@@ -1,0 +1,7 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "description": "This is the package for the Appsmith design system components",
+  "private": true,
+  "workspaces": ["packages/*"]
+}
