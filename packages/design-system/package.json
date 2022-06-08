@@ -1,9 +1,10 @@
 {
-  "name": "@appsmithorg/blocks",
+  "name": "blocks",
   "version": "1.0.0",
   "description": "This is the package for the Appsmith design system components",
   "main": "build/index.js",
   "module": "build/index.es.js",
+  "private": true,
   "files": [
     "build"
   ],
@@ -57,7 +58,7 @@
     "react-dom": ">=16.7.0"
   },
   "dependencies": {
-    "@blueprintjs/core": "^3.36.0",
+    "@blueprintjs/core": "3.36.0",
     "popper.js": "^1.16.1"
   },
   "eslintConfig": {
