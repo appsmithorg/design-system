@@ -8,6 +8,12 @@ export default {
   component: TooltipComponent,
 } as ComponentMeta<typeof TooltipComponent>;
 
-export const Tooltip: ComponentStory<typeof TooltipComponent> = (args) => (
-  <TooltipComponent {...args} />
+// eslint-disable-next-line react/function-component-definition
+const Template: ComponentStory<typeof TooltipComponent> = (args) => (
+  <TooltipComponent {...args}>Target</TooltipComponent>
 );
+
+export const Tooltip = Template.bind({
+  content: "This is the tooltip 😁",
+  hoverOpenDelay: 200,
+});
