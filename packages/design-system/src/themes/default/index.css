@@ -1,0 +1,6 @@
+@import "colors.css";
+@import "variables.css";
+
+:root {
+  --ds-primary-color: var(--ds-color-orange-500);
+}

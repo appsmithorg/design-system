@@ -4,6 +4,9 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import url from "@rollup/plugin-url";
 import svgr from "@svgr/rollup";
+import postcss from "rollup-plugin-postcss";
+import path from "path";
+import postcssImport from "postcss-import";
 
 const packageJson = require("./package.json");
 
@@ -26,6 +29,12 @@ export default {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
+    postcss({
+      minimize: true,
+      sourceMap: true,
+      plugins: [postcssImport()],
+      extract: path.resolve("build/css/design-system.css"),
+    }),
     url(),
     svgr(),
   ],

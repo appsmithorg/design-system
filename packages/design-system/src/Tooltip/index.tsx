@@ -1,8 +1,9 @@
-import React from "react";
-import { CommonComponentProps } from "../config/common";
+import React, { useMemo } from "react";
+import { CommonComponentProps } from "../types/common";
 import { Position, Tooltip, PopperBoundary } from "@blueprintjs/core";
 import { Modifiers } from "popper.js";
 import { noop } from "lodash";
+import "./styles.module.css";
 
 type Variant = "dark" | "light";
 
@@ -12,7 +13,7 @@ export type TooltipProps = CommonComponentProps & {
   content: JSX.Element | string;
   disabled?: boolean;
   position?: Position;
-  children: JSX.Element | React.ReactNode;
+  children: JSX.Element;
   variant?: Variant;
   maxWidth?: string;
   boundary?: PopperBoundary;
@@ -29,10 +30,28 @@ export type TooltipProps = CommonComponentProps & {
   transitionDuration?: number;
 };
 
-const portalContainer = document.getElementById("tooltip-root");
+const rootElementId = "tooltip-root";
+
+let portalContainer = document.getElementById(rootElementId);
+
+if (!portalContainer) {
+  const tooltipPortalElement = document.createElement("div");
+  tooltipPortalElement.id = rootElementId;
+  document.body.append(tooltipPortalElement);
+  portalContainer = document.getElementById(rootElementId);
+}
 
 function TooltipComponent(props: TooltipProps) {
+  const modifiers = useMemo(
+    () => ({
+      preventOverflow: { enabled: false },
+      ...props.modifiers,
+    }),
+    [props.modifiers],
+  );
+
   return (
+    // @ts-expect-error: Tooltip type miss match
     <Tooltip
       autoFocus={props.autoFocus}
       boundary={props.boundary || "scrollParent"}
@@ -42,10 +61,7 @@ function TooltipComponent(props: TooltipProps) {
       hoverOpenDelay={props.hoverOpenDelay}
       isOpen={props.isOpen}
       minimal={props.minimal}
-      modifiers={{
-        preventOverflow: { enabled: false },
-        ...props.modifiers,
-      }}
+      modifiers={modifiers}
       onOpening={props.onOpening}
       openOnTargetFocus={props.openOnTargetFocus}
       popoverClassName={`${GLOBAL_STYLE_TOOLTIP_CLASSNAME} ${props.popoverClassName ??

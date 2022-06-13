@@ -6,10 +6,10 @@
   "workspaces": ["packages/*"],
   "nohoist": [],
   "scripts": {
-    "blocks:build": "yarn workspace blocks build",
-    "blocks:test": "yarn workspace blocks test",
-    "blocks:prepublishOnly": "yarn workspace blocks prepublishOnly",
-    "blocks:storybook": "yarn workspace blocks storybook",
-    "blocks:build-storybook": "yarn workspace blocks build-storybook"
+    "design-system:build": "yarn workspace @appsmithorg/design-system build",
+    "design-system:test": "yarn workspace @appsmithorg/design-system test",
+    "design-system:prepublishOnly": "yarn workspace @appsmithorg/design-system prepublishOnly",
+    "design-system:storybook": "yarn workspace @appsmithorg/design-system storybook",
+    "design-system:build-storybook": "yarn workspace @appsmithorg/design-system build-storybook"
   }
 }

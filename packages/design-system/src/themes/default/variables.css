@@ -1,0 +1,17 @@
+:root {
+
+  /* z-indexes */
+  --ds-z-index-0: 0;
+  --ds-z-index-1: 1;
+  --ds-z-index-2: 2;
+  --ds-z-index-3: 3;
+  --ds-z-index-4: 4;
+  --ds-z-index-5: 5;
+  --ds-z-index-6: 6;
+  --ds-z-index-7: 7;
+  --ds-z-index-8: 8;
+  --ds-z-index-9: 9;
+  --ds-z-index-10: 10;
+  --ds-z-index-21: 21;
+  --ds-z-index-max: 99999;
+}
