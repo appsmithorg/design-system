@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { CommonComponentProps } from "../types/common";
 import { Position, Tooltip, PopperBoundary } from "@blueprintjs/core";
 import { Modifiers } from "popper.js";
-import { noop } from "lodash";
+import noop from "lodash/noop";
 import "./styles.module.css";
 
 type Variant = "dark" | "light";
@@ -13,7 +13,7 @@ export type TooltipProps = CommonComponentProps & {
   content: JSX.Element | string;
   disabled?: boolean;
   position?: Position;
-  children: JSX.Element;
+  children: JSX.Element | React.ReactNode;
   variant?: Variant;
   maxWidth?: string;
   boundary?: PopperBoundary;
