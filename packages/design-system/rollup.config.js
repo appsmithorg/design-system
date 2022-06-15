@@ -6,6 +6,7 @@ import svgr from "@svgr/rollup";
 import postcss from "rollup-plugin-postcss";
 import path from "path";
 import postcssImport from "postcss-import";
+import { terser } from "rollup-plugin-terser";
 
 export default {
   input: ["src/index.ts", "src/Tooltip/index.tsx"],
@@ -29,5 +30,6 @@ export default {
     }),
     url(),
     svgr(),
+    terser(),
   ],
 };

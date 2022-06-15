@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 import { CommonComponentProps } from "../types/common";
-import { Position, Tooltip, PopperBoundary } from "@blueprintjs/core";
+import { PopperBoundary } from "@blueprintjs/core/lib/esnext/components/popover/popoverSharedProps";
+import { Position } from "@blueprintjs/core/lib/esnext/common";
+import { Tooltip } from "@blueprintjs/core/lib/esnext/components/tooltip/tooltip.js";
 import { Modifiers } from "popper.js";
 import noop from "lodash/noop";
 import "./styles.module.css";
