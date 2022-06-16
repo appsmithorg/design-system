@@ -1,7 +1,9 @@
 import React, { useMemo } from "react";
 import { CommonComponentProps } from "../types/common";
-import { PopperBoundary } from "@blueprintjs/core/lib/esnext/components/popover/popoverSharedProps";
-import { Position } from "@blueprintjs/core/lib/esnext/common";
+import {
+  PopoverPosition,
+  PopperBoundary,
+} from "@blueprintjs/core/lib/esnext/components/popover/popoverSharedProps";
 import { Tooltip } from "@blueprintjs/core/lib/esnext/components/tooltip/tooltip.js";
 import { Modifiers } from "popper.js";
 import noop from "lodash/noop";
@@ -14,7 +16,7 @@ export const GLOBAL_STYLE_TOOLTIP_CLASSNAME = "ads-global-tooltip";
 export type TooltipProps = CommonComponentProps & {
   content: JSX.Element | string;
   disabled?: boolean;
-  position?: Position;
+  position?: PopoverPosition;
   children: JSX.Element | React.ReactNode;
   variant?: Variant;
   maxWidth?: string;
@@ -79,7 +81,7 @@ function TooltipComponent(props: TooltipProps) {
 }
 
 TooltipComponent.defaultProps = {
-  position: Position.TOP,
+  position: PopoverPosition.TOP,
   variant: "dark",
 };
 
