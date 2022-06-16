@@ -4,5 +4,5 @@
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: var(--ds-z-index-max);
+  z-index: var(--ads-z-index-max);
 }

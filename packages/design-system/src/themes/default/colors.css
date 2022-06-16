@@ -1,40 +1,40 @@
 :root {
   /* orange */
-  --ds-color-orange-900 : #B7491A;
-  --ds-color-orange-800 : #D15420;
-  --ds-color-orange-700 : #DF5B23;
-  --ds-color-orange-600 : #ED6227;
-  --ds-color-orange-500 : #F86A2B; /* Primary */
-  --ds-color-orange-400 : #F97D4A;
-  --ds-color-orange-300 : #F9936B;
-  --ds-color-orange-200 : #FBB195;
-  --ds-color-orange-100 : #FCCFBF;
-  --ds-color-orange-50 : #FAEAE8;
+  --ads-color-orange-900 : #B7491A;
+  --ads-color-orange-800 : #D15420;
+  --ads-color-orange-700 : #DF5B23;
+  --ads-color-orange-600 : #ED6227;
+  --ads-color-orange-500 : #F86A2B; /* Primary */
+  --ads-color-orange-400 : #F97D4A;
+  --ads-color-orange-300 : #F9936B;
+  --ads-color-orange-200 : #FBB195;
+  --ads-color-orange-100 : #FCCFBF;
+  --ads-color-orange-50 : #FAEAE8;
 
   /* black */
-  --ds-color-black-900 : #191919;
-  --ds-color-black-800 : #393939;
-  --ds-color-black-700 : #575757;
-  --ds-color-black-600 : #6B6B6B;
-  --ds-color-black-500 : #939393;
-  --ds-color-black-400 : #B3B3B3;
-  --ds-color-black-300 : #D7D7D7;
-  --ds-color-black-250 : #E0DEDE;
-  --ds-color-black-200 : #E7E7E7;
-  --ds-color-black-100 : #F1F1F1;
-  --ds-color-black-50 : #F8F8F8;
-  --ds-color-black-0 : #FFFFFF;
+  --ads-color-black-900 : #191919;
+  --ads-color-black-800 : #393939;
+  --ads-color-black-700 : #575757;
+  --ads-color-black-600 : #6B6B6B;
+  --ads-color-black-500 : #939393;
+  --ads-color-black-400 : #B3B3B3;
+  --ads-color-black-300 : #D7D7D7;
+  --ads-color-black-250 : #E0DEDE;
+  --ads-color-black-200 : #E7E7E7;
+  --ads-color-black-100 : #F1F1F1;
+  --ads-color-black-50 : #F8F8F8;
+  --ads-color-black-0 : #FFFFFF;
 
   /* green */
-  --ds-color-green-500 : #03B364;
-  --ds-color-green-50 : #E5F6EC;
+  --ads-color-green-500 : #03B364;
+  --ads-color-green-50 : #E5F6EC;
 
   /* yellow */
-  --ds-color-yellow-500 : #FEC518;
-  --ds-color-yellow-50 : #FFF8E2;
+  --ads-color-yellow-500 : #FEC518;
+  --ads-color-yellow-50 : #FFF8E2;
 
   /* red */
-  --ds-color-red-500 : #F13125;
-  --ds-color-red-50 : #FFEAEC;
+  --ads-color-red-500 : #F13125;
+  --ads-color-red-50 : #FFEAEC;
 
 }

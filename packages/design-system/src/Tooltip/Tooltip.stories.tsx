@@ -10,10 +10,12 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof TooltipComponent> = (args) => (
-  <TooltipComponent {...args}>Target</TooltipComponent>
+  <TooltipComponent {...args} content="test">
+    {/* Added content prop above since it is conflict with some storybook props */}
+    Target
+  </TooltipComponent>
 );
 
 export const Tooltip = Template.bind({
-  content: "This is the tooltip 😁",
   hoverOpenDelay: 200,
 });
