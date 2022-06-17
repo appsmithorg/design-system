@@ -12,7 +12,7 @@ export default {
 const Template: ComponentStory<typeof TooltipComponent> = (args) => (
   <TooltipComponent {...args} content="test">
     {/* Added content prop above since it is conflict with some storybook props */}
-    Target
+    Hover over me 😁
   </TooltipComponent>
 );
 

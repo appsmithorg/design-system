@@ -1,6 +1,6 @@
 const path = require("path");
 
-async function supportCssModules(config) {
+async function webpackConfig(config) {
 
   config.module.rules.find(
     (rule) => rule.test.toString() === '/\\.css$/'
@@ -17,6 +17,14 @@ async function supportCssModules(config) {
         },
       },
     ],
+  })
+
+  config.module.rules.push({
+    test: /\.(js|jsx|ts|tsx)$/,
+    use: {
+      loader: 'babel-loader',
+      options: { presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"] }
+    }
   })
 
   return config
@@ -41,5 +49,5 @@ module.exports = {
     },
   ],
   "framework": "@storybook/react",
-  "webpackFinal": supportCssModules,
+  "webpackFinal": webpackConfig,
 }
