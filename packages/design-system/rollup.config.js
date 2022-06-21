@@ -9,7 +9,7 @@ import postcssImport from "postcss-import";
 import { terser } from "rollup-plugin-terser";
 
 export default {
-  input: ["src/index.ts", "src/**/index.tsx"],
+  input: ["src/index.ts", "src/Tooltip/index.tsx"],
   output: [
     {
       dir: "build",
