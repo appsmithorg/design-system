@@ -1,0 +1,17 @@
+:root {
+
+  /* z-indexes */
+  --ads-z-index-0: 0;
+  --ads-z-index-1: 1;
+  --ads-z-index-2: 2;
+  --ads-z-index-3: 3;
+  --ads-z-index-4: 4;
+  --ads-z-index-5: 5;
+  --ads-z-index-6: 6;
+  --ads-z-index-7: 7;
+  --ads-z-index-8: 8;
+  --ads-z-index-9: 9;
+  --ads-z-index-10: 10;
+  --ads-z-index-21: 21;
+  --ads-z-index-max: 99999;
+}

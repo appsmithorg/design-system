@@ -1,0 +1,15 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "description": "This is the package for the Appsmith design system components",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "nohoist": [],
+  "scripts": {
+    "design-system:build": "yarn workspace @appsmithorg/design-system build",
+    "design-system:test": "yarn workspace @appsmithorg/design-system test",
+    "design-system:prepublishOnly": "yarn workspace @appsmithorg/design-system prepublishOnly",
+    "design-system:storybook": "yarn workspace @appsmithorg/design-system storybook",
+    "design-system:build-storybook": "yarn workspace @appsmithorg/design-system build-storybook"
+  }
+}
