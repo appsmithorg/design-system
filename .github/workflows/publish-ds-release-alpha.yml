@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - release
+    paths:
+      - "packages/design-system/**"
 
 # Job will run on a ubuntu instance
 jobs:
@@ -12,12 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout the code
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # Setup node with version 16.x and NPM registry url
       - uses: actions/setup-node@v1
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
+      # set git config
+      - name: Set git config to github-actions
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
       # cd to packages/design-system
       - name: Switch to packages/design-system directory
         run: cd packages/design-system
