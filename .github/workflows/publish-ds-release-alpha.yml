@@ -8,6 +8,11 @@ on:
     paths:
       - "packages/design-system/**"
 
+# Change the working directory for all the jobs in this workflow
+defaults:
+  run:
+    working-directory: packages/design-system
+
 # Job will run on a ubuntu instance
 jobs:
   build:
@@ -25,9 +30,6 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-      # cd to packages/design-system
-      - name: Switch to packages/design-system directory
-        run: cd packages/design-system
       # create new alpha version
       - name: Create new alpha version
         run: npm version prerelease --preid alpha
