@@ -14,7 +14,7 @@ UI Design system of Appsmith
 
 </div>
 
-[![](https://github.com/appsmithorg/appsmith/raw/release/static/git-banner-new.png)](https://appsmith.com)
+[![](https://github.com/appsmithorg/appsmith/raw/release/static/git-banner-new.png)](https://www.appsmith.com)
 
 
 
