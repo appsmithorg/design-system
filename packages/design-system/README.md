@@ -38,4 +38,4 @@ ReactDOM.render(<TooltipComponent />, mountNode);
 
 ## Links
 
-- [Home page](https://www.appsmith.com)
+- [Home-page](https://www.appsmith.com)
