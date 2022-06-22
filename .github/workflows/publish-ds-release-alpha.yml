@@ -4,7 +4,7 @@ name: NPM Publish Design System Alpha
 on:
   push:
     branches:
-      - release
+      - "test-workflow"
     paths:
       - "packages/design-system/**"
 
@@ -30,12 +30,12 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-      # create new alpha version
-      - name: Create new alpha version
-        run: npm version prerelease --preid alpha
       # Run yarn install to install project packages
       - name: Yarn
         run: yarn install
+      # create new alpha version
+      - name: Create new alpha version
+        run: npm version prerelease --preid alpha
       # yarn build to build the project
       - name: Build package
         run: yarn build
