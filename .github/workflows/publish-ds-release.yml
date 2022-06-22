@@ -4,7 +4,7 @@ name: NPM Publish Design System Alpha
 on:
   push:
     branches:
-      - "test-workflow"
+      - "release"
     paths:
       - "packages/design-system/**"
 
