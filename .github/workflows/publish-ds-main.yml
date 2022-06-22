@@ -35,7 +35,9 @@ jobs:
         run: yarn install
       # create new beta version
       - name: Create new beta version
-        run: npm version prerelease --preid beta
+        run: |
+          npm version prerelease --preid beta -m "[RELEASE] %s"
+          git push
       # yarn build to build the project
       - name: Build package
         run: yarn build
