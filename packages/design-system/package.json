@@ -12,8 +12,7 @@
     "build": "rollup -c",
     "prepublishOnly": "npm run build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag @appsmithorg/design-system@$PACKAGE_VERSION && git push --tags"
+    "build-storybook": "build-storybook"
   },
   "contributors": [
     "Albin <albin@appsmith.com>",
