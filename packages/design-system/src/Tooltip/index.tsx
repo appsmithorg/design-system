@@ -55,7 +55,6 @@ function TooltipComponent(props: TooltipProps) {
   );
 
   return (
-    // @ts-expect-error: Tooltip type miss match
     <Tooltip
       autoFocus={props.autoFocus}
       boundary={props.boundary || "scrollParent"}
