@@ -4,7 +4,7 @@ name: NPM Publish Design System Beta
 on:
   push:
     branches:
-      - "test-workflow"
+      - "main"
     paths:
       - "packages/design-system/**"
 
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout the code
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       # Setup node with version 16.x and NPM registry url
       - uses: actions/setup-node@v1
         with:
@@ -32,7 +32,7 @@ jobs:
           git config user.email github-actions@github.com
       # Run yarn install to install project packages
       - name: Yarn
-        run: yarn install
+        run: yarn install --frozen-lockfile
       # create new beta version
       - name: Create new beta version
         run: |
@@ -43,7 +43,7 @@ jobs:
         run: yarn build
       # publish the files to NPM
       - name: Publish package and tag as beta
-        run: npm publish --access public --tag beta
+        run: npm publish --access public --tag beta --ignore-scripts
       # for publishing, npm need authorization. We add the NPM token to the environment which will take care of authorization to publish to the package
         env:
           NODE_AUTH_TOKEN: ${{secrets.APPSMITH_NPM_PUBLISH_KEY}}
