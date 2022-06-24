@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "This is the package for the Appsmith design system components",
   "private": true,
-  "workspaces": ["packages/*"],
-  "nohoist": [],
+  "workspaces": {
+    "packages": ["packages/*"],
+    "nohoist": ["**"]
+  },
   "scripts": {
     "design-system:build": "yarn workspace @appsmithorg/design-system build",
     "design-system:test": "yarn workspace @appsmithorg/design-system test",

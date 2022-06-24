@@ -4,14 +4,14 @@
     "declaration": true,
     "declarationDir": "build",
     "module": "esnext",
-    "target": "es5",
+    "target": "ES6",
     "lib": [
-      "dom",
-      "dom.iterable",
+      "DOM",
+      "DOM.Iterable",
+      "ScriptHost",
       "esnext",
-      "es5",
-      "es2015.collection",
-      "es2015.iterable",
+      "ES6",
+      "ES2016.Array.Include",
       "es2020.string"
     ],
     "sourceMap": true,
@@ -19,7 +19,11 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "skipLibCheck": true,
   },
   "include": ["src/**/*"],
   "exclude": [
