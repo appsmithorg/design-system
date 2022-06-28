@@ -5,7 +5,7 @@ on:
     paths:
       - "packages/**"
     branches:
-      - "changeset-integration-and-workflow-setup"
+      - "main"
     
 jobs:
   release:
