@@ -7,7 +7,7 @@
   "commit": false,
   "fixed": [],
   "linked": [],
-  "access": "restricted",
+  "access": "public",
   "baseBranch": "changeset-integration-and-workflow-setup",
   "updateInternalDependencies": "patch",
   "ignore": []
