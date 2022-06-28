@@ -8,6 +8,7 @@ import { Tooltip } from "@blueprintjs/core/lib/esnext/components/tooltip/tooltip
 import { Modifiers } from "popper.js";
 import noop from "lodash/noop";
 import "./styles.module.css";
+import styled from "styled-components";
 
 type Variant = "dark" | "light";
 
@@ -32,11 +33,37 @@ export type TooltipProps = CommonComponentProps & {
   popoverClassName?: string;
   donotUsePortal?: boolean;
   transitionDuration?: number;
+  underline?: boolean;
+  styles?: any;
 };
 
 const rootElementId = "tooltip-root";
 
 let portalContainer = document.getElementById(rootElementId);
+
+// @ts-expect-error: Tooltip type mismatch
+const TooltipWrapper = styled(Tooltip)<{ width?: string }>`
+  display: flex;
+  width: ${(props) => (props.width ? props.width : "fit-content")};
+  text-align: start;
+`;
+
+const TooltipChildrenWrapper = styled.div<{ helpCursor: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  cursor: ${(props) => (props.helpCursor ? "help" : "")};
+`;
+
+const TooltipUnderline = styled.span`
+  border-bottom: 1px dashed;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: -1px;
+`;
 
 if (!portalContainer) {
   const tooltipPortalElement = document.createElement("div");
@@ -55,7 +82,7 @@ function TooltipComponent(props: TooltipProps) {
   );
 
   return (
-    <Tooltip
+    <TooltipWrapper
       autoFocus={props.autoFocus}
       boundary={props.boundary || "scrollParent"}
       className={props.className}
@@ -73,9 +100,18 @@ function TooltipComponent(props: TooltipProps) {
       position={props.position}
       transitionDuration={props.transitionDuration || 0}
       usePortal={!props.donotUsePortal}
+      {...(props.styles || {})}
     >
-      {props.children}
-    </Tooltip>
+      <TooltipChildrenWrapper
+        helpCursor={!!(!props.disabled && props.underline)}
+        tabIndex={-1}
+      >
+        {props.children}
+        {!props.disabled && props.underline && (
+          <TooltipUnderline className={"underline"} />
+        )}
+      </TooltipChildrenWrapper>
+    </TooltipWrapper>
   );
 }
 
