@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Appsmith Design System</h1>
+<h1 align="center">Appsmith Design system</h1>
 
 <div align="center">
 
