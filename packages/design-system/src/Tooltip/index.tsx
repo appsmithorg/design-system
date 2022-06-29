@@ -42,27 +42,27 @@ const rootElementId = "tooltip-root";
 let portalContainer = document.getElementById(rootElementId);
 
 // @ts-expect-error: Tooltip type mismatch
-const TooltipWrapper = styled(Tooltip)<{ width?: string }>`
-  display: flex;
-  width: ${(props) => (props.width ? props.width : "fit-content")};
-  text-align: start;
-`;
+const TooltipWrapper = styled(Tooltip)<{
+  width?: string;
+  underline?: boolean;
+}>`
+  .bp3-popover-target {
+    position: relative;
+    cursor: ${({ underline }) => (underline ? "help" : "")};
 
-const TooltipChildrenWrapper = styled.div<{ helpCursor: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 100%;
-  cursor: ${(props) => (props.helpCursor ? "help" : "")};
-`;
-
-const TooltipUnderline = styled.span`
-  border-bottom: 1px dashed;
-  width: 100%;
-  display: flex;
-  position: absolute;
-  bottom: -1px;
+    ${({ underline }) =>
+      underline &&
+      `
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px dashed;
+      }
+    `}
+  }
 `;
 
 if (!portalContainer) {
@@ -99,18 +99,11 @@ function TooltipComponent(props: TooltipProps) {
       portalContainer={portalContainer as HTMLDivElement}
       position={props.position}
       transitionDuration={props.transitionDuration || 0}
+      underline={props.underline}
       usePortal={!props.donotUsePortal}
       {...(props.styles || {})}
     >
-      <TooltipChildrenWrapper
-        helpCursor={!!(!props.disabled && props.underline)}
-        tabIndex={-1}
-      >
-        {props.children}
-        {!props.disabled && props.underline && (
-          <TooltipUnderline className={"underline"} />
-        )}
-      </TooltipChildrenWrapper>
+      {props.children}
     </TooltipWrapper>
   );
 }
