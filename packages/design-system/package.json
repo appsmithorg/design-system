@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "1.0.1-beta.11",
+  "version": "1.0.3",
   "description": "This is the package for the Appsmith design system components",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -10,7 +10,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "prepublishOnly": "npm run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
