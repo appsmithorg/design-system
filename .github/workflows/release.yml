@@ -1,4 +1,4 @@
-name: Release Workflow
+name: NPM Publish Release Workflow
 
 on:
   push:

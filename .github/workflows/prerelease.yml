@@ -1,4 +1,4 @@
-name: NPM Publish Design System Alpha
+name: NPM Publish Design System Beta
 
 # This action will trigger on PR merge to release
 on:
