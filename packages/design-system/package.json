@@ -1,0 +1,100 @@
+{
+  "name": "@appsmithorg/design-system",
+  "version": "1.0.3",
+  "description": "This is the package for the Appsmith design system components",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "contributors": [
+    "Albin <albin@appsmith.com>",
+    "Rohit Agarwal <rohit.agarwal@appsmith.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appsmithorg/design-system.git",
+    "directory": "packages/design-system"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
+    "@blueprintjs/core": "^3.36.0",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-url": "^7.0.0",
+    "@storybook/addon-actions": "^6.5.7",
+    "@storybook/addon-essentials": "^6.5.7",
+    "@storybook/addon-interactions": "^6.5.7",
+    "@storybook/addon-links": "^6.5.7",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack4": "^6.5.7",
+    "@storybook/manager-webpack4": "^6.5.7",
+    "@storybook/react": "^6.5.7",
+    "@storybook/testing-library": "^0.0.11",
+    "@svgr/rollup": "^6.2.1",
+    "@types/react": "^16.8.2",
+    "@types/styled-components": "5.1.3",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "babel-loader": "^8.2.5",
+    "babel-preset-react-app": "^10.0.1",
+    "eslint": "8.3.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-sort-destructure-keys": "^1.3.5",
+    "eslint-plugin-storybook": "^0.5.12",
+    "popper.js": "^1.15.0",
+    "postcss": "^8.4.14",
+    "postcss-import": "^14.1.0",
+    "prettier": "^1.18.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.7.0",
+    "rollup": "^2.75.5",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.32.0",
+    "styled-components": "^5.2.0",
+    "typescript": "4.5.5"
+  },
+  "peerDependencies": {
+    "@blueprintjs/core": "^3.36.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.7.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "parser": "@typescript-eslint/parser",
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

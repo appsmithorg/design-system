@@ -1,0 +1,6 @@
+@import "colors.css";
+@import "variables.css";
+
+:root {
+  --ads-primary-color: var(--ads-color-orange-500);
+}
