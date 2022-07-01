@@ -32,7 +32,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::391311798816:role/design-systems-github-actions-deploy-s3
+          role-to-assume: ${{secrets.APPSMITH_DESIGN_SYSTEM_AWS_ROLE}}
           role-session-name: ds-storybook-deploy-workflow
           aws-region: us-east-2
 
