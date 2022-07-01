@@ -28,3 +28,14 @@ jobs:
       # yarn build to build the project
       - name: Build package
         run: yarn build-storybook
+
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::391311798816:role/design-systems-github-actions-deploy-s3
+          role-session-name: ds-storybook-deploy-workflow
+          aws-region: us-east-2
+
+      - name: Upload to S3
+        run: |
+          aws s3 sync packages/design-system/storybook-static s3://design-system.appsmith.com/ --recursive
