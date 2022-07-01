@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ThemeProp, Classes, CommonComponentProps } from "./common";
+import { CommonComponentProps } from "../types/common";
 import { Theme } from "constants/DefaultTheme";
 import { TypographyKeys } from "constants/typography";
 
