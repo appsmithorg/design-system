@@ -14,4 +14,11 @@
   --ads-z-index-10: 10;
   --ads-z-index-21: 21;
   --ads-z-index-max: 99999;
+
+  /* font-weights */
+  --ads-font-weight-0: 0;
+  --ads-font-weight-normal: 400;
+  --ads-font-weight-bold: 500;
+  --ads-font-weight-bold-xl: 600;
+  --ads-font-weight-bold-xxl: 700;
 }
