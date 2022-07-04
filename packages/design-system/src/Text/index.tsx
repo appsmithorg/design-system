@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { CommonComponentProps } from "../types/common";
-import { Theme } from "constants/DefaultTheme";
-import { TypographyKeys } from "constants/typography";
+import { TypographyKeys, typography } from "../constants/typography";
+import { Classes } from "../constants/classes";
 
 export enum TextType {
   P0 = "p0",
@@ -43,48 +43,46 @@ export type TextProps = CommonComponentProps & {
   color?: string;
 };
 
-const typeSelector = (props: TextProps & ThemeProp): string => {
+const typeSelector = (props: TextProps): string => {
   let color = "";
   switch (props.type) {
     case TextType.P0:
-      color = props.theme.colors.text.normal;
+      color = "var(--ads-text-color)";
       break;
     case TextType.P1:
-      color = props.theme.colors.text.normal;
+      color = "var(--ads-text-color)";
       break;
     case TextType.P2:
-      color = props.theme.colors.text.normal;
+      color = "var(--ads-text-color)";
       break;
     case TextType.P3:
-      color = props.theme.colors.text.normal;
+      color = "var(--ads-text-color)";
       break;
     default:
-      color = props.theme.colors.text.heading;
+      color = "var(--ads-text-heading-color)";
       break;
   }
   return color;
 };
 
 const getFontWeight = ({
-  theme,
   type,
   weight,
 }: {
-  theme: Theme;
   weight: string | undefined;
   type: TypographyKeys;
 }) => {
   if (weight) {
     switch (weight) {
       case FontWeight.BOLD:
-        return theme.fontWeights[2];
+        return "var(--ads-font-weight-bold)";
       case FontWeight.NORMAL:
         return "normal";
       default:
         return weight;
     }
   } else {
-    return theme.typography[type].fontWeight;
+    return typography[type].fontWeight;
   }
 };
 
@@ -96,17 +94,15 @@ const Text = styled.span.attrs<TextProps>(({ className, cypressSelector }) => ({
   font-style: ${(props) => (props.italic ? "italic" : "normal")};
   font-weight: ${(props) =>
     getFontWeight({
-      theme: props.theme,
       type: props.type,
       weight: props.weight,
     })};
-  font-size: ${(props) => props.theme.typography[props.type].fontSize}px;
-  line-height: ${(props) => props.theme.typography[props.type].lineHeight}px;
-  letter-spacing: ${(props) =>
-    props.theme.typography[props.type].letterSpacing}px;
+  font-size: ${(props) => typography[props.type].fontSize}px;
+  line-height: ${(props) => typography[props.type].lineHeight}px;
+  letter-spacing: ${(props) => typography[props.type].letterSpacing}px;
   color: ${(props) =>
     props.highlight
-      ? props.theme.colors.text.highlight
+      ? "var(--ads-text-highlight-color)"
       : props.color
       ? props.color
       : typeSelector(props)};

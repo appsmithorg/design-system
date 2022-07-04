@@ -3,4 +3,21 @@
 
 :root {
   --ads-primary-color: var(--ads-color-orange-500);
+
+  /** Naming convention for tokens
+  *
+  * --ads-<component>-<componentType>-<state>-<property>-<subProperty>
+  * 
+  * component: button, checkbox, dropdown, input, link, list, menu, radio, select, textarea...
+  * componentType: primary, secondary...
+  * state: hover, focus, active, disabled, default...
+  * property: color, background, border...
+  * subProperty: color, width, radius...
+  *
+  */
+
+  /** Text */
+  --ads-text-color: var(--ads-color-black-750);
+  --ads-text-heading-color: var(--ads-color-black-850);
+  --ads-text-highlight-color: var(--ads-color-black-0);
 }
