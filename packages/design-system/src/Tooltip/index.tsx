@@ -8,6 +8,7 @@ import { Tooltip } from "@blueprintjs/core/lib/esnext/components/tooltip/tooltip
 import { Modifiers } from "popper.js";
 import noop from "lodash/noop";
 import "./styles.module.css";
+import styled from "styled-components";
 
 type Variant = "dark" | "light";
 
@@ -32,11 +33,37 @@ export type TooltipProps = CommonComponentProps & {
   popoverClassName?: string;
   donotUsePortal?: boolean;
   transitionDuration?: number;
+  underline?: boolean;
+  styles?: any;
 };
 
 const rootElementId = "tooltip-root";
 
 let portalContainer = document.getElementById(rootElementId);
+
+// @ts-expect-error: Tooltip type mismatch
+const TooltipWrapper = styled(Tooltip)<{
+  width?: string;
+  underline?: boolean;
+}>`
+  .bp3-popover-target {
+    position: relative;
+    cursor: ${({ underline }) => (underline ? "help" : "")};
+
+    ${({ underline }) =>
+      underline &&
+      `
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px dashed;
+      }
+    `}
+  }
+`;
 
 if (!portalContainer) {
   const tooltipPortalElement = document.createElement("div");
@@ -55,7 +82,7 @@ function TooltipComponent(props: TooltipProps) {
   );
 
   return (
-    <Tooltip
+    <TooltipWrapper
       autoFocus={props.autoFocus}
       boundary={props.boundary || "scrollParent"}
       className={props.className}
@@ -72,10 +99,12 @@ function TooltipComponent(props: TooltipProps) {
       portalContainer={portalContainer as HTMLDivElement}
       position={props.position}
       transitionDuration={props.transitionDuration || 0}
+      underline={props.underline}
       usePortal={!props.donotUsePortal}
+      {...(props.styles || {})}
     >
       {props.children}
-    </Tooltip>
+    </TooltipWrapper>
   );
 }
 
