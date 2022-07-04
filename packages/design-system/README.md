@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Appsmith Design system</h1>
+<h1 align="center">Appsmith Design System</h1>
 
 <div align="center">
 
@@ -27,6 +27,12 @@ npm install @appsmith/design-system
 or
 ```bash
 yarn add @appsmithorg/design-system
+```
+
+## Including CSS
+Add css import in the root index css file
+```bash
+@import "~@appsmithorg/design-system/build/css/design-system.css";
 ```
 
 ## Usage
