@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.4
+
+### Patch Changes
+
+- [#23](https://github.com/appsmithorg/design-system/pull/23) [`a2bf066`](https://github.com/appsmithorg/design-system/commit/a2bf066c69b5d08100d2adf223d377bf947e280c) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - Added optional underline feature for tooltip target
+
+* [#22](https://github.com/appsmithorg/design-system/pull/22) [`c791e3e`](https://github.com/appsmithorg/design-system/commit/c791e3e2184e8528a0a1a54c59909a21e9d4ed16) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - Added Text component and related stories
+
 ## 1.0.3
 
 ### Patch Changes
