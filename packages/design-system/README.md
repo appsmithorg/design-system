@@ -42,7 +42,7 @@ Add css import in the root index css file
 import { TooltipComponent } from "@appsmithorg/design-system";
 
 <TooltipComponent content="Some useful content">
-  Hover here
+  Hover here 😁
 </TooltipComponent>
 ```
 
