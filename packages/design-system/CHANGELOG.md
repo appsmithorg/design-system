@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.6
+
+### Patch Changes
+
+- [#32](https://github.com/appsmithorg/design-system/pull/32) [`6833851`](https://github.com/appsmithorg/design-system/commit/6833851de5303a6b4487743083a79e1f5bea987c) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - Readme change for testing workflows
+
 ## 1.0.5
 
 ### Patch Changes
