@@ -60,24 +60,11 @@ jobs:
       # Build packages, add packages build script inside workspace scripts.build
       - name: Build packages
         run: yarn build
-
-      # Create PR & publish to NPM
-      - name: Create release Pull Request or publish to NPM
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: yarn release
-          commit: "ci(changesets): version packages"
-          title: "ci(changesets): version packages"
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       # Release beta
       - name: Release to @beta tag
         if: steps.changesets.outputs.published != 'true'
         run: |
-          git checkout main
           yarn changeset version --snapshot beta
           yarn changeset publish --tag beta
         env:
