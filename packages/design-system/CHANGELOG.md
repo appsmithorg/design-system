@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.5
+
+### Patch Changes
+
+- [#29](https://github.com/appsmithorg/design-system/pull/29) [`e710c7a`](https://github.com/appsmithorg/design-system/commit/e710c7a9ce7fdac09d34c8085dc53c8c5856b1ad) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - Fixed spacing in readme
+
 ## 1.0.4
 
 ### Patch Changes
