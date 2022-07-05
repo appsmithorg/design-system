@@ -40,7 +40,10 @@ Add css import in the root index css file
 
 ```jsx
 import { TooltipComponent } from "@appsmithorg/design-system";
-ReactDOM.render(<TooltipComponent />, mountNode);
+
+<TooltipComponent content="Some useful content" hoverOpenDelay={1000}>
+  Hover here
+</TooltipComponent>
 ```
 
 ## Links
