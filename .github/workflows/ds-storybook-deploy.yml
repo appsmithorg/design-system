@@ -53,4 +53,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_DEPLOY_AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-east-2
         run: |
-          aws s3 sync storybook-static s3://design-system.appsmith.com/ --recursive
+          aws s3 sync storybook-static s3://design-system.appsmith.com/
