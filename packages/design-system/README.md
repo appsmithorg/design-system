@@ -30,6 +30,7 @@ yarn add @appsmithorg/design-system
 ```
 
 ## Including CSS
+
 Add css import in the root index css file
 ```bash
 @import "~@appsmithorg/design-system/build/css/design-system.css";
