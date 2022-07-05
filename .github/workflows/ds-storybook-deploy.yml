@@ -16,6 +16,11 @@ jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
     steps:
+      # Get yarn cache directory and set it in a variable
+      - name: Get yarn cache path
+        id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
       # Checkout the code
       - uses: actions/checkout@v3
 
@@ -24,6 +29,19 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
+      
+      # Load yarn cache
+      - name: Load Yarn cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarn-cache-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      
+      # Install the dependencies
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       # yarn build to build the project
       - name: Build package
