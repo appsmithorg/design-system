@@ -46,6 +46,25 @@ import { TooltipComponent } from "@appsmithorg/design-system";
 </TooltipComponent>
 ```
 
+## Contribute
+
+```
+git clone https://github.com/appsmithorg/design-system.git
+```
+Get all dependencies with
+```
+cd design-system/packages/design-system
+yarn install
+```
+
+Then run storybook in development and watch mode with
+```
+yarn design-system:storybook
+```
+
+Any stories you write within `design-system/packages/design-system/src/**` will show up here. Happy playground testing!
+
+
 ## Links
 
 - [Home page](https://www.appsmith.com)
