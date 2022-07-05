@@ -16,11 +16,6 @@ jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
     steps:
-      # Get yarn cache directory and set it in a variable
-      - name: Get yarn cache path
-        id: yarn-cache-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
       # Checkout the code
       - uses: actions/checkout@v3
 
@@ -29,6 +24,11 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
+      
+      # Get yarn cache directory and set it in a variable
+      - name: Get yarn cache path
+        id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
       
       # Load yarn cache
       - name: Load Yarn cache

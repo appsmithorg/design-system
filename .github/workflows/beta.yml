@@ -77,6 +77,7 @@ jobs:
       - name: Release to @beta tag
         if: steps.changesets.outputs.published != 'true'
         run: |
+          git checkout main
           yarn changeset version --snapshot beta
           yarn changeset publish --tag beta
         env:
