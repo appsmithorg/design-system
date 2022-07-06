@@ -57,6 +57,7 @@ function Dropdown(props: IPopoverProps & Props) {
   return (
     <Popover
       {...rest}
+      canEscapeKeyClose
       content={menus}
       popoverClassName="dropdown-v2"
       transitionDuration={-1}
@@ -84,4 +85,4 @@ function DropdownItem(props: IMenuItemProps) {
 
 DropdownItem.displayName = "DropdownItem";
 
-export { Dropdown, DropdownList, DropdownItem, DropdownTrigger };
+export { Props, Dropdown, DropdownList, DropdownItem, DropdownTrigger };

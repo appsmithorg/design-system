@@ -1,0 +1,65 @@
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+
+import {
+  Props,
+  Dropdown,
+  DropdownList,
+  DropdownItem,
+  DropdownTrigger,
+} from "./index";
+import { IMenuItemProps, IMenuProps, IPopoverProps } from "@blueprintjs/core";
+
+export default {
+  title: "Design System/Dropdown V2",
+  component: Dropdown,
+} as ComponentMeta<typeof Dropdown>;
+
+const DropdownItemTemplate: ComponentStory<typeof DropdownItem> = (
+  args: IMenuItemProps,
+) => <DropdownItem text={args.text} {...args} />;
+
+export const DropdownItemExample = DropdownItemTemplate.bind({});
+DropdownItemExample.storyName = "Dropdown Item";
+DropdownItemExample.args = {
+  text: "Lorem Ipsum Dolor",
+  onClick: () => {
+    console.log("clicked");
+  },
+};
+
+const DropdownListTemplate: ComponentStory<typeof DropdownList> = (
+  args: IMenuProps,
+) => <DropdownList {...args} />;
+
+export const DropdownListExample = DropdownListTemplate.bind({});
+DropdownListExample.storyName = "Dropdown List";
+DropdownListExample.args = {
+  children: [
+    <DropdownItem key="0" {...DropdownItemExample.args} />,
+    <DropdownItem key="1" {...DropdownItemExample.args} />,
+  ],
+};
+
+const DropdownTriggerTemplate: ComponentStory<typeof DropdownTrigger> = (
+  args: any,
+) => <DropdownTrigger {...args} />;
+
+export const DropdownTriggerExample = DropdownTriggerTemplate.bind({});
+DropdownTriggerExample.storyName = "Dropdown Trigger";
+DropdownTriggerExample.args = {
+  children: <button>Click me</button>,
+};
+
+const DropdownTemplate: ComponentStory<typeof Dropdown> = (
+  args: IPopoverProps & Props,
+) => <Dropdown {...args} />;
+
+export const DropdownExample = DropdownTemplate.bind({});
+DropdownExample.storyName = "Dropdown";
+DropdownExample.args = {
+  children: [
+    <DropdownTrigger key="0" {...DropdownTriggerExample.args} />,
+    <DropdownList key="1" {...DropdownListExample.args} />,
+  ],
+};
