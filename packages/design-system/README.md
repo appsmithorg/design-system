@@ -41,7 +41,7 @@ Add css import in the root index css file
 ```jsx
 import { TooltipComponent } from "@appsmithorg/design-system";
 
-<TooltipComponent content="Some useful content">
+<TooltipComponent content="Some useful content 🤷🏽‍♂️">
   Hover here 😁
 </TooltipComponent>
 ```
