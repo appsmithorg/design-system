@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import _ from "lodash";
 import {
-  Popover,
+  IMenuItemProps,
+  IMenuProps,
+  IPopoverProps,
   Menu,
   MenuItem,
-  IMenuProps,
-  IMenuItemProps,
-  IPopoverProps,
+  Popover,
 } from "@blueprintjs/core";
 import SearchComponent from "../SearchComponent";
 import { HighlightText } from "../HighlightText";
-import _ from "lodash";
+import Text, { TextType } from "../Text";
 
 /**
  * ----------------------------------------------------------------------------
@@ -40,6 +41,15 @@ const StyledMenu = styled(Menu)`
   padding: 0;
 `;
 
+const EmptyState = styled(MenuItem)`
+  background-color: var(--ads-color-black-100);
+`;
+
+const EmptyStateText = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 /**
  * ----------------------------------------------------------------------------
  * COMPONENTS
@@ -47,6 +57,8 @@ const StyledMenu = styled(Menu)`
  */
 function Dropdown(props: IPopoverProps & Props) {
   const { children, enableSearch, searchPlaceholder, ...rest } = props;
+
+  // Find the menu items from the children of dropdown and assign it
   const [menuItems, setMenuItems] = useState(
     (Array.isArray(children) &&
       children.find(
@@ -54,8 +66,9 @@ function Dropdown(props: IPopoverProps & Props) {
       )) ||
       undefined,
   );
-  const [searchValue, setSearchValue] = useState("");
 
+  // handle search and filtering of options on menu items
+  const [searchValue, setSearchValue] = useState("");
   const onOptionSearch = (searchStr: string) => {
     setSearchValue(searchStr);
     const search = searchStr.toLocaleUpperCase();
@@ -67,26 +80,47 @@ function Dropdown(props: IPopoverProps & Props) {
           .includes(search);
       },
     );
-    setMenuItems(
-      <DropdownList {...menuItems?.props}>
-        {filteredOptions.map((option, key) => {
-          const propsWithoutText = _.omit(option.props, ["text"]);
-          return (
-            <DropdownItem
-              {...propsWithoutText}
-              key={key}
+
+    // handle case when search string doesn't have any matches
+    _.isEmpty(filteredOptions)
+      ? setMenuItems(
+          <DropdownList {...menuItems?.props}>
+            <EmptyState
               text={
-                <HighlightText
-                  highlight={search}
-                  text={option.props.text?.toString() || ""}
-                />
+                <EmptyStateText>
+                  <Text color={"var(--ads-color-black-500)"} type={TextType.P1}>
+                    No results found
+                  </Text>
+                  <Text color={"var(--ads-color-black-500)"} type={TextType.P3}>
+                    Try to search a different keyword
+                  </Text>
+                </EmptyStateText>
               }
             />
-          );
-        })}
-      </DropdownList>,
-    );
+          </DropdownList>,
+        )
+      : setMenuItems(
+          <DropdownList {...menuItems?.props}>
+            {filteredOptions.map((option, key) => {
+              const propsWithoutText = _.omit(option.props, ["text"]);
+              // filtered options must highlight the sub string matched in the option
+              return (
+                <DropdownItem
+                  {...propsWithoutText}
+                  key={key}
+                  text={
+                    <HighlightText
+                      highlight={search}
+                      text={option.props.text?.toString() || ""}
+                    />
+                  }
+                />
+              );
+            })}
+          </DropdownList>,
+        );
   };
+
   const trigger = enableSearch ? (
     <SearchComponent
       onSearch={onOptionSearch}
