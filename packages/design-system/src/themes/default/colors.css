@@ -1,7 +1,7 @@
 :root {
   /* orange */
   --ads-color-orange-900 : #B7491A;
-  --ads-color-orange-800 : #D15420;
+  --ads-color-orange-800 : #D15420; /* Secondary */
   --ads-color-orange-700 : #DF5B23;
   --ads-color-orange-600 : #ED6227;
   --ads-color-orange-500 : #F86A2B; /* Primary */
