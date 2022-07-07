@@ -39,4 +39,12 @@
   --ads-color-red-500 : #F13125;
   --ads-color-red-50 : #FFEAEC;
 
+
+  /*  Old colors */
+  /* TODO: These should go away or be renamed when the more comprehensive color palate is here */
+  --ads-old-color-gray-7: #858282;
+  --ads-old-color-gray-10: #090707;
+  --ads-old-color-fern-green: #50AF6C;
+  --ads-old-color-jagged-ice: #CAECDC;
+
 }
