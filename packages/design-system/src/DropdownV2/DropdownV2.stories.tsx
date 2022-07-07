@@ -63,3 +63,12 @@ DropdownExample.args = {
     <DropdownList key="1" {...DropdownListExample.args} />,
   ],
 };
+
+export const DropdownWithSearch = DropdownTemplate.bind({});
+DropdownWithSearch.args = {
+  enableSearch: true,
+  children: [
+    <DropdownTrigger key="0" {...DropdownTriggerExample.args} />,
+    <DropdownList key="1" {...DropdownListExample.args} />,
+  ],
+};

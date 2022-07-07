@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   Popover,
@@ -8,6 +8,9 @@ import {
   IMenuItemProps,
   IPopoverProps,
 } from "@blueprintjs/core";
+import SearchComponent from "../SearchComponent";
+import { HighlightText } from "../HighlightText";
+import _ from "lodash";
 
 /**
  * ----------------------------------------------------------------------------
@@ -16,6 +19,8 @@ import {
  */
 
 type Props = {
+  enableSearch: boolean;
+  searchPlaceholder?: string;
   children: React.ReactElement[] | React.ReactElement;
 };
 
@@ -41,24 +46,63 @@ const StyledMenu = styled(Menu)`
  *-----------------------------------------------------------------------------
  */
 function Dropdown(props: IPopoverProps & Props) {
-  const { children, ...rest } = props;
-
-  const menus =
+  const { children, enableSearch, searchPlaceholder, ...rest } = props;
+  const [menuItems, setMenuItems] = useState(
     (Array.isArray(children) &&
       children.find(
         (child: any) => child.type.displayName === "DropdownList",
       )) ||
-    undefined;
+      undefined,
+  );
+  const [searchValue, setSearchValue] = useState("");
 
-  const trigger =
+  const onOptionSearch = (searchStr: string) => {
+    setSearchValue(searchStr);
+    const search = searchStr.toLocaleUpperCase();
+    const filteredOptions: Array<MenuItem> = menuItems?.props.children?.filter(
+      (menuItem: MenuItem) => {
+        return menuItem.props.text
+          ?.toLocaleString()
+          .toLocaleUpperCase()
+          .includes(search);
+      },
+    );
+    setMenuItems(
+      <DropdownList {...menuItems?.props}>
+        {filteredOptions.map((option, key) => {
+          const propsWithoutText = _.omit(option.props, ["text"]);
+          return (
+            <DropdownItem
+              {...propsWithoutText}
+              key={key}
+              text={
+                <HighlightText
+                  highlight={search}
+                  text={option.props.text?.toString() || ""}
+                />
+              }
+            />
+          );
+        })}
+      </DropdownList>,
+    );
+  };
+  const trigger = enableSearch ? (
+    <SearchComponent
+      onSearch={onOptionSearch}
+      placeholder={searchPlaceholder || "Type here"}
+      value={searchValue}
+    />
+  ) : (
     Array.isArray(children) &&
-    children.find((child: any) => child.type.displayName === "DropdownTrigger");
+    children.find((child: any) => child.type.displayName === "DropdownTrigger")
+  );
 
   return (
     <Popover
       {...rest}
       canEscapeKeyClose
-      content={menus}
+      content={menuItems}
       popoverClassName="dropdown-v2"
       transitionDuration={-1}
     >
