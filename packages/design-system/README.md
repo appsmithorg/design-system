@@ -39,7 +39,7 @@ Add css import in the root index css file
 ## Usage
 
 ```jsx
-import { TooltipComponent } from "@appsmithorg/design-system";
+import { TooltipComponent } from "design-system";
 
 <TooltipComponent content="Some useful content 🤷🏽‍♂️">
   Hover here 😁
@@ -48,21 +48,38 @@ import { TooltipComponent } from "@appsmithorg/design-system";
 
 ## Contribute
 
-```
+```bash
 git clone https://github.com/appsmithorg/design-system.git
 ```
 Get all dependencies with
-```
+```bash 
 cd design-system/packages/design-system
 yarn install
 ```
 
 Then run storybook in development and watch mode with
-```
+```bash
 yarn design-system:storybook
 ```
 
-Any stories you write within `design-system/packages/design-system/src/**` will show up here. Happy playground testing!
+Any stories you write within `design-system/packages/design-system/src/**` will show up here. 
+
+To use your local version of the package, run 
+```bash
+yarn link
+```
+in this repository, then copy instruction it outputs into the root directory of the repository you want to use this package in. 
+Run
+```bash
+yarn install 
+```
+again to be able to import the components using 
+
+```jsx
+import { TooltipComponent } from "@appsmithorg/design-system";
+```
+
+Happy playground testing!
 
 
 ## Links
