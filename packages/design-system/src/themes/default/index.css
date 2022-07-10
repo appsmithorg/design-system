@@ -20,4 +20,8 @@
   --ads-text-color: var(--ads-color-black-750);
   --ads-text-heading-color: var(--ads-color-black-850);
   --ads-text-highlight-color: var(--ads-color-black-0);
+
+  /** AppIcon  */
+  --ads-app-icon-normal-color: var(--ads-color-black-550);
+  --ads-app-icon-background-color: var(--ads-color-black-25);
 }
