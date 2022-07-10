@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Appsmith Design system</h1>
+<h1 align="center">Appsmith Design System</h1>
 
 <div align="center">
 
@@ -29,11 +29,21 @@ or
 yarn add @appsmithorg/design-system
 ```
 
+## Including CSS
+
+Add css import in the root index css file
+```bash
+@import "~@appsmithorg/design-system/build/css/design-system.css";
+```
+
 ## Usage
 
 ```jsx
 import { TooltipComponent } from "@appsmithorg/design-system";
-ReactDOM.render(<TooltipComponent />, mountNode);
+
+<TooltipComponent content="Some useful content 🤷🏽‍♂️">
+  Hover here 😁
+</TooltipComponent>
 ```
 
 ## Links

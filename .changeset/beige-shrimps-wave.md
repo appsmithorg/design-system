@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-Added Text component and related stories
+fix: Changed readme to test workflow

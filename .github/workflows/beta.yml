@@ -5,7 +5,7 @@ on:
     paths:
       - "packages/**"
     branches:
-      - "main"
+      - "release"
     
 jobs:
   release:
@@ -25,7 +25,7 @@ jobs:
       
       # Set up node version
       - name: Setup Node js version
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: 16.x
       
@@ -60,15 +60,13 @@ jobs:
       # Build packages, add packages build script inside workspace scripts.build
       - name: Build packages
         run: yarn build
-
-      # Create PR & publish to NPM
-      - name: Create release Pull Request or publish to NPM
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: yarn release
-          commit: "ci(changesets): version packages"
-          title: "ci(changesets): version packages"
+      
+      # Release beta
+      - name: Release to @beta tag
+        if: steps.changesets.outputs.published != 'true'
+        run: |
+          yarn changeset version --snapshot beta
+          yarn changeset publish --tag beta
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

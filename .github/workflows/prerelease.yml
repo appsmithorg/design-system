@@ -4,7 +4,7 @@ name: NPM Publish Design System Beta
 on:
   push:
     branches:
-      - "release"
+      - "temp_release"
     paths:
       - "packages/design-system/**"
 
@@ -21,7 +21,7 @@ jobs:
       # Checkout the code
       - uses: actions/checkout@v3
       # Setup node with version 16.x and NPM registry url
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
@@ -35,7 +35,7 @@ jobs:
         run: yarn install
       # create new beta version
       - name: Create new beta version
-        run: npm version prerelease --preid beta
+        run: npm version prerelease --preid beta -m "Upgrade to %s"
       # yarn build to build the project
       - name: Build package
         run: yarn build
