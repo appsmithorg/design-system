@@ -47,7 +47,24 @@ module.exports = {
         },
       },
     },
+    "storybook-zeplin/register",
   ],
   "framework": "@storybook/react",
   "webpackFinal": webpackConfig,
+  "babel": async (options) => {
+    options.plugins.push([
+      "babel-plugin-inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            {
+              "name": "removeViewBox",
+              "active": false
+            }
+          ]
+        }
+      }
+    ]);
+    return options;
+  }
 }

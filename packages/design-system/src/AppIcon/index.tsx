@@ -91,7 +91,7 @@ import styled from "styled-components";
 import { CommonComponentProps } from "../types/common";
 import { Classes } from "../constants/classes";
 
-enum Size {
+export enum Size {
   xxs = "xxs",
   xs = "xs",
   small = "small",
@@ -235,7 +235,7 @@ const IconWrapper = styled.a<AppIconProps & { styledProps: cssAttributes }>`
     width: ${(props) => props.styledProps.width}px;
     height: ${(props) => props.styledProps.height}px;
     path {
-      fill: "var(--ads-app-icon-normal-color)";
+      fill: var(--ads-app-icon-normal-color);
     }
   }
 `;
