@@ -2,11 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const TextHighlighter = styled.mark`
-  --ads-text-highlight-color: var(--ads-color-orange-800);
-  --ads-text-highlight-background: var(--ads-color-orange-100);
-
-  color: var(--ads-text-highlight-color);
-  background-color: var(--ads-text-highlight-background);
+  color: var(--ads-highlight-text-default-text-color);
+  background-color: var(--ads-highlight-text-default-background-color);
 `;
 
 export type HighlightTextProps = {
