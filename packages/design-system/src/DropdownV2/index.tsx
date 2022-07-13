@@ -20,7 +20,7 @@ import Text, { TextType } from "../Text";
  */
 
 type Props = {
-  enableSearch: boolean;
+  enableSearch?: boolean;
   searchPlaceholder?: string;
   children: React.ReactElement[] | React.ReactElement;
 };
