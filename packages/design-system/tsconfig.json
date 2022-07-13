@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "Assets/*": ["assets/*"],
+      "Types/*": ["types/*"],
+      "Constants/*": ["constants/*"],
+    },
     "strict": true,
     "declaration": true,
     "declarationDir": "build",
