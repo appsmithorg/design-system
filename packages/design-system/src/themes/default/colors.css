@@ -18,14 +18,21 @@
   --ads-color-black-750 : #4B4848;
   --ads-color-black-700 : #575757;
   --ads-color-black-600 : #6B6B6B;
+  --ads-color-black-550 : #716E6E;
   --ads-color-black-500 : #939393;
+  --ads-color-black-450 : #A9A7A7;
   --ads-color-black-400 : #B3B3B3;
   --ads-color-black-300 : #D7D7D7;
   --ads-color-black-250 : #E0DEDE;
   --ads-color-black-200 : #E7E7E7;
   --ads-color-black-100 : #F1F1F1;
   --ads-color-black-50 : #F8F8F8;
+  --ads-color-black-25 : #F7F7F7;
+  --ads-color-black-5 : #FAFAFA;
   --ads-color-black-0 : #FFFFFF;
+
+
+  --ads-color-blue-150 : #6A86CE;
 
   /* green */
   --ads-color-green-500 : #03B364;

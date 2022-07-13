@@ -41,7 +41,6 @@ const rootElementId = "tooltip-root";
 
 let portalContainer = document.getElementById(rootElementId);
 
-// @ts-expect-error: Tooltip type mismatch
 const TooltipWrapper = styled(Tooltip)<{
   width?: string;
   underline?: boolean;
