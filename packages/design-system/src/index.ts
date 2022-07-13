@@ -1,3 +1,5 @@
+// Everything exported from this file is a named export
+
 export { default as AppIcon } from "./AppIcon";
 export * from "./AppIcon";
 
@@ -6,7 +8,6 @@ export * from "./DatePicker";
 
 export * from "./DropdownV2";
 
-export { HighlightText } from "./HighlightText";
 export * from "./HighlightText";
 
 export { default as SearchComponent } from "./SearchComponent";
