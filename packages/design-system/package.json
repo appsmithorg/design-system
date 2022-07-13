@@ -31,6 +31,7 @@
     "@babel/preset-typescript": "^7.17.12",
     "@blueprintjs/core": "3.33.0",
     "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-url": "^7.0.0",
     "@storybook/addon-actions": "^6.5.7",
     "@storybook/addon-essentials": "^6.5.7",
