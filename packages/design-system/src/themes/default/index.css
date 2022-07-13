@@ -7,7 +7,7 @@
   /** Naming convention for tokens
   *
   * --ads-<component>-<componentType>-<state>-<property>-<subProperty>
-  * 
+  *
   * component: button, checkbox, dropdown, input, link, list, menu, radio, select, textarea...
   * componentType: primary, secondary...
   * state: hover, focus, active, disabled, default...
@@ -24,4 +24,9 @@
   /** AppIcon  */
   --ads-app-icon-normal-color: var(--ads-color-black-550);
   --ads-app-icon-background-color: var(--ads-color-black-25);
+
+  /** HighlightText */
+  --ads-highlight-text-default-text-color: var(--ads-color-orange-800);
+  --ads-highlight-text-default-background-color: var(--ads-color-orange-100);
+
 }
