@@ -59,7 +59,7 @@ yarn install
 
 Then run storybook in development and watch mode with
 ```bash
-yarn design-system:storybook
+yarn run design-system:storybook
 ```
 
 Any stories you write within `design-system/packages/design-system/src/**` will show up here. 
@@ -80,7 +80,6 @@ import { TooltipComponent } from "@appsmithorg/design-system";
 ```
 
 Happy playground testing!
-
 
 ## Links
 
