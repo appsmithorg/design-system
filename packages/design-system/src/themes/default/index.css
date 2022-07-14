@@ -16,11 +16,6 @@
   *
   */
 
-  /** Text */
-  --ads-text-color: var(--ads-color-black-750);
-  --ads-text-heading-color: var(--ads-color-black-850);
-  --ads-text-highlight-color: var(--ads-color-black-0);
-
   /** AppIcon  */
   --ads-app-icon-normal-color: var(--ads-color-black-550);
   --ads-app-icon-background-color: var(--ads-color-black-25);
@@ -28,5 +23,30 @@
   /** HighlightText */
   --ads-highlight-text-default-text-color: var(--ads-color-orange-800);
   --ads-highlight-text-default-background-color: var(--ads-color-orange-100);
+
+  /** Info */
+  --ads-main-text-color: #CB4810;
+
+  /** Input */
+  --ads-input-focus-border-color: var(--ads-color-black-900);
+
+  /** Menu */
+  --ads-menu-default-border-color: #404040;
+
+  /** Property Pane */
+  --ads-property-pane-default-zoom-button-background-color: #2B2B2B;
+  --ads-property-pane-default-radio-group-button-text-color: #D4D4D4;
+  --ads-property-pane-default-button-text-color: #090707;
+
+  /** Radio */
+  --ads-radio-default-text-color: var(--ads-color-black-0);
+  /* TODO: get this color from the design system */
+  --ads-radio-default-border-color: #404040;
+  --ads-radio-disabled-background-color: #6D6D6D;
+
+  /** Text */
+  --ads-text-color: var(--ads-color-black-750);
+  --ads-text-heading-color: var(--ads-color-black-850);
+  --ads-text-highlight-color: var(--ads-color-black-0);
 
 }
