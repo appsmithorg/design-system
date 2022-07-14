@@ -18,3 +18,6 @@ export * from "./Text";
 
 export { default as TooltipComponent } from "./Tooltip";
 export * from "./Tooltip";
+
+export { default as ColorPicker } from "./ColorPicker";
+export * from "./ColorPicker";

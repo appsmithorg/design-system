@@ -26,32 +26,35 @@
   --ads-color-black-250 : #E0DEDE;
   --ads-color-black-200 : #E7E7E7;
   --ads-color-black-100 : #F1F1F1;
+  --ads-color-black-75 : #F0F0F0;
   --ads-color-black-50 : #F8F8F8;
   --ads-color-black-25 : #F7F7F7;
   --ads-color-black-5 : #FAFAFA;
   --ads-color-black-0 : #FFFFFF;
-
-
+  
+  
   --ads-color-blue-150 : #6A86CE;
-
+  
   /* green */
   --ads-color-green-500 : #03B364;
   --ads-color-green-50 : #E5F6EC;
-
+  
   /* yellow */
   --ads-color-yellow-500 : #FEC518;
   --ads-color-yellow-50 : #FFF8E2;
-
+  
   /* red */
+  --ads-color-red-900 : #ff0000;
   --ads-color-red-500 : #F13125;
   --ads-color-red-50 : #FFEAEC;
-
-
+  
+  
   /*  Old colors */
   /* TODO: These should go away or be renamed when the more comprehensive color palate is here */
   --ads-old-color-gray-7: #858282;
   --ads-old-color-gray-10: #090707;
   --ads-old-color-fern-green: #50AF6C;
   --ads-old-color-jagged-ice: #CAECDC;
-
+  --ads-old-color-blue-gray : #43464a;
+  
 }
