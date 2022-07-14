@@ -19,6 +19,9 @@ export * from "./Icon";
 export { default as Spinner } from "./Spinner";
 export * from "./Spinner";
 
+export { default as Switcher } from "./Switcher";
+export * from "./Switcher";
+
 export { default as SearchComponent } from "./SearchComponent";
 export * from "./SearchComponent";
 
