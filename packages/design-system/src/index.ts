@@ -22,6 +22,9 @@ export * from "./Spinner";
 export { default as SearchComponent } from "./SearchComponent";
 export * from "./SearchComponent";
 
+export { default as Switch } from "./Switch";
+export * from "./Switch";
+
 export { default as Text } from "./Text";
 export * from "./Text";
 
