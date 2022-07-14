@@ -20,6 +20,7 @@
   --ads-color-black-600 : #6B6B6B;
   --ads-color-black-550 : #716E6E;
   --ads-color-black-500 : #939393;
+  --ads-color-black-470 : #939090;
   --ads-color-black-450 : #A9A7A7;
   --ads-color-black-400 : #B3B3B3;
   --ads-color-black-300 : #D7D7D7;
@@ -53,5 +54,6 @@
   --ads-old-color-gray-10: #090707;
   --ads-old-color-fern-green: #50AF6C;
   --ads-old-color-jagged-ice: #CAECDC;
+  --ads-old-color-outer-space: #363E44;
 
 }

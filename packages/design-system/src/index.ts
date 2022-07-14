@@ -18,3 +18,11 @@ export * from "./Text";
 
 export { default as TooltipComponent } from "./Tooltip";
 export * from "./Tooltip";
+
+export * from "./ControlIcons";
+
+export { default as Icon } from "./Icon";
+export * from "./Icon";
+
+export { default as Spinner } from "./Spinner";
+export * from "./Spinner";
