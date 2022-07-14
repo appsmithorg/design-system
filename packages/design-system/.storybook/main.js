@@ -1,4 +1,5 @@
 const path = require("path");
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 async function webpackConfig(config) {
 
@@ -26,6 +27,8 @@ async function webpackConfig(config) {
       options: { presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"] }
     }
   })
+
+  config.resolve.plugins.push(new TsconfigPathsPlugin());
 
   return config
 }

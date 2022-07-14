@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { DateInput, TimePrecision } from "@blueprintjs/datetime";
 import styled from "styled-components";
-import { Classes } from "../constants/classes";
+import { Classes } from "Constants/classes";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
 
 const StyledDateInput = styled(DateInput)`

@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { CommonComponentProps } from "../types/common";
+import { CommonComponentProps } from "Types/common";
 import {
   PopoverPosition,
   PopperBoundary,
