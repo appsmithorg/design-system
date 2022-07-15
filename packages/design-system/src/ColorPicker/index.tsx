@@ -10,7 +10,7 @@ import {
 import { ReactComponent as CheckedIcon } from "../assets/icons/control/checkmark.svg";
 import { ReactComponent as ColorPickerIcon } from "../assets/icons/control/color-picker.svg";
 import debounce from "lodash/debounce";
-import { replayHighlightClass } from "../constants/classes";
+import { replayHighlightClass } from "Constants/classes";
 
 const ColorIcon = styled.div<{ color: string }>`
   width: 24px;
