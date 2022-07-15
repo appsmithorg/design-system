@@ -16,6 +16,12 @@ export * from "./HighlightText";
 export { default as Icon } from "./Icon";
 export * from "./Icon";
 
+export { default as Menu } from "./Menu";
+export * from "./Menu";
+
+export { default as MenuItem } from "./MenuItem";
+export * from "./MenuItem";
+
 export { default as Spinner } from "./Spinner";
 export * from "./Spinner";
 

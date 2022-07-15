@@ -29,8 +29,8 @@ export const IconWrapper = styled.div<IconProps>`
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 
   && svg {
-    width: ${(props) => props.width || "var(--ads-font-size-6)"}px;
-    height: ${(props) => props.height || "var(--ads-font-size-6)"}px;
+    width: ${(props) => props.width + "px" || "var(--ads-font-size-6)"};
+    height: ${(props) => props.height + "px" || "var(--ads-font-size-6)"};
 
     ${(props) =>
       !props.keepColors
