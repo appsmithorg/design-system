@@ -91,7 +91,7 @@ import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 
-export enum Size {
+enum Size {
   xxs = "xxs",
   xs = "xs",
   small = "small",

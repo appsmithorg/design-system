@@ -5,6 +5,7 @@
       "Assets/*": ["assets/*"],
       "Types/*": ["types/*"],
       "Constants/*": ["constants/*"],
+      "Common/*": ["common/*"],
     },
     "strict": true,
     "declaration": true,

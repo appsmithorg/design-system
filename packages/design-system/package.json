@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "1.0.5",
+  "version": "1.0.6-alpha.0",
   "description": "This is the package for the Appsmith design system components",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -46,6 +46,7 @@
     "@svgr/webpack": "4.3.3",
     "@types/react": "16.14.28",
     "@types/styled-components": "5.1.4",
+    "@types/tinycolor2": "1.4.2",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "babel-loader": "^8.2.5",
@@ -107,6 +108,7 @@
   ],
   "dependencies": {
     "@blueprintjs/datetime": "3.23.6",
-    "remixicon-react": "^1.0.0"
+    "remixicon-react": "^1.0.0",
+    "tinycolor2": "^1.4.2"
   }
 }
