@@ -1,7 +1,7 @@
 # Steps to migrate components
 
 - [ ]  Pick the component to be migrated. Mark it as in progress (highlight in yellow) on the migration sheet [Component Migration planning](https://docs.google.com/spreadsheets/d/1pcIMvGwknhbjnG1yxKH2UnRIOPwW5lw_xiFxrJdb1E8/edit?usp=drivesdk)
-- [ ]  Create an issue for it on [appsmith/ce](http://github.com/appsmithorg/appsmith). Announce that you’re doing this on #design-system
+- [ ]  Create an issue for it on [appsmith/ce](http://github.com/appsmithorg/appsmith). Announce that you’re doing this on #design-system and #team-tech channel.
 - [ ]  Copy the files over to the [appsmith/design-system](http://github.com/appsmithorg/design-system/) repository.
       - [ ]  Copy any unit test files over as well if they exist.
       - [ ]  In the files, props.theme variables become variables used from variables.css
@@ -11,6 +11,7 @@
 - [ ]  Create a branch to change the imports on appsmith/ce.
       - [ ]  On this branch, delete the files for the component you’ve just migrated.
       - [ ]  Everywhere the component was used, change the import to point to the design-system package instead.
+      - [ ] If you've migrated a component that is used a specific new places in the ee-repo, make updates there as well.
 - [ ]  Test the changes you’ve made and if the imports you’ve generated work as expected in your local developer environment of appsmith
       - [ ]  install yalc on your system
       - [ ]  run `yarn build` to build the package, then `yalc publish` to imitate the package being published
