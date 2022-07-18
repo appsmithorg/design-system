@@ -1,0 +1,35 @@
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+
+import ButtonTabComponent from "./index";
+
+export default {
+  title: "Design System/ButtonTab",
+  component: ButtonTabComponent,
+} as ComponentMeta<typeof ButtonTabComponent>;
+
+// eslint-disable-next-line react/function-component-definition
+const Template: ComponentStory<typeof ButtonTabComponent> = (args) => {
+  return <ButtonTabComponent {...args} />;
+};
+
+export const ButtonTab = Template.bind({});
+ButtonTab.args = {
+  options: [
+    {
+      icon: "DELETE_CONTROL",
+      value: "delete",
+      width: 100,
+    },
+    {
+      icon: "INCREASE_CONTROL",
+      value: "edit",
+      width: 100,
+    },
+  ],
+  values: ["burgers"],
+  selectButton: (value, isUpdatedViaKeyboard) => {
+    // eslint-disable-next-line no-console
+    console.log("value:", value, "isUpdatedViaKeyboard:", isUpdatedViaKeyboard);
+  },
+};
