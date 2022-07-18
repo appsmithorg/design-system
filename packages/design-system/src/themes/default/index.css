@@ -39,4 +39,15 @@
   --ads-tag-input-tag-text-color: var(--ads-color-black-0);
   --ads-tag-input-tag-background-color: var(--ads-primary-color);
 
+  /* Toggle */
+  --ads-toggle-slider-background-color: var(--ads-color-black-250);
+  --ads-toggle-slider-loading-background-color: var(--ads-old-color-mercury);
+  --ads-toggle-slider-disabled-on-background-color: var(--ads-color-black-0);
+  --ads-toggle-slider-disabled-off-background-color: var(--ads-color-black-0);
+  --ads-toggle-checked-background-color: var(--ads-color-orange-500);
+  --ads-toggle-focus-hover-on-background-color: var(--ads-old-color-rock-spray);
+  --ads-toggle-focus-hover-off-background-color: var(--ads-color-black-450);
+  --ads-toggle-disabled-on-background-color: var(--ads-old-color-bridesmaid);
+  --ads-toggle-disabled-off-background-color: var(--ads-color-black-250);
+  --ads-toggle-spinner-stroke-color: var(--ads-color-black-450);
 }

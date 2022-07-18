@@ -40,5 +40,8 @@ export * from "./Switch";
 export { default as Text } from "./Text";
 export * from "./Text";
 
+export { default as Toggle } from "./Toggle";
+export * from "./Toggle";
+
 export { default as TooltipComponent } from "./Tooltip";
 export * from "./Tooltip";
