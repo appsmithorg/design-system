@@ -79,6 +79,12 @@ again to be able to import the components using
 import { TooltipComponent } from "@appsmithorg/design-system";
 ```
 
+### Create story template
+```
+yarn create-story -f <folder-name>
+```
+'folder-name' is the folder which holds the component which the story template is being created. This should be under 'src' folder.
+
 Happy playground testing!
 
 
