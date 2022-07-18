@@ -4,34 +4,33 @@ import { Classes, TagInput } from "@blueprintjs/core";
 import {
   createMessage,
   INVITE_USERS_VALIDATION_EMAIL_LIST,
-} from "@appsmith/constants/messages";
-import { isEmail } from "utils/formhelpers";
-import { Colors } from "constants/Colors";
+} from "Constants/messages";
+import { isEmail } from "Common/index";
 
 const TagInputWrapper = styled.div`
   margin-right: 8px;
 
   &&& {
     .${Classes.TAG_INPUT} {
-      background-color: ${(props) => props.theme.colors.tagInput.bg};
+      background-color: var(--ads-tag-input-background-color);
       min-height: 38px;
-      border: 1.2px solid ${Colors.ALTO2};
+      border: 1.2px solid var(--ads-tag-input-border-color);
       border-radius: 0px;
     }
     .${Classes.TAG_INPUT}.${Classes.ACTIVE} {
-      border: 1px solid ${(props) => props.theme.colors.info.main};
-      box-shadow: ${(props) => props.theme.colors.tagInput.shadow};
+      border: 1px solid var(--ads-tag-input-active-border-color);
+      box-shadow: var(--ads-tag-input-active-box-shadow);
     }
     .${Classes.INPUT_GHOST} {
-      color: ${(props) => props.theme.colors.tagInput.text};
+      color: var(--ads-tag-input-color);
       &::placeholder {
-        color: ${(props) => props.theme.colors.tagInput.placeholder};
+        color: var(--ads-tag-input-placeholder-color);
       }
     }
     .${Classes.TAG} {
       padding: 3px 10px;
-      color: ${(props) => props.theme.colors.tagInput.tag.text};
-      background-color: ${(props) => props.theme.colors.info.main};
+      color: var(--ads-tag-input-tag-color);
+      background-color: var(--ads-tag-input-tag-background-color);
       border-radius: 0px;
       font-size: 11px;
       letter-spacing: 0.4px;
@@ -55,8 +54,6 @@ type TagInputProps = {
   type: string;
   /** A delimiter which decides when to separate string into tags */
   separator?: string | RegExp | undefined;
-  /** Intent of the tags, which defines their color */
-  intent?: Intent;
   hasError?: boolean;
   customError?: (values: any) => void;
 };
@@ -153,7 +150,7 @@ function TagInputComponent(props: TagInputProps) {
   };
 
   return (
-    <TagInputWrapper intent={props.intent}>
+    <TagInputWrapper>
       <TagInput
         addOnPaste
         inputProps={{
