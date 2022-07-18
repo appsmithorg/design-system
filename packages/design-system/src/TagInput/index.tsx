@@ -22,14 +22,14 @@ const TagInputWrapper = styled.div`
       box-shadow: var(--ads-tag-input-active-box-shadow);
     }
     .${Classes.INPUT_GHOST} {
-      color: var(--ads-tag-input-color);
+      color: var(--ads-tag-input-text-color);
       &::placeholder {
         color: var(--ads-tag-input-placeholder-color);
       }
     }
     .${Classes.TAG} {
       padding: 3px 10px;
-      color: var(--ads-tag-input-tag-color);
+      color: var(--ads-tag-input-tag-text-color);
       background-color: var(--ads-tag-input-tag-background-color);
       border-radius: 0px;
       font-size: 11px;

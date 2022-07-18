@@ -32,11 +32,11 @@
   /* Tag Input */
   --ads-tag-input-background-color: var(--ads-color-black-0);
   --ads-tag-input-border-color: var(--ads-color-black-250);
-  --ads-tag-input-color: var(--ads-color-black-850);
+  --ads-tag-input-text-color: var(--ads-color-black-850);
   --ads-tag-input-placeholder-color: var(--ads-old-color-alto);
   --ads-tag-input-active-border-color: var(--ads-primary-color);
   --ads-tag-input-active-box-shadow: "none";
-  --ads-tag-input-tag-color: var(--ads-color-black-0);
+  --ads-tag-input-tag-text-color: var(--ads-color-black-0);
   --ads-tag-input-tag-background-color: var(--ads-primary-color);
 
 }
