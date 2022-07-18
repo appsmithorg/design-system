@@ -3,6 +3,9 @@
 export { default as AppIcon } from "./AppIcon";
 export * from "./AppIcon";
 
+export { default as Breadcrumbs } from "./Breadcrumbs";
+export * from "./Breadcrumbs";
+
 export { default as Button } from "./Button";
 export * from "./Button";
 
@@ -36,6 +39,9 @@ export * from "./SearchComponent";
 
 export { default as Switch } from "./Switch";
 export * from "./Switch";
+
+export { default as TagInput } from "./TagInput";
+export * from "./TagInput";
 
 export { default as Text } from "./Text";
 export * from "./Text";
