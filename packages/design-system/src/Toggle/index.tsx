@@ -88,7 +88,7 @@ const StyledToggle = styled.label<{
   }
 
   input:checked + .slider {
-    background-color: var(--ads-toggle-checked-background-color);
+    background-color: var(--ads-toggle-on-background-color);
   }
 
   input:hover + .slider,
