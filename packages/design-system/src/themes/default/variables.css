@@ -24,35 +24,34 @@
 
   /* Spaces */
   --ads-spaces-0: 0;
-  --ads-spaces-1: 4;
-  --ads-spaces-2: 6;
-  --ads-spaces-3: 8;
-  --ads-spaces-4: 10;
-  --ads-spaces-5: 12;
-  --ads-spaces-6: 14;
-  --ads-spaces-7: 16;
-  --ads-spaces-8: 18;
-  --ads-spaces-9: 20;
-  --ads-spaces-10: 22;
-  --ads-spaces-11: 24;
-  --ads-spaces-12: 30;
-  --ads-spaces-13: 36;
-  --ads-spaces-14: 38;
-  --ads-spaces-15: 40;
-  --ads-spaces-16: 42;
-  --ads-spaces-17: 44;
+  --ads-spaces-1: 4px;
+  --ads-spaces-2: 6px;
+  --ads-spaces-3: 8px;
+  --ads-spaces-4: 10px;
+  --ads-spaces-5: 12px;
+  --ads-spaces-6: 14px;
+  --ads-spaces-7: 16px;
+  --ads-spaces-8: 18px;
+  --ads-spaces-9: 20px;
+  --ads-spaces-10: 22px;
+  --ads-spaces-11: 24px;
+  --ads-spaces-12: 30px;
+  --ads-spaces-13: 36px;
+  --ads-spaces-14: 38px;
+  --ads-spaces-15: 40px;
+  --ads-spaces-16: 42px;
+  --ads-spaces-17: 44px;
 
-  /* font sizes */
-  --ads-font-size-0: 0;
-  --ads-font-size-1: 10;
-  --ads-font-size-2: 12;
-  --ads-font-size-3: 14;
-  --ads-font-size-4: 16;
-  --ads-font-size-5: 18;
-  --ads-font-size-6: 24;
-  --ads-font-size-7: 28;
-  --ads-font-size-8: 32;
-  --ads-font-size-9: 48;
-  --ads-font-size-10: 64;
-
+  /* Font Sizes */
+  --ads-font-size-0: 0px;
+  --ads-font-size-1: 10px;
+  --ads-font-size-2: 12px;
+  --ads-font-size-3: 14px;
+  --ads-font-size-4: 16px;
+  --ads-font-size-5: 18px;
+  --ads-font-size-6: 24px;
+  --ads-font-size-7: 28px;
+  --ads-font-size-8: 32px;
+  --ads-font-size-9: 48px;
+  --ads-font-size-10: 64px;
 }

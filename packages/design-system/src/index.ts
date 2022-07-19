@@ -3,6 +3,9 @@
 export { default as AppIcon } from "./AppIcon";
 export * from "./AppIcon";
 
+export { default as Button } from "./Button";
+export * from "./Button";
+
 export { default as ColorPicker } from "./ColorPicker";
 export * from "./ColorPicker";
 
@@ -16,8 +19,14 @@ export * from "./HighlightText";
 export { default as Icon } from "./Icon";
 export * from "./Icon";
 
+export { default as Menu } from "./Menu";
+export * from "./Menu";
+
 export { default as MenuDivider } from "./MenuDivider";
 export * from "./MenuDivider";
+
+export { default as MenuItem } from "./MenuItem";
+export * from "./MenuItem";
 
 export { default as RadioComponent } from "./Radio";
 export * from "./Radio";
@@ -27,6 +36,12 @@ export * from "./SearchComponent";
 
 export { default as Spinner } from "./Spinner";
 export * from "./Spinner";
+
+export { default as Switch } from "./Switch";
+export * from "./Switch";
+
+export { default as Switcher } from "./Switcher";
+export * from "./Switcher";
 
 export { default as Text } from "./Text";
 export * from "./Text";
