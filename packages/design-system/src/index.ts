@@ -9,6 +9,9 @@ export * from "./Breadcrumbs";
 export { default as Button } from "./Button";
 export * from "./Button";
 
+export { default as Callout } from "./Callout";
+export * from "./Callout";
+
 export { default as ColorPicker } from "./ColorPicker";
 export * from "./ColorPicker";
 
