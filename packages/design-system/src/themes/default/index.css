@@ -15,6 +15,10 @@
   * subProperty: color, width, radius...
   *
   */
+  
+  /** ColorSelector */
+  --ads-color-selector-shadow-color: #E8E8E8;
+  --ads-color-selector-checkmark-color: #000000;
 
   /** AppIcon  */
   --ads-app-icon-normal-color: var(--ads-color-black-550);
