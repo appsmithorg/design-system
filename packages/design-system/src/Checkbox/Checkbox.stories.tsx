@@ -13,8 +13,8 @@ const Template: ComponentStory<typeof Checkbox> = (args) => {
   return <Checkbox {...args} />;
 };
 
-export const ComponentDisplay = Template.bind({});
-ComponentDisplay.args = {
+export const CheckboxRegular = Template.bind({});
+CheckboxRegular.args = {
   info: "Here is some Info",
   isDefaultChecked: true,
   label: "This is a label",
