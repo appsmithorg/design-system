@@ -1,13 +1,13 @@
 # Steps to migrate components
 
 - [ ]  Pick the component to be migrated. Mark it as in progress (highlight in yellow) on the migration sheet [Component Migration planning](https://docs.google.com/spreadsheets/d/1pcIMvGwknhbjnG1yxKH2UnRIOPwW5lw_xiFxrJdb1E8/edit?usp=drivesdk)
+- [ ]  Create an issue for it on [appsmith/ce](http://github.com/appsmithorg/appsmith). Announce that you’re doing this on #design-system and #team-tech channel.
     - [ ] All PRs should have an issue.
     - [ ] All issues should have estimates.
     - [ ] All migration-related issue goes inside the migration epic
     - [ ] All migration issues should have labels ads migration
     - [ ] All design system issues should have a design system pod label. Then, zenhub can track the issues.
     - [ ] All issues should have sprint added to it.
-- [ ]  Create an issue for it on [appsmith/ce](http://github.com/appsmithorg/appsmith). Announce that you’re doing this on #design-system and #team-tech channel.
 - [ ]  Copy the files over to the [appsmith/design-system](http://github.com/appsmithorg/design-system/) repository.
       - [ ]  Copy any unit test files over as well if they exist.
       - [ ]  In the files, props.theme variables become variables used from variables.css
