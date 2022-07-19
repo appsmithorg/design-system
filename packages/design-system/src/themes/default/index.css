@@ -15,6 +15,10 @@
   * subProperty: color, width, radius...
   *
   */
+  
+  /** ColorSelector */
+  --ads-color-selector-shadow-color: #E8E8E8;
+  --ads-color-selector-checkmark-color: #000000;
 
   /** Text */
   --ads-text-color: var(--ads-color-black-750);
