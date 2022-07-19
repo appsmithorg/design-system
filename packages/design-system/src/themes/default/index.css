@@ -15,14 +15,29 @@
   * subProperty: color, width, radius...
   *
   */
-  
-  /** ColorSelector */
-  --ads-color-selector-shadow-color: #E8E8E8;
-  --ads-color-selector-checkmark-color: #000000;
 
   /** AppIcon  */
   --ads-app-icon-normal-color: var(--ads-color-black-550);
   --ads-app-icon-background-color: var(--ads-color-black-25);
+
+  /* Breadcrumbs */
+  --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
+  --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray);
+  --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
+
+  /** Callout */
+  --ads-callout-info-text-color: #D44100;
+  --ads-callout-info-background-color: #F8F3F0;
+  --ads-callout-success-text-color: var(--ads-old-color-jade);
+  --ads-callout-success-background-color: #E4F4ED;
+  --ads-callout-danger-text-color: var(--ads-old-color-pomegranate);
+  --ads-callout-danger-background-color: #F9E9E9;
+  --ads-callout-warning-text-color: var(--ads-old-color-sun);
+  --ads-callout-warning-background-color: #FAF3E3;
+
+  /** ColorSelector */
+  --ads-color-selector-shadow-color: #E8E8E8;
+  --ads-color-selector-checkmark-color: #000000;
 
   /** HighlightText */
   --ads-highlight-text-default-text-color: var(--ads-color-orange-800);
@@ -57,7 +72,7 @@
   --ads-tag-input-active-box-shadow: "none";
   --ads-tag-input-tag-text-color: var(--ads-color-black-0);
   --ads-tag-input-tag-background-color: var(--ads-primary-color);
-  
+
   /** Text */
   --ads-text-color: var(--ads-color-black-750);
   --ads-text-heading-color: var(--ads-color-black-850);
