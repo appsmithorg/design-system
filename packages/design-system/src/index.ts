@@ -9,6 +9,9 @@ export * from "./Button";
 export { default as ColorPicker } from "./ColorPicker";
 export * from "./ColorPicker";
 
+export { default as ColorSelector } from "./ColorSelector";
+export * from "./ColorSelector";
+
 export { default as DatePicker } from "./DatePicker";
 export * from "./DatePicker";
 
