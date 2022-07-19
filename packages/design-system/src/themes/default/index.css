@@ -63,4 +63,9 @@
   --ads-text-heading-color: var(--ads-color-black-850);
   --ads-text-highlight-color: var(--ads-color-black-0);
 
+  /* Breadcrumbs */
+  --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
+  --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray);
+  --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
+
 }
