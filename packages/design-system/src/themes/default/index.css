@@ -15,11 +15,10 @@
   * subProperty: color, width, radius...
   *
   */
-
-  /** Text */
-  --ads-text-color: var(--ads-color-black-750);
-  --ads-text-heading-color: var(--ads-color-black-850);
-  --ads-text-highlight-color: var(--ads-color-black-0);
+  
+  /** ColorSelector */
+  --ads-color-selector-shadow-color: #E8E8E8;
+  --ads-color-selector-checkmark-color: #000000;
 
   /** AppIcon  */
   --ads-app-icon-normal-color: var(--ads-color-black-550);
@@ -29,7 +28,27 @@
   --ads-highlight-text-default-text-color: var(--ads-color-orange-800);
   --ads-highlight-text-default-background-color: var(--ads-color-orange-100);
 
-  /* Tag Input */
+  /** Info */
+  --ads-main-text-color: #CB4810;
+
+  /** Input */
+  --ads-input-focus-border-color: var(--ads-color-black-900);
+
+  /** Menu */
+  --ads-menu-default-border-color: #404040;
+
+  /** Property Pane */
+  --ads-property-pane-default-zoom-button-background-color: #2B2B2B;
+  --ads-property-pane-default-radio-group-button-text-color: #D4D4D4;
+  --ads-property-pane-default-button-text-color: #090707;
+
+  /** Radio */
+  --ads-radio-default-text-color: var(--ads-color-black-0);
+  /* TODO: get this color from the design system */
+  --ads-radio-default-border-color: #404040;
+  --ads-radio-disabled-background-color: #6D6D6D;
+
+  /** Tag Input */
   --ads-tag-input-background-color: var(--ads-color-black-0);
   --ads-tag-input-border-color: var(--ads-color-black-250);
   --ads-tag-input-text-color: var(--ads-color-black-850);
@@ -38,6 +57,11 @@
   --ads-tag-input-active-box-shadow: "none";
   --ads-tag-input-tag-text-color: var(--ads-color-black-0);
   --ads-tag-input-tag-background-color: var(--ads-primary-color);
+  
+  /** Text */
+  --ads-text-color: var(--ads-color-black-750);
+  --ads-text-heading-color: var(--ads-color-black-850);
+  --ads-text-highlight-color: var(--ads-color-black-0);
 
   /* Breadcrumbs */
   --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
