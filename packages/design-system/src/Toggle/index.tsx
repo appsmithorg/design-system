@@ -95,8 +95,8 @@ const StyledToggle = styled.label<{
   input:focus + .slider {
     background-color: ${(props) =>
       props.value
-        ? "var(--ads-toggle-focus-hover-on-background-color)"
-        : "var(--ads-toggle-focus-hover-off-background-color)"};
+        ? "var(--ads-toggle-hover-on-background-color)"
+        : "var(--ads-toggle-hover-off-background-color)"};
   }
 
   input:disabled + .slider {
