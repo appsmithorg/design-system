@@ -22,20 +22,26 @@ export * from "./Icon";
 export { default as Menu } from "./Menu";
 export * from "./Menu";
 
+export { default as MenuDivider } from "./MenuDivider";
+export * from "./MenuDivider";
+
 export { default as MenuItem } from "./MenuItem";
 export * from "./MenuItem";
 
-export { default as Spinner } from "./Spinner";
-export * from "./Spinner";
-
-export { default as Switcher } from "./Switcher";
-export * from "./Switcher";
+export { default as RadioComponent } from "./Radio";
+export * from "./Radio";
 
 export { default as SearchComponent } from "./SearchComponent";
 export * from "./SearchComponent";
 
+export { default as Spinner } from "./Spinner";
+export * from "./Spinner";
+
 export { default as Switch } from "./Switch";
 export * from "./Switch";
+
+export { default as Switcher } from "./Switcher";
+export * from "./Switcher";
 
 export { default as Text } from "./Text";
 export * from "./Text";
