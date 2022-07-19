@@ -59,7 +59,7 @@ yarn install
 
 Then run storybook in development and watch mode with
 ```bash
-yarn design-system:storybook
+yarn run design-system:storybook
 ```
 
 Any stories you write within `design-system/packages/design-system/src/**` will show up here. 
@@ -86,7 +86,6 @@ yarn create-story -f <folder-name>
 'folder-name' is the folder which holds the component which the story template is being created. This should be under 'src' folder.
 
 Happy playground testing!
-
 
 ## Links
 
