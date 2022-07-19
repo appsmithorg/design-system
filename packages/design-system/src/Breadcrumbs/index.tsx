@@ -1,4 +1,4 @@
-// Caution: use this component under the context of a <Router> component
+// TODO: In Phase 2, add a warn when this component doesn't have a <Router> component in it's ancestors
 import React, { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
