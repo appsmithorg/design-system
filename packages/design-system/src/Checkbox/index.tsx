@@ -31,7 +31,7 @@ export const Checkmark = styled.span<{
     props.isChecked
       ? props.disabled
         ? "var(--ads-checkbox-disabled-checked-background-color)"
-        : props.backgroundColor || "var(--ads-info-main)"
+        : props.backgroundColor || "var(--ads-primary-color)"
       : props.disabled
       ? "var(--ads-checkbox-disabled-checked-background-color)"
       : "transparent"};
@@ -40,7 +40,7 @@ export const Checkmark = styled.span<{
       props.isChecked
         ? props.disabled
           ? "var(--ads-checkbox-disabled-checked-border-color)"
-          : props.backgroundColor || "var(--ads-info-main)"
+          : props.backgroundColor || "var(--ads-primary-color)"
         : props.disabled
         ? "var(--ads-checkbox-disabled-checked-border-color)"
         : "var(--ads-checkbox-default-unchecked-border-color)"};
