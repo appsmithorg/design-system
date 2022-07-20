@@ -27,6 +27,9 @@ export * from "./CopyToClipboard";
 export { default as DatePicker } from "./DatePicker";
 export * from "./DatePicker";
 
+export { default as DialogComponent } from "./DialogComponent";
+export * from "./DialogComponent";
+
 export * from "./DropdownV2";
 
 export * from "./HighlightText";
