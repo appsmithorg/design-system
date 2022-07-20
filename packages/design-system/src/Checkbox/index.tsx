@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
-import { Classes } from "Constants/classes";
+import { Classes, replayHighlightClass } from "Constants/classes";
 import Text, { TextType } from "../Text";
-
-const GLOBAL_STYLE_REPLAY_HIGHLIGHT_CLASS = "ur--has-border";
 
 export type CheckboxProps = CommonComponentProps & {
   label: string;
@@ -147,7 +145,7 @@ function Checkbox(props: CheckboxProps) {
       />
       <Checkmark
         backgroundColor={props.backgroundColor}
-        className={GLOBAL_STYLE_REPLAY_HIGHLIGHT_CLASS}
+        className={replayHighlightClass}
         disabled={props.disabled}
         info={props.info}
         isChecked={checked}
