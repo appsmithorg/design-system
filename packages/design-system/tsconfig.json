@@ -28,6 +28,7 @@
     "esModuleInterop": true,
     "noFallthroughCasesInSwitch": true,
     "typeRoots": [
+      "./typings",
       "./node_modules/@types"
     ],
     "skipLibCheck": true,

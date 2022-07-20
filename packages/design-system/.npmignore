@@ -10,3 +10,4 @@ tsconfig.json
 story_template.txt
 alpha-release.sh
 create_story.sh
+typings
