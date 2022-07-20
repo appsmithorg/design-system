@@ -94,4 +94,23 @@
   --ads-toggle-disabled-on-background-color: var(--ads-old-color-bridesmaid);
   --ads-toggle-disabled-off-background-color: var(--ads-color-black-250);
   --ads-toggle-spinner-stroke-color: var(--ads-color-black-450);
+
+  /** TextInput */
+  --ads-text-input-text-box-default-background-color: #ffffff;
+  --ads-text-input-text-box-default-text-color: #090707;
+  --ads-text-input-text-box-default-border-color: #E0DEDE;
+  --ads-text-input-text-box-disabled-background-color: #F0F0F0;
+  --ads-text-input-text-box-disabled-text-color: #6D6D6D;
+  --ads-text-input-text-box-disabled-border-color: #F0F0F0;
+  --ads-text-input-text-box-read-only-background-color: #F0F0F0;
+  --ads-text-input-text-box-read-only-text-color: #716E6E;
+  --ads-text-input-text-box-read-only-border-color: #F0F0F0;
+  --ads-text-input-text-box-hover-background-color: #FAFAFA;
+  --ads-text-input-icon-path-color: #716E6E;
+  --ads-text-input-placeholder-text-color: #A9A7A7;
+  --ads-text-input-helper-text-text-color: #858282;
+
+  --ads-danger-main: #E22C2C;
+  --appsmith-input-focus-border-color: var(--ads-color-black-900);
+
 }

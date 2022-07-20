@@ -18,6 +18,9 @@ export * from "./ColorPicker";
 export { default as ColorSelector } from "./ColorSelector";
 export * from "./ColorSelector";
 
+export { default as CopyToClipboard } from "./CopyToClipboard";
+export * from "./CopyToClipboard";
+
 export { default as DatePicker } from "./DatePicker";
 export * from "./DatePicker";
 
@@ -57,6 +60,9 @@ export * from "./TagInput";
 
 export { default as Text } from "./Text";
 export * from "./Text";
+
+export { default as TextInput } from "./TextInput";
+export * from "./TextInput";
 
 export { default as Toggle } from "./Toggle";
 export * from "./Toggle";
