@@ -15,6 +15,9 @@ export * from "./ButtonTab";
 export { default as Callout } from "./Callout";
 export * from "./Callout";
 
+export { default as Checkbox } from "./Checkbox";
+export * from "./Checkbox";
+
 export { default as ColorPicker } from "./ColorPicker";
 export * from "./ColorPicker";
 

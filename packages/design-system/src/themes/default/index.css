@@ -9,12 +9,16 @@
   * --ads-<component>-<componentType>-<state>-<property>-<subProperty>
   *
   * component: button, checkbox, dropdown, input, link, list, menu, radio, select, textarea...
+  * subComponent: label, divider...
   * componentType: primary, secondary...
   * state: hover, focus, active, disabled, default...
   * property: color, background, border...
   * subProperty: color, width, radius...
   *
   */
+
+  /** API Pane */
+  --ads-api-pane-settings-text-color: var(--ads-old-color-gray-10);
 
   /** AppIcon  */
   --ads-app-icon-normal-color: var(--ads-color-black-550);
@@ -34,6 +38,14 @@
   --ads-callout-danger-background-color: #F9E9E9;
   --ads-callout-warning-text-color: var(--ads-old-color-sun);
   --ads-callout-warning-background-color: #FAF3E3;
+
+  /** Checkbox */
+  --ads-checkbox-disabled-checked-background-color: #2B2B2B;
+  --ads-checkbox-disabled-checked-border-color: #2B2B2B;
+  --ads-checkbox-default-unchecked-border-color: #404040;
+  --ads-checkbox-after-disabled-checked-border-color: #6D6D6D;
+  --ads-checkbox-after-default-checked-border-color: var(--ads-color-black-0);
+  --ads-checkbox-label-text-color: var(--ads-old-color-alto);
 
   /** ColorSelector */
   --ads-color-selector-shadow-color: #E8E8E8;
