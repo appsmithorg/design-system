@@ -62,7 +62,7 @@ const Container = styled.div`
     }
 
     .label {
-      ${(props) => getTypographyByKey("h6")}
+      ${() => getTypographyByKey("h6")}
       color: var(--ads-display-image-upload-label-text-color);
     }
   }
