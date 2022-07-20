@@ -78,6 +78,23 @@
   --ads-text-heading-color: var(--ads-color-black-850);
   --ads-text-highlight-color: var(--ads-color-black-0);
 
+  /* Breadcrumbs */
+  --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
+  --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray);
+  --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
+
+  /* Toggle */
+  --ads-toggle-slider-background-color: var(--ads-color-black-250);
+  --ads-toggle-slider-loading-background-color: var(--ads-old-color-mercury);
+  --ads-toggle-slider-disabled-on-background-color: var(--ads-color-black-0);
+  --ads-toggle-slider-disabled-off-background-color: var(--ads-color-black-0);
+  --ads-toggle-on-background-color: var(--ads-color-orange-500);
+  --ads-toggle-hover-on-background-color: var(--ads-old-color-rock-spray);
+  --ads-toggle-hover-off-background-color: var(--ads-color-black-450);
+  --ads-toggle-disabled-on-background-color: var(--ads-old-color-bridesmaid);
+  --ads-toggle-disabled-off-background-color: var(--ads-color-black-250);
+  --ads-toggle-spinner-stroke-color: var(--ads-color-black-450);
+
   /** TextInput */
   --ads-text-input-text-box-default-background-color: #ffffff;
   --ads-text-input-text-box-default-text-color: #090707;

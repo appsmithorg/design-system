@@ -64,5 +64,8 @@ export * from "./Text";
 export { default as TextInput } from "./TextInput";
 export * from "./TextInput";
 
+export { default as Toggle } from "./Toggle";
+export * from "./Toggle";
+
 export { default as TooltipComponent } from "./Tooltip";
 export * from "./Tooltip";
