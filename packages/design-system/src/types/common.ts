@@ -5,3 +5,9 @@ export interface CommonComponentProps {
   name?: string;
   disabled?: boolean; //default false
 }
+
+export const DS_EVENT = "DS_EVENT";
+
+export enum DSEventTypes {
+  KEYPRESS = "KEYPRESS",
+}

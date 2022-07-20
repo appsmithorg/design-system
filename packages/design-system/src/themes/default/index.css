@@ -73,6 +73,13 @@
   --ads-tag-input-tag-text-color: var(--ads-color-black-0);
   --ads-tag-input-tag-background-color: var(--ads-primary-color);
 
+  /* Button Tab */
+  --ads-button-tab-selected-border-color: var(--ads-old-color-gray-10);
+  --ads-button-tab-border-color: var(--ads-color-black-250);
+  --ads-button-tab-focus-background-color: var(--ads-old-color-gallery-2);
+  --ads-button-tab-hover-background-color: var(--ads-old-color-gallery-2);
+  --ads-button-tab-svg-path-fill-color: var(--ads-old-color-gray-7);
+
   /** Text */
   --ads-text-color: var(--ads-color-black-750);
   --ads-text-heading-color: var(--ads-color-black-850);
