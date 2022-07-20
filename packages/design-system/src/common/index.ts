@@ -1,4 +1,5 @@
 import tinycolor from "tinycolor2";
+import { TypographyKeys, typography } from "Constants/typography";
 
 export const hexToRgb = (
   hex: string,
@@ -38,14 +39,14 @@ export const darken = (color: string, amount: number) => {
     .toString();
 };
 
-export enum Variant {
-  success = "success",
-  info = "info",
-  warning = "warning",
-  danger = "danger",
-}
-
 export const isEmail = (value: string) => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(value);
 };
+
+export const getTypographyByKey = (key: TypographyKeys) => `
+  font-weight: ${typography[key].fontWeight};
+  font-size: ${typography[key].fontSize}px;
+  line-height: ${typography[key].lineHeight}px;
+  letter-spacing: ${typography[key].letterSpacing}px;
+`;

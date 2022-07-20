@@ -126,4 +126,7 @@
   --ads-danger-main: #E22C2C;
   --appsmith-input-focus-border-color: var(--ads-color-black-900);
 
+  /** Display Image Upload */
+  --ads-display-image-upload-background-color: var(--ads-old-color-pigeon-post);
+  --ads-display-image-upload-label-text-color: var(--ads-old-color-royal-blue);
 }

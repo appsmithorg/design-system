@@ -12,3 +12,7 @@ export const FORM_VALIDATION_INVALID_EMAIL = () =>
 
 export const INVITE_USERS_VALIDATION_EMAIL_LIST = () =>
   `Invalid Email address(es) found`;
+
+export const REMOVE = () => "Remove";
+
+export const DISPLAY_IMAGE_UPLOAD_LABEL = () => "Upload Display Picture";
