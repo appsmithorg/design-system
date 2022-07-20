@@ -58,5 +58,8 @@ export * from "./TagInput";
 export { default as Text } from "./Text";
 export * from "./Text";
 
+export { default as TextInput } from "./TextInput";
+export * from "./TextInput";
+
 export { default as TooltipComponent } from "./Tooltip";
 export * from "./Tooltip";
