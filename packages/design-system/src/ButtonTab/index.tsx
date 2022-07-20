@@ -14,7 +14,9 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
   justify-content: center;
   border: 1px solid
     ${(props) =>
-      props.selected
+props.selected 
+    ? "var(--ads-button-tab-selected-border-color)" 
+    : "var(--ads-button-tab-border-color)"
         ? "var(--ads-button-tab-border-color)"
         : "var(--ads-button-tab-selected-border-color)"};
 
