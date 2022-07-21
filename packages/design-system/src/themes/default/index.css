@@ -105,8 +105,8 @@
   --ads-text-highlight-color: var(--ads-color-black-0);
 
   /* Breadcrumbs */
-  --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
-  --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray);
+  --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray-2);
+  --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray-2);
   --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
 
   /* Toggle */
@@ -175,4 +175,10 @@
   --ads-emoji-reactions-count-text-color: var(--ads-old-color-dove-gray);
   --ads-emoji-reactions-count-active-text-color: var(--ads-old-color-rock-spray);
   --ads-emoji-reactions-count-hover-text-color: var(--ads-color-black-750);
+
+  /* Gif Player */
+  --ads-gif-player-icon-path-fill-color: var(--ads-old-color-silver);
+  --ads-gif-player-icon-circle-fill-color: var(--ads-old-color-gray-10);
+  --ads-gif-player-text-color: var(--ads-old-color-dove-gray-3);
+  --ads-gif-player-overlay-background-color: var(--ads-color-black-0);
 }
