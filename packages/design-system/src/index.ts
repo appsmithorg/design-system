@@ -33,6 +33,9 @@ export * from "./DatePicker";
 export { default as DialogComponent } from "./DialogComponent";
 export * from "./DialogComponent";
 
+export { default as DisplayImageUpload } from "./DisplayImageUpload";
+export * from "./DisplayImageUpload";
+
 export { default as DraggableList } from "./DraggableList";
 export * from "./DraggableList";
 
