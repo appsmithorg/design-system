@@ -187,4 +187,9 @@
   --ads-scroll-indicator-track-light-background-color: var(--ads-old-color-white-opacity-50);
   --ads-scroll-indicator-thumb-dark-background-color: var(--ads-old-color-alto-opacity-50);
   --ads-scroll-indicator-track-dark-background-color: var(--ads-old-color-gray-10-opacity-50);
+
+  /** Icon Selector */
+  --ads-icon-selector-scrollbar-thumb-background-color: var(--ads-color-black-450);
+  --ads-icon-selector-app-icon-background-color: var(--ads-color-black-25);
+  --ads-icon-selector-icon-fill-color: var(--ads-color-black-0);
 }

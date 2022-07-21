@@ -55,6 +55,9 @@ export * from "./HighlightText";
 export { default as Icon } from "./Icon";
 export * from "./Icon";
 
+export { default as IconSelector } from "./IconSelector";
+export * from "./IconSelector";
+
 export { default as Menu } from "./Menu";
 export * from "./Menu";
 
