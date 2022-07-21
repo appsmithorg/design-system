@@ -16,10 +16,8 @@ import { Classes, replayHighlightClass } from "Constants/classes";
 import Text, { TextProps, TextType } from "Text";
 import { Popover, PopperBoundary, Position } from "@blueprintjs/core";
 import { typography } from "Constants/typography";
-import { Theme } from "constants/DefaultTheme";
 import styled, { useTheme } from "styled-components";
 import SearchComponent from "SearchComponent";
-import { Colors } from "constants/Colors";
 import Spinner from "Spinner";
 import { ReactComponent as Check } from "../assets/icons/control/checkmark.svg";
 import { ReactComponent as Close } from "../assets/icons/control/remove.svg";
@@ -337,7 +335,7 @@ export const DropdownWrapper = styled.div<{
     input {
       height: 32px;
       font-size: 14px !important;
-      color: ${Colors.GRAY_700} !important;
+      color: var(--ads-color-black-200) !important;
       padding-left: 36px !important;
       border: 1.2px solid var(--ads-color-black-200);
 
@@ -576,7 +574,7 @@ const ErrorMsg = styled.span`
   font-size: ${typography["p3"].fontSize}px;
   line-height: ${typography["p3"].lineHeight}px;
   letter-spacing: ${typography["p3"].letterSpacing}px;
-  color: ${Colors.POMEGRANATE2};
+  color: var(--ads-old-color-pomegranate);
   margin-top: var(--ads-spaces-3);
 `;
 
@@ -727,9 +725,15 @@ function DefaultDropDownValueNode({
           <>
             {selected?.icon ? (
               <SelectedIcon
-                fillColor={hasError ? Colors.POMEGRANATE2 : selected?.iconColor}
+                fillColor={
+                  hasError
+                    ? "var(--ads-old-color-pomegranate)"
+                    : selected?.iconColor
+                }
                 hoverFillColor={
-                  hasError ? Colors.POMEGRANATE2 : selected?.iconColor
+                  hasError
+                    ? "var(--ads-old-color-pomegranate)"
+                    : selected?.iconColor
                 }
                 name={selected.icon}
                 size={selected.iconSize || IconSize.XL}
@@ -943,7 +947,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
             </Tooltip>
           ) : (
             <SegmentHeader
-              style={{ paddingRight: theme.spaces[5] }}
+              style={{ paddingRight: "var(--ads-spaces-5)" }}
               title={option.label || ""}
             />
           );
