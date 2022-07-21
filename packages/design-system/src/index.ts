@@ -33,12 +33,18 @@ export * from "./DatePicker";
 export { default as DialogComponent } from "./DialogComponent";
 export * from "./DialogComponent";
 
+export { default as Dropdown } from "./Dropdown";
+export * from "./Dropdown";
+
 export * from "./DropdownV2";
 
 export * from "./HighlightText";
 
 export { default as Icon } from "./Icon";
 export * from "./Icon";
+
+export { default as SegmentHeader } from "./ListSegmentHeader";
+export * from "./ListSegmentHeader";
 
 export { default as Menu } from "./Menu";
 export * from "./Menu";
