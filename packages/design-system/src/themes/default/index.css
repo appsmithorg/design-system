@@ -176,9 +176,15 @@
   --ads-emoji-reactions-count-active-text-color: var(--ads-old-color-rock-spray);
   --ads-emoji-reactions-count-hover-text-color: var(--ads-color-black-750);
 
-  /* Gif Player */
+  /** Gif Player */
   --ads-gif-player-icon-path-fill-color: var(--ads-old-color-silver);
   --ads-gif-player-icon-circle-fill-color: var(--ads-old-color-gray-10);
   --ads-gif-player-text-color: var(--ads-old-color-dove-gray-3);
   --ads-gif-player-overlay-background-color: var(--ads-color-black-0);
+
+  /** Scroll Indicator */
+  --ads-scroll-indicator-thumb-light-background-color: var(--ads-old-color-black-750-opacity-50);
+  --ads-scroll-indicator-track-light-background-color: var(--ads-old-color-white-opacity-50);
+  --ads-scroll-indicator-thumb-dark-background-color: var(--ads-old-color-alto-opacity-50);
+  --ads-scroll-indicator-track-dark-background-color: var(--ads-old-color-gray-10-opacity-50);
 }

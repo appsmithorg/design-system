@@ -70,6 +70,9 @@ export * from "./NumberedStep";
 export { default as RadioComponent } from "./Radio";
 export * from "./Radio";
 
+export { default as ScrollIndicator } from "./ScrollIndicator";
+export * from "./ScrollIndicator";
+
 export { default as SearchComponent } from "./SearchComponent";
 export * from "./SearchComponent";
 
