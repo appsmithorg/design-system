@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { clamp } from "lodash-es";
-import swap from "lodash-move";
 import { useDrag } from "react-use-gesture";
 import { useSprings, animated, to } from "react-spring";
 import styled from "styled-components";
-import { debounce, get } from "lodash";
+import debounce from "lodash/debounce";
+import get from "lodash/get";
 
 interface SpringStyleProps {
   down: boolean;
@@ -193,7 +193,8 @@ export function DraggableList(props: any) {
           0,
           items.length - 1,
         );
-        const newOrder = swap(order.current, curIndex, curRow);
+        const newOrder = [...order.current];
+        newOrder.splice(curRow, 0, newOrder.splice(curIndex, 1)[0]);
         setSprings(
           dragIdleSpringStyles(newOrder, {
             down: props.down,
