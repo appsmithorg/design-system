@@ -44,6 +44,9 @@ export * from "./DropdownV2";
 export { default as EmojiPicker } from "./EmojiPicker";
 export * from "./EmojiPicker";
 
+export { default as EmojiReactions } from "./EmojiReactions";
+export * from "./EmojiReactions";
+
 export * from "./HighlightText";
 
 export { default as Icon } from "./Icon";

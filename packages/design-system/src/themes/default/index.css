@@ -166,4 +166,13 @@
   --ads-tab-item-text-color: var(--ads-normal-text-color);
   --ads-tab-item-focus-background-color: var(--ads-color-black-75);
   --ads-tab-item-focus-text-color: var(--ads-color-black-900);
+
+  /** Emoji Reactions */
+  --ads-emoji-reactions-bubble-background-color: var(--ads-color-black-75);
+  --ads-emoji-reactions-bubble-active-background-color: var(--ads-old-color-bridesmaid);
+  --ads-emoji-reactions-bubble-active-border-color: var(--ads-old-color-rock-spray);
+  --ads-emoji-reactions-bubble-hover-background-color: var(--ads-old-color-gallery-2);
+  --ads-emoji-reactions-count-text-color: var(--ads-old-color-dove-gray);
+  --ads-emoji-reactions-count-active-text-color: var(--ads-old-color-rock-spray);
+  --ads-emoji-reactions-count-hover-text-color: var(--ads-color-black-750);
 }

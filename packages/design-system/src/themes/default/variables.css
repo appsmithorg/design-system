@@ -54,4 +54,12 @@
   --ads-font-size-8: 32px;
   --ads-font-size-9: 48px;
   --ads-font-size-10: 64px;
+
+  /* Radius */
+  --ads-radius-0: 0px;
+  --ads-radius-1: 4px;
+  --ads-radius-2: 8px;
+  --ads-radius-3: 10px;
+  --ads-radius-4: 20px;
+  --ads-radius-5: 50px;
 }
