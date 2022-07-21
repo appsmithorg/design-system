@@ -6,6 +6,7 @@ import Icon, { IconName, IconSize } from "Icon";
 import { useResizeObserver } from "hooks";
 import { Classes } from "Constants/classes";
 import { CommonComponentProps } from "Types/common";
+import { typography } from "Constants/typography";
 
 export const TAB_MIN_HEIGHT = `36px`;
 
@@ -30,7 +31,7 @@ const TabsWrapper = styled.div<{
     height: 100%;
   }
   .react-tabs__tab-panel {
-    height: ${() => `calc(100% - ${TAB_MIN_HEIGHT})`};
+    height: calc(100% - ${TAB_MIN_HEIGHT});
     overflow: auto;
   }
   .react-tabs__tab-list {
@@ -39,9 +40,9 @@ const TabsWrapper = styled.div<{
     flex-direction: ${(props) => (!!props.vertical ? "column" : "row")};
     align-items: ${(props) => (!!props.vertical ? "stretch" : "center")};
     border-bottom: none;
-    color: ${(props) => props.theme.colors.tabs.normal};
+    color: var(--ads-tabs-list-text-color);
     path {
-      fill: ${(props) => props.theme.colors.tabs.icon};
+      fill: var(--ads-tabs-list-svg-fill-color);
     }
     ${(props) =>
       props.shouldOverflow &&
@@ -58,7 +59,7 @@ const TabsWrapper = styled.div<{
       display: flex;
       align-items: center;
       height: 24px;
-      background-color: ${props.theme.colors.multiSwitch.bg} !important;
+      background-color: var(--ads-tabs-list-response-viewer-background-color) !important;
       width: fit-content;
       padding-left: 1px;
       margin-top: 10px !important;
@@ -75,7 +76,7 @@ const TabsWrapper = styled.div<{
 
     padding: 0px 3px;
     margin-right: ${(props) =>
-      !props.vertical ? `${props.theme.spaces[12] - 3}px` : 0};
+      !props.vertical ? `calc(var(--ads-spaces-12) - 3px)` : 0};
   }
 
   .react-tabs__tab,
@@ -94,7 +95,7 @@ const TabsWrapper = styled.div<{
         cursor: pointer;
         height: 22px;
         padding: 0 12px;
-        border: 1px solid ${props.theme.colors.multiSwitch.border};
+        border: 1px solid var(--ads-tabs-list-focus-response-viewer-background-color);
         margin-right: -1px;
         margin-left: -1px;
         margin-top: -2px;
@@ -105,14 +106,14 @@ const TabsWrapper = styled.div<{
   .react-tabs__tab--selected {
     background-color: transparent;
     path {
-      fill: ${(props) => props.theme.colors.tabs.hover};
+      fill: var(--ads-tabs-list-selected-svg-fill-color);
     }
 
     ${(props) =>
       props.responseViewer &&
       `
-        background-color: ${props.theme.colors.multiSwitch.selectedBg};
-        border: 1px solid ${props.theme.colors.multiSwitch.border};
+        background-color: var(--ads-tabs-list-selected-response-viewer-background-color);
+        border: 1px solid var(--ads-tabs-list-selected-response-viewer-border-color);
         border-radius: 0px;
         font-weight: normal;
       `}
@@ -127,10 +128,10 @@ const TabsWrapper = styled.div<{
 `;
 
 export const TabTitle = styled.span<{ responseViewer?: boolean }>`
-  font-size: ${(props) => props.theme.typography.h4.fontSize}px;
-  font-weight: ${(props) => props.theme.fontWeights[2]};
-  line-height: ${(props) => props.theme.spaces[7]}px;
-  letter-spacing: ${(props) => props.theme.typography.h4.letterSpacing}px;
+  font-size: ${typography.h4.fontSize}px;
+  font-weight: var(--ads-font-weight-bold);
+  line-height: var(--ads-spaces-7);
+  letter-spacing: ${typography.h4.letterSpacing}px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -143,12 +144,12 @@ export const TabTitle = styled.span<{ responseViewer?: boolean }>`
     line-height: 16px;
     letter-spacing: normal;
     text-transform: uppercase;
-    color: ${props.theme.colors.text.normal};
+    color: var(--ads-tabs-list-selected-response-viewer-text-color);
     `}
 `;
 
 export const TabCount = styled.div`
-  background-color: ${(props) => props.theme.colors.tabs.countBg};
+  background-color: var(--ads-tabs-count-background-color);
   border-radius: 8px;
   min-width: 17px;
   height: 17px;
@@ -168,18 +169,18 @@ const TabTitleWrapper = styled.div<{
   display: flex;
   align-items: center;
   width: 100%;
-  padding: ${(props) => props.theme.spaces[3] - 1}px
-    ${(props) => (props.vertical ? `${props.theme.spaces[4] - 1}px` : 0)}
-    ${(props) => props.theme.spaces[4] - 1}px
-    ${(props) => (props.vertical ? `${props.theme.spaces[4] - 1}px` : 0)};
-  color: ${(props) => props.theme.colors.tabs.normal};
+  padding: calc(var(--ads-spaces-3) - 1px)
+    ${(props) => (props.vertical ? `calc(var(--ads-spaces-4) - 1px)` : 0)}
+    calc(var(--ads-spaces-4) - 1px)
+    ${(props) => (props.vertical ? `calc(var(--ads-spaces-4) - 1px)` : 0)};
+  color: var(--ads-tabs-title-wrapper-text-color);
   &:hover {
-    color: ${(props) => props.theme.colors.tabs.hover};
+    color: var(--ads-tabs-title-wrapper-hover-text-color);
     .${Classes.ICON} {
       svg {
-        fill: ${(props) => props.theme.colors.tabs.hover};
+        fill: var(--ads-tabs-title-wrapper-hover-text-color);
         path {
-          fill: ${(props) => props.theme.colors.tabs.hover};
+          fill: var(--ads-tabs-title-wrapper-hover-text-color);
         }
       }
     }
@@ -192,15 +193,15 @@ const TabTitleWrapper = styled.div<{
     `}
 
   .${Classes.ICON} {
-    margin-right: ${(props) => props.theme.spaces[1]}px;
+    margin-right: var(--ads-spaces-1);
     border-radius: 50%;
     svg {
       width: 16px;
       height: 16px;
       margin: auto;
-      fill: ${(props) => props.theme.colors.tabs.normal};
+      fill: var(--ads-tabs-title-wrapper-icon-fill-color);
       path {
-        fill: ${(props) => props.theme.colors.tabs.normal};
+        fill: var(--ads-tabs-title-wrapper-icon-fill-color);
       }
     }
   }
@@ -209,11 +210,11 @@ const TabTitleWrapper = styled.div<{
     props.selected
       ? `
   background-color: transparent;
-  color: var(--appsmith-color-black-900);
+  color: var(--ads-color-black-900);
   .${Classes.ICON} {
     svg {
       path {
-        fill:  var(--appsmith-color-black-900)
+        fill:  var(--ads-color-black-900)
       }
     }
   }
@@ -228,14 +229,14 @@ const TabTitleWrapper = styled.div<{
   &::after {
     content: "";
     position: absolute;
-    width: ${props.vertical ? `${props.theme.spaces[1] - 2}px` : "100%"};
-    bottom: ${props.vertical ? "0%" : `${props.theme.spaces[0] - 1}px`};
+    width: ${props.vertical ? `calc(var(--ads-spaces-1) - 2px)` : "100%"};
+    bottom: ${props.vertical ? "0%" : `calc(var(--ads-spaces-0) - 1px)`};
     top: ${
-      props.vertical ? `${props.theme.spaces[0] - 1}px` : "calc(100% - 2px)"
+      props.vertical ? `calc(var(--ads-spaces-0) - 1px)` : "calc(100% - 2px)"
     };
-    left: ${props.theme.spaces[0]}px;
-    height: ${props.vertical ? "100%" : `${props.theme.spaces[1] - 2}px`};
-    background-color: ${props.theme.colors.info.main};
+    left: var(--ads-spaces-0);
+    height: ${props.vertical ? "100%" : `calc(var(--ads-spaces-1) - 2px)`};
+    background-color: var(--ads-primary-color);
     z-index: var(--ads-z-index-3);
 
     ${props.responseViewer &&

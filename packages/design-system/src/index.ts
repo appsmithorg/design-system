@@ -73,6 +73,8 @@ export * from "./Switch";
 export { default as Switcher } from "./Switcher";
 export * from "./Switcher";
 
+export * from "./Tabs";
+
 export { default as TagInput } from "./TagInput";
 export * from "./TagInput";
 
