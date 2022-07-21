@@ -75,6 +75,9 @@ export * from "./Switcher";
 
 export * from "./Tabs";
 
+export { default as TabItemBackgroundFill } from "./TabItemBackgroundFill";
+export * from "./TabItemBackgroundFill";
+
 export { default as TagInput } from "./TagInput";
 export * from "./TagInput";
 

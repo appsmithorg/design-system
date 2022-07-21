@@ -161,4 +161,9 @@
   --ads-tabs-title-wrapper-hover-text-color: var(--ads-color-black-750);
   --ads-tabs-title-wrapper-icon-fill-color: var(--ads-old-color-gray-7);
   --ads-tabs-title-wrapper-text-color: var(--ads-old-color-gray-7);
+  
+  /** Tab Item Background fill */
+  --ads-tab-item-text-color: var(--ads-normal-text-color);
+  --ads-tab-item-focus-background-color: var(--ads-color-black-75);
+  --ads-tab-item-focus-text-color: var(--ads-color-black-900);
 }
