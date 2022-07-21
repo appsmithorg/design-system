@@ -41,6 +41,9 @@ export * from "./DraggableList";
 
 export * from "./DropdownV2";
 
+export { default as EmojiPicker } from "./EmojiPicker";
+export * from "./EmojiPicker";
+
 export * from "./HighlightText";
 
 export { default as Icon } from "./Icon";
