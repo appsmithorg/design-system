@@ -55,6 +55,9 @@ export * from "./MenuDivider";
 export { default as MenuItem } from "./MenuItem";
 export * from "./MenuItem";
 
+export { default as NumberedStep } from "./NumberedStep";
+export * from "./NumberedStep";
+
 export { default as RadioComponent } from "./Radio";
 export * from "./Radio";
 

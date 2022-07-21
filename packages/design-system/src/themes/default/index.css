@@ -141,4 +141,8 @@
   /** Display Image Upload */
   --ads-display-image-upload-background-color: var(--ads-old-color-pigeon-post);
   --ads-display-image-upload-label-text-color: var(--ads-old-color-royal-blue);
+
+  /** Numbered Step */
+  --ads-numbered-step-text-color: var(--ads-color-black-250);
+  --ads-numbered-step-line-background-color: var(--ads-color-black);
 }
