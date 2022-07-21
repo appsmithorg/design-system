@@ -67,6 +67,9 @@ export * from "./MenuDivider";
 export { default as MenuItem } from "./MenuItem";
 export * from "./MenuItem";
 
+export { default as MultiSwitch } from "./MultiSwitch";
+export * from "./MultiSwitch";
+
 export { default as NumberedStep } from "./NumberedStep";
 export * from "./NumberedStep";
 

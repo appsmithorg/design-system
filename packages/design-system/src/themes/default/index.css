@@ -192,4 +192,10 @@
   --ads-icon-selector-scrollbar-thumb-background-color: var(--ads-color-black-450);
   --ads-icon-selector-app-icon-background-color: var(--ads-color-black-25);
   --ads-icon-selector-icon-fill-color: var(--ads-color-black-0);
+
+  /** Multiswitch */
+  --ads-multiswitch-background-color: var(--ads-old-color-mercury);
+  --ads-multiswitch-border-color: var(--ads-color-black-250);
+  --ads-multiswitch-selected-background-color: var(--ads-color-black-0);
+  --ads-multiswitch-tab-header-background-color: var(--ads-color-black-0);
 }
