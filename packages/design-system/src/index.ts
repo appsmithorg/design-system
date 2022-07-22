@@ -105,6 +105,9 @@ export * from "./TagInput";
 export { default as Text } from "./Text";
 export * from "./Text";
 
+export { default as TextField } from "./TextField";
+export * from "./TextField";
+
 export { default as TextInput } from "./TextInput";
 export * from "./TextInput";
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Text, { Case, TextType } from "Text";
 import { CommonComponentProps } from "Types/common";
 
-export type TabProp<T> = {
+type TabProp<T> = {
   key: string;
   title: T;
   panelComponent: JSX.Element;

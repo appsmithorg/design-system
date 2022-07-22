@@ -1,5 +1,6 @@
 /**
  * Story not added to the storybook since redux dependency.
+ * TODO: Add story.
  */
 import React from "react";
 import {
