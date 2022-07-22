@@ -198,4 +198,13 @@
   --ads-multiswitch-border-color: var(--ads-color-black-250);
   --ads-multiswitch-selected-background-color: var(--ads-color-black-0);
   --ads-multiswitch-tab-header-background-color: var(--ads-color-black-0);
+
+  /** Intent Colors */
+  --ads-intent-color-primary: var(--ads-old-color-jade);
+  --ads-intent-color-secondary: var(--ads-old-color-black-pearl);
+  --ads-intent-color-success: var(--ads-old-color-cornflower-blue);
+  --ads-intent-color-danger: var(--ads-old-color-danger-red);
+  --ads-intent-color-none: var(--ads-color-black-200);
+  --ads-intent-color-warning: var(--ads-old-color-jaffa);
+  --ads-intent-color-success-light: var(--ads-old-color-jade);
 }
