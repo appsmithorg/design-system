@@ -228,4 +228,10 @@
   --ads-statusbar-status-text-color: var(--ads-color-black);
   --ads-statusbar-progress-bar-active-background-color: var(--ads-old-color-crusta);
   --ads-statusbar-progress-bar-background-color: var(--ads-color-black-0);
+
+  /** TableDropdown  */
+  --ads-table-dropdown-background-color: var(--ads-color-black-0);
+  --ads-table-dropdown-selected-background-color: var(--ads-color-black-75);
+  --ads-table-dropdown-selected-text-color: var(--ads-color-black-850);
+
 }

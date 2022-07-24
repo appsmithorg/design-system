@@ -108,6 +108,9 @@ export * from "./Tabs";
 export { default as TabItemBackgroundFill } from "./TabItemBackgroundFill";
 export * from "./TabItemBackgroundFill";
 
+export { default as TableDropdown } from "./TableDropdown";
+export * from "./TableDropdown";
+
 export { default as TagInput } from "./TagInput";
 export * from "./TagInput";
 
