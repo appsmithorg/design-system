@@ -79,6 +79,9 @@ export * from "./NumberedStep";
 export { default as RadioComponent } from "./Radio";
 export * from "./Radio";
 
+export { default as RectangularSwitcher } from "./RectangularSwitcher";
+export * from "./RectangularSwitcher";
+
 export { default as ScrollIndicator } from "./ScrollIndicator";
 export * from "./ScrollIndicator";
 
