@@ -234,4 +234,8 @@
   --ads-table-dropdown-selected-background-color: var(--ads-color-black-75);
   --ads-table-dropdown-selected-text-color: var(--ads-color-black-850);
 
+  /** Search Input */
+  --ads-search-input-border-color: var(--ads-color-black-400);
+  --ads-search-input-active-border-color: var(--ads-color-black-900);
+
 }
