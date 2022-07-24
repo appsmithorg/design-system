@@ -88,6 +88,9 @@ export * from "./ScrollIndicator";
 export { default as SearchComponent } from "./SearchComponent";
 export * from "./SearchComponent";
 
+export { default as ShowcaseCarousel } from "./ShowcaseCarousel";
+export * from "./ShowcaseCarousel";
+
 export { default as Spinner } from "./Spinner";
 export * from "./Spinner";
 

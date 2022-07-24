@@ -208,11 +208,15 @@
   --ads-intent-color-warning: var(--ads-old-color-jaffa);
   --ads-intent-color-success-light: var(--ads-old-color-jade);
 
-  /* Rectangular Switch */
+  /** Rectangular Switch */
   --ads-rectangular-switch-background-color: var(--ads-color-black-0);
   --ads-rectangular-switch-hover-background-color: var(--ads-color-black-0);
   --ads-rectangular-switch-slider-border-color: var(--ads-color-black-450);
   --ads-rectangular-switch-slider-background-color: var(--ads-primary-color);
   --ads-rectangular-switch-light-text-color: var(--ads-color-black-0);
   --ads-rectangular-switch-dark-text-color: var(--ads-color-black-470);
+
+  /** Showcase Carousel */
+  --ads-showcase-carousel-dot-background-color: var(--ads-old-color-bridesmaid);
+  --ads-showcase-carousel-dot-active-background-color: var(--ads-primary-color);
 }

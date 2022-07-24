@@ -20,3 +20,8 @@ export const DISPLAY_IMAGE_UPLOAD_LABEL = () => "Upload Display Picture";
 export const ADD_REACTION = () => "Add Reaction";
 
 export const EMOJI = () => "Emoji";
+
+// Showcase Carousel
+export const NEXT = () => "NEXT";
+export const BACK = () => "BACK";
+export const SKIP = () => "SKIP";
