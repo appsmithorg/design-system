@@ -168,3 +168,10 @@ export const typography = {
 
 export type TypographyKeys = keyof typeof typography;
 export type Typography = typeof typography;
+
+export enum FontStyleTypes {
+  BOLD = "BOLD",
+  ITALIC = "ITALIC",
+  REGULAR = "REGULAR",
+  UNDERLINE = "UNDERLINE",
+}

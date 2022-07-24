@@ -11,3 +11,10 @@ export const DS_EVENT = "DS_EVENT";
 export enum DSEventTypes {
   KEYPRESS = "KEYPRESS",
 }
+
+export enum LabelPosition {
+  Auto = "Auto",
+  Top = "Top",
+  Left = "Left",
+  Right = "Right",
+}
