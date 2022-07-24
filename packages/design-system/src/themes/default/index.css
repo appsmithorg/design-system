@@ -148,11 +148,20 @@
   --ads-text-input-placeholder-text-color: #A9A7A7;
   --ads-text-input-helper-text-text-color: #858282;
 
+  /** Tree Dropdown */
+  --ads-tree-dropdown-menu-default-background-color: var(--ads-color-black-5);
+  --ads-tree-dropdown-menu-default-text-color: var(--ads-color-black-750);
+  --ads-tree-dropdown-menu-selected-text-color: var(--ads-color-black-750);
+  --ads-tree-dropdown-target-background-color: var(--ads-color-black-0);
+
+
   /** Uncategorized/common */
   --ads-danger-main: #E22C2C;
   --appsmith-input-focus-border-color: var(--ads-color-black-900);
   --ads-text-color-on-dark-background: var(--ads-color-black-0);
   --ads-property-pane-default-label-fill-color : var(--ads-color-black-750);
+  --ads-small-header-height: 32px;
+  --ads-bottom-bar-height: 34px;
 
 
 }
