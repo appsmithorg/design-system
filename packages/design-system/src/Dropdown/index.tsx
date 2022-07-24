@@ -16,7 +16,7 @@ import { Classes, replayHighlightClass } from "Constants/classes";
 import Text, { TextProps, TextType } from "Text";
 import { Popover, PopperBoundary, Position } from "@blueprintjs/core";
 import { typography } from "Constants/typography";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import SearchComponent from "SearchComponent";
 import Spinner from "Spinner";
 import { ReactComponent as Check } from "../assets/icons/control/checkmark.svg";
@@ -798,7 +798,6 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
     setOptions(filteredOptions);
     onSearch && onSearch(searchStr);
   };
-  const theme = useTheme() as Theme;
 
   if (!options.length && !showEmptyOptions) return null;
 
