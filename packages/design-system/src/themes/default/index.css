@@ -67,6 +67,11 @@
   /** Input */
   --ads-input-focus-border-color: var(--ads-color-black-900);
 
+  /** Label with Tooltip */
+  --ads-label-with-tooltip-default-text-color: var(--ads-color-black-550);
+  --ads-label-with-tooltip-default-icon-fill-color: var(--ads-color-black-450);
+  --ads-label-with-tooltip-hover-icon-fill-color: var(--ads-color-black-550);
+
   /** Menu */
   --ads-menu-default-border-color: #404040;
 
