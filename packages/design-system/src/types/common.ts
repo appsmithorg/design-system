@@ -11,3 +11,28 @@ export const DS_EVENT = "DS_EVENT";
 export enum DSEventTypes {
   KEYPRESS = "KEYPRESS",
 }
+
+export type DSEventDetail = {
+  component: string;
+  event: DSEventTypes;
+  meta: Record<string, unknown>;
+};
+
+export function createDSEvent(detail: DSEventDetail) {
+  return new CustomEvent(DS_EVENT, {
+    bubbles: true,
+    detail,
+  });
+}
+
+export function emitDSEvent<T extends HTMLElement>(
+  element: T | null,
+  args: DSEventDetail,
+) {
+  element?.dispatchEvent(createDSEvent(args));
+}
+
+export enum SubTextPosition {
+  BOTTOM,
+  LEFT,
+}
