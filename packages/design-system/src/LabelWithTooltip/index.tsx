@@ -132,7 +132,7 @@ export const multiSelectInputContainerStyles = css<{
   }};
 `;
 
-export const LabelContainer = styled.div<LabelContainerProps>`
+const LabelContainer = styled.div<LabelContainerProps>`
   &&& {
     display: flex;
     align-items: center;
