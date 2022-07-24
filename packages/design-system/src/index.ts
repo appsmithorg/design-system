@@ -76,6 +76,9 @@ export * from "./MultiSwitch";
 export { default as NumberedStep } from "./NumberedStep";
 export * from "./NumberedStep";
 
+export { default as ProgressiveImage } from "./ProgressiveImage";
+export * from "./ProgressiveImage";
+
 export { default as RadioComponent } from "./Radio";
 export * from "./Radio";
 
