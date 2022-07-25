@@ -74,6 +74,8 @@
   --ads-dropdown-default-icon-background-color: var(--ads-color-black-250);
   --ads-dropdown-default-icon-selected-fill-color: var(--ads-old-color-gray-7);
   --ads-dropdown-default-icon-hover: var(--ads-color-black-0);
+  --ads-dropdown-default-dropdown-trigger-border-color: var(--ads-color-black-900);
+  --ads-dropdown-default-close-hover-background-color : var(--ads-old-color-gallery-2);
 
   /** HighlightText */
   --ads-highlight-text-default-text-color: var(--ads-color-orange-800);

@@ -165,7 +165,7 @@ const DropdownTriggerWrapper = styled.div<{
     props.isOpen && !props.disabled
       ? `
       box-sizing: border-box;
-      border: 1px solid var(--ads-color-black-900);
+      border: 1px solid var(--ads-dropdown-default-dropdown-trigger-border-color);
     `
       : null};
   .${Classes.TEXT} {
@@ -181,7 +181,7 @@ const StyledClose = styled(Close)`
   height: 18px;
   margin-right: -2px;
   &:hover {
-    background-color: #ebebeb;
+    background-color: var(--ads-dropdown-default-close-hover-background-color);
   }
 `;
 const SquareBox = styled.div<{
