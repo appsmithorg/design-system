@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import Icon, { IconSize } from "Icon";
-import { CloseButton } from "components/designSystems/appsmith/CloseButton";
+import CloseButton from "CloseButton";
 import { createMessage, LEARN_MORE } from "Constants/messages";
 
 export enum NotificationVariant {
