@@ -57,6 +57,26 @@
   --ads-dialog-component-dialog-header-underline-color: #C5C5C5;
   --ads-dialog-component-icon-background-color: #FFDEDE;
 
+  /** Dropdown */
+  --ads-dropdown-hover-background-color : var(--ads-old-color-gallery-2);
+  --ads-dropdown-selected-text-color: var(--ads-old-color-gray-10);
+  --ads-dropdown-disabled-header-text-color: #9F9F9F;
+  --ads-dropdown-disabled-header-background-color: var(--ads-color-black-0);
+  --ads-dropdown-default-header-text-color: var(--ads-color-black-750);
+  --ads-dropdown-selected-header-text-color: var(--ads-old-color-gray-10);
+  --ads-dropdown-default-menu-border-color: var(--ads-color-black-250);
+  --ads-dropdown-default-menu-subtext-text-color: var(--ads-old-color-gray-7);
+  --ads-dropdown-selected-menu-subtext-text-color: var(--ads-color-black-550);
+  --ads-dropdown-default-menu-text-color: var(--ads-color-black-750);
+  --ads-dropdown-default-menu-hover-text-color: var(--ads-old-color-gray-10);
+  --ads-dropdown-default-menu-hover-background-color: var(--ads-color-black-200);
+  --ads-dropdown-default-icon-fill-color: var(--ads-color-black-550);
+  --ads-dropdown-default-icon-background-color: var(--ads-color-black-250);
+  --ads-dropdown-default-icon-selected-fill-color: var(--ads-old-color-gray-7);
+  --ads-dropdown-default-icon-hover: var(--ads-color-black-0);
+  --ads-dropdown-default-dropdown-trigger-border-color: var(--ads-color-black-900);
+  --ads-dropdown-default-close-hover-background-color : var(--ads-old-color-gallery-2);
+
   /** HighlightText */
   --ads-highlight-text-default-text-color: var(--ads-color-orange-800);
   --ads-highlight-text-default-background-color: var(--ads-color-orange-100);
@@ -108,11 +128,6 @@
   --ads-text-heading-color: var(--ads-color-black-850);
   --ads-text-highlight-color: var(--ads-color-black-0);
 
-  /* Breadcrumbs */
-  --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
-  --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray);
-  --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
-
   /* Toggle */
   --ads-toggle-slider-background-color: var(--ads-color-black-250);
   --ads-toggle-slider-loading-background-color: var(--ads-old-color-mercury);
@@ -140,7 +155,20 @@
   --ads-text-input-placeholder-text-color: #A9A7A7;
   --ads-text-input-helper-text-text-color: #858282;
 
+  /** Tree Dropdown */
+  --ads-tree-dropdown-menu-default-background-color: var(--ads-color-black-5);
+  --ads-tree-dropdown-menu-default-text-color: var(--ads-color-black-750);
+  --ads-tree-dropdown-menu-selected-text-color: var(--ads-color-black-750);
+  --ads-tree-dropdown-target-background-color: var(--ads-color-black-0);
+
+
+  /** Uncategorized/common */
   --ads-danger-main: #E22C2C;
   --appsmith-input-focus-border-color: var(--ads-color-black-900);
+  --ads-text-color-on-dark-background: var(--ads-color-black-0);
+  --ads-property-pane-default-label-fill-color : var(--ads-color-black-750);
+  --ads-small-header-height: 32px;
+  --ads-bottom-bar-height: 34px;
+
 
 }
