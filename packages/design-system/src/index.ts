@@ -39,6 +39,9 @@ export * from "./DisplayImageUpload";
 export { default as DraggableList } from "./DraggableList";
 export * from "./DraggableList";
 
+export { default as Dropdown } from "./Dropdown";
+export * from "./Dropdown";
+
 export * from "./DropdownV2";
 
 export { default as EmojiPicker } from "./EmojiPicker";
@@ -60,6 +63,12 @@ export * from "./Icon";
 
 export { default as IconSelector } from "./IconSelector";
 export * from "./IconSelector";
+
+export { default as LabelWithTooltip } from "./LabelWithTooltip";
+export * from "./LabelWithTooltip";
+
+export { default as SegmentHeader } from "./ListSegmentHeader";
+export * from "./ListSegmentHeader";
 
 export { default as Menu } from "./Menu";
 export * from "./Menu";
