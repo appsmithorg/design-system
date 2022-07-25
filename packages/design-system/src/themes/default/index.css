@@ -96,6 +96,11 @@
   /** Menu */
   --ads-menu-default-border-color: #404040;
 
+  /** Notification Banner */
+  --ads-notification-banner-error-text-color: #C91818;
+  --ads-notification-banner-light-enterprise-text-color: #E8F5FA;
+  ----ads-notification-banner-dark-enterprise-text-color: #00407D;
+
   /** Property Pane */
   --ads-property-pane-default-zoom-button-background-color: #2B2B2B;
   --ads-property-pane-default-radio-group-button-text-color: #D4D4D4;
