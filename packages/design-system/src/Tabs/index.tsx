@@ -40,9 +40,9 @@ const TabsWrapper = styled.div<{
     flex-direction: ${(props) => (!!props.vertical ? "column" : "row")};
     align-items: ${(props) => (!!props.vertical ? "stretch" : "center")};
     border-bottom: none;
-    color: var(--ads-tabs-list-text-color);
+    color: var(--ads-tabs-default-tab-list-text-color);
     path {
-      fill: var(--ads-tabs-list-svg-fill-color);
+      fill: var(--ads-tabs-default-tab-list-svg-fill-color);
     }
     ${(props) =>
       props.shouldOverflow &&
@@ -59,7 +59,7 @@ const TabsWrapper = styled.div<{
       display: flex;
       align-items: center;
       height: 24px;
-      background-color: var(--ads-tabs-list-response-viewer-background-color) !important;
+      background-color: var(--ads-tabs-default-tab-list-response-viewer-background-color) !important;
       width: fit-content;
       padding-left: 1px;
       margin-top: 10px !important;
@@ -106,14 +106,14 @@ const TabsWrapper = styled.div<{
   .react-tabs__tab--selected {
     background-color: transparent;
     path {
-      fill: var(--ads-tabs-list-selected-svg-fill-color);
+      fill: var(--ads-tabs-tab-selected-svg-fill-color);
     }
 
     ${(props) =>
       props.responseViewer &&
       `
-        background-color: var(--ads-tabs-list-selected-response-viewer-background-color);
-        border: 1px solid var(--ads-tabs-list-selected-response-viewer-border-color);
+        background-color: var(--ads-tabs-tab-selected-response-viewer-background-color);
+        border: 1px solid var(--ads-tabs-tab-selected-response-viewer-border-color);
         border-radius: 0px;
         font-weight: normal;
       `}
@@ -144,7 +144,7 @@ export const TabTitle = styled.span<{ responseViewer?: boolean }>`
     line-height: 16px;
     letter-spacing: normal;
     text-transform: uppercase;
-    color: var(--ads-tabs-list-selected-response-viewer-text-color);
+    color: var(--ads-tabs-tab-title-response-viewer-text-color);
     `}
 `;
 

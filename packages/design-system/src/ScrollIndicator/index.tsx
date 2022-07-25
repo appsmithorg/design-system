@@ -12,9 +12,9 @@ export const ScrollThumb = styled(animated.div)<{
   background-color: ${(props) =>
     props.mode
       ? props.mode === "LIGHT"
-        ? "var(--ads-scroll-indicator-thumb-light-background-color)"
-        : "var(--ads-scroll-indicator-thumb-dark-background-color)"
-      : "var(--ads-scroll-indicator-thumb-light-background-color)"};
+        ? "var(--ads-scroll-indicator-light-thumb-background-color)"
+        : "var(--ads-scroll-indicator-dark-thumb-background-color)"
+      : "var(--ads-scroll-indicator-light-thumb-background-color)"};
   border-radius: var(--ads-radius-3);
 `;
 
@@ -37,9 +37,9 @@ const ScrollTrack = styled.div<{
     ${(props) =>
       props.mode
         ? props.mode === "LIGHT"
-          ? "var(--ads-scroll-indicator-track-light-background-color)"
-          : "var(--ads-scroll-indicator-track-dark-background-color)"
-        : "var(--ads-scroll-indicator-track-light-background-color)"};
+          ? "var(--ads-scroll-indicator-light-track-background-color)"
+          : "var(--ads-scroll-indicator-dark-track-background-color)"
+        : "var(--ads-scroll-indicator-light-track-background-color)"};
   width: 4px;
 `;
 

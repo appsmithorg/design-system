@@ -16,7 +16,7 @@ type DropdownOption = {
   desc: string;
 };
 
-export type DropdownProps = CommonComponentProps & {
+type DropdownProps = CommonComponentProps & {
   options: DropdownOption[];
   onSelect: (selectedValue: DropdownOption) => void;
   selectedIndex: number;
@@ -64,7 +64,7 @@ const DropdownOption = styled.div<{
 
   &:hover {
     .${Classes.TEXT} {
-      color: var(--ads-table-dropdown-selected-text-color);
+      color: var(--ads-table-dropdown-selected-hover-text-color);
     }
   }
 `;

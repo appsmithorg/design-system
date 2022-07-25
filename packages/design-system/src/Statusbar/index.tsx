@@ -5,7 +5,7 @@ const Wrapper = styled.div<{ active: boolean }>`
   position: relative;
   width: 100%;
   background-color: ${(props) =>
-    props.active ? "var(--ads-statusbar-background-color)" : ""};
+    props.active ? "var(--ads-statusbar-active-background-color)" : ""};
   cursor: ${(props) => (props.active ? "default" : "pointer")};
   height: var(--ads-statusbar-height);
   transition: background-color 0.3s ease;
@@ -14,10 +14,10 @@ const Wrapper = styled.div<{ active: boolean }>`
     props.active &&
     `
       p {
-        color: var(--ads-statusbar-p-text-color);
+        color: var(--ads-statusbar-p-active-text-color);
       }
       svg {
-        fill: var(--ads-statusbar-svg-fill-color);
+        fill: var(--ads-statusbar-svg-active-fill-color);
       }
   `}
 

@@ -3,7 +3,7 @@
 
 :root {
   --ads-primary-color: var(--ads-color-orange-500);
-  --ads-normal-text-color: var(--ads-color-black-750);
+  --ads-primary-text-color: var(--ads-color-black-750);
 
   /** Naming convention for tokens
   *
@@ -125,7 +125,7 @@
   --ads-button-tab-svg-path-fill-color: var(--ads-old-color-gray-7);
 
   /** Text */
-  --ads-text-color: var(--ads-normal-text-color);
+  --ads-text-color: var(--ads-primary-text-color);
   --ads-text-heading-color: var(--ads-color-black-850);
   --ads-text-highlight-color: var(--ads-color-black-0);
 
@@ -183,17 +183,17 @@
 
   /** Numbered Step */
   --ads-numbered-step-text-color: var(--ads-color-black-250);
-  --ads-numbered-step-line-background-color: var(--ads-color-black);
+  --ads-numbered-step-line-background-color: var(--ads-old-color-black);
 
   /** Tabs */
-  --ads-tabs-list-text-color: var(--ads-old-color-gray-7);
-  --ads-tabs-list-svg-fill-color: var(--ads-color-black-0);
-  --ads-tabs-list-response-viewer-background-color: var(--ads-old-color-mercury);
+  --ads-tabs-default-tab-list-text-color: var(--ads-old-color-gray-7);
+  --ads-tabs-default-tab-list-svg-fill-color: var(--ads-color-black-0);
+  --ads-tabs-default-tab-list-response-viewer-background-color: var(--ads-old-color-mercury);
   --ads-tabs-list-focus-response-viewer-background-color: var(--ads-color-black-250);
-  --ads-tabs-list-selected-svg-fill-color: var(--ads-color-black-750);
-  --ads-tabs-list-selected-response-viewer-background-color: var(--ads-color-black-0);
-  --ads-tabs-list-selected-response-viewer-border-color: var(--ads-color-black-250);
-  --ads-tabs-list-selected-response-viewer-text-color: var(--ads-normal-text-color);
+  --ads-tabs-tab-selected-svg-fill-color: var(--ads-color-black-750);
+  --ads-tabs-tab-selected-response-viewer-background-color: var(--ads-color-black-0);
+  --ads-tabs-tab-selected-response-viewer-border-color: var(--ads-color-black-250);
+  --ads-tabs-tab-title-response-viewer-text-color: var(--ads-primary-text-color);
   --ads-tabs-count-background-color: var(--ads-old-color-mercury);
   --ads-tabs-title-wrapper-text-color: var(--ads-old-color-gray-7);
   --ads-tabs-title-wrapper-hover-text-color: var(--ads-color-black-750);
@@ -201,7 +201,7 @@
   --ads-tabs-title-wrapper-text-color: var(--ads-old-color-gray-7);
   
   /** Tab Item Background fill */
-  --ads-tab-item-text-color: var(--ads-normal-text-color);
+  --ads-tab-item-text-color: var(--ads-primary-text-color);
   --ads-tab-item-focus-background-color: var(--ads-color-black-75);
   --ads-tab-item-focus-text-color: var(--ads-color-black-900);
 
@@ -221,18 +221,18 @@
   --ads-gif-player-overlay-background-color: var(--ads-color-black-0);
 
   /** Scroll Indicator */
-  --ads-scroll-indicator-thumb-light-background-color: var(--ads-old-color-black-750-opacity-50);
-  --ads-scroll-indicator-track-light-background-color: var(--ads-old-color-white-opacity-50);
-  --ads-scroll-indicator-thumb-dark-background-color: var(--ads-old-color-alto-opacity-50);
-  --ads-scroll-indicator-track-dark-background-color: var(--ads-old-color-gray-10-opacity-50);
+  --ads-scroll-indicator-light-thumb-background-color: var(--ads-old-color-black-750-opacity-50);
+  --ads-scroll-indicator-light-track-background-color: var(--ads-old-color-white-opacity-50);
+  --ads-scroll-indicator-dark-thumb-background-color: var(--ads-old-color-alto-opacity-50);
+  --ads-scroll-indicator-dark-track-background-color: var(--ads-old-color-gray-10-opacity-50);
 
   /** Icon Selector */
   --ads-icon-selector-scrollbar-thumb-background-color: var(--ads-color-black-450);
   --ads-icon-selector-app-icon-background-color: var(--ads-color-black-25);
-  --ads-icon-selector-icon-fill-color: var(--ads-color-black-0);
+  --ads-icon-selector-selected-icon-fill-color: var(--ads-color-black-0);
 
   /** Multiswitch */
-  --ads-multiswitch-background-color: var(--ads-old-color-mercury);
+  --ads-multiswitch-tab-list-background-color: var(--ads-old-color-mercury);
   --ads-multiswitch-border-color: var(--ads-color-black-250);
   --ads-multiswitch-selected-background-color: var(--ads-color-black-0);
   --ads-multiswitch-tab-header-background-color: var(--ads-color-black-0);
@@ -259,18 +259,18 @@
   --ads-showcase-carousel-dot-active-background-color: var(--ads-primary-color);
 
   /** Statusbar */
-  --ads-statusbar-background-color: var(--ads-primary-color);
+  --ads-statusbar-active-background-color: var(--ads-primary-color);
   --ads-statusbar-height: 92px;
-  --ads-statusbar-p-text-color: var(--ads-color-black-0);
-  --ads-statusbar-svg-fill-color: var(--ads-color-black-0);
-  --ads-statusbar-status-text-color: var(--ads-color-black);
+  --ads-statusbar-p-active-text-color: var(--ads-color-black-0);
+  --ads-statusbar-svg-active-fill-color: var(--ads-color-black-0);
+  --ads-statusbar-status-text-color: var(--ads-old-color-black);
   --ads-statusbar-progress-bar-active-background-color: var(--ads-old-color-crusta);
   --ads-statusbar-progress-bar-background-color: var(--ads-color-black-0);
 
   /** TableDropdown  */
   --ads-table-dropdown-background-color: var(--ads-color-black-0);
   --ads-table-dropdown-selected-background-color: var(--ads-color-black-75);
-  --ads-table-dropdown-selected-text-color: var(--ads-color-black-850);
+  --ads-table-dropdown-selected-hover-text-color: var(--ads-color-black-850);
 
   /** Search Input */
   --ads-search-input-border-color: var(--ads-color-black-400);

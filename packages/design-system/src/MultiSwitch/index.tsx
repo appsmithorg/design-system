@@ -14,7 +14,7 @@ const TabList = styled.div`
   display: flex;
   align-items: center;
   height: 24px;
-  background-color: var(--ads-multiswitch-background-color);
+  background-color: var(--ads-multiswitch-tab-list-background-color);
   width: fit-content;
   margin-bottom: 12px;
   padding-left: 1px;

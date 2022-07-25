@@ -51,7 +51,7 @@ const IconBox = styled.div<{ selectedColor?: string }>`
       ? `.${Classes.APP_ICON} {
     svg {
       path {
-        fill: var(--ads-icon-selector-icon-fill-color);
+        fill: var(--ads-icon-selector-selected-icon-fill-color);
       }
     }
   }`

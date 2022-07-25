@@ -8,19 +8,17 @@ type WrapperProps = {
   vertical: boolean;
 };
 
-const getFocusedStyles = () => `
-  background-color: var(--ads-tab-item-focus-background-color);
-  color: var(--ads-tab-item-focus-text-color);
-  font-weight: 500;
-`;
-
 const Wrapper = styled.div<WrapperProps>`
   display: flex;
   ${getTypographyByKey("p1")}
 
   ${(props) =>
     props.selected
-      ? getFocusedStyles()
+      ? `
+      background-color: var(--ads-tab-item-focus-background-color);
+      color: var(--ads-tab-item-focus-text-color);
+      font-weight: 500;
+      `
       : `
       color: var(--ads-tab-item-text-color);
     `};
