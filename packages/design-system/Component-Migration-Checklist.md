@@ -9,23 +9,25 @@
     - [ ] All design system issues should have a design system pod label. Then, zenhub can track the issues.
     - [ ] All issues should have sprint added to it.
 - [ ]  Copy the files over to the [appsmith/design-system](http://github.com/appsmithorg/design-system/) repository.
-      - [ ]  Copy any unit test files over as well if they exist.
-      - [ ]  In the files, props.theme variables become variables used from variables.css
-      - [ ]  component-specific variables and tokens go in index.css (make sure you order this alphabetically)
-      - [ ]  Add stories for every state and variation of the component
-      - [ ]  Make sure to add the exports of the components you’ve added in the src/index.ts file
+    - [ ]  Copy any unit test files over as well if they exist.
+    - [ ]  In the files, props.theme variables become variables used from variables.css
+    - [ ]  component-specific variables and tokens go in index.css (make sure you order this alphabetically)
+    - [ ]  Add stories for every state and variation of the component
+    - [ ]  Make sure to add the exports of the components you’ve added in the src/index.ts file
 - [ ]  Create a branch to change the imports on appsmith/ce.
-      - [ ]  On this branch, delete the files for the component you’ve just migrated.
-      - [ ]  Everywhere the component was used, change the import to point to the design-system package instead.
-      - [ ] If you've migrated a component that is used a specific new places in the ee-repo, make updates there as well.
+    - [ ]  On this branch, delete the files for the component you’ve just migrated.
+    - [ ]  Everywhere the component was used, change the import to point to the design-system package instead.
+    - [ ] If you've migrated a component that is used a specific new places in the ee-repo, make updates there as well.
 - [ ]  Test the changes you’ve made and if the imports you’ve generated work as expected in your local developer environment of appsmith
-      - [ ]  install yalc on your system
-      - [ ]  run `yarn build` to build the package, then `yalc publish` to imitate the package being published
-      - [ ]  run `yalc add '@appsmithorg/design-system'` in the appsmith/ce repository
-      - [ ]  All the imports will now be named imports. for local testing purposes, they will come from `@appsmithorg/design-system` . Make sure to change these imports to just `design-system` when committing them.
+    - [ ]  install yalc on your system
+    - [ ]  run `yarn build` to build the package, then `yalc publish` to imitate the package being published
+    - [ ]  run `yalc add '@appsmithorg/design-system'` in the appsmith/ce repository
+    - [ ]  All the imports will now be named imports. for local testing purposes, they will come from `@appsmithorg/design-system` . Make sure to change these imports to just `design-system` when committing them.
+    - [ ]  Make sure you also test on ee, because ee is a superset of ce. If things break on ee, you will have to fix the specific import changes there as well.
 - [ ]  Raise a PR for the changes you’ve made in the design-system repository. Make sure you have added a changeset for the PR detailing what the PR will do.
 - [ ]  Once your changes on the design-system repository has been approved and merged to release, take the beta version number of our package under ‘current tags’ from the published npm page, and replace the version number of [this line](https://github.com/appsmithorg/appsmith/blob/8428ae506a02ec477027b82936ff003c0c53cafb/app/client/package.json#L48) with it on your branch. Test once again if the imports work as expected, then raise a PR for the changed imports in the appsmith/ce repository. [@appsmithorg/design-system](https://www.npmjs.com/package/@appsmithorg/design-system)
 - [ ]  Once the PR is raised, the deploy preview created will be given to QA for testing. To help them with that process, we will have to prepare a document of where the component is being used. Take a screenshot of the pages where the changes have happened, and then add them to the component usage spreadsheet: [Components usage](https://docs.google.com/spreadsheets/d/1np7jQdiQa0nyryOBnNa927NkGDplG9M2gb7qnoZIIyM/edit?usp=drivesdk)
+- [ ]  Ensure that QA signs off on both ce and ee repositories
 - [ ]  Minor versions are incremented every time release is merged into main. This is currently a manual process. Make sure that when you make this change, the package.json in appsmith/ce is updated accordingly.
 
 ## **Versioning ([NPM semantic versioning](https://docs.npmjs.com/about-semantic-versioning))**
