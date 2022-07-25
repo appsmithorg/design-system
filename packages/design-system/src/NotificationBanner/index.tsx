@@ -1,9 +1,8 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import Icon, { IconSize } from "Icon";
-import { Colors } from "constants/Colors";
 import { CloseButton } from "components/designSystems/appsmith/CloseButton";
-import { createMessage, LEARN_MORE } from "@appsmith/constants/messages";
+import { createMessage, LEARN_MORE } from "Constants/messages";
 
 export enum NotificationVariant {
   error,
@@ -100,7 +99,7 @@ const NOTIFICATION_VARIANT_MAP = {
   [NotificationVariant.enterprise]: (icon?: string) => ({
     icon: (
       <Icon
-        fillColor={Colors.CURIOUS_BLUE}
+        fillColor={"var(--ads-old-color-curious-blue)"}
         name={icon || "enterprise"}
         size={IconSize.XXL}
       />
@@ -147,7 +146,7 @@ const LearnMoreContainer = styled.div`
   margin-top: 8px;
 `;
 
-export function NotificationBanner(props: NotificationBannerProps) {
+export default function NotificationBanner(props: NotificationBannerProps) {
   const variant = props?.variant;
   const propIcon = props?.icon;
   const noLearnMoreArrow = props?.noLearnMoreArrow || false;

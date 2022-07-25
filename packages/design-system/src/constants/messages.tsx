@@ -25,3 +25,5 @@ export const EMOJI = () => "Emoji";
 export const NEXT = () => "NEXT";
 export const BACK = () => "BACK";
 export const SKIP = () => "SKIP";
+
+export const LEARN_MORE = () => "Learn More";
