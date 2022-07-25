@@ -40,6 +40,9 @@ export * from "./HighlightText";
 export { default as Icon } from "./Icon";
 export * from "./Icon";
 
+export { default as LabelWithTooltip } from "./LabelWithTooltip";
+export * from "./LabelWithTooltip";
+
 export { default as Menu } from "./Menu";
 export * from "./Menu";
 
