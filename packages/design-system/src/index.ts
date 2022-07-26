@@ -33,18 +33,42 @@ export * from "./DatePicker";
 export { default as DialogComponent } from "./DialogComponent";
 export * from "./DialogComponent";
 
+export { default as DisplayImageUpload } from "./DisplayImageUpload";
+export * from "./DisplayImageUpload";
+
+export { default as DraggableList } from "./DraggableList";
+export * from "./DraggableList";
+
 export { default as Dropdown } from "./Dropdown";
 export * from "./Dropdown";
 
 export * from "./DropdownV2";
+
+export { default as EmojiPicker } from "./EmojiPicker";
+export * from "./EmojiPicker";
+
+export { default as EmojiReactions } from "./EmojiReactions";
+export * from "./EmojiReactions";
+
+export { default as FieldError } from "./FieldError";
+export * from "./FieldError";
+
+export { default as GifPlayer } from "./GifPlayer";
+export * from "./GifPlayer";
 
 export * from "./HighlightText";
 
 export { default as Icon } from "./Icon";
 export * from "./Icon";
 
+export { default as IconSelector } from "./IconSelector";
+export * from "./IconSelector";
+
 export { default as LabelWithTooltip } from "./LabelWithTooltip";
 export * from "./LabelWithTooltip";
+
+export { default as SegmentHeader } from "./ListSegmentHeader";
+export * from "./ListSegmentHeader";
 
 export { default as Menu } from "./Menu";
 export * from "./Menu";
@@ -55,17 +79,38 @@ export * from "./MenuDivider";
 export { default as MenuItem } from "./MenuItem";
 export * from "./MenuItem";
 
+export { default as MultiSwitch } from "./MultiSwitch";
+export * from "./MultiSwitch";
+
+export { default as NumberedStep } from "./NumberedStep";
+export * from "./NumberedStep";
+
+export { default as ProgressiveImage } from "./ProgressiveImage";
+export * from "./ProgressiveImage";
+
 export { default as RadioComponent } from "./Radio";
 export * from "./Radio";
+
+export { default as RectangularSwitcher } from "./RectangularSwitcher";
+export * from "./RectangularSwitcher";
+
+export { default as ScrollIndicator } from "./ScrollIndicator";
+export * from "./ScrollIndicator";
 
 export { default as SearchComponent } from "./SearchComponent";
 export * from "./SearchComponent";
 
-export { default as SegmentHeader } from "./ListSegmentHeader";
-export * from "./ListSegmentHeader";
+export { default as SearchInput } from "./SearchInput";
+export * from "./SearchInput";
+
+export { default as ShowcaseCarousel } from "./ShowcaseCarousel";
+export * from "./ShowcaseCarousel";
 
 export { default as Spinner } from "./Spinner";
 export * from "./Spinner";
+
+export { default as Statusbar } from "./Statusbar";
+export * from "./Statusbar";
 
 export { default as Switch } from "./Switch";
 export * from "./Switch";
@@ -73,11 +118,22 @@ export * from "./Switch";
 export { default as Switcher } from "./Switcher";
 export * from "./Switcher";
 
+export * from "./Tabs";
+
+export { default as TabItemBackgroundFill } from "./TabItemBackgroundFill";
+export * from "./TabItemBackgroundFill";
+
+export { default as TableDropdown } from "./TableDropdown";
+export * from "./TableDropdown";
+
 export { default as TagInput } from "./TagInput";
 export * from "./TagInput";
 
 export { default as Text } from "./Text";
 export * from "./Text";
+
+export { default as TextField } from "./TextField";
+export * from "./TextField";
 
 export { default as TextInput } from "./TextInput";
 export * from "./TextInput";
