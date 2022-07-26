@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { InputGroup } from "@blueprintjs/core";
 import { debounce } from "lodash";
-import { ReactComponent as CrossIcon } from "assets/icons/ads/cross.svg";
-
-// TODO: Rename this component to SearchInput
+import { ReactComponent as CrossIcon } from "../assets/icons/ads/cross.svg";
 
 interface SearchProps {
   onSearch: (value: any) => void;
@@ -122,11 +120,11 @@ class SearchComponent extends React.Component<
           type="search"
           value={this.state.localValue}
         />
-        {/*{this.state.localValue && (*/}
-        {/*  <CrossIconWrapper onClick={this.clearSearch}>*/}
-        {/*    <CrossIcon className="cross-icon" />*/}
-        {/*  </CrossIconWrapper>*/}
-        {/*)}*/}
+        {this.state.localValue && (
+          <CrossIconWrapper onClick={this.clearSearch}>
+            <CrossIcon className="cross-icon" />
+          </CrossIconWrapper>
+        )}
       </SearchComponentWrapper>
     );
   }
