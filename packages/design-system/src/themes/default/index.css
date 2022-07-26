@@ -98,6 +98,7 @@
 
   /** Notification Banner */
   --ads-notification-banner-error-text-color: #C91818;
+  --ads-notification-banner-error-background-color:  var(--ads-old-color-fair-pink);
   --ads-notification-banner-light-enterprise-text-color: #E8F5FA;
   ----ads-notification-banner-dark-enterprise-text-color: #00407D;
 

@@ -35,7 +35,7 @@ const FlexContainer = styled.div`
   min-height: 56px;
 
   &.error {
-    background-color: var(--ads-old-color-fair-pink);
+    background-color: var(--ads-notification-banner-error-background-color);
     color: var(--ads-notification-banner-error-text-color);
   }
 
