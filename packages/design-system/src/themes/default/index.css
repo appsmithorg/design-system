@@ -189,7 +189,7 @@
   --ads-tabs-default-tab-list-text-color: var(--ads-old-color-gray-7);
   --ads-tabs-default-tab-list-svg-fill-color: var(--ads-color-black-0);
   --ads-tabs-default-tab-list-response-viewer-background-color: var(--ads-old-color-mercury);
-  --ads-tabs-list-focus-response-viewer-background-color: var(--ads-color-black-250);
+  --ads-tabs-default-tab-focus-response-viewer-border-color: var(--ads-color-black-250);
   --ads-tabs-tab-selected-svg-fill-color: var(--ads-color-black-750);
   --ads-tabs-tab-selected-response-viewer-background-color: var(--ads-color-black-0);
   --ads-tabs-tab-selected-response-viewer-border-color: var(--ads-color-black-250);
@@ -261,8 +261,8 @@
   /** Statusbar */
   --ads-statusbar-active-background-color: var(--ads-primary-color);
   --ads-statusbar-height: 92px;
-  --ads-statusbar-p-active-text-color: var(--ads-color-black-0);
-  --ads-statusbar-svg-active-fill-color: var(--ads-color-black-0);
+  --ads-statusbar-active-p-text-color: var(--ads-color-black-0);
+  --ads-statusbar-active-svg-fill-color: var(--ads-color-black-0);
   --ads-statusbar-status-text-color: var(--ads-old-color-black);
   --ads-statusbar-progress-bar-active-background-color: var(--ads-old-color-crusta);
   --ads-statusbar-progress-bar-background-color: var(--ads-color-black-0);

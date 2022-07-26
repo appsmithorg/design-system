@@ -14,10 +14,10 @@ const Wrapper = styled.div<{ active: boolean }>`
     props.active &&
     `
       p {
-        color: var(--ads-statusbar-p-active-text-color);
+        color: var(--ads-statusbar-active-p-text-color);
       }
       svg {
-        fill: var(--ads-statusbar-svg-active-fill-color);
+        fill: var(--ads-statusbar-active-svg-fill-color);
       }
   `}
 

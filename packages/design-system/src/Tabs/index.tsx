@@ -95,7 +95,7 @@ const TabsWrapper = styled.div<{
         cursor: pointer;
         height: 22px;
         padding: 0 12px;
-        border: 1px solid var(--ads-tabs-list-focus-response-viewer-background-color);
+        border: 1px solid var(--ads-tabs-default-tab-focus-response-viewer-border-color);
         margin-right: -1px;
         margin-left: -1px;
         margin-top: -2px;
