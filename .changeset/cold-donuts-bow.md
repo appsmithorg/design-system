@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-Enable cross icon
+Enable cross icon on the Search Component
