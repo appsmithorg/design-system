@@ -5,7 +5,7 @@ import { Alignment, Classes, Label } from "@blueprintjs/core";
 import { LabelPosition } from "Types/common";
 import { FontStyleTypes } from "Constants/typography";
 import Tooltip from "Tooltip";
-import { IconWrapper } from "Icon";
+import { IconProps, IconWrapper } from "Icon";
 import { ReactComponent as HelpIcon } from "../assets/icons/control/help.svg";
 
 export interface LabelWithTooltipProps {
@@ -300,9 +300,7 @@ const LabelWithTooltip = React.forwardRef<
           <ToolTipIcon
             color={"var(--ads-label-with-tooltip-default-icon-fill-color)"}
             compact={compact}
-            height={TOOLTIP_ICON_SIZE}
             position={position}
-            width={TOOLTIP_ICON_SIZE}
           >
             <HelpIcon className={cyHelpTextClassName} />
           </ToolTipIcon>
