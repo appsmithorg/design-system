@@ -15,6 +15,7 @@
     - [ ]  Add stories for every state and variation of the component
     - [ ]  Make sure to add the exports of the components you’ve added in the src/index.ts file
 - [ ]  Create a branch to change the imports on appsmith/ce.
+    - [ ]  First, check that there has been no deviation from the migrated file in the design-system repo with the current file in the appsmith repo. You can run the command `git log -1 --pretty="format:%ci" ./src/components/ads/[YOUR_COMPONENT_FILE]` and if the date returned is after the beginning of July, it was probably modified. You can paste both files in a diff checker like [diffchecker.com](diffchecker.com) to compare and update the files in the design-system repo.
     - [ ]  On this branch, delete the files for the component you’ve just migrated.
     - [ ]  Everywhere the component was used, change the import to point to the design-system package instead.
     - [ ] If you've migrated a component that is used a specific new places in the ee-repo, make updates there as well.
