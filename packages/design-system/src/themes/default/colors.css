@@ -92,24 +92,32 @@
 
   --ads-old-color-gallery-2: #EBEBEB;
   --ads-old-color-mercury: #E8E8E8;
+  --ads-old-color-pure-black: #000000;
+  --ads-old-color-burning-orange: #FF7742;
+  --ads-old-color-curious-blue: #1D9BD1;
+
   --ads-old-color-dove-gray-2: #716E6E;
   --ads-old-color-pigeon-post: #AEBAD9;
   --ads-old-color-royal-blue: #457AE6;
   --ads-old-color-silver: #C4C4C4;
   --ads-old-color-dove-gray-3: #6F6F6F;
 
+  --ads-old-color-crusta: #F86A2B;
+  --ads-old-color-black-pearl: #040627;
+  --ads-old-color-cornflower-blue: #6871EF;
+  --ads-old-color-jaffa: #F2994A;
+
+  /* Colors with opacity */
   --ads-old-color-black-750-opacity-50: #4b484880;
   --ads-old-color-alto-opacity-50: #D4D4D480;
   --ads-old-color-white-opacity-50: #FFFFFF80;
   --ads-old-color-gray-10-opacity-50: #09070780;
 
   /* intent colors */
-  --ads-old-color-black-pearl: #040627;
-  --ads-old-color-cornflower-blue: #6871EF;
   --ads-old-color-danger-red: #E22C2C;
-  --ads-old-color-jaffa: #F2994A;
-
-  --ads-old-color-crusta: #F86A2B;
+  --ads-old-warning-600: #DFA211;
+  --ads-old-error-600: #E32525;
   --ads-old-color-black : #000000;
+
 }
 
