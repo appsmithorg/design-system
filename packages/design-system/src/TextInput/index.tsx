@@ -12,7 +12,7 @@ import { Classes } from "Constants/classes";
 import { typography } from "Constants/typography";
 import { hexToRgba } from "Common/index";
 import { Classes as BlueprintClasses } from "@blueprintjs/core";
-import styled, { withTheme } from "styled-components";
+import styled from "styled-components";
 import Text, { TextType } from "Text";
 import {
   ERROR_MESSAGE_NAME_EMPTY,
@@ -453,4 +453,4 @@ const TextInput = forwardRef(
 
 TextInput.displayName = "TextInput";
 
-export default withTheme(TextInput);
+export default TextInput;
