@@ -69,7 +69,6 @@ export type TextInputProps = CommonComponentProps & {
   onChange?: (value: string) => void;
   readOnly?: boolean;
   dataType?: string;
-  theme?: any;
   leftIcon?: IconName;
   helperText?: string;
   rightSideComponent?: React.ReactNode;
@@ -95,11 +94,7 @@ type boxReturnType = {
   borderColor: string;
 };
 
-const boxStyles = (
-  props: TextInputProps,
-  isValid: boolean,
-  theme: any,
-): boxReturnType => {
+const boxStyles = (props: TextInputProps, isValid: boolean): boxReturnType => {
   let bgColor = "var(--ads-text-input-text-box-default-background-color)";
   let color = "var(--ads-text-input-text-box-default-text-color)";
   let borderColor = "var(--ads-text-input-text-box-default-border-color)";
@@ -148,7 +143,6 @@ const StyledInput = styled((props) => {
     "hasLeftIcon",
     "inputStyle",
     "rightSideComponentWidth",
-    "theme",
     "validator",
     "isValid",
     "cypressSelector",
@@ -324,10 +318,10 @@ const TextInput = forwardRef(
       }
     }, []);
 
-    const inputStyle = useMemo(
-      () => boxStyles(props, validation?.isValid, props.theme),
-      [props, validation?.isValid, props.theme],
-    );
+    const inputStyle = useMemo(() => boxStyles(props, validation?.isValid), [
+      props,
+      validation?.isValid,
+    ]);
 
     // set the default value
     useEffect(() => {
