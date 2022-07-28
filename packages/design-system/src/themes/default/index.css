@@ -44,7 +44,7 @@
   --ads-checkbox-disabled-checked-background-color: #2B2B2B;
   --ads-checkbox-disabled-checked-border-color: #2B2B2B;
   --ads-checkbox-default-unchecked-border-color: #404040;
-  --ads-checkbox-after-disabled-checked-border-color: #6D6D6D;
+  --ads-checkbox-after-disabled-checked-border-color: #939090;
   --ads-checkbox-after-default-checked-border-color: var(--ads-color-black-0);
   --ads-checkbox-label-text-color: var(--ads-old-color-alto);
 
@@ -199,7 +199,7 @@
   --ads-tabs-title-wrapper-hover-text-color: var(--ads-color-black-750);
   --ads-tabs-title-wrapper-icon-fill-color: var(--ads-old-color-gray-7);
   --ads-tabs-title-wrapper-text-color: var(--ads-old-color-gray-7);
-  
+
   /** Tab Item Background fill */
   --ads-tab-item-text-color: var(--ads-primary-text-color);
   --ads-tab-item-focus-background-color: var(--ads-color-black-75);
