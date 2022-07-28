@@ -7,8 +7,10 @@ import postcss from "rollup-plugin-postcss";
 import path from "path";
 import postcssImport from "postcss-import";
 import { terser } from "rollup-plugin-terser";
+import image from "@rollup/plugin-image";
 
 export default {
+  // TODO: Figure out regex where each directory can be a separate module without having to manually add them
   input: ["src/index.ts", "src/Tooltip/index.tsx"],
   output: [
     {
@@ -31,5 +33,6 @@ export default {
     url(),
     svgr(),
     terser(),
+    image(),
   ],
 };

@@ -1,4 +1,5 @@
 const path = require("path");
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 async function webpackConfig(config) {
 
@@ -27,6 +28,8 @@ async function webpackConfig(config) {
     }
   })
 
+  config.resolve.plugins.push(new TsconfigPathsPlugin());
+
   return config
 }
 
@@ -47,7 +50,24 @@ module.exports = {
         },
       },
     },
+    "storybook-zeplin/register",
   ],
   "framework": "@storybook/react",
   "webpackFinal": webpackConfig,
+  "babel": async (options) => {
+    options.plugins.push([
+      "babel-plugin-inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            {
+              "name": "removeViewBox",
+              "active": false
+            }
+          ]
+        }
+      }
+    ]);
+    return options;
+  }
 }

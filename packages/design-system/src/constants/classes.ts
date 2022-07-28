@@ -8,3 +8,5 @@ export enum Classes {
   MULTI_SELECT_BOX = "cs-multi-select-box",
   DATE_PICKER_OVARLAY = "date-picker-overlay",
 }
+
+export const replayHighlightClass = "ur--has-border";

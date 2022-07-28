@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "Assets/*": ["assets/*"],
+      "Types/*": ["types/*"],
+      "Constants/*": ["constants/*"],
+      "Common/*": ["common/*"],
+    },
     "strict": true,
     "declaration": true,
     "declarationDir": "build",
@@ -21,6 +28,7 @@
     "esModuleInterop": true,
     "noFallthroughCasesInSwitch": true,
     "typeRoots": [
+      "./typings",
       "./node_modules/@types"
     ],
     "skipLibCheck": true,

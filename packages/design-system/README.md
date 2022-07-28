@@ -30,6 +30,7 @@ yarn add @appsmithorg/design-system
 ```
 
 ## Including CSS
+
 Add css import in the root index css file
 ```bash
 @import "~@appsmithorg/design-system/build/css/design-system.css";
@@ -39,8 +40,52 @@ Add css import in the root index css file
 
 ```jsx
 import { TooltipComponent } from "@appsmithorg/design-system";
-ReactDOM.render(<TooltipComponent />, mountNode);
+
+<TooltipComponent content="Some useful content 🤷🏽‍♂️">
+  Hover here 😁
+</TooltipComponent>
 ```
+
+## Contribute
+
+```bash
+git clone https://github.com/appsmithorg/design-system.git
+```
+Get all dependencies with
+```bash 
+cd design-system/packages/design-system
+yarn install
+```
+
+Then run storybook in development and watch mode with
+```bash
+yarn run design-system:storybook
+```
+
+Any stories you write within `design-system/packages/design-system/src/**` will show up here. 
+
+To use your local version of the package, run 
+```bash
+yarn link
+```
+in this repository, then copy instruction it outputs into the root directory of the repository you want to use this package in. 
+Run
+```bash
+yarn install 
+```
+again to be able to import the components using 
+
+```jsx
+import { TooltipComponent } from "@appsmithorg/design-system";
+```
+
+### Create story template
+```
+yarn create-story -f <folder-name>
+```
+'folder-name' is the folder which holds the component which the story template is being created. This should be under 'src' folder.
+
+Happy playground testing!
 
 ## Links
 

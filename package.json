@@ -23,5 +23,12 @@
   "dependencies": {
     "@changesets/changelog-github": "^0.4.5",
     "@changesets/cli": "^2.23.0"
+  },
+  "resolutions": {
+    "trim-newlines": "3.0.1",
+    "glob-parent": "6.0.2",
+    "trim": "0.0.3",
+    "nth-check": "2.0.1",
+    "terser": "5.14.2"
   }
 }

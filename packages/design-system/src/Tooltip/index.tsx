@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { CommonComponentProps } from "../types/common";
+import { CommonComponentProps } from "Types/common";
 import {
   PopoverPosition,
   PopperBoundary,
@@ -41,7 +41,6 @@ const rootElementId = "tooltip-root";
 
 let portalContainer = document.getElementById(rootElementId);
 
-// @ts-expect-error: Tooltip type mismatch
 const TooltipWrapper = styled(Tooltip)<{
   width?: string;
   underline?: boolean;
