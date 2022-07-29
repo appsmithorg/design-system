@@ -11,6 +11,7 @@
     "declaration": true,
     "declarationDir": "build",
     "module": "esnext",
+    "allowJs": true,
     "target": "ES6",
     "lib": [
       "DOM",

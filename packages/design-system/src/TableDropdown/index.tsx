@@ -12,6 +12,7 @@ import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 
 type DropdownOption = {
+  id: string;
   name: string;
   desc: string;
 };
