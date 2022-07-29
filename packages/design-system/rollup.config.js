@@ -31,7 +31,9 @@ export default {
       extract: path.resolve("build/css/design-system.css"),
     }),
     url(),
-    svgr(),
+    svgr({
+      dimensions: false,
+    }),
     terser(),
     image(),
   ],

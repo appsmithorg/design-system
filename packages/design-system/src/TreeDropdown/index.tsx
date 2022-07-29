@@ -19,7 +19,7 @@ import {
   Position,
 } from "@blueprintjs/core";
 import styled from "styled-components";
-import { DropdownOption } from "../Dropdown";
+import { DropdownOption } from "Dropdown";
 import Icon, { IconSize } from "Icon";
 import { replayHighlightClass } from "Constants/classes";
 import useDSEvent from "Common/hooks/useDSEvent";
