@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.7
+
+### Patch Changes
+
+- [#82](https://github.com/appsmithorg/design-system/pull/82) [`74ad31c`](https://github.com/appsmithorg/design-system/commit/74ad31c525483d7cd0366a189e624863efa87f59) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - Added Jest configuration
+  Fixed svg viewBox trimming issue
+  Added sprint assignment to checklist
+
 ## 1.0.6
 
 ### Patch Changes
