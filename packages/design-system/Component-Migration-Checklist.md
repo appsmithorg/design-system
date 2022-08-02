@@ -4,6 +4,7 @@
 - [ ]  Create an issue for it on [appsmith/ce](http://github.com/appsmithorg/appsmith). Announce that you’re doing this on #design-system and #team-tech channel.
     - [ ] All PRs should have an issue.
     - [ ] All issues should have estimates.
+    - [ ] All issues should be assigned to sprint(s).
     - [ ] All migration-related issue goes inside the migration epic
     - [ ] All migration issues should have labels ads migration
     - [ ] All design system issues should have a design system pod label. Then, zenhub can track the issues.
