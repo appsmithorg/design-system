@@ -55,7 +55,7 @@ const EmptyStateText = styled.div`
  * COMPONENTS
  *-----------------------------------------------------------------------------
  */
-function Dropdown(props: IPopoverProps & Props) {
+function DropdownV2(props: IPopoverProps & Props) {
   const { children, enableSearch, searchPlaceholder, ...rest } = props;
 
   // Find the menu items from the children of dropdown and assign it
@@ -163,4 +163,4 @@ function DropdownItem(props: IMenuItemProps) {
 
 DropdownItem.displayName = "DropdownItem";
 
-export { Props, Dropdown, DropdownList, DropdownItem, DropdownTrigger };
+export { Props, DropdownV2, DropdownList, DropdownItem, DropdownTrigger };
