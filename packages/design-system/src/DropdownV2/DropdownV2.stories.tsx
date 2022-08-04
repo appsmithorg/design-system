@@ -1,9 +1,8 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-
 import {
   Props,
-  Dropdown,
+  DropdownV2,
   DropdownList,
   DropdownItem,
   DropdownTrigger,
@@ -12,8 +11,8 @@ import { IMenuItemProps, IMenuProps, IPopoverProps } from "@blueprintjs/core";
 
 export default {
   title: "Design System/Dropdown V2",
-  component: Dropdown,
-} as ComponentMeta<typeof Dropdown>;
+  component: DropdownV2,
+} as ComponentMeta<typeof DropdownV2>;
 
 const DropdownItemTemplate: ComponentStory<typeof DropdownItem> = (
   args: IMenuItemProps,
@@ -51,9 +50,9 @@ DropdownTriggerExample.args = {
   children: <button>Click me</button>,
 };
 
-const DropdownTemplate: ComponentStory<typeof Dropdown> = (
+const DropdownTemplate: ComponentStory<typeof DropdownV2> = (
   args: IPopoverProps & Props,
-) => <Dropdown {...args} />;
+) => <DropdownV2 {...args} />;
 
 export const DropdownExample = DropdownTemplate.bind({});
 DropdownExample.storyName = "Dropdown";
