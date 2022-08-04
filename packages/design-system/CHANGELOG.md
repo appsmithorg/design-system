@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.8
+
+### Patch Changes
+
+- [#87](https://github.com/appsmithorg/design-system/pull/87) [`d506fd1`](https://github.com/appsmithorg/design-system/commit/d506fd1a6b5aec7dc8596ba16d5f9e24d25e539d) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - Fix: Clashing dropdown exports
+
 ## 1.0.7
 
 ### Patch Changes
