@@ -1,5 +1,15 @@
 # @appsmithorg/design-system
 
+## 1.0.9
+
+### Patch Changes
+
+- [#90](https://github.com/appsmithorg/design-system/pull/90) [`2c4ec92`](https://github.com/appsmithorg/design-system/commit/2c4ec92b08e5b073de94001115dad45fd0e03c9d) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - Add exports for Radio, Notificationbanner
+  Add some more unused tests
+  Update LabelWithTooltip from ce before deleting the file there
+
+* [#92](https://github.com/appsmithorg/design-system/pull/92) [`dc57c6e`](https://github.com/appsmithorg/design-system/commit/dc57c6e700f8fa0fe328f070e0f48f2c6c4ab0c8) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Treedropdown icon and intent prop type
+
 ## 1.0.8
 
 ### Patch Changes
