@@ -85,6 +85,9 @@ export * from "./MultiSwitch";
 export { default as NumberedStep } from "./NumberedStep";
 export * from "./NumberedStep";
 
+export { default as NotificationBanner } from "./NotificationBanner";
+export * from "./NotificationBanner";
+
 export { default as ProgressiveImage } from "./ProgressiveImage";
 export * from "./ProgressiveImage";
 
