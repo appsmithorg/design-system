@@ -19,19 +19,25 @@ import {
   Position,
 } from "@blueprintjs/core";
 import styled from "styled-components";
-import { DropdownOption } from "Dropdown";
 import Icon, { IconSize } from "Icon";
 import { replayHighlightClass } from "Constants/classes";
 import useDSEvent from "Common/hooks/useDSEvent";
 import { DSEventTypes } from "Types/common";
 import { typography } from "Constants/typography";
+import { Intent as BlueprintIntent } from "@blueprintjs/core";
+import { IconName } from "@blueprintjs/icons";
 
-export type TreeDropdownOption = DropdownOption & {
+export type TreeDropdownOption = {
+  label: string;
+  value: string;
+  subText?: string;
+  id?: string;
+  intent?: BlueprintIntent;
   onSelect?: (value: TreeDropdownOption, setter?: Setter) => void;
   children?: TreeDropdownOption[];
   className?: string;
   type?: string;
-  icon?: React.ReactNode;
+  icon?: IconName;
   isChildrenOpen?: boolean;
   selfIndex?: number[];
   args?: Array<any>;
