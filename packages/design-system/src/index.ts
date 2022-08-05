@@ -24,6 +24,8 @@ export * from "./ColorPicker";
 export { default as ColorSelector } from "./ColorSelector";
 export * from "./ColorSelector";
 
+export * from "./ControlIcons";
+
 export { default as CopyToClipboard } from "./CopyToClipboard";
 export * from "./CopyToClipboard";
 
@@ -82,11 +84,11 @@ export * from "./MenuItem";
 export { default as MultiSwitch } from "./MultiSwitch";
 export * from "./MultiSwitch";
 
-export { default as NumberedStep } from "./NumberedStep";
-export * from "./NumberedStep";
-
 export { default as NotificationBanner } from "./NotificationBanner";
 export * from "./NotificationBanner";
+
+export { default as NumberedStep } from "./NumberedStep";
+export * from "./NumberedStep";
 
 export { default as ProgressiveImage } from "./ProgressiveImage";
 export * from "./ProgressiveImage";
@@ -121,13 +123,13 @@ export * from "./Switch";
 export { default as Switcher } from "./Switcher";
 export * from "./Switcher";
 
-export * from "./Tabs";
-
 export { default as TabItemBackgroundFill } from "./TabItemBackgroundFill";
 export * from "./TabItemBackgroundFill";
 
 export { default as TableDropdown } from "./TableDropdown";
 export * from "./TableDropdown";
+
+export * from "./Tabs";
 
 export { default as TagInput } from "./TagInput";
 export * from "./TagInput";
