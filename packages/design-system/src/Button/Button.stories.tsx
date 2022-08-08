@@ -26,6 +26,11 @@ const Template: ComponentStory<typeof ButtonComponent> = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
   category: "primary",
+  onClick: (e) => {
+    alert("Clicked");
+    // eslint-disable-next-line no-console
+    console.log("Clicked ", e);
+  },
 };
 
 export const Secondary = Template.bind({});

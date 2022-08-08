@@ -434,6 +434,7 @@ const ButtonStyles = css<ButtonProps>`
   color: ${(props) => btnColorStyles(props, "main").txtColor};
   border: ${(props) => btnColorStyles(props, "main").border};
   border-radius: 0;
+  ${({ isLoading }) => isLoading && "pointer-events: none"};
   ${(props) => btnFontStyles(props).buttonFont};
   padding: ${(props) => btnFontStyles(props).padding};
   .${Classes.ICON}:not([name="no-response"]) {
@@ -563,9 +564,6 @@ function ButtonComponent(props: ButtonProps) {
       className={props.className}
       data-cy={props.cypressSelector}
       {..._.omit(props, omitProps)}
-      onClick={(e: React.MouseEvent<HTMLElement>) =>
-        props.onClick && !props.isLoading && props.onClick(e)
-      }
     >
       {getButtonContent(props)}
     </StyledButton>
@@ -579,9 +577,6 @@ function LinkButtonComponent(props: ButtonProps) {
       data-cy={props.cypressSelector}
       href={props.href}
       {...props}
-      onClick={(e: React.MouseEvent<HTMLElement>) =>
-        props.onClick && props.onClick(e)
-      }
     >
       {getButtonContent(props)}
     </StyledLinkButton>
