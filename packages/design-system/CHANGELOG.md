@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.11
+
+### Patch Changes
+
+- [#100](https://github.com/appsmithorg/design-system/pull/100) [`cedb54d`](https://github.com/appsmithorg/design-system/commit/cedb54d0f357389f5db571fdb5a20ad3c675885d) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added button test
+
 ## 1.0.10
 
 ### Patch Changes
