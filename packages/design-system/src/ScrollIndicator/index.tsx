@@ -49,6 +49,7 @@ interface Props {
   bottom?: string;
   right?: string;
   alwaysShowScrollbar?: boolean;
+  showScrollbarOnHover?: boolean;
   mode?: "DARK" | "LIGHT";
 }
 function ScrollIndicator({
@@ -57,6 +58,7 @@ function ScrollIndicator({
   containerRef,
   right,
   top,
+  showScrollbarOnHover = false,
 }: Props) {
   const [{ thumbPosition }, setThumbPosition] = useSpring<{
     thumbPosition: number;
@@ -106,6 +108,11 @@ function ScrollIndicator({
   }, []);
 
   useEffect(() => {
+    // showScrollbarOnHover prop if true will bypass hideScrollbar functionality
+    // as hideScrollbar behaviour conflicts with "hover to show scrollbar" functionality
+    if (showScrollbarOnHover) {
+      return;
+    }
     if (isScrollVisible) {
       hideScrollbar();
     }
@@ -114,6 +121,30 @@ function ScrollIndicator({
   const hideScrollbar = _.debounce(() => {
     setIsScrollVisible(alwaysShowScrollbar || false);
   }, 1500);
+
+  useEffect(() => {
+    // This useEffect adds events to show/hide scrollbar when showScrollBarOnHover prop is true
+    if (showScrollbarOnHover) {
+      containerRef.current?.setAttribute("hoverListeners", "true");
+      containerRef.current?.addEventListener("mouseenter", () =>
+        setIsScrollVisible(true),
+      );
+      containerRef.current?.addEventListener("mouseleave", () =>
+        setIsScrollVisible(false),
+      );
+    }
+    return () => {
+      if (containerRef.current?.getAttribute("hoverListeners")) {
+        containerRef.current?.removeEventListener("mouseenter", () =>
+          setIsScrollVisible(true),
+        );
+        containerRef.current?.removeEventListener("mouseleave", () =>
+          setIsScrollVisible(false),
+        );
+      }
+    };
+  }, []);
+
   return (
     <ScrollTrack
       bottom={bottom}
