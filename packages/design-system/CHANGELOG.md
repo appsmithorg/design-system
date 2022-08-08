@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.10
+
+### Patch Changes
+
+- [#96](https://github.com/appsmithorg/design-system/pull/96) [`81b2848`](https://github.com/appsmithorg/design-system/commit/81b2848a12dc36da31f981f880a402ff1e38bea7) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - Update HighlightText from ee
+
+* [#94](https://github.com/appsmithorg/design-system/pull/94) [`f361147`](https://github.com/appsmithorg/design-system/commit/f361147a21aa49db92d1ac1ff46e8763de3c41ba) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - Update scroll indicator on hover behavior
+
 ## 1.0.9
 
 ### Patch Changes
