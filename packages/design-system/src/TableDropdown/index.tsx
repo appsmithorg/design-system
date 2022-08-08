@@ -11,15 +11,15 @@ import Text, { TextType } from "Text";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 
-type DropdownOption = {
+export type TableDropdownOption = {
   id: string;
   name: string;
   desc: string;
 };
 
 type DropdownProps = CommonComponentProps & {
-  options: DropdownOption[];
-  onSelect: (selectedValue: DropdownOption) => void;
+  options: TableDropdownOption[];
+  onSelect: (selectedValue: TableDropdownOption) => void;
   selectedIndex: number;
   position?: Position;
   selectedTextWidth?: string;
@@ -131,7 +131,7 @@ function TableDropdown(props: DropdownProps) {
         </SelectedItem>
       </Content>
       <OptionsWrapper>
-        {props.options.map((el: DropdownOption, index: number) => (
+        {props.options.map((el: TableDropdownOption, index: number) => (
           <DropdownOption
             isSelected={selectedIndex === index}
             key={index}
