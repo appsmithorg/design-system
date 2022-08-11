@@ -131,6 +131,7 @@
   ],
   "dependencies": {
     "@blueprintjs/datetime": "3.23.6",
+    "@types/react-form": "^4.0.2",
     "@types/react-table": "^7.7.12",
     "@types/redux-form": "8.3.0",
     "copy-to-clipboard": "^3.3.1",
