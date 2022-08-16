@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.13
+
+### Patch Changes
+
+- [#111](https://github.com/appsmithorg/design-system/pull/111) [`4b591ee`](https://github.com/appsmithorg/design-system/commit/4b591ee31bff46d12660fbb584efd13ae5396874) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - chore: sync LabelWithTooltip and Dropdown
+
+* [#109](https://github.com/appsmithorg/design-system/pull/109) [`8fc60ea`](https://github.com/appsmithorg/design-system/commit/8fc60ea238ad20ec34a21d799273c851dfdc709d) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Button and ButtonTab component issue in onclick functions
+
 ## 1.0.12
 
 ### Patch Changes
