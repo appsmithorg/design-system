@@ -116,6 +116,7 @@ export type DropdownProps = CommonComponentProps &
     allowDeselection?: boolean; //prevents de-selection of the selected option
     truncateOption?: boolean; // enabled wrapping and adding tooltip on option item of dropdown menu
     portalClassName?: string;
+    portalContainer?: HTMLElement;
     customBadge?: JSX.Element;
     selectedHighlightBg?: string;
     showEmptyOptions?: boolean;
@@ -1296,6 +1297,7 @@ export default function Dropdown(props: DropdownProps) {
         onInteraction={(state) => !disabled && setIsOpen(state)}
         popoverClassName={`${props.className} none-shadow-popover`}
         portalClassName={props.portalClassName}
+        portalContainer={props.portalContainer}
         position={Position.BOTTOM_LEFT}
         usePortal={!props.dontUsePortal}
       >
