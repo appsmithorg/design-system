@@ -28,6 +28,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
     "typeRoots": [
       "./typings",
       "./node_modules/@types"
