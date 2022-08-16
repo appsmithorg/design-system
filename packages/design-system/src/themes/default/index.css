@@ -273,6 +273,12 @@
   --ads-statusbar-progress-bar-active-background-color: var(--ads-old-color-crusta);
   --ads-statusbar-progress-bar-background-color: var(--ads-color-black-0);
 
+  /** StepComponent */
+  --ads-step-component-wrapper-background-color: var(--ads-color-black-250);
+  --ads-step-component-wrapper-svg-fill-color: var(--ads-color-black-750);
+  --ads-step-component-input-wrapper-text-color: var(--ads-color-black-750);
+  --ads-step-component-input-wrapper-background-color: var(--ads-color-black-0);
+
   /** TableDropdown  */
   --ads-table-dropdown-background-color: var(--ads-color-black-0);
   --ads-table-dropdown-selected-background-color: var(--ads-color-black-75);

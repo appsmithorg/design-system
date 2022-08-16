@@ -117,6 +117,9 @@ export * from "./Spinner";
 export { default as Statusbar } from "./Statusbar";
 export * from "./Statusbar";
 
+export { default as StepCompoent } from "./StepComponent";
+export * from "./StepComponent";
+
 export { default as Switch } from "./Switch";
 export * from "./Switch";
 
