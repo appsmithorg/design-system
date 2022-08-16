@@ -58,9 +58,10 @@ interface ButtonTabComponentProps {
 // eslint-disable-next-line react/display-name
 const ButtonTabComponent = React.forwardRef(
   (props: ButtonTabComponentProps, ref: any) => {
-    const valueSet = new Set(props.values);
+    const { options, selectButton, values } = props;
+    const valueSet = new Set(values);
     let firstValueIndex = 0;
-    for (const [i, x] of props.options.entries()) {
+    for (const [i, x] of options.entries()) {
       if (valueSet.has(x.value)) {
         firstValueIndex = i;
         break;
@@ -93,20 +94,20 @@ const ButtonTabComponent = React.forwardRef(
         case "Right":
           emitKeyPressEvent(e.key);
           setFocusedIndex((prev) =>
-            prev === props.options.length - 1 ? 0 : prev + 1,
+            prev === options.length - 1 ? 0 : prev + 1,
           );
           break;
         case "ArrowLeft":
         case "Left":
           emitKeyPressEvent(e.key);
           setFocusedIndex((prev) =>
-            prev === 0 ? props.options.length - 1 : prev - 1,
+            prev === 0 ? options.length - 1 : prev - 1,
           );
           break;
         case "Enter":
         case " ":
           emitKeyPressEvent(e.key);
-          props.selectButton(props.options[focusedIndex].value, true);
+          selectButton(options[focusedIndex].value, true);
           e.preventDefault();
           break;
         case "Tab":
@@ -124,7 +125,7 @@ const ButtonTabComponent = React.forwardRef(
         role="tablist"
         tabIndex={0}
       >
-        {props.options.map(
+        {options.map(
           ({ icon, value, width = 24 }: ButtonTabOption, index: number) => {
             let ControlIcon;
             if (_.isString(icon)) {
@@ -142,7 +143,7 @@ const ButtonTabComponent = React.forwardRef(
                 }`}
                 key={index}
                 onClick={() => {
-                  props.selectButton(value, false);
+                  selectButton(value, false);
                   setFocusedIndex(index);
                 }}
                 role="tab"
