@@ -3,9 +3,9 @@ name: Workflow for push and PR
 
 on:
   push:
-  pull_request:
-    branches:
-      - release
+  # pull_request:
+  #   branches:
+  #     - release
 
 defaults:
   run:
