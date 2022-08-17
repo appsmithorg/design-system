@@ -28,9 +28,20 @@ jobs:
       # yarn build to build the project
       - name: Build package
         run: yarn build
+
+        # Configure npm
+      - name: Configure npm
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.APPSMITH_NPM_PUBLISH_KEY }}
+          
       # publish the files to NPM
       - name: Publish package and tag as beta
         run: npm publish --access public --tag beta
       # for publishing, npm need authorization. We add the NPM token to the environment which will take care of authorization to publish to the package
         env:
-          NODE_AUTH_TOKEN: ${{secrets.APPSMITH_NPM_PUBLISH_KEY}}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
