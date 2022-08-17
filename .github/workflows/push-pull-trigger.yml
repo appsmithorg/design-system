@@ -1,0 +1,18 @@
+# Workflow trigger on any push and pull request
+name: Workflow for push and PR
+
+on:
+  push:
+  pull_request:
+    branches:
+      - release
+
+defaults:
+  run:
+    working-directory: packages/design-system
+
+# Job will run on a ubuntu instance
+jobs:
+  build-design-system:
+    uses: ./.github/workflows/Lib-build-design-system.yml
+    name: build-design-system
