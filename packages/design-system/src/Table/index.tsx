@@ -20,9 +20,9 @@ const Styles = styled.div`
           text-align: left;
           color: var(--ads-table-table-header-text-color);
           font-weight: ${typography.h6.fontWeight};
-          font-size: ${typography.h6.fontSize};
-          line-height: ${typography.h6.lineHeight};
-          letter-spacing: ${typography.h6.letterSpacing};
+          font-size: ${typography.h6.fontSize}px;
+          line-height: ${typography.h6.lineHeight}px;
+          letter-spacing: ${typography.h6.letterSpacing}px;
 
           svg {
             margin-left: var(--ads-spaces-2);
@@ -52,9 +52,9 @@ const Styles = styled.div`
         td {
           padding: var(--ads-spaces-4) var(--ads-spaces-9);
           color: var(--ads-table-table-row-table-data-default-text-color);
-          font-size: ${typography.p1.fontSize};
-          line-height: ${typography.p1.lineHeight};
-          letter-spacing: ${typography.p1.letterSpacing};
+          font-size: ${typography.p1.fontSize}px;
+          line-height: ${typography.p1.lineHeight}px;
+          letter-spacing: ${typography.p1.letterSpacing}px;
           font-weight: normal;
           border-bottom: 1px solid
             var(--ads-table-table-row-table-data-border-bottom-color);
