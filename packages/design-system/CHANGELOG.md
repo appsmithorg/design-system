@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.14
+
+### Patch Changes
+
+- [#116](https://github.com/appsmithorg/design-system/pull/116) [`538ca0f`](https://github.com/appsmithorg/design-system/commit/538ca0f561f0073663ec83842fc140a87a705910) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: Migrate Table, Uneditable Field, Step Component
+
+* [#113](https://github.com/appsmithorg/design-system/pull/113) [`7511e4c`](https://github.com/appsmithorg/design-system/commit/7511e4cfb615e59df9f382c8b6b8d4ceb3576e54) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added taginput changes for showing suggetion
+
 ## 1.0.13
 
 ### Patch Changes
