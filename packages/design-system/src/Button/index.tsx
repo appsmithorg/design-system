@@ -558,12 +558,12 @@ const getButtonContent = (props: ButtonProps) => {
 
 function ButtonComponent(props: ButtonProps) {
   const { className, cypressSelector, isLoading, onClick } = props;
-  const omitProps = ["fill"];
+  const filteredProps = _.omit(props, ["fill"]);
   return (
     <StyledButton
       className={className}
       data-cy={cypressSelector}
-      {..._.omit(props, omitProps)}
+      {...filteredProps}
       onClick={(e: React.MouseEvent<HTMLElement>) =>
         onClick && !isLoading && onClick(e)
       }
