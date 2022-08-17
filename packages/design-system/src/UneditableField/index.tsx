@@ -24,34 +24,30 @@ const InputCopyWrapper = styled.div`
   }
 `;
 
-const UneditableField = (
-  componentProps: FormUneditableTextFieldProps & {
-    meta: any;
-    // meta: Partial<WrappedFieldMetaProps>;
-    input: any;
-    // input: Partial<WrappedFieldInputProps>;
-  },
-) => {
-  return (
-    <>
-      {componentProps.label && <Label>{componentProps.label}</Label>}
-      <InputCopyWrapper>
-        <InputComponent {...componentProps} {...componentProps.input} fill />
-        {componentProps.iscopy === "true" && (
-          <CopyIcon
-            className={"copy-icon"}
-            color="var(--ads-old-color-gray-7)"
-            height={16}
-            onClick={() =>
-              componentProps.handleCopy(componentProps.input.value)
-            }
-            width={16}
-          />
-        )}
-      </InputCopyWrapper>
-    </>
-  );
+type UneditableFieldPropType = FormUneditableTextFieldProps & {
+  meta: any;
+  // meta: Partial<WrappedFieldMetaProps>;
+  input: any;
+  // input: Partial<WrappedFieldInputProps>;
 };
+
+export const UneditableField = (componentProps: UneditableFieldPropType) => (
+  <>
+    {componentProps.label && <Label>{componentProps.label}</Label>}
+    <InputCopyWrapper>
+      <InputComponent {...componentProps} {...componentProps.input} fill />
+      {componentProps.iscopy === "true" && (
+        <CopyIcon
+          className={"copy-icon"}
+          color="var(--ads-old-color-gray-7)"
+          height={16}
+          onClick={() => componentProps.handleCopy(componentProps.input.value)}
+          width={16}
+        />
+      )}
+    </InputCopyWrapper>
+  </>
+);
 
 export type FormUneditableTextFieldProps = {
   name: string;
@@ -65,7 +61,7 @@ export type FormUneditableTextFieldProps = {
   handleCopy: (value: string) => void;
 };
 
-// function UneditableField(props: FormTextFieldProps) {
+// function UneditableField(props: FormUneditableTextFieldProps) {
 // TODO: The line below should replace all usages of UneditableField in ce
 //   return <Field component={UneditableField} {...props} asyncControl />;
 // }
