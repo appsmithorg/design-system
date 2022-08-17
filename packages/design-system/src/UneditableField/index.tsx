@@ -1,13 +1,9 @@
 import React from "react";
-import {
-  WrappedFieldMetaProps,
-  WrappedFieldInputProps,
-} from "@types/redux-form";
 import InputComponent, { InputType } from "../TextInput";
 import styled from "styled-components";
-import { HelpIcons } from "icons/HelpIcons";
+import { ControlIcons } from "../ControlIcons";
 
-const CopyIcon = HelpIcons.COPY_ICON;
+const CopyIcon = ControlIcons.COPY_ICON;
 
 const Label = styled.div`
   font-size: 14px;
@@ -29,9 +25,11 @@ const InputCopyWrapper = styled.div`
 `;
 
 const UneditableField = (
-  componentProps: FormTextFieldProps & {
-    meta: Partial<WrappedFieldMetaProps>;
-    input: Partial<WrappedFieldInputProps>;
+  componentProps: FormUneditableTextFieldProps & {
+    meta: any;
+    // meta: Partial<WrappedFieldMetaProps>;
+    input: any;
+    // input: Partial<WrappedFieldInputProps>;
   },
 ) => {
   return (
