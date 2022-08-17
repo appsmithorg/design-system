@@ -6,7 +6,7 @@ import {
   INVITE_USERS_VALIDATION_EMAIL_LIST,
 } from "Constants/messages";
 import { isEmail } from "Common/index";
-import HighlightText from "HighlightText";
+import { HighlightText } from "HighlightText";
 
 const TagInputWrapper = styled.div`
   margin-right: 8px;
