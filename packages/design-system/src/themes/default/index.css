@@ -279,6 +279,20 @@
   --ads-step-component-input-wrapper-text-color: var(--ads-color-black-750);
   --ads-step-component-input-wrapper-background-color: var(--ads-color-black-0);
 
+  /** Table */
+  --ads-table-table-row-background-color : var(--ads-color-black-25);
+  --ads-table-table-header-default-text-color : var(--ads-color-black-470);
+  --ads-table-table-header-hover-text-color: var(--ads-color-black-850);
+  --ads-table-table-header-hover-icon-path-color: var(--ads-color-black-850);
+  --ads-table-table-row-first-table-data-default-text-color: var(--ads-color-black-850);
+  --ads-table-table-row-table-data-default-text-color: var(--ads-color-black-550);
+  --ads-table-table-row-table-data-border-bottom-color: var(--ads-old-color-mercury);
+  --ads-table-table-row-hover-background-color : var(--ads-color-black-75);
+  --ads-table-table-row-hover-icon-path-color: var(--ads-old-color-gray-10);
+  --ads-table-table-row-first-table-data-hover-text-color: var(--ads-old-color-gray-10);
+  --ads-table-table-row-table-data-hover-text-color: var(--ads-color-black-850);
+
+
   /** TableDropdown  */
   --ads-table-dropdown-background-color: var(--ads-color-black-0);
   --ads-table-dropdown-selected-background-color: var(--ads-color-black-75);

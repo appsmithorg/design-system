@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ReactComponent as DownArrow } from "../assets/icons/ads/down_arrow.svg";
 import { ReactComponent as UpperArrow } from "../assets/icons/ads/upper_arrow.svg";
 import { Classes } from "Constants/classes";
+import { typography } from "Constants/typography";
 
 const Styles = styled.div`
   table {
@@ -12,30 +13,28 @@ const Styles = styled.div`
 
     thead {
       tr {
-        background-color: ${(props) => props.theme.colors.table.headerBg};
+        background-color: var(--ads-table-table-row-background-color);
 
         th {
-          padding: ${(props) => props.theme.spaces[5]}px
-            ${(props) => props.theme.spaces[9]}px;
+          padding: var(--ads-spaces-5) var(--ads-spaces-9);
           text-align: left;
-          color: ${(props) => props.theme.colors.table.headerText};
-          font-weight: ${(props) => props.theme.fontWeights[1]};
-          font-size: ${(props) => props.theme.typography.h6.fontSize}px;
-          line-height: ${(props) => props.theme.typography.h6.lineHeight}px;
-          letter-spacing: ${(props) =>
-            props.theme.typography.h6.letterSpacing}px;
+          color: var(--ads-table-table-header-text-color);
+          font-weight: ${typography.h6.fontWeight};
+          font-size: ${typography.h6.fontSize};
+          line-height: ${typography.h6.lineHeight};
+          letter-spacing: ${typography.h6.letterSpacing};
 
           svg {
-            margin-left: ${(props) => props.theme.spaces[2]}px;
-            margin-bottom: ${(props) => props.theme.spaces[0] + 1}px;
+            margin-left: var(--ads-spaces-2);
+            margin-bottom: calc(var(--ads-spaces-0) + 1px);
           }
 
           &:hover {
-            color: ${(props) => props.theme.colors.table.hover.headerColor};
+            color: var(--ads-table-table-header-hover-text-color);
             cursor: pointer;
             svg {
               path {
-                fill: ${(props) => props.theme.colors.table.hover.headerColor};
+                fill: var(--ads-table-table-header-hover-icon-path-color);
               }
             }
           }
@@ -46,34 +45,33 @@ const Styles = styled.div`
     tbody {
       tr {
         td:first-child {
-          color: ${(props) => props.theme.colors.table.rowTitle};
-          font-weight: ${(props) => props.theme.fontWeights[1]};
+          color: var(--ads-table-table-row-first-table-data-default-text-color);
+          font-weight: var(--ads-font-weight-normal);
         }
 
         td {
-          padding: ${(props) => props.theme.spaces[4]}px
-            ${(props) => props.theme.spaces[9]}px;
-          color: ${(props) => props.theme.colors.table.rowData};
-          font-size: ${(props) => props.theme.typography.p1.fontSize}px;
-          line-height: ${(props) => props.theme.typography.p1.lineHeight}px;
-          letter-spacing: ${(props) =>
-            props.theme.typography.p1.letterSpacing}px;
+          padding: var(--ads-spaces-4) var(--ads-spaces-9);
+          color: var(--ads-table-table-row-table-data-default-text-color);
+          font-size: ${typography.p1.fontSize};
+          line-height: ${typography.p1.lineHeight};
+          letter-spacing: ${typography.p1.letterSpacing};
           font-weight: normal;
-          border-bottom: 1px solid ${(props) => props.theme.colors.table.border};
+          border-bottom: 1px solid
+            var(--ads-table-table-row-table-data-border-bottom-color);
         }
 
         &:hover {
-          background-color: ${(props) => props.theme.colors.table.hover.rowBg};
+          background-color: var(--ads-table-table-row-hover-background-color);
           .${Classes.ICON} {
             path {
-              fill: ${(props) => props.theme.colors.table.hover.rowTitle};
+              fill: var(--ads-table-table-row-hover-icon-path-color);
             }
           }
           td:first-child {
-            color: ${(props) => props.theme.colors.table.hover.rowTitle};
+            color: var(--ads-table-table-row-first-table-data-hover-text-color);
           }
           td {
-            color: ${(props) => props.theme.colors.table.hover.rowData};
+            color: var(--ads-table-table-row-table-data-hover-text-color);
           }
         }
       }
