@@ -1,5 +1,8 @@
 import React from "react";
-import { WrappedFieldMetaProps, WrappedFieldInputProps } from "redux-form";
+import {
+  WrappedFieldMetaProps,
+  WrappedFieldInputProps,
+} from "@types/redux-form";
 import InputComponent, { InputType } from "../TextInput";
 import styled from "styled-components";
 import { HelpIcons } from "icons/HelpIcons";
@@ -52,7 +55,7 @@ const UneditableField = (
   );
 };
 
-export type FormTextFieldProps = {
+export type FormUneditableTextFieldProps = {
   name: string;
   type?: InputType;
   label?: string;

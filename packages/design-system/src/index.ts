@@ -134,6 +134,9 @@ export * from "./TableDropdown";
 
 export * from "./Tabs";
 
+export { default as Table } from "./Table";
+export * from "./Table";
+
 export { default as TagInput } from "./TagInput";
 export * from "./TagInput";
 
@@ -154,3 +157,6 @@ export * from "./Tooltip";
 
 export { default as TreeDropdown } from "./TreeDropdown";
 export * from "./TreeDropdown";
+
+export { default as UneditableField } from "./UneditableField";
+export * from "./UneditableField";
