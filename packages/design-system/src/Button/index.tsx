@@ -557,14 +557,15 @@ const getButtonContent = (props: ButtonProps) => {
 };
 
 function ButtonComponent(props: ButtonProps) {
-  const omitProps = ["fill"];
+  const { className, cypressSelector, isLoading, onClick } = props;
+  const filteredProps = _.omit(props, ["fill"]);
   return (
     <StyledButton
-      className={props.className}
-      data-cy={props.cypressSelector}
-      {..._.omit(props, omitProps)}
+      className={className}
+      data-cy={cypressSelector}
+      {...filteredProps}
       onClick={(e: React.MouseEvent<HTMLElement>) =>
-        props.onClick && !props.isLoading && props.onClick(e)
+        onClick && !isLoading && onClick(e)
       }
     >
       {getButtonContent(props)}
@@ -573,15 +574,14 @@ function ButtonComponent(props: ButtonProps) {
 }
 
 function LinkButtonComponent(props: ButtonProps) {
+  const { className, cypressSelector, href, onClick } = props;
   return (
     <StyledLinkButton
-      className={props.className}
-      data-cy={props.cypressSelector}
-      href={props.href}
+      className={className}
+      data-cy={cypressSelector}
+      href={href}
       {...props}
-      onClick={(e: React.MouseEvent<HTMLElement>) =>
-        props.onClick && props.onClick(e)
-      }
+      onClick={(e: React.MouseEvent<HTMLElement>) => onClick && onClick(e)}
     >
       {getButtonContent(props)}
     </StyledLinkButton>

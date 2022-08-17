@@ -1,5 +1,17 @@
 # @appsmithorg/design-system
 
+## 1.0.12
+
+### Patch Changes
+
+- [#105](https://github.com/appsmithorg/design-system/pull/105) [`444cee2`](https://github.com/appsmithorg/design-system/commit/444cee2ace642335988ebab974f02ff17a775f9c) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - update DropdownOption to TableDropdownOption and export for typechecking ease
+
+## 1.0.11
+
+### Patch Changes
+
+- [#100](https://github.com/appsmithorg/design-system/pull/100) [`cedb54d`](https://github.com/appsmithorg/design-system/commit/cedb54d0f357389f5db571fdb5a20ad3c675885d) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added button test
+
 ## 1.0.10
 
 ### Patch Changes

@@ -48,6 +48,7 @@ export type DropdownOption = {
   disabled?: boolean;
   disabledTooltipText?: string;
   hasCustomBadge?: boolean;
+  link?: string;
 };
 
 export interface DropdownSearchProps {
@@ -116,6 +117,7 @@ export type DropdownProps = CommonComponentProps &
     allowDeselection?: boolean; //prevents de-selection of the selected option
     truncateOption?: boolean; // enabled wrapping and adding tooltip on option item of dropdown menu
     portalClassName?: string;
+    portalContainer?: HTMLElement;
     customBadge?: JSX.Element;
     selectedHighlightBg?: string;
     showEmptyOptions?: boolean;
@@ -202,6 +204,7 @@ const SquareBox = styled.div<{
     if (props.borderColor) return props.borderColor;
     props.checked ? "var(--ads-color-black-900)" : "var(--ads-color-black-400)";
   }};
+  flex: 0 0 auto;
 
   & svg {
     display: ${(props) => (props.checked ? "block" : "none")};
@@ -1296,6 +1299,7 @@ export default function Dropdown(props: DropdownProps) {
         onInteraction={(state) => !disabled && setIsOpen(state)}
         popoverClassName={`${props.className} none-shadow-popover`}
         portalClassName={props.portalClassName}
+        portalContainer={props.portalContainer}
         position={Position.BOTTOM_LEFT}
         usePortal={!props.dontUsePortal}
       >
