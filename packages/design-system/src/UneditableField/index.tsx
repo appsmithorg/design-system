@@ -1,14 +1,14 @@
 import React from "react";
 import InputComponent, { InputType } from "../TextInput";
-import styled from "styled-components";
+import styled, { AnyStyledComponent } from "styled-components";
 import { ControlIcons } from "../ControlIcons";
 
-const CopyIcon = ControlIcons.COPY_ICON;
+const CopyIcon = ControlIcons.COPY_ICON as AnyStyledComponent;
 
 const Label = styled.div`
   font-size: 14px;
   margin: 8px 0;
-  color: ${Colors.CHARCOAL};
+  color: var(--ads-uneditable-text-field-label-text-color);
 `;
 
 const InputCopyWrapper = styled.div`
@@ -40,7 +40,7 @@ const UneditableField = (
         {componentProps.iscopy === "true" && (
           <CopyIcon
             className={"copy-icon"}
-            color={Colors.GREY_7}
+            color="var(--ads-old-color-gray-7)"
             height={16}
             onClick={() =>
               componentProps.handleCopy(componentProps.input.value)
