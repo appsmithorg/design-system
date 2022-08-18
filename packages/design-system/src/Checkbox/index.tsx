@@ -69,7 +69,7 @@ export const Checkmark = styled.span<{
       return `
       background-color: ${
         props.disabled
-          ? "var(--ads-checkbox-disabled-checked-border-color)"
+          ? "var(--ads-checkbox-disabled-checked-background-color)"
           : "transparent"
       };
       border: 1.8px solid

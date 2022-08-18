@@ -48,8 +48,8 @@
   --ads-callout-warning-background-color: #FAF3E3;
 
   /** Checkbox */
-  --ads-checkbox-disabled-checked-background-color: #2B2B2B;
-  --ads-checkbox-disabled-checked-border-color: #2B2B2B;
+  --ads-checkbox-disabled-checked-background-color: #E8E8E8;
+  --ads-checkbox-disabled-checked-border-color: #E8E8E8;
   --ads-checkbox-default-unchecked-border-color: #404040;
   --ads-checkbox-after-disabled-checked-border-color: #939090;
   --ads-checkbox-after-default-checked-border-color: var(--ads-color-black-0);
