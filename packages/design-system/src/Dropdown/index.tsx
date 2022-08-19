@@ -410,8 +410,8 @@ const OptionWrapper = styled.div<{
   subTextPosition?: SubTextPosition;
   selectedHighlightBg?: string;
 }>`
-  padding: calc(var(--ads-spaces-3) + 1px) var(--ads-spaces-5)
-    ${(props) => (!props.disabled ? "cursor: pointer" : "")};
+  padding: calc(var(--ads-spaces-3) + 1px) var(--ads-spaces-5);
+  ${(props) => (!props.disabled ? "cursor: pointer" : "")};
   display: flex;
   width: 100%;
   min-height: 36px;

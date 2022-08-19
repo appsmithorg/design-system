@@ -1,6 +1,19 @@
 import tinycolor from "tinycolor2";
 import { TypographyKeys, typography } from "Constants/typography";
 
+function validateHex(arg: string) {
+  // Test if the argument is a valid hex code. Passes both 3 letter and 6 letter hexes.
+  const regex = new RegExp("/^#?([0-9a-f]{3}|[0-9a-f]{6})$/i");
+
+  if (regex.test(arg)) return arg;
+  else {
+    const cssVariable = arg.substring(4, arg.length - 1);
+    return getComputedStyle(document.documentElement).getPropertyValue(
+      cssVariable,
+    );
+  }
+}
+
 export const hexToRgb = (
   hex: string,
 ): {
@@ -8,7 +21,8 @@ export const hexToRgb = (
   g: number;
   b: number;
 } => {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const validatedHex = validateHex(hex);
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(validatedHex);
   return result
     ? {
         r: parseInt(result[1], 16),
