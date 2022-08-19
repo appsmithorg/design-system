@@ -2,19 +2,19 @@ name: Appsmith Design External Integration Test Workflow
 
 on:
   workflow_call:
-  workflow_dispatch:
-  pull_request:
-    types:
-      [
-        opened,
-        labeled,
-        unlabeled,
-        assigned,
-        edited,
-        reopened,
-        synchronize,
-        ready_for_review,
-      ]
+  # workflow_dispatch:
+  # pull_request:
+  #   types:
+  #     [
+  #       opened,
+  #       labeled,
+  #       unlabeled,
+  #       assigned,
+  #       edited,
+  #       reopened,
+  #       synchronize,
+  #       ready_for_review,
+  #     ]
   repository_dispatch:
     types: [ok-to-test-command]
 
