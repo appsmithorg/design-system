@@ -162,12 +162,12 @@ const useUpdate = (intitialValue?: boolean) => {
 };
 
 function Checkbox(props: CheckboxProps) {
-  const { className, fill = true } = props;
+  const { className, fill = true, onCheckChange } = props;
   const [checked, setChecked] = useUpdate(props.isDefaultChecked);
 
   const onChangeHandler = (checked: boolean) => {
     setChecked(checked);
-    props.onCheckChange && props.onCheckChange(checked);
+    onCheckChange && onCheckChange(checked);
   };
 
   return (
