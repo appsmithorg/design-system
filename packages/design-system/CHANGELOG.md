@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.15
+
+### Patch Changes
+
+- [#124](https://github.com/appsmithorg/design-system/pull/124) [`5ce3673`](https://github.com/appsmithorg/design-system/commit/5ce3673a54679094fdc0dd487cb895eeb329ff07) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Adds showScrollbarOnlyOnHover functionality as a property to ScrollIndicator
+
+* [#124](https://github.com/appsmithorg/design-system/pull/124) [`5ce3673`](https://github.com/appsmithorg/design-system/commit/5ce3673a54679094fdc0dd487cb895eeb329ff07) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: ui issues with checkbox, button, dropdown
+
 ## 1.0.14
 
 ### Patch Changes
