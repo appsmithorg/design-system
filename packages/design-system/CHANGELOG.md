@@ -1,5 +1,15 @@
 # @appsmithorg/design-system
 
+## 1.0.16
+
+### Patch Changes
+
+- [#122](https://github.com/appsmithorg/design-system/pull/122) [`acea1df`](https://github.com/appsmithorg/design-system/commit/acea1dfe6b2bb8887d173d7c338a3b016fd044c2) Thanks [@souma-ghosh](https://github.com/souma-ghosh)! - feat: Adds showScrollbarOnlyOnHover functionality as a property to ScrollIndicator
+
+* [#126](https://github.com/appsmithorg/design-system/pull/126) [`1e63e78`](https://github.com/appsmithorg/design-system/commit/1e63e78641a3b21a80bb3a0c919544193b5ed9fb) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Table Widget shows scrollbar when not in focus
+
+- [#123](https://github.com/appsmithorg/design-system/pull/123) [`ae63f08`](https://github.com/appsmithorg/design-system/commit/ae63f08cede255f66deb27a4461565c7db2c243d) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: ui issues with checkbox, button, dropdown
+
 ## 1.0.15
 
 ### Patch Changes
