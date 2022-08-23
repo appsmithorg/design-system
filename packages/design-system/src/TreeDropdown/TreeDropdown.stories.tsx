@@ -22,8 +22,7 @@ const options = [
 export const TreeDropdownExample = Template.bind({});
 TreeDropdownExample.storyName = "Tree Dropdown";
 TreeDropdownExample.args = {
-  optionTree: options,
-  selectedValue: "PRIMARY",
   defaultText: "Some default text here",
   onSelect: () => console.log("Selected"),
+  optionTree: options,
 };
