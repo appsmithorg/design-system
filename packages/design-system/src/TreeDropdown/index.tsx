@@ -94,7 +94,7 @@ export const StyledMenu = styled(Menu)`
   .${Classes.MENU_ITEM} {
     border-radius: 0px;
     font-size: 14px;
-    line-height: ${typography.p1.lineHeight};
+    line-height: ${typography.p1.lineHeight}px;
     display: flex;
     align-items: center;
     height: 30px;
