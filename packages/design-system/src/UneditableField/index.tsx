@@ -3,7 +3,7 @@ import InputComponent, { InputType } from "../TextInput";
 import styled, { AnyStyledComponent } from "styled-components";
 import { ControlIcons } from "../ControlIcons";
 
-const CopyIcon = ControlIcons.COPY_ICON as AnyStyledComponent;
+const CopyIcon = ControlIcons.COPY_CONTROL as AnyStyledComponent;
 
 const Label = styled.div`
   font-size: 14px;

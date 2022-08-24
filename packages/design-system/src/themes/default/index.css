@@ -136,6 +136,9 @@
   /** Menu */
   --ads-menu-default-border-color: #404040;
 
+  /** Menu Divider */
+  --ads-menu-divider-border-color: var(--ads-old-color-mercury);
+
   /** Multiswitch */
   --ads-multiswitch-tab-list-background-color: var(--ads-old-color-mercury);
   --ads-multiswitch-border-color: var(--ads-color-black-250);

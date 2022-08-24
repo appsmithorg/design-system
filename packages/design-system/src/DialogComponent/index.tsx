@@ -41,7 +41,7 @@ const StyledDialog = styled(Dialog)<{
       font-weight: ${typography.h1.fontWeight};
       font-size: ${typography.h1.fontSize}px;
       line-height: unset;
-      letter-spacing: ${typography.h1.letterSpacing};
+      letter-spacing: ${typography.h1.letterSpacing}px;
     }
 
     .${Classes.DIALOG_CLOSE_BUTTON} {
