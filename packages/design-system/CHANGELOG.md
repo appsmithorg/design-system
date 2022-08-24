@@ -1,5 +1,15 @@
 # @appsmithorg/design-system
 
+## 1.0.17
+
+### Patch Changes
+
+- [#133](https://github.com/appsmithorg/design-system/pull/133) [`0d0872e`](https://github.com/appsmithorg/design-system/commit/0d0872e09276f3a6584cc549942a9f43ebe1b472) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: uneditable field icon
+
+* [#130](https://github.com/appsmithorg/design-system/pull/130) [`99f809b`](https://github.com/appsmithorg/design-system/commit/99f809b732370f935e0d55d08672704659f4527f) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issue with line height in TableDropdown
+
+- [#132](https://github.com/appsmithorg/design-system/pull/132) [`b2ba8a5`](https://github.com/appsmithorg/design-system/commit/b2ba8a586409703ecc15543bee03d034c114cc07) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: color of menu divider
+
 ## 1.0.16
 
 ### Patch Changes
