@@ -5,6 +5,8 @@ import { ReactComponent as DownArrow } from "../assets/icons/ads/down_arrow.svg"
 import { ReactComponent as UpperArrow } from "../assets/icons/ads/upper_arrow.svg";
 import { Classes } from "Constants/classes";
 import { typography } from "Constants/typography";
+import Spinner from "Spinner";
+import { IconSize } from "Icon";
 
 const Styles = styled.div`
   table {
@@ -12,6 +14,9 @@ const Styles = styled.div`
     width: 100%;
 
     thead {
+      position: sticky;
+      top: 0;
+
       tr {
         background-color: var(--ads-table-table-row-background-color);
 
@@ -23,10 +28,14 @@ const Styles = styled.div`
           font-size: ${typography.h6.fontSize}px;
           line-height: ${typography.h6.lineHeight}px;
           letter-spacing: ${typography.h6.letterSpacing}px;
+          border-bottom: 1px solid var(--ads-color-black-200);
 
           svg {
             margin-left: var(--ads-spaces-2);
             margin-bottom: calc(var(--ads-spaces-0) + 1px);
+            width: 6px;
+            height: 4px;
+            display: initial;
           }
 
           &:hover {
@@ -82,13 +91,48 @@ const Styles = styled.div`
 const HiddenArrow = styled(DownArrow)`
   visibility: hidden;
 `;
+
+const CentralizedWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+`;
+
+const TableColumnEmptyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    width: 156px;
+    margin-top: 16px;
+  }
+  .no-data-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    margin-top: 23px;
+  }
+`;
 export interface TableProps {
   data: any[];
   columns: any[];
+  isLoading?: boolean;
+  loaderComponent?: JSX.Element;
+  noDataComponent?: JSX.Element;
 }
 
 function Table(props: TableProps) {
-  const { columns, data } = props;
+  const {
+    columns,
+    data,
+    isLoading = false,
+    loaderComponent,
+    noDataComponent,
+  } = props;
 
   const {
     getTableBodyProps,
@@ -125,24 +169,53 @@ function Table(props: TableProps) {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row, index: number) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()} key={index}>
-                {row.cells.map((cell, index: number) => {
-                  return (
-                    <td
-                      {...cell.getCellProps()}
-                      data-colindex={index}
-                      key={index}
-                    >
-                      {cell.render("Cell")}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
+          {isLoading ? (
+            <tr>
+              <td className="no-border" colSpan={columns?.length}>
+                <CentralizedWrapper>
+                  {loaderComponent ? (
+                    loaderComponent
+                  ) : (
+                    <Spinner size={IconSize.XXL} />
+                  )}
+                </CentralizedWrapper>
+              </td>
+            </tr>
+          ) : rows.length > 0 ? (
+            rows.map((row, index) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()} key={index}>
+                  {row.cells.map((cell, index) => {
+                    return (
+                      <td
+                        {...cell.getCellProps()}
+                        data-colindex={index}
+                        key={index}
+                      >
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })
+          ) : (
+            <tr>
+              <td className="no-border" colSpan={columns?.length}>
+                <CentralizedWrapper>
+                  {noDataComponent ? (
+                    noDataComponent
+                  ) : (
+                    <TableColumnEmptyWrapper>
+                      {/*<img alt="No data" src={NoDataImage} />*/}
+                      <div className="no-data-title">No data found</div>
+                    </TableColumnEmptyWrapper>
+                  )}
+                </CentralizedWrapper>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </Styles>

@@ -241,7 +241,7 @@ function TagInputComponent(props: TagInputProps) {
         })}
         values={values || [""]}
       />
-      {showSuggestions && (
+      {mappedSuggestions.length > 0 && (
         <SuggestionsWrapper>
           <div>{mappedSuggestions}</div>
         </SuggestionsWrapper>
