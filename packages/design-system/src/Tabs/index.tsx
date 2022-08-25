@@ -29,12 +29,10 @@ const TabsWrapper = styled.div<{
   overflow: hidden;
   .react-tabs {
     height: 100%;
-    position: relative;
   }
   .react-tabs__tab-panel {
     height: calc(100% - ${TAB_MIN_HEIGHT});
     overflow: auto;
-    padding: 20px 0 0;
   }
   .react-tabs__tab-list {
     margin: 0px;
@@ -46,10 +44,6 @@ const TabsWrapper = styled.div<{
     path {
       fill: var(--ads-tabs-default-tab-list-svg-fill-color);
     }
-    position: fixed;
-    background: var(--ads-color-black-0);
-    width: 100%;
-    z-index: 4;
     ${(props) =>
       props.shouldOverflow &&
       `
