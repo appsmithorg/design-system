@@ -3,6 +3,8 @@ name: Workflow for push and PR
 
 on:
   push:
+    paths:
+      - "packages/design-system/**"
 
 defaults:
   run:
