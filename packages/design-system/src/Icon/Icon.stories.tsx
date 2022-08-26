@@ -1,7 +1,8 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import IconComponent, { IconSize, IconCollection } from "./index";
+import IconComponent, { IconCollection, IconSize } from "./index";
+import styled from "styled-components";
 
 export default {
   title: "Design System/Icon",
@@ -34,9 +35,42 @@ const Template: ComponentStory<typeof IconComponent> = (args) => (
 );
 
 export const Icon = Template.bind({});
-
 Icon.args = {
   name: "filter",
   size: IconSize.XXXXL,
   fillColor: "gray",
 };
+
+const IconWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+`;
+
+const AllIconsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const AllIcons = () => {
+  return (
+    <AllIconsWrapper>
+      {IconCollection.map((icon, index) => (
+        <IconWrapper key={index}>
+          <IconComponent name={icon} size={IconSize.XXXXL} />
+          <p>{icon}</p>
+        </IconWrapper>
+      ))}
+    </AllIconsWrapper>
+  );
+};
+
+AllIcons.decorators = [
+  (Story) => (
+    <div style={{ height: "75%", width: "25%" }}>
+      <Story />
+    </div>
+  ),
+];
