@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.18
+
+### Patch Changes
+
+- [#137](https://github.com/appsmithorg/design-system/pull/137) [`ec192f4`](https://github.com/appsmithorg/design-system/commit/ec192f44159784064eff5f8cd9cf9d2adb2e05f9) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - Feat/add all icon stories
+
+* [#140](https://github.com/appsmithorg/design-system/pull/140) [`e316e87`](https://github.com/appsmithorg/design-system/commit/e316e87018b2f79bd0e5ecad5b0adabba78abbe5) Thanks [@yaldram](https://github.com/yaldram)! - fix: dropdown input search text color.
+
 ## 1.0.17
 
 ### Patch Changes
