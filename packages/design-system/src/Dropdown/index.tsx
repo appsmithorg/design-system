@@ -338,7 +338,7 @@ export const DropdownWrapper = styled.div<{
     input {
       height: 32px;
       font-size: 14px !important;
-      color: var(--ads-color-black-200) !important;
+      color: var(--ads-old-color-gray-10) !important;
       padding-left: 36px !important;
       border: 1.2px solid var(--ads-color-black-200);
 
@@ -559,7 +559,8 @@ const SelectedIcon = styled(Icon)`
       fill: ${(props) =>
         props.fillColor
           ? props.fillColor
-          : "var(--ads-dropdown-default-icon-selected-fill-color)"}
+          : "var(--ads-dropdown-default-icon-selected-fill-color)"};
+    }
   }
 `;
 
