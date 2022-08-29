@@ -34,6 +34,7 @@ import { ReactComponent as DesktopIcon } from "../assets/icons/ads/desktop.svg";
 import { ReactComponent as WandIcon } from "../assets/icons/ads/wand.svg";
 import { ReactComponent as MobileIcon } from "../assets/icons/ads/mobile.svg";
 import { ReactComponent as TabletIcon } from "../assets/icons/ads/tablet.svg";
+import { ReactComponent as TabletLandscapeIcon } from "../assets/icons/ads/tablet-landscape.svg";
 import { ReactComponent as FluidIcon } from "../assets/icons/ads/fluid.svg";
 import { ReactComponent as CardContextMenu } from "../assets/icons/ads/card-context-menu.svg";
 import { ReactComponent as SendButton } from "../assets/icons/comments/send-button.svg";
@@ -367,6 +368,7 @@ const ICON_LOOKUP = {
   support: <SupportIcon />,
   tables: <TableIcon />,
   tablet: <TabletIcon />,
+  tabletLandscape: <TabletLandscapeIcon />,
   trash: <Trash />,
   unpin: <Unpin />,
   upArrow: <UpArrow />,
