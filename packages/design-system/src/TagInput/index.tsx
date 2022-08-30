@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactElement } from "react";
 import styled from "styled-components";
 import { Classes, TagInput } from "@blueprintjs/core";
 import {
@@ -51,6 +51,13 @@ const SuggestionsWrapper = styled.div`
   position: relative;
   left: 4px;
   width: 100%;
+
+  svg {
+    path {
+      fill: var(--ads-old-color-gray-7);
+    }
+  }
+
   > div {
     position: absolute;
     border: 1px solid var(--appsmith-color-black-250);
@@ -62,6 +69,7 @@ const SuggestionsWrapper = styled.div`
 const Suggestion = styled.div`
   padding: 8px;
   cursor: pointer;
+  display: flex;
   &:hover {
     background: var(--appsmith-color-black-100);
   }
@@ -83,6 +91,7 @@ type TagInputProps = {
   hasError?: boolean;
   customError?: (error: any, values?: any) => void;
   suggestions?: { id: string; name: string; icon?: string }[];
+  suggestionLeftIcon?: ReactElement;
 };
 
 function getValues(inputValues: any) {
@@ -111,6 +120,7 @@ function TagInputComponent(props: TagInputProps) {
         key={each.id}
         onClick={() => handleSuggestionClick(each.name)}
       >
+        {props.suggestionLeftIcon}
         <HighlightText highlight={currentValue} text={each.name} />
       </Suggestion>
     ),
