@@ -120,7 +120,7 @@ function TagInputComponent(props: TagInputProps) {
         key={each.id}
         onClick={() => handleSuggestionClick(each.name)}
       >
-        {props.suggestionLeftIcon}
+        {props.suggestionLeftIcon ?? null}
         <HighlightText highlight={currentValue} text={each.name} />
       </Suggestion>
     ),
