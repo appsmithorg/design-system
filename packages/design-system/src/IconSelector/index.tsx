@@ -63,6 +63,7 @@ function IconSelector(props: IconSelectorProps) {
   const [selected, setSelected] = useState<AppIconName>(firstSelectedIcon());
   const iconPaletteRef = React.createRef<HTMLDivElement>();
   const [iconPalette, setIconPalette] = useState(props.iconPalette);
+  const { onSelect } = props;
 
   useEffect(() => {
     if (props.selectedIcon && iconRef.current) {
@@ -112,7 +113,7 @@ function IconSelector(props: IconSelectorProps) {
               onClick={() => {
                 if (iconName !== selected) {
                   setSelected(iconName);
-                  props.onSelect && props.onSelect(iconName);
+                  onSelect && onSelect(iconName);
                 }
               }}
               selectedColor={selected === iconName ? props.selectedColor : ""}
