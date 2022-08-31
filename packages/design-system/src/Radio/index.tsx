@@ -49,7 +49,7 @@ export const Radio = styled.label<{
 }>`
   display: block;
   position: relative;
-  padding-left: var(--ads-space-10) px;
+  padding-left: var(--ads-spaces-10) px;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   font-size: ${typography.p1.fontSize} px;
   font-weight: ${typography.p1.fontWeight};
@@ -63,7 +63,7 @@ export const Radio = styled.label<{
         `
       : props.rows && props.rows > 0
       ? `
-        margin-bottom: calc(var(--ads-space-11) + 1)px;`
+        margin-bottom: calc(var(--ads-spaces-11) + 1)px;`
       : null};
 
   input {
@@ -76,8 +76,8 @@ export const Radio = styled.label<{
     position: absolute;
     top: 0;
     left: 0;
-    width: var(--ads-space-8) px;
-    height: var(--ads-space-8) px;
+    width: var(--ads-spaces-8) px;
+    height: var(--ads-spaces-8) px;
     background-color: transparent;
     border: 1px solid var(--ads-radio-default-border-color);
     border-radius: 50%;
@@ -101,8 +101,8 @@ export const Radio = styled.label<{
   .checkbox:after {
     content: "";
     position: absolute;
-    width: var(--ads-space-4) px;
-    height: var(--ads-space-4) px;
+    width: var(--ads-spaces-4) px;
+    height: var(--ads-spaces-4) px;
     ${(props) =>
       props.disabled
         ? `background-color: var(--ads-radio-disabled-background-color)`
