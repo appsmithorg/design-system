@@ -63,7 +63,7 @@ export const Radio = styled.label<{
         `
       : props.rows && props.rows > 0
       ? `
-        margin-bottom: calc(var(--ads-spaces-11) + 1)px;`
+        margin-bottom: calc(var(--ads-spaces-11) + 1px);`
       : null};
 
   input {
