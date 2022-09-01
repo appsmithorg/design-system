@@ -28,3 +28,8 @@ jobs:
   PRCheck:
     needs: [build-design-system]
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run: echo "All ui-test matrices completed"
