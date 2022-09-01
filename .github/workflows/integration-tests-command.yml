@@ -24,3 +24,7 @@ jobs:
   build-design-system:
     uses: ./.github/workflows/Lib-build-design-system.yml
     name: build-design-system
+  
+  PRCheck:
+    needs: [build-design-system]
+    runs-on: ubuntu-latest
