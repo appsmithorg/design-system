@@ -1,9 +1,14 @@
 name: Appsmith Design External Integration Test Workflow
 
 on:
-  workflow_call:
-  repository_dispatch:
-    types: [ok-to-test-command]
+  #workflow_call:
+  #repository_dispatch:
+  #  types: [ok-to-test-command]
+ workflow_dispatch:
+ pull_request_review:
+    branches: [release]
+    paths:
+      - "packages/design-system/**"
 
   # This workflow is only triggered by the ok to test command dispatch
   #repository_dispatch:
