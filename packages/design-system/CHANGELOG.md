@@ -1,5 +1,19 @@
 # @appsmithorg/design-system
 
+## 1.0.19
+
+### Patch Changes
+
+- [#144](https://github.com/appsmithorg/design-system/pull/144) [`43895a4`](https://github.com/appsmithorg/design-system/commit/43895a4689d042eda4c537a53f7d675053abcc8c) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issues with color and spacing in MenuDivider, Radio
+
+* [#139](https://github.com/appsmithorg/design-system/pull/139) [`ed6f5a7`](https://github.com/appsmithorg/design-system/commit/ed6f5a77ae54da13a7d9061079e84335e3ff7e0d) Thanks [@IAmAnubhavSaini](https://github.com/IAmAnubhavSaini)! - feat: Introducing icons for audit-logs
+
+- [#146](https://github.com/appsmithorg/design-system/pull/146) [`15892d5`](https://github.com/appsmithorg/design-system/commit/15892d5750a07656c2843e5e17529de962388084) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issue with default image being zoomed in on the Display Image Upload component
+
+* [#143](https://github.com/appsmithorg/design-system/pull/143) [`94035cb`](https://github.com/appsmithorg/design-system/commit/94035cb14016f8625e7db995916b65159d54a2ab) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix:IconSelector onSelect failure in local development
+
+- [#136](https://github.com/appsmithorg/design-system/pull/136) [`cd54d63`](https://github.com/appsmithorg/design-system/commit/cd54d63fa0138afd8a6f57d841b13aa54ab786ea) Thanks [@ankitakinger](https://github.com/ankitakinger)! - feat: Make Table and Tab header sticky
+
 ## 1.0.18
 
 ### Patch Changes
