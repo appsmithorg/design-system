@@ -22,7 +22,7 @@ defaults:
 # Job will run on a ubuntu instance
 jobs:
   build-design-system:
-    uses: yatinappsmith/design-system/edit/release/.github/workflows/Lib-build-design-system.yml@release
+    uses: yatinappsmith/design-system/.github/workflows/Lib-build-design-system.yml@release
     name: build-design-system
   
   PRCheck:
