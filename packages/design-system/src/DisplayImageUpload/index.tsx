@@ -160,7 +160,7 @@ export default function DisplayImageUpload({
           <div className="view">
             <div className="image-view">
               {!value || loadError ? (
-                <ProfileImagePlaceholder />
+                <ProfileImagePlaceholder style={{ width: "35px" }} />
               ) : (
                 <img
                   onError={() => {

@@ -161,10 +161,9 @@
   --ads-property-pane-default-button-text-color: #090707;
 
   /** Radio */
-  --ads-radio-default-text-color: var(--ads-color-black-0);
-  /* TODO: get this color from the design system */
-  --ads-radio-default-border-color: #404040;
-  --ads-radio-disabled-background-color: #6D6D6D;
+  --ads-radio-default-text-color: var(--ads-old-color-gray-10);
+  --ads-radio-default-border-color: var(--ads-old-color-mercury);
+  --ads-radio-disabled-background-color: #C5C5C5;
 
   /** Rectangular Switch */
   --ads-rectangular-switch-background-color: var(--ads-color-black-0);

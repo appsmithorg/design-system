@@ -60,7 +60,7 @@ const DropdownOption = styled.div<{
       : null};
 
   .${Classes.TEXT}:last-child {
-    margin-top: calc(var(--ads-spaces-1) - 1px);
+    margin-top: calc(var(--ads-spaces-1) + 1px);
   }
 
   &:hover {

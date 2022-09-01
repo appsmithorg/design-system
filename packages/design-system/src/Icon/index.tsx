@@ -34,6 +34,7 @@ import { ReactComponent as DesktopIcon } from "../assets/icons/ads/desktop.svg";
 import { ReactComponent as WandIcon } from "../assets/icons/ads/wand.svg";
 import { ReactComponent as MobileIcon } from "../assets/icons/ads/mobile.svg";
 import { ReactComponent as TabletIcon } from "../assets/icons/ads/tablet.svg";
+import { ReactComponent as TabletLandscapeIcon } from "../assets/icons/ads/tablet-landscape.svg";
 import { ReactComponent as FluidIcon } from "../assets/icons/ads/fluid.svg";
 import { ReactComponent as CardContextMenu } from "../assets/icons/ads/card-context-menu.svg";
 import { ReactComponent as SendButton } from "../assets/icons/comments/send-button.svg";
@@ -63,6 +64,8 @@ import { ReactComponent as SettingIcon } from "../assets/icons/control/settings.
 import { ReactComponent as DropdownIcon } from "../assets/icons/ads/dropdown.svg";
 import { ReactComponent as ChatIcon } from "../assets/icons/ads/app-icons/chat.svg";
 import { ReactComponent as JsIcon } from "../assets/icons/ads/js.svg";
+import { ReactComponent as ExecuteIcon } from "../assets/icons/ads/execute.svg";
+
 
 // remix icons
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
@@ -139,6 +142,7 @@ import Settings2LineIcon from "remixicon-react/Settings2LineIcon";
 import DownloadIcon from "remixicon-react/DownloadLineIcon";
 import UploadCloud2LineIcon from "remixicon-react/UploadCloud2LineIcon";
 import DownloadLineIcon from "remixicon-react/DownloadLineIcon";
+import UploadLineIcon from "remixicon-react/UploadLineIcon";
 import FileListLineIcon from "remixicon-react/FileListLineIcon";
 import HamburgerIcon from "remixicon-react/MenuLineIcon";
 import MagicLineIcon from "remixicon-react/MagicLineIcon";
@@ -148,6 +152,9 @@ import Group2LineIcon from "remixicon-react/Group2LineIcon";
 import CodeViewIcon from "remixicon-react/CodeViewIcon";
 import GroupLineIcon from "remixicon-react/GroupLineIcon";
 import ArrowRightUpLineIcon from "remixicon-react/ArrowRightUpLineIcon";
+import MailCheckLineIcon from "remixicon-react/MailCheckLineIcon";
+import UserFollowLineIcon from "remixicon-react/UserFollowLineIcon";
+import AddBoxLineIcon from "remixicon-react/AddBoxLineIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -309,6 +316,10 @@ const ICON_LOOKUP = {
   "group-2-line": <Group2LineIcon />,
   "group-line": <GroupLineIcon />,
   "arrow-right-up-line": <ArrowRightUpLineIcon />,
+  "upload-line": <UploadLineIcon />,
+  "mail-check-line": <MailCheckLineIcon />,
+  "user-follow-line": <UserFollowLineIcon />,
+  "add-box-line": <AddBoxLineIcon />,
   billing: <BillingIcon />,
   book: <BookIcon />,
   bug: <BugIcon />,
@@ -331,6 +342,7 @@ const ICON_LOOKUP = {
   emoji: <Emoji />,
   enterprise: <MagicLineIcon />,
   error: <ErrorIcon />,
+  execute: <ExecuteIcon />,
   filter: <Filter />,
   fluid: <FluidIcon />,
   fork: <GitMerge />,
@@ -367,6 +379,7 @@ const ICON_LOOKUP = {
   support: <SupportIcon />,
   tables: <TableIcon />,
   tablet: <TabletIcon />,
+  tabletLandscape: <TabletLandscapeIcon />,
   trash: <Trash />,
   unpin: <Unpin />,
   upArrow: <UpArrow />,
