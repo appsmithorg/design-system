@@ -15,7 +15,7 @@ jobs:
     uses: ./.github/workflows/Lib-build-design-system.yml
     name: build-design-system
   
-  PRCheck:
+  PushCheck:
     needs: [build-design-system]
     runs-on: ubuntu-latest
     defaults:
