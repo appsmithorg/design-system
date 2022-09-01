@@ -18,8 +18,6 @@ jobs:
         with:
           app_id: ${{ secrets.APPSMITH_INTEGRATION_TESTING_ID }}
           private_key: ${{ secrets.APPSMITH_INTEGRATION_TESTING_KEY }}
-          token: ${{ secrets.PAT }}
-          reaction-token: ${{ secrets.PAT }}
 
       - name: Slash Command Dispatch
         uses: peter-evans/slash-command-dispatch@v1
