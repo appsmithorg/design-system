@@ -8,7 +8,7 @@
 
 <div align="center">
 
-UI Design system of Appsmith
+UI Design system of Appsmith 
 
 [![npm package](https://img.shields.io/npm/v/@appsmithorg/design-system.svg?style=flat-square)](https://www.npmjs.org/package/@appsmithorg/design-system)
 
