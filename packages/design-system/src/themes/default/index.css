@@ -114,7 +114,7 @@
   --ads-icon-selector-selected-icon-fill-color: var(--ads-color-black-0);
 
   /** Info */
-  --ads-main-text-color: #CB4810;
+  --ads-info-main-text-color: #CB4810;
 
   /** Input */
   --ads-input-focus-border-color: var(--ads-color-black-900);

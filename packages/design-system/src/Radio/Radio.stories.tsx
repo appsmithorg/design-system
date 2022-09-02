@@ -26,4 +26,5 @@ Radio.args = {
     },
   ],
   rows: 2,
+  disabled: false,
 };

@@ -108,7 +108,7 @@ export const Radio = styled.label<{
       props.disabled
         ? `background-color: var(--ads-radio-disabled-background-color)`
         : `background-color: ${props.backgroundColor ||
-            `var(--ads-info-main-text-color`}`};
+            `var(--ads-info-main-text-color)`}`};
     top: 2px;
     left: 2px;
     border-radius: 50%;
