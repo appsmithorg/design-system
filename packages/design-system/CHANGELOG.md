@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.20
+
+### Patch Changes
+
+- [#152](https://github.com/appsmithorg/design-system/pull/152) [`a57397f`](https://github.com/appsmithorg/design-system/commit/a57397fb87301be1184bb4cb49a6429ee3ed2571) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issues with radio button not responding to click
+
+* [#155](https://github.com/appsmithorg/design-system/pull/155) [`9a4e930`](https://github.com/appsmithorg/design-system/commit/9a4e930b99e46d89d34611ba9608790dee694d9e) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: radio button color
+
 ## 1.0.19
 
 ### Patch Changes
