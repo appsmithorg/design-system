@@ -118,6 +118,7 @@ export const Radio = styled.label<{
 
 export default function RadioComponent(props: RadioProps) {
   const [selected, setSelected] = useState(props.defaultValue);
+  const { onSelect } = props;
 
   useEffect(() => {
     if (props.rows && props.columns && props.rows > 0 && props.columns > 0) {
@@ -130,7 +131,6 @@ export default function RadioComponent(props: RadioProps) {
   }, [props.defaultValue]);
 
   const onChangeHandler = (e: any) => {
-    const { onSelect } = props;
     if (!e.target?.closest(".t--radioSelectedOptionElement")) {
       const value: string = e.target.value;
       setSelected(value);
@@ -160,9 +160,7 @@ export default function RadioComponent(props: RadioProps) {
               checked={selected === option.value}
               disabled={props.disabled || option.disabled}
               name={props.name || "radio"}
-              onChange={(e) =>
-                option.onSelect && option.onSelect(e.target.value)
-              }
+              onChange={(e) => onSelect && onSelect(e.target.value)}
               type="radio"
               value={option.value}
             />
