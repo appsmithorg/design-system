@@ -130,10 +130,11 @@ export default function RadioComponent(props: RadioProps) {
   }, [props.defaultValue]);
 
   const onChangeHandler = (e: any) => {
+    const { onSelect } = props;
     if (!e.target?.closest(".t--radioSelectedOptionElement")) {
       const value: string = e.target.value;
       setSelected(value);
-      props.onSelect && props.onSelect(value);
+      onSelect && onSelect(value);
     }
   };
 
