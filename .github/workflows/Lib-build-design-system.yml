@@ -19,14 +19,26 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
+      
       # set git config
       - name: Set git config to github-actions
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+
       # Run yarn install to install project packages
       - name: Yarn
         run: yarn install --frozen-lockfile
+
       # yarn build to build the project
       - name: Build package
-        run: yarn build
+      
+       name: Install Playwright
+        run: npx playwright install --with-deps
+      #- name: Build Storybook
+      #  run: yarn build-storybook --quiet
+      - name: Serve Storybook and run tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && yarn test-storybook"
