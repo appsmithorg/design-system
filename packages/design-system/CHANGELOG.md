@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.21
+
+### Patch Changes
+
+- [#162](https://github.com/appsmithorg/design-system/pull/162) [`38fc15b`](https://github.com/appsmithorg/design-system/commit/38fc15b91720351bd64b6dc827fa2bfed378693b) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: AppIcon story not showing in storybook
+
+* [#159](https://github.com/appsmithorg/design-system/pull/159) [`0249c93`](https://github.com/appsmithorg/design-system/commit/0249c9389f31b1f021c67c6a6e95cb83b268c3a8) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Dropdown - added selectedOptionElements
+
 ## 1.0.20
 
 ### Patch Changes
