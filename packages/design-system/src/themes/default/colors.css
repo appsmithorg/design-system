@@ -70,42 +70,46 @@
   --ads-old-color-fun-green: #007340;
   --ads-old-color-fun-green-2: #00693B;
   --ads-old-color-granny-apple: #CBF4E2;
-  --ads-old-color-foam: #D9FDED;
 
+  --ads-old-color-foam: #D9FDED;
   --ads-old-color-sun: #FEB811;
   --ads-old-color-yellow-sea: #EFA903;
   --ads-old-color-champagne: #FBEED0;
+
   --ads-old-color-early-dawn: #FFFAE9;
   --ads-old-color-dove-gray: #6D6D6D;
-
   --ads-old-color-pomegranate: #F22B2B;
   --ads-old-color-milano-red: #B90707;
+
   --ads-old-color-milano-red-2: #C60707;
   --ads-old-color-cinderella: #FDE4E4;
   --ads-old-color-fair-pink: #FFE9E9;
+  --ads-old-color-pale-blue: #E8F5FA;
 
   --ads-old-color-mid-gray: #606065;
   --ads-old-color-gallery: #EDEDED;
   --ads-old-color-linen: #FDFAF2;
   --ads-old-color-buddha-gold: #D2A500;
-  --ads-old-color-alto: #D4D4D4;
 
+  --ads-old-color-alto: #D4D4D4;
   --ads-old-color-gallery-2: #EBEBEB;
   --ads-old-color-mercury: #E8E8E8;
   --ads-old-color-pure-black: #000000;
+
   --ads-old-color-burning-orange: #FF7742;
   --ads-old-color-curious-blue: #1D9BD1;
-
   --ads-old-color-dove-gray-2: #716E6E;
   --ads-old-color-pigeon-post: #AEBAD9;
+
   --ads-old-color-royal-blue: #457AE6;
   --ads-old-color-silver: #C4C4C4;
   --ads-old-color-dove-gray-3: #6F6F6F;
-
   --ads-old-color-crusta: #F86A2B;
+
   --ads-old-color-black-pearl: #040627;
   --ads-old-color-cornflower-blue: #6871EF;
   --ads-old-color-jaffa: #F2994A;
+  --ads-old-color-enterprise-dark: #00407D;
 
   /* Colors with opacity */
   --ads-old-color-black-750-opacity-50: #4b484880;
