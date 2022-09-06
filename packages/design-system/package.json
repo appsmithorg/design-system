@@ -13,7 +13,8 @@
     "build-storybook": "build-storybook",
     "create-story": "./create_story.sh",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test-storybook": "test-storybook"
   },
   "contributors": [
     "Albin <albin@appsmith.com>",
