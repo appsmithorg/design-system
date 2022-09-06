@@ -105,8 +105,7 @@ const NOTIFICATION_VARIANT_MAP = {
       />
     ),
     closeButtonColor: "var(--ads-old-color-curious-blue)",
-    linkTextColor:
-      "var(----ads-notification-banner-dark-enterprise-text-color)",
+    linkTextColor: "var(--ads-notification-banner-dark-enterprise-text-color)",
   }),
 };
 
