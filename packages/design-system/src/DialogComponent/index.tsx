@@ -136,7 +136,7 @@ type DialogComponentProps = {
 export function DialogComponent(props: DialogComponentProps) {
   const [isOpen, setIsOpen] = useState(!!props.isOpen);
 
-  const { onClose: onCloseProp, setModalClose } = props;
+  const { onClose: onCloseProp, onOpening, setModalClose } = props;
   const onClose = () => {
     setModalClose ? setModalClose(false) : null;
     setIsOpen(false);
@@ -183,7 +183,7 @@ export function DialogComponent(props: DialogComponentProps) {
         maxWidth={props.maxWidth}
         noModalBodyMarginTop={props.noModalBodyMarginTop}
         onClose={onClose}
-        onOpening={props.onOpening}
+        onOpening={onOpening}
         setMaxWidth={props.setMaxWidth}
         showHeaderUnderline={props.showHeaderUnderline}
         title={props.title}

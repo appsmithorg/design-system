@@ -70,6 +70,7 @@ const CloseIcon = styled.div`
 
 const SearchInput = forwardRef(
   (props: TextInputProps, ref: Ref<HTMLInputElement>) => {
+    const { onChange } = props;
     const [searchValue, setSearchValue] = useState(props.defaultValue);
     useEffect(() => {
       setSearchValue(props.defaultValue);
@@ -79,7 +80,7 @@ const SearchInput = forwardRef(
     const memoizedChangeHandler = useCallback(
       (value) => {
         setSearchValue(value);
-        return props.onChange && props.onChange(value);
+        return onChange && onChange(value);
       },
       [props],
     );
@@ -92,7 +93,7 @@ const SearchInput = forwardRef(
           inputElem[0].value = "";
         }
       }
-      return props.onChange && props.onChange("");
+      return onChange && onChange("");
     }, [props]);
     return (
       <SearchInputWrapper

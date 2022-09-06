@@ -265,6 +265,7 @@ function DatePickerComponent(props: DatePickerComponentProps) {
   // footer action bar last Clear button
   const clearButtonText = "Clear";
   let inputRef = useRef<HTMLInputElement>(null);
+  const { formatDate, onChange, parseDate } = props;
 
   inputRef = props.inputRef ? props.inputRef : inputRef;
 
@@ -281,7 +282,7 @@ function DatePickerComponent(props: DatePickerComponentProps) {
       className={Classes.DATE_PICKER_OVARLAY}
       clearButtonText={clearButtonText}
       closeOnSelection={props.closeOnSelection}
-      formatDate={props.formatDate}
+      formatDate={formatDate}
       highlightCurrentDay={props.highlightCurrentDay}
       inputProps={{
         inputRef: inputRef,
@@ -290,8 +291,8 @@ function DatePickerComponent(props: DatePickerComponentProps) {
       }}
       maxDate={props.maxDate}
       minDate={props.minDate}
-      onChange={props.onChange}
-      parseDate={props.parseDate}
+      onChange={onChange}
+      parseDate={parseDate}
       placeholder={props.placeholder}
       popoverProps={{
         popoverRef: popoverRef,

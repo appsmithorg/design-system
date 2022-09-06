@@ -81,13 +81,13 @@ function Dots(props: DotsProps) {
 }
 
 export default function ShowcaseCarousel(props: Props) {
-  const { steps } = props;
+  const { onClose, onStepChange, setActiveIndex, steps } = props;
   const [activeIndex, setCurrentIdxInState] = useState(props.activeIndex || 0);
 
   const setCurrentIdx = (index: number) => {
-    if (activeIndex !== index) props.onStepChange(activeIndex, index);
+    if (activeIndex !== index) onStepChange(activeIndex, index);
     setCurrentIdxInState(index);
-    props.setActiveIndex(index);
+    setActiveIndex(index);
   };
 
   const currentStep = steps[activeIndex];
@@ -173,7 +173,7 @@ export default function ShowcaseCarousel(props: Props) {
         </Buttons>
       </Footer>
       <CloseBtnContainer>
-        <Icon name="close-modal" onClick={props.onClose} />
+        <Icon name="close-modal" onClick={onClose} />
       </CloseBtnContainer>
     </Container>
   );

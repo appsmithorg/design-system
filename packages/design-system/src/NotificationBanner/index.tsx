@@ -147,6 +147,7 @@ const LearnMoreContainer = styled.div`
 `;
 
 export default function NotificationBanner(props: NotificationBannerProps) {
+  const { learnMoreClickHandler, onClose } = props;
   const variant = props?.variant;
   const propIcon = props?.icon;
   const noLearnMoreArrow = props?.noLearnMoreArrow || false;
@@ -162,12 +163,12 @@ export default function NotificationBanner(props: NotificationBannerProps) {
       {props?.icon && <IconContainer>{icon}</IconContainer>}
       <TextContainer>
         {props.children}
-        {props?.learnMoreClickHandler && (
+        {learnMoreClickHandler && (
           <LearnMoreContainer>
             <LinkText
               className="t--notification-banner-learn-more"
               color={linkTextColor}
-              onClick={props?.learnMoreClickHandler}
+              onClick={learnMoreClickHandler}
             >
               {createMessage(LEARN_MORE)}
               {!noLearnMoreArrow && (
@@ -182,7 +183,7 @@ export default function NotificationBanner(props: NotificationBannerProps) {
           <CloseButton
             className={"notification-banner-close-button"}
             color={closeButtonColor}
-            onClick={props.onClose}
+            onClick={onClose}
             size={16}
           />
         )}
