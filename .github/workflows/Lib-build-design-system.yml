@@ -33,9 +33,6 @@ jobs:
       # yarn build to build the project
       - name: Build package
         run: yarn build
-
-      - name: Install dependencies
-        run: yarn
-       
+      
       - name: Run Storybook tests
         run: yarn test-storybook:ci
