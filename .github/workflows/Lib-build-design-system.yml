@@ -19,14 +19,30 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
+      
       # set git config
       - name: Set git config to github-actions
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-      # Run yarn install to install project packages
+     
+     # Run yarn install to install project packages
       - name: Yarn
         run: yarn install --frozen-lockfile
+      
       # yarn build to build the project
       - name: Build package
         run: yarn build
+      
+      # Playwright is needed by testrunner
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Install dependencies
+        run: yarn
+        
+      - name: Install concurrently
+        run: npm install concurrently
+        
+      - name: Run Storybook tests
+        run: yarn test-storybook:ci
