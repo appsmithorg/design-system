@@ -33,16 +33,9 @@ jobs:
       # yarn build to build the project
       - name: Build package
         run: yarn build
-      
-      # Playwright is needed by testrunner
-      - name: Install Playwright
-        run: npx playwright install --with-deps
 
       - name: Install dependencies
         run: yarn
-        
-      - name: Install concurrently
-        run: npm install concurrently
-        
+       
       - name: Run Storybook tests
         run: yarn test-storybook:ci
