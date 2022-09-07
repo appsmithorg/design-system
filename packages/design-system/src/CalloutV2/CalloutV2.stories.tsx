@@ -1,21 +1,21 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Callout } from "./index";
+import CalloutV2 from "./index";
 
 export default {
   title: "Design System/Callout",
-  component: Callout,
-} as ComponentMeta<typeof Callout>;
+  component: CalloutV2,
+} as ComponentMeta<typeof CalloutV2>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Callout> = (args) => {
-  return <Callout {...args} />;
+const Template: ComponentStory<typeof CalloutV2> = (args) => {
+  return <CalloutV2 {...args} />;
 };
 
-export const CalloutExample = Template.bind({});
-CalloutExample.storyName = "Callout";
-CalloutExample.args = {
+export const CalloutV2Example = Template.bind({});
+CalloutV2Example.storyName = "CalloutV2";
+CalloutV2Example.args = {
   // actionLabel: calloutBanner.actionLabel,
   actionLabel: "The action label",
   desc: "Here is a description",

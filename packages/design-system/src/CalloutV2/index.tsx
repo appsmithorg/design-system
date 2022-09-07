@@ -73,7 +73,7 @@ const ContentWrapper = styled.div`
   flex: 1;
 `;
 
-export function Callout(props: {
+function CalloutV2(props: {
   desc: string;
   type: CalloutType;
   title?: string;
@@ -137,3 +137,5 @@ export function Callout(props: {
     </Wrapper>
   ) : null;
 }
+
+export default CalloutV2;
