@@ -9,6 +9,7 @@ display: flex;
 align-items: center;
 width: 100%;
 padding: 8px 16px;
+  // TODO: Why doesn't warning have a left border?
 ${(props) =>
   props.type === "Info"
     ? `border-left: 5px solid var(--ads-old-color-curious-blue);
