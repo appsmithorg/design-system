@@ -129,6 +129,7 @@ import Trash from "remixicon-react/DeleteBinLineIcon";
 import UpArrow from "remixicon-react/ArrowUpSFillIcon";
 import WarningIcon from "remixicon-react/ErrorWarningFillIcon";
 import WarningLineIcon from "remixicon-react/ErrorWarningLineIcon";
+import LoginIcon from "remixicon-react/LoginBoxLineIcon";
 import LogoutIcon from "remixicon-react/LogoutBoxRLineIcon";
 import ShareLineIcon from "remixicon-react/ShareLineIcon";
 import LoaderLineIcon from "remixicon-react/LoaderLineIcon";
@@ -155,6 +156,8 @@ import ArrowRightUpLineIcon from "remixicon-react/ArrowRightUpLineIcon";
 import MailCheckLineIcon from "remixicon-react/MailCheckLineIcon";
 import UserFollowLineIcon from "remixicon-react/UserFollowLineIcon";
 import AddBoxLineIcon from "remixicon-react/AddBoxLineIcon";
+import ArrowRightSFillIcon from "remixicon-react/ArrowRightSFillIcon";
+import ArrowDownSFillIcon from "remixicon-react/ArrowDownSFillIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -320,6 +323,8 @@ const ICON_LOOKUP = {
   "mail-check-line": <MailCheckLineIcon />,
   "user-follow-line": <UserFollowLineIcon />,
   "add-box-line": <AddBoxLineIcon />,
+  "arrow-down-s-fill": <ArrowDownSFillIcon />,
+  "arrow-right-s-fill": <ArrowRightSFillIcon />,
   billing: <BillingIcon />,
   book: <BookIcon />,
   bug: <BugIcon />,
@@ -357,6 +362,7 @@ const ICON_LOOKUP = {
   lightning: <LightningIcon />,
   link: <LinkIcon />,
   loader: <LoaderLineIcon />,
+  login: <LoginIcon />,
   logout: <LogoutIcon />,
   manage: <ManageIcon />,
   member: <UserHeartLineIcon />,
