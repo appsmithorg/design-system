@@ -1,4 +1,4 @@
-name: Appsmith Design External Integration Test Workflow
+name: Appsmith Design External Integration Test  Workflow
 
 on:
   #workflow_call:
