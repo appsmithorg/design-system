@@ -74,30 +74,22 @@ const ContentWrapper = styled.div`
 `;
 
 function CalloutV2(props: {
-  desc: string;
-  type: CalloutType;
-  title?: string;
   actionLabel?: string;
-  // action?: (
-  //   dispatch: Dispatch<ReduxAction<any>>,
-  //   settings?: Record<string, any>,
-  // ) => void;
-  url?: string;
+  desc: string;
+  onClick?: any;
   showCrossIcon?: boolean;
+  title?: string;
+  type: CalloutType;
+  url?: string;
 }) {
-  // const dispatch = useDispatch();
   const linkProps: Record<string, string | (() => any)> = {};
   const [show, setShow] = useState(true);
 
   if (props.url) {
     linkProps.href = props.url;
     linkProps.target = "_blank";
-    // } else if (props.action) {
-    //   linkProps.onClick = () => {
-    //     if (props.action) {
-    //       props.action(dispatch);
-    //     }
-    //   };
+  } else if (props.onClick) {
+    linkProps.onClick = props.onClick;
   }
 
   const handleClick = () => {
