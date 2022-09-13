@@ -647,6 +647,17 @@ const DropdownGlobalStyle = createGlobalStyle`
     box-shadow: none;
     border-radius: 0;
   }
+  `;
+
+const EmptyStateWrapper = styled.div`
+  padding: 8px;
+  background-color: var(--ads-color-black-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  & > span {
+    color: var(--ads-color-black-500);
+  }
 `;
 
 const scrollIntoViewOptions: ScrollIntoViewOptions = {
@@ -818,7 +829,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
     optionClickHandler,
     optionWidth,
     renderOption,
-    showEmptyOptions = false,
+    showEmptyOptions = false, //TODO: deprecate this prop
   } = props;
   const [options, setOptions] = useState<Array<DropdownOption>>(props.options);
   const [searchValue, setSearchValue] = useState<string>("");
@@ -837,7 +848,16 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
     onSearch && onSearch(searchStr);
   };
 
-  if (!options.length && !showEmptyOptions) return null;
+  function EmptyState() {
+    return (
+      <EmptyStateWrapper>
+        <Text type={TextType.P1}>No results found</Text>
+        {props.enableSearch && (
+          <Text type={TextType.P2}>Try to search a different keyword</Text>
+        )}
+      </EmptyStateWrapper>
+    );
+  }
 
   return (
     <DropdownWrapper
@@ -990,6 +1010,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
             />
           );
         })}
+        {!options.length && <EmptyState />}
       </DropdownOptionsWrapper>
     </DropdownWrapper>
   );
