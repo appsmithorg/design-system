@@ -1,5 +1,69 @@
 # @appsmithorg/design-system
 
+## 1.0.22
+
+### Patch Changes
+
+- [#173](https://github.com/appsmithorg/design-system/pull/173) [`0ba1df7`](https://github.com/appsmithorg/design-system/commit/0ba1df7a93f85e14b5f848e774e5ae69ba66a747) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Dropdown v1 design fixes
+
+## 1.0.21
+
+### Patch Changes
+
+- [#162](https://github.com/appsmithorg/design-system/pull/162) [`38fc15b`](https://github.com/appsmithorg/design-system/commit/38fc15b91720351bd64b6dc827fa2bfed378693b) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: AppIcon story not showing in storybook
+
+* [#159](https://github.com/appsmithorg/design-system/pull/159) [`0249c93`](https://github.com/appsmithorg/design-system/commit/0249c9389f31b1f021c67c6a6e95cb83b268c3a8) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Dropdown - added selectedOptionElements
+
+## 1.0.20
+
+### Patch Changes
+
+- [#152](https://github.com/appsmithorg/design-system/pull/152) [`a57397f`](https://github.com/appsmithorg/design-system/commit/a57397fb87301be1184bb4cb49a6429ee3ed2571) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issues with radio button not responding to click
+
+* [#155](https://github.com/appsmithorg/design-system/pull/155) [`9a4e930`](https://github.com/appsmithorg/design-system/commit/9a4e930b99e46d89d34611ba9608790dee694d9e) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: radio button color
+
+## 1.0.19
+
+### Patch Changes
+
+- [#144](https://github.com/appsmithorg/design-system/pull/144) [`43895a4`](https://github.com/appsmithorg/design-system/commit/43895a4689d042eda4c537a53f7d675053abcc8c) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issues with color and spacing in MenuDivider, Radio
+
+* [#139](https://github.com/appsmithorg/design-system/pull/139) [`ed6f5a7`](https://github.com/appsmithorg/design-system/commit/ed6f5a77ae54da13a7d9061079e84335e3ff7e0d) Thanks [@IAmAnubhavSaini](https://github.com/IAmAnubhavSaini)! - feat: Introducing icons for audit-logs
+
+- [#146](https://github.com/appsmithorg/design-system/pull/146) [`15892d5`](https://github.com/appsmithorg/design-system/commit/15892d5750a07656c2843e5e17529de962388084) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issue with default image being zoomed in on the Display Image Upload component
+
+* [#143](https://github.com/appsmithorg/design-system/pull/143) [`94035cb`](https://github.com/appsmithorg/design-system/commit/94035cb14016f8625e7db995916b65159d54a2ab) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix:IconSelector onSelect failure in local development
+
+- [#136](https://github.com/appsmithorg/design-system/pull/136) [`cd54d63`](https://github.com/appsmithorg/design-system/commit/cd54d63fa0138afd8a6f57d841b13aa54ab786ea) Thanks [@ankitakinger](https://github.com/ankitakinger)! - feat: Make Table and Tab header sticky
+
+## 1.0.18
+
+### Patch Changes
+
+- [#137](https://github.com/appsmithorg/design-system/pull/137) [`ec192f4`](https://github.com/appsmithorg/design-system/commit/ec192f44159784064eff5f8cd9cf9d2adb2e05f9) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - Feat/add all icon stories
+
+* [#140](https://github.com/appsmithorg/design-system/pull/140) [`e316e87`](https://github.com/appsmithorg/design-system/commit/e316e87018b2f79bd0e5ecad5b0adabba78abbe5) Thanks [@yaldram](https://github.com/yaldram)! - fix: dropdown input search text color.
+
+## 1.0.17
+
+### Patch Changes
+
+- [#133](https://github.com/appsmithorg/design-system/pull/133) [`0d0872e`](https://github.com/appsmithorg/design-system/commit/0d0872e09276f3a6584cc549942a9f43ebe1b472) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: uneditable field icon
+
+* [#130](https://github.com/appsmithorg/design-system/pull/130) [`99f809b`](https://github.com/appsmithorg/design-system/commit/99f809b732370f935e0d55d08672704659f4527f) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issue with line height in TableDropdown
+
+- [#132](https://github.com/appsmithorg/design-system/pull/132) [`b2ba8a5`](https://github.com/appsmithorg/design-system/commit/b2ba8a586409703ecc15543bee03d034c114cc07) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: color of menu divider
+
+## 1.0.16
+
+### Patch Changes
+
+- [#122](https://github.com/appsmithorg/design-system/pull/122) [`acea1df`](https://github.com/appsmithorg/design-system/commit/acea1dfe6b2bb8887d173d7c338a3b016fd044c2) Thanks [@souma-ghosh](https://github.com/souma-ghosh)! - feat: Adds showScrollbarOnlyOnHover functionality as a property to ScrollIndicator
+
+* [#126](https://github.com/appsmithorg/design-system/pull/126) [`1e63e78`](https://github.com/appsmithorg/design-system/commit/1e63e78641a3b21a80bb3a0c919544193b5ed9fb) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Table Widget shows scrollbar when not in focus
+
+- [#123](https://github.com/appsmithorg/design-system/pull/123) [`ae63f08`](https://github.com/appsmithorg/design-system/commit/ae63f08cede255f66deb27a4461565c7db2c243d) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: ui issues with checkbox, button, dropdown
+
 ## 1.0.15
 
 ### Patch Changes
