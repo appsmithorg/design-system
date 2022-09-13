@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-fix: color of menu divider
+feat: Added empty state for dropdown
