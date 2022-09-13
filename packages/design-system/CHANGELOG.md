@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.22
+
+### Patch Changes
+
+- [#173](https://github.com/appsmithorg/design-system/pull/173) [`0ba1df7`](https://github.com/appsmithorg/design-system/commit/0ba1df7a93f85e14b5f848e774e5ae69ba66a747) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Dropdown v1 design fixes
+
 ## 1.0.21
 
 ### Patch Changes
