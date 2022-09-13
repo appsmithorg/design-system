@@ -66,7 +66,6 @@ import { ReactComponent as ChatIcon } from "../assets/icons/ads/app-icons/chat.s
 import { ReactComponent as JsIcon } from "../assets/icons/ads/js.svg";
 import { ReactComponent as ExecuteIcon } from "../assets/icons/ads/execute.svg";
 
-
 // remix icons
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
 import AddMoreFillIcon from "remixicon-react/AddCircleFillIcon";
