@@ -14,13 +14,17 @@ import {
 } from "Types/common";
 import { Classes, replayHighlightClass } from "Constants/classes";
 import Text, { TextProps, TextType } from "Text";
-import { Popover, PopperBoundary, Position } from "@blueprintjs/core";
+import {
+  Classes as BS_CLASSES,
+  Popover,
+  PopperBoundary,
+  Position,
+} from "@blueprintjs/core";
 import { typography } from "Constants/typography";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import SearchComponent from "SearchComponent";
 import Spinner from "Spinner";
 import { ReactComponent as Check } from "../assets/icons/control/checkmark.svg";
-import { ReactComponent as Close } from "../assets/icons/control/remove.svg";
 import Tooltip from "Tooltip";
 import SegmentHeader from "ListSegmentHeader";
 import { debounce, findIndex, isArray } from "lodash";
@@ -178,10 +182,9 @@ const DropdownTriggerWrapper = styled.div<{
   }
 `;
 
-const StyledClose = styled(Close)`
+const StyledIcon = styled(Icon)`
   width: 18px;
   height: 18px;
-  margin-right: -2px;
   &:hover {
     background-color: var(--ads-dropdown-default-close-hover-background-color);
   }
@@ -243,7 +246,7 @@ const Selected = styled.div<{
     props.isMultiSelect &&
     `
     min-height: 36px;
-    padding: 2px 8px;
+    padding: 8px;
   `}
   cursor: ${(props) =>
     props.disabled || props.isLoading ? "not-allowed" : "pointer"};
@@ -332,8 +335,7 @@ export const DropdownWrapper = styled.div<{
     0px 4px 6px -2px rgba(0, 0, 0, 0.05);
   display: ${(props) => (props.isOpen ? "inline-block" : "none")};
   .dropdown-search {
-    margin: 4px 12px 8px;
-    width: calc(100% - 24px);
+    width: 100%;
 
     input {
       height: 32px;
@@ -371,7 +373,7 @@ export const DropdownWrapper = styled.div<{
 `;
 
 const SearchComponentWrapper = styled.div`
-  margin: 0px 8px 8px 8px;
+  padding: 8px;
 `;
 
 const DropdownOptionsWrapper = styled.div<{
@@ -384,6 +386,24 @@ const DropdownOptionsWrapper = styled.div<{
   max-height: ${(props) => props.maxHeight};
   overflow-y: auto;
   overflow-x: hidden;
+
+  .ds--dropdown-tooltip > span {
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    & > .t--dropdown-option:focus {
+      outline: none;
+    }
+  }
+
+  .ds--dropdown-tooltip {
+    &:focus {
+      outline: none;
+    }
+  }
 `;
 
 const StyledSubText = styled(Text)<{
@@ -610,12 +630,23 @@ const ChipsWrapper = styled.div`
 `;
 
 const Chips = styled.div`
-  border: 1.2px solid var(--ads-color-black-500);
   display: flex;
   height: 24px;
   align-items: center;
   padding: 4px 8px;
   margin-right: 8px;
+  background-color: var(--ads-color-black-100);
+
+  & > span[type="p2"] {
+    margin-right: 4px;
+  }
+`;
+
+const DropdownGlobalStyle = createGlobalStyle`
+  .${BS_CLASSES.POPOVER}.ds--dropdown-popover {
+    box-shadow: none;
+    border-radius: 0;
+  }
 `;
 
 const scrollIntoViewOptions: ScrollIntoViewOptions = {
@@ -683,15 +714,18 @@ function DefaultDropDownValueNode({
           {selected?.map((s: DropdownOption) => {
             return (
               <Chips key={s.value}>
-                <Text type={TextType.P1}>{s.label}</Text>
-                <StyledClose
+                <Text type={TextType.P2}>{s.label}</Text>
+                <StyledIcon
                   className={`t--remove-option-${s.label}`}
+                  fillColor="var(--ads-old-color-gray-7)"
+                  name="close-x"
                   onClick={(event: any) => {
                     event.stopPropagation();
                     if (removeSelectedOptionClickHandler) {
                       removeSelectedOptionClickHandler(s as DropdownOption);
                     }
                   }}
+                  size={IconSize.XXL}
                 />
               </Chips>
             );
@@ -854,6 +888,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
           }
           return !option.isSectionHeader ? (
             <Tooltip
+              className="ds--dropdown-tooltip"
               content={
                 !!option.disabledTooltipText
                   ? option.disabledTooltipText
@@ -1298,7 +1333,7 @@ export default function Dropdown(props: DropdownProps) {
         minimal
         modifiers={{ arrow: { enabled: true } }}
         onInteraction={(state) => !disabled && setIsOpen(state)}
-        popoverClassName={`${props.className} none-shadow-popover`}
+        popoverClassName={`${props.className} none-shadow-popover ds--dropdown-popover`}
         portalClassName={props.portalClassName}
         portalContainer={props.portalContainer}
         position={Position.BOTTOM_LEFT}
@@ -1314,10 +1349,12 @@ export default function Dropdown(props: DropdownProps) {
           optionClickHandler={optionClickHandler}
           optionWidth={dropdownOptionWidth}
           removeSelectedOptionClickHandler={removeSelectedOptionClickHandler}
+          searchAutoFocus={props.enableSearch}
           selected={selected ? selected : { id: undefined, value: undefined }}
           wrapperBgColor={wrapperBgColor}
         />
       </Popover>
+      <DropdownGlobalStyle />
     </DropdownContainer>
   );
 }
