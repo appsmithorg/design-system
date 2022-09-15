@@ -749,8 +749,15 @@ function DefaultDropDownValueNode({
       return hasError ? (
         <ErrorLabel>{LabelText}</ErrorLabel>
       ) : (
-        <span style={{ width: "100%" }}>
-          <Text type={TextType.P1}>{LabelText}</Text>
+        <span style={{ width: "100%", height: "26px", display: "flex" }}>
+          <Text
+            style={{
+              padding: "4px 8px",
+            }}
+            type={TextType.P1}
+          >
+            {LabelText}
+          </Text>
         </span>
       );
   }
@@ -821,6 +828,7 @@ interface DropdownOptionsProps extends DropdownProps, DropdownSearchProps {
   allowDeselection?: boolean;
   isOpen: boolean; // dropdown popover options flashes when closed, this prop helps to make sure it never happens again.
   showEmptyOptions?: boolean;
+  setVisibleOptions?: (options: DropdownOption[]) => void;
 }
 
 export function RenderDropdownOptions(props: DropdownOptionsProps) {
@@ -829,6 +837,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
     optionClickHandler,
     optionWidth,
     renderOption,
+    setVisibleOptions,
     showEmptyOptions = false, //TODO: deprecate this prop
   } = props;
   const [options, setOptions] = useState<Array<DropdownOption>>(props.options);
@@ -845,6 +854,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
     );
     setSearchValue(searchStr);
     setOptions(filteredOptions);
+    setVisibleOptions && setVisibleOptions(filteredOptions);
     onSearch && onSearch(searchStr);
   };
 
@@ -1037,6 +1047,9 @@ export default function Dropdown(props: DropdownProps) {
   );
   const [highlight, setHighlight] = useState(-1);
   const dropdownWrapperRef = useRef<HTMLDivElement>(null);
+  const [visibleOptions, setVisibleOptions] = useState<Array<DropdownOption>>(
+    props.options,
+  );
 
   const closeIfOpen = () => {
     if (isOpen && !props.isMultiSelect) {
@@ -1134,18 +1147,20 @@ export default function Dropdown(props: DropdownProps) {
           }
           break;
         case " ":
-          emitKeyPressEvent(dropdownWrapperRef.current, e.key);
-          if (closeOnSpace) {
-            e.preventDefault();
-            if (isOpen) {
-              if (props.isMultiSelect) {
-                if (highlight >= 0)
-                  optionClickHandler(props.options[highlight], true);
+          if (!props.enableSearch) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
+            if (closeOnSpace) {
+              e.preventDefault();
+              if (isOpen) {
+                if (props.isMultiSelect) {
+                  if (highlight >= 0)
+                    optionClickHandler(visibleOptions[highlight], true);
+                } else {
+                  optionClickHandler(selected as DropdownOption, true);
+                }
               } else {
-                optionClickHandler(selected as DropdownOption, true);
+                onClickHandler();
               }
-            } else {
-              onClickHandler();
             }
           }
           break;
@@ -1155,7 +1170,7 @@ export default function Dropdown(props: DropdownProps) {
           if (isOpen) {
             if (props.isMultiSelect) {
               if (highlight >= 0)
-                optionClickHandler(props.options[highlight], true);
+                optionClickHandler(visibleOptions[highlight], true);
             } else {
               optionClickHandler(selected as DropdownOption, true);
             }
@@ -1169,7 +1184,7 @@ export default function Dropdown(props: DropdownProps) {
           if (isOpen) {
             if (props.isMultiSelect) {
               setHighlight((x) => {
-                const index = x < 1 ? props.options.length - 1 : x - 1;
+                const index = x < 1 ? visibleOptions.length - 1 : x - 1;
                 document
                   .querySelectorAll(".t--dropdown-option")
                   [index]?.scrollIntoView(scrollIntoViewOptions);
@@ -1178,15 +1193,15 @@ export default function Dropdown(props: DropdownProps) {
             } else {
               setSelected((prevSelected) => {
                 let index = findIndex(
-                  props.options,
+                  visibleOptions,
                   prevSelected as DropdownOption,
                 );
-                if (index === 0) index = props.options.length - 1;
+                if (index === 0) index = visibleOptions.length - 1;
                 else index--;
                 document
                   .querySelectorAll(".t--dropdown-option")
                   [index]?.scrollIntoView(scrollIntoViewOptions);
-                return props.options[index];
+                return visibleOptions[index];
               });
             }
           } else {
@@ -1200,7 +1215,7 @@ export default function Dropdown(props: DropdownProps) {
           if (isOpen) {
             if (props.isMultiSelect) {
               setHighlight((x) => {
-                const index = x + 1 === props.options.length ? 0 : x + 1;
+                const index = x + 1 === visibleOptions.length ? 0 : x + 1;
                 document
                   .querySelectorAll(".t--dropdown-option")
                   [index]?.scrollIntoView(scrollIntoViewOptions);
@@ -1208,16 +1223,18 @@ export default function Dropdown(props: DropdownProps) {
               });
             } else {
               setSelected((prevSelected) => {
+                // eslint-disable-next-line no-debugger
+                debugger;
                 let index = findIndex(
-                  props.options,
+                  visibleOptions,
                   prevSelected as DropdownOption,
                 );
-                if (index === props.options.length - 1) index = 0;
+                if (index === visibleOptions.length - 1) index = 0;
                 else index++;
                 document
                   .querySelectorAll(".t--dropdown-option")
                   [index]?.scrollIntoView(scrollIntoViewOptions);
-                return props.options[index];
+                return visibleOptions[index];
               });
             }
           } else {
@@ -1236,7 +1253,7 @@ export default function Dropdown(props: DropdownProps) {
           break;
       }
     },
-    [isOpen, props.options, props.selected, selected, highlight],
+    [isOpen, visibleOptions, props.selected, selected, highlight],
   );
 
   const [dropdownWrapperWidth, setDropdownWrapperWidth] = useState<string>(
@@ -1372,6 +1389,7 @@ export default function Dropdown(props: DropdownProps) {
           removeSelectedOptionClickHandler={removeSelectedOptionClickHandler}
           searchAutoFocus={props.enableSearch}
           selected={selected ? selected : { id: undefined, value: undefined }}
+          setVisibleOptions={setVisibleOptions}
           wrapperBgColor={wrapperBgColor}
         />
       </Popover>
