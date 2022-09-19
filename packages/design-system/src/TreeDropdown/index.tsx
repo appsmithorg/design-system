@@ -16,7 +16,6 @@ import {
   Menu,
   Button,
   Classes,
-  Position,
 } from "@blueprintjs/core";
 import styled from "styled-components";
 import Icon, { IconSize } from "Icon";
@@ -64,7 +63,7 @@ export type TreeDropdownProps = {
   className?: string;
   modifiers?: IPopoverSharedProps["modifiers"];
   onMenuToggle?: (isOpen: boolean) => void;
-  position?: Position;
+  position?: PopoverPosition;
   menuWidth?: number;
 };
 
