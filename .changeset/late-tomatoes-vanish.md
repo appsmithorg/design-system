@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: Introducing icons for audit-logs
+feat: Added audit logs icons

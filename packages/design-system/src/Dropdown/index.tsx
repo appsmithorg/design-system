@@ -205,7 +205,6 @@ const SquareBox = styled.div<{
     props.checked ? "var(--ads-color-black-900)" : "var(--ads-color-black-400)";
   }};
   flex: 0 0 auto;
-
   & svg {
     display: ${(props) => (props.checked ? "block" : "none")};
     width: 14px;
@@ -238,7 +237,6 @@ const Selected = styled.div<{
   justify-content: space-between;
   width: 100%;
   min-height: ${(props) => props.height};
-
   ${(props) =>
     props.isMultiSelect &&
     `
@@ -305,11 +303,9 @@ export const DropdownContainer = styled.div<{ width: string; height?: string }>`
   span.bp3-popover-target div {
     height: 100%;
   }
-
   span.bp3-popover-wrapper {
     width: 100%;
   }
-
   &:focus ${Selected} {
     border: 1px solid var(--appsmith-input-focus-border-color);
   }
@@ -334,24 +330,20 @@ export const DropdownWrapper = styled.div<{
   .dropdown-search {
     margin: 4px 12px 8px;
     width: calc(100% - 24px);
-
     input {
       height: 32px;
       font-size: 14px !important;
       color: var(--ads-old-color-gray-10) !important;
       padding-left: 36px !important;
       border: 1.2px solid var(--ads-color-black-200);
-
       &:hover {
         background: var(--ads-color-black-50);
       }
-
       &:focus {
         color: var(--ads-color-black-900);
         border: 1.2px solid var(--ads-color-black-900);
       }
     }
-
     .bp3-icon-search {
       width: 32px;
       height: 32px;
@@ -359,7 +351,6 @@ export const DropdownWrapper = styled.div<{
       display: flex;
       align-items: center;
       justify-content: center;
-
       svg {
         width: 14px;
         path {
@@ -428,11 +419,9 @@ const OptionWrapper = styled.div<{
       fill: var(--ads-color-black-250);
     }
   }
-
   .bp3-popover-wrapper {
     width: 100%;
   }
-
   .${Classes.TEXT} {
     color: ${(props) =>
       props.disabled
@@ -441,7 +430,6 @@ const OptionWrapper = styled.div<{
         ? "var(--ads-dropdown-default-menu-hover-text-color)"
         : "var(--ads-dropdown-default-menu-text-color)"};
   }
-
   .${Classes.ICON} {
     margin-right: var(--ads-spaces-5);
     svg {
@@ -453,26 +441,21 @@ const OptionWrapper = styled.div<{
       }
     }
   }
-
   &:hover {
     background-color: ${(props) =>
       props.selectedHighlightBg ||
       "var(--ads-dropdown-default-menu-hover-background-color)"};
-
     &&& svg {
       rect {
         fill: var(--ads-text-color-on-dark-background);
       }
     }
-
     .${Classes.TEXT} {
       color: var(--ads-dropdown-default-menu-hover-text-color);
     }
-
     ${StyledSubText} {
       color: var(--ads-dropdown-default-menu-subtext-text-color);
     }
-
     .${Classes.ICON} {
       svg {
         path {
@@ -519,13 +502,11 @@ const SelectedDropDownHolder = styled.div<{ enableScroll?: boolean }>`
   max-width: 100%;
   overflow: ${(props) => (props.enableScroll ? "auto" : "hidden")};
   width: 100%;
-
   & ${Text} {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
   &.custom-render-option > * {
     // below if to override any custom margin and padding added in the render option
     // because the above container already comes with a padding
@@ -540,7 +521,6 @@ const SelectedIcon = styled(Icon)`
   & > div:first-child {
     height: 18px;
     width: 18px;
-
     svg {
       height: 18px;
       width: 18px;
@@ -553,7 +533,6 @@ const SelectedIcon = styled(Icon)`
       }
     }
   }
-
   svg {
     path {
       fill: ${(props) =>

@@ -76,7 +76,7 @@
   --ads-dropdown-disabled-header-background-color: var(--ads-color-black-0);
   --ads-dropdown-default-header-text-color: var(--ads-color-black-750);
   --ads-dropdown-selected-header-text-color: var(--ads-old-color-gray-10);
-  --ads-dropdown-default-menu-border-color: var(--ads-color-black-250);
+  --ads-dropdown-default-menu-border-color: var(--ads-color-black-100);
   --ads-dropdown-default-menu-subtext-text-color: var(--ads-old-color-gray-7);
   --ads-dropdown-selected-menu-subtext-text-color: var(--ads-color-black-550);
   --ads-dropdown-default-menu-text-color: var(--ads-color-black-750);
@@ -149,7 +149,7 @@
   --ads-notification-banner-error-text-color: #C91818;
   --ads-notification-banner-error-background-color:  var(--ads-old-color-fair-pink);
   --ads-notification-banner-light-enterprise-text-color: #E8F5FA;
-  ----ads-notification-banner-dark-enterprise-text-color: #00407D;
+  --ads-notification-banner-dark-enterprise-text-color: #00407D;
 
   /** Numbered Step */
   --ads-numbered-step-text-color: var(--ads-color-black-250);

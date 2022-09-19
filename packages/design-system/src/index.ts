@@ -15,6 +15,9 @@ export * from "./ButtonTab";
 export { default as Callout } from "./Callout";
 export * from "./Callout";
 
+export { default as CalloutV2 } from "./CalloutV2";
+export * from "./CalloutV2";
+
 export { default as Checkbox } from "./Checkbox";
 export * from "./Checkbox";
 

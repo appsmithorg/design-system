@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-Feat/add all icon stories
+feat: Added empty state for dropdown

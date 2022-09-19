@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-fix: radio button color
+fix: Reverted dropdown changes

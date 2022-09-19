@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "1.0.15",
+  "version": "1.0.22",
   "description": "This is the package for the Appsmith design system components",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -13,7 +13,9 @@
     "build-storybook": "build-storybook",
     "create-story": "./create_story.sh",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test-storybook": "test-storybook",
+    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\""
   },
   "contributors": [
     "Albin <albin@appsmith.com>",
@@ -45,6 +47,7 @@
     "@storybook/manager-webpack4": "^6.5.7",
     "@storybook/react": "^6.5.7",
     "@storybook/testing-library": "^0.0.11",
+    "@storybook/test-runner": "^0.7.1",
     "@svgr/rollup": "^6.2.1",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "5.16.1",
@@ -52,6 +55,7 @@
     "@testing-library/react-hooks": "7.0.2",
     "@testing-library/user-event": "13.5.0",
     "@types/emoji-mart": "3.0.4",
+    "@types/wait-on": "^5.2.0",
     "@types/jest": "27.4.1",
     "@types/lodash-es": "^4.17.6",
     "@types/react": "16.14.28",
@@ -69,6 +73,7 @@
     "babel-loader": "^8.2.5",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-preset-react-app": "^10.0.1",
+    "concurrently": "^7.3.0",
     "eslint": "8.3.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-config-react": "^1.1.7",
@@ -87,6 +92,7 @@
     "lodash-es": "4.17.21",
     "loglevel": "^1.7.1",
     "moment-timezone": "^0.5.34",
+    "playwright": "^1.25.1",
     "popper.js": "^1.15.0",
     "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
@@ -104,7 +110,8 @@
     "styled-components": "^5.2.0",
     "ts-jest": "27.0.0",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
-    "typescript": "4.5.5"
+    "typescript": "4.5.5",
+    "wait-on": "^5.3.0"
   },
   "peerDependencies": {
     "@blueprintjs/core": "3.33.0",

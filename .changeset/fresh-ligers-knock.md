@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-fix: color of menu divider
+fix: Dropdown keyboard navigation issues
