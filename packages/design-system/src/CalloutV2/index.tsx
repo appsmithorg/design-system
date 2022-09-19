@@ -76,20 +76,21 @@ const ContentWrapper = styled.div`
 function CalloutV2(props: {
   actionLabel?: string;
   desc: string;
-  onClick?: any;
+  onClick?: React.MouseEvent<HTMLElement>;
   showCrossIcon?: boolean;
   title?: string;
   type: CalloutType;
   url?: string;
 }) {
-  const linkProps: Record<string, string | (() => any)> = {};
+  const linkProps: Record<string, string | any> = {};
   const [show, setShow] = useState(true);
+  const { onClick } = props;
 
   if (props.url) {
     linkProps.href = props.url;
     linkProps.target = "_blank";
-  } else if (props.onClick) {
-    linkProps.onClick = props.onClick;
+  } else if (onClick) {
+    linkProps.onClick = onClick;
   }
 
   const handleClick = () => {
