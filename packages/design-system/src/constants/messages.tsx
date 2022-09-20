@@ -27,3 +27,5 @@ export const BACK = () => "BACK";
 export const SKIP = () => "SKIP";
 
 export const LEARN_MORE = () => "Learn More";
+
+export const SNIPPET_TOOLTIP = () => "Search code snippets";
