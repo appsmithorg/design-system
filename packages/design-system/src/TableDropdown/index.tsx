@@ -83,6 +83,7 @@ const Content = styled.div<{ isLoading?: boolean }>`
 `;
 
 function TableDropdown(props: DropdownProps) {
+  const { onSelect } = props;
   const [selectedIndex, setSelectedIndex] = useState(props.selectedIndex);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(
@@ -103,7 +104,7 @@ function TableDropdown(props: DropdownProps) {
     ) {
       setSelectedIndex(index);
       setSelectedOption(props.options[index]);
-      props.onSelect && props.onSelect(props.options[index]);
+      onSelect && onSelect(props.options[index]);
     }
     setIsDropdownOpen(false);
   };

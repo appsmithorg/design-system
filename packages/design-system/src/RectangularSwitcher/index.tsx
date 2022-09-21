@@ -90,6 +90,7 @@ const Dark = styled.div<{ value: boolean }>`
 `;
 
 export default function Switch(props: SwitchProps) {
+  const { onSwitch } = props;
   const [value, setValue] = useState(false);
   const [firstRender, setFirstRender] = useState(false);
 
@@ -99,7 +100,7 @@ export default function Switch(props: SwitchProps) {
 
   const onChangeHandler = (value: boolean) => {
     setValue(value);
-    props.onSwitch && props.onSwitch(value);
+    onSwitch && onSwitch(value);
   };
 
   return (

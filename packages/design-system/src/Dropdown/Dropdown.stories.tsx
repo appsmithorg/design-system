@@ -31,6 +31,7 @@ DropdownExample.args = {
   allowDeselection: true,
   containerClassName: "dropdown-container",
   isMultiSelect: true,
+  // eslint-disable-next-line no-console
   onSelect: () => console.log("selected"),
   options: options,
   selected: selected,

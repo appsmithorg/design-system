@@ -326,7 +326,8 @@ export const isCollapsibleTabComponent = (
 export function TabComponent(
   props: TabbedViewComponentType | CollapsibleTabbedViewComponentType,
 ) {
-  const TabItem = props.tabItemComponent || DefaultTabItem;
+  const { onSelect, tabItemComponent } = props;
+  const TabItem = tabItemComponent || DefaultTabItem;
   // for setting selected state of an uncontrolled component
   const [selectedIndex, setSelectedIndex] = useState(props.selectedIndex || 0);
   const [isExpanded, setIsExpanded] = useState(true);
@@ -396,7 +397,7 @@ export function TabComponent(
 
       <Tabs
         onSelect={(index: number) => {
-          props.onSelect && props.onSelect(index);
+          onSelect && onSelect(index);
           setSelectedIndex(index);
         }}
         selectedIndex={props.selectedIndex}

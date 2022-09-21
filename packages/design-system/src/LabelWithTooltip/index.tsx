@@ -5,7 +5,7 @@ import { Alignment, Classes, Label } from "@blueprintjs/core";
 import { LabelPosition } from "Types/common";
 import { FontStyleTypes } from "Constants/typography";
 import Tooltip from "Tooltip";
-import { IconProps, IconWrapper } from "Icon";
+import { IconWrapper } from "Icon";
 import { ReactComponent as HelpIcon } from "../assets/icons/control/help.svg";
 
 export interface LabelWithTooltipProps {
