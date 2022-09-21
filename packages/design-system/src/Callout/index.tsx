@@ -80,6 +80,7 @@ Callout.defaultProps = {
 };
 
 function Callout(props: CalloutProps) {
+  const { onClose } = props;
   return (
     <CalloutContainer
       addMarginTop={props.addMarginTop}
@@ -93,7 +94,7 @@ function Callout(props: CalloutProps) {
       <Text type={TextType.P2}>{props.text}</Text>
       {props.label ? props.label : null}
       {props.closeButton ? (
-        <Label onClick={props.onClose} variant={props.variant || Variant.info}>
+        <Label onClick={onClose} variant={props.variant || Variant.info}>
           <Icon name="close-modal" size={IconSize.XXL} />
         </Label>
       ) : null}

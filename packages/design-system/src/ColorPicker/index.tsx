@@ -111,6 +111,7 @@ const EmptyColorIconWrapper = styled.div`
 `;
 
 function ColorBoard(props: ColorBoardProps) {
+  const { selectColor } = props;
   return (
     <ColorsWrapper>
       {defaultColors.map((color: string, index: number) => (
@@ -118,14 +119,14 @@ function ColorBoard(props: ColorBoardProps) {
           className={Classes.POPOVER_DISMISS}
           color={color}
           key={index}
-          onClick={() => props.selectColor(color)}
+          onClick={() => selectColor(color)}
         >
           {props.selectedColor === color && <CheckedIcon />}
         </ColorTab>
       ))}
       <EmptyColorIconWrapper
         color="transparent"
-        onClick={() => props.selectColor("")}
+        onClick={() => selectColor("")}
       >
         <NoColorIcon>
           <div className="line" />
@@ -155,11 +156,11 @@ interface ColorPickerProps {
 }
 
 function ColorPickerComponent(props: ColorPickerProps) {
+  const { changeColor } = props;
   const [color, setColor] = React.useState(props.color);
-  const debouncedOnChange = React.useCallback(
-    debounce(props.changeColor, 500),
-    [props.changeColor],
-  );
+  const debouncedOnChange = React.useCallback(debounce(changeColor, 500), [
+    changeColor,
+  ]);
   const handleChangeColor = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     debouncedOnChange(value);
@@ -205,7 +206,7 @@ function ColorPickerComponent(props: ColorPickerProps) {
       <ColorBoard
         selectColor={(color) => {
           setColor(color);
-          props.changeColor(color);
+          changeColor(color);
         }}
         selectedColor={color}
       />
