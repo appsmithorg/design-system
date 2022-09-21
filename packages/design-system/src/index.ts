@@ -114,6 +114,9 @@ export * from "./SearchInput";
 export { default as ShowcaseCarousel } from "./ShowcaseCarousel";
 export * from "./ShowcaseCarousel";
 
+export { default as SearchSnippet } from "./SnippetButton";
+export * from "./SnippetButton";
+
 export { default as Spinner } from "./Spinner";
 export * from "./Spinner";
 
