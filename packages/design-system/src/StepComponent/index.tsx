@@ -70,6 +70,7 @@ interface StepComponentProps {
 
 const StepComponent = React.forwardRef(
   (props: StepComponentProps, ref: any) => {
+    const { displayFormat, onChange } = props;
     const { emitDSEvent, eventEmitterRef } = useDSEvent<HTMLDivElement>(
       false,
       ref,
@@ -93,7 +94,7 @@ const StepComponent = React.forwardRef(
         return;
       }
       const value = props.value - props.steps;
-      props.onChange(value, isUpdatedViaKeyboard);
+      onChange(value, isUpdatedViaKeyboard);
     }
 
     function increase(isUpdatedViaKeyboard = false) {
@@ -101,7 +102,7 @@ const StepComponent = React.forwardRef(
         return;
       }
       const value = props.value + props.steps;
-      props.onChange(value, isUpdatedViaKeyboard);
+      onChange(value, isUpdatedViaKeyboard);
     }
 
     function handleKeydown(e: React.KeyboardEvent) {
@@ -140,7 +141,7 @@ const StepComponent = React.forwardRef(
           onClick={() => decrease(false)}
           width={12}
         />
-        <InputWrapper>{props.displayFormat(props.value)}</InputWrapper>
+        <InputWrapper>{displayFormat(props.value)}</InputWrapper>
         <StyledIncreaseIcon
           height={12}
           onClick={() => increase(false)}

@@ -58,6 +58,7 @@ const ColorBox = styled.div<{ selected: string; color: string }>`
 `;
 
 function ColorSelector(props: ColorSelectorProps) {
+  const { onSelect } = props;
   const [selected, setSelected] = useState<string>(
     props.defaultValue || props.colorPalette[0],
   );
@@ -81,7 +82,7 @@ function ColorSelector(props: ColorSelectorProps) {
             onClick={() => {
               if (selected !== hex) {
                 setSelected(hex);
-                props.onSelect && props.onSelect(hex);
+                onSelect && onSelect(hex);
               }
             }}
             selected={selected}

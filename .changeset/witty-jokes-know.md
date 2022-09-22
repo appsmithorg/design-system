@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: Added empty state for dropdown
+feat: create SnippetButton component

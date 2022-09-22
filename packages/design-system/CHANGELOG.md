@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.23
+
+### Patch Changes
+
+- [#171](https://github.com/appsmithorg/design-system/pull/171) [`08cc10f`](https://github.com/appsmithorg/design-system/commit/08cc10fb55f52d65fddee1950a9cc2f7191969bd) Thanks [@IAmAnubhavSaini](https://github.com/IAmAnubhavSaini)! - feat: Added audit logs icons
+
+* [#177](https://github.com/appsmithorg/design-system/pull/177) [`4b0865a`](https://github.com/appsmithorg/design-system/commit/4b0865ac4965d67131609a471ec9fc97d0b2fa89) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added empty state for dropdown
+
 ## 1.0.22
 
 ### Patch Changes

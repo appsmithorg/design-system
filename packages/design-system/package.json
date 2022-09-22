@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "This is the package for the Appsmith design system components",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -91,7 +91,7 @@
     "jsdom": "16.7.0",
     "lodash-es": "4.17.21",
     "loglevel": "^1.7.1",
-    "moment-timezone": "^0.5.34",
+    "moment-timezone": "^0.5.35",
     "playwright": "^1.25.1",
     "popper.js": "^1.15.0",
     "postcss": "^8.4.14",

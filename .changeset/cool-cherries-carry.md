@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: Added audit logs icons
+Bump moment-timezone from 0.5.34 to 0.5.35
