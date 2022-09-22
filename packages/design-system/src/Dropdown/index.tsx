@@ -226,7 +226,7 @@ const Selected = styled.div<{
   isLoading?: boolean;
   isMultiSelect?: boolean;
 }>`
-  padding: var(--ads-spaces-2) var(--ads-spaces-3);
+  padding: var(--ads-spaces-3);
   background: ${(props) => {
     if (props.disabled) {
       return "var(--ads-dropdown-disabled-header-background-color)";
@@ -245,7 +245,7 @@ const Selected = styled.div<{
     props.isMultiSelect &&
     `
     min-height: 36px;
-    padding: 8px;
+    padding: 4px 8px;
   `}
   cursor: ${(props) =>
     props.disabled || props.isLoading ? "not-allowed" : "pointer"};
@@ -324,7 +324,8 @@ export const DropdownWrapper = styled.div<{
 }>`
   width: ${(props) => props.width};
   z-index: 1;
-  background-color: ${(props) => props.wrapperBgColor};
+  background-color: ${(props) =>
+    props.wrapperBgColor ? props.wrapperBgColor : "var(--ads-color-black-0)"};
   border: 1px solid var(--ads-dropdown-default-menu-border-color);
   overflow: hidden;
   overflow-y: auto;
@@ -610,7 +611,7 @@ const Chips = styled.div`
   display: flex;
   height: 24px;
   align-items: center;
-  padding: 4px 8px;
+  padding: 4px;
   margin-right: 8px;
   background-color: var(--ads-color-black-100);
   & > span[type="p2"] {
@@ -622,7 +623,11 @@ const DropdownGlobalStyle = createGlobalStyle`
   .${BS_CLASSES.POPOVER}.ds--dropdown-popover {	
     box-shadow: none;	
     border-radius: 0;	
-  }	
+  }
+
+  .${BS_CLASSES.POPOVER}.ds--dropdown-popover > .${BS_CLASSES.POPOVER_CONTENT} {
+    background: none;
+  }
 `;
 
 const EmptyStateWrapper = styled.div`
@@ -724,10 +729,11 @@ function DefaultDropDownValueNode({
       return hasError ? (
         <ErrorLabel>{LabelText}</ErrorLabel>
       ) : (
-        <span style={{ width: "100%", height: "26px", display: "flex" }}>
+        <span style={{ width: "100%", height: "24px", display: "flex" }}>
           <Text
             style={{
-              padding: "4px 8px",
+              display: "flex",
+              alignItems: "center",
             }}
             type={TextType.P1}
           >
