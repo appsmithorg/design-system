@@ -76,7 +76,7 @@ const ContentWrapper = styled.div`
 function CalloutV2(props: {
   actionLabel?: string;
   desc: string;
-  onClick?: React.MouseEvent<HTMLElement>;
+  onClick?: any;
   showCrossIcon?: boolean;
   title?: string;
   type: CalloutType;
