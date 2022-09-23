@@ -226,7 +226,7 @@ const Selected = styled.div<{
   isLoading?: boolean;
   isMultiSelect?: boolean;
 }>`
-  padding: var(--ads-spaces-3);
+  padding: var(--ads-spaces-2) var(--ads-spaces-3);
   background: ${(props) => {
     if (props.disabled) {
       return "var(--ads-dropdown-disabled-header-background-color)";
@@ -532,6 +532,10 @@ const SelectedDropDownHolder = styled.div<{ enableScroll?: boolean }>`
     // which will result broken UI
     margin: 0 !important;
     padding: 0 !important;
+    & > *:hover {
+      background-color: initial;
+      background: initial;
+    }
   }
 `;
 
