@@ -1136,6 +1136,7 @@ export default function Dropdown(props: DropdownProps) {
           break;
         case " ":
           if (!isOpen) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
             onClickHandler();
             break;
           }
@@ -1180,6 +1181,7 @@ export default function Dropdown(props: DropdownProps) {
           break;
         case "ArrowUp":
           if (!isOpen) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
             onClickHandler();
             break;
           }
@@ -1199,6 +1201,7 @@ export default function Dropdown(props: DropdownProps) {
           break;
         case "ArrowDown":
           if (!isOpen) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
             onClickHandler();
             break;
           }
