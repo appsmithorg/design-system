@@ -1135,6 +1135,10 @@ export default function Dropdown(props: DropdownProps) {
           }
           break;
         case " ":
+          if (!isOpen) {
+            onClickHandler();
+            break;
+          }
           if (!props.enableSearch) {
             emitKeyPressEvent(dropdownWrapperRef.current, e.key);
             if (closeOnSpace) {
@@ -1175,6 +1179,10 @@ export default function Dropdown(props: DropdownProps) {
           }
           break;
         case "ArrowUp":
+          if (!isOpen) {
+            onClickHandler();
+            break;
+          }
           if (elementList) {
             emitKeyPressEvent(dropdownWrapperRef.current, e.key);
             e.preventDefault();
@@ -1190,6 +1198,10 @@ export default function Dropdown(props: DropdownProps) {
           }
           break;
         case "ArrowDown":
+          if (!isOpen) {
+            onClickHandler();
+            break;
+          }
           if (elementList) {
             emitKeyPressEvent(dropdownWrapperRef.current, e.key);
             e.preventDefault();

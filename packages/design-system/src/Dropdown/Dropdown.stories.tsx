@@ -14,13 +14,19 @@ const Template: ComponentStory<typeof Dropdown> = (args) => {
 };
 
 const options = [
-  { label: "Primary", value: "PRIMARY" },
-  { label: "Secondary", value: "SECONDARY" },
+  { label: "One", value: "one" },
+  { label: "Two", value: "two" },
+  { label: "Three", value: "three" },
+  { label: "Four", value: "four" },
+  { label: "Five", value: "five" },
+  { label: "Six", value: "six" },
+  { label: "Seven", value: "seven" },
+  { label: "Eight", value: "eight" },
 ];
 const selected = [
   {
-    label: "Primary",
-    value: "PRIMARY",
+    label: "One",
+    value: "one",
   },
 ];
 
