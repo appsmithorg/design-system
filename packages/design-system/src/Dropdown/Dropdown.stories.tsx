@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { default as Dropdown } from "./index";
 
 export default {
-  title: "Design System/Dropdown Original",
+  title: "Design System/Dropdown",
   component: Dropdown,
 } as ComponentMeta<typeof Dropdown>;
 
@@ -14,19 +14,24 @@ const Template: ComponentStory<typeof Dropdown> = (args) => {
 };
 
 const options = [
-  { label: "Primary", value: "PRIMARY" },
-  { label: "Secondary", value: "SECONDARY" },
-  { label: "Tertiary", value: "TERTIARY" },
+  { label: "One", value: "one" },
+  { label: "Two", value: "two" },
+  { label: "Three", value: "three" },
+  { label: "Four", value: "four" },
+  { label: "Five", value: "five" },
+  { label: "Six", value: "six" },
+  { label: "Seven", value: "seven" },
+  { label: "Eight", value: "eight" },
 ];
 const selected = [
   {
-    label: "Primary",
-    value: "PRIMARY",
+    label: "One",
+    value: "one",
   },
 ];
 
 export const DropdownExample = Template.bind({});
-DropdownExample.storyName = "Dropdown Original";
+DropdownExample.storyName = "Dropdown";
 DropdownExample.args = {
   allowDeselection: true,
   containerClassName: "dropdown-container",
