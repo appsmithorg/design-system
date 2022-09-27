@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { Icon, IconSize, Text, TextType } from "../index";
 import { toast, ToastOptions, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import DebugButton from "components/editorComponents/Debugger/DebugCTA";
+// import DebugButton from "components/editorComponents/Debugger/DebugCTA";
 import * as log from "loglevel";
 
 export type ToastProps = ToastOptions &
@@ -132,9 +132,9 @@ const ToastTextWrapper = styled.div`
   min-width: 0;
 `;
 
-const StyledDebugButton = styled(DebugButton)`
-  margin-left: auto;
-`;
+// const StyledDebugButton = styled(DebugButton)`
+//   margin-left: auto;
+// `;
 
 const StyledActionText = styled(Text)`
   color: var(--ads-toast-redo-text-color) !important;
@@ -184,11 +184,12 @@ export function ToastComponent(
             </StyledActionText>
           )}
           {props.variant === Variant.danger && props.showDebugButton ? (
-            <StyledDebugButton
-              className="t--toast-debug-button"
-              source={"TOAST"}
-            />
-          ) : null}
+            <div>debug button should show here</div>
+          ) : // <StyledDebugButton
+          //   className="t--toast-debug-button"
+          //   source={"TOAST"}
+          // />
+          null}
         </ToastTextWrapper>
       </FlexContainer>
       <div className="undo-section">
@@ -196,7 +197,7 @@ export function ToastComponent(
           <Text
             onClick={() => {
               if (dispatch && props.dispatchableAction) {
-                dispatch(props.dispatchableAction);
+                dispatch(dispatchableAction);
                 props.undoAction && props.undoAction();
               } else {
                 props.undoAction && props.undoAction();
