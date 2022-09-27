@@ -1,15 +1,11 @@
 import React, { Dispatch } from "react";
-import {
-  CommonComponentProps,
-  Classes,
-  Variant,
-  ToastTypeOptions,
-} from "./common";
+import { CommonComponentProps, ToastTypeOptions } from "Types/common";
+import { Classes } from "Constants/classes";
+import { Variant } from "Constants/variants";
 import styled from "styled-components";
 import { Icon, IconSize, Text, TextType } from "../index";
 import { toast, ToastOptions, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ReduxActionType } from "@appsmith/constants/ReduxActionConstants";
 import DebugButton from "components/editorComponents/Debugger/DebugCTA";
 import * as log from "loglevel";
 
@@ -23,7 +19,7 @@ export type ToastProps = ToastOptions &
     onUndo?: () => void;
     dispatchableAction?: {
       dispatch: Dispatch<any>;
-      type: ReduxActionType;
+      type: string;
       payload: any;
     };
     showDebugButton?: boolean;
@@ -65,7 +61,7 @@ const ToastBody = styled.div<{
   isUndo?: boolean;
   dispatchableAction?: {
     dispatch: Dispatch<any>;
-    type: ReduxActionType;
+    type: string;
     payload: any;
   };
   width?: string;
@@ -153,7 +149,7 @@ export function ToastComponent(
   const dispatchableAction = {
     type: props.dispatchableAction?.type,
     payload: props.dispatchableAction?.payload,
-  }
+  };
 
   return (
     <ToastBody
