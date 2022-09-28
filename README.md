@@ -1,2 +1,2 @@
 # design-system
-This is the repository for the Appsmith Design System components
+This is the repository for the Appsmith Design System components 
