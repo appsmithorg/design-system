@@ -14,9 +14,9 @@ defaults:
 # Job will run on a ubuntu instance
 jobs:
   build-design-system:
-    #uses: ./.github/workflows/Lib-build-design-system.yml
     uses: ./.github/workflows/Lib-build-design-system.yml
     name: build-design-system
+    secrets: inherit
   
   PRCheck:
     needs: [build-design-system]
