@@ -29,7 +29,7 @@ const MessageContainer = styled.div<{
   }
 `;
 const StyledIcon = styled(Icon)`
-  padding: 10px;
+  padding: 8px 4px;
   cursor: default;
 
   svg {
@@ -40,13 +40,17 @@ const StyledIcon = styled(Icon)`
 const MessageWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding-left: 4px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   line-height: 16px;
 `;
 
 const MessageText = styled.p`
   font-size: 13px;
   font-weight: 400;
+  margin-bottom: 0;
 `;
 
 const MessageHeader = styled.h2`
