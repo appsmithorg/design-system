@@ -3,6 +3,8 @@
 export { default as AppIcon } from "./AppIcon";
 export * from "./AppIcon";
 
+export * from "./BannerMessage";
+
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export * from "./Breadcrumbs";
 
