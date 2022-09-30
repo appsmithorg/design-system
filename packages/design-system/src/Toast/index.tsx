@@ -6,7 +6,6 @@ import styled from "styled-components";
 import { Icon, IconSize, Text, TextType } from "../index";
 import { toast, ToastOptions, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import DebugButton from "components/editorComponents/Debugger/DebugCTA";
 import * as log from "loglevel";
 
 export type ToastProps = ToastOptions &
@@ -22,7 +21,7 @@ export type ToastProps = ToastOptions &
       type: string;
       payload: any;
     };
-    showDebugButton?: boolean;
+    showDebugButton?: any;
     hideProgressBar?: boolean;
     hideActionElementSpace?: boolean;
     width?: string;
@@ -132,10 +131,6 @@ const ToastTextWrapper = styled.div`
   min-width: 0;
 `;
 
-// const StyledDebugButton = styled(DebugButton)`
-//   margin-left: auto;
-// `;
-
 const StyledActionText = styled(Text)`
   color: var(--ads-toast-redo-text-color) !important;
   cursor: pointer;
@@ -184,12 +179,11 @@ export function ToastComponent(
             </StyledActionText>
           )}
           {props.variant === Variant.danger && props.showDebugButton ? (
-            <div>debug button should show here</div>
-          ) : // <StyledDebugButton
-          //   className="t--toast-debug-button"
-          //   source={"TOAST"}
-          // />
-          null}
+            <props.showDebugButton.component
+              {...props.showDebugButton.componentProps}
+              style={{ marginLeft: "auto" }}
+            />
+          ) : null}
         </ToastTextWrapper>
       </FlexContainer>
       <div className="undo-section">
@@ -246,13 +240,12 @@ export const Toaster = {
         hideProgressBar: config.hideProgressBar,
       },
     );
-    if(config.autoClose !== false) {
+    if (config.autoClose !== false) {
       // Update autoclose everytime to keep resetting the timer.
       toast.update(toastId, {
         autoClose: config.duration || 5000,
       });
     }
-
   },
   clear: () => toast.dismiss(),
 };
