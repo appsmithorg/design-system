@@ -14,6 +14,9 @@ jobs:
     steps:
       # Checkout the code
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
       # Setup node with version 16.x and NPM registry url
       - uses: actions/setup-node@v1
         with:
@@ -36,3 +39,10 @@ jobs:
       
       - name: Run Storybook tests
         run: yarn test-storybook:ci
+      
+      - name: Build and run storybook
+        env:
+            CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: |
+          npm run --silent build-storybook -- --output-dir /tmp/chromatic--1888-bWWVRAGr8LrR >/dev/null 2>&1
+          npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN

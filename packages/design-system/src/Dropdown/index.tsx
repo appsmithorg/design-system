@@ -14,13 +14,17 @@ import {
 } from "Types/common";
 import { Classes, replayHighlightClass } from "Constants/classes";
 import Text, { TextProps, TextType } from "Text";
-import { Popover, PopperBoundary, Position } from "@blueprintjs/core";
+import {
+  Classes as BS_CLASSES,
+  Popover,
+  PopperBoundary,
+  Position,
+} from "@blueprintjs/core";
 import { typography } from "Constants/typography";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import SearchComponent from "SearchComponent";
 import Spinner from "Spinner";
 import { ReactComponent as Check } from "../assets/icons/control/checkmark.svg";
-import { ReactComponent as Close } from "../assets/icons/control/remove.svg";
 import Tooltip from "Tooltip";
 import SegmentHeader from "ListSegmentHeader";
 import { debounce, findIndex, isArray } from "lodash";
@@ -66,6 +70,7 @@ export interface RenderDropdownOptionType {
   extraProps?: any;
   hasError?: boolean;
   optionWidth: string;
+  isHighlighted?: boolean;
 }
 
 export type RenderOption = ({
@@ -178,10 +183,9 @@ const DropdownTriggerWrapper = styled.div<{
   }
 `;
 
-const StyledClose = styled(Close)`
+const StyledIcon = styled(Icon)`
   width: 18px;
   height: 18px;
-  margin-right: -2px;
   &:hover {
     background-color: var(--ads-dropdown-default-close-hover-background-color);
   }
@@ -241,7 +245,7 @@ const Selected = styled.div<{
     props.isMultiSelect &&
     `
     min-height: 36px;
-    padding: 2px 8px;
+    padding: 4px 8px;
   `}
   cursor: ${(props) =>
     props.disabled || props.isLoading ? "not-allowed" : "pointer"};
@@ -320,7 +324,8 @@ export const DropdownWrapper = styled.div<{
 }>`
   width: ${(props) => props.width};
   z-index: 1;
-  background-color: ${(props) => props.wrapperBgColor};
+  background-color: ${(props) =>
+    props.wrapperBgColor ? props.wrapperBgColor : "var(--ads-color-black-0)"};
   border: 1px solid var(--ads-dropdown-default-menu-border-color);
   overflow: hidden;
   overflow-y: auto;
@@ -328,8 +333,7 @@ export const DropdownWrapper = styled.div<{
     0px 4px 6px -2px rgba(0, 0, 0, 0.05);
   display: ${(props) => (props.isOpen ? "inline-block" : "none")};
   .dropdown-search {
-    margin: 4px 12px 8px;
-    width: calc(100% - 24px);
+    width: 100%;
     input {
       height: 32px;
       font-size: 14px !important;
@@ -362,7 +366,7 @@ export const DropdownWrapper = styled.div<{
 `;
 
 const SearchComponentWrapper = styled.div`
-  margin: 0px 8px 8px 8px;
+  padding: 8px;
 `;
 
 const DropdownOptionsWrapper = styled.div<{
@@ -375,6 +379,20 @@ const DropdownOptionsWrapper = styled.div<{
   max-height: ${(props) => props.maxHeight};
   overflow-y: auto;
   overflow-x: hidden;
+  .ds--dropdown-tooltip > span {
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+    & > .t--dropdown-option:focus {
+      outline: none;
+    }
+  }
+  .ds--dropdown-tooltip {
+    &:focus {
+      outline: none;
+    }
+  }
 `;
 
 const StyledSubText = styled(Text)<{
@@ -441,7 +459,8 @@ const OptionWrapper = styled.div<{
       }
     }
   }
-  &:hover {
+  &:hover,
+  &.highlight-option {
     background-color: ${(props) =>
       props.selectedHighlightBg ||
       "var(--ads-dropdown-default-menu-hover-background-color)"};
@@ -513,6 +532,10 @@ const SelectedDropDownHolder = styled.div<{ enableScroll?: boolean }>`
     // which will result broken UI
     margin: 0 !important;
     padding: 0 !important;
+    & > *:hover {
+      background-color: initial;
+      background: initial;
+    }
   }
 `;
 
@@ -589,16 +612,40 @@ const ChipsWrapper = styled.div`
 `;
 
 const Chips = styled.div`
-  border: 1.2px solid var(--ads-color-black-500);
   display: flex;
   height: 24px;
   align-items: center;
-  padding: 4px 8px;
+  padding: 4px;
   margin-right: 8px;
+  background-color: var(--ads-color-black-100);
+  & > span[type="p2"] {
+    margin-right: 4px;
+  }
+`;
+
+const DropdownGlobalStyle = createGlobalStyle`	
+  .${BS_CLASSES.POPOVER}.ds--dropdown-popover {	
+    box-shadow: none;	
+    border-radius: 0;	
+  }
+
+  .${BS_CLASSES.POPOVER}.ds--dropdown-popover > .${BS_CLASSES.POPOVER_CONTENT} {
+    background: none;
+  }
+`;
+
+const EmptyStateWrapper = styled.div`
+  padding: 8px;
+  background-color: var(--ads-color-black-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  & > span {
+    color: var(--ads-color-black-500);
+  }
 `;
 
 const scrollIntoViewOptions: ScrollIntoViewOptions = {
-  behavior: "smooth",
   block: "nearest",
 };
 
@@ -662,15 +709,18 @@ function DefaultDropDownValueNode({
           {selected?.map((s: DropdownOption) => {
             return (
               <Chips key={s.value}>
-                <Text type={TextType.P1}>{s.label}</Text>
-                <StyledClose
+                <Text type={TextType.P2}>{s.label}</Text>
+                <StyledIcon
                   className={`t--remove-option-${s.label}`}
+                  fillColor="var(--ads-old-color-gray-7)"
+                  name="close-x"
                   onClick={(event: any) => {
                     event.stopPropagation();
                     if (removeSelectedOptionClickHandler) {
                       removeSelectedOptionClickHandler(s as DropdownOption);
                     }
                   }}
+                  size={IconSize.XXL}
                 />
               </Chips>
             );
@@ -683,8 +733,16 @@ function DefaultDropDownValueNode({
       return hasError ? (
         <ErrorLabel>{LabelText}</ErrorLabel>
       ) : (
-        <span style={{ width: "100%" }}>
-          <Text type={TextType.P1}>{LabelText}</Text>
+        <span style={{ width: "100%", height: "24px", display: "flex" }}>
+          <Text
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+            type={TextType.P1}
+          >
+            {LabelText}
+          </Text>
         </span>
       );
   }
@@ -782,7 +840,16 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
     onSearch && onSearch(searchStr);
   };
 
-  if (!options.length && !showEmptyOptions) return null;
+  function EmptyState() {
+    return (
+      <EmptyStateWrapper>
+        <Text type={TextType.P1}>No results found</Text>
+        {props.enableSearch && (
+          <Text type={TextType.P2}>Try to search a different keyword</Text>
+        )}
+      </EmptyStateWrapper>
+    );
+  }
 
   return (
     <DropdownWrapper
@@ -806,6 +873,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
       {props.headerLabel && <HeaderWrapper>{props.headerLabel}</HeaderWrapper>}
       <DropdownOptionsWrapper
         height={props.dropdownHeight || "100%"}
+        id="ds--dropdown-options"
         maxHeight={props.dropdownMaxHeight || "auto"}
       >
         {options.map((option: DropdownOption, index: number) => {
@@ -829,10 +897,12 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
               optionClickHandler,
               optionWidth,
               isSelectedNode: isSelected,
+              isHighlighted: index === props.highlightIndex,
             });
           }
           return !option.isSectionHeader ? (
             <Tooltip
+              className="ds--dropdown-tooltip"
               content={
                 !!option.disabledTooltipText
                   ? option.disabledTooltipText
@@ -846,7 +916,9 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
             >
               <OptionWrapper
                 aria-selected={isSelected}
-                className={`t--dropdown-option ${isSelected ? "selected" : ""}`}
+                className={`t--dropdown-option ${
+                  isSelected ? "selected" : ""
+                } ${props.highlightIndex === index ? "highlight-option" : ""}`}
                 data-cy={`t--dropdown-option-${option?.label}`}
                 disabled={option.disabled}
                 key={index}
@@ -934,6 +1006,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
             />
           );
         })}
+        {!options.length && <EmptyState />}
       </DropdownOptionsWrapper>
     </DropdownWrapper>
   );
@@ -1044,6 +1117,11 @@ export default function Dropdown(props: DropdownProps) {
 
   const handleKeydown = useCallback(
     (e: React.KeyboardEvent) => {
+      const elementList = document.getElementById("ds--dropdown-options")
+        ?.children;
+      if (!elementList || elementList?.length === 0) {
+        setHighlight(-1);
+      }
       switch (e.key) {
         case "Escape":
           emitKeyPressEvent(dropdownWrapperRef.current, e.key);
@@ -1057,18 +1135,29 @@ export default function Dropdown(props: DropdownProps) {
           }
           break;
         case " ":
-          emitKeyPressEvent(dropdownWrapperRef.current, e.key);
-          if (closeOnSpace) {
-            e.preventDefault();
-            if (isOpen) {
-              if (props.isMultiSelect) {
-                if (highlight >= 0)
-                  optionClickHandler(props.options[highlight], true);
+          if (!isOpen) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
+            onClickHandler();
+            break;
+          }
+          if (!props.enableSearch) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
+            if (closeOnSpace) {
+              e.preventDefault();
+              if (isOpen) {
+                if (highlight !== -1 && elementList) {
+                  const optionElement = elementList[highlight] as HTMLElement;
+                  const dropdownOptionElement = optionElement.querySelector(
+                    ".t--dropdown-option",
+                  ) as HTMLElement;
+                  dropdownOptionElement &&
+                  typeof dropdownOptionElement.click === "function"
+                    ? dropdownOptionElement.click()
+                    : optionElement.click();
+                }
               } else {
-                optionClickHandler(selected as DropdownOption, true);
+                onClickHandler();
               }
-            } else {
-              onClickHandler();
             }
           }
           break;
@@ -1076,76 +1165,58 @@ export default function Dropdown(props: DropdownProps) {
           emitKeyPressEvent(dropdownWrapperRef.current, e.key);
           e.preventDefault();
           if (isOpen) {
-            if (props.isMultiSelect) {
-              if (highlight >= 0)
-                optionClickHandler(props.options[highlight], true);
-            } else {
-              optionClickHandler(selected as DropdownOption, true);
+            if (highlight !== -1 && elementList) {
+              const optionElement = elementList[highlight] as HTMLElement;
+              const dropdownOptionElement = optionElement.querySelector(
+                ".t--dropdown-option",
+              ) as HTMLElement;
+              dropdownOptionElement &&
+              typeof dropdownOptionElement.click === "function"
+                ? dropdownOptionElement.click()
+                : optionElement.click();
             }
           } else {
             onClickHandler();
           }
           break;
         case "ArrowUp":
-          emitKeyPressEvent(dropdownWrapperRef.current, e.key);
-          e.preventDefault();
-          if (isOpen) {
-            if (props.isMultiSelect) {
+          if (!isOpen) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
+            onClickHandler();
+            break;
+          }
+          if (elementList) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
+            e.preventDefault();
+            if (highlight === -1) {
+              setHighlight(elementList.length - 1);
+            } else {
               setHighlight((x) => {
-                const index = x < 1 ? props.options.length - 1 : x - 1;
-                document
-                  .querySelectorAll(".t--dropdown-option")
-                  [index]?.scrollIntoView(scrollIntoViewOptions);
+                const index = x - 1 < 0 ? elementList.length - 1 : x - 1;
+                elementList[index]?.scrollIntoView(scrollIntoViewOptions);
                 return index;
               });
-            } else {
-              setSelected((prevSelected) => {
-                let index = findIndex(
-                  props.options,
-                  prevSelected as DropdownOption,
-                );
-                if (index === 0) index = props.options.length - 1;
-                else index--;
-                document
-                  .querySelectorAll(".t--dropdown-option")
-                  [index]?.scrollIntoView(scrollIntoViewOptions);
-                return props.options[index];
-              });
             }
-          } else {
-            setHighlight(0);
-            onClickHandler();
           }
           break;
         case "ArrowDown":
-          emitKeyPressEvent(dropdownWrapperRef.current, e.key);
-          e.preventDefault();
-          if (isOpen) {
-            if (props.isMultiSelect) {
+          if (!isOpen) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
+            onClickHandler();
+            break;
+          }
+          if (elementList) {
+            emitKeyPressEvent(dropdownWrapperRef.current, e.key);
+            e.preventDefault();
+            if (highlight === -1) {
+              setHighlight(0);
+            } else {
               setHighlight((x) => {
-                const index = x + 1 === props.options.length ? 0 : x + 1;
-                document
-                  .querySelectorAll(".t--dropdown-option")
-                  [index]?.scrollIntoView(scrollIntoViewOptions);
+                const index = x + 1 > elementList.length - 1 ? 0 : x + 1;
+                elementList[index]?.scrollIntoView(scrollIntoViewOptions);
                 return index;
               });
-            } else {
-              setSelected((prevSelected) => {
-                let index = findIndex(
-                  props.options,
-                  prevSelected as DropdownOption,
-                );
-                if (index === props.options.length - 1) index = 0;
-                else index++;
-                document
-                  .querySelectorAll(".t--dropdown-option")
-                  [index]?.scrollIntoView(scrollIntoViewOptions);
-                return props.options[index];
-              });
             }
-          } else {
-            setHighlight(0);
-            onClickHandler();
           }
           break;
         case "Tab":
@@ -1277,7 +1348,7 @@ export default function Dropdown(props: DropdownProps) {
         minimal
         modifiers={{ arrow: { enabled: true } }}
         onInteraction={(state) => !disabled && setIsOpen(state)}
-        popoverClassName={`${props.className} none-shadow-popover`}
+        popoverClassName={`${props.className} none-shadow-popover ds--dropdown-popover`}
         portalClassName={props.portalClassName}
         portalContainer={props.portalContainer}
         position={Position.BOTTOM_LEFT}
@@ -1293,10 +1364,12 @@ export default function Dropdown(props: DropdownProps) {
           optionClickHandler={optionClickHandler}
           optionWidth={dropdownOptionWidth}
           removeSelectedOptionClickHandler={removeSelectedOptionClickHandler}
+          searchAutoFocus={props.enableSearch}
           selected={selected ? selected : { id: undefined, value: undefined }}
           wrapperBgColor={wrapperBgColor}
         />
       </Popover>
+      <DropdownGlobalStyle />
     </DropdownContainer>
   );
 }
