@@ -21,6 +21,6 @@ BannerMessage.args = {
   icon: "warning-line",
   iconColor: "#FEB811",
   iconSize: IconSize.XXXXL,
-  message: "Message about deprecation",
+  message: "Some banner message",
   textColor: "#864C17",
 };
