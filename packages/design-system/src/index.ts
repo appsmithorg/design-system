@@ -69,6 +69,9 @@ export * from "./Icon";
 export { default as IconSelector } from "./IconSelector";
 export * from "./IconSelector";
 
+export { default as JSToggleButton } from "./JSToggleButton";
+export * from "./JSToggleButton";
+
 export { default as LabelWithTooltip } from "./LabelWithTooltip";
 export * from "./LabelWithTooltip";
 
