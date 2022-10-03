@@ -43,3 +43,10 @@ export enum SubTextPosition {
   BOTTOM,
   LEFT,
 }
+
+export enum ToastTypeOptions {
+  success = "success",
+  info = "info",
+  warning = "warning",
+  error = "error",
+}

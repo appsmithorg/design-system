@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "1.0.23",
+  "version": "1.0.25-alpha.5",
   "description": "This is the package for the Appsmith design system components",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -149,6 +149,7 @@
     "react-router-dom": "^6.3.0",
     "react-table": "^7.8.0",
     "react-tabs": "3.1.1",
+    "react-toastify": "^5.5.0",
     "redux-form": "8.2.6",
     "remixicon-react": "^1.0.0",
     "tinycolor2": "^1.4.2"
