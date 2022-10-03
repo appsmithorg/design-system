@@ -89,6 +89,9 @@
   --ads-dropdown-default-dropdown-trigger-border-color: var(--ads-color-black-900);
   --ads-dropdown-default-close-hover-background-color : var(--ads-old-color-gallery-2);
 
+  /** EditableText */
+
+
   /** EditableTextSubComponent */
   --ads-editable-text-subcomponent-error-background-color: var(--ads-old-color-pomegranate);
   --ads-editable-text-subcomponent-default-background-color: var(--ads-color-black-75);
