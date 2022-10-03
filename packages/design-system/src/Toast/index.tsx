@@ -90,8 +90,8 @@ const ToastBody = styled.div<{
           props.variant === Variant.warning
             ? "var(--ads-toast-icon-fill-color)"
             : props.variant === Variant.danger
-            ? "#FFFFFF"
-            : "#9F9F9F"};
+            ? "var(--ads-color-black-0)"
+            : "var(--ads-dropdown-disabled-header-text-color)"};
       }
       rect {
         ${(props) =>
