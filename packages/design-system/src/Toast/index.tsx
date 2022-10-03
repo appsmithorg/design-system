@@ -21,6 +21,7 @@ export type ToastProps = ToastOptions &
       type: string;
       payload: any;
     };
+    // TODO: rename this to accept any generic child component to show within toast
     showDebugButton?: any;
     hideProgressBar?: boolean;
     hideActionElementSpace?: boolean;
