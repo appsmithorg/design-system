@@ -46,24 +46,6 @@ export type EditableTextSubComponentProps = CommonComponentProps & {
   isError?: boolean;
 };
 
-export const EditableTextWrapper = styled.div<{
-  filled: boolean;
-}>`
-  ${(props) =>
-    !props.filled
-      ? `
-    width: ${UNFILLED_WIDTH}px;
-  `
-      : `
-    width: 100%;
-    flex: 1;
-  `}
-  .error-message {
-    margin-left: var(--ads-spaces-5);
-    color: var(--ads-editable-text-subcomponent-error-text-color);
-  }
-`;
-
 const editModeBgcolor = (
   isInvalid: boolean,
   isEditing: boolean,

@@ -5,10 +5,8 @@ import {
   EditableTextSubComponent,
   EditInteractionKind,
   SavingState,
-} from "index";
+} from "EditableTextSubComponent";
 import { CommonComponentProps } from "Types/common";
-
-export { EditInteractionKind, SavingState };
 
 export type EditableTextProps = CommonComponentProps & {
   defaultValue: string;
