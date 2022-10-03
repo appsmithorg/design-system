@@ -49,6 +49,12 @@ export * from "./Dropdown";
 
 export * from "./DropdownV2";
 
+export { default as EditableText } from "./EditableText";
+export * from "./EditableText";
+
+export { default as EditableTextSubComponent } from "./EditableTextSubComponent";
+export * from "./EditableTextSubComponent";
+
 export { default as EmojiPicker } from "./EmojiPicker";
 export * from "./EmojiPicker";
 
@@ -71,9 +77,6 @@ export * from "./IconSelector";
 
 export { default as LabelWithTooltip } from "./LabelWithTooltip";
 export * from "./LabelWithTooltip";
-
-export { default as SegmentHeader } from "./ListSegmentHeader";
-export * from "./ListSegmentHeader";
 
 export { default as Menu } from "./Menu";
 export * from "./Menu";
@@ -111,11 +114,14 @@ export * from "./SearchComponent";
 export { default as SearchInput } from "./SearchInput";
 export * from "./SearchInput";
 
-export { default as ShowcaseCarousel } from "./ShowcaseCarousel";
-export * from "./ShowcaseCarousel";
-
 export { default as SearchSnippet } from "./SnippetButton";
 export * from "./SnippetButton";
+
+export { default as SegmentHeader } from "./ListSegmentHeader";
+export * from "./ListSegmentHeader";
+
+export { default as ShowcaseCarousel } from "./ShowcaseCarousel";
+export * from "./ShowcaseCarousel";
 
 export { default as Spinner } from "./Spinner";
 export * from "./Spinner";
