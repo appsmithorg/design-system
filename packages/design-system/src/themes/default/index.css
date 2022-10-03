@@ -284,6 +284,14 @@
   --ads-text-input-placeholder-text-color: #A9A7A7;
   --ads-text-input-helper-text-text-color: #858282;
 
+  /* Toast */
+  --ads-toast-background-color: var(--ads-old-color-gray-10);
+  --ads-toast-icon-fill-color: #DCAD00;
+  --ads-toast-icon-outline-color: var(--ads-old-color-pomegranate);
+  --ads-toast-text-color: var(--ads-color-black-25);
+  --ads-toast-undo-text-color: var(--ads-old-color-crusta);
+  --ads-toast-redo-text-color: #F8682B;
+
   /* Toggle */
   --ads-toggle-slider-background-color: var(--ads-color-black-250);
   --ads-toggle-slider-loading-background-color: var(--ads-old-color-mercury);

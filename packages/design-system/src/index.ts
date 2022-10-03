@@ -126,8 +126,7 @@ export * from "./Spinner";
 export { default as Statusbar } from "./Statusbar";
 export * from "./Statusbar";
 
-export { default as StepCompoent } from "./StepComponent";
-export * from "./StepComponent";
+export { default as StepComponent } from "./StepComponent";
 
 export { default as Switch } from "./Switch";
 export * from "./Switch";
@@ -163,6 +162,8 @@ export * from "./Toggle";
 
 export { default as TooltipComponent } from "./Tooltip";
 export * from "./Tooltip";
+
+export * from "./Toast";
 
 export { default as TreeDropdown } from "./TreeDropdown";
 export * from "./TreeDropdown";
