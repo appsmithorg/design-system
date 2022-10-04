@@ -147,6 +147,7 @@ export function ToastComponent(
     type: props.dispatchableAction?.type,
     payload: props.dispatchableAction?.payload,
   };
+  const undoAction = props.undoAction;
 
   return (
     <ToastBody
@@ -194,9 +195,9 @@ export function ToastComponent(
             onClick={() => {
               if (dispatch && props.dispatchableAction) {
                 dispatch(dispatchableAction);
-                props.undoAction && props.undoAction();
+                undoAction && undoAction();
               } else {
-                props.undoAction && props.undoAction();
+                undoAction && undoAction();
               }
             }}
             type={TextType.H6}

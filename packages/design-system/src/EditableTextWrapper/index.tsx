@@ -80,6 +80,7 @@ const Container = styled.div<{
 export default function EditableTextWrapper(props: EditableTextWrapperProps) {
   const [isEditing, setIsEditing] = useState(props.isNewApp);
   const [isValid, setIsValid] = useState(false);
+  const onBlur = props.onBlur;
 
   useEffect(() => {
     setIsEditing(props.isNewApp);
@@ -115,7 +116,7 @@ export default function EditableTextWrapper(props: EditableTextWrapperProps) {
         }}
         onBlur={(value) => {
           setIsEditing(false);
-          props.onBlur && props.onBlur(value);
+          onBlur && onBlur(value);
         }}
         onTextChanged={() => setIsEditing(true)}
         placeholder={props.placeholder}
