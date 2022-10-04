@@ -16,10 +16,22 @@ const Template: ComponentStory<typeof EditableTextSubComponent> = (args) => {
 };
 
 export const EditableTextSubComponentExample = Template.bind({});
-EditableTextSubComponentExample.name = "EditableTextSubComponent";
+EditableTextSubComponentExample.storyName = "EditableTextSubComponent";
 EditableTextSubComponentExample.args = {
   isEditing: false,
-  savingState: SavingState.STARTED,
+  setSavingState: () => {
+    console.log("setting saving state");
+    return undefined;
+  },
+  setIsEditing: () => {
+    console.log("setting editing");
+    return undefined;
+  },
+  setIsInvalid: () => {
+    console.log("setting invalid");
+    return undefined;
+  },
+  savingState: SavingState.NOT_STARTED,
   underline: false,
   defaultSavingState: SavingState.NOT_STARTED,
   defaultValue: "Here is an editable text sub component",

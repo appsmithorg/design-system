@@ -2,7 +2,8 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 // change ThisComponentName to the name of the component you are writing a story for
-import EditableText, { EditInteractionKind } from "./index";
+import EditableText from "./index";
+import { EditInteractionKind } from "../EditableTextSubComponent";
 
 export default {
   // change ComponentDisplay to the name of the component you are writing a story for
@@ -16,7 +17,7 @@ const Template: ComponentStory<typeof EditableText> = (args) => {
 };
 
 export const EditableTextExample = Template.bind({});
-EditableTextExample.name = "EditableText";
+EditableTextExample.storyName = "EditableText";
 EditableTextExample.args = {
   defaultValue: "Some Editable Text",
   editInteractionKind: EditInteractionKind.SINGLE,
