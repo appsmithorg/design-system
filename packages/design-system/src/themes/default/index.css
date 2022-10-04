@@ -89,14 +89,14 @@
   --ads-dropdown-default-dropdown-trigger-border-color: var(--ads-color-black-900);
   --ads-dropdown-default-close-hover-background-color : var(--ads-old-color-gallery-2);
 
-  /** EditableText */
-
-
   /** EditableTextSubComponent */
   --ads-editable-text-subcomponent-error-background-color: var(--ads-old-color-pomegranate);
   --ads-editable-text-subcomponent-default-background-color: var(--ads-color-black-75);
   --ads-editable-text-subcomponent-error-text-color: var(--ads-old-color-pomegranate);
   --ads-editable-text-subcomponent-default-text-color: var(--ads-color-black-750);
+
+  /** EditableTextWrapper */
+  --ads-editable-text-wrapper-default-text-color: var(--ads-old-color-alto);
 
   /** Emoji Reactions */
   --ads-emoji-reactions-bubble-background-color: var(--ads-color-black-75);
