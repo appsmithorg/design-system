@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.26
+
+### Patch Changes
+
+- [#200](https://github.com/appsmithorg/design-system/pull/200) [`691ec30`](https://github.com/appsmithorg/design-system/commit/691ec3074e566472b1a07331a2429d5a2c063c5c) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: form group component migrated
+
 ## 1.0.25
 
 ### Patch Changes
