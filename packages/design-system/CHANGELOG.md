@@ -4,6 +4,16 @@
 
 ### Patch Changes
 
+- [#204](https://github.com/appsmithorg/design-system/pull/204) [`6f235f1`](https://github.com/appsmithorg/design-system/commit/6f235f1535494025e8df96aced91815bc50aee36) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: JS Toggle Button migrated
+
+* [#199](https://github.com/appsmithorg/design-system/pull/199) [`30cbd7c`](https://github.com/appsmithorg/design-system/commit/30cbd7c392d793083ac16674a2a75b8ab686392f) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: migrate toast
+
+- [#205](https://github.com/appsmithorg/design-system/pull/205) [`615eb6e`](https://github.com/appsmithorg/design-system/commit/615eb6efb3c1f1e0fc4066446b75c55478c85993) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix typo in export of StepComponent
+
+## 1.0.25
+
+### Patch Changes
+
 - [#145](https://github.com/appsmithorg/design-system/pull/145) [`dd6b696`](https://github.com/appsmithorg/design-system/commit/dd6b69638a9aac30883534b96ce43c87677a4dbd) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump moment-timezone from 0.5.34 to 0.5.35
 
 * [#189](https://github.com/appsmithorg/design-system/pull/189) [`f975201`](https://github.com/appsmithorg/design-system/commit/f975201afae376d85457f2b1117883c302ee0c56) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - destructure props for onClick on UneditableField
