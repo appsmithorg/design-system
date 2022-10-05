@@ -98,6 +98,9 @@
   --ads-emoji-reactions-count-active-text-color: var(--ads-old-color-rock-spray);
   --ads-emoji-reactions-count-hover-text-color: var(--ads-color-black-750);
 
+  /** Form Group */
+  --ads-form-group-label-text-color: var(--ads-old-color-alto);
+
   /** Gif Player */
   --ads-gif-player-icon-path-fill-color: var(--ads-old-color-silver);
   --ads-gif-player-icon-circle-fill-color: var(--ads-old-color-gray-10);
