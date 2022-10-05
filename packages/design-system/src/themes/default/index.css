@@ -128,6 +128,21 @@
   --ads-intent-color-warning: var(--ads-old-color-jaffa);
   --ads-intent-color-success-light: var(--ads-old-color-jade);
 
+  /* JSToggleButton */
+  --ads-js-toggle-button-default-border-color: var(--ads-color-black-700);
+  --ads-js-toggle-button-default-background-color: var(--ads-color-black-0);
+  --ads-js-toggle-button-disabled-border-color: var(--ads-color-black-400);
+  --ads-js-toggle-button-disabled-background-color: var(--ads-color-black-200);
+  --ads-js-toggle-button-active-disabled-background-color: var(--ads-color-black-400);
+  --ads-js-toggle-button-active-background-color: var(--ads-color-black-800);
+  --ads-js-toggle-button-hover-active-background-color: var(--ads-color-black-900);
+  --ads-js-toggle-button-hover-background-color: var(--ads-color-black-200);
+  --ads-js-toggle-button-hover-disabled-active-background-color: var(--ads-color-black-400);
+  --ads-js-toggle-button-hover-disabled-background-color: var(--ads-color-black-200);
+  --ads-js-toggle-button-svg-path-active-fill-color: var(--ads-color-black-0);
+  --ads-js-toggle-button-svg-path-fill-color: var(--ads-color-black-700);
+
+
   /** Label with Tooltip */
   --ads-label-with-tooltip-default-text-color: var(--ads-color-black-550);
   --ads-label-with-tooltip-default-icon-fill-color: var(--ads-color-black-450);
@@ -268,6 +283,14 @@
   --ads-text-input-icon-path-color: #716E6E;
   --ads-text-input-placeholder-text-color: #A9A7A7;
   --ads-text-input-helper-text-text-color: #858282;
+
+  /* Toast */
+  --ads-toast-background-color: var(--ads-old-color-gray-10);
+  --ads-toast-icon-fill-color: #DCAD00;
+  --ads-toast-icon-outline-color: var(--ads-old-color-pomegranate);
+  --ads-toast-text-color: var(--ads-color-black-25);
+  --ads-toast-undo-text-color: var(--ads-old-color-crusta);
+  --ads-toast-redo-text-color: #F8682B;
 
   /* Toggle */
   --ads-toggle-slider-background-color: var(--ads-color-black-250);
