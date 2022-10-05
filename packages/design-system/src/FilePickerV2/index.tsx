@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { ReactComponent as UploadSuccessIcon } from "assets/icons/ads/upload_success.svg";
+import { ReactComponent as UploadSuccessIcon } from "../assets/icons/ads/upload_success.svg";
 import { DndProvider, useDrop, DropTargetMonitor } from "react-dnd";
 import HTML5Backend, { NativeTypes } from "react-dnd-html5-backend";
 import { Variant } from "Constants/variants";
@@ -147,8 +147,8 @@ export const ContainerDiv = styled.div<{
     right: 0;
     background: linear-gradient(
       180deg,
-      ${(props) => props.theme.colors.filePicker.shadow.from},
-      ${(props) => props.theme.colors.filePicker.shadow.to}
+      var(--ads-file-picker-v2-remove-button-background-color-gradient-start),
+      var(--ads-file-picker-v2-remove-button-background-color-gradient-end)
     );
     opacity: 0.6;
     width: 100%;
