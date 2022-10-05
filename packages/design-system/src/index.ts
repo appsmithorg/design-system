@@ -58,6 +58,8 @@ export * from "./EmojiReactions";
 export { default as FieldError } from "./FieldError";
 export * from "./FieldError";
 
+export { default as FormGroup } from "./FormGroup";
+
 export { default as GifPlayer } from "./GifPlayer";
 export * from "./GifPlayer";
 
