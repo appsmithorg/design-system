@@ -107,6 +107,9 @@
   --ads-emoji-reactions-count-active-text-color: var(--ads-old-color-rock-spray);
   --ads-emoji-reactions-count-hover-text-color: var(--ads-color-black-750);
 
+  /** Form Group */
+  --ads-form-group-label-text-color: var(--ads-old-color-alto);
+
   /** Gif Player */
   --ads-gif-player-icon-path-fill-color: var(--ads-old-color-silver);
   --ads-gif-player-icon-circle-fill-color: var(--ads-old-color-gray-10);
@@ -136,6 +139,21 @@
   --ads-intent-color-none: var(--ads-color-black-200);
   --ads-intent-color-warning: var(--ads-old-color-jaffa);
   --ads-intent-color-success-light: var(--ads-old-color-jade);
+
+  /* JSToggleButton */
+  --ads-js-toggle-button-default-border-color: var(--ads-color-black-700);
+  --ads-js-toggle-button-default-background-color: var(--ads-color-black-0);
+  --ads-js-toggle-button-disabled-border-color: var(--ads-color-black-400);
+  --ads-js-toggle-button-disabled-background-color: var(--ads-color-black-200);
+  --ads-js-toggle-button-active-disabled-background-color: var(--ads-color-black-400);
+  --ads-js-toggle-button-active-background-color: var(--ads-color-black-800);
+  --ads-js-toggle-button-hover-active-background-color: var(--ads-color-black-900);
+  --ads-js-toggle-button-hover-background-color: var(--ads-color-black-200);
+  --ads-js-toggle-button-hover-disabled-active-background-color: var(--ads-color-black-400);
+  --ads-js-toggle-button-hover-disabled-background-color: var(--ads-color-black-200);
+  --ads-js-toggle-button-svg-path-active-fill-color: var(--ads-color-black-0);
+  --ads-js-toggle-button-svg-path-fill-color: var(--ads-color-black-700);
+
 
   /** Label with Tooltip */
   --ads-label-with-tooltip-default-text-color: var(--ads-color-black-550);

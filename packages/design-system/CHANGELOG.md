@@ -1,5 +1,31 @@
 # @appsmithorg/design-system
 
+## 1.0.25
+
+### Patch Changes
+
+- [#145](https://github.com/appsmithorg/design-system/pull/145) [`dd6b696`](https://github.com/appsmithorg/design-system/commit/dd6b69638a9aac30883534b96ce43c87677a4dbd) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump moment-timezone from 0.5.34 to 0.5.35
+
+* [#189](https://github.com/appsmithorg/design-system/pull/189) [`f975201`](https://github.com/appsmithorg/design-system/commit/f975201afae376d85457f2b1117883c302ee0c56) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - destructure props for onClick on UneditableField
+
+- [#187](https://github.com/appsmithorg/design-system/pull/187) [`b0b18c3`](https://github.com/appsmithorg/design-system/commit/b0b18c303966439175f78aa8aeaba37c62cea70c) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Dropdown keyboard navigation and UI fixes
+
+## 1.0.24
+
+### Patch Changes
+
+- [#160](https://github.com/appsmithorg/design-system/pull/160) [`c7d1471`](https://github.com/appsmithorg/design-system/commit/c7d14716908c3ff7d838b89e88ce81f2ce282a8d) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: migrate callout v2, change it so it no longer contains redux
+
+* [#180](https://github.com/appsmithorg/design-system/pull/180) [`2a394d2`](https://github.com/appsmithorg/design-system/commit/2a394d216815afab40116f3e9f4582ea322d6a1d) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Dropdown keyboard navigation issues
+
+- [#172](https://github.com/appsmithorg/design-system/pull/172) [`e01f7bd`](https://github.com/appsmithorg/design-system/commit/e01f7bdc395f1b954cb1eb6c6123c02c96495462) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: props destructuring for functions passed as props to components
+
+* [#181](https://github.com/appsmithorg/design-system/pull/181) [`26c0d6a`](https://github.com/appsmithorg/design-system/commit/26c0d6a592db5acaf30cb8f16a7c49b3734083fc) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: destructure onClick on migrating CalloutV2
+
+- [#184](https://github.com/appsmithorg/design-system/pull/184) [`d5acc69`](https://github.com/appsmithorg/design-system/commit/d5acc697a7b5ffdf5fc07b14aecfa52cfcc80730) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: create SnippetButton component
+
+* [#182](https://github.com/appsmithorg/design-system/pull/182) [`fe9ce05`](https://github.com/appsmithorg/design-system/commit/fe9ce052b79827b2ab33e524b72466589d065cf6) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Reverted dropdown changes
+
 ## 1.0.23
 
 ### Patch Changes

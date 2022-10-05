@@ -64,6 +64,8 @@ export * from "./EmojiReactions";
 export { default as FieldError } from "./FieldError";
 export * from "./FieldError";
 
+export { default as FormGroup } from "./FormGroup";
+
 export { default as GifPlayer } from "./GifPlayer";
 export * from "./GifPlayer";
 
@@ -74,6 +76,9 @@ export * from "./Icon";
 
 export { default as IconSelector } from "./IconSelector";
 export * from "./IconSelector";
+
+export { default as JSToggleButton } from "./JSToggleButton";
+export * from "./JSToggleButton";
 
 export { default as LabelWithTooltip } from "./LabelWithTooltip";
 export * from "./LabelWithTooltip";
