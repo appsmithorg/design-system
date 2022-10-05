@@ -12,7 +12,7 @@
 
 "@appsmithorg/design-system@file:/Users/tanvibhakta/Code/design-system/packages/design-system":
   "resolved" "file:packages/design-system"
-  "version" "1.0.25-alpha.10"
+  "version" "1.0.25-alpha.9"
   dependencies:
     "@blueprintjs/datetime" "3.23.6"
     "copy-to-clipboard" "^3.3.1"
