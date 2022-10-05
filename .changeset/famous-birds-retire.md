@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: create SnippetButton component
+feat: JS Toggle Button migrated
