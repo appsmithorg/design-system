@@ -98,6 +98,15 @@
   --ads-emoji-reactions-count-active-text-color: var(--ads-old-color-rock-spray);
   --ads-emoji-reactions-count-hover-text-color: var(--ads-color-black-750);
 
+  /** FilePickerV2 */
+  --ads-file-picker-v2-default-background-color: var(--ads-color-black-75);
+  --ads-file-picker-v2-default-text-color : var(--ads-old-color-dove-gray-2);
+  --ads-file-picker-v2-success-text-color : var(--ads-old-color-jade);
+  --ads-file-picker-v2-upload-progress-background-color: var(--ads-color-black-470);
+  --ads-file-picker-v2-upload-success-background-color: var(--ads-old-color-fun-green);
+  --ads-file-picker-v2-upload-icon-fill-color: var(--ads-color-black-800);
+
+
   /** Gif Player */
   --ads-gif-player-icon-path-fill-color: var(--ads-old-color-silver);
   --ads-gif-player-icon-circle-fill-color: var(--ads-old-color-gray-10);
