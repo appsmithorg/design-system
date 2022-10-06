@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Toaster, ToastComponent } from "./index";
+import { ToastComponent } from "./index";
 import { Variant } from "../constants/variants";
 import Button from "../Button";
 

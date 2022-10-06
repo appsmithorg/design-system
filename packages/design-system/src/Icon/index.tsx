@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 import { noop } from "lodash";
-import Spinner from "../Spinner";
+import Spinner from "Spinner";
 import { ControlIcons } from "ControlIcons";
 
 import { ReactComponent as BookLineIcon } from "../assets/icons/ads/book-open-line.svg";
