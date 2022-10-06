@@ -139,6 +139,11 @@ const StyledActionText = styled(Text)`
   margin-left: var(--ads-spaces-3);
 `;
 
+const StyledDebugComponent = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
 export function ToastComponent(
   props: ToastProps & { undoAction?: () => void },
 ) {
@@ -182,10 +187,11 @@ export function ToastComponent(
             </StyledActionText>
           )}
           {props.variant === Variant.danger && props.showDebugButton ? (
-            <props.showDebugButton.component
-              {...props.showDebugButton.componentProps}
-              style={{ marginLeft: "auto" }}
-            />
+            <StyledDebugComponent>
+              <props.showDebugButton.component
+                {...props.showDebugButton.componentProps}
+              />
+            </StyledDebugComponent>
           ) : null}
         </ToastTextWrapper>
       </FlexContainer>
