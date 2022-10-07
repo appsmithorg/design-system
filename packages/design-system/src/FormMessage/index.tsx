@@ -5,12 +5,14 @@ import { getTypographyByKey } from "Common/index";
 
 const formMessage: { [char: string]: { [char: string]: string } } = {
   text: {
+    primary: "var(--ads-form-message-primary-text-color)",
     danger: "var(--ads-form-message-danger-text-color)",
     success: "var(--ads-form-message-success-text-color)",
     warning: "var(--ads-form-message-warning-text-color)",
     lightSuccess: "var(--ads-form-message-light-success-text-color)",
   },
   background: {
+    primary: "var(--ads-form-message-primary-background-color)",
     danger: "var(--ads-form-message-danger-background-color)",
     success: "var(--ads-form-message-success-background-color)",
     warning: "var(--ads-form-message-warning-background-color)",
@@ -18,7 +20,7 @@ const formMessage: { [char: string]: { [char: string]: string } } = {
   },
 };
 
-type Intent = "danger" | "success" | "warning" | "lightSuccess";
+type Intent = "primary" | "danger" | "success" | "warning" | "lightSuccess";
 
 export type MessageAction = {
   url?: string;
