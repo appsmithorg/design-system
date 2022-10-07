@@ -101,6 +101,12 @@
   /** Form Group */
   --ads-form-group-label-text-color: var(--ads-old-color-alto);
 
+  /** FormMessage */
+  --ads-form-message-danger-text-color: var(--ads-old-color-danger-red);
+  --ads-form-message-success-text-color: var(--ads-old-color-jade);
+  --ads-form-message-warning-text-color: var(--ads-old-color-warning);
+  --ads-form-message-light-success-text-color: var(--ads-old-color-fun-green-2);
+
   /** Gif Player */
   --ads-gif-player-icon-path-fill-color: var(--ads-old-color-silver);
   --ads-gif-player-icon-circle-fill-color: var(--ads-old-color-gray-10);
