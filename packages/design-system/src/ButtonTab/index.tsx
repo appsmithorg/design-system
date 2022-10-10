@@ -22,7 +22,7 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
   }
 
   cursor: pointer;
-  & {
+  &:not(:last-child) {
     margin-right: 4px;
   }
   & > div {
