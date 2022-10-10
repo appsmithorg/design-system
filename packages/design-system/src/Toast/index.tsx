@@ -8,6 +8,7 @@ import Text, { TextType } from "Text";
 import { toast, ToastOptions, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as log from "loglevel";
+import { TextFonts } from "Constants/typography";
 
 export type ToastProps = ToastOptions &
   CommonComponentProps & {
@@ -42,7 +43,7 @@ const WrappedToastContainer = styled.div`
     cursor: auto;
     min-height: auto;
     border-radius: 0px !important;
-    // font-family: ${(props) => props.theme.fonts.text};
+    font-family: ${TextFonts};
     margin-bottom: var(--ads-spaces-4);
   }
   .Toastify__toast-container--top-right {
