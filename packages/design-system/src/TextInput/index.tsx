@@ -19,7 +19,7 @@ import {
   createMessage,
   FORM_VALIDATION_INVALID_EMAIL,
 } from "Constants/messages";
-import Icon, { IconCollection, IconName, IconSize } from "../Icon";
+import Icon, { IconCollection, IconName, IconSize } from "Icon";
 import { AsyncControllableInput } from "@blueprintjs/core/lib/esm/components/forms/asyncControllableInput";
 import _ from "lodash";
 import { replayHighlightClass } from "Constants/classes";

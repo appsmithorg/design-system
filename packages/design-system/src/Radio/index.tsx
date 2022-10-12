@@ -1,8 +1,8 @@
-import { CommonComponentProps } from "../types/common";
+import { CommonComponentProps } from "types/common";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import * as log from "loglevel";
-import { typography } from "../constants/typography";
+import { typography } from "constants/typography";
 
 export type OptionProps = {
   label: string;
