@@ -1,5 +1,25 @@
 # @appsmithorg/design-system
 
+## 1.0.27
+
+### Patch Changes
+
+- [#202](https://github.com/appsmithorg/design-system/pull/202) [`c40f7ab`](https://github.com/appsmithorg/design-system/commit/c40f7ab3f4b71991d52011654afb63b36fe327c1) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Migrated BannerMessage component
+
+* [#202](https://github.com/appsmithorg/design-system/pull/202) [`4b98f32`](https://github.com/appsmithorg/design-system/commit/4b98f32a568e6754dd4ebfde00a30501f81d91b8) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Migrated BannerMessage component
+
+- [#207](https://github.com/appsmithorg/design-system/pull/207) [`5147ee4`](https://github.com/appsmithorg/design-system/commit/5147ee410bbbc3a8f34c2d09d55aa53e9413592c) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: migrate file picker v2
+
+* [#206](https://github.com/appsmithorg/design-system/pull/206) [`c98a9dd`](https://github.com/appsmithorg/design-system/commit/c98a9ddf69714187eb475cdee92249e7ecea7984) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: migrate editable text, editable text sub component, and editable text wrapper
+
+- [#213](https://github.com/appsmithorg/design-system/pull/213) [`36d06c0`](https://github.com/appsmithorg/design-system/commit/36d06c0c19189cc913883c50040e19a57454ee14) Thanks [@aswathkk](https://github.com/aswathkk)! - feat: Makes ButtonTab to accept label
+
+* [#218](https://github.com/appsmithorg/design-system/pull/218) [`88cce94`](https://github.com/appsmithorg/design-system/commit/88cce94288f174bf2dd401df5f7aff68dc64abb6) Thanks [@IAmAnubhavSaini](https://github.com/IAmAnubhavSaini)! - feat: settings icon update
+
+- [#202](https://github.com/appsmithorg/design-system/pull/202) [`a6fc46f`](https://github.com/appsmithorg/design-system/commit/a6fc46f4b6b05c5caa5e6767d739fb1a23a97fa0) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Migrated BannerMessage component
+
+* [#216](https://github.com/appsmithorg/design-system/pull/216) [`bf2c626`](https://github.com/appsmithorg/design-system/commit/bf2c626d8869e0c7732d597edeb896f131266ac6) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Table no data found hover state issue
+
 ## 1.0.26
 
 ### Patch Changes
