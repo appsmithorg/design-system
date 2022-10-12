@@ -1,5 +1,41 @@
 # @appsmithorg/design-system
 
+## 1.0.27
+
+### Patch Changes
+
+- [#202](https://github.com/appsmithorg/design-system/pull/202) [`c40f7ab`](https://github.com/appsmithorg/design-system/commit/c40f7ab3f4b71991d52011654afb63b36fe327c1) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Migrated BannerMessage component
+
+* [#202](https://github.com/appsmithorg/design-system/pull/202) [`4b98f32`](https://github.com/appsmithorg/design-system/commit/4b98f32a568e6754dd4ebfde00a30501f81d91b8) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Migrated BannerMessage component
+
+- [#207](https://github.com/appsmithorg/design-system/pull/207) [`5147ee4`](https://github.com/appsmithorg/design-system/commit/5147ee410bbbc3a8f34c2d09d55aa53e9413592c) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: migrate file picker v2
+
+* [#206](https://github.com/appsmithorg/design-system/pull/206) [`c98a9dd`](https://github.com/appsmithorg/design-system/commit/c98a9ddf69714187eb475cdee92249e7ecea7984) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: migrate editable text, editable text sub component, and editable text wrapper
+
+- [#213](https://github.com/appsmithorg/design-system/pull/213) [`36d06c0`](https://github.com/appsmithorg/design-system/commit/36d06c0c19189cc913883c50040e19a57454ee14) Thanks [@aswathkk](https://github.com/aswathkk)! - feat: Makes ButtonTab to accept label
+
+* [#218](https://github.com/appsmithorg/design-system/pull/218) [`88cce94`](https://github.com/appsmithorg/design-system/commit/88cce94288f174bf2dd401df5f7aff68dc64abb6) Thanks [@IAmAnubhavSaini](https://github.com/IAmAnubhavSaini)! - feat: settings icon update
+
+- [#202](https://github.com/appsmithorg/design-system/pull/202) [`a6fc46f`](https://github.com/appsmithorg/design-system/commit/a6fc46f4b6b05c5caa5e6767d739fb1a23a97fa0) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Migrated BannerMessage component
+
+* [#216](https://github.com/appsmithorg/design-system/pull/216) [`bf2c626`](https://github.com/appsmithorg/design-system/commit/bf2c626d8869e0c7732d597edeb896f131266ac6) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Table no data found hover state issue
+
+## 1.0.26
+
+### Patch Changes
+
+- [#200](https://github.com/appsmithorg/design-system/pull/200) [`691ec30`](https://github.com/appsmithorg/design-system/commit/691ec3074e566472b1a07331a2429d5a2c063c5c) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: form group component migrated
+
+## 1.0.25
+
+### Patch Changes
+
+- [#204](https://github.com/appsmithorg/design-system/pull/204) [`6f235f1`](https://github.com/appsmithorg/design-system/commit/6f235f1535494025e8df96aced91815bc50aee36) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: JS Toggle Button migrated
+
+* [#199](https://github.com/appsmithorg/design-system/pull/199) [`30cbd7c`](https://github.com/appsmithorg/design-system/commit/30cbd7c392d793083ac16674a2a75b8ab686392f) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: migrate toast
+
+- [#205](https://github.com/appsmithorg/design-system/pull/205) [`615eb6e`](https://github.com/appsmithorg/design-system/commit/615eb6efb3c1f1e0fc4066446b75c55478c85993) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix typo in export of StepComponent
+
 ## 1.0.25
 
 ### Patch Changes
