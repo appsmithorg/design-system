@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "1.0.25-alpha.5",
+  "version": "1.0.25-alpha.12",
   "description": "This is the package for the Appsmith design system components",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -145,6 +145,8 @@
     "@blueprintjs/datetime": "3.23.6",
     "copy-to-clipboard": "^3.3.1",
     "emoji-mart": "3.0.1",
+    "react-dnd": "^9.3.4",
+    "react-dnd-html5-backend": "^9.3.4",
     "react-redux": "^7.2.4",
     "react-router-dom": "^6.3.0",
     "react-table": "^7.8.0",

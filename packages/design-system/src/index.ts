@@ -58,6 +58,9 @@ export * from "./EmojiReactions";
 export { default as FieldError } from "./FieldError";
 export * from "./FieldError";
 
+export { default as FilePickerV2 } from "./FilePickerV2";
+export * from "./FilePickerV2";
+
 export { default as FormGroup } from "./FormGroup";
 
 export { default as FormMessage } from "./FormMessage";
