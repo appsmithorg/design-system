@@ -2,7 +2,3 @@
   box-shadow: none;	
   border-radius: 0;	
 }
-
-.bp3-popover.ds--dropdown-popover > .bp3-popover-content {
-  background: none;
-}
