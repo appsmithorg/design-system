@@ -157,6 +157,17 @@ import UserFollowLineIcon from "remixicon-react/UserFollowLineIcon";
 import AddBoxLineIcon from "remixicon-react/AddBoxLineIcon";
 import ArrowRightSFillIcon from "remixicon-react/ArrowRightSFillIcon";
 import ArrowDownSFillIcon from "remixicon-react/ArrowDownSFillIcon";
+import MailLineIcon from "remixicon-react/MailLineIcon";
+import LockPasswordLineIcon from "remixicon-react/LockPasswordLineIcon";
+import Timer2LineIcon from "remixicon-react/Timer2LineIcon";
+import MapPin2LineIcon from "remixicon-react/MapPin2LineIcon";
+import User3LineIcon from "remixicon-react/User3LineIcon";
+import User2LineIcon from "remixicon-react/User2LineIcon";
+import Key2LineIcon from "remixicon-react/Key2LineIcon";
+import FileList2LineIcon from "remixicon-react/FileList2LineIcon";
+import Lock2LineIcon from "remixicon-react/Lock2LineIcon";
+import SearchEyeLineIcon from "remixicon-react/SearchEyeLineIcon";
+import AlertLineIcon from "remixicon-react/AlertLineIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -244,6 +255,7 @@ const ICON_LOOKUP = {
   PARAGRAPH_TWO: getControlIcon("PARAGRAPH_TWO"),
   "add-more": <AddMoreIcon />,
   "add-more-fill": <AddMoreFillIcon />,
+  "alert-line": <AlertLineIcon />,
   "arrow-forward": <ArrowForwardIcon />,
   "arrow-left": <ArrowLeft />,
   "book-line": <BookLineIcon />,
@@ -274,18 +286,24 @@ const ICON_LOOKUP = {
   "eye-on": <EyeOn />,
   "file-line": <FileLine />,
   "file-list-line": <FileListLineIcon />,
+  "file-list-2-line": <FileList2LineIcon />,
   "fork-2": <Fork2Icon />,
   "file-transfer": <FileTransfer />,
   "git-branch": <GitBranchLineIcon />,
   "git-commit": <GitCommit />,
   "git-pull-request": <GitPullRequst />,
   "invite-user": <InviteUserIcon />,
+  "key-2-line": <Key2LineIcon/>,
   "left-arrow-2": <LeftArrowIcon2 />,
   "lightbulb-flash-line": <LightbulbFlashLine />,
   "line-dashed": <LineDashedIcon />,
   "line-dotted": <LineDottedIcon />,
   "link-2": <Link2 />,
+  "lock-password-line": <LockPasswordLineIcon />,
+  "lock-2-line": <Lock2LineIcon />,
   "magic-line": <MagicLineIcon />,
+  "mail-line": <MailLineIcon />,
+  "map-pin-2-line": <MapPin2LineIcon />,
   "more-2-fill": <More2FillIcon />,
   "news-paper": <NewsPaperLine />,
   "no-response": <NoResponseIcon />,
@@ -297,6 +315,7 @@ const ICON_LOOKUP = {
   "right-arrow": <RightArrowIcon />,
   "right-arrow-2": <RightArrowIcon2 />,
   "send-button": <SendButton />,
+  "search-eye-line": <SearchEyeLineIcon/>,
   "settings-2-line": <Settings2LineIcon />,
   "share-2": <ShareIcon2 />,
   "share-box": <ShareBoxFillIcon />,
@@ -304,11 +323,14 @@ const ICON_LOOKUP = {
   "star-fill": <StarFillIcon />,
   "star-line": <StarLineIcon />,
   "swap-horizontal": <ArrowLeftRightIcon />,
+  "timer-2-line": <Timer2LineIcon />,
   "trash-outline": <TrashOutline />,
   "trending-flat": <TrendingFlat />,
   "unread-pin": <UnreadPin />,
   "upload-cloud": <UploadCloud2LineIcon />,
   "user-2": <UserV2Icon />,
+  "user-2-line": <User2LineIcon/>,
+  "user-3-line": <User3LineIcon />,
   "user-heart-line": <UserHeartLineIcon />,
   "view-all": <RightArrowIcon />,
   "view-less": <LeftArrowIcon />,
