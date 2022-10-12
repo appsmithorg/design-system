@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import Icon, { IconSize } from "../Icon";
+import Icon, { IconSize } from "Icon";
 
 export type CalloutType = "Warning" | "Info" | "Notify";
 

@@ -53,11 +53,6 @@ const Styles = styled.div`
 
     tbody {
       tr {
-        td:first-child {
-          color: var(--ads-table-table-row-first-table-data-default-text-color);
-          font-weight: var(--ads-font-weight-normal);
-        }
-
         td {
           padding: var(--ads-spaces-4) var(--ads-spaces-9);
           color: var(--ads-table-table-row-table-data-default-text-color);
@@ -67,6 +62,21 @@ const Styles = styled.div`
           font-weight: normal;
           border-bottom: 1px solid
             var(--ads-table-table-row-table-data-border-bottom-color);
+
+          &:first-child {
+            color: var(
+              --ads-table-table-row-first-table-data-default-text-color
+            );
+            font-weight: var(--ads-font-weight-normal);
+          }
+
+          &.no-border {
+            border: none;
+
+            .no-data-title {
+              color: var(--ads-table-table-row-table-data-default-text-color);
+            }
+          }
         }
 
         &:hover {
@@ -76,11 +86,17 @@ const Styles = styled.div`
               fill: var(--ads-table-table-row-hover-icon-path-color);
             }
           }
-          td:first-child {
-            color: var(--ads-table-table-row-first-table-data-hover-text-color);
-          }
           td {
             color: var(--ads-table-table-row-table-data-hover-text-color);
+
+            &:first-child {
+              color: var(
+                --ads-table-table-row-first-table-data-hover-text-color
+              );
+            }
+            &.no-border {
+              background-color: var(--ads-color-black-0);
+            }
           }
         }
       }
