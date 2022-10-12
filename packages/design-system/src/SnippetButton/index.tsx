@@ -1,14 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { createMessage, SNIPPET_TOOLTIP } from "Constants/messages";
-import {
-  Button,
-  Category,
-  Icon as AdsIcon,
-  IconSize,
-  Size,
-  TooltipComponent,
-} from "../index";
+import Button, { Category, Size } from "../Button";
+import AdsIcon, { IconSize } from "../Icon";
+import TooltipComponent from "../Tooltip";
 
 export enum ENTITY_TYPE {
   ACTION = "ACTION",
