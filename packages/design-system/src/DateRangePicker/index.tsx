@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Classes as BP_Classes } from "@blueprintjs/core";
-import { DateRangeInput } from "@blueprintjs/datetime";
+import { DateRangeInput, IDateRangeInputProps } from "@blueprintjs/datetime";
+import omit from "lodash-es/omit";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
 import "./styles.css";
 
@@ -37,7 +38,7 @@ const DS_DateRangePicker = styled(DateRangeInput)`
       top: 0;
       right: 0;
       color: var(--ads-primary-text-color);
-      z-index: 2;
+      z-index: 100;
       height: 100%;
       display: flex;
       align-items: center;
@@ -57,20 +58,30 @@ const DS_DateRangePicker = styled(DateRangeInput)`
   }
 `;
 
-function DateRangePicker() {
+type DateRangePickerProps = IDateRangeInputProps & {
+  className?: string;
+};
+
+function DateRangePicker(props: DateRangePickerProps) {
+  const className = props.className ? props.className : "";
+  const filteredProps = omit(props, [
+    "className",
+    "popoverProps",
+    "highlightCurrentDay",
+    "closeOnSelection",
+  ]);
   return (
     <DS_DateRangePicker
-      className="ds--date-range-picker"
+      className={"ds--date-range-picker " + className}
       closeOnSelection
-      formatDate={(date) => date.toLocaleString()}
       highlightCurrentDay
-      parseDate={(str) => new Date(str)}
       popoverProps={{
         minimal: true,
         popoverClassName: "ds--date-range-picker-popover",
       }}
+      {...filteredProps}
     />
   );
 }
 
-export { DateRangePicker };
+export { DateRangePicker, DateRangePickerProps };

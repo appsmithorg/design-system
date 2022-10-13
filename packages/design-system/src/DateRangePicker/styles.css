@@ -6,13 +6,8 @@
   left: -1px;
 }
 
-.ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--selected {
-  background-color: var(--ads-primary-color);
-  color: var(--ads-color-black-0);
-}
-
 .ds--date-range-picker-popover .bp3-daterangepicker .DayPicker-Day--selected-range {
-  background-color: #FFEFDB;
+  background-color: var(--ads-primary-color-accent);
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Weekday {
@@ -21,7 +16,7 @@
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day:hover, .bp3-datepicker .DayPicker-Day:focus {
-  background-color: var(--ads-color-black-100);
+  background-color: var(--ads-primary-color-accent);
   color: var(--ads-color-black-800);
 }
 
@@ -40,4 +35,17 @@
   width: 4px;
   border-radius: 50%;
   background-color: var(--ads-primary-color);
+}
+
+.ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day {
+  border-radius: var(--ads-border-radius);
+}
+
+.ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--selected {
+  background-color: var(--ads-primary-color);
+  color: var(--ads-color-black-0);
+}
+
+.ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--selected > .bp3-datepicker-day-wrapper {
+  color: var(--ads-color-black-0);
 }
