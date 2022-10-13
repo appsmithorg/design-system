@@ -118,13 +118,6 @@ const TabsWrapper = styled.div<{
         font-weight: normal;
       `}
   }
-
-  ${(props) =>
-    props.responseViewer &&
-    `
-      padding: 0px;
-      margin-top: 10px;
-  `}
 `;
 
 export const TabTitle = styled.span<{ responseViewer?: boolean }>`
@@ -337,7 +330,7 @@ export function TabComponent(
       setSelectedIndex(props.selectedIndex);
   }, [props.selectedIndex]);
 
-  const handleContainerResize = () => {
+  const toggleCollapse = () => {
     if (!isCollapsibleTabComponent(props)) return;
     const { containerRef, expandedHeight } = props;
     if (containerRef?.current && expandedHeight) {
@@ -386,10 +379,10 @@ export function TabComponent(
       vertical={props.vertical}
     >
       {isCollapsibleTabComponent(props) && (
-        <CollapseIconWrapper>
+        <CollapseIconWrapper className="t--tabs-collapse-icon">
           <Icon
             name={isExpanded ? "expand-more" : "expand-less"}
-            onClick={handleContainerResize}
+            onClick={toggleCollapse}
             size={IconSize.XXXXL}
           />
         </CollapseIconWrapper>
@@ -399,6 +392,7 @@ export function TabComponent(
         onSelect={(index: number) => {
           onSelect && onSelect(index);
           setSelectedIndex(index);
+          !isExpanded && toggleCollapse();
         }}
         selectedIndex={props.selectedIndex}
       >

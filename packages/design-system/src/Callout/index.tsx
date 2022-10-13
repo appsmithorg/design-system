@@ -3,8 +3,8 @@ import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 import { Variant } from "Constants/variants";
 import styled from "styled-components";
-import Icon, { IconSize } from "../Icon";
-import Text, { TextType } from "../Text";
+import Icon, { IconSize } from "Icon";
+import Text, { TextType } from "Text";
 
 export type CalloutProps = CommonComponentProps & {
   variant?: Variant;

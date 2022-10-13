@@ -27,7 +27,7 @@ import Spinner from "Spinner";
 import { ReactComponent as Check } from "../assets/icons/control/checkmark.svg";
 import Tooltip from "Tooltip";
 import SegmentHeader from "ListSegmentHeader";
-import { debounce, findIndex, isArray } from "lodash";
+import { debounce, isArray } from "lodash";
 
 export type DropdownOnSelect = (
   value?: string,
@@ -623,10 +623,10 @@ const Chips = styled.div`
   }
 `;
 
-const DropdownGlobalStyle = createGlobalStyle`	
-  .${BS_CLASSES.POPOVER}.ds--dropdown-popover {	
-    box-shadow: none;	
-    border-radius: 0;	
+const DropdownGlobalStyle = createGlobalStyle`
+  .${BS_CLASSES.POPOVER}.ds--dropdown-popover {
+    box-shadow: none;
+    border-radius: 0;
   }
 
   .${BS_CLASSES.POPOVER}.ds--dropdown-popover > .${BS_CLASSES.POPOVER_CONTENT} {

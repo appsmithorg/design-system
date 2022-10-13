@@ -3,10 +3,12 @@ import { CommonComponentProps, ToastTypeOptions } from "Types/common";
 import { Classes } from "Constants/classes";
 import { Variant } from "Constants/variants";
 import styled from "styled-components";
-import { Icon, IconSize, Text, TextType } from "../index";
+import Icon, { IconSize } from "Icon";
+import Text, { TextType } from "Text";
 import { toast, ToastOptions, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as log from "loglevel";
+import { TextFonts } from "Constants/typography";
 
 export type ToastProps = ToastOptions &
   CommonComponentProps & {
@@ -41,7 +43,7 @@ const WrappedToastContainer = styled.div`
     cursor: auto;
     min-height: auto;
     border-radius: 0px !important;
-    // font-family: ${(props) => props.theme.fonts.text};
+    font-family: ${TextFonts};
     margin-bottom: var(--ads-spaces-4);
   }
   .Toastify__toast-container--top-right {
@@ -138,6 +140,11 @@ const StyledActionText = styled(Text)`
   margin-left: var(--ads-spaces-3);
 `;
 
+const StyledDebugComponent = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
 export function ToastComponent(
   props: ToastProps & { undoAction?: () => void },
 ) {
@@ -146,6 +153,7 @@ export function ToastComponent(
     type: props.dispatchableAction?.type,
     payload: props.dispatchableAction?.payload,
   };
+  const undoAction = props.undoAction;
 
   return (
     <ToastBody
@@ -180,10 +188,11 @@ export function ToastComponent(
             </StyledActionText>
           )}
           {props.variant === Variant.danger && props.showDebugButton ? (
-            <props.showDebugButton.component
-              {...props.showDebugButton.componentProps}
-              style={{ marginLeft: "auto" }}
-            />
+            <StyledDebugComponent>
+              <props.showDebugButton.component
+                {...props.showDebugButton.componentProps}
+              />
+            </StyledDebugComponent>
           ) : null}
         </ToastTextWrapper>
       </FlexContainer>
@@ -193,9 +202,9 @@ export function ToastComponent(
             onClick={() => {
               if (dispatch && props.dispatchableAction) {
                 dispatch(dispatchableAction);
-                props.undoAction && props.undoAction();
+                undoAction && undoAction();
               } else {
-                props.undoAction && props.undoAction();
+                undoAction && undoAction();
               }
             }}
             type={TextType.H6}
