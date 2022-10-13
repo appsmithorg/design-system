@@ -29,5 +29,6 @@ TextInputExample.args = {
   trimValue: false,
   useTextArea: true,
   helperText: "Some text",
-  value: () => console.log("This is the value"),
+  value: "some text in the thing",
+  readOnly: true,
 };
