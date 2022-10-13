@@ -128,9 +128,12 @@
   --ads-old-color-alto-opacity-50: #D4D4D480;
   --ads-old-color-white-opacity-50: #FFFFFF80;
   --ads-old-color-gray-10-opacity-50: #09070780;
+  --ads-old-color-danger-red-opacity-80: #e22c2c14;
+  --ads-old-color-warning-opacity-80: #e0b30e14;
 
   /* intent colors */
   --ads-old-color-danger-red: #E22C2C;
+  --ads-old-color-warning: #E0B30E;
   --ads-old-warning-600: #DFA211;
   --ads-old-error-600: #E32525;
   --ads-old-color-black : #000000;
