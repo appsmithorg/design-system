@@ -69,7 +69,7 @@ const SearchInputWrapper = styled(InputGroup)`
     ${HideDefaultSearchCancelIcon}
     svg {
       path {
-        fill: var(--ads-old-color-gray-7);
+        fill: var(--ads-color-gray-5);
       }
     }
   }

@@ -34,4 +34,11 @@ TagIpt.args = {
   label: "Emails",
   placeholder: "Enter email address",
   type: "email",
+  suggestions: [
+    {
+      id: "ksghd",
+      name: "Albin",
+    },
+  ],
+  // { id: string; name: string; icon?: string }[];
 };

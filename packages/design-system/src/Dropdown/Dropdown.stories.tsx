@@ -27,6 +27,7 @@ const selected = [
   {
     label: "One",
     value: "one",
+    subText: "some text",
   },
 ];
 

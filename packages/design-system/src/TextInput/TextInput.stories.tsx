@@ -28,5 +28,6 @@ TextInputExample.args = {
   // style: {{ resize: "none" }},
   trimValue: false,
   useTextArea: true,
+  helperText: "Some text",
   value: () => console.log("This is the value"),
 };
