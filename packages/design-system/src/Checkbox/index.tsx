@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { Classes, replayHighlightClass } from "Constants/classes";
-import Text, { TextType } from "../Text";
+import Text, { TextType } from "Text";
 
 export enum CheckboxType {
   PRIMARY = "PRIMARY",
