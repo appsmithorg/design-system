@@ -6,12 +6,20 @@ import omit from "lodash-es/omit";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
 import "./styles.css";
 
-const DS_DateRangePicker = styled(DateRangeInput)`
+const DS_DateRangePicker = styled(DateRangeInput)<{
+  height?: string;
+  width?: string;
+}>`
   border: 1px solid var(--ads-border-color);
   border-radius: var(--ads-border-radius);
   box-sizing: border-box;
   overflow: hidden;
   box-shadow: none;
+
+  &.bp3-popover-wrapper {
+    height: ${(props) => props.height};
+    width: ${(props) => props.width};
+  }
 
   &:focus-within {
     border-color: var(--ads-focus-color);
@@ -60,25 +68,33 @@ const DS_DateRangePicker = styled(DateRangeInput)`
 
 type DateRangePickerProps = IDateRangeInputProps & {
   className?: string;
+  height?: string;
+  width?: string;
 };
 
 function DateRangePicker(props: DateRangePickerProps) {
   const className = props.className ? props.className : "";
+  const height = props.height;
+  const width = props.width;
   const filteredProps = omit(props, [
     "className",
-    "popoverProps",
-    "highlightCurrentDay",
     "closeOnSelection",
+    "height",
+    "highlightCurrentDay",
+    "popoverProps",
+    "width",
   ]);
   return (
     <DS_DateRangePicker
       className={"ds--date-range-picker " + className}
       closeOnSelection
+      height={height}
       highlightCurrentDay
       popoverProps={{
         minimal: true,
         popoverClassName: "ds--date-range-picker-popover",
       }}
+      width={width}
       {...filteredProps}
     />
   );
