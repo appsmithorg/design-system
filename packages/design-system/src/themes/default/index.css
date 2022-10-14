@@ -118,7 +118,7 @@
   --ads-file-picker-v2-remove-button-background-color-gradient-end: rgba(250, 250, 250, 0.898847);
 
   /** Form Group */
-  --ads-form-group-label-text-color: var(--ads-old-color-alto);
+  --ads-form-group-label-text-color: var(--ads-old-color-gray-10);
 
   /** FormMessage */
   --ads-form-message-danger-text-color: var(--ads-old-color-danger-red);
