@@ -14,20 +14,16 @@ import {
 } from "Types/common";
 import { Classes, replayHighlightClass } from "Constants/classes";
 import Text, { TextProps, TextType } from "Text";
-import {
-  Classes as BS_CLASSES,
-  Popover,
-  PopperBoundary,
-  Position,
-} from "@blueprintjs/core";
+import { Popover, PopperBoundary, Position } from "@blueprintjs/core";
 import { typography } from "Constants/typography";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import SearchComponent from "SearchComponent";
 import Spinner from "Spinner";
 import { ReactComponent as Check } from "../assets/icons/control/checkmark.svg";
 import Tooltip from "Tooltip";
 import SegmentHeader from "ListSegmentHeader";
 import { debounce, isArray } from "lodash";
+import "./styles.css";
 
 export type DropdownOnSelect = (
   value?: string,
@@ -620,17 +616,6 @@ const Chips = styled.div`
   background-color: var(--ads-color-black-100);
   & > span[type="p2"] {
     margin-right: 4px;
-  }
-`;
-
-const DropdownGlobalStyle = createGlobalStyle`
-  .${BS_CLASSES.POPOVER}.ds--dropdown-popover {
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  .${BS_CLASSES.POPOVER}.ds--dropdown-popover > .${BS_CLASSES.POPOVER_CONTENT} {
-    background: none;
   }
 `;
 
@@ -1369,7 +1354,6 @@ export default function Dropdown(props: DropdownProps) {
           wrapperBgColor={wrapperBgColor}
         />
       </Popover>
-      <DropdownGlobalStyle />
     </DropdownContainer>
   );
 }
