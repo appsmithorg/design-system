@@ -3,7 +3,12 @@
 
 :root {
   --ads-primary-color: var(--ads-color-orange-500);
+  --ads-primary-color-accent: var(--ads-orange-accent);
   --ads-primary-text-color: var(--ads-color-black-750);
+  --ads-border-radius: 0px;
+  --ads-border-color: var(--ads-color-black-250);
+  --ads-border-color-focus: var(--ads-color-black-900);
+  
 
   /** Naming convention for tokens
   *

@@ -62,4 +62,17 @@
   --ads-radius-3: 10px;
   --ads-radius-4: 20px;
   --ads-radius-5: 50px;
+
+  /* dimensions */
+  --ads-dimensions-0: 0px;
+  --ads-dimensions-1: 4px;
+  --ads-dimensions-2: 8px;
+  --ads-dimensions-3: 12px;
+  --ads-dimensions-4: 16px;
+  --ads-dimensions-5: 20px;
+  --ads-dimensions-6: 24px;
+  --ads-dimensions-7: 28px;
+  --ads-dimensions-8: 32px;
+  --ads-dimensions-9: 36px;
+  --ads-dimensions-10: 40px;
 }
