@@ -40,7 +40,7 @@
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .bp3-html-select.bp3-minimal select:hover, .bp3-select.bp3-minimal select:hover {
-  background-color: var(--ads-color-black-200);
+  background-color: var(--ads-color-black-100);
   border-radius: var(--ads-border-radius);
 }
 
@@ -70,8 +70,9 @@
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--selected {
-  background-color: var(--ads-primary-color);
-  color: var(--ads-color-black-0);
+  background-color: var(--ads-primary-color) !important;
+  color: var(--ads-color-black-0) !important;
+  border-radius: var(--ads-border-radius) !important;
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--selected > .bp3-datepicker-day-wrapper {
