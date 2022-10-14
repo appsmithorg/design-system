@@ -42,4 +42,5 @@ DropdownExample.args = {
   options: options,
   selected: selected,
   showLabelOnly: true,
+  headerLabel: "A Header",
 };
