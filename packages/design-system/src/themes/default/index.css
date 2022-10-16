@@ -3,7 +3,12 @@
 
 :root {
   --ads-primary-color: var(--ads-color-orange-500);
+  --ads-primary-color-accent: var(--ads-orange-accent);
   --ads-primary-text-color: var(--ads-color-black-750);
+  --ads-border-radius: 0px;
+  --ads-border-color: var(--ads-color-black-250);
+  --ads-border-color-focus: var(--ads-color-black-900);
+  
 
   /** Naming convention for tokens
   *
@@ -118,7 +123,7 @@
   --ads-file-picker-v2-remove-button-background-color-gradient-end: rgba(250, 250, 250, 0.898847);
 
   /** Form Group */
-  --ads-form-group-label-text-color: var(--ads-old-color-alto);
+  --ads-form-group-label-text-color: var(--ads-old-color-gray-10);
 
   /** FormMessage */
   --ads-form-message-danger-text-color: var(--ads-old-color-danger-red);
