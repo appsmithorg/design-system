@@ -1,5 +1,4 @@
 import tinycolor from "tinycolor2";
-import { TypographyKeys, typography } from "Constants/typography";
 
 function validateHex(arg: string) {
   // Test if the argument is a valid hex code. Passes both 3 letter and 6 letter hexes.
@@ -35,22 +34,17 @@ export const hexToRgb = (
         b: -1,
       };
 };
-
 export const hexToRgba = (color: string, alpha: number) => {
   const value = hexToRgb(color);
   return `rgba(${value.r}, ${value.g}, ${value.b}, ${alpha});`;
 };
-
 export const lighten = (color: string, amount: number) => {
   return tinycolor(color)
     .lighten(amount)
     .toString();
 };
-
 export const darken = (color: string, amount: number) => {
   return tinycolor(color)
     .darken(amount)
     .toString();
 };
-
-

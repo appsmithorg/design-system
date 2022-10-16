@@ -10,7 +10,6 @@ import React, {
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 import { typography } from "Constants/typography";
-import { hexToRgba } from "Common/index";
 import { Classes as BlueprintClasses } from "@blueprintjs/core";
 import styled from "styled-components";
 import Text, { TextType } from "Text";
@@ -24,6 +23,7 @@ import { AsyncControllableInput } from "@blueprintjs/core/lib/esm/components/for
 import _ from "lodash";
 import { replayHighlightClass } from "Constants/classes";
 import { useEffect } from "react";
+import { hexToRgba } from "Constants/colors";
 
 export type InputType = "text" | "password" | "number" | "email" | "tel";
 
