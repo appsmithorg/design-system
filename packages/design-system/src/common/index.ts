@@ -54,9 +54,3 @@ export const darken = (color: string, amount: number) => {
 };
 
 
-export const getTypographyByKey = (key: TypographyKeys) => `
-  font-weight: ${typography[key].fontWeight};
-  font-size: ${typography[key].fontSize}px;
-  line-height: ${typography[key].lineHeight}px;
-  letter-spacing: ${typography[key].letterSpacing}px;
-`;
