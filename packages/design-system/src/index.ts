@@ -189,7 +189,8 @@ export * from "./TreeDropdown";
 export { default as UneditableField } from "./UneditableField";
 export * from "./UneditableField";
 
-export * from "Constants/colors";
-export * from "Constants/typography";
-export * from "Constants/variants";
-export * from "Types/common";
+export * from "./constants/colors";
+export * from "./constants/classes";
+export * from "./constants/typography";
+export * from "./constants/variants";
+export * from "./types/common";
