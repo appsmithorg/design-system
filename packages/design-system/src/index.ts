@@ -93,6 +93,9 @@ export * from "./JSToggleButton";
 export { default as LabelWithTooltip } from "./LabelWithTooltip";
 export * from "./LabelWithTooltip";
 
+export { default as Link } from "./Link";
+export * from "./Link";
+
 export { default as Menu } from "./Menu";
 export * from "./Menu";
 

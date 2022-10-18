@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import Text, { TextProps, TextType } from "Text";
 import { CommonComponentProps } from "Types/common";
 
@@ -33,9 +33,10 @@ const StyledLink = styled.a<{ isPrimary?: boolean }>`
   }
 `;
 
-const Link = ({ children, isPrimary, to }: LinkProps) => {
+const Link = ({ children, isPrimary, to, ...rest }: LinkProps) => {
+  // TODO: evaluate `to` prop and assign to RouterLink or a based on type?
   return (
-    <StyledLink href={to} isPrimary={isPrimary}>
+    <StyledLink href={to} isPrimary={isPrimary} {...rest}>
       {children}
     </StyledLink>
   );
