@@ -1,10 +1,9 @@
-import React from "react";
+import React, { ReactFragment } from "react";
 import styled from "styled-components";
-import Text, { TextProps, TextType } from "Text";
 import { CommonComponentProps } from "Types/common";
 
-export interface LinkProps {
-  children: string;
+export interface LinkProps extends CommonComponentProps {
+  children: string | ReactFragment;
   to: string;
   isPrimary?: boolean;
 }
@@ -24,6 +23,10 @@ const StyledLink = styled.a<{ isPrimary?: boolean }>`
   }
 
   &:focus {
+    color: ${(props) =>
+      props.isPrimary
+        ? "var(--ads-color-primary-hover)"
+        : "var(--ads-text-color-default)"};
     outline: 1px solid
       ${(props) =>
         props.isPrimary
