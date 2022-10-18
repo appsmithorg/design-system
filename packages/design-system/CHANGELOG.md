@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.29
+
+### Patch Changes
+
+- [#229](https://github.com/appsmithorg/design-system/pull/229) [`c7f164e`](https://github.com/appsmithorg/design-system/commit/c7f164e35f485df7839b30eb7ed6ff8979b42c60) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issue with font of toasts on windows machines
+
 ## 1.0.28
 
 ### Patch Changes
