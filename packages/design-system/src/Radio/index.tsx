@@ -56,7 +56,10 @@ export const Radio = styled.label<{
   font-weight: ${typography.p1.fontWeight};
   line-height: ${typography.p1.lineHeight}px;
   letter-spacing: ${typography.p1.letterSpacing}px;
-  color: var(--ads-radio-default-text-color);
+  color: ${(props) =>
+    props.disabled
+      ? "var(--ads-radio-disabled-text-color)"
+      : "var(--ads-radio-default-text-color"};
   ${(props) =>
     props.columns && props.columns > 0
       ? `
@@ -98,6 +101,7 @@ export const Radio = styled.label<{
 
   input:disabled ~ .checkbox:after {
     background-color: var(--ads-radio-disabled-background-color);
+    //border: var(--ads-radio-disabled-border-color);
   }
 
   .checkbox:after {
