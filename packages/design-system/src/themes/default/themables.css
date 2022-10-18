@@ -1,0 +1,5 @@
+:root {
+  --ads-text-color-default: var(--ads-color-gray-7);
+  --ads-color-primary: var(--ads-color-orange-500);
+  --ads-color-primary-hover: var(--ads-color-orange-800);
+}
