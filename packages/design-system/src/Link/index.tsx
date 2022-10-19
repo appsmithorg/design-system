@@ -6,6 +6,7 @@ export interface LinkProps extends CommonComponentProps {
   children: string | ReactFragment;
   to: string;
   isPrimary?: boolean;
+  [x: string]: any;
 }
 
 const StyledLink = styled.a<{ isPrimary?: boolean }>`
