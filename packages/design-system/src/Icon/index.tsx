@@ -34,6 +34,7 @@ import { ReactComponent as DesktopIcon } from "../assets/icons/ads/desktop.svg";
 import { ReactComponent as WandIcon } from "../assets/icons/ads/wand.svg";
 import { ReactComponent as MobileIcon } from "../assets/icons/ads/mobile.svg";
 import { ReactComponent as TabletIcon } from "../assets/icons/ads/tablet.svg";
+import { ReactComponent as TabletLandscapeIcon } from "../assets/icons/ads/tablet-landscape.svg";
 import { ReactComponent as FluidIcon } from "../assets/icons/ads/fluid.svg";
 import { ReactComponent as CardContextMenu } from "../assets/icons/ads/card-context-menu.svg";
 import { ReactComponent as SendButton } from "../assets/icons/comments/send-button.svg";
@@ -63,6 +64,7 @@ import { ReactComponent as SettingIcon } from "../assets/icons/control/settings.
 import { ReactComponent as DropdownIcon } from "../assets/icons/ads/dropdown.svg";
 import { ReactComponent as ChatIcon } from "../assets/icons/ads/app-icons/chat.svg";
 import { ReactComponent as JsIcon } from "../assets/icons/ads/js.svg";
+import { ReactComponent as ExecuteIcon } from "../assets/icons/ads/execute.svg";
 
 // remix icons
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
@@ -126,6 +128,7 @@ import Trash from "remixicon-react/DeleteBinLineIcon";
 import UpArrow from "remixicon-react/ArrowUpSFillIcon";
 import WarningIcon from "remixicon-react/ErrorWarningFillIcon";
 import WarningLineIcon from "remixicon-react/ErrorWarningLineIcon";
+import LoginIcon from "remixicon-react/LoginBoxLineIcon";
 import LogoutIcon from "remixicon-react/LogoutBoxRLineIcon";
 import ShareLineIcon from "remixicon-react/ShareLineIcon";
 import LoaderLineIcon from "remixicon-react/LoaderLineIcon";
@@ -139,6 +142,7 @@ import Settings2LineIcon from "remixicon-react/Settings2LineIcon";
 import DownloadIcon from "remixicon-react/DownloadLineIcon";
 import UploadCloud2LineIcon from "remixicon-react/UploadCloud2LineIcon";
 import DownloadLineIcon from "remixicon-react/DownloadLineIcon";
+import UploadLineIcon from "remixicon-react/UploadLineIcon";
 import FileListLineIcon from "remixicon-react/FileListLineIcon";
 import HamburgerIcon from "remixicon-react/MenuLineIcon";
 import MagicLineIcon from "remixicon-react/MagicLineIcon";
@@ -148,6 +152,24 @@ import Group2LineIcon from "remixicon-react/Group2LineIcon";
 import CodeViewIcon from "remixicon-react/CodeViewIcon";
 import GroupLineIcon from "remixicon-react/GroupLineIcon";
 import ArrowRightUpLineIcon from "remixicon-react/ArrowRightUpLineIcon";
+import MailCheckLineIcon from "remixicon-react/MailCheckLineIcon";
+import UserFollowLineIcon from "remixicon-react/UserFollowLineIcon";
+import AddBoxLineIcon from "remixicon-react/AddBoxLineIcon";
+import ArrowRightSFillIcon from "remixicon-react/ArrowRightSFillIcon";
+import ArrowDownSFillIcon from "remixicon-react/ArrowDownSFillIcon";
+import MailLineIcon from "remixicon-react/MailLineIcon";
+import LockPasswordLineIcon from "remixicon-react/LockPasswordLineIcon";
+import Timer2LineIcon from "remixicon-react/Timer2LineIcon";
+import MapPin2LineIcon from "remixicon-react/MapPin2LineIcon";
+import User3LineIcon from "remixicon-react/User3LineIcon";
+import User2LineIcon from "remixicon-react/User2LineIcon";
+import Key2LineIcon from "remixicon-react/Key2LineIcon";
+import FileList2LineIcon from "remixicon-react/FileList2LineIcon";
+import Lock2LineIcon from "remixicon-react/Lock2LineIcon";
+import SearchEyeLineIcon from "remixicon-react/SearchEyeLineIcon";
+import AlertLineIcon from "remixicon-react/AlertLineIcon";
+import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
+import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -233,14 +255,20 @@ const ICON_LOOKUP = {
   HEADING_TWO: getControlIcon("HEADING_TWO"),
   PARAGRAPH: getControlIcon("PARAGRAPH"),
   PARAGRAPH_TWO: getControlIcon("PARAGRAPH_TWO"),
+  "add-box-line": <AddBoxLineIcon />,
   "add-more": <AddMoreIcon />,
   "add-more-fill": <AddMoreFillIcon />,
+  "alert-line": <AlertLineIcon />,
+  "arrow-down-s-fill": <ArrowDownSFillIcon />,
   "arrow-forward": <ArrowForwardIcon />,
   "arrow-left": <ArrowLeft />,
+  "arrow-right-s-fill": <ArrowRightSFillIcon />,
+  "arrow-right-up-line": <ArrowRightUpLineIcon />,
   "book-line": <BookLineIcon />,
   "cap-dot": <CapDotIcon />,
   "cap-solid": <CapSolidIcon />,
   "card-context-menu": <CardContextMenu />,
+  "chat-help": <ChatIcon />,
   "check-line": <CheckLineIcon />,
   "chevron-left": <ChevronLeft />,
   "chevron-right": <ChevronRight />,
@@ -264,19 +292,29 @@ const ICON_LOOKUP = {
   "eye-off": <EyeOff />,
   "eye-on": <EyeOn />,
   "file-line": <FileLine />,
+  "file-list-2-line": <FileList2LineIcon />,
   "file-list-line": <FileListLineIcon />,
-  "fork-2": <Fork2Icon />,
   "file-transfer": <FileTransfer />,
+  "fork-2": <Fork2Icon />,
   "git-branch": <GitBranchLineIcon />,
   "git-commit": <GitCommit />,
   "git-pull-request": <GitPullRequst />,
+  "group-2-line": <Group2LineIcon />,
+  "group-line": <GroupLineIcon />,
   "invite-user": <InviteUserIcon />,
+  "key-2-line": <Key2LineIcon/>,
   "left-arrow-2": <LeftArrowIcon2 />,
   "lightbulb-flash-line": <LightbulbFlashLine />,
   "line-dashed": <LineDashedIcon />,
   "line-dotted": <LineDottedIcon />,
   "link-2": <Link2 />,
+  "lock-2-line": <Lock2LineIcon />,
+  "lock-password-line": <LockPasswordLineIcon />,
+  "lock-unlock-line": <LockUnlockLineIcon />,
   "magic-line": <MagicLineIcon />,
+  "mail-check-line": <MailCheckLineIcon />,
+  "mail-line": <MailLineIcon />,
+  "map-pin-2-line": <MapPin2LineIcon />,
   "more-2-fill": <More2FillIcon />,
   "news-paper": <NewsPaperLine />,
   "no-response": <NoResponseIcon />,
@@ -287,28 +325,31 @@ const ICON_LOOKUP = {
   "read-pin": <ReadPin />,
   "right-arrow": <RightArrowIcon />,
   "right-arrow-2": <RightArrowIcon2 />,
+  "search-eye-line": <SearchEyeLineIcon/>,
   "send-button": <SendButton />,
   "settings-2-line": <Settings2LineIcon />,
+  "settings-line": <SettingsLineIcon />,
   "share-2": <ShareIcon2 />,
   "share-box": <ShareBoxFillIcon />,
   "share-line": <ShareLineIcon />,
   "star-fill": <StarFillIcon />,
   "star-line": <StarLineIcon />,
   "swap-horizontal": <ArrowLeftRightIcon />,
+  "timer-2-line": <Timer2LineIcon />,
   "trash-outline": <TrashOutline />,
   "trending-flat": <TrendingFlat />,
   "unread-pin": <UnreadPin />,
   "upload-cloud": <UploadCloud2LineIcon />,
+  "upload-line": <UploadLineIcon />,
   "user-2": <UserV2Icon />,
+  "user-2-line": <User2LineIcon/>,
+  "user-3-line": <User3LineIcon />,
+  "user-follow-line": <UserFollowLineIcon />,
   "user-heart-line": <UserHeartLineIcon />,
   "view-all": <RightArrowIcon />,
   "view-less": <LeftArrowIcon />,
   "warning-line": <WarningLineIcon />,
   "warning-triangle": <WarningTriangleIcon />,
-  "chat-help": <ChatIcon />,
-  "group-2-line": <Group2LineIcon />,
-  "group-line": <GroupLineIcon />,
-  "arrow-right-up-line": <ArrowRightUpLineIcon />,
   billing: <BillingIcon />,
   book: <BookIcon />,
   bug: <BugIcon />,
@@ -324,6 +365,7 @@ const ICON_LOOKUP = {
   desktop: <DesktopIcon />,
   discord: <DiscordIcon />,
   downArrow: <DownArrow />,
+  download2: <DownloadIcon />,
   download: <Download />,
   dropdown: <DropdownIcon />,
   duplicate: <DuplicateIcon />,
@@ -331,6 +373,7 @@ const ICON_LOOKUP = {
   emoji: <Emoji />,
   enterprise: <MagicLineIcon />,
   error: <ErrorIcon />,
+  execute: <ExecuteIcon />,
   filter: <Filter />,
   fluid: <FluidIcon />,
   fork: <GitMerge />,
@@ -345,6 +388,7 @@ const ICON_LOOKUP = {
   lightning: <LightningIcon />,
   link: <LinkIcon />,
   loader: <LoaderLineIcon />,
+  login: <LoginIcon />,
   logout: <LogoutIcon />,
   manage: <ManageIcon />,
   member: <UserHeartLineIcon />,
@@ -367,17 +411,17 @@ const ICON_LOOKUP = {
   support: <SupportIcon />,
   tables: <TableIcon />,
   tablet: <TabletIcon />,
+  tabletLandscape: <TabletLandscapeIcon />,
   trash: <Trash />,
   unpin: <Unpin />,
   upArrow: <UpArrow />,
+  upgrade: <DvdLineIcon />,
   upload: <Upload />,
   user: <UserIcon />,
   wand: <WandIcon />,
   warning: <WarningIcon />,
   widget: <WidgetIcon />,
   workspace: <WorkspaceIcon />,
-  download2: <DownloadIcon />,
-  upgrade: <DvdLineIcon />,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);

@@ -6,9 +6,8 @@ import { DSEventTypes } from "Types/common";
 import { useDSEvent } from "hooks";
 
 const ItemWrapper = styled.div<{ selected: boolean }>`
-  min-width: 32px;
-  height: 32px;
-  padding: 0 2px;
+  min-width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +22,7 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
   }
 
   cursor: pointer;
-  & {
+  &:not(:last-child) {
     margin-right: 4px;
   }
   & > div {
@@ -39,17 +38,22 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
   }
 `;
 
-const FlexWrapper = styled.div`
-  display: inline-flex;
+const FlexWrapper = styled.div<{ fullWidth: boolean }>`
+  display: flex;
+  ${ItemWrapper} {
+    flex: ${({ fullWidth }) => (fullWidth ? 1 : "none")};
+  }
 `;
 
 export interface ButtonTabOption {
-  icon: string | JSX.Element;
+  icon?: string | JSX.Element;
+  label?: string;
   value: string;
   width?: number;
 }
 
 interface ButtonTabComponentProps {
+  fullWidth?: boolean;
   options: ButtonTabOption[];
   values: Array<string>;
   selectButton: (value: string, isUpdatedViaKeyboard: boolean) => void;
@@ -118,6 +122,7 @@ const ButtonTabComponent = React.forwardRef(
 
     return (
       <FlexWrapper
+        fullWidth={props.fullWidth ?? false}
         onBlur={() => setFocusedIndex(-1)}
         onFocus={() => setFocusedIndex(firstValueIndex)}
         onKeyDown={handleKeyDown}
@@ -126,7 +131,10 @@ const ButtonTabComponent = React.forwardRef(
         tabIndex={0}
       >
         {options.map(
-          ({ icon, value, width = 24 }: ButtonTabOption, index: number) => {
+          (
+            { icon, label, value, width = 24 }: ButtonTabOption,
+            index: number,
+          ) => {
             let ControlIcon;
             if (_.isString(icon)) {
               const Icon = ControlIcons[icon];
@@ -149,7 +157,7 @@ const ButtonTabComponent = React.forwardRef(
                 role="tab"
                 selected={isSelected}
               >
-                {ControlIcon}
+                {ControlIcon} {label}
               </ItemWrapper>
             );
           },

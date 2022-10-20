@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 const MenuDivider = styled.div`
-  margin: var(--ads-space-1) px var(--ads-space-6) px;
-  border-top: 1px solid var(--ads-menu-default-border-color);
-  min-width: 100%;
+  margin: var(--ads-spaces-1) var(--ads-spaces-6);
+  border-top: 1px solid var(--ads-menu-divider-border-color);
 `;
 
 export default MenuDivider;

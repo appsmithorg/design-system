@@ -106,13 +106,14 @@ const MenuItem = forwardRef(
 );
 const MenuItemContent = forwardRef(
   (props: MenuItemProps, ref: Ref<HTMLAnchorElement>) => {
+    const { onSelect } = props;
     return (
       <ItemRow
         className={props.className}
         data-cy={props.cypressSelector}
         disabled={props.disabled}
         href={props.href}
-        onClick={props.onSelect}
+        onClick={onSelect}
         ref={ref}
         selected={props.selected}
         type={props.type}

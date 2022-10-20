@@ -24,8 +24,6 @@ TextInputExample.args = {
   height: "80px",
   onChange: () => console.log("input has changed"),
   placeholder: "This is a Text Input placeholder",
-  // ref={commitInputRef}
-  // style: {{ resize: "none" }},
   trimValue: false,
   useTextArea: true,
   value: () => console.log("This is the value"),

@@ -33,3 +33,27 @@ ButtonTab.args = {
     console.log("value:", value, "isUpdatedViaKeyboard:", isUpdatedViaKeyboard);
   },
 };
+
+export const ButtonTabWithLabel = Template.bind({});
+ButtonTabWithLabel.args = {
+  options: [
+    {
+      label: "AUTO",
+      value: "auto",
+    },
+    {
+      label: "TOP",
+      value: "top",
+    },
+    {
+      label: "LEFT",
+      value: "left",
+    },
+  ],
+  values: ["left"],
+  fullWidth: true,
+  selectButton: (value, isUpdatedViaKeyboard) => {
+    // eslint-disable-next-line no-console
+    console.log("value:", value, "isUpdatedViaKeyboard:", isUpdatedViaKeyboard);
+  },
+};

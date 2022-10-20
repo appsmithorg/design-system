@@ -62,12 +62,13 @@ type MultiSwitchProps<T> = CommonComponentProps & {
 };
 
 export default function MultiSwitch<T>(props: MultiSwitchProps<T>) {
+  const { onSelect } = props;
   const selectedTab = props.tabs.find(
     (tab) => tab.key === props.selected.value,
   );
 
   useEffect(() => {
-    props.onSelect(props.selected.value);
+    onSelect(props.selected.value);
   }, []);
 
   // eslint-disable-next-line no-console
@@ -87,7 +88,7 @@ export default function MultiSwitch<T>(props: MultiSwitchProps<T>) {
               }`}
               data-cy={`tab--${tab.title}`}
               key={tab.key}
-              onClick={() => props.onSelect(tab.key)}
+              onClick={() => onSelect(tab.key)}
               selected={props.selected.value === tab.key}
             >
               <Text case={Case.UPPERCASE} type={TextType.P3}>

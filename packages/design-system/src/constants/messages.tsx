@@ -27,3 +27,12 @@ export const BACK = () => "BACK";
 export const SKIP = () => "SKIP";
 
 export const LEARN_MORE = () => "Learn More";
+
+export const SNIPPET_TOOLTIP = () => "Search code snippets";
+
+export const ERROR_EMPTY_APPLICATION_NAME = () =>
+  `Application name can't be empty`;
+
+export const ERROR_FILE_TOO_LARGE = (fileSize: string) =>
+  `File size should be less than ${fileSize}!`;
+export const REMOVE_FILE_TOOL_TIP = () => "Remove Upload";

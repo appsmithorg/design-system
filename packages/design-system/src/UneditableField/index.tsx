@@ -3,7 +3,7 @@ import InputComponent, { InputType } from "../TextInput";
 import styled, { AnyStyledComponent } from "styled-components";
 import { ControlIcons } from "../ControlIcons";
 
-const CopyIcon = ControlIcons.COPY_ICON as AnyStyledComponent;
+const CopyIcon = ControlIcons.COPY_CONTROL as AnyStyledComponent;
 
 const Label = styled.div`
   font-size: 14px;
@@ -31,23 +31,26 @@ type UneditableFieldPropType = FormUneditableTextFieldProps & {
   // input: Partial<WrappedFieldInputProps>;
 };
 
-export const UneditableField = (componentProps: UneditableFieldPropType) => (
-  <>
-    {componentProps.label && <Label>{componentProps.label}</Label>}
-    <InputCopyWrapper>
-      <InputComponent {...componentProps} {...componentProps.input} fill />
-      {componentProps.iscopy === "true" && (
-        <CopyIcon
-          className={"copy-icon"}
-          color="var(--ads-old-color-gray-7)"
-          height={16}
-          onClick={() => componentProps.handleCopy(componentProps.input.value)}
-          width={16}
-        />
-      )}
-    </InputCopyWrapper>
-  </>
-);
+export const UneditableField = (componentProps: UneditableFieldPropType) => {
+  const { handleCopy } = componentProps;
+  return (
+    <>
+      {componentProps.label && <Label>{componentProps.label}</Label>}
+      <InputCopyWrapper>
+        <InputComponent {...componentProps} {...componentProps.input} fill />
+        {componentProps.iscopy === "true" && (
+          <CopyIcon
+            className={"copy-icon"}
+            color="var(--ads-old-color-gray-7)"
+            height={16}
+            onClick={() => handleCopy(componentProps.input.value)}
+            width={16}
+          />
+        )}
+      </InputCopyWrapper>
+    </>
+  );
+};
 
 export type FormUneditableTextFieldProps = {
   name: string;

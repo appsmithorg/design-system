@@ -37,6 +37,8 @@ const MenuWrapper = styled.div<{ width?: string }>`
 const MenuOption = styled.div``;
 
 function Menu(props: MenuProps) {
+  const { onClose, onClosing, onOpening } = props;
+
   return (
     <Popover
       autoFocus={props.autoFocus}
@@ -47,9 +49,9 @@ function Menu(props: MenuProps) {
       isOpen={props.isOpen}
       minimal
       modifiers={props.modifiers}
-      onClose={props.onClose}
-      onClosing={props.onClosing}
-      onOpening={props.onOpening}
+      onClose={onClose}
+      onClosing={onClosing}
+      onOpening={onOpening}
       portalClassName={props.className}
       position={props.position || Position.BOTTOM}
       usePortal={!props.dontUsePortal}
@@ -62,11 +64,8 @@ function Menu(props: MenuProps) {
               <MenuOption
                 key={index}
                 onClick={() => {
-                  if (
-                    typeof props.onClose === "function" &&
-                    props.closeOnItemClick
-                  )
-                    props.onClose();
+                  if (typeof onClose === "function" && props.closeOnItemClick)
+                    onClose();
                 }}
               >
                 {el}

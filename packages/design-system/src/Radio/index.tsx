@@ -1,8 +1,8 @@
-import { CommonComponentProps } from "../types/common";
+import { CommonComponentProps } from "types/common";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import * as log from "loglevel";
-import { typography } from "../constants/typography";
+import { typography } from "constants/typography";
 
 export type OptionProps = {
   label: string;
@@ -17,6 +17,7 @@ export type RadioProps = CommonComponentProps & {
   defaultValue: string;
   onSelect?: (value: string) => void;
   options: OptionProps[];
+  selectedOptionElements?: Array<JSX.Element | null>;
   backgroundColor?: string;
   // To prevent interference when there are multiple radio groups,
   // options corresponding to the same radio should have same name, which is different from others.
@@ -49,9 +50,9 @@ export const Radio = styled.label<{
 }>`
   display: block;
   position: relative;
-  padding-left: var(--ads-space-10) px;
+  padding-left: calc(var(--ads-spaces-12) - 2px);
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  font-size: ${typography.p1.fontSize} px;
+  font-size: ${typography.p1.fontSize}px;
   font-weight: ${typography.p1.fontWeight};
   line-height: ${typography.p1.lineHeight}px;
   letter-spacing: ${typography.p1.letterSpacing}px;
@@ -63,7 +64,7 @@ export const Radio = styled.label<{
         `
       : props.rows && props.rows > 0
       ? `
-        margin-bottom: calc(var(--ads-space-11) + 1)px;`
+        margin-bottom: calc(var(--ads-spaces-11) + 1px);`
       : null};
 
   input {
@@ -76,10 +77,11 @@ export const Radio = styled.label<{
     position: absolute;
     top: 0;
     left: 0;
-    width: var(--ads-space-8) px;
-    height: var(--ads-space-8) px;
+    width: var(--ads-spaces-8);
+    height: var(--ads-spaces-8);
     background-color: transparent;
-    border: 1px solid var(--ads-radio-default-border-color);
+    border: calc(var(--ads-spaces-1) - 2px) solid
+      var(--ads-radio-default-border-color);
     border-radius: 50%;
     margin-top: 0px;
   }
@@ -101,13 +103,13 @@ export const Radio = styled.label<{
   .checkbox:after {
     content: "";
     position: absolute;
-    width: var(--ads-space-4) px;
-    height: var(--ads-space-4) px;
+    width: var(--ads-spaces-4);
+    height: var(--ads-spaces-4);
     ${(props) =>
       props.disabled
         ? `background-color: var(--ads-radio-disabled-background-color)`
         : `background-color: ${props.backgroundColor ||
-            `var(--ads-info-main-text-color`}`};
+            `var(--ads-info-main-text-color)`}`};
     top: 2px;
     left: 2px;
     border-radius: 50%;
@@ -116,6 +118,7 @@ export const Radio = styled.label<{
 
 export default function RadioComponent(props: RadioProps) {
   const [selected, setSelected] = useState(props.defaultValue);
+  const { onSelect } = props;
 
   useEffect(() => {
     if (props.rows && props.columns && props.rows > 0 && props.columns > 0) {
@@ -127,9 +130,12 @@ export default function RadioComponent(props: RadioProps) {
     setSelected(props.defaultValue);
   }, [props.defaultValue]);
 
-  const onChangeHandler = (value: string) => {
-    setSelected(value);
-    props.onSelect && props.onSelect(value);
+  const onChangeHandler = (e: any) => {
+    if (!e.target?.closest(".t--radioSelectedOptionElement")) {
+      const value: string = e.target.value;
+      setSelected(value);
+      onSelect && onSelect(value);
+    }
   };
 
   return (
@@ -137,28 +143,35 @@ export default function RadioComponent(props: RadioProps) {
       className={props.className}
       columns={props.columns}
       data-cy={props.cypressSelector}
-      onChange={(e: any) => onChangeHandler(e.target.value)}
+      onChange={onChangeHandler}
       rows={props.rows}
     >
       {props.options.map((option: OptionProps, index: number) => (
-        <Radio
-          backgroundColor={props.backgroundColor}
-          columns={props.columns}
-          disabled={props.disabled || option.disabled}
-          key={index}
-          rows={props.rows}
-        >
-          {option.label}
-          <input
-            checked={selected === option.value}
+        <React.Fragment key={index}>
+          <Radio
+            backgroundColor={props.backgroundColor}
+            columns={props.columns}
             disabled={props.disabled || option.disabled}
-            name={props.name || "radio"}
-            onChange={(e) => option.onSelect && option.onSelect(e.target.value)}
-            type="radio"
-            value={option.value}
-          />
-          <span className="checkbox" />
-        </Radio>
+            key={index}
+            rows={props.rows}
+          >
+            {option.label}
+            <input
+              checked={selected === option.value}
+              disabled={props.disabled || option.disabled}
+              name={props.name || "radio"}
+              onChange={(e) => onSelect && onSelect(e.target.value)}
+              type="radio"
+              value={option.value}
+            />
+            <span className="checkbox" />
+          </Radio>
+          {selected === option.value && (
+            <div className="t--radioSelectedOptionElement">
+              {props.selectedOptionElements?.[index]}
+            </div>
+          )}
+        </React.Fragment>
       ))}
     </RadioGroup>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import AppIconComponent, { Size } from "./index";
+import AppIconComponent from "./index";
 
 export default {
   title: "Design System/AppIcon",
@@ -16,5 +16,5 @@ const Template: ComponentStory<typeof AppIconComponent> = (args) => {
 export const AppIcon = Template.bind({});
 AppIcon.args = {
   name: "arrow-down",
-  size: Size.large,
+  size: "large",
 };

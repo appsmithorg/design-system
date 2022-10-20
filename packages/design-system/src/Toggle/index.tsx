@@ -117,6 +117,7 @@ const StyledToggle = styled.label<{
 `;
 
 export default function Toggle(props: ToggleProps) {
+  const { onToggle } = props;
   const [value, setValue] = useState(props.value);
 
   useEffect(() => {
@@ -125,7 +126,7 @@ export default function Toggle(props: ToggleProps) {
 
   const onChangeHandler = (value: boolean) => {
     setValue(value);
-    props.onToggle && props.onToggle(value);
+    onToggle && onToggle(value);
   };
 
   return (
