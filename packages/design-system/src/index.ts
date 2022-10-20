@@ -37,6 +37,8 @@ export * from "./CopyToClipboard";
 export { default as DatePicker } from "./DatePicker";
 export * from "./DatePicker";
 
+export * from "./DateRangePicker";
+
 export { default as DialogComponent } from "./DialogComponent";
 export * from "./DialogComponent";
 

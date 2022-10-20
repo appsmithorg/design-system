@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: form group component migrated
+feat: Added date range picker
