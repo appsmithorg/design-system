@@ -12,9 +12,18 @@ Run
 yarn global add yalc
 ```
 
+### Setting up for appsmith usage
+
+If we're going to use this package in the `appsmith` repository, we need to make some additional changes to this repository.
+
+1. navigate to the `package/design-system/package.json` file
+2. Make sure you change the field `"name": "@appsmithorg/design-system"` to `"name": "design-system"`. We do this so that we don't run into alias conflicts later.
+3. Make sure you do not commit this file
+
 ### In this repository 
 
 We need to "publish" our package.
+
 1. Make sure the package builds by running `yarn build`
 2. Make sure the functionality works as expected in the playground by running `yarn storybook` and then testing your component out in the relevant story
 3. If you are writing a new component, write a story for it taking another story from this repository as reference. You could also refer to [the official docs](https://storybook.js.org/docs/react/writing-stories/introduction#how-to-write-stories).
@@ -24,13 +33,36 @@ We need to "publish" our package.
 
 1. Run `yalc add design-system` in the appsmith repository.
 2. This will create changes in your `package.lock` file. Run `yarn` to get the new package version from `yalc`.
-3. This will create changes in your `yarn.lock` file, which is what we want.
+3. This will create changes in your `yarn.lock` file, which is what we want. Make sure you do not commit these changes.
 
-Now you can test your app while including the changes made in this package. Go ahead and run your local development environment, or some cypress tests. 
+Now you can test your app while including the changes made in this package. Go ahead and run your local development environment, or some cypress tests.
 
+Please note that yalc will not test any uncommited changes you make in your file system. Make sure you have everything you need in the commits (you can always revert bad ones!) 
+
+
+## Non local testing 
+
+You can create an alpha release of your branch so that other people can see and test your changes in a different repository. To do this, run 
+```shell 
+./alpha-release.sh 
+```
+ TODO: how to auth via not-otp?
+
+## Creating stories 
+
+When you create a component, make sure you write a well defined story for it. A well defined story is one that 
+1. Denotes the default state of the component 
+2. Denotes all the variants of the component 
+3. Has a list of all the things the component can be
+
+You can create a template for your stories by running 
+```shell
+yarn create-story -f <DIRECTORY_NAME>
+```
+where ideally your directory name matches your component name exactly. 
 
 ## Contribution Guidelines: Code Style
 
-1. Destructure props where possible: https://github.com/appsmithorg/design-system/pull/109
+1. Destructure function props where possible: https://github.com/appsmithorg/design-system/pull/109
 2. 
 
