@@ -117,7 +117,7 @@ type ButtonColorType = {
 
 const ButtonColors: ButtonColorType = {
   info: {
-    main: "var(--ads-color-orange-500)",
+    main: "var(--ads-color-brand)",
     light: "var(--ads-old-color-hot-cinnamon)",
     dark: "var(--ads-old-color-rock-spray)",
     darker: "var(--ads-old-color-bridesmaid)",
@@ -216,7 +216,7 @@ const getMainStateStyles = (props: ButtonProps) => {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].main,
       borderColorPrimary: ButtonColors[variant].main,
-      txtColorPrimary: "var(--ads-color-black-0)",
+      txtColorPrimary: "var(--ads-color-brand-text)",
     },
     [Category.secondary]: {
       borderColorSecondary: ButtonColors[variant].main,
@@ -226,7 +226,7 @@ const getMainStateStyles = (props: ButtonProps) => {
     [Category.tertiary]: {
       bgColorTertiary: "transparent",
       borderColorTertiary: ButtonColors.tertiary.darker,
-      txtColorTertiary: ButtonColors.tertiary.main,
+      txtColorTertiary: "var(--ads-color-text)",
     },
   };
 

@@ -2,10 +2,23 @@
 @import "variables.css";
 
 :root {
+
+  /* new variables */
+  --ads-color-brand: var(--ads-color-orange-500);
+  --ads-color-brand-hover: var(--ads-old-color-rock-spray);
+  --ads-color-brand-active: var(--ads-old-color-rock-spray);
+  --ads-color-brand-focus: var(--ads-old-color-rock-spray);
+  --ads-color-brand-disabled: var(--ads-old-color-bridesmaid);
+  --ads-color-brand-text: var(--ads-color-black-0);
+  --ads-color-text: var(--ads-color-black-750);
+  --ads-color-background: var(--ads-color-black-0);
+  --ads-color-background-secondary: var(--ads-color-black-0);
+  --ads-border-radius: 0px;
+  /* new variables end here */
+
   --ads-primary-color: var(--ads-color-orange-500);
   --ads-primary-color-accent: var(--ads-orange-accent);
   --ads-primary-text-color: var(--ads-color-black-750);
-  --ads-border-radius: 0px;
   --ads-border-color: var(--ads-color-black-250);
   --ads-border-color-focus: var(--ads-color-black-900);
   
