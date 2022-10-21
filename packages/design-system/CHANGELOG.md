@@ -1,5 +1,21 @@
 # @appsmithorg/design-system
 
+## 1.0.29
+
+### Patch Changes
+
+- [#229](https://github.com/appsmithorg/design-system/pull/229) [`c7f164e`](https://github.com/appsmithorg/design-system/commit/c7f164e35f485df7839b30eb7ed6ff8979b42c60) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issue with font of toasts on windows machines
+
+## 1.0.28
+
+### Patch Changes
+
+- [#214](https://github.com/appsmithorg/design-system/pull/214) [`5430e7e`](https://github.com/appsmithorg/design-system/commit/5430e7e185976024cd00687ebe2bd551320cf276) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added date range picker
+
+* [#217](https://github.com/appsmithorg/design-system/pull/217) [`93a675c`](https://github.com/appsmithorg/design-system/commit/93a675c55f12bf75eadc3c05d162de6af8694833) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Dropdown performance due to createGlobalStyle
+
+- [#223](https://github.com/appsmithorg/design-system/pull/223) [`d66ff3a`](https://github.com/appsmithorg/design-system/commit/d66ff3a97e718c68c792980115237ccf26201a5c) Thanks [@IAmAnubhavSaini](https://github.com/IAmAnubhavSaini)! - chore: add two new icons and sort icon lines alphabetically
+
 ## 1.0.27
 
 ### Patch Changes
