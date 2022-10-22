@@ -7,7 +7,7 @@ import { Classes } from "Constants/classes";
 import Icon, { IconName, IconSize } from "Icon";
 import Spinner from "Spinner";
 import { typography } from "Constants/typography";
-import { hexToRgba } from "Constants/colors";
+import { hexToRgba } from "Utils/colors";
 
 const smallButton = css`
   font-size: ${typography.btnSmall.fontSize}px;

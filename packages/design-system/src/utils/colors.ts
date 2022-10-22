@@ -24,15 +24,15 @@ export const hexToRgb = (
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(validatedHex);
   return result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : {
-        r: -1,
-        g: -1,
-        b: -1,
-      };
+      r: -1,
+      g: -1,
+      b: -1,
+    };
 };
 export const hexToRgba = (color: string, alpha: number) => {
   const value = hexToRgb(color);

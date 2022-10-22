@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   Ref,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -22,8 +23,7 @@ import Icon, { IconCollection, IconName, IconSize } from "Icon";
 import { AsyncControllableInput } from "@blueprintjs/core/lib/esm/components/forms/asyncControllableInput";
 import _ from "lodash";
 import { replayHighlightClass } from "Constants/classes";
-import { useEffect } from "react";
-import { hexToRgba } from "Constants/colors";
+import { hexToRgba } from "Utils/colors";
 
 export type InputType = "text" | "password" | "number" | "email" | "tel";
 
