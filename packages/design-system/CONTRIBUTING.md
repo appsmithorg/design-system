@@ -37,20 +37,19 @@ We need to "publish" our package.
 
 Now you can test your app while including the changes made in this package. Go ahead and run your local development environment, or some cypress tests.
 
-Please note that yalc will not test any uncommited changes you make in your file system. Make sure you have everything you need in the commits (you can always revert bad ones!) 
+Please note that yalc will not test any uncommitted changes you make in your file system. Make sure you have everything you need in the commits (you can always revert bad ones!) 
 
 
-## Non local testing 
+## Non-local testing 
 
-You can create an alpha release of your branch so that other people can see and test your changes in a different repository. To do this, run 
-```shell 
-./alpha-release.sh 
-```
- TODO: how to auth via not-otp?
+You can create an alpha release of your branch so that other people can see and test your changes in a different repository (on a CI, for example). To do this, 
+
+1. In your `package.json`, make sure the `version` key is set to be the latest alpha version listed on the `versions` tab on [our npm package listing](https://www.npmjs.com/package/@appsmithorg/design-system). If you don't do this, the alpha version you create will overwrite an existing version and bad things might happen. 
+2. Run `./alpha-release.sh` in your shell. In order to complete this script, you will need an OTP which only members of the [@appsmithorg](https://www.npmjs.com/package/@appsmithorg/design-system) organisation on npm have access to. Please contact someone from the design system pod before you start this action.  
 
 ## Creating stories 
 
-When you create a component, make sure you write a well defined story for it. A well defined story is one that 
+When you create a component, make sure you write a well-defined story for it. A well defined story is one that 
 1. Denotes the default state of the component 
 2. Denotes all the variants of the component 
 3. Has a list of all the things the component can be
