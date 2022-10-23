@@ -231,6 +231,7 @@ const Selected = styled.div<{
     }
     return props.bgColor || "var(--ads-color-black-0)";
   }};
+  pointer-events: ${(props) => (props.disabled ? "none" : "auto")};
   box-sizing: border-box;
   display: flex;
   align-items: center;
