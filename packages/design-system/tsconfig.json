@@ -6,6 +6,7 @@
       "Types/*": ["types/*"],
       "Constants/*": ["constants/*"],
       "Common/*": ["common/*"],
+      "Utils/*": ["utils/*"],
     },
     "strict": true,
     "declaration": true,
