@@ -54,7 +54,7 @@ const SuggestionsWrapper = styled.div`
 
   svg {
     path {
-      fill: var(--ads-old-color-gray-7);
+      fill: var(--ads-color-gray-5);
     }
   }
 

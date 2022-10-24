@@ -23,24 +23,21 @@
   *
   */
 
-  /** API Pane */
-  --ads-api-pane-settings-text-color: var(--ads-old-color-gray-10);
-
   /** AppIcon  */
   --ads-app-icon-normal-color: var(--ads-color-black-550);
   --ads-app-icon-background-color: var(--ads-color-black-25);
 
   /* Breadcrumbs */
-  --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
-  --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray);
+  --ads-breadcrumbs-list-text-color: var(--ads-color-gray-7);
+  --ads-breadcrumbs-separator-text-color: var(--ads-color-gray-5);
   --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
 
   /** Button Tab */
-  --ads-button-tab-selected-border-color: var(--ads-old-color-gray-10);
+  --ads-button-tab-selected-border-color: var(--ads-color-gray-8);
   --ads-button-tab-border-color: var(--ads-color-black-250);
   --ads-button-tab-focus-background-color: var(--ads-old-color-gallery-2);
   --ads-button-tab-hover-background-color: var(--ads-old-color-gallery-2);
-  --ads-button-tab-svg-path-fill-color: var(--ads-old-color-gray-7);
+  --ads-button-tab-svg-path-fill-color: var(--ads-color-gray-5);
 
   /** Callout */
   --ads-callout-info-text-color: #D44100;
@@ -58,7 +55,8 @@
   --ads-checkbox-default-unchecked-border-color: #404040;
   --ads-checkbox-after-disabled-checked-border-color: #939090;
   --ads-checkbox-after-default-checked-border-color: var(--ads-color-black-0);
-  --ads-checkbox-label-text-color: var(--ads-old-color-alto);
+  --ads-checkbox-label-text-color: var(--ads-color-gray-5);
+  --ads-checkbox-label-first-child-text-color: var(--ads-color-gray-7);
 
   /** ColorSelector */
   --ads-color-selector-shadow-color: #E8E8E8;
@@ -76,20 +74,20 @@
 
   /** Dropdown */
   --ads-dropdown-hover-background-color : var(--ads-old-color-gallery-2);
-  --ads-dropdown-selected-text-color: var(--ads-old-color-gray-10);
+  --ads-dropdown-selected-text-color: var(--ads-color-gray-9);
   --ads-dropdown-disabled-header-text-color: #9F9F9F;
   --ads-dropdown-disabled-header-background-color: var(--ads-color-black-0);
   --ads-dropdown-default-header-text-color: var(--ads-color-black-750);
-  --ads-dropdown-selected-header-text-color: var(--ads-old-color-gray-10);
+  --ads-dropdown-selected-header-text-color: var(--ads-color-gray-9);
   --ads-dropdown-default-menu-border-color: var(--ads-color-black-100);
-  --ads-dropdown-default-menu-subtext-text-color: var(--ads-old-color-gray-7);
+  --ads-dropdown-default-menu-subtext-text-color: var(--ads-color-gray-7);
   --ads-dropdown-selected-menu-subtext-text-color: var(--ads-color-black-550);
   --ads-dropdown-default-menu-text-color: var(--ads-color-black-750);
-  --ads-dropdown-default-menu-hover-text-color: var(--ads-old-color-gray-10);
+  --ads-dropdown-default-menu-hover-text-color: var(--ads-color-gray-9);
   --ads-dropdown-default-menu-hover-background-color: var(--ads-color-black-200);
   --ads-dropdown-default-icon-fill-color: var(--ads-color-black-550);
   --ads-dropdown-default-icon-background-color: var(--ads-color-black-250);
-  --ads-dropdown-default-icon-selected-fill-color: var(--ads-old-color-gray-7);
+  --ads-dropdown-default-icon-selected-fill-color: var(--ads-color-gray-5);
   --ads-dropdown-default-icon-hover: var(--ads-color-black-0);
   --ads-dropdown-default-dropdown-trigger-border-color: var(--ads-color-black-900);
   --ads-dropdown-default-close-hover-background-color : var(--ads-old-color-gallery-2);
@@ -101,20 +99,20 @@
   --ads-editable-text-subcomponent-default-text-color: var(--ads-color-black-750);
 
   /** EditableTextWrapper */
-  --ads-editable-text-wrapper-default-text-color: var(--ads-old-color-alto);
+  --ads-editable-text-wrapper-default-text-color: var(--ads-color-gray-7);
 
   /** Emoji Reactions */
   --ads-emoji-reactions-bubble-background-color: var(--ads-color-black-75);
   --ads-emoji-reactions-bubble-active-background-color: var(--ads-old-color-bridesmaid);
   --ads-emoji-reactions-bubble-active-border-color: var(--ads-old-color-rock-spray);
   --ads-emoji-reactions-bubble-hover-background-color: var(--ads-old-color-gallery-2);
-  --ads-emoji-reactions-count-text-color: var(--ads-old-color-dove-gray);
+  --ads-emoji-reactions-count-text-color: var(--ads-color-gray-7);
   --ads-emoji-reactions-count-active-text-color: var(--ads-old-color-rock-spray);
   --ads-emoji-reactions-count-hover-text-color: var(--ads-color-black-750);
 
   /** FilePickerV2 */
   --ads-file-picker-v2-default-background-color: var(--ads-color-black-75);
-  --ads-file-picker-v2-default-text-color : var(--ads-old-color-dove-gray-2);
+  --ads-file-picker-v2-default-text-color : var(--ads-color-gray-7);
   --ads-file-picker-v2-success-text-color : var(--ads-old-color-jade);
   --ads-file-picker-v2-upload-progress-background-color: var(--ads-color-black-470);
   --ads-file-picker-v2-upload-success-background-color: var(--ads-old-color-fun-green);
@@ -139,9 +137,9 @@
   --ads-form-message-light-success-background-color: #EFFFF4;
 
   /** Gif Player */
-  --ads-gif-player-icon-path-fill-color: var(--ads-old-color-silver);
-  --ads-gif-player-icon-circle-fill-color: var(--ads-old-color-gray-10);
-  --ads-gif-player-text-color: var(--ads-old-color-dove-gray-3);
+  --ads-gif-player-icon-path-fill-color: var(--ads-color-gray-2);
+  --ads-gif-player-icon-circle-fill-color: var(--ads-color-gray-9);
+  --ads-gif-player-text-color: var(--ads-color-gray-5);
   --ads-gif-player-overlay-background-color: var(--ads-color-black-0);
 
   /** HighlightText */
@@ -161,7 +159,6 @@
 
   /** Intent Colors */
   --ads-intent-color-primary: var(--ads-old-color-jade);
-  --ads-intent-color-secondary: var(--ads-old-color-black-pearl);
   --ads-intent-color-success: var(--ads-old-color-cornflower-blue);
   --ads-intent-color-danger: var(--ads-old-color-danger-red);
   --ads-intent-color-none: var(--ads-color-black-200);
@@ -192,10 +189,10 @@
   --ads-menu-default-border-color: #404040;
 
   /** Menu Divider */
-  --ads-menu-divider-border-color: var(--ads-old-color-mercury);
+  --ads-menu-divider-border-color: var(--ads-color-gray-2);
 
   /** Multiswitch */
-  --ads-multiswitch-tab-list-background-color: var(--ads-old-color-mercury);
+  --ads-multiswitch-tab-list-background-color: var(--ads-color-gray-1);
   --ads-multiswitch-border-color: var(--ads-color-black-250);
   --ads-multiswitch-selected-background-color: var(--ads-color-black-0);
   --ads-multiswitch-tab-header-background-color: var(--ads-color-black-0);
@@ -216,9 +213,12 @@
   --ads-property-pane-default-button-text-color: #090707;
 
   /** Radio */
-  --ads-radio-default-text-color: var(--ads-old-color-gray-10);
-  --ads-radio-default-border-color: var(--ads-old-color-mercury);
-  --ads-radio-disabled-background-color: #C5C5C5;
+  /* TODO: why did it change again? Fix before committing */
+  --ads-radio-default-text-color: var(--ads-color-gray-9);
+  --ads-radio-default-border-color: var(--ads-color-gray-4);
+  --ads-radio-disabled-background-color: var(--ads-color-gray-3);
+  --ads-radio-disabled-border-color: var(--ads-color-gray-3);
+  --ads-radio-disabled-text-color: var(--ads-color-gray-4);
 
   /** Rectangular Switch */
   --ads-rectangular-switch-background-color: var(--ads-color-black-0);
@@ -230,8 +230,8 @@
 
   /** Scroll Indicator */
   --ads-scroll-indicator-light-thumb-background-color: var(--ads-old-color-black-750-opacity-50);
-  --ads-scroll-indicator-light-track-background-color: var(--ads-old-color-white-opacity-50);
-  --ads-scroll-indicator-dark-thumb-background-color: var(--ads-old-color-alto-opacity-50);
+  --ads-scroll-indicator-light-track-background-color: var(--ads-color-gray-1);
+  --ads-scroll-indicator-dark-thumb-background-color: var(--ads-color-gray-2);
   --ads-scroll-indicator-dark-track-background-color: var(--ads-old-color-gray-10-opacity-50);
 
   /** Search Input */
@@ -264,10 +264,10 @@
   --ads-table-table-header-hover-icon-path-color: var(--ads-color-black-850);
   --ads-table-table-row-first-table-data-default-text-color: var(--ads-color-black-850);
   --ads-table-table-row-table-data-default-text-color: var(--ads-color-black-550);
-  --ads-table-table-row-table-data-border-bottom-color: var(--ads-old-color-mercury);
+  --ads-table-table-row-table-data-border-bottom-color: var(--ads-color-gray-2);
   --ads-table-table-row-hover-background-color : var(--ads-color-black-75);
-  --ads-table-table-row-hover-icon-path-color: var(--ads-old-color-gray-10);
-  --ads-table-table-row-first-table-data-hover-text-color: var(--ads-old-color-gray-10);
+  --ads-table-table-row-hover-icon-path-color: var(--ads-color-gray-5);
+  --ads-table-table-row-first-table-data-hover-text-color: var(--ads-color-gray-9);
   --ads-table-table-row-table-data-hover-text-color: var(--ads-color-black-850);
 
   /** TableDropdown  */
@@ -276,18 +276,18 @@
   --ads-table-dropdown-selected-hover-text-color: var(--ads-color-black-850);
 
   /** Tabs */
-  --ads-tabs-default-tab-list-text-color: var(--ads-old-color-gray-7);
+  --ads-tabs-default-tab-list-text-color: var(--ads-color-gray-5);
   --ads-tabs-default-tab-list-svg-fill-color: var(--ads-color-black-0);
-  --ads-tabs-default-tab-list-response-viewer-background-color: var(--ads-old-color-mercury);
+  --ads-tabs-default-tab-list-response-viewer-background-color: var(--ads-color-gray-0);
   --ads-tabs-default-tab-focus-response-viewer-border-color: var(--ads-color-black-250);
   --ads-tabs-tab-selected-svg-fill-color: var(--ads-color-black-750);
   --ads-tabs-tab-selected-response-viewer-background-color: var(--ads-color-black-0);
   --ads-tabs-tab-selected-response-viewer-border-color: var(--ads-color-black-250);
   --ads-tabs-tab-title-response-viewer-text-color: var(--ads-primary-text-color);
-  --ads-tabs-count-background-color: var(--ads-old-color-mercury);
-  --ads-tabs-title-wrapper-text-color: var(--ads-old-color-gray-7);
+  --ads-tabs-count-background-color: var(--ads-color-gray-2);
+  --ads-tabs-title-wrapper-text-color: var(--ads-color-gray-5);
   --ads-tabs-title-wrapper-hover-text-color: var(--ads-color-black-750);
-  --ads-tabs-title-wrapper-icon-fill-color: var(--ads-old-color-gray-7);
+  --ads-tabs-title-wrapper-icon-fill-color: var(--ads-color-gray-5);
 
   /** Tab Item Background fill */
   --ads-tab-item-text-color: var(--ads-primary-text-color);
@@ -298,7 +298,7 @@
   --ads-tag-input-background-color: var(--ads-color-black-0);
   --ads-tag-input-border-color: var(--ads-color-black-250);
   --ads-tag-input-text-color: var(--ads-color-black-850);
-  --ads-tag-input-placeholder-color: var(--ads-old-color-alto);
+  --ads-tag-input-placeholder-color: var(--ads-color-gray-3);
   --ads-tag-input-active-border-color: var(--ads-primary-color);
   --ads-tag-input-active-box-shadow: "none";
   --ads-tag-input-tag-text-color: var(--ads-color-black-0);
@@ -309,23 +309,23 @@
   --ads-text-heading-color: var(--ads-color-black-850);
   --ads-text-highlight-color: var(--ads-color-black-0);
 
-  /** TextInput */
-  --ads-text-input-text-box-default-background-color: #ffffff;
-  --ads-text-input-text-box-default-text-color: #090707;
-  --ads-text-input-text-box-default-border-color: #E0DEDE;
-  --ads-text-input-text-box-disabled-background-color: #F0F0F0;
-  --ads-text-input-text-box-disabled-text-color: #6D6D6D;
-  --ads-text-input-text-box-disabled-border-color: #F0F0F0;
-  --ads-text-input-text-box-read-only-background-color: #F0F0F0;
-  --ads-text-input-text-box-read-only-text-color: #716E6E;
-  --ads-text-input-text-box-read-only-border-color: #F0F0F0;
-  --ads-text-input-text-box-hover-background-color: #FAFAFA;
-  --ads-text-input-icon-path-color: #716E6E;
-  --ads-text-input-placeholder-text-color: #A9A7A7;
-  --ads-text-input-helper-text-text-color: #858282;
+  /* TextInput */
+  --ads-text-input-text-box-default-background-color: var(--ads-color-black-0);
+  --ads-text-input-text-box-default-text-color: var(--ads-color-gray-7);
+  --ads-text-input-text-box-default-border-color: var(--ads-color-black-250);
+  --ads-text-input-text-box-disabled-background-color: var(--ads-color-gray-2);
+  --ads-text-input-text-box-disabled-text-color: var(--ads-color-gray-5);
+  --ads-text-input-text-box-disabled-border-color: var(--ads-color-gray-2);
+  --ads-text-input-text-box-read-only-background-color: var(--ads-color-gray-2);
+  --ads-text-input-text-box-read-only-text-color: var(--ads-color-gray-7);
+  --ads-text-input-text-box-read-only-border-color: var(--ads-color-gray-2);
+  --ads-text-input-text-box-hover-background-color: var(--ads-color-black-5);
+  --ads-text-input-icon-path-color: var(--ads-color-gray-5);
+  --ads-text-input-placeholder-text-color: var(--ads-color-black-450);
+  --ads-text-input-helper-text-text-color: var(--ads-color-gray-5);
 
   /* Toast */
-  --ads-toast-background-color: var(--ads-old-color-gray-10);
+  --ads-toast-background-color: var(--ads-color-gray-9);
   --ads-toast-icon-fill-color: #DCAD00;
   --ads-toast-icon-outline-color: var(--ads-old-color-pomegranate);
   --ads-toast-text-color: var(--ads-color-black-25);
@@ -334,7 +334,7 @@
 
   /* Toggle */
   --ads-toggle-slider-background-color: var(--ads-color-black-250);
-  --ads-toggle-slider-loading-background-color: var(--ads-old-color-mercury);
+  --ads-toggle-slider-loading-background-color: var(--ads-color-black-250);
   --ads-toggle-slider-disabled-on-background-color: var(--ads-color-black-0);
   --ads-toggle-slider-disabled-off-background-color: var(--ads-color-black-0);
   --ads-toggle-on-background-color: var(--ads-color-orange-500);
