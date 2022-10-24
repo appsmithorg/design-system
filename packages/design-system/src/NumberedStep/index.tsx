@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { getTypographyByKey } from "Common/index";
+import { getTypographyByKey } from "Constants/typography";
 
 const Container = styled.div`
   display: flex;
