@@ -26,5 +26,7 @@ TextInputExample.args = {
   placeholder: "This is a Text Input placeholder",
   trimValue: false,
   useTextArea: true,
-  value: () => console.log("This is the value"),
+  helperText: "Some text",
+  value: "some text in the thing",
+  readOnly: true,
 };

@@ -48,6 +48,7 @@ ButtonTabWithLabel.args = {
     {
       label: "LEFT",
       value: "left",
+      selected: true,
     },
   ],
   values: ["left"],

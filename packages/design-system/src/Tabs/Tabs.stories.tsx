@@ -30,6 +30,7 @@ Tabs.args = {
       key: "tab1",
       title: "Tab 1",
       panelComponent: <PanelComponent title={"Tab 1"} />,
+      count: 4,
     },
     {
       key: "tab2",
