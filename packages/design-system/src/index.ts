@@ -5,6 +5,9 @@ export * from "./AppIcon";
 
 export * from "./BannerMessage";
 
+export { default as Box } from "./Box";
+export * from "./Box";
+
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export * from "./Breadcrumbs";
 
