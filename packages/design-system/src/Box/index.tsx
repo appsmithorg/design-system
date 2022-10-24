@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 type BoxProps = {
-  space: string;
-  direction: "horizontal" | "vertical";
+  space?: string;
+  direction?: "horizontal" | "vertical";
   children: ReactNode;
 };
 
