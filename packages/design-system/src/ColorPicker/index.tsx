@@ -15,7 +15,8 @@ import { replayHighlightClass } from "Constants/classes";
 const ColorIcon = styled.div<{ color: string }>`
   width: 24px;
   height: 24px;
-  border: 3px solid var(--ads-color-black-75);
+  border-radius: var(--ads-border-radius);
+  border: 3px solid var(--ads-color-border);
   position: absolute;
   z-index: 1;
   top: 6px;
@@ -43,12 +44,13 @@ const StyledInputGroup = styled(InputGroup)`
   &&& input {
     padding-left: 36px;
     height: 36px;
-    border: 1px solid var(--ads-color-black-250);
-    background: var(--ads-color-black-0);
-    color: var(--ads-color-black-750);
+    border: 1px solid var(--ads-color-border);
+    border-radius: var(--ads-border-radius);
+    background: var(--ads-color-white);
+    color: var(--ads-color-text);
 
     &:focus {
-      border: 1px solid var(--ads-color-black-900);
+      border: 1px solid var(--ads-color-border-selected);
     }
   }
 `;
@@ -57,11 +59,11 @@ const ColorsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 0 12px 12px 0;
-  background: var(--ads-color-black-0);
+  background: var(--ads-color-white);
   width: 232px;
   height: auto;
   box-shadow: 0px 2px 4px rgba(67, 70, 74, 0.14);
-  border-radius: 4px;
+  border-radius: var(--ads-border-radius);
 `;
 
 const ColorTab = styled.div<{ color: string }>`
@@ -70,7 +72,8 @@ const ColorTab = styled.div<{ color: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--ads-color-black-75);
+  border-radius: var(--ads-border-radius);
+  border: 3px solid var(--ads-color-border);
   background: ${(props) => (props.color ? props.color : "transparent")};
   margin-top: 12px;
   margin-left: 12px;
@@ -102,6 +105,7 @@ const EmptyColorIconWrapper = styled.div`
   margin-left: 12px;
   box-shadow: 0px 2px 4px rgba(67, 70, 74, 0.14);
   cursor: pointer;
+  border-radius: var(--ads-border-radius);
   .line {
     left: 12px;
     top: -6px;
@@ -139,8 +143,9 @@ function ColorBoard(props: ColorBoardProps) {
 const NoColorIcon = styled.div`
   width: 100%;
   height: 100%;
-  border: 3px solid var(--ads-color-black-75);
-  background: var(--ads-color-black-0);
+  border: 3px solid var(--ads-color-border);
+  border-radius: var(--ads-border-radius);
+  background: var(--ads-color-white);
   position: relative;
   .line {
     width: 2px;
