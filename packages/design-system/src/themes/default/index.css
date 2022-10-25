@@ -45,10 +45,6 @@
   /** API Pane */
   --ads-api-pane-settings-text-color: var(--ads-old-color-gray-10);
 
-  /** ColorSelector */
-  --ads-color-selector-shadow-color: #E8E8E8;
-  --ads-color-selector-checkmark-color: #000000;
-
   /** Dialog Component */
   --ads-dialog-component-default-background-color: var(--ads-color-black-0)x;
   --ads-dialog-component-header-text-text-color: var(--ads-color-black-900);

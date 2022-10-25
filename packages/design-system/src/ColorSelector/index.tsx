@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
+import "./styles.css";
 
 export type ColorSelectorProps = CommonComponentProps & {
   onSelect?: (hex: string) => void;
@@ -24,6 +25,7 @@ const ColorBox = styled.div<{ selected: string; color: string }>`
   background-color: ${(props) => props.color};
   cursor: pointer;
   position: relative;
+  border-radius: var(--ads-border-radius);
 
   &:hover {
     box-shadow: 0px 0px 0px calc(var(--ads-spaces-1) - 1px)
@@ -70,7 +72,11 @@ function ColorSelector(props: ColorSelectorProps) {
   }, [props.defaultValue]);
 
   return (
-    <Palette data-cy={props.cypressSelector} fill={props.fill}>
+    <Palette
+      className="ads--color-selector"
+      data-cy={props.cypressSelector}
+      fill={props.fill}
+    >
       {props.colorPalette.map((hex: string, index: number) => {
         return (
           <ColorBox
