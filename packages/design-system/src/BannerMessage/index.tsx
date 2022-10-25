@@ -26,7 +26,7 @@ const MessageContainer = styled.div<{
   flex-direction: row;
   color: ${(props) => props.textColor};
   background: ${(props) => props.backgroundColor};
-  }
+  border-radius: var(--ads-border-radius);
 `;
 const StyledIcon = styled(Icon)`
   padding: 8px 4px;

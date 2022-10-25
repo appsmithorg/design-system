@@ -13,7 +13,7 @@
   --ads-color-text: var(--ads-color-black-750);
   --ads-color-background: var(--ads-color-black-0);
   --ads-color-background-secondary: var(--ads-color-black-0);
-  --ads-border-radius: 0px;
+  --ads-border-radius: 4px;
   /* new variables end here */
 
   --ads-primary-color: var(--ads-color-orange-500);
@@ -38,10 +38,6 @@
 
   /** API Pane */
   --ads-api-pane-settings-text-color: var(--ads-old-color-gray-10);
-
-  /** AppIcon  */
-  --ads-app-icon-normal-color: var(--ads-color-black-550);
-  --ads-app-icon-background-color: var(--ads-color-black-25);
 
   /* Breadcrumbs */
   --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
@@ -78,7 +74,7 @@
   --ads-color-selector-checkmark-color: #000000;
 
   /** Dialog Component */
-  --ads-dialog-component-default-background-color: var(--ads-color-black-0);
+  --ads-dialog-component-default-background-color: var(--ads-color-black-0)x;
   --ads-dialog-component-header-text-text-color: var(--ads-color-black-900);
   --ads-dialog-component-dialog-header-underline-color: #C5C5C5;
   --ads-dialog-component-icon-background-color: #FFDEDE;
