@@ -39,11 +39,6 @@
   /** API Pane */
   --ads-api-pane-settings-text-color: var(--ads-old-color-gray-10);
 
-  /* Breadcrumbs */
-  --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
-  --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray);
-  --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
-
   /** Button Tab */
   --ads-button-tab-selected-border-color: var(--ads-old-color-gray-10);
   --ads-button-tab-border-color: var(--ads-color-black-250);

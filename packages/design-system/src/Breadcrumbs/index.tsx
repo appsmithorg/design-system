@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Icon from "Icon";
+import "./styles.css";
 
 export interface BreadcrumbsProps {
   items: {
@@ -78,7 +79,7 @@ function BreadcrumbList(props: BreadcrumbProps) {
   }, []);
 
   return (
-    <StyledBreadcrumbList className="t--breadcrumb-list">
+    <StyledBreadcrumbList className="t--breadcrumb-list ads--breadcrumbs">
       {childrenNew}
     </StyledBreadcrumbList>
   );
