@@ -1,0 +1,4 @@
+.ads--app-icon {
+  --ads-app-icon-normal-color: var(--ads-color-black-550);
+  --ads-app-icon-background-color: var(--ads-color-black-25);
+}
