@@ -45,7 +45,7 @@ const DS_DateRangePicker = styled(DateRangeInput)<{
       position: absolute;
       top: 0;
       right: 0;
-      color: var(--ads-primary-text-color);
+      color: var(--ads-color-text);
       z-index: 100;
       height: 100%;
       display: flex;
