@@ -11,6 +11,7 @@ const Wrapper = styled.div<{ offset?: string }>`
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  border-radius: var(--ads-border-radius);
 
   div {
     height: 100%;
