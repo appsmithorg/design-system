@@ -4,6 +4,7 @@ import { ControlIcons } from "ControlIcons";
 import _ from "lodash";
 import { DSEventTypes } from "Types/common";
 import { useDSEvent } from "hooks";
+import "./styles.css";
 
 const ItemWrapper = styled.div<{ selected: boolean }>`
   min-width: 36px;
@@ -11,6 +12,7 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: var(--ads-border-radius);
   border: 1px solid
     ${(props) =>
       props.selected
@@ -122,6 +124,7 @@ const ButtonTabComponent = React.forwardRef(
 
     return (
       <FlexWrapper
+        className="ads--button-tab"
         fullWidth={props.fullWidth ?? false}
         onBlur={() => setFocusedIndex(-1)}
         onFocus={() => setFocusedIndex(firstValueIndex)}

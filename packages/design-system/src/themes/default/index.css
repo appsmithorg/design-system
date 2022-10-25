@@ -13,6 +13,9 @@
   --ads-color-text: var(--ads-color-gray-600);
   --ads-color-background: var(--ads-color-black-0);
   --ads-color-background-secondary: var(--ads-color-black-0);
+  --ads-color-border: var(--ads-color-gray-200);
+  --ads-color-background-hover: var(--ads-color-gray-100);
+  --ads-color-background-focus: var(--ads-color-gray-100);
   --ads-border-radius: 4px;
   /* new variables end here */
 
@@ -38,13 +41,6 @@
 
   /** API Pane */
   --ads-api-pane-settings-text-color: var(--ads-old-color-gray-10);
-
-  /** Button Tab */
-  --ads-button-tab-selected-border-color: var(--ads-old-color-gray-10);
-  --ads-button-tab-border-color: var(--ads-color-black-250);
-  --ads-button-tab-focus-background-color: var(--ads-old-color-gallery-2);
-  --ads-button-tab-hover-background-color: var(--ads-old-color-gallery-2);
-  --ads-button-tab-svg-path-fill-color: var(--ads-old-color-gray-7);
 
   /** Callout */
   --ads-callout-info-text-color: #D44100;
