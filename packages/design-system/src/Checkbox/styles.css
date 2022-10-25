@@ -1,0 +1,8 @@
+.ads--checkbox {
+  --ads-checkbox-disabled-checked-background-color: var(--ads-color-background-disabled);
+  --ads-checkbox-disabled-checked-border-color: var(--ads-color-background-disabled);
+  --ads-checkbox-default-unchecked-border-color: var(--ads-color-border);
+  --ads-checkbox-after-disabled-checked-border-color: #939090;
+  --ads-checkbox-after-default-checked-border-color: var(--ads-color-white);
+  --ads-checkbox-label-text-color: var(--ads-color-text);
+}

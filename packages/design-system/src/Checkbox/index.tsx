@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { Classes, replayHighlightClass } from "Constants/classes";
 import Text, { TextType } from "Text";
+import "./styles.css";
 
 export enum CheckboxType {
   PRIMARY = "PRIMARY",
@@ -33,6 +34,7 @@ export const Checkmark = styled.span<{
   left: 0;
   width: var(--ads-spaces-8);
   height: var(--ads-spaces-8);
+  border-radius: var(--ads-border-radius);
   ${(props) => {
     if (props.type === CheckboxType.PRIMARY) {
       return `
@@ -173,7 +175,7 @@ function Checkbox(props: CheckboxProps) {
   return (
     <StyledCheckbox
       $fill={fill}
-      className={className}
+      className={[className, "ads--checkbox"].join(" ")}
       data-cy={props.cypressSelector}
       disabled={props.disabled}
     >

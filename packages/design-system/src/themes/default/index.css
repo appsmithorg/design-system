@@ -16,6 +16,8 @@
   --ads-color-border: var(--ads-color-gray-200);
   --ads-color-background-hover: var(--ads-color-gray-100);
   --ads-color-background-focus: var(--ads-color-gray-100);
+  /* --ads-color-background-active: var(--ads-color-gray-200); */
+  --ads-color-background-disabled: var(--ads-color-gray-200);
   --ads-border-radius: 4px;
   /* new variables end here */
 
@@ -41,14 +43,6 @@
 
   /** API Pane */
   --ads-api-pane-settings-text-color: var(--ads-old-color-gray-10);
-
-  /** Checkbox */
-  --ads-checkbox-disabled-checked-background-color: #E8E8E8;
-  --ads-checkbox-disabled-checked-border-color: #E8E8E8;
-  --ads-checkbox-default-unchecked-border-color: #404040;
-  --ads-checkbox-after-disabled-checked-border-color: #939090;
-  --ads-checkbox-after-default-checked-border-color: var(--ads-color-black-0);
-  --ads-checkbox-label-text-color: var(--ads-old-color-alto);
 
   /** ColorSelector */
   --ads-color-selector-shadow-color: #E8E8E8;
