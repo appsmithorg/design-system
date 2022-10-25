@@ -148,7 +148,7 @@ const ButtonColors: ButtonColorType = {
     main: "var(--ads-old-color-mid-gray)",
     light: "var(--ads-old-color-gray-10)",
     dark: "var(--ads-color-black-5)",
-    darker: "var(--ads-old-color-gallery)",
+    darker: "var(--ads-color-gray-300)",
     darkest: "var(--ads-color-black-450)",
   },
 };
@@ -433,7 +433,7 @@ const ButtonStyles = css<ButtonProps>`
   background-color: ${(props) => btnColorStyles(props, "main").bgColor};
   color: ${(props) => btnColorStyles(props, "main").txtColor};
   border: ${(props) => btnColorStyles(props, "main").border};
-  border-radius: 0;
+  border-radius: var(--ads-border-radius);
   ${(props) => btnFontStyles(props).buttonFont};
   padding: ${(props) => btnFontStyles(props).padding};
   .${Classes.ICON}:not([name="no-response"]) {

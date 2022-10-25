@@ -34,6 +34,19 @@
   --ads-color-black-5 : #FAFAFA;
   --ads-color-black-0 : #FFFFFF;
 
+  /* Gray */
+  --ads-color-gray-900 : #12192B;
+  --ads-color-gray-800 : #202939;
+  --ads-color-gray-700 : #364252;
+  --ads-color-gray-600 : #4C5664;
+  --ads-color-gray-500 : #6A7585;
+  --ads-color-gray-400 : #99A4B3;
+  --ads-color-gray-300 : #CDD5DF;
+  --ads-color-gray-200 : #E3E8EF;
+  --ads-color-gray-100 : #F1F5F9;
+  --ads-color-gray-50 : #F8FAFC;
+  --ads-color-white : #FFFFFF;
+
 
   --ads-color-blue-150 : #6A86CE;
 

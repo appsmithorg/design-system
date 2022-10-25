@@ -9,8 +9,8 @@
   --ads-color-brand-active: var(--ads-old-color-rock-spray);
   --ads-color-brand-focus: var(--ads-old-color-rock-spray);
   --ads-color-brand-disabled: var(--ads-old-color-bridesmaid);
-  --ads-color-brand-text: var(--ads-color-black-0);
-  --ads-color-text: var(--ads-color-black-750);
+  --ads-color-brand-text: var(--ads-color-white);
+  --ads-color-text: var(--ads-color-gray-600);
   --ads-color-background: var(--ads-color-black-0);
   --ads-color-background-secondary: var(--ads-color-black-0);
   --ads-border-radius: 4px;
