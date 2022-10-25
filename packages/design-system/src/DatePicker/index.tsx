@@ -7,10 +7,10 @@ import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
 const StyledDateInput = styled(DateInput)`
   & {
     input {
-      color: var(--ads-color-black-750);
-      background-color: var(--ads-color-black-0);
-      border: 1px solid var(--ads-color-black-250);
-      border-radius: 0;
+      color: var(--ads-color-text);
+      background-color: var(--ads-color-white);
+      border: 1px solid var(--ads-border-color);
+      border-radius: var(--ads-border-radius);
       padding: 6px 8px;
       height: 36px;
       box-shadow: none;
@@ -22,7 +22,7 @@ const StyledDateInput = styled(DateInput)`
   }
 
   .bp3-input-group input:focus {
-    border-color: var(--ads-color-black-900);
+    border-color: var(--ads-color-background-focus);
   }
 
   button,
@@ -35,7 +35,7 @@ const StyledDateInput = styled(DateInput)`
 
   .${Classes.DATE_PICKER_OVARLAY} {
     background-color: var(--ads-color-black-5);
-    color: var(--ads-color-black-750);
+    color: var(--ads-color-text);
     box-shadow: 0px 12px 28px -8px rgba(0, 0, 0, 0.75);
     margin-top: -3px;
 
