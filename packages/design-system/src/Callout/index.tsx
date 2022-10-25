@@ -5,6 +5,7 @@ import { Variant } from "Constants/variants";
 import styled from "styled-components";
 import Icon, { IconSize } from "Icon";
 import Text, { TextType } from "Text";
+import "./styles.css";
 
 export type CalloutProps = CommonComponentProps & {
   variant?: Variant;
@@ -25,6 +26,7 @@ const CalloutContainer = styled.div<{
   padding: var(--ads-spaces-4) var(--ads-spaces-12);
   background: ${(props) =>
     `var(--ads-callout-${props.variant}-background-color)`};
+  border-radius: var(--ads-border-radius);
 
   ${(props) =>
     props.addMarginTop &&
@@ -84,7 +86,7 @@ function Callout(props: CalloutProps) {
   return (
     <CalloutContainer
       addMarginTop={props.addMarginTop}
-      className={props.className}
+      className={[props.className, "ads--callout"].join(" ")}
       fillUp={props.fill}
       variant={props.variant || Variant.info}
     >
