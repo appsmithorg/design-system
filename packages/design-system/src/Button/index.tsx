@@ -119,8 +119,8 @@ const ButtonColors: ButtonColorType = {
   info: {
     main: "var(--ads-color-brand)",
     light: "var(--ads-old-color-hot-cinnamon)",
-    dark: "var(--ads-old-color-rock-spray)",
-    darker: "var(--ads-old-color-bridesmaid)",
+    dark: "var(--ads-color-brand-hover)",
+    darker: "var(--ads-color-brand-disabled)",
     darkest: "var(--ads-old-color-pot-pourri)",
   },
   success: {
