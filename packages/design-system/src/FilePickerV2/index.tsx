@@ -130,7 +130,7 @@ export const ContainerDiv = styled.div<{
     background-color: var(--ads-file-picker-v2-upload-success-background-color);
     transition: width 0.4s ease;
     height: var(--ads-spaces-1);
-    border-radius: calc(var(--ads-spaces-1) - 1px);
+    border-radius: var(--ads-border-radius);
     width: 0%;
   }
 
@@ -177,8 +177,9 @@ const ContainerDivWithBorder = styled(ContainerDiv)<{
 }>`
   width: 100%;
   height: 188px;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23F86A2B' stroke-width='1.2' stroke-dasharray='6.4%2c 6.4' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
   background-color: var(--ads-color-black-0);
+  border: 1px dashed var(--ads-color-brand);
+  border-radius: var(--ads-border-radius);
 `;
 
 const IconWrapper = styled.div`
