@@ -20,6 +20,7 @@ export enum TextType {
   BUTTON_SMALL = "btnSmall",
   SIDE_HEAD = "sideHeading",
   DANGER_HEADING = "dangerHeading",
+  CARD_SUBHEADER = "cardSubheader",
 }
 
 export enum Case {
