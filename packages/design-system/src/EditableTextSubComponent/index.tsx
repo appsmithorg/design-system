@@ -100,7 +100,7 @@ const TextContainer = styled.div<{
     height: calc(var(--ads-spaces-14) + 1px);
     color: var(--ads-editable-text-subcomponent-default-text-color);
     min-width: 100%;
-    border-radius: var(--ads-spaces-0);
+    border-radius: var(--ads-border-radius);
   }
 
   &&& .${BlueprintClasses.EDITABLE_TEXT} {
