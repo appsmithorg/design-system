@@ -7,6 +7,7 @@ import {
   SavingState,
 } from "EditableTextSubComponent";
 import { CommonComponentProps } from "Types/common";
+import { Classes as BP_Classes } from "@blueprintjs/core";
 
 export type EditableTextProps = CommonComponentProps & {
   defaultValue: string;
@@ -43,6 +44,9 @@ export const EditableTextWrapper = styled.div<{
     width: 100%;
     flex: 1;
   `}
+  .${BP_Classes.EDITABLE_TEXT} {
+    border-radius: var(--ads-border-radius);
+  }
   .error-message {
     margin-left: var(--ads-spaces-5);
     color: var(--ads-old-color-pomegranate);
