@@ -13,7 +13,7 @@ const StyledDialog = styled(Dialog)<{
   noModalBodyMarginTop?: boolean;
 }>`
   && {
-    border-radius: 0;
+    border-radius: var(--ads-border-radius);
     padding: 24px;
     background: var(--ads-dialog-component-default-background-color);
     ${(props) => (props.maxHeight ? `max-height: ${props.maxHeight};` : "")}
