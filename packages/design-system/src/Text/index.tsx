@@ -3,6 +3,7 @@ import { CommonComponentProps } from "Types/common";
 import { TypographyKeys, typography } from "Constants/typography";
 import { Classes } from "Constants/classes";
 
+// TODO: Why does this use a different set of keys from that in the constant typography? Refactor.
 export enum TextType {
   P0 = "p0",
   P1 = "p1",
