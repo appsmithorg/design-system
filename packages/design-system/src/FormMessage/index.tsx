@@ -35,6 +35,7 @@ const StyledMessage = styled.div<{ intent: Intent }>`
     width: 100%;
     padding: var(--ads-spaces-4);
     color: ${(props) => formMessage.text[props.intent]};
+    border-radius: var(--ads-border-radius);
     background-color: ${(props) => formMessage.background[props.intent]};
   }
 `;

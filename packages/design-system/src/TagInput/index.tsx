@@ -19,7 +19,7 @@ const TagInputWrapper = styled.div`
       background-color: var(--ads-tag-input-background-color);
       min-height: 38px;
       border: 1.2px solid var(--ads-tag-input-border-color);
-      border-radius: 0px;
+      border-radius: var(--ads-border-radius);
     }
     .${Classes.TAG_INPUT}.${Classes.ACTIVE} {
       border: 1px solid var(--ads-tag-input-active-border-color);

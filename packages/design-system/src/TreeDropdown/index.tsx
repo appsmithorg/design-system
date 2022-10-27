@@ -79,19 +79,19 @@ export const StyledMenu = styled(Menu)`
   min-width: 220px;
   width: ${(props: StyledMenuProps) => `${props.width}px`};
   padding: 0px;
-  border-radius: 0px;
+  border-radius: var(--ads-border-radius);
   background-color: var(--ads-tree-dropdown-menu-default-background-color);
   .${Classes.MENU} {
     min-width: 220px;
     width: ${(props: StyledMenuProps) => `${props.width}px`};
     padding: 0px;
-    border-radius: 0px;
+    border-radius: var(--ads-border-radius);
     background-color: var(--ads-tree-dropdown-menu-default-background-color);
     max-height: 90vh;
     overflow-y: scroll;
   }
   .${Classes.MENU_ITEM} {
-    border-radius: 0px;
+    border-radius: var(--ads-border-radius);
     font-size: 14px;
     line-height: ${typography.p1.lineHeight}px;
     display: flex;
@@ -145,7 +145,7 @@ const DropdownTarget = styled.div`
   &&&& .${Classes.BUTTON} {
     width: 100%;
     box-shadow: none;
-    border-radius: 0px;
+    border-radius: var(--ads-border-radius);
     border: 1px solid var(--ads-color-black-250);
     min-height: 36px;
     background-color: var(--ads-tree-dropdown-target-background-color);

@@ -10,6 +10,7 @@ type WrapperProps = {
 
 const Wrapper = styled.div<WrapperProps>`
   display: flex;
+  border-radius: var(--ads-border-radius);
   ${getTypographyByKey("p1")}
 
   ${(props) =>

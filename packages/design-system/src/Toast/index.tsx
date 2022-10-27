@@ -42,7 +42,7 @@ const WrappedToastContainer = styled.div`
   .Toastify__toast {
     cursor: auto;
     min-height: auto;
-    border-radius: 0px !important;
+    border-radius: var(--ads-border-radius) !important;
     font-family: ${TextFonts};
     margin-bottom: var(--ads-spaces-4);
   }
@@ -74,6 +74,7 @@ const ToastBody = styled.div<{
   margin-left: auto;
   background: var(--ads-toast-background-color);
   padding: var(--ads-spaces-4) var(--ads-spaces-5);
+  border-radius: var(--ads-border-radius);
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -16,6 +16,7 @@ const JSToggleButtonWrapper = styled.button<{ active: boolean }>`
   height: auto;
   width: 28px;
   height: 16px;
+  border-radius: var(--ads-border-radius);
   border: 0.5px solid
     ${(props) =>
       props.disabled

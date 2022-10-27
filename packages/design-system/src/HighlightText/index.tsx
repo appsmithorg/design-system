@@ -5,6 +5,7 @@ import { escapeRegExp } from "lodash";
 const TextHighlighter = styled.mark`
   color: var(--ads-highlight-text-default-text-color);
   background-color: var(--ads-highlight-text-default-background-color);
+  border-radius: var(--ads-border-radius);
 `;
 
 export type HighlightTextProps = {

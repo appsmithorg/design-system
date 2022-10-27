@@ -19,6 +19,7 @@ const StyledSwitch = styled.label<{
   width: 78px;
   height: 26px;
   cursor: pointer;
+  border-radius: var(--ads-border-radius);
 
   input {
     opacity: 0;
@@ -31,6 +32,7 @@ const StyledSwitch = styled.label<{
     cursor: pointer;
     top: 0;
     left: 0;
+    border-radius: var(--ads-border-radius);
     border: 1px solid var(--ads-rectangular-switch-slider-border-color);
     background-color: var(--ads-rectangular-switch-slider-background-color);
     width: 78px;
@@ -44,6 +46,7 @@ const StyledSwitch = styled.label<{
 			width: 36px;
 			height: 20px;
 			top: 2px;
+      border-radius: var(--ads-border-radius);
 	    background-color: var(--ads-rectangular-switch-background-color);
       left: ${props.value && !props.firstRender ? "38px" : "2px"};
     	transition: ${props.firstRender ? "0.4s" : "none"};

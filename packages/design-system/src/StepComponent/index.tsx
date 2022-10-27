@@ -36,6 +36,7 @@ const StepWrapper = styled.div`
   height: 32px;
   line-height: 32px;
   margin-top: 6px;
+  border-radius: var(--ads-border-radius);
   background-color: var(--ads-step-component-wrapper-background-color);
   && svg {
     path {

@@ -9,6 +9,7 @@ const Wrapper = styled.div<{ active: boolean }>`
   cursor: ${(props) => (props.active ? "default" : "pointer")};
   height: var(--ads-statusbar-height);
   transition: background-color 0.3s ease;
+  border-radius: var(--ads-border-radius);
 
   ${(props) =>
     props.active &&
@@ -41,6 +42,7 @@ const ProgressContainer = styled.div`
   background-color: rgb(0, 0, 0, 0.2);
   overflow: hidden;
   margin-top: 12px;
+  border-radius: var(--ads-border-radius);
 `;
 
 const Progressbar = styled.div<StatusProgressbarType>`

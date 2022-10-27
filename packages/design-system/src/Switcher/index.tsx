@@ -10,6 +10,7 @@ const MainContainer = styled.div`
   background-color: var(--ads-color-black-75);
   height: 32px;
   padding: 2px;
+  border-radius: var(--ads-border-radius);
 `;
 
 const SwitchBlock = styled.div<{ active?: boolean }>`
@@ -23,6 +24,7 @@ const SwitchBlock = styled.div<{ active?: boolean }>`
   height: 100%;
   flex: 1;
   border: 1px solid transparent;
+  border-radius: var(--ads-border-radius);
   user-select: none;
 
   ${(props) =>

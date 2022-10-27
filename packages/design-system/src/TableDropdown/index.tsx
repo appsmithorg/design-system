@@ -43,6 +43,7 @@ const OptionsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: var(--ads-table-dropdown-background-color);
+  border-radius: var(--ads-border-radius);
   box-shadow: var(--ads-spaces-0) var(--ads-spaces-5)
     calc(var(--ads-spaces-13) - 2px) rgba(0, 0, 0, 0.32);
 `;

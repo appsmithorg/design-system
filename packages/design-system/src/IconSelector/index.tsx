@@ -22,6 +22,7 @@ const IconPalette = styled.div<{ fill?: boolean }>`
   width: ${(props) => (props.fill ? "100%" : "234px")};
   max-height: 90px;
   overflow-y: auto;
+  border-radius: var(--ads-border-radius);
   &&::-webkit-scrollbar-thumb {
     background-color: var(--ads-icon-selector-scrollbar-thumb-background-color);
   }
@@ -40,6 +41,7 @@ const IconBox = styled.div<{ selectedColor?: string }>`
     props.selectedColor ||
     "var(--ads-icon-selector-app-icon-background-color)"};
   margin: 0 var(--ads-spaces-2) var(--ads-spaces-2) 0;
+  border-radius: var(--ads-border-radius);
   position: relative;
 
   &:nth-child(6n) {

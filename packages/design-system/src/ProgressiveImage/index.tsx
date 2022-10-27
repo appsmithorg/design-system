@@ -10,6 +10,7 @@ export const Container = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+    border-radius: var(--ads-border-radius);
   }
   .progressive-image--full {
     transition: opacity 300ms ease 0ms;

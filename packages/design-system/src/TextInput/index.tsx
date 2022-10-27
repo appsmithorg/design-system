@@ -187,7 +187,7 @@ const StyledInput = styled((props) => {
     props.value && !props.noBorder && props.isFocused
       ? "calc(100% - 50px)"
       : "100%"};
-  border-radius: 0;
+  border-radius: var(--ads-border-radius);
   outline: 0;
   box-shadow: none;
   border: none;
@@ -229,6 +229,7 @@ export const InputWrapper = styled.div<{
   width: ${(props) =>
     props.fill ? "100%" : props.width ? props.width : "260px"};
   height: ${(props) => props.height || "36px"};
+  border-radius: var(--ads-border-radius);
   border: 1.2px solid
     ${(props) =>
       props.noBorder ? "transparent" : props.inputStyle.borderColor};

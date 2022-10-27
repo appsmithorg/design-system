@@ -15,6 +15,7 @@ interface SearchProps {
 const SearchComponentWrapper = styled.div`
   position: relative;
   width: 100%;
+  border-radius: var(--ads-border-radius);
 `;
 
 const CrossIconWrapper = styled.div`
@@ -56,6 +57,7 @@ const SearchInputWrapper = styled(InputGroup)`
       padding-right: 20px;
       text-overflow: ellipsis;
       width: 100%;
+      border-radius: var(--ads-border-radius);
     }
     input:focus {
       border: 1.2px solid var(--ads-old-color-fern-green);

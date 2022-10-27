@@ -32,6 +32,7 @@ const MenuWrapper = styled.div<{ width?: string }>`
   width: ${(props) => (props.width ? props.width : "234px")};
   background: var(--ads-color-black-0);
   box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.318);
+  border-radius: var(--ads-border-radius);
 `;
 
 const MenuOption = styled.div``;

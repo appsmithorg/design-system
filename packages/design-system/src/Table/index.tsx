@@ -10,6 +10,7 @@ import { IconSize } from "Icon";
 
 const Styles = styled.div`
   table {
+    border-radius: var(--ads-border-radius);
     border-spacing: 0;
     width: 100%;
 

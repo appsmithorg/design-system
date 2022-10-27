@@ -33,6 +33,7 @@ const FlexContainer = styled.div`
   max-width: 486px;
   width: 100%;
   min-height: 56px;
+  border-radius: var(--ads-border-radius);
 
   &.error {
     background-color: var(--ads-notification-banner-error-background-color);

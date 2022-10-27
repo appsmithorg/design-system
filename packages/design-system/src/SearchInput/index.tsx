@@ -31,6 +31,7 @@ type TextInputProps = CommonComponentProps & {
 const SearchInputWrapper = styled.div<{ border?: boolean; className?: string }>`
   & > div {
     border: none;
+    border-radius: var(--ads-border-radius);
 
     & > .left-icon {
       margin-left: 8px;

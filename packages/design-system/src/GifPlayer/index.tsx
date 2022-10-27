@@ -39,12 +39,18 @@ const PlayButton = styled.div`
 const ThumbnailContainer = styled.div`
   position: relative;
   cursor: pointer;
+  border-radius: var(--ads-border-radius);
+
+  & img {
+    border-radius: var(--ads-border-radius);
+  }
 `;
 
 const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  border-radius: var(--ads-border-radius);
   background: var(--ads-gif-player-overlay-background-color);
   opacity: 0.7;
   width: 100%;

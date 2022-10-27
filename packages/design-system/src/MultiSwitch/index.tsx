@@ -18,6 +18,7 @@ const TabList = styled.div`
   width: fit-content;
   margin-bottom: 12px;
   padding-left: 1px;
+  border-radius: var(--ads-border-radius);
 `;
 
 const TabContent = styled.div`
@@ -30,6 +31,7 @@ const Tab = styled.div<{ selected: boolean }>`
   cursor: pointer;
   height: 22px;
   padding: 0 12px;
+  border-radius: var(--ads-border-radius);
   ${(props) =>
     props.selected
       ? `
