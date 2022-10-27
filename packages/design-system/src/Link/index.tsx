@@ -24,6 +24,10 @@ const StyledLink = styled.a<{ isPrimary?: boolean }>`
   }
 
   &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
     color: var(--current-color);
     outline: 1px solid var(--current-color);
     border-bottom: 1px solid var(--current-color);
