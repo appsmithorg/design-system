@@ -199,6 +199,7 @@ const SquareBox = styled.div<{
     if (props.backgroundColor) return props.backgroundColor;
     props.checked ? "var(--ads-color-black-900)" : "var(--ads-color-black-0)";
   }};
+  border-radius: var(--ads-border-radius);
   border: 1.4px solid;
   border-color: ${(props) => {
     if (props.borderColor) return props.borderColor;
@@ -237,6 +238,7 @@ const Selected = styled.div<{
   justify-content: space-between;
   width: 100%;
   min-height: ${(props) => props.height};
+  border-radius: var(--ads-border-radius);
   ${(props) =>
     props.isMultiSelect &&
     `
@@ -307,6 +309,7 @@ export const DropdownContainer = styled.div<{ width: string; height?: string }>`
     width: 100%;
   }
   &:focus ${Selected} {
+    border-radius: var(--ads-border-radius);
     border: 1px solid var(--appsmith-input-focus-border-color);
   }
 `;
@@ -322,6 +325,7 @@ export const DropdownWrapper = styled.div<{
   z-index: 1;
   background-color: ${(props) =>
     props.wrapperBgColor ? props.wrapperBgColor : "var(--ads-color-black-0)"};
+  border-radius: var(--ads-border-radius);
   border: 1px solid var(--ads-dropdown-default-menu-border-color);
   overflow: hidden;
   overflow-y: auto;
@@ -335,6 +339,7 @@ export const DropdownWrapper = styled.div<{
       font-size: 14px !important;
       color: var(--ads-old-color-gray-10) !important;
       padding-left: 36px !important;
+      border-radius: var(--ads-border-radius);
       border: 1.2px solid var(--ads-color-black-200);
       &:hover {
         background: var(--ads-color-black-50);
@@ -613,6 +618,7 @@ const Chips = styled.div`
   align-items: center;
   padding: 4px;
   margin-right: 8px;
+  border-radius: var(--ads-border-radius);
   background-color: var(--ads-color-black-100);
   & > span[type="p2"] {
     margin-right: 4px;
