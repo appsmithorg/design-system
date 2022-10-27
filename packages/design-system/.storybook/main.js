@@ -24,7 +24,12 @@ async function webpackConfig(config) {
     test: /\.(js|jsx|ts|tsx)$/,
     use: {
       loader: 'babel-loader',
-      options: { presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"] }
+      options: {
+        presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
+        plugins: [
+          "babel-plugin-styled-components",
+        ]
+      }
     }
   })
 

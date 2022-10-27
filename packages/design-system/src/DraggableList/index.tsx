@@ -56,6 +56,10 @@ const DraggableListWrapper = styled.div`
     user-select: none;
     overflow: visible;
     pointer-events: auto;
+
+    & > .itemRendererWrapper > * {
+      border-radius: var(--ads-border-radius);
+    }
   }
 `;
 
@@ -252,7 +256,7 @@ export function DraggableList(props: any) {
               ),
             }}
           >
-            <div>
+            <div className="itemRendererWrapper">
               <ItemRenderer index={i} item={items[i]} />
             </div>
           </animated.div>
