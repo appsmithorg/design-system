@@ -1,16 +1,19 @@
 import React, { ReactFragment } from "react";
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
+import { TextType } from "../Text";
+import { typography } from "Constants/typography";
 
 export interface LinkProps extends CommonComponentProps {
   children: string | ReactFragment;
   to: string;
   isPrimary?: boolean;
+  textType?: TextType;
   // allow any number of other arguments (classes, styles, etc)
   [x: string]: any;
 }
 
-const StyledLink = styled.a<{ isPrimary?: boolean }>`
+const StyledLink = styled.a<{ isPrimary?: boolean; textType?: TextType }>`
   // explicitly set color instead of relying on css current color property
   --current-color: ${(props) =>
     props.isPrimary
@@ -18,6 +21,8 @@ const StyledLink = styled.a<{ isPrimary?: boolean }>`
       : "var(--ads-text-color-default)"};
 
   color: var(--current-color);
+  font-size: ${(props) =>
+    props.textType ? `${typography[props.textType].fontSize}px` : "inherit"};
 
   &:hover {
     color: var(--current-color);
