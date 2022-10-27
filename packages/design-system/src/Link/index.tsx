@@ -10,30 +10,22 @@ export interface LinkProps extends CommonComponentProps {
 }
 
 const StyledLink = styled.a<{ isPrimary?: boolean }>`
-  color: ${(props) =>
+  --current-color: ${(props) =>
     props.isPrimary
       ? "var(--ads-color-primary)"
       : "var(--ads-text-color-default)"};
 
+  color: var(--current-color);
+
   &:hover {
-    color: ${(props) =>
-      props.isPrimary
-        ? "var(--ads-color-primary-hover)"
-        : "var(--ads-text-color-default)"};
     text-decoration: underline;
+    color: var(--current-color);
   }
 
   &:focus {
-    color: ${(props) =>
-      props.isPrimary
-        ? "var(--ads-color-primary-hover)"
-        : "var(--ads-text-color-default)"};
-    outline: 1px solid
-      ${(props) =>
-        props.isPrimary
-          ? "var(--ads-color-primary-hover)"
-          : "var(--ads-color-gray-4)"};
     text-decoration: underline;
+    color: var(--current-color);
+    outline: 1px solid var(--current-color);
   }
 `;
 
