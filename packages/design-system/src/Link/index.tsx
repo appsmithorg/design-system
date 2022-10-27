@@ -18,14 +18,15 @@ const StyledLink = styled.a<{ isPrimary?: boolean }>`
   color: var(--current-color);
 
   &:hover {
-    text-decoration: underline;
     color: var(--current-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--current-color);
   }
 
   &:focus {
-    text-decoration: underline;
     color: var(--current-color);
     outline: 1px solid var(--current-color);
+    border-bottom: 1px solid var(--current-color);
   }
 `;
 
