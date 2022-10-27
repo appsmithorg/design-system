@@ -23,6 +23,7 @@ const StyledLink = styled.a<{ isPrimary?: boolean }>`
     color: var(--current-color);
     text-decoration: none;
     border-bottom: 1px solid var(--current-color);
+    margin-bottom: -1px;
   }
 
   // hide outline for mouse, touch, or stylus usage
@@ -35,6 +36,7 @@ const StyledLink = styled.a<{ isPrimary?: boolean }>`
     color: var(--current-color);
     outline: 1px solid var(--current-color);
     border-bottom: 1px solid var(--current-color);
+    margin-bottom: -1px;
   }
 `;
 
