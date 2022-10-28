@@ -137,7 +137,7 @@ export const LabelContainer = styled.div<{ info?: string }>`
   display: flex;
   flex-direction: column;
   .${Classes.TEXT}:first-child {
-    color: var(--ads-api-pane-settings-text-color);
+    color: var(--ads-checkbox-label-first-child-text-color);
   }
   ${(props) =>
     props.info

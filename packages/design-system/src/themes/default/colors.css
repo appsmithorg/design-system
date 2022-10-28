@@ -48,6 +48,20 @@
   --ads-color-white : #FFFFFF;
 
 
+  /* gray */
+  --ads-color-white: #FFFFFF;
+  --ads-color-gray-0: #F8FAFC;
+  --ads-color-gray-1: #F1F5F9;
+  --ads-color-gray-2: #E3E8EF;
+  --ads-color-gray-3: #CDD5DF;
+  --ads-color-gray-4: #99A4B3;
+  --ads-color-gray-5: #6A7585;
+  --ads-color-gray-6: #4C5664;
+  --ads-color-gray-7: #364252;
+  --ads-color-gray-8: #202939;
+  --ads-color-gray-9: #12192B;
+
+
   --ads-color-blue-150 : #6A86CE;
 
   /* green */
@@ -66,13 +80,9 @@
 
   /*  Old colors */
   /* TODO: These should go away or be renamed when the more comprehensive color palate is here */
-  --ads-old-color-gray-7: #858282;
-  --ads-old-color-gray-10: #090707;
 
   --ads-old-color-fern-green: #50AF6C;
   --ads-old-color-jagged-ice: #CAECDC;
-  --ads-old-color-blue-gray : #43464a;
-  --ads-old-color-outer-space: #363E44;
 
   --ads-old-color-hot-cinnamon: #DC5B21;
   --ads-old-color-rock-spray: #BF4109;
@@ -90,7 +100,6 @@
   --ads-old-color-champagne: #FBEED0;
 
   --ads-old-color-early-dawn: #FFFAE9;
-  --ads-old-color-dove-gray: #6D6D6D;
   --ads-old-color-pomegranate: #F22B2B;
   --ads-old-color-milano-red: #B90707;
 
@@ -99,35 +108,25 @@
   --ads-old-color-fair-pink: #FFE9E9;
   --ads-old-color-pale-blue: #E8F5FA;
 
-  --ads-old-color-mid-gray: #606065;
   --ads-old-color-gallery: #EDEDED;
   --ads-old-color-linen: #FDFAF2;
   --ads-old-color-buddha-gold: #D2A500;
 
-  --ads-old-color-alto: #D4D4D4;
   --ads-old-color-gallery-2: #EBEBEB;
-  --ads-old-color-mercury: #E8E8E8;
-  --ads-old-color-pure-black: #000000;
 
   --ads-old-color-burning-orange: #FF7742;
   --ads-old-color-curious-blue: #1D9BD1;
-  --ads-old-color-dove-gray-2: #716E6E;
   --ads-old-color-pigeon-post: #AEBAD9;
 
   --ads-old-color-royal-blue: #457AE6;
-  --ads-old-color-silver: #C4C4C4;
-  --ads-old-color-dove-gray-3: #6F6F6F;
   --ads-old-color-crusta: #F86A2B;
 
-  --ads-old-color-black-pearl: #040627;
   --ads-old-color-cornflower-blue: #6871EF;
   --ads-old-color-jaffa: #F2994A;
   --ads-old-color-enterprise-dark: #00407D;
 
   /* Colors with opacity */
   --ads-old-color-black-750-opacity-50: #4b484880;
-  --ads-old-color-alto-opacity-50: #D4D4D480;
-  --ads-old-color-white-opacity-50: #FFFFFF80;
   --ads-old-color-gray-10-opacity-50: #09070780;
   --ads-old-color-danger-red-opacity-80: #e22c2c14;
   --ads-old-color-warning-opacity-80: #e0b30e14;

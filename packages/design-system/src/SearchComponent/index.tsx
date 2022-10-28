@@ -53,7 +53,7 @@ const SearchInputWrapper = styled(InputGroup)`
       border-radius: 0;
       box-shadow: none;
       font-size: 12px;
-      color: var(--ads-old-color-gray-10);
+      color: var(--ads-color-gray-7);
       padding-right: 20px;
       text-overflow: ellipsis;
       width: 100%;
@@ -71,7 +71,7 @@ const SearchInputWrapper = styled(InputGroup)`
     ${HideDefaultSearchCancelIcon}
     svg {
       path {
-        fill: var(--ads-old-color-gray-7);
+        fill: var(--ads-color-gray-5);
       }
     }
   }

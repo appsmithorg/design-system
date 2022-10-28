@@ -5,7 +5,7 @@ import { replayHighlightClass } from "Constants/classes";
 
 const StyledSwitch = styled(Switch)`
   &&&&& input:checked ~ span {
-    background: var(--ads-old-color-gray-10);
+    background: var(--ads-color-gray-9);
   }
 
   & input:focus + .bp3-control-indicator {

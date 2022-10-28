@@ -337,7 +337,7 @@ export const DropdownWrapper = styled.div<{
     input {
       height: 32px;
       font-size: 14px !important;
-      color: var(--ads-old-color-gray-10) !important;
+      color: var(--ads-color-gray-7) !important;
       padding-left: 36px !important;
       border-radius: var(--ads-border-radius);
       border: 1.2px solid var(--ads-color-black-200);
@@ -510,7 +510,7 @@ const LeftIconWrapper = styled.span`
 `;
 
 const HeaderWrapper = styled.div`
-  color: var(--ads-old-color-dove-gray);
+  color: var(--ads-color-gray-5);
   font-size: 10px;
   padding: 0px 7px 7px 7px;
 `;

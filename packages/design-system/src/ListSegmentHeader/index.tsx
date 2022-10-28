@@ -9,22 +9,14 @@ const StyledSegmentHeader = styled.div`
   font-size: ${typography["u2"].fontSize}px;
   line-height: ${typography["u2"].lineHeight}px;
   letter-spacing: ${typography["u2"].letterSpacing}px;
-  color: var(--ads-old-color-gray-10);
+  color: var(--ads-color-gray-7);
   display: flex;
   align-items: center;
-`;
-
-const StyledHr = styled.div`
-  flex: 1;
-  height: 1px;
-  background-color: var(--ads-old-color-gray-10);
-  margin-left: var(--ads-spaces-3);
 `;
 
 export type SegmentHeaderProps = {
   title: string;
   style?: CSSProperties;
-  hideStyledHr?: boolean;
 };
 
 export default function SegmentHeader(props: SegmentHeaderProps) {
@@ -34,9 +26,9 @@ export default function SegmentHeader(props: SegmentHeaderProps) {
       style={props.style}
     >
       {props.title}
-      {!props.hideStyledHr && (
-        <StyledHr data-testid={"t--styled-segment-header-hr"} />
-      )}
+      {/*  TODO: Fix cypress here */}
+      {/*          <StyledHr data-testid={"t--styled-segment-header-hr"} />
+       */}
     </StyledSegmentHeader>
   );
 }

@@ -120,9 +120,9 @@ export const StyledMenu = styled(Menu)`
 
     &:hover:not(.t--apiFormDeleteBtn) {
       background-color: var(--ads-old-color-gallery-2);
-      color: var(--ads-old-color-gray-10);
+      color: var(--ads-color-gray-9);
       .${Classes.ICON} > svg:not([fill]) {
-        fill: var(--ads-old-color-gray-10);
+        fill: var(--ads-old-color-gray-9);
       }
     }
 

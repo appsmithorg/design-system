@@ -475,7 +475,7 @@ const ButtonStyles = css<ButtonProps>`
     margin-left: auto;
     margin-right: auto;
     circle {
-      stroke: var(--ads-old-color-gray-7);
+      stroke: var(--ads-color-gray-5);
     }
   }
   .t--right-icon {

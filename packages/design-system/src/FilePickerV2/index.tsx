@@ -386,6 +386,7 @@ function FilePickerComponent(props: FilePickerProps) {
         {props.title || "Drag & Drop files to upload or"}
       </Text>
       {props.description && (
+        // TODO: This is helper text and should be gray-5
         <Text className="drag-drop-description" type={TextType.P2}>
           {props.description}
         </Text>
