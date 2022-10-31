@@ -17,8 +17,13 @@ type BoxProps = {
 const StyledBox = styled.div<BoxProps>`
   background-color: var(--ads-color-black-0);
   border: 1px solid #f1f5f9;
-  padding: ${(props) => props.space} 0px;
   display: flex;
+  ${(props) =>
+    props.direction == "horizontal"
+      ? `flex-direction: row;
+          padding: ${props.space} 0px;`
+      : `flex-direction: column;
+          padding: 0px ${props.space};`}
   justify-content: ${(props) => props.justifyContent};
 `;
 
