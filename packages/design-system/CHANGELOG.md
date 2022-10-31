@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.30
+
+### Patch Changes
+
+- [#228](https://github.com/appsmithorg/design-system/pull/228) [`7fe2634`](https://github.com/appsmithorg/design-system/commit/7fe26342c1d93db72eb136a8844b96fb9994a273) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: destructure file picker functions so that they don't throw errors on local
+
+* [#131](https://github.com/appsmithorg/design-system/pull/131) [`09c108d`](https://github.com/appsmithorg/design-system/commit/09c108dbca070ca092b1ac7a229e6c26d7081a76) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - Create CONTRIBUTING.md
+
 ## 1.0.29
 
 ### Patch Changes
