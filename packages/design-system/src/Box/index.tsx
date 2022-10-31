@@ -21,22 +21,23 @@ const StyledBox = styled.div<BoxProps>`
   ${(props) =>
     props.direction == "horizontal"
       ? `flex-direction: row;
-          padding: ${props.space} 0px;`
+          padding: ${props.space} var(--ads-spaces-1);`
       : `flex-direction: column;
-          padding: 0px ${props.space};`}
+          padding: var(--ads-spaces-1) ${props.space};`}
   justify-content: ${(props) => props.justifyContent};
 `;
 
 const Box = ({
   direction = "horizontal",
   justifyContent = "space-evenly",
+  space = "var(--ads-spaces-1)",
   ...props
 }: BoxProps) => {
   return (
     <StyledBox
       direction={direction}
       justifyContent={justifyContent}
-      space={props.space}
+      space={space}
     >
       {props.children}
     </StyledBox>
