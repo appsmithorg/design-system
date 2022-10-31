@@ -4,13 +4,13 @@ import React, {
   forwardRef,
   Ref,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from "react";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 import { typography } from "Constants/typography";
-import { hexToRgba } from "Common/index";
 import { Classes as BlueprintClasses } from "@blueprintjs/core";
 import styled from "styled-components";
 import Text, { TextType } from "Text";
@@ -23,7 +23,7 @@ import Icon, { IconCollection, IconName, IconSize } from "Icon";
 import { AsyncControllableInput } from "@blueprintjs/core/lib/esm/components/forms/asyncControllableInput";
 import _ from "lodash";
 import { replayHighlightClass } from "Constants/classes";
-import { useEffect } from "react";
+import { hexToRgba } from "Utils/colors";
 
 export type InputType = "text" | "password" | "number" | "email" | "tel";
 
