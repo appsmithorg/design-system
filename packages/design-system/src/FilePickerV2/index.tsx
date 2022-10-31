@@ -194,7 +194,7 @@ const UploadIconWrapper = styled.div`
 `;
 
 function FilePickerComponent(props: FilePickerProps) {
-  const { fileType, logoUploadError } = props;
+  const { fileType, logoUploadError, onFileRemoved, onFileUploaded, fileUploader } = props;
   const [fileInfo, setFileInfo] = useState<{ name: string; size: number }>({
     name: "",
     size: 0,
@@ -257,7 +257,7 @@ function FilePickerComponent(props: FilePickerProps) {
   }
 
   function onUpload(url: string) {
-    props.onFileUploaded && props.onFileUploaded(url);
+    onFileUploaded && onFileUploaded(url);
   }
 
   function handleFileUpload(files: FileList | null) {
@@ -286,7 +286,7 @@ function FilePickerComponent(props: FilePickerProps) {
     if (fileContainerRef.current) {
       fileContainerRef.current.style.display = "none";
     }
-    props.fileUploader && props.fileUploader(file, setProgress, onUpload);
+    fileUploader && fileUploader(file, setProgress, onUpload);
   }
 
   function handleImageFileUpload(files: FileList | null) {
@@ -314,7 +314,7 @@ function FilePickerComponent(props: FilePickerProps) {
       }
 
       /* set form data and send api request */
-      props.fileUploader && props.fileUploader(file, setProgress, onUpload);
+      fileUploader && fileUploader(file, setProgress, onUpload);
     } else {
       Toaster.show({
         text: createMessage(ERROR_FILE_TOO_LARGE, "250 KB"),
@@ -334,7 +334,7 @@ function FilePickerComponent(props: FilePickerProps) {
         bgRef.current.style.backgroundImage = "url('')";
       }
       setIsUploaded(false);
-      props.onFileRemoved && props.onFileRemoved();
+      onFileRemoved && onFileRemoved();
     }
   }
 
