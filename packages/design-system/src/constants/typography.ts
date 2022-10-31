@@ -1,3 +1,4 @@
+// TODO: Why is the constant typography different from the constant TextType in Text? Refactor.
 export const typography = {
   h1: {
     fontSize: 20,

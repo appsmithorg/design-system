@@ -101,6 +101,7 @@ export const Radio = styled.label<{
 
   input:disabled ~ .checkbox:after {
     background-color: var(--ads-radio-disabled-background-color);
+    //border: var(--ads-radio-disabled-border-color);
   }
 
   .checkbox:after {
