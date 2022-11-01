@@ -10,16 +10,20 @@
   --ads-color-brand-focus: var(--ads-old-color-rock-spray);
   --ads-color-brand-disabled: var(--ads-old-color-bridesmaid);
   --ads-color-brand-text: var(--ads-color-white);
+
   --ads-color-text: var(--ads-color-gray-600);
   --ads-color-heading-text: var(--ads-color-gray-800);
+
   --ads-color-background: var(--ads-color-white);
   --ads-color-background-secondary: var(--ads-color-white);
-  --ads-color-border: var(--ads-color-gray-200);
   --ads-color-background-hover: var(--ads-color-gray-100);
-  --ads-color-border-selected: var(--ads-color-gray-700);
-  --ads-color-background-focus: var(--ads-color-gray-700);
-  /* --ads-color-background-active: var(--ads-color-gray-200); */
   --ads-color-background-disabled: var(--ads-color-gray-200);
+
+  --ads-color-border: var(--ads-color-gray-200);
+  --ads-color-border-selected: var(--ads-color-gray-700); /* focus selected active are same */
+  --ads-color-border-hover: var(--ads-color-gray-500);
+  --ads-color-border-disabled: var(--ads-color-gray-200);
+  
   --ads-border-radius: 4px;
   /* new variables end here */
 
@@ -42,22 +46,6 @@
   * subProperty: color, width, radius...
   *
   */
-
-  /** AppIcon  */
-  --ads-app-icon-normal-color: var(--ads-color-black-550);
-  --ads-app-icon-background-color: var(--ads-color-black-25);
-
-  /* Breadcrumbs */
-  --ads-breadcrumbs-list-text-color: var(--ads-color-gray-7);
-  --ads-breadcrumbs-separator-text-color: var(--ads-color-gray-5);
-  --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
-
-  /** Button Tab */
-  --ads-button-tab-selected-border-color: var(--ads-color-gray-8);
-  --ads-button-tab-border-color: var(--ads-color-black-250);
-  --ads-button-tab-focus-background-color: var(--ads-old-color-gallery-2);
-  --ads-button-tab-hover-background-color: var(--ads-old-color-gallery-2);
-  --ads-button-tab-svg-path-fill-color: var(--ads-color-gray-5);
 
   /** Callout */
   --ads-callout-info-text-color: #D44100;

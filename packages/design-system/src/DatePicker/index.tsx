@@ -22,7 +22,7 @@ const StyledDateInput = styled(DateInput)`
   }
 
   .bp3-input-group input:focus {
-    border-color: var(--ads-color-background-focus);
+    border-color: var(--ads-color-border-selected);
   }
 
   button,

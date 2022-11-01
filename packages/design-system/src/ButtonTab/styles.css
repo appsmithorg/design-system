@@ -1,7 +1,7 @@
 .ads--button-tab {
-  --ads-button-tab-selected-border-color: var(--ads-old-color-gray-10);
+  --ads-button-tab-selected-border-color: var(--ads-color-border-selected);
   --ads-button-tab-border-color: var(--ads-color-border);
-  --ads-button-tab-focus-background-color: var(--ads-color-background-focus);
-  --ads-button-tab-hover-background-color: var(--ads-color-background-hover);
-  --ads-button-tab-svg-path-fill-color: var(--ads-old-color-gray-7);
+  --ads-button-tab-focus-background-color: var(--ads-old-color-gallery-2);
+  --ads-button-tab-hover-background-color: var(--ads-old-color-gallery-2);
+  --ads-button-tab-svg-path-fill-color: var(--ads-color-gray-500);
 }

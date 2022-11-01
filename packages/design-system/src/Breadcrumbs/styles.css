@@ -1,5 +1,5 @@
 .ads--breadcrumbs {
-  --ads-breadcrumbs-list-text-color: var(--ads-old-color-dove-gray);
-  --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray);
+  --ads-breadcrumbs-list-text-color: var(--ads-color-gray-700);
+  --ads-breadcrumbs-separator-text-color: var(--ads-color-gray-500);
   --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
 }
