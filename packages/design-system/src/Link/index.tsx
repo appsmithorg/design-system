@@ -2,18 +2,18 @@ import React, { ReactFragment } from "react";
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { TextType } from "../Text";
-import { getTypographyByKey } from "Constants/typography";
+import { getTypographyByKey, TypographyKeys } from "Constants/typography";
 
 export interface LinkProps extends CommonComponentProps {
   children: string | ReactFragment;
   to: string;
   isPrimary?: boolean;
-  textType?: TextType;
+  textType?: TypographyKeys;
   // allow any number of other arguments (classes, styles, etc)
   [x: string]: any;
 }
 
-const StyledLink = styled.a<{ isPrimary?: boolean; textType?: TextType }>`
+const StyledLink = styled.a<{ isPrimary?: boolean; textType: TypographyKeys }>`
   // explicitly set color instead of relying on css current color property
   --current-color: ${(props) =>
     props.isPrimary
