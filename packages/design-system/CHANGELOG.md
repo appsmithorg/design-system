@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.31
+
+### Patch Changes
+
+- [#245](https://github.com/appsmithorg/design-system/pull/245) [`b44e378`](https://github.com/appsmithorg/design-system/commit/b44e37863b80445b4ab8582bc021cc762071a8bb) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: reveryt changes to tree dropdown
+
 ## 1.0.30
 
 ### Patch Changes
