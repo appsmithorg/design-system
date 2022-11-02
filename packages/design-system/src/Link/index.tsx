@@ -2,8 +2,7 @@ import React, { ReactFragment } from "react";
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { TextType } from "../Text";
-import { typography, TypographyKeys } from "Constants/typography";
-import { getTypographyByKey } from "Common/index";
+import { getTypographyByKey } from "Constants/typography";
 
 export interface LinkProps extends CommonComponentProps {
   children: string | ReactFragment;
