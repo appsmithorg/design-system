@@ -5,6 +5,9 @@ export * from "./AppIcon";
 
 export * from "./BannerMessage";
 
+export { default as Box } from "./Box";
+export * from "./Box";
+
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export * from "./Breadcrumbs";
 
@@ -191,3 +194,9 @@ export * from "./TreeDropdown";
 
 export { default as UneditableField } from "./UneditableField";
 export * from "./UneditableField";
+
+export * from "./constants/classes";
+export * from "./constants/typography";
+export * from "./constants/variants";
+export * from "./types/common";
+export * from "./utils/colors";

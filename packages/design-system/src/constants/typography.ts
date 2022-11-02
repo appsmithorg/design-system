@@ -178,4 +178,11 @@ export enum FontStyleTypes {
 }
 
 export const TextFonts =
-  "-apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”";
+  "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue";
+
+export const getTypographyByKey = (key: TypographyKeys) => `
+  font-weight: ${typography[key].fontWeight};
+  font-size: ${typography[key].fontSize}px;
+  line-height: ${typography[key].lineHeight}px;
+  letter-spacing: ${typography[key].letterSpacing}px;
+`;

@@ -4,7 +4,6 @@ import Uppy from "@uppy/core";
 import Dialog from "DialogComponent";
 
 import { Dashboard, useUppy } from "@uppy/react";
-import { getTypographyByKey } from "Common/index";
 
 import styled from "styled-components";
 import ImageEditor from "@uppy/image-editor";
@@ -18,6 +17,7 @@ import "@uppy/core/dist/style.css";
 import "@uppy/dashboard/dist/style.css";
 import "@uppy/image-editor/dist/style.css";
 import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
+import { getTypographyByKey } from "Constants/typography";
 
 type Props = {
   onChange: (file: File) => void;

@@ -5,8 +5,12 @@ import {
   createMessage,
   INVITE_USERS_VALIDATION_EMAIL_LIST,
 } from "Constants/messages";
-import { isEmail } from "Common/index";
 import { HighlightText } from "HighlightText";
+
+export const isEmail = (value: string) => {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(value);
+};
 
 const TagInputWrapper = styled.div`
   margin-right: 8px;
