@@ -2,7 +2,8 @@ import React, { ReactFragment } from "react";
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { TextType } from "../Text";
-import { typography } from "Constants/typography";
+import { typography, TypographyKeys } from "Constants/typography";
+import { getTypographyByKey } from "Common/index";
 
 export interface LinkProps extends CommonComponentProps {
   children: string | ReactFragment;
@@ -21,8 +22,8 @@ const StyledLink = styled.a<{ isPrimary?: boolean; textType?: TextType }>`
       : "var(--ads-text-color-default)"};
 
   color: var(--current-color);
-  font-size: ${(props) =>
-    props.textType ? `${typography[props.textType].fontSize}px` : "inherit"};
+
+  ${(props) => getTypographyByKey(props.textType)}
 
   &:hover {
     color: var(--current-color);
@@ -45,10 +46,16 @@ const StyledLink = styled.a<{ isPrimary?: boolean; textType?: TextType }>`
   }
 `;
 
-const Link = ({ children, isPrimary, to, ...rest }: LinkProps) => {
+const Link = ({
+  children,
+  isPrimary,
+  textType = TextType.P1,
+  to,
+  ...rest
+}: LinkProps) => {
   // TODO: evaluate `to` prop and assign to RouterLink or a based on type?
   return (
-    <StyledLink href={to} isPrimary={isPrimary} {...rest}>
+    <StyledLink href={to} isPrimary={isPrimary} textType={textType} {...rest}>
       {children}
     </StyledLink>
   );
