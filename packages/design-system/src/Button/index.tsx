@@ -184,11 +184,9 @@ const getDisabledStyles = (props: ButtonProps) => {
         : ButtonColors.tertiary.darker,
     },
     [Category.tertiary]: {
-      txtColorTertiary: "var(--ads-old-color-gray-7)",
-      bgColorTertiary: ButtonColors.tertiary.dark,
-      borderColorTertiary: props.isLoading
-        ? ButtonColors.tertiary.darkest
-        : ButtonColors.tertiary.darker,
+      txtColorTertiary: "var(--ads-color-text-disabled)",
+      bgColorTertiary: "var(--ads-color-brand-secondary-disabled)",
+      borderColorTertiary: "var(--ads-color-border-disabled)",
     },
   };
 
@@ -225,7 +223,7 @@ const getMainStateStyles = (props: ButtonProps) => {
     },
     [Category.tertiary]: {
       bgColorTertiary: "transparent",
-      borderColorTertiary: ButtonColors.tertiary.darker,
+      borderColorTertiary: "var(--ads-color-border)",
       txtColorTertiary: "var(--ads-color-text)",
     },
   };
@@ -263,9 +261,9 @@ const getHoverStateStyles = (props: ButtonProps) => {
       borderColorSecondary: ButtonColors[variant].main,
     },
     [Category.tertiary]: {
-      bgColorTertiary: hexToRgba(ButtonColors.tertiary.main, 0.1),
-      borderColorTertiary: ButtonColors.tertiary.main,
-      txtColorTertiary: ButtonColors.tertiary.main,
+      bgColorTertiary: "var(--ads-color-brand-secondary-hover)",
+      borderColorTertiary: "var(--ads-color-border-hover)",
+      txtColorTertiary: "var(--ads-color-text)",
     },
   };
 
@@ -301,9 +299,9 @@ const getActiveStateStyles = (props: ButtonProps) => {
       borderColorSecondary: ButtonColors[variant].light,
     },
     [Category.tertiary]: {
-      bgColorTertiary: hexToRgba(ButtonColors.tertiary.main, 0.1),
-      borderColorTertiary: ButtonColors.tertiary.light,
-      txtColorTertiary: ButtonColors.tertiary.light,
+      bgColorTertiary: "var(--ads-color-gray-100)",
+      borderColorTertiary: "var(--ads-color-gray-400)",
+      txtColorTertiary: "var(--ads-color-text)",
     },
   };
 

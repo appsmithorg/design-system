@@ -90,7 +90,6 @@ import ServerLineIcon from "remixicon-react/ServerLineIcon";
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
-import "./styles.css";
 
 enum Size {
   xxs = "xxs",
@@ -226,6 +225,8 @@ const appSizeHandler = (size: Size): cssAttributes => {
 };
 
 const IconWrapper = styled.a<AppIconProps & { styledProps: cssAttributes }>`
+  --ads-app-icon-normal-color: var(--ads-color-text);
+
   cursor: pointer;
   width: ${(props) => props.styledProps.width}px;
   height: ${(props) => props.styledProps.height}px;
@@ -523,7 +524,7 @@ function AppIcon(props: AppIconProps) {
     <IconWrapper
       data-cy={props.cypressSelector}
       {...props}
-      className={[Classes.APP_ICON, props.className, "ads--app-icon"].join(" ")}
+      className={[Classes.APP_ICON, props.className].join(" ")}
       styledProps={styledProps}
     >
       {returnIcon}

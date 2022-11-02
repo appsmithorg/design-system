@@ -4,7 +4,6 @@ import { ControlIcons } from "ControlIcons";
 import _ from "lodash";
 import { DSEventTypes } from "Types/common";
 import { useDSEvent } from "hooks";
-import "./styles.css";
 
 const ItemWrapper = styled.div<{ selected: boolean }>`
   min-width: 36px;
@@ -15,12 +14,16 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
   border-radius: var(--ads-border-radius);
   border: 1px solid
     ${(props) =>
-      props.selected
-        ? "var(--ads-button-tab-selected-border-color)"
-        : "var(--ads-button-tab-border-color)"};
+      props.selected ? "var(--ads-color-gray-400)" : "var(--ads-color-border)"};
+
+  &:hover {
+    border-color: var(--ads-color-border-hover);
+    background: var(--ads-color-brand-secondary-hover);
+  }
 
   &.focused {
-    background: var(--ads-button-tab-focus-background-color);
+    border-color: var(--ads-color-gray-400);
+    background: var(--ads-color-gray-100);
   }
 
   cursor: pointer;
@@ -30,12 +33,9 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
   & > div {
     cursor: pointer;
   }
-  &:hover {
-    background: var(--ads-button-tab-hover-background-color);
-  }
   &&& svg {
     path {
-      fill: var(--ads-button-tab-svg-path-fill-color) !important;
+      fill: var(--ads-color-text) !important;
     }
   }
 `;

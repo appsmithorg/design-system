@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { Classes, replayHighlightClass } from "Constants/classes";
 import Text, { TextType } from "Text";
-import "./styles.css";
 
 export enum CheckboxType {
   PRIMARY = "PRIMARY",
@@ -42,7 +41,8 @@ export const Checkmark = styled.span<{
         props.isChecked
           ? props.disabled
             ? "var(--ads-checkbox-disabled-checked-background-color)"
-            : props.backgroundColor || "var(--ads-primary-color)"
+            : props.backgroundColor ||
+              "var(--ads-checkbox-checked-background-color)"
           : props.disabled
           ? "var(--ads-checkbox-disabled-checked-background-color)"
           : "transparent"
@@ -52,7 +52,8 @@ export const Checkmark = styled.span<{
           props.isChecked
             ? props.disabled
               ? "var(--ads-checkbox-disabled-checked-border-color)"
-              : props.backgroundColor || "var(--ads-primary-color)"
+              : props.backgroundColor ||
+                "var(--ads-checkbox-checked-background-color)"
             : props.disabled
             ? "var(--ads-checkbox-disabled-checked-border-color)"
             : "var(--ads-checkbox-default-unchecked-border-color)"
@@ -79,7 +80,8 @@ export const Checkmark = styled.span<{
           props.isChecked
             ? props.disabled
               ? "var(--ads-checkbox-disabled-checked-border-color)"
-              : props.backgroundColor || "var(--ads-primary-color)"
+              : props.backgroundColor ||
+                "var(--ads-checkbox-checked-background-color)"
             : props.disabled
             ? "var(--ads-checkbox-disabled-checked-border-color)"
             : "var(--ads-checkbox-default-unchecked-border-color)"
@@ -88,8 +90,10 @@ export const Checkmark = styled.span<{
           border: solid
             ${
               props.disabled
-                ? props.backgroundColor || "var(--ads-primary-color)"
-                : props.backgroundColor || "var(--ads-primary-color)"
+                ? props.backgroundColor ||
+                  "var(--ads-checkbox-checked-background-color)"
+                : props.backgroundColor ||
+                  "var(--ads-checkbox-checked-background-color)"
             };
         }
       `;
@@ -113,6 +117,22 @@ const StyledCheckbox = styled.label<{
   disabled?: boolean;
   $fill?: boolean;
 }>`
+  --ads-checkbox-disabled-checked-background-color: var(
+    --ads-color-brand-secondary-disabled
+  );
+  --ads-checkbox-disabled-checked-border-color: var(
+    --ads-color-border-disabled
+  );
+  --ads-checkbox-default-unchecked-border-color: var(--ads-color-border);
+  --ads-checkbox-after-disabled-checked-border-color: var(
+    --ads-color-text-disabled
+  );
+  --ads-checkbox-after-default-checked-border-color: var(
+    --ads-color-brand-secondary-text
+  );
+  --ads-checkbox-label-text-color: var(--ads-color-text);
+  --ads-checkbox-checked-background-color: var(--ads-color-brand-secondary);
+
   position: relative;
   display: block;
   width: ${(props) => (props.$fill ? "100%" : "unset")};

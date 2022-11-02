@@ -4,27 +4,38 @@
 :root {
 
   /* new variables */
+  /* PRIMARY */
   --ads-color-brand: var(--ads-color-orange-500);
   --ads-color-brand-hover: var(--ads-old-color-rock-spray);
   --ads-color-brand-active: var(--ads-old-color-rock-spray);
   --ads-color-brand-focus: var(--ads-old-color-rock-spray);
   --ads-color-brand-disabled: var(--ads-old-color-bridesmaid);
-  --ads-color-brand-text: var(--ads-color-white);
-
-  --ads-color-text: var(--ads-color-gray-600);
-  --ads-color-heading-text: var(--ads-color-gray-800);
-
+  /* SECONDARY */
+  --ads-color-brand-secondary: var(--ads-color-gray-700);
+  --ads-color-brand-secondary-active: var(--ads-color-gray-400);
+  --ads-color-brand-secondary-hover: var(--ads-color-gray-50);
+  --ads-color-brand-secondary-disabled: var(--ads-color-gray-100);
+  /* BACKGROUND */
   --ads-color-background: var(--ads-color-white);
-  --ads-color-background-secondary: var(--ads-color-white);
-  --ads-color-background-hover: var(--ads-color-gray-100);
-  --ads-color-background-disabled: var(--ads-color-gray-200);
-
-  --ads-color-border: var(--ads-color-gray-200);
-  --ads-color-border-selected: var(--ads-color-gray-700); /* focus selected active are same */
-  --ads-color-border-hover: var(--ads-color-gray-500);
+  --ads-color-background-secondary: var(--ads-color-gray-50);
+  /* TEXT */
+  --ads-color-text: var(--ads-color-gray-600);
+  --ads-color-text-active: var(--ads-color-gray-700);
+  --ads-color-text-focus: var(--ads-color-gray-700);
+  --ads-color-text-hover: var(--ads-color-gray-700);
+  --ads-color-text-disabled: var(--ads-color-gray-400);
+  --ads-color-heading-text: var(--ads-color-gray-800); /* secondary */
+  --ads-color-sub-heading-text: var(--ads-color-gray-700); /* tertiary */
+  --ads-color-brand-text: var(--ads-color-white); /* can be renamed to on brand */
+  --ads-color-onbrand-secondary-text: var(--ads-color-white);
+  /* BORDER */
+  --ads-color-border: var(--ads-color-gray-300);
+  --ads-color-border-active: var(--ads-color-gray-700); /* focus selected active are same */
+  --ads-color-border-hover: var(--ads-color-gray-300);
   --ads-color-border-disabled: var(--ads-color-gray-200);
-  
+  --ads-color-border-danger: var(--ads-color-gray-200); /* red */
   --ads-border-radius: 4px;
+
   /* new variables end here */
 
   --ads-primary-color: var(--ads-color-orange-500);

@@ -27,7 +27,7 @@ ButtonTab.args = {
       width: 100,
     },
   ],
-  values: ["burgers"],
+  values: ["delete"],
   selectButton: (value, isUpdatedViaKeyboard) => {
     // eslint-disable-next-line no-console
     console.log("value:", value, "isUpdatedViaKeyboard:", isUpdatedViaKeyboard);
