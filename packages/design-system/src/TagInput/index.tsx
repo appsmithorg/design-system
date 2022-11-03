@@ -67,6 +67,8 @@ const SuggestionsWrapper = styled.div`
     border: 1px solid var(--appsmith-color-black-250);
     width: 100%;
     background: var(--appsmith-color-black-0);
+    max-height: 160px;
+    overflow: auto;
   }
 `;
 
@@ -98,11 +100,11 @@ type TagInputProps = {
   suggestionLeftIcon?: ReactElement;
 };
 
-function getValues(inputValues: any, suggestionIds: any[]) {
+function getValues(inputValues: any, suggestions: any[]) {
   const values =
     inputValues && inputValues.length > 0 ? inputValues.split(",") : [];
-  if (suggestionIds?.length > 0) {
-    for (const i of suggestionIds) {
+  if (suggestions?.length > 0) {
+    for (const i of suggestions) {
       for (const j in values) {
         if (values[j] === i.id) {
           values[j] = i.name;
@@ -120,9 +122,9 @@ function getValues(inputValues: any, suggestionIds: any[]) {
  * @param props : TagInputProps
  */
 function TagInputComponent(props: TagInputProps) {
-  const [suggestionIds, setSuggestionIds] = useState<any[]>([]);
+  const [selectedSuggestions, setSelectedSuggestions] = useState<any[]>([]);
   const [values, setValues] = useState<string[]>(
-    getValues(props?.input?.value, suggestionIds),
+    getValues(props?.input?.value, selectedSuggestions),
   );
 
   const [currentValue, setCurrentValue] = useState<string>("");
@@ -140,7 +142,7 @@ function TagInputComponent(props: TagInputProps) {
   );
 
   useEffect(() => {
-    setValues(getValues(props?.input?.value, suggestionIds));
+    setValues(getValues(props?.input?.value, selectedSuggestions));
   }, [props.input.value]);
 
   const validateEmail = (newValues: string[]) => {
@@ -244,7 +246,7 @@ function TagInputComponent(props: TagInputProps) {
       [props?.input?.value, getSuggestionData?.id].filter(Boolean).join(","),
     );
     if (getSuggestionData) {
-      setSuggestionIds([...suggestionIds, getSuggestionData]);
+      setSelectedSuggestions([...selectedSuggestions, getSuggestionData]);
     }
   };
 
