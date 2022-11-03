@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.32
+
+### Patch Changes
+
+- [#247](https://github.com/appsmithorg/design-system/pull/247) [`bf94a82`](https://github.com/appsmithorg/design-system/commit/bf94a82f9acefece268560e504611d749b859040) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: multiple on change trigger in radio component
+
 ## 1.0.31
 
 ### Patch Changes
