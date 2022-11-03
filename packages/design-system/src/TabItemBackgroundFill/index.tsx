@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { TabProp } from "Tabs";
-import { getTypographyByKey } from "Common/index";
+import { getTypographyByKey } from "Constants/typography";
 
 type WrapperProps = {
   selected: boolean;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { getTypographyByKey } from "Common/index";
+import { getTypographyByKey } from "Constants/typography";
 
 const formMessage: { [char: string]: { [char: string]: string } } = {
   text: {
