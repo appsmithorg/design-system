@@ -98,8 +98,19 @@ type TagInputProps = {
   suggestionLeftIcon?: ReactElement;
 };
 
-function getValues(inputValues: any) {
-  return inputValues && inputValues.length > 0 ? inputValues.split(",") : [];
+function getValues(inputValues: any, suggestionIds: any[]) {
+  const values =
+    inputValues && inputValues.length > 0 ? inputValues.split(",") : [];
+  if (suggestionIds?.length > 0) {
+    for (const i of suggestionIds) {
+      for (const j in values) {
+        if (values[j] === i.id) {
+          values[j] = i.name;
+        }
+      }
+    }
+  }
+  return values;
 }
 
 /**
@@ -109,8 +120,9 @@ function getValues(inputValues: any) {
  * @param props : TagInputProps
  */
 function TagInputComponent(props: TagInputProps) {
+  const [suggestionIds, setSuggestionIds] = useState<any[]>([]);
   const [values, setValues] = useState<string[]>(
-    getValues(props?.input?.value),
+    getValues(props?.input?.value, suggestionIds),
   );
 
   const [currentValue, setCurrentValue] = useState<string>("");
@@ -120,10 +132,7 @@ function TagInputComponent(props: TagInputProps) {
   >(props?.suggestions || []);
   const mappedSuggestions = (showSuggestions ? suggestions : []).map(
     (each: any) => (
-      <Suggestion
-        key={each.id}
-        onClick={() => handleSuggestionClick(each.name)}
-      >
+      <Suggestion key={each.id} onClick={() => handleSuggestionClick(each.id)}>
         {props.suggestionLeftIcon ?? null}
         <HighlightText highlight={currentValue} text={each.name} />
       </Suggestion>
@@ -131,7 +140,7 @@ function TagInputComponent(props: TagInputProps) {
   );
 
   useEffect(() => {
-    setValues(getValues(props?.input?.value));
+    setValues(getValues(props?.input?.value, suggestionIds));
   }, [props.input.value]);
 
   const validateEmail = (newValues: string[]) => {
@@ -225,12 +234,18 @@ function TagInputComponent(props: TagInputProps) {
   };
 
   const handleSuggestionClick = (value: string) => {
+    const getSuggestionData = props.suggestions?.find(
+      (group: any) => group.id === value,
+    );
     setCurrentValue("");
     setSuggestions(props?.suggestions || []);
     setShowSuggestions(false);
     props?.input?.onChange?.(
-      [props?.input?.value, value].filter(Boolean).join(","),
+      [props?.input?.value, getSuggestionData?.id].filter(Boolean).join(","),
     );
+    if (getSuggestionData) {
+      setSuggestionIds([...suggestionIds, getSuggestionData]);
+    }
   };
 
   return (
