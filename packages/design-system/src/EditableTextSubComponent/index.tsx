@@ -66,6 +66,17 @@ const TextContainer = styled.div<{
   bgColor: string;
   underline?: boolean;
 }>`
+  --ads-editable-text-subcomponent-error-background-color: var(
+    --ads-old-color-pomegranate
+  );
+  --ads-editable-text-subcomponent-default-background-color: var(
+    --ads-color-background
+  );
+  --ads-editable-text-subcomponent-error-text-color: var(
+    --ads-old-color-pomegranate
+  );
+  --ads-editable-text-subcomponent-default-text-color: var(--ads-color-text);
+
   display: flex;
   align-items: center;
   .bp3-editable-text.bp3-editable-text-editing::before,

@@ -53,7 +53,7 @@ export const EditableTextWrapper = styled.div<{
   }
 
   :focus-visible {
-    outline: 1px solid var(--appsmith-input-focus-border-color) !important;
+    outline: 1px solid var(--ads-color-border-active) !important;
   }
 `;
 
