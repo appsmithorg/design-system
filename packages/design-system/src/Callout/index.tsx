@@ -5,7 +5,6 @@ import { Variant } from "Constants/variants";
 import styled from "styled-components";
 import Icon, { IconSize } from "Icon";
 import Text, { TextType } from "Text";
-import "./styles.css";
 
 export type CalloutProps = CommonComponentProps & {
   variant?: Variant;
@@ -22,6 +21,15 @@ const CalloutContainer = styled.div<{
   fillUp?: boolean;
   addMarginTop?: boolean;
 }>`
+  --ads-callout-info-text-color: #d44100;
+  --ads-callout-info-background-color: #f8f3f0;
+  --ads-callout-success-text-color: var(--ads-old-color-jade);
+  --ads-callout-success-background-color: #e4f4ed;
+  --ads-callout-danger-text-color: var(--ads-old-color-pomegranate);
+  --ads-callout-danger-background-color: #f9e9e9;
+  --ads-callout-warning-text-color: var(--ads-old-color-sun);
+  --ads-callout-warning-background-color: #faf3e3;
+
   position: relative;
   padding: var(--ads-spaces-4) var(--ads-spaces-12);
   background: ${(props) =>

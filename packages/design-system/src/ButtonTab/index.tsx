@@ -12,6 +12,7 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
   align-items: center;
   justify-content: center;
   border-radius: var(--ads-border-radius);
+  color: var(--ads-color-text);
   border: 1px solid
     ${(props) =>
       props.selected ? "var(--ads-color-gray-400)" : "var(--ads-color-border)"};
@@ -21,9 +22,16 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
     background: var(--ads-color-brand-secondary-hover);
   }
 
-  &.focused {
+  &.focused,
+  &[aria-selected="true"] {
     border-color: var(--ads-color-gray-400);
     background: var(--ads-color-gray-100);
+    color: var(--ads-color-text-active);
+    && svg {
+      path {
+        fill: var(--ads-color-text-active);
+      }
+    }
   }
 
   cursor: pointer;
@@ -35,7 +43,7 @@ const ItemWrapper = styled.div<{ selected: boolean }>`
   }
   &&& svg {
     path {
-      fill: var(--ads-color-text) !important;
+      fill: var(--ads-color-text);
     }
   }
 `;
