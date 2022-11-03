@@ -6,6 +6,7 @@ import {
   INVITE_USERS_VALIDATION_EMAIL_LIST,
 } from "Constants/messages";
 import { HighlightText } from "HighlightText";
+import _ from "lodash";
 
 export const isEmail = (value: string) => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -104,11 +105,10 @@ function getValues(inputValues: any, suggestions: any[]) {
   const values =
     inputValues && inputValues.length > 0 ? inputValues.split(",") : [];
   if (suggestions?.length > 0) {
-    for (const i of suggestions) {
-      for (const j in values) {
-        if (values[j] === i.id) {
-          values[j] = i.name;
-        }
+    for (const j in values) {
+      const index = _.findIndex(suggestions, { id: values[j] });
+      if (index > -1) {
+        values[j] = suggestions[index].name;
       }
     }
   }
@@ -242,10 +242,10 @@ function TagInputComponent(props: TagInputProps) {
     setCurrentValue("");
     setSuggestions(props?.suggestions || []);
     setShowSuggestions(false);
-    props?.input?.onChange?.(
-      [props?.input?.value, getSuggestionData?.id].filter(Boolean).join(","),
-    );
     if (getSuggestionData) {
+      props?.input?.onChange?.(
+        [props?.input?.value, getSuggestionData?.id].filter(Boolean).join(","),
+      );
       setSelectedSuggestions([...selectedSuggestions, getSuggestionData]);
     }
   };
