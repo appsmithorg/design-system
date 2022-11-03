@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
-import "./styles.css";
 
 export type ColorSelectorProps = CommonComponentProps & {
   onSelect?: (hex: string) => void;
@@ -11,6 +10,9 @@ export type ColorSelectorProps = CommonComponentProps & {
 };
 
 const Palette = styled.div<{ fill?: boolean }>`
+  --ads-color-selector-shadow-color: var(--ads-color-background-hover);
+  --ads-color-selector-checkmark-color: #000000;
+
   display: flex;
   align-items: center;
   flex-wrap: wrap;

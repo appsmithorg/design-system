@@ -22,7 +22,7 @@ const DS_DateRangePicker = styled(DateRangeInput)<{
   }
 
   &:focus-within {
-    border-color: var(--ads-focus-color);
+    border-color: var(--ads-color-border-hover);
   }
 
   & .${BP_Classes.CONTROL_GROUP} > .${BP_Classes.INPUT_GROUP} {

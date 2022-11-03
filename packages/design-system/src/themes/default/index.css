@@ -34,7 +34,9 @@
   --ads-color-border-hover: var(--ads-color-gray-300);
   --ads-color-border-disabled: var(--ads-color-gray-200);
   --ads-color-border-danger: var(--ads-color-gray-200); /* red */
+
   --ads-border-radius: 4px;
+  --ads-border-width: 1.2px;
 
   /* new variables end here */
 
@@ -57,61 +59,6 @@
   * subProperty: color, width, radius...
   *
   */
-
-  /** Callout */
-  --ads-callout-info-text-color: #D44100;
-  --ads-callout-info-background-color: #F8F3F0;
-  --ads-callout-success-text-color: var(--ads-old-color-jade);
-  --ads-callout-success-background-color: #E4F4ED;
-  --ads-callout-danger-text-color: var(--ads-old-color-pomegranate);
-  --ads-callout-danger-background-color: #F9E9E9;
-  --ads-callout-warning-text-color: var(--ads-old-color-sun);
-  --ads-callout-warning-background-color: #FAF3E3;
-
-  /** Checkbox */
-  --ads-checkbox-disabled-checked-background-color: #E8E8E8;
-  --ads-checkbox-disabled-checked-border-color: #E8E8E8;
-  --ads-checkbox-default-unchecked-border-color: #404040;
-  --ads-checkbox-after-disabled-checked-border-color: #939090;
-  --ads-checkbox-after-default-checked-border-color: var(--ads-color-black-0);
-  --ads-checkbox-label-text-color: var(--ads-color-gray-5);
-  --ads-checkbox-label-first-child-text-color: var(--ads-color-gray-7);
-
-  /** ColorSelector */
-  --ads-color-selector-shadow-color: #E8E8E8;
-  --ads-color-selector-checkmark-color: #000000;
- 
-  /* till here */
-
-  /** Dialog Component */
-  --ads-dialog-component-default-background-color: var(--ads-color-white);
-  --ads-dialog-component-header-text-text-color: var(--ads-color-heading-text);
-  --ads-dialog-component-dialog-header-underline-color: #C5C5C5;
-  --ads-dialog-component-icon-background-color: #FFDEDE;
-
-  /** Display Image Upload */
-  --ads-display-image-upload-background-color: var(--ads-old-color-pigeon-post);
-  --ads-display-image-upload-label-text-color: var(--ads-old-color-royal-blue);
-
-  /** Dropdown */
-  --ads-dropdown-hover-background-color : var(--ads-old-color-gallery-2);
-  --ads-dropdown-selected-text-color: var(--ads-color-gray-9);
-  --ads-dropdown-disabled-header-text-color: #9F9F9F;
-  --ads-dropdown-disabled-header-background-color: var(--ads-color-white);
-  --ads-dropdown-default-header-text-color: var(--ads-color-black-750);
-  --ads-dropdown-selected-header-text-color: var(--ads-color-gray-9);
-  --ads-dropdown-default-menu-border-color: var(--ads-color-black-100);
-  --ads-dropdown-default-menu-subtext-text-color: var(--ads-color-gray-7);
-  --ads-dropdown-selected-menu-subtext-text-color: var(--ads-color-black-550);
-  --ads-dropdown-default-menu-text-color: var(--ads-color-black-750);
-  --ads-dropdown-default-menu-hover-text-color: var(--ads-color-gray-9);
-  --ads-dropdown-default-menu-hover-background-color: var(--ads-color-black-200);
-  --ads-dropdown-default-icon-fill-color: var(--ads-color-black-550);
-  --ads-dropdown-default-icon-background-color: var(--ads-color-black-250);
-  --ads-dropdown-default-icon-selected-fill-color: var(--ads-color-gray-5);
-  --ads-dropdown-default-icon-hover: var(--ads-color-black-0);
-  --ads-dropdown-default-dropdown-trigger-border-color: var(--ads-color-black-900);
-  --ads-dropdown-default-close-hover-background-color : var(--ads-old-color-gallery-2);
 
   /** EditableTextSubComponent */
   --ads-editable-text-subcomponent-error-background-color: var(--ads-old-color-pomegranate);

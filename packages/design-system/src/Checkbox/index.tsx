@@ -28,6 +28,20 @@ export const Checkmark = styled.span<{
   backgroundColor?: string;
   type?: CheckboxType;
 }>`
+  /* --ads-checkbox-disabled-checked-background-color: var(
+    --ads-color-brand-secondary-disabled
+  );
+  --ads-checkbox-disabled-checked-border-color: var(
+    --ads-color-border-disabled
+  );
+  --ads-checkbox-default-unchecked-border-color: var(--ads-color-border);
+  --ads-checkbox-after-disabled-checked-border-color: var(
+    --ads-color-text-disabled
+  );
+  --ads-checkbox-after-default-checked-border-color: var(--ads-color-black-0);
+  --ads-checkbox-label-text-color: var(--ads-color-gray-500);
+  --ads-checkbox-label-first-child-text-color: var(--ads-color-gray-700); */
+
   position: absolute;
   top: ${(props) => (props.info ? "6px" : "1px")};
   left: 0;
@@ -128,7 +142,7 @@ const StyledCheckbox = styled.label<{
     --ads-color-text-disabled
   );
   --ads-checkbox-after-default-checked-border-color: var(
-    --ads-color-brand-secondary-text
+    --ads-color-onbrand-secondary-text
   );
   --ads-checkbox-label-text-color: var(--ads-color-text);
   --ads-checkbox-checked-background-color: var(--ads-color-brand-secondary);

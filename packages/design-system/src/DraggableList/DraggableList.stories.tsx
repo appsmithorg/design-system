@@ -21,7 +21,7 @@ const ItemRenderer = styled.div`
   padding: 10px;
   cursor: grab;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
-  background-color: var(--ads-color-black-5);
+  background-color: var(--ads-color-brand-secondary-hover;
 `;
 
 export default {

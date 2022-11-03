@@ -1,3 +1,24 @@
+:root {
+  --ads-dropdown-hover-background-color : var(--ads-color-brand-secondary-hover);
+  --ads-dropdown-selected-text-color: var(--ads-color-text-active);
+  --ads-dropdown-disabled-header-text-color: var(--ads-color-text-disabled);
+  --ads-dropdown-disabled-header-background-color: var(--ads-color-brand-secondary-disabled);
+  --ads-dropdown-default-header-text-color: var(--ads-color-text);
+  --ads-dropdown-selected-header-text-color: var(--ads-color-text-active);
+  --ads-dropdown-default-menu-border-color: var(--ads-color-black-100);
+  --ads-dropdown-default-menu-subtext-text-color: var(--ads-color-gray-7);
+  --ads-dropdown-selected-menu-subtext-text-color: var(--ads-color-black-550);
+  --ads-dropdown-default-menu-text-color: var(--ads-color-black-750);
+  --ads-dropdown-default-menu-hover-text-color: var(--ads-color-gray-9);
+  --ads-dropdown-default-menu-hover-background-color: var(--ads-color-black-200);
+  --ads-dropdown-default-icon-fill-color: var(--ads-color-black-550);
+  --ads-dropdown-default-icon-background-color: var(--ads-color-black-250);
+  --ads-dropdown-default-icon-selected-fill-color: var(--ads-color-gray-5);
+  --ads-dropdown-default-icon-hover: var(--ads-color-black-0);
+  --ads-dropdown-default-dropdown-trigger-border-color: var(--ads-color-black-900);
+  --ads-dropdown-default-close-hover-background-color : var(--ads-old-color-gallery-2);
+}
+
 .bp3-popover.ds--dropdown-popover {	
   box-shadow: none;	
   border-radius: 0;	

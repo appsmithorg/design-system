@@ -289,7 +289,7 @@ const Selected = styled.div<{
         ? props.hasError
           ? "var(--ads-old-color-fair-pink)"
           : "var(--ads-dropdown-hover-background-color)"
-        : "var(--ads-color-black-0)"};
+        : "var(--ads-dropdown-hover-background-color)"};
   }
 `;
 
@@ -1325,7 +1325,13 @@ export default function Dropdown(props: DropdownProps) {
 
   return (
     <DropdownContainer
-      className={props.containerClassName + " " + replayHighlightClass}
+      className={
+        props.containerClassName +
+        " " +
+        replayHighlightClass +
+        " " +
+        "ads--dropdown-container"
+      }
       data-cy={props.cypressSelector}
       height={dropdownHeight}
       onKeyDown={handleKeydown}

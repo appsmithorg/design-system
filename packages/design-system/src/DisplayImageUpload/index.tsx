@@ -28,6 +28,9 @@ type Props = {
 };
 
 const Container = styled.div`
+  --ads-display-image-upload-background-color: var(--ads-old-color-pigeon-post);
+  --ads-display-image-upload-label-text-color: var(--ads-old-color-royal-blue);
+
   display: flex;
   justify-content: center;
   align-items: center;

@@ -12,6 +12,11 @@ const StyledDialog = styled(Dialog)<{
   showHeaderUnderline?: boolean;
   noModalBodyMarginTop?: boolean;
 }>`
+  --ads-dialog-component-default-background-color: var(--ads-color-background);
+  --ads-dialog-component-header-text-text-color: var(--ads-color-heading-text);
+  --ads-dialog-component-dialog-header-underline-color: #C5C5C5;
+  --ads-dialog-component-icon-background-color: #FFDEDE;
+
   && {
     border-radius: var(--ads-border-radius);
     padding: 24px;
@@ -45,12 +50,12 @@ const StyledDialog = styled(Dialog)<{
     }
 
     .${Classes.DIALOG_CLOSE_BUTTON} {
-      color: var(--ads-color-black-700);
+      color: var(--ads-color-text);
       min-width: 0;
       padding: 0;
 
       svg {
-        fill: var(--ads-color-black-700);
+        fill: var(--ads-color-text);
         width: 24px;
         height: 24px;
 
