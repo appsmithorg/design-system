@@ -25,4 +25,5 @@ TextInputExample.args = {
   readOnly: true,
   trimValue: false,
   value: () => console.log("This is the value"),
+  disabled: false,
 };
