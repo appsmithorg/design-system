@@ -5,6 +5,9 @@ export * from "./AppIcon";
 
 export * from "./BannerMessage";
 
+export { default as Box } from "./Box";
+export * from "./Box";
+
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export * from "./Breadcrumbs";
 
@@ -92,6 +95,9 @@ export * from "./JSToggleButton";
 
 export { default as LabelWithTooltip } from "./LabelWithTooltip";
 export * from "./LabelWithTooltip";
+
+export { default as Link } from "./Link";
+export * from "./Link";
 
 export { default as Menu } from "./Menu";
 export * from "./Menu";

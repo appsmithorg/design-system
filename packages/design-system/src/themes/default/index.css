@@ -1,5 +1,6 @@
 @import "colors.css";
 @import "variables.css";
+@import "themables.css";
 
 :root {
 
@@ -46,7 +47,7 @@
   --ads-primary-text-color: var(--ads-color-black-750);
   --ads-border-color: var(--ads-color-black-250);
   --ads-border-color-focus: var(--ads-color-black-900);
-  
+
 
   /** Naming convention for tokens
   *
