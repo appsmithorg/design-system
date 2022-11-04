@@ -10,6 +10,14 @@ const Container = styled.div`
 `;
 
 const Bubble = styled.div<{ active?: boolean }>`
+  --ads-emoji-reactions-bubble-background-color: var(--ads-color-background-secondary);
+  --ads-emoji-reactions-bubble-active-background-color: var(--ads-color-brand-secondary-active);
+  --ads-emoji-reactions-bubble-active-border-color: var(--ads-color-border-active);
+  --ads-emoji-reactions-bubble-hover-background-color: var(--ads-color-brand-secondary-hover);
+  --ads-emoji-reactions-count-text-color: var(--ads-color-text);
+  --ads-emoji-reactions-count-active-text-color: var(--ads-color-text-active);
+  --ads-emoji-reactions-count-hover-text-color: var(--ads-color-text-hover);
+
   font-size: 12px; // emoji
   cursor: pointer;
   display: flex;

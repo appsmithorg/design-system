@@ -37,6 +37,13 @@ const PlayButton = styled.div`
 `;
 
 const ThumbnailContainer = styled.div`
+  --ads-gif-player-icon-path-fill-color: var(
+    --ads-color-onbrand-secondary-text
+  );
+  --ads-gif-player-icon-circle-fill-color: var(--ads-color-brand-secondary);
+  --ads-gif-player-text-color: var(--ads-color-text);
+  --ads-gif-player-overlay-background-color: var(--ads-color-background);
+
   position: relative;
   cursor: pointer;
   border-radius: var(--ads-border-radius);

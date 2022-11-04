@@ -24,6 +24,13 @@ export type NotificationBannerProps = {
 };
 
 const FlexContainer = styled.div`
+  --ads-notification-banner-error-text-color: #c91818;
+  --ads-notification-banner-error-background-color: var(
+    --ads-old-color-fair-pink
+  );
+  --ads-notification-banner-light-enterprise-text-color: #e8f5fa;
+  --ads-notification-banner-dark-enterprise-text-color: #00407d;
+
   display: flex;
   flex-direction: row;
   align-items: center;

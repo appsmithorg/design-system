@@ -9,6 +9,22 @@ import Spinner from "Spinner";
 import { IconSize } from "Icon";
 
 const Styles = styled.div`
+  --ads-table-table-row-background-color: var(--ads-color-gray-50);
+  --ads-table-table-header-default-text-color: var(--ads-color-text-active);
+  --ads-table-table-header-hover-text-color: var(--ads-color-text-hover);
+  --ads-table-table-header-hover-icon-path-color: var(--ads-color-text-hover);
+  // eslint-disable-next-line prettier/prettier
+  --ads-table-table-row-first-table-data-default-text-color: var(--ads-color-text-active);
+  --ads-table-table-row-table-data-default-text-color: var(--ads-color-text);
+  --ads-table-table-row-table-data-border-bottom-color: var(--ads-color-border);
+  // eslint-disable-next-line prettier/prettier
+  --ads-table-table-row-hover-background-color: var( --ads-color-brand-secondary-hover);
+  --ads-table-table-row-hover-icon-path-color: var(---ads-color-text-hover);
+  // eslint-disable-next-line prettier/prettier
+  --ads-table-table-row-first-table-data-hover-text-color: var(--ads-color-text-hover);
+  // eslint-disable-next-line prettier/prettier
+  --ads-table-table-row-table-data-hover-text-color: var(--ads-color-text-hover);
+
   table {
     border-radius: var(--ads-border-radius);
     border-spacing: 0;

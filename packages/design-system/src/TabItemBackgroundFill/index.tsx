@@ -9,6 +9,12 @@ type WrapperProps = {
 };
 
 const Wrapper = styled.div<WrapperProps>`
+  --ads-tab-item-text-color: var(--ads-color-text);
+  --ads-tab-item-focus-background-color: var(
+    --ads-color-brand-secondary-normal
+  );
+  --ads-tab-item-focus-text-color: var(--ads-color-text-focus);
+
   display: flex;
   border-radius: var(--ads-border-radius);
   ${getTypographyByKey("p1")}

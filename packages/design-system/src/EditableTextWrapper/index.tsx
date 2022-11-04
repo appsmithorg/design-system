@@ -21,6 +21,8 @@ const Container = styled.div<{
   savingState: SavingState;
   isInvalid: boolean;
 }>`
+  --ads-editable-text-wrapper-default-text-color: var(--ads-color-gray-700);
+
   position: relative;
   .editable-text-container {
     justify-content: center;

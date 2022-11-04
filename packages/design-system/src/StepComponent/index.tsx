@@ -14,6 +14,17 @@ const StyledIncreaseIcon = styled(
   cursor: pointer;
   width: 60px;
   height: 32px;
+  border-left: 1px solid var(--ads-color-border);
+  &:focus {
+    border-color: var(--ads-color-border-active);
+    background-color: var(--ads-color-brand-secondary-hover);
+    color: var(--ads-color-text-active);
+  }
+  &:hover {
+    border-color: var(--ads-color-border-hover);
+    background-color: var(--ads-color-brand-secondary-hover);
+    color: var(--ads-color-text-hover);
+  }
 `;
 
 const StyledDecreaseIcon = styled(
@@ -26,9 +37,27 @@ const StyledDecreaseIcon = styled(
   cursor: pointer;
   width: 60px;
   height: 32px;
+  border-right: 1px solid var(--ads-color-border);
+  &:focus {
+    border-color: var(--ads-color-border-active);
+    background-color: var(--ads-color-brand-secondary-hover);
+    color: var(--ads-color-text-active);
+  }
+  &:hover {
+    border-color: var(--ads-color-border-hover);
+    background-color: var(--ads-color-brand-secondary-hover);
+    color: var(--ads-color-text-hover);
+  }
 `;
 
 const StepWrapper = styled.div`
+  --ads-step-component-wrapper-background-color: var(--ads-color-background);
+  --ads-step-component-wrapper-svg-fill-color: var(--ads-color-text);
+  --ads-step-component-input-wrapper-text-color: var(--ads-color-text);
+  --ads-step-component-input-wrapper-background-color: var(
+    --ads-color-background
+  );
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,6 +67,8 @@ const StepWrapper = styled.div`
   margin-top: 6px;
   border-radius: var(--ads-border-radius);
   background-color: var(--ads-step-component-wrapper-background-color);
+  border: 1px solid var(--ads-color-border);
+  overflow: hidden;
   && svg {
     path {
       fill: var(--ads-step-component-wrapper-svg-fill-color);
@@ -45,7 +76,7 @@ const StepWrapper = styled.div`
   }
 
   &:focus {
-    border: 1px solid var(--appsmith-input-focus-border-color);
+    border-color: var(--ads-color-border-active);
   }
 `;
 

@@ -223,6 +223,20 @@ export const InputWrapper = styled.div<{
   disabled?: boolean;
   $isLoading?: boolean;
 }>`
+  --ads-text-input-text-box-default-background-color: var(--ads-color-white);
+  --ads-text-input-text-box-default-text-color: var(--ads-color-text);
+  --ads-text-input-text-box-default-border-color: var(--ads-color-border);
+  --ads-text-input-text-box-disabled-background-color: var(--ads-color-brand-secondary-disabled);
+  --ads-text-input-text-box-disabled-text-color: var(--ads-color-text-disabled);
+  --ads-text-input-text-box-disabled-border-color: var(--ads-color-border-disabled);
+  --ads-text-input-text-box-read-only-background-color: var(--ads-color-brand-secondary-disabled);
+  --ads-text-input-text-box-read-only-text-color: var(--ads-color-text-disabled);
+  --ads-text-input-text-box-read-only-border-color: var(--ads-color-border-disabled);
+  --ads-text-input-text-box-hover-background-color: var(--ads-color-brand-secondary-hover);
+  --ads-text-input-icon-path-color: var(--ads-color-gray-500);
+  --ads-text-input-placeholder-text-color: var(--ads-color-black-450);
+  --ads-text-input-helper-text-text-color: var(--ads-color-gray-500);
+
   position: relative;
   display: flex;
   align-items: center;

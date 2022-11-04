@@ -129,6 +129,11 @@ export const multiSelectInputContainerStyles = css<{
 `;
 
 const LabelContainer = styled.div<LabelContainerProps>`
+  --ads-label-with-tooltip-default-text-color: var(--ads-color-text);
+  --ads-label-with-tooltip-disabled-text-color: var(--ads-color-text-disabled);
+  --ads-label-with-tooltip-default-icon-fill-color: var(--ads-color-text);
+  --ads-label-with-tooltip-hover-icon-fill-color: var(--ads-color-text-hover);
+
   &&& {
     display: flex;
     align-items: center;
@@ -181,8 +186,8 @@ export const StyledLabel = styled(Label)<StyledLabelProps>`
     ${({ color, disabled, fontSize, fontStyle }) => `
       color: ${
         disabled
-          ? "var(--ads-label-with-tooltip-default-text-color)"
-          : color || "inherit"
+          ? "var(--ads-label-with-tooltip-disabled-text-color)"
+          : color || "var(--ads-label-with-tooltip-default-text-color)"
       };
       font-size: ${fontSize ?? "inherit"};
       font-weight: ${

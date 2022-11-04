@@ -38,7 +38,7 @@ export const Icon = Template.bind({});
 Icon.args = {
   name: "filter",
   size: IconSize.XXXXL,
-  fillColor: "gray",
+  fillColor: "var(--ads-color-text)",
 };
 
 const IconWrapper = styled.div`

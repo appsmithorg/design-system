@@ -28,6 +28,14 @@ const RadioGroup = styled.div<{
   rows?: number;
   columns?: number;
 }>`
+  --ads-radio-default-text-color: var(--ads-color-text);
+  --ads-radio-default-border-color: var(--ads-color-border);
+  --ads-radio-disabled-background-color: var(
+    --ads-color-brand-secondary-disabled
+  );
+  --ads-radio-disabled-border-color: var(--ads-color-border-disabled);
+  --ads-radio-disabled-text-color: var(--ads-color-text-disabled);
+
   display: flex;
   flex-wrap: wrap;
   ${(props) =>
@@ -59,7 +67,7 @@ export const Radio = styled.label<{
   color: ${(props) =>
     props.disabled
       ? "var(--ads-radio-disabled-text-color)"
-      : "var(--ads-radio-default-text-color"};
+      : "var(--ads-radio-default-text-color)"};
   ${(props) =>
     props.columns && props.columns > 0
       ? `
@@ -95,6 +103,15 @@ export const Radio = styled.label<{
     display: none;
   }
 
+  input:checked ~ .checkbox {
+    border-color: var(--ads-color-brand-secondary);
+  }
+
+  input:disabled ~ .checkbox {
+    border-color: var(--ads-radio-disabled-border-color);
+    background-color: var(--ads-radio-disabled-background-color);
+  }
+
   input:checked ~ .checkbox:after {
     display: block;
   }
@@ -112,7 +129,7 @@ export const Radio = styled.label<{
       props.disabled
         ? `background-color: var(--ads-radio-disabled-background-color)`
         : `background-color: ${props.backgroundColor ||
-            `var(--ads-info-main-text-color)`}`};
+            `var(--ads-color-brand-secondary)`}`};
     top: 2px;
     left: 2px;
     border-radius: 50%;

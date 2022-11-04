@@ -24,6 +24,24 @@ const TabsWrapper = styled.div<{
   vertical?: boolean;
   responseViewer?: boolean;
 }>`
+  --ads-tabs-default-tab-list-text-color: var(--ads-color-text);
+  --ads-tabs-default-tab-list-svg-fill-color: var(--ads-color-white);
+  // eslint-disable-next-line prettier/prettier
+  --ads-tabs-default-tab-list-response-viewer-background-color: var(--ads-color-white);
+  // eslint-disable-next-line prettier/prettier
+  --ads-tabs-default-tab-focus-response-viewer-border-color: var(--ads-color-border);
+  --ads-tabs-tab-selected-svg-fill-color: var(--ads-color-black-750);
+  // eslint-disable-next-line prettier/prettier
+  --ads-tabs-tab-selected-response-viewer-background-color: var(--ads-color-white);
+  // eslint-disable-next-line prettier/prettier
+  --ads-tabs-tab-selected-response-viewer-border-color: var(--ads-color-border-active);
+  // eslint-disable-next-line prettier/prettier
+  --ads-tabs-tab-title-response-viewer-text-color: var(--ads-primary-text-color);
+  --ads-tabs-count-background-color: var(--ads-color-brand-secondary-normal);
+  --ads-tabs-title-wrapper-text-color: var(--ads-color-text);
+  --ads-tabs-title-wrapper-hover-text-color: var(--ads-color-text-hover);
+  --ads-tabs-title-wrapper-icon-fill-color: var(--ads-color-text);
+
   border-radius: 0px;
   height: 100%;
   overflow: hidden;
@@ -229,7 +247,7 @@ const TabTitleWrapper = styled.div<{
     };
     left: var(--ads-spaces-0);
     height: ${props.vertical ? "100%" : `calc(var(--ads-spaces-1) - 2px)`};
-    background-color: var(--ads-primary-color);
+    background-color: var(--ads-color-brand);
     z-index: var(--ads-z-index-3);
 
     ${props.responseViewer &&

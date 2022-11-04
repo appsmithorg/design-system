@@ -13,10 +13,20 @@ export const isEmail = (value: string) => {
 };
 
 const TagInputWrapper = styled.div`
+  --ads-tag-input-background-color: var(--ads-color-white);
+  --ads-tag-input-border-color: var(--ads-color-border);
+  --ads-tag-input-text-color: var(--ads-color-text);
+  --ads-tag-input-placeholder-color: var(--ads-color-gray-300);
+  --ads-tag-input-active-border-color: var(--ads-color-border-active);
+  --ads-tag-input-active-box-shadow: "none";
+  --ads-tag-input-tag-text-color: var(--ads-color-white);
+  --ads-tag-input-tag-background-color: var(--ads-color-brand);
+
   margin-right: 8px;
   display: flex;
   flex-direction: column;
   position: relative;
+  box-shadow: none !important;
 
   &&& {
     .${Classes.TAG_INPUT} {
@@ -24,10 +34,11 @@ const TagInputWrapper = styled.div`
       min-height: 38px;
       border: 1.2px solid var(--ads-tag-input-border-color);
       border-radius: var(--ads-border-radius);
+      box-shadow: none !important;
     }
     .${Classes.TAG_INPUT}.${Classes.ACTIVE} {
       border: 1px solid var(--ads-tag-input-active-border-color);
-      box-shadow: var(--ads-tag-input-active-box-shadow);
+      box-shadow: none;
     }
     .${Classes.INPUT_GHOST} {
       color: var(--ads-tag-input-text-color);
@@ -58,11 +69,11 @@ const SuggestionsWrapper = styled.div`
 
   svg {
     path {
-      fill: var(--ads-color-gray-5);
+      fill: var(--ads-color-gray-500);
     }
   }
 
-  > div {
+  & > div {
     position: absolute;
     border: 1px solid var(--appsmith-color-black-250);
     width: 100%;

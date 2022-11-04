@@ -15,6 +15,14 @@ export type IconSelectorProps = CommonComponentProps & {
 };
 
 const IconPalette = styled.div<{ fill?: boolean }>`
+  --ads-icon-selector-scrollbar-thumb-background-color: var(
+    --ads-color-black-450
+  );
+  --ads-icon-selector-app-icon-background-color: var(
+    --ads-color-background-secondary
+  );
+  --ads-icon-selector-selected-icon-fill-color: var(--ads-color-white);
+
   display: flex;
   align-items: center;
   flex-wrap: wrap;

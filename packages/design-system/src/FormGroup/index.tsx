@@ -6,6 +6,8 @@ type FormGroupProps = {
   fill?: boolean;
 };
 const StyledFormGroup = styled(FormGroup)<FormGroupProps>`
+  --ads-form-group-label-text-color: var(--ads-color-text);
+
   & {
     width: ${(props) => (props.fill ? "100%" : "auto")};
     &.${Classes.FORM_GROUP} {

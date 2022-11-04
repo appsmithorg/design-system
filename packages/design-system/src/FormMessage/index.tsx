@@ -30,6 +30,22 @@ export type MessageAction = {
 };
 
 const StyledMessage = styled.div<{ intent: Intent }>`
+  --ads-form-message-danger-text-color: var(--ads-old-color-danger-red);
+  --ads-form-message-primary-text-color: var(--ads-color-white);
+  --ads-form-message-success-text-color: var(--ads-old-color-jade);
+  --ads-form-message-warning-text-color: var(--ads-old-color-warning);
+  --ads-form-message-light-success-text-color: var(--ads-old-color-fun-green-2);
+
+  --ads-form-message-danger-background-color: var(
+    --ads-old-color-danger-red-opacity-80
+  );
+  --ads-form-message-primary-background-color: var(--ads-old-color-jade);
+  --ads-form-message-success-background-color: #172320;
+  --ads-form-message-warning-background-color: var(
+    --ads-old-color-warning-opacity-80
+  );
+  --ads-form-message-light-success-background-color: #effff4;
+
   & {
     ${getTypographyByKey("p1")}
     width: 100%;

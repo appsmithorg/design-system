@@ -25,6 +25,15 @@ const ScrollTrack = styled.div<{
   right?: string;
   mode?: "DARK" | "LIGHT";
 }>`
+  --ads-scroll-indicator-light-thumb-background-color: var(
+    --ads-old-color-black-750-opacity-50
+  );
+  --ads-scroll-indicator-light-track-background-color: var(--ads-color-gray-1);
+  --ads-scroll-indicator-dark-thumb-background-color: var(--ads-color-gray-2);
+  --ads-scroll-indicator-dark-track-background-color: var(
+    --ads-old-color-gray-10-opacity-50
+  );
+
   position: absolute;
   z-index: 100;
   overflow: hidden;

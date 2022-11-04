@@ -7,7 +7,7 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--ads-color-black-75);
+  background-color: var(--ads-color-brand-secondary-normal);
   height: 32px;
   padding: 2px;
   border-radius: var(--ads-border-radius);
@@ -19,7 +19,7 @@ const SwitchBlock = styled.div<{ active?: boolean }>`
   justify-content: center;
   font-size: 14px;
   line-height: 28px;
-  color: var(--ads-color-black-450);
+  color: var(--ads-color-text-disabled);
   cursor: pointer;
   height: 100%;
   flex: 1;
@@ -30,9 +30,9 @@ const SwitchBlock = styled.div<{ active?: boolean }>`
   ${(props) =>
     props.active &&
     css`
-      border: 1px solid var(--ads-color-black-250);
+      border: 1px solid var(--ads-color-border);
       background-color: var(--ads-color-black-0);
-      color: var(--ads-color-black-550);
+      color: var(--ads-color-text-active);
     `}
 `;
 

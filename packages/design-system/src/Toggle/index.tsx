@@ -15,6 +15,17 @@ const StyledToggle = styled.label<{
   disabled?: boolean;
   value: boolean;
 }>`
+  --ads-toggle-slider-background-color: var(--ads-color-black-250);
+  --ads-toggle-slider-loading-background-color: var(--ads-color-black-250);
+  --ads-toggle-slider-disabled-on-background-color: var(--ads-color-black-0);
+  --ads-toggle-slider-disabled-off-background-color: var(--ads-color-black-0);
+  --ads-toggle-on-background-color: var(--ads-color-orange-500);
+  --ads-toggle-hover-on-background-color: var(--ads-old-color-rock-spray);
+  --ads-toggle-hover-off-background-color: var(--ads-color-black-450);
+  --ads-toggle-disabled-on-background-color: var(--ads-old-color-bridesmaid);
+  --ads-toggle-disabled-off-background-color: var(--ads-color-black-250);
+  --ads-toggle-spinner-stroke-color: var(--ads-color-black-450);
+
   position: relative;
   display: block;
 

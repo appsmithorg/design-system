@@ -13,7 +13,7 @@ const StyledIcon = styled(Icon)<{
 }>`
   &:hover circle,
   &:hover path {
-    fill: var(--ads-color-black-750);
+    fill: var(--ads-color-text-hover);
   }
   ${(props) =>
     props.fillColor
@@ -67,7 +67,7 @@ function EmojiPicker({
         hoverOpenDelay={1000}
       >
         <StyledIcon
-          fillColor="var(--ads-color-black-450)"
+          fillColor="var(--ads-color-text)"
           keepColors
           name={iconName || "emoji"}
           size={iconSize || IconSize.XXXL}

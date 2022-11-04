@@ -131,6 +131,7 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  color: var(--ads-color-text);
 `;
 
 export const EditableTextSubComponent = React.forwardRef(

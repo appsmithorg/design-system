@@ -14,7 +14,14 @@ const Template: ComponentStory<typeof TreeDropdown> = (args) => {
 };
 
 const options = [
-  { label: "Primary", value: "PRIMARY" },
+  {
+    label: "Primary",
+    value: "PRIMARY",
+    children: [
+      { label: "Primary 1", value: "PRIMARY_1" },
+      { label: "Primary 2", value: "PRIMARY_2" },
+    ],
+  },
   { label: "Secondary", value: "SECONDARY" },
   { label: "Tertiary", value: "TERTIARY" },
 ];

@@ -47,19 +47,19 @@ const typeSelector = (props: TextProps): string => {
   let color = "";
   switch (props.type) {
     case TextType.P0:
-      color = "var(--ads-text-color)";
+      color = "var(--ads-color-text)";
       break;
     case TextType.P1:
-      color = "var(--ads-text-color)";
+      color = "var(--ads-color-text)";
       break;
     case TextType.P2:
-      color = "var(--ads-text-color)";
+      color = "var(--ads-color-text)";
       break;
     case TextType.P3:
-      color = "var(--ads-text-color)";
+      color = "var(--ads-color-text)";
       break;
     default:
-      color = "var(--ads-text-heading-color)";
+      color = "var(--ads-color-heading-text)";
       break;
   }
   return color;

@@ -7,6 +7,9 @@ import { useTransition, animated } from "react-spring";
 import Icon from "Icon";
 
 const Container = styled.div`
+  --ads-showcase-carousel-dot-background-color: var(--ads-old-color-bridesmaid);
+  --ads-showcase-carousel-dot-active-background-color: var(--ads-color-brand);
+
   box-shadow: 1px 0px 10px 5px rgba(0, 0, 0, 0.15);
   border-radius: var(--ads-border-radius);
 `;

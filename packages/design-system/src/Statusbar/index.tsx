@@ -2,6 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div<{ active: boolean }>`
+  --ads-statusbar-active-background-color: var(--ads-color-brand);
+  --ads-statusbar-height: 92px;
+  --ads-statusbar-active-p-text-color: var(--ads-color-white);
+  --ads-statusbar-active-svg-fill-color: var(--ads-color-white);
+  --ads-statusbar-status-text-color: var(--ads-old-color-black);
+  --ads-statusbar-progress-bar-active-background-color: var(
+    --ads-old-color-crusta
+  );
+  --ads-statusbar-progress-bar-background-color: var(--ads-color-white);
+
   position: relative;
   width: 100%;
   background-color: ${(props) =>

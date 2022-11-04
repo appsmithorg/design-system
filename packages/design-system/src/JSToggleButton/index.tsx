@@ -4,6 +4,20 @@ import { IconWrapper } from "Icon";
 import { ControlIcons } from "ControlIcons";
 
 const JSToggleButtonWrapper = styled.button<{ active: boolean }>`
+  --ads-js-toggle-button-default-border-color: var(--ads-color-gray-300);
+  --ads-js-toggle-button-default-background-color: var(--ads-color-white);
+  --ads-js-toggle-button-disabled-border-color: var(--ads-color-border-disabled);
+  --ads-js-toggle-button-disabled-background-color: var(--ads-color-brand-secondary-disabled);
+  --ads-js-toggle-button-active-disabled-background-color: var(--ads-color-brand-secondary-disabled);
+  --ads-js-toggle-button-active-border-color: var(--ads-color-brand-secondary);
+  --ads-js-toggle-button-active-background-color: var(--ads-color-brand-secondary);
+  --ads-js-toggle-button-hover-active-background-color: var(--ads-color-brand-secondary);
+  --ads-js-toggle-button-hover-background-color: var(--ads-color-brand-secondary-hover);
+  --ads-js-toggle-button-hover-disabled-active-background-color: var(--ads-color-brand-secondary);
+  --ads-js-toggle-button-hover-disabled-background-color: var(--ads-color-black-200);
+  --ads-js-toggle-button-svg-path-active-fill-color: var(--ads-color-white);
+  --ads-js-toggle-button-svg-path-fill-color: var(--ads-color-text);
+
   margin: 4px;
   margin-top: 0px;
   cursor: pointer;
@@ -22,6 +36,13 @@ const JSToggleButtonWrapper = styled.button<{ active: boolean }>`
       props.disabled
         ? "var(--ads-js-toggle-button-disabled-border-color)"
         : "var(--ads-js-toggle-button-default-border-color)"};
+  ${(props) => {
+    if (props.active) {
+      return `
+        border-color: var(--ads-js-toggle-button-active-border-color);
+      `;
+    }
+  }}
   background-color: ${(props) =>
     props.active
       ? props.disabled

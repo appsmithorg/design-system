@@ -25,6 +25,14 @@ type DropdownProps = CommonComponentProps & {
   selectedTextWidth?: string;
 };
 
+const StyledPopover = styled(Popover)`
+  --ads-table-dropdown-background-color: var(--ads-color-white);
+  --ads-table-dropdown-selected-background-color: var(
+    --ads-color-brand-secondary-normal
+  );
+  --ads-table-dropdown-selected-hover-text-color: var(--ads-color-text-hover);
+`;
+
 const SelectedItem = styled.div<{
   width?: string;
 }>`
@@ -32,9 +40,15 @@ const SelectedItem = styled.div<{
   align-items: center;
   cursor: pointer;
   user-select: none;
+  color: var(--ads-color-text);
   .${Classes.TEXT} {
     margin-right: calc(var(--ads-spaces-1) + 1px);
     width: ${(props) => props.width || "auto"};
+  }
+
+  svg,
+  svg path {
+    fill: var(--ads-color-text);
   }
 `;
 
@@ -55,6 +69,7 @@ const DropdownOption = styled.div<{
   flex-direction: column;
   padding: 10px 12px;
   cursor: pointer;
+  color: var(--ads-color-text);
   ${(props) =>
     props.isSelected
       ? `background-color: var(--ads-table-dropdown-selected-background-color)`
@@ -113,7 +128,7 @@ function TableDropdown(props: DropdownProps) {
   return props.isLoading ? (
     <Spinner size={IconSize.LARGE} />
   ) : (
-    <Popover
+    <StyledPopover
       data-cy={props.cypressSelector}
       interactionKind={PopoverInteractionKind.CLICK}
       isOpen={isDropdownOpen}
@@ -144,7 +159,7 @@ function TableDropdown(props: DropdownProps) {
           </DropdownOption>
         ))}
       </OptionsWrapper>
-    </Popover>
+    </StyledPopover>
   );
 }
 

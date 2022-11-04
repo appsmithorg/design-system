@@ -59,6 +59,29 @@ export const ContainerDiv = styled.div<{
   canDrop: boolean;
   fileType: FileType;
 }>`
+  --ads-file-picker-v2-default-background-color: var(--ads-color-background);
+  --ads-file-picker-v2-default-text-color: var(--ads-color-text);
+  --ads-file-picker-v2-success-text-color: var(--ads-old-color-jade);
+  --ads-file-picker-v2-upload-progress-background-color: var(
+    --ads-color-black-470
+  );
+  --ads-file-picker-v2-upload-success-background-color: var(
+    --ads-old-color-fun-green
+  );
+  --ads-file-picker-v2-upload-icon-fill-color: var(--ads-color-text);
+  --ads-file-picker-v2-remove-button-background-color-gradient-start: rgba(
+    253,
+    253,
+    253,
+    0.0001
+  );
+  --ads-file-picker-v2-remove-button-background-color-gradient-end: rgba(
+    250,
+    250,
+    250,
+    0.898847
+  );
+
   width: 320px;
   height: 190px;
   background-color: var(--ads-file-picker-v2-default-background-color);
@@ -177,7 +200,7 @@ const ContainerDivWithBorder = styled(ContainerDiv)<{
 }>`
   width: 100%;
   height: 188px;
-  background-color: var(--ads-color-black-0);
+  background-color: var(--ads-color-background);
   border: 1px dashed var(--ads-color-brand);
   border-radius: var(--ads-border-radius);
 `;
@@ -195,7 +218,13 @@ const UploadIconWrapper = styled.div`
 `;
 
 function FilePickerComponent(props: FilePickerProps) {
-  const { fileType, logoUploadError, onFileRemoved, onFileUploaded, fileUploader } = props;
+  const {
+    fileType,
+    fileUploader,
+    logoUploadError,
+    onFileRemoved,
+    onFileUploaded,
+  } = props;
   const [fileInfo, setFileInfo] = useState<{ name: string; size: number }>({
     name: "",
     size: 0,
@@ -459,7 +488,11 @@ function FilePickerComponent(props: FilePickerProps) {
           </Text>
           <TooltipComponent content={REMOVE_FILE_TOOL_TIP()} position="top">
             <IconWrapper className="icon-wrapper" onClick={() => removeFile()}>
-              <Icon name="close" size={IconSize.XL} />
+              <Icon
+                fillColor={"var(--ads-color-text)"}
+                name="close"
+                size={IconSize.XL}
+              />
             </IconWrapper>
           </TooltipComponent>
         </div>

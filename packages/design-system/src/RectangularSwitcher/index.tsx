@@ -14,6 +14,13 @@ const StyledSwitch = styled.label<{
   value: boolean;
   firstRender: boolean;
 }>`
+  --ads-rectangular-switch-background-color: var(--ads-color-white);
+  --ads-rectangular-switch-hover-background-color: var(--ads-color-white);
+  --ads-rectangular-switch-slider-border-color: var(--ads-color-black-450);
+  --ads-rectangular-switch-slider-background-color: var(--ads-color-brand);
+  --ads-rectangular-switch-light-text-color: var(--ads-color-white);
+  --ads-rectangular-switch-dark-text-color: var(--ads-color-black-470);
+
   position: relative;
   display: block;
   width: 78px;

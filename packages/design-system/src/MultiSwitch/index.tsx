@@ -23,6 +23,7 @@ const TabList = styled.div`
 
 const TabContent = styled.div`
   height: calc(100% - 24px);
+  color: var(--ads-color-text);
 `;
 
 const Tab = styled.div<{ selected: boolean }>`
@@ -31,6 +32,7 @@ const Tab = styled.div<{ selected: boolean }>`
   cursor: pointer;
   height: 22px;
   padding: 0 12px;
+  position: relative;
   border-radius: var(--ads-border-radius);
   ${(props) =>
     props.selected
@@ -38,10 +40,15 @@ const Tab = styled.div<{ selected: boolean }>`
 		background-color: var(--ads-multiswitch-selected-background-color);
 		`
       : null};
-  border-right: 1px solid var(--ads-multiswitch-border-color);
+  /* border-right: 1px solid var(--ads-multiswitch-border-color); */
 `;
 
 const TabHeader = styled.div<{ stickyTabHeader?: boolean }>`
+  --ads-multiswitch-tab-list-background-color: var(--ads-color-gray-100);
+  --ads-multiswitch-border-color: var(--ads-color-border);
+  --ads-multiswitch-selected-background-color: var(--ads-color-white);
+  --ads-multiswitch-tab-header-background-color: var(--ads-color-white);
+
   ${({ stickyTabHeader }) =>
     stickyTabHeader &&
     `

@@ -25,6 +25,7 @@ import { DSEventTypes } from "Types/common";
 import { typography } from "Constants/typography";
 import { Intent as BlueprintIntent } from "@blueprintjs/core";
 import { IconName } from "@blueprintjs/icons";
+import "./styles.css";
 
 export type TreeDropdownOption = {
   label: string;
@@ -71,6 +72,13 @@ export type StyledMenuProps = {
   width?: number;
 };
 
+const StyledPopover = styled(Popover)`
+  --ads-tree-dropdown-menu-default-background-color: var(--ads-color-white);
+  --ads-tree-dropdown-menu-default-text-color: var(--ads-color-text);
+  --ads-tree-dropdown-menu-selected-text-color: var(--ads-color-text-active);
+  --ads-tree-dropdown-target-background-color: var(--ads-color-white);
+`;
+
 export const StyledMenu = styled(Menu)`
   max-height: calc(
     100vh - var(--ads-small-header-height) - var(--ads-bottom-bar-height)
@@ -85,13 +93,13 @@ export const StyledMenu = styled(Menu)`
     min-width: 220px;
     width: ${(props: StyledMenuProps) => `${props.width}px`};
     padding: 0px;
-    border-radius: var(--ads-border-radius);
+    border-radius: 0;
     background-color: var(--ads-tree-dropdown-menu-default-background-color);
     max-height: 90vh;
     overflow-y: scroll;
   }
   .${Classes.MENU_ITEM} {
-    border-radius: var(--ads-border-radius);
+    border-radius: 0;
     font-size: 14px;
     line-height: ${typography.p1.lineHeight}px;
     display: flex;
@@ -100,7 +108,7 @@ export const StyledMenu = styled(Menu)`
     color: var(--ads-tree-dropdown-menu-default-text-color);
     .${Classes.ICON} > svg:not([fill]) {
       margin-top: 0px;
-      fill: #9f9f9f;
+      fill: var(--ads-color-text);
     }
 
     &.t--apiFormDeleteBtn {
@@ -119,25 +127,27 @@ export const StyledMenu = styled(Menu)`
     }
 
     &:hover:not(.t--apiFormDeleteBtn) {
-      background-color: var(--ads-old-color-gallery-2);
-      color: var(--ads-color-gray-9);
+      background-color: var(--ads-color-gray-100);
+      color: var(--ads-color-text-active);
       .${Classes.ICON} > svg:not([fill]) {
-        fill: var(--ads-old-color-gray-9);
+        fill: var(--ads-color-text-active);
       }
     }
 
     &.${Classes.ACTIVE} {
-      background-color: var(--ads-old-color-gallery-2);
-      color: var(--ads-tree-dropdown-menu-selected-text-color);
+      background-color: var(--ads-color-brand-secondary-normal);
+      color: var(--ads-color-text-active);
+      border-radius: 0;
       .${Classes.ICON} > svg:not([fill]) {
-        fill: var(--ads-tree-dropdown-menu-selected-text-color);
+        fill: var(--ads-color-text-active);
       }
     }
   }
   .${Classes.MENU_SUBMENU}
     .${Classes.POPOVER_TARGET}.${Classes.POPOVER_OPEN}
     > .${Classes.MENU_ITEM} {
-    background-color: var(--ads-old-color-gallery-2);
+    background-color: var(--ads-color-brand-secondary-normal);
+    border-radius: 0;
   }
 `;
 
@@ -146,7 +156,7 @@ const DropdownTarget = styled.div`
     width: 100%;
     box-shadow: none;
     border-radius: var(--ads-border-radius);
-    border: 1px solid var(--ads-color-black-250);
+    border: 1px solid var(--ads-color-border);
     min-height: 36px;
     background-color: var(--ads-tree-dropdown-target-background-color);
     color: var(--ads-tree-dropdown-menu-default-text-color);
@@ -559,7 +569,7 @@ function TreeDropdown(props: TreeDropdownProps) {
     </DropdownTarget>
   );
   return (
-    <Popover
+    <StyledPopover
       className="wrapper-popover"
       content={menuItems}
       isOpen={isOpen}
@@ -581,7 +591,7 @@ function TreeDropdown(props: TreeDropdownProps) {
       }}
     >
       {toggle ? toggle : defaultToggle}
-    </Popover>
+    </StyledPopover>
   );
 }
 

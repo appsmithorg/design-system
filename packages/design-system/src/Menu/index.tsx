@@ -30,7 +30,7 @@ export type MenuProps = CommonComponentProps & {
 
 const MenuWrapper = styled.div<{ width?: string }>`
   width: ${(props) => (props.width ? props.width : "234px")};
-  background: var(--ads-color-black-0);
+  background: var(--ads-color-white);
   box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.318);
   border-radius: var(--ads-border-radius);
 `;

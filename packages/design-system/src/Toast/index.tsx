@@ -69,6 +69,13 @@ const ToastBody = styled.div<{
   width?: string;
   maxWidth?: string;
 }>`
+  --ads-toast-background-color: var(--ads-color-gray-900);
+  --ads-toast-icon-fill-color: #dcad00;
+  --ads-toast-icon-outline-color: var(--ads-old-color-pomegranate);
+  --ads-toast-text-color: var(--ads-color-white);
+  --ads-toast-undo-text-color: var(--ads-color-brand);
+  --ads-toast-redo-text-color: var(--ads-color-brand);
+
   width: ${(props) => props.width || "fit-content"};
   max-width: ${(props) => props.maxWidth || "264px"};
   margin-left: auto;

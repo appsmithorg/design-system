@@ -1,0 +1,8 @@
+.bp3-popover {
+  box-shadow: none;
+}
+
+.bp3-popover .bp3-popover-content {
+  border-radius: var(--ads-border-radius);
+  border: 1px solid var(--ads-color-border);
+}

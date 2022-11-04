@@ -13,6 +13,9 @@ interface SearchProps {
 }
 
 const SearchComponentWrapper = styled.div`
+  --ads-search-input-border-color: var(--ads-color-border);
+  --ads-search-input-active-border-color: var(--ads-color-border-active);
+
   position: relative;
   width: 100%;
   border-radius: var(--ads-border-radius);
@@ -53,25 +56,25 @@ const SearchInputWrapper = styled(InputGroup)`
       border-radius: 0;
       box-shadow: none;
       font-size: 12px;
-      color: var(--ads-color-gray-7);
+      color: var(--ads-color-text);
       padding-right: 20px;
       text-overflow: ellipsis;
       width: 100%;
       border-radius: var(--ads-border-radius);
     }
     input:focus {
-      border: 1.2px solid var(--ads-old-color-fern-green);
+      border: 1.2px solid var(--ads-color-border-active);
       box-sizing: border-box;
       width: 100%;
     }
 
-    input:active {
+    /* input:active {
       box-shadow: 0px 0px 0px 3px var(--ads-old-color-jagged-ice);
-    }
+    } */
     ${HideDefaultSearchCancelIcon}
     svg {
       path {
-        fill: var(--ads-color-gray-5);
+        fill: var(--ads-color-text);
       }
     }
   }

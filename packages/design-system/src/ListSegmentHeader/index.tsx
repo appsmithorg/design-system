@@ -9,7 +9,7 @@ const StyledSegmentHeader = styled.div`
   font-size: ${typography["u2"].fontSize}px;
   line-height: ${typography["u2"].lineHeight}px;
   letter-spacing: ${typography["u2"].letterSpacing}px;
-  color: var(--ads-color-gray-7);
+  color: var(--ads-color-text);
   display: flex;
   align-items: center;
 `;

@@ -29,6 +29,8 @@ type TextInputProps = CommonComponentProps & {
 };
 
 const SearchInputWrapper = styled.div<{ border?: boolean; className?: string }>`
+  --ads-search-input-border-color: var(--ads-color-border);
+  --ads-search-input-active-border-color: var(--ads-color-border-active);
   & > div {
     border: none;
     border-radius: var(--ads-border-radius);

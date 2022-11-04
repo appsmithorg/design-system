@@ -27,20 +27,20 @@ const ItemRow = styled.a<{ disabled?: boolean; selected?: boolean }>`
   text-decoration: none;
   padding: 0px var(--ads-spaces-6);
   background-color: ${(props) =>
-    props.selected ? "var(--ads-color-black-75)" : "transparent"};
+    props.selected ? "var(--ads-color-brand-secondary-active)" : "transparent"};
   .${Classes.TEXT} {
     color: ${(props) =>
       props.selected
-        ? "var( --ads-old-color-gray-10)"
-        : "var(--ads-color-black-750)"};
+        ? "var(--ads-color-text-active)"
+        : "var(--ads-color-text)"};
   }
   .${Classes.ICON} {
     svg {
       path {
         fill: ${(props) =>
           props.selected
-            ? "var(--ads-color-black-750)"
-            : "var(--ads-color-black-470)"};
+            ? "var(--ads-color-text-active)"
+            : "var(--ads-color-text)"};
       }
     }
   }
@@ -55,13 +55,13 @@ const ItemRow = styled.a<{ disabled?: boolean; selected?: boolean }>`
       background-color: ${
         props.type === "warning"
           ? "var(--ads-old-color-linen)"
-          : "var(--ads-color-black-75)"
+          : "var(--ads-color-brand-secondary-hover)"
       };
       .${Classes.TEXT} {
         color: ${
           props.type === "warning"
             ? "var(--ads-old-color-buddha-gold)"
-            : "var(--ads-old-color-gray-10)"
+            : "var(--ads-color-text-hover) !important"
         };
       }
       .${Classes.ICON} {
@@ -69,7 +69,7 @@ const ItemRow = styled.a<{ disabled?: boolean; selected?: boolean }>`
           fill: ${
             props.type === "warning"
               ? "var(--ads-old-color-buddha-gold)"
-              : "var(--ads-color-black-750)"
+              : "var(--ads-color-text-hover)"
           };
         }
       }
