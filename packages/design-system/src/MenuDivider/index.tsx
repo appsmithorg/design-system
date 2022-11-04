@@ -7,6 +7,7 @@ type MenuDividerProps = {
 };
 
 const StyledMenuDivider = styled.div<MenuDividerProps>`
+  --ads-menu-divider-border-color: var(--ads-color-gray-200);
   ${(props) =>
     props.direction == "horizontal"
       ? `border-top: 1px solid var(--ads-menu-divider-border-color);
