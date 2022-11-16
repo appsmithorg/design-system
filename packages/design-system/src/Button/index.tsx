@@ -10,24 +10,24 @@ import { typography } from "Constants/typography";
 import { hexToRgba } from "Utils/colors";
 
 const smallButton = css`
-  font-size: ${typography.btnSmall.fontSize}px;
-  font-weight: ${typography.btnSmall.fontWeight};
-  line-height: ${typography.btnSmall.lineHeight}px;
-  letter-spacing: ${typography.btnSmall.letterSpacing}px;
+  font-size: ${typography.buttonSmall.fontSize}px;
+  font-weight: ${typography.buttonSmall.fontWeight};
+  line-height: ${typography.buttonSmall.lineHeight}px;
+  letter-spacing: ${typography.buttonSmall.letterSpacing}px;
 `;
 
 const mediumButton = css`
-  font-size: ${typography.btnMedium.fontSize}px;
-  font-weight: ${typography.btnMedium.fontWeight};
-  line-height: ${typography.btnMedium.lineHeight}px;
-  letter-spacing: ${typography.btnMedium.letterSpacing}px;
+  font-size: ${typography.buttonMedium.fontSize}px;
+  font-weight: ${typography.buttonMedium.fontWeight};
+  line-height: ${typography.buttonMedium.lineHeight}px;
+  letter-spacing: ${typography.buttonMedium.letterSpacing}px;
 `;
 
 const largeButton = css`
-  font-size: ${typography.btnLarge.fontSize}px;
-  font-weight: ${typography.btnLarge.fontWeight};
-  line-height: ${typography.btnLarge.lineHeight}px;
-  letter-spacing: ${typography.btnLarge.letterSpacing}px;
+  font-size: ${typography.buttonLarge.fontSize}px;
+  font-weight: ${typography.buttonLarge.fontWeight};
+  line-height: ${typography.buttonLarge.lineHeight}px;
+  letter-spacing: ${typography.buttonLarge.letterSpacing}px;
 `;
 
 export enum Category {

@@ -66,25 +66,25 @@ export const typography = {
     letterSpacing: -0.221538,
     fontWeight: "var(--ads-font-weight-bold-xl)",
   },
-  btnLarge: {
+  buttonLarge: {
     fontSize: 13,
     lineHeight: 15,
     letterSpacing: 0.6,
     fontWeight: "var(--ads-font-weight-bold-xl)",
   },
-  btnMedium: {
+  buttonMedium: {
     fontSize: 12,
     lineHeight: 14,
     letterSpacing: 0.6,
     fontWeight: "var(--ads-font-weight-bold-xl)",
   },
-  btnSmall: {
+  buttonSmall: {
     fontSize: 11,
     lineHeight: 12,
     letterSpacing: 0.4,
     fontWeight: "var(--ads-font-weight-bold-xl)",
   },
-  floatingBtn: {
+  floatingButton: {
     fontSize: 14,
     lineHeight: 17,
     letterSpacing: -0.24,
@@ -131,7 +131,7 @@ export const typography = {
     lineHeight: 24,
     letterSpacing: "normal",
   },
-  categoryBtn: {
+  categoryButton: {
     fontSize: 12,
     lineHeight: 14,
     letterSpacing: 0.2,
