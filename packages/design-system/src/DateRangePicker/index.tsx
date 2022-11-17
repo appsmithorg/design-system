@@ -5,6 +5,7 @@ import { DateRangeInput, IDateRangeInputProps } from "@blueprintjs/datetime";
 import omit from "lodash-es/omit";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
 import "./styles.css";
+import { popoverModifiers } from "../constants/popoverModifiers";
 
 const DS_DateRangePicker = styled(DateRangeInput)<{
   height?: string;
@@ -92,7 +93,8 @@ function DateRangePicker(props: DateRangePickerProps) {
       highlightCurrentDay
       popoverProps={{
         minimal: true,
-        popoverClassName: "ds--date-range-picker-popover",
+        modifiers: popoverModifiers,
+        popoverClassName: "ds--popover ds--date-range-picker-popover",
       }}
       width={width}
       {...filteredProps}

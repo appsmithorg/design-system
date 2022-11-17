@@ -1,3 +1,5 @@
+@import url("../commonStyles/popover.css");
+
 :root {
   --ads-dropdown-hover-background-color : var(--ads-color-brand-secondary-hover);
   --ads-dropdown-selected-text-color: var(--ads-color-text-active);

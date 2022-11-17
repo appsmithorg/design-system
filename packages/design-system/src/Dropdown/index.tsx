@@ -23,6 +23,7 @@ import { ReactComponent as Check } from "../assets/icons/control/checkmark.svg";
 import Tooltip from "Tooltip";
 import SegmentHeader from "ListSegmentHeader";
 import { debounce, isArray } from "lodash";
+import { popoverModifiers } from "../constants/popoverModifiers";
 import "./styles.css";
 
 export type DropdownOnSelect = (
@@ -325,12 +326,8 @@ export const DropdownWrapper = styled.div<{
   z-index: 1;
   background-color: ${(props) =>
     props.wrapperBgColor ? props.wrapperBgColor : "var(--ads-color-black-0)"};
-  border-radius: var(--ads-border-radius);
-  border: 1px solid var(--ads-dropdown-default-menu-border-color);
   overflow: hidden;
   overflow-y: auto;
-  box-shadow: 0px 12px 16px -4px rgba(0, 0, 0, 0.1),
-    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
   display: ${(props) => (props.isOpen ? "inline-block" : "none")};
   .dropdown-search {
     width: 100%;
@@ -1343,9 +1340,9 @@ export default function Dropdown(props: DropdownProps) {
         boundary={props.boundary || "scrollParent"}
         isOpen={isOpen && !disabled}
         minimal
-        modifiers={{ arrow: { enabled: true } }}
+        modifiers={{ ...popoverModifiers, arrow: { enabled: true } }}
         onInteraction={(state) => !disabled && setIsOpen(state)}
-        popoverClassName={`${props.className} none-shadow-popover ds--dropdown-popover`}
+        popoverClassName={`${props.className} none-shadow-popover ds--dropdown-popover ds--popover`}
         portalClassName={props.portalClassName}
         portalContainer={props.portalContainer}
         position={Position.BOTTOM_LEFT}

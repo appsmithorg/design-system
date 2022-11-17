@@ -26,6 +26,7 @@ import { typography } from "Constants/typography";
 import { Intent as BlueprintIntent } from "@blueprintjs/core";
 import { IconName } from "@blueprintjs/icons";
 import "./styles.css";
+import { popoverModifiers } from "../constants/popoverModifiers";
 
 export type TreeDropdownOption = {
   label: string;
@@ -574,11 +575,12 @@ function TreeDropdown(props: TreeDropdownProps) {
       content={menuItems}
       isOpen={isOpen}
       minimal
-      modifiers={props.modifiers}
+      modifiers={{ ...props.modifiers, popoverModifiers }}
       onClose={() => {
         setIsOpen(false);
         props.onMenuToggle && props.onMenuToggle(false);
       }}
+      popoverClassName="ds--tree-dropdown"
       position={props.position || PopoverPosition.LEFT}
       targetProps={{
         onClick: (e: any) => {

@@ -12,6 +12,8 @@ import {
 import SearchComponent from "../SearchComponent";
 import { HighlightText } from "../HighlightText";
 import Text, { TextType } from "../Text";
+import { popoverModifiers } from "Constants/popoverModifiers";
+import "./styles.css";
 
 /**
  * ----------------------------------------------------------------------------
@@ -137,7 +139,9 @@ function DropdownV2(props: IPopoverProps & Props) {
       {...rest}
       canEscapeKeyClose
       content={menuItems}
-      popoverClassName="dropdown-v2"
+      minimal
+      modifiers={popoverModifiers}
+      popoverClassName="dropdown-v2 ds--popover"
       transitionDuration={-1}
     >
       {trigger}

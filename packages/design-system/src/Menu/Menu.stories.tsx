@@ -15,6 +15,8 @@ const Template: ComponentStory<typeof MenuComponent> = (args) => {
     <MenuComponent {...args}>
       <MenuItem icon="edit-underline" text="Edit" />
       <MenuItem icon="setting" text="Settings" />
+      <MenuItem icon="alert-line" text="Alert" />
+      <MenuItem icon="delete-blank" text="Delete" />
     </MenuComponent>
   );
 };

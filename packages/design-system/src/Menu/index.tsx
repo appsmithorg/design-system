@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Popover } from "@blueprintjs/core/lib/esm/components/popover/popover";
 import { Position } from "@blueprintjs/core/lib/esm/common/position";
 import { PopperModifiers } from "@blueprintjs/core";
+import { popoverModifiers } from "../constants/popoverModifiers";
+import "./styles.css";
 
 export type MenuProps = CommonComponentProps & {
   autoFocus?: boolean;
@@ -31,8 +33,7 @@ export type MenuProps = CommonComponentProps & {
 const MenuWrapper = styled.div<{ width?: string }>`
   width: ${(props) => (props.width ? props.width : "234px")};
   background: var(--ads-color-white);
-  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.318);
-  border-radius: var(--ads-border-radius);
+  overflow: hidden;
 `;
 
 const MenuOption = styled.div``;
@@ -49,10 +50,11 @@ function Menu(props: MenuProps) {
       disabled={props.disabled}
       isOpen={props.isOpen}
       minimal
-      modifiers={props.modifiers}
+      modifiers={{ ...props.modifiers, ...popoverModifiers }}
       onClose={onClose}
       onClosing={onClosing}
       onOpening={onOpening}
+      popoverClassName="ds--popover"
       portalClassName={props.className}
       position={props.position || Position.BOTTOM}
       usePortal={!props.dontUsePortal}

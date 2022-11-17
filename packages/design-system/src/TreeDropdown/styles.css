@@ -1,8 +1,13 @@
-.bp3-popover {
+.ds--tree-dropdown.bp3-popover {
   box-shadow: none;
 }
 
-.bp3-popover .bp3-popover-content {
+.ds--tree-dropdown.bp3-popover .bp3-popover-content {
   border-radius: var(--ads-border-radius);
   border: 1px solid var(--ads-color-border);
+  box-shadow: 0px 12px 16px -4px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.ds--tree-dropdown .bp3-submenu.bp3-popover > .bp3-popover-content {
+  overflow: hidden;
 }

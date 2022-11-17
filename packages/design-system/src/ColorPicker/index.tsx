@@ -11,6 +11,8 @@ import { ReactComponent as CheckedIcon } from "../assets/icons/control/checkmark
 import { ReactComponent as ColorPickerIcon } from "../assets/icons/control/color-picker.svg";
 import debounce from "lodash/debounce";
 import { replayHighlightClass } from "Constants/classes";
+import { popoverModifiers } from "Constants/popoverModifiers";
+import "./styles.css";
 
 const ColorIcon = styled.div<{ color: string }>`
   width: 24px;
@@ -50,7 +52,7 @@ const StyledInputGroup = styled(InputGroup)`
     color: var(--ads-color-text);
 
     &:focus {
-      border: 1px solid var(--ads-color-border-selected);
+      border: 1px solid var(--ads-color-border-active);
     }
   }
 `;
@@ -77,7 +79,6 @@ const ColorTab = styled.div<{ color: string }>`
   background: ${(props) => (props.color ? props.color : "transparent")};
   margin-top: 12px;
   margin-left: 12px;
-  box-shadow: 0px 1px 1px rgba(54, 62, 68, 0.16);
   cursor: pointer;
 `;
 
@@ -185,11 +186,8 @@ function ColorPickerComponent(props: ColorPickerProps) {
       enforceFocus={false}
       interactionKind={PopoverInteractionKind.CLICK}
       minimal
-      modifiers={{
-        offset: {
-          offset: "0, 24px",
-        },
-      }}
+      modifiers={popoverModifiers}
+      popoverClassName="ds--popover"
       position={Position.BOTTOM}
       usePortal
     >

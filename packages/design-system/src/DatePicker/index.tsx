@@ -3,6 +3,8 @@ import { DateInput, TimePrecision } from "@blueprintjs/datetime";
 import styled from "styled-components";
 import { Classes } from "Constants/classes";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
+import { popoverModifiers } from "../constants/popoverModifiers";
+import "./styles.css";
 
 const StyledDateInput = styled(DateInput)`
   & {
@@ -295,7 +297,10 @@ function DatePickerComponent(props: DatePickerComponentProps) {
       parseDate={parseDate}
       placeholder={props.placeholder}
       popoverProps={{
+        minimal: true,
+        modifiers: popoverModifiers,
         popoverRef: popoverRef,
+        popoverClassName: "ds--popover ds--datepicker-popover",
         onInteraction: handleInteraction,
         usePortal: true,
         isOpen: isDatePickerVisible,

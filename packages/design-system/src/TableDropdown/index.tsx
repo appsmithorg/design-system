@@ -10,6 +10,8 @@ import Spinner from "Spinner";
 import Text, { TextType } from "Text";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
+import { popoverModifiers } from "Constants/popoverModifiers";
+import "./styles.css";
 
 export type TableDropdownOption = {
   id: string;
@@ -132,7 +134,10 @@ function TableDropdown(props: DropdownProps) {
       data-cy={props.cypressSelector}
       interactionKind={PopoverInteractionKind.CLICK}
       isOpen={isDropdownOpen}
+      minimal
+      modifiers={popoverModifiers}
       onInteraction={(state) => setIsDropdownOpen(state)}
+      popoverClassName="ds--popover"
       position={props.position || Position.BOTTOM_LEFT}
       usePortal={false}
     >

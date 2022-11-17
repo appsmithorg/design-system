@@ -1,0 +1,10 @@
+@import url("../commonStyles/popover.css");
+
+.ds--datepicker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--selected {
+  background-color: var(--ads-color-brand-secondary);
+  color: var(--ads-color-onbrand-secondary-text);
+}
+
+.ds--datepicker-popover .bp3-divider {
+  border: none;
+}
