@@ -292,10 +292,15 @@ const Selected = styled.div<{
   }
 `;
 
-export const DropdownContainer = styled.div<{ width: string; height?: string }>`
+export const DropdownContainer = styled.div<{
+  disabled?: boolean;
+  width: string;
+  height?: string;
+}>`
   width: ${(props) => props.width};
   height: ${(props) => props.height || `auto`};
   position: relative;
+  ${({ disabled }) => (disabled ? "cursor: not-allowed;" : "")}
   span.bp3-popover-target {
     display: inline-block;
     width: 100%;
@@ -308,7 +313,10 @@ export const DropdownContainer = styled.div<{ width: string; height?: string }>`
     width: 100%;
   }
   &:focus ${Selected} {
-    border: 1px solid var(--appsmith-input-focus-border-color);
+    ${({ disabled }) =>
+      !disabled
+        ? "border: 1px solid var(--appsmith-input-focus-border-color);"
+        : ""};
   }
 `;
 
@@ -1322,6 +1330,7 @@ export default function Dropdown(props: DropdownProps) {
     <DropdownContainer
       className={props.containerClassName + " " + replayHighlightClass}
       data-cy={props.cypressSelector}
+      disabled={disabled}
       height={dropdownHeight}
       onKeyDown={handleKeydown}
       role="listbox"
