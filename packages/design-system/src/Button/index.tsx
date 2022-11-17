@@ -144,6 +144,13 @@ const ButtonColors: ButtonColorType = {
     darker: "var(--ads-old-color-cinderella)",
     darkest: "var(--ads-old-color-fair-pink)",
   },
+  secondary: {
+    main: "var(--ads-old-color-mid-gray)",
+    light: "var(--ads-old-color-gray-10)",
+    dark: "var(--ads-color-black-5)",
+    darker: "var(--ads-old-color-gallery)",
+    darkest: "var(--ads-color-black-450)",
+  },
   tertiary: {
     main: "var(--ads-old-color-mid-gray)",
     light: "var(--ads-old-color-gray-10)",
@@ -178,10 +185,10 @@ const getDisabledStyles = (props: ButtonProps) => {
     },
     [Category.secondary]: {
       txtColorSecondary: "var(--ads-old-color-gray-7)",
-      bgColorSecondary: ButtonColors[variant].darker,
+      bgColorSecondary: ButtonColors.secondary.dark,
       borderColorSecondary: props.isLoading
-        ? ButtonColors[variant].darkest
-        : ButtonColors.tertiary.darker,
+        ? ButtonColors.secondary.darkest
+        : ButtonColors.secondary.darker,
     },
     [Category.tertiary]: {
       txtColorTertiary: "var(--ads-old-color-gray-7)",
@@ -219,9 +226,9 @@ const getMainStateStyles = (props: ButtonProps) => {
       txtColorPrimary: "var(--ads-color-black-0)",
     },
     [Category.secondary]: {
-      borderColorSecondary: ButtonColors[variant].main,
-      txtColorSecondary: ButtonColors[variant].main,
       bgColorSecondary: "transparent",
+      borderColorSecondary: ButtonColors.secondary.darker,
+      txtColorSecondary: ButtonColors.secondary.main,
     },
     [Category.tertiary]: {
       bgColorTertiary: "transparent",
@@ -254,18 +261,18 @@ const getHoverStateStyles = (props: ButtonProps) => {
   const stylesByCategory = {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].dark,
-      borderColorPrimary: ButtonColors[variant].dark,
       txtColorPrimary: "var(--ads-color-black-0)",
+      borderColorPrimary: ButtonColors[variant].dark,
     },
     [Category.secondary]: {
-      bgColorSecondary: hexToRgba(ButtonColors[variant].main, 0.1),
-      txtColorSecondary: ButtonColors[variant].main,
-      borderColorSecondary: ButtonColors[variant].main,
+      bgColorSecondary: hexToRgba(ButtonColors.secondary.main, 0.1),
+      txtColorSecondary: ButtonColors.secondary.main,
+      borderColorSecondary: ButtonColors.secondary.main,
     },
     [Category.tertiary]: {
       bgColorTertiary: hexToRgba(ButtonColors.tertiary.main, 0.1),
-      borderColorTertiary: ButtonColors.tertiary.main,
       txtColorTertiary: ButtonColors.tertiary.main,
+      borderColorTertiary: ButtonColors.tertiary.main,
     },
   };
 
@@ -296,9 +303,9 @@ const getActiveStateStyles = (props: ButtonProps) => {
       txtColorPrimary: "var(--ads-color-black-0)",
     },
     [Category.secondary]: {
-      bgColorSecondary: hexToRgba(ButtonColors[variant].main, 0.1),
-      txtColorSecondary: ButtonColors[variant].light,
-      borderColorSecondary: ButtonColors[variant].light,
+      bgColorSecondary: hexToRgba(ButtonColors.secondary.main, 0.1),
+      borderColorSecondary: ButtonColors.secondary.light,
+      txtColorSecondary: ButtonColors.secondary.light,
     },
     [Category.tertiary]: {
       bgColorTertiary: hexToRgba(ButtonColors.tertiary.main, 0.1),
