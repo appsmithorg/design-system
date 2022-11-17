@@ -1,5 +1,25 @@
 # @appsmithorg/design-system
 
+## 1.0.32
+
+### Patch Changes
+
+- [#247](https://github.com/appsmithorg/design-system/pull/247) [`bf94a82`](https://github.com/appsmithorg/design-system/commit/bf94a82f9acefece268560e504611d749b859040) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: multiple on change trigger in radio component
+
+## 1.0.31
+
+### Patch Changes
+
+- [#245](https://github.com/appsmithorg/design-system/pull/245) [`b44e378`](https://github.com/appsmithorg/design-system/commit/b44e37863b80445b4ab8582bc021cc762071a8bb) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: reveryt changes to tree dropdown
+
+## 1.0.30
+
+### Patch Changes
+
+- [#228](https://github.com/appsmithorg/design-system/pull/228) [`7fe2634`](https://github.com/appsmithorg/design-system/commit/7fe26342c1d93db72eb136a8844b96fb9994a273) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: destructure file picker functions so that they don't throw errors on local
+
+* [#131](https://github.com/appsmithorg/design-system/pull/131) [`09c108d`](https://github.com/appsmithorg/design-system/commit/09c108dbca070ca092b1ac7a229e6c26d7081a76) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - Create CONTRIBUTING.md
+
 ## 1.0.29
 
 ### Patch Changes
