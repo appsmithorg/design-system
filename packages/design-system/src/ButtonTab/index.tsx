@@ -6,40 +6,51 @@ import { DSEventTypes } from "Types/common";
 import { useDSEvent } from "hooks";
 
 const ItemWrapper = styled.div<{ selected: boolean }>`
-  min-width: 36px;
-  height: 36px;
+  min-width: 33px;
+  height: 33px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid
-    ${(props) =>
-      props.selected
-        ? "var(--ads-button-tab-selected-border-color)"
-        : "var(--ads-button-tab-border-color)"};
+  // padding: 10px;
+  color: var(--ads-color-black-450);
+  border: 1px solid transparent;
 
-  &.focused {
-    background: var(--ads-button-tab-focus-background-color);
+        
+ 
+  // &.focused {
+  //   background: var(--ads-button-tab-focus-background-color);
+  // }
+  &.selected, &.focused, &:hover{
+    border: 1px solid var(--ads-color-black-250);
+    background-color: var(--ads-color-black-0);
+    color: var(--ads-color-black-550);
   }
 
   cursor: pointer;
-  &:not(:last-child) {
-    margin-right: 4px;
-  }
+  // &:not(:last-child) {
+  //   margin-right: 4px;
+  // }
   & > div {
     cursor: pointer;
   }
-  &:hover {
-    background: var(--ads-button-tab-hover-background-color);
-  }
+  // &:hover {
+  //   background: var(--ads-button-tab-hover-background-color);
+  // }
   &&& svg {
     path {
-      fill: var(--ads-button-tab-svg-path-fill-color) !important;
+      //fill: var(--ads-button-tab-svg-path-fill-color);
+      fill: var(--ads-color-black-450);
     }
   }
 `;
 
 const FlexWrapper = styled.div<{ fullWidth: boolean }>`
-  display: flex;
+  display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
+  background: var(--ads-color-black-75);
+  border: 1px solid var(--ads-color-black-75);
+  padding: 1px;
+  font-size: 13px;
+  flex: ${({ fullWidth }) => (fullWidth ? 1 : "none")};
   ${ItemWrapper} {
     flex: ${({ fullWidth }) => (fullWidth ? 1 : "none")};
   }
@@ -138,7 +149,7 @@ const ButtonTabComponent = React.forwardRef(
             let ControlIcon;
             if (_.isString(icon)) {
               const Icon = ControlIcons[icon];
-              ControlIcon = <Icon height={24} width={width} />;
+              ControlIcon = <Icon height={14} width={width} />;
             } else {
               ControlIcon = icon;
             }
@@ -146,9 +157,11 @@ const ButtonTabComponent = React.forwardRef(
             return (
               <ItemWrapper
                 aria-selected={isSelected}
-                className={`t--button-tab-${value} ${
+                className={`t--button-tab-${value} 
+                ${
                   index === focusedIndex ? "focused" : ""
-                }`}
+                } 
+                ${isSelected ? "selected" : ""}`}
                 key={index}
                 onClick={() => {
                   selectButton(value, false);
