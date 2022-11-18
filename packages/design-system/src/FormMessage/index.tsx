@@ -55,7 +55,11 @@ const StyledAction = styled.div<{ intent: Intent }>`
   }
 `;
 
-export function ActionButton(props: MessageAction) {
+export function ActionButton(
+  props: MessageAction & {
+    linkAs?: any;
+  },
+) {
   if (props.url) {
     const isExternal = props.url.indexOf("//") !== -1;
     return (
@@ -64,8 +68,10 @@ export function ActionButton(props: MessageAction) {
           <a href={props.url} rel="noreferrer" target="_blank">
             {props.text}
           </a>
+        ) : props.linkAs ? (
+          <props.linkAs to={props.url}>{props.text}</props.linkAs>
         ) : (
-          <Link to={props.url}>{props.text}</Link>
+          <a href={props.url}>{props.text}</a>
         )}
       </StyledAction>
     );
@@ -83,13 +89,19 @@ export type FormMessageProps = {
   intent: Intent;
   message: string;
   actions?: MessageAction[];
+  linkAs?: any;
 };
 
 export function FormMessage(props: FormMessageProps) {
   const actions =
     props.actions &&
     props.actions.map((action) => (
-      <ActionButton key={action.text} {...action} intent={props.intent} />
+      <ActionButton
+        key={action.text}
+        {...action}
+        intent={props.intent}
+        linkAs={props.linkAs}
+      />
     ));
   return (
     <StyledMessage className="form-message-container" intent={props.intent}>
