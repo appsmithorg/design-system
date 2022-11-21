@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.33
+
+### Patch Changes
+
+- [#253](https://github.com/appsmithorg/design-system/pull/253) [`6c398b6`](https://github.com/appsmithorg/design-system/commit/6c398b6dcd8de8ec7e7fd1b496f68f314963e2ac) Thanks [@yaldram](https://github.com/yaldram)! - fix: added classname to leftElement in Dropdown
+
 ## 1.0.32
 
 ### Patch Changes
