@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import TextComponent, { TextType } from "./index";
+import { within, userEvent } from "@storybook/testing-library";
 
 export default {
   title: "Design System/Text",
@@ -17,3 +18,9 @@ export const Text = Template.bind({});
 Text.args = {
   type: TextType.P0,
 };
+
+Text.play = async ({canvasElement}) => {
+  const canvas = within(canvasElement);
+  const item = await canvas.findByText(' Some Content 🍎 ')
+}
+

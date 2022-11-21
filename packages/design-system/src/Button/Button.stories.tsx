@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-
+import { within, userEvent } from "@storybook/testing-library";
 import ButtonComponent, { Size } from "./index";
 
 export default {
@@ -37,3 +37,21 @@ export const Tertiary = Template.bind({});
 Tertiary.args = {
   category: "tertiary",
 };
+
+Primary.play = async ({canvasElement}) => {
+  const canvas = within(canvasElement);
+  const item = await canvas.findByText('Button')
+  await userEvent.click(item);
+}
+
+Secondary.play = async ({canvasElement}) => {
+  const canvas = within(canvasElement);
+  const item = await canvas.findByText('Button')
+  await userEvent.click(item);
+}
+
+Tertiary.play = async ({canvasElement}) => {
+  const canvas = within(canvasElement);
+  const item = await canvas.findByText('Button')
+  await userEvent.click(item);
+}
