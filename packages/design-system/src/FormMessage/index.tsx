@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { getTypographyByKey } from "Constants/typography";
 
 const formMessage: { [char: string]: { [char: string]: string } } = {
@@ -23,7 +22,7 @@ const formMessage: { [char: string]: { [char: string]: string } } = {
 type Intent = "primary" | "danger" | "success" | "warning" | "lightSuccess";
 
 export type MessageAction = {
-  url?: string;
+  linkElement?: any;
   onClick?: () => void;
   text: string;
   intent: Intent;
@@ -55,25 +54,10 @@ const StyledAction = styled.div<{ intent: Intent }>`
   }
 `;
 
-export function ActionButton(
-  props: MessageAction & {
-    linkAs?: any;
-  },
-) {
-  if (props.url) {
-    const isExternal = props.url.indexOf("//") !== -1;
+export function ActionButton(props: MessageAction) {
+  if (props.linkElement) {
     return (
-      <StyledAction intent={props.intent}>
-        {isExternal ? (
-          <a href={props.url} rel="noreferrer" target="_blank">
-            {props.text}
-          </a>
-        ) : props.linkAs ? (
-          <props.linkAs to={props.url}>{props.text}</props.linkAs>
-        ) : (
-          <a href={props.url}>{props.text}</a>
-        )}
-      </StyledAction>
+      <StyledAction intent={props.intent}>{props.linkElement}</StyledAction>
     );
   } else if (props.onClick) {
     return (
@@ -96,12 +80,7 @@ export function FormMessage(props: FormMessageProps) {
   const actions =
     props.actions &&
     props.actions.map((action) => (
-      <ActionButton
-        key={action.text}
-        {...action}
-        intent={props.intent}
-        linkAs={props.linkAs}
-      />
+      <ActionButton key={action.text} {...action} intent={props.intent} />
     ));
   return (
     <StyledMessage className="form-message-container" intent={props.intent}>
