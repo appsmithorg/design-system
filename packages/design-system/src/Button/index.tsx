@@ -60,6 +60,7 @@ type BtnColorType = {
   bgColor: string;
   txtColor: string;
   border: string;
+  outline: string;
 };
 
 type BtnFontType = {
@@ -291,7 +292,8 @@ const stateStyles = (props: ButtonProps, stateArg: string): stateStyleType => {
 const btnColorStyles = (props: ButtonProps, state: string): BtnColorType => {
   let bgColor = "",
     txtColor = "",
-    border = "";
+    border = "",
+    outline = "";
   switch (props.category) {
     case Category.primary:
       bgColor = stateStyles(props, state).bgColorPrimary;
@@ -302,14 +304,16 @@ const btnColorStyles = (props: ButtonProps, state: string): BtnColorType => {
       bgColor = stateStyles(props, state).bgColorSecondary;
       txtColor = stateStyles(props, state).txtColorSecondary;
       border = `1.2px solid ${stateStyles(props, state).borderColorSecondary}`;
+      outline = "2px solid var(--ads-color-blue-150)";
       break;
     case Category.tertiary:
       bgColor = stateStyles(props, state).bgColorTertiary;
       txtColor = stateStyles(props, state).txtColorTertiary;
       border = `1.2px solid ${stateStyles(props, state).borderColorTertiary}`;
+      outline = "2px solid var(--ads-color-blue-150)";
       break;
   }
-  return { bgColor, txtColor, border };
+  return { bgColor, txtColor, border, outline };
 };
 
 const getPaddingBySize = (props: ButtonProps) => {
@@ -390,8 +394,7 @@ const ButtonStyles = css<ButtonProps>`
       fill: ${(props) => btnColorStyles(props, "main").txtColor};
     }
   }
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: none;
     background-color: ${(props) => btnColorStyles(props, "hover").bgColor};
     color: ${(props) => btnColorStyles(props, "hover").txtColor};
@@ -401,6 +404,11 @@ const ButtonStyles = css<ButtonProps>`
     .${Classes.ICON} {
       fill: ${(props) => btnColorStyles(props, "hover").txtColor};
     }
+  }
+  &:focus,
+  &:focus-visible {
+    outline: ${(props) => btnColorStyles(props, "active").outline};
+    outline-offset: 0px;
   }
   font-style: normal;
   &:active {
