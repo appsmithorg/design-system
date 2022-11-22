@@ -30,7 +30,6 @@ const SwitchBlock = styled.div<{ active?: boolean }>`
   ${(props) =>
     props.active &&
     css`
-      border: 1px solid var(--ads-color-border);
       background-color: var(--ads-color-black-0);
       color: var(--ads-color-text-active);
     `}
