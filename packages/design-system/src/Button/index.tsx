@@ -171,12 +171,12 @@ const getDisabledStyles = (props: ButtonProps) => {
       borderColorPrimary: ButtonColors[variant].darker,
     },
     [Category.secondary]: {
-      txtColorSecondary: "var(--ads-color-gray-500)",
-      bgColorSecondary: "var(--ads-color-gray-50)",
-      borderColorSecondary: "var(--ads-color-gray-300)",
+      txtColorSecondary: "var(--ads-color-black-500)",
+      bgColorSecondary: "var(--ads-color-black-50)",
+      borderColorSecondary: "var(--ads-color-black-300)",
     },
     [Category.tertiary]: {
-      txtColorTertiary: "var(--ads-color-gray-500)",
+      txtColorTertiary: "var(--ads-color-black-500)",
       bgColorTertiary: "var(--ads-color-white)",
       borderColorTertiary: "transparent",
     },
@@ -197,13 +197,13 @@ const getMainStateStyles = (props: ButtonProps) => {
     },
     [Category.secondary]: {
       bgColorSecondary: "transparent",
-      borderColorSecondary: "var(--ads-color-gray-300)",
-      txtColorSecondary: "var(--ads-color-gray-700)",
+      borderColorSecondary: "var(--ads-color-black-300)",
+      txtColorSecondary: "var(--ads-color-black-700)",
     },
     [Category.tertiary]: {
       bgColorTertiary: "transparent",
       borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-color-gray-700)",
+      txtColorTertiary: "var(--ads-color-black-700)",
     },
   };
 
@@ -221,13 +221,13 @@ const getHoverStateStyles = (props: ButtonProps) => {
       borderColorPrimary: ButtonColors[variant].dark,
     },
     [Category.secondary]: {
-      bgColorSecondary: "var(--ads-color-gray-50)",
-      txtColorSecondary: "var(--ads-color-gray-700)",
-      borderColorSecondary: "var(--ads-color-gray-300)",
+      bgColorSecondary: "var(--ads-color-black-50)",
+      txtColorSecondary: "var(--ads-color-black-700)",
+      borderColorSecondary: "var(--ads-color-black-300)",
     },
     [Category.tertiary]: {
-      bgColorTertiary: "var(--ads-color-gray-100)",
-      txtColorTertiary: "var(--ads-color-gray-700)",
+      bgColorTertiary: "var(--ads-color-black-100)",
+      txtColorTertiary: "var(--ads-color-black-700)",
       borderColorTertiary: "transparent",
     },
   };
@@ -246,14 +246,14 @@ const getActiveStateStyles = (props: ButtonProps) => {
       txtColorPrimary: "var(--ads-color-black-0)",
     },
     [Category.secondary]: {
-      bgColorSecondary: "var(--ads-color-gray-100)",
-      borderColorSecondary: "var(--ads-color-gray-600)",
-      txtColorSecondary: "var(--ads-color-gray-800)",
+      bgColorSecondary: "var(--ads-color-black-100)",
+      borderColorSecondary: "var(--ads-color-black-600)",
+      txtColorSecondary: "var(--ads-color-black-800)",
     },
     [Category.tertiary]: {
-      bgColorTertiary: "var(--ads-color-gray-200)",
+      bgColorTertiary: "var(--ads-color-black-200)",
       borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-color-gray-800)",
+      txtColorTertiary: "var(--ads-color-black-800)",
     },
   };
 
