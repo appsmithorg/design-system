@@ -318,6 +318,16 @@ export const DropdownContainer = styled.div<{
         ? "border: 1px solid var(--appsmith-input-focus-border-color);"
         : ""};
   }
+
+  ${({ disabled }) => {
+    if (disabled) {
+      return `
+        &:focus {
+          outline: none;
+        }
+      `;
+    }
+  }}
 `;
 
 const DropdownSelect = styled.div``;
