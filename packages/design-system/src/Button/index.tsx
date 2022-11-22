@@ -89,7 +89,6 @@ export type ButtonProps = CommonComponentProps & {
   target?: string;
   height?: string;
   width?: string;
-  isLink?: boolean;
   iconPosition?: IconPositions;
 };
 
@@ -164,19 +163,6 @@ const getDisabledStyles = (props: ButtonProps) => {
   const variant = props.variant || defaultProps.variant;
   const category = props.category || defaultProps.category;
 
-  if (props.isLink) {
-    return {
-      bgColorPrimary: "transparent",
-      borderColorPrimary: "transparent",
-      txtColorPrimary: "var(--ads-old-color-gray-7)",
-      bgColorSecondary: "transparent",
-      borderColorSecondary: "transparent",
-      txtColorSecondary: "var(--ads-old-color-gray-7)",
-      bgColorTertiary: "transparent",
-      borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-old-color-gray-7)",
-    };
-  }
   const stylesByCategory = {
     [Category.primary]: {
       txtColorPrimary: "var(--ads-old-color-gray-7)",
@@ -206,19 +192,6 @@ const getMainStateStyles = (props: ButtonProps) => {
   const variant = props.variant || defaultProps.variant;
   const category = props.category || defaultProps.category;
 
-  if (props.isLink) {
-    return {
-      bgColorPrimary: "transparent",
-      borderColorPrimary: "transparent",
-      txtColorPrimary: "var(--ads-color-black-550)",
-      bgColorSecondary: "transparent",
-      borderColorSecondary: "transparent",
-      txtColorSecondary: "var(--ads-color-black-550)",
-      bgColorTertiary: "transparent",
-      borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-color-black-550)",
-    };
-  }
   const stylesByCategory = {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].main,
@@ -243,20 +216,6 @@ const getMainStateStyles = (props: ButtonProps) => {
 const getHoverStateStyles = (props: ButtonProps) => {
   const variant = props.variant || defaultProps.variant;
   const category = props.category || defaultProps.category;
-
-  if (props.isLink) {
-    return {
-      bgColorPrimary: "transparent",
-      borderColorPrimary: "transparent",
-      txtColorPrimary: "var(--ads-old-color-gray-10)",
-      bgColorSecondary: "transparent",
-      borderColorSecondary: "transparent",
-      txtColorSecondary: "var(--ads-old-color-gray-10)",
-      bgColorTertiary: "transparent",
-      borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-old-color-gray-10)",
-    };
-  }
 
   const stylesByCategory = {
     [Category.primary]: {
@@ -283,19 +242,6 @@ const getActiveStateStyles = (props: ButtonProps) => {
   const variant = props.variant || defaultProps.variant;
   const category = props.category || defaultProps.category;
 
-  if (props.isLink) {
-    return {
-      bgColorPrimary: "transparent",
-      borderColorPrimary: "transparent",
-      txtColorPrimary: "var(--ads-color-black-750)",
-      bgColorSecondary: "transparent",
-      borderColorSecondary: "transparent",
-      txtColorSecondary: "var(--ads-color-black-750)",
-      bgColorTertiary: "transparent",
-      borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-color-black-750)",
-    };
-  }
   const stylesByCategory = {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].dark,
