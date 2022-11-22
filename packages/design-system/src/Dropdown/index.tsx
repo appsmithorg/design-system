@@ -775,7 +775,9 @@ function DefaultDropDownValueNode({
               />
             ) : null}
             {selected?.leftElement && (
-              <LeftIconWrapper>{selected.leftElement}</LeftIconWrapper>
+              <LeftIconWrapper className="left-icon-wrapper">
+                {selected.leftElement}
+              </LeftIconWrapper>
             )}
             <Label />
             {selected?.subText && !hideSubText ? (
