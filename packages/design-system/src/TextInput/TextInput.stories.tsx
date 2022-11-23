@@ -16,17 +16,16 @@ const Template: ComponentStory<typeof TextInput> = (args) => {
 export const TextInputExample = Template.bind({});
 TextInputExample.storyName = "Text Input";
 TextInputExample.args = {
-  $padding: "8px 14px",
+  $padding: "8px",
   autoFocus: true,
   className: "t--commit-comment-input",
-  disabled: true,
-  fill: true,
-  height: "80px",
+  height: "36px",
   onChange: () => console.log("input has changed"),
-  placeholder: "This is a Text Input placeholder",
+  placeholder: "Enter text",
+  readOnly: true,
   trimValue: false,
   useTextArea: true,
   helperText: "Some text",
   value: "some text in the thing",
-  readOnly: true,
+  disabled: false,
 };

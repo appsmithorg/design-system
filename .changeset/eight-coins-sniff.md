@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-Create CONTRIBUTING.md
+Revert radio button colors
