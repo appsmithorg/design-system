@@ -18,7 +18,15 @@ FormMessageExample.storyName = "Form Message";
 FormMessageExample.args = {
   actions: [
     {
-      url: "https://docs.appsmith.com/v/v1.2.1/setup/docker/email",
+      linkElement: (
+        <a
+          href="https://docs.appsmith.com/v/v1.2.1/setup/docker/email"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Configure Email service
+        </a>
+      ),
       text: "Configure Email service",
       intent: "primary",
     },

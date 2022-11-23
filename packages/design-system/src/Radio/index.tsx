@@ -143,7 +143,6 @@ export default function RadioComponent(props: RadioProps) {
       className={props.className}
       columns={props.columns}
       data-cy={props.cypressSelector}
-      onChange={onChangeHandler}
       rows={props.rows}
     >
       {props.options.map((option: OptionProps, index: number) => (
@@ -160,7 +159,7 @@ export default function RadioComponent(props: RadioProps) {
               checked={selected === option.value}
               disabled={props.disabled || option.disabled}
               name={props.name || "radio"}
-              onChange={(e) => onSelect && onSelect(e.target.value)}
+              onChange={onChangeHandler}
               type="radio"
               value={option.value}
             />
