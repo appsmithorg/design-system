@@ -56,10 +56,7 @@ export const Radio = styled.label<{
   font-weight: ${typography.p1.fontWeight};
   line-height: ${typography.p1.lineHeight}px;
   letter-spacing: ${typography.p1.letterSpacing}px;
-  color: ${(props) =>
-    props.disabled
-      ? "var(--ads-radio-disabled-text-color)"
-      : "var(--ads-radio-default-text-color"};
+  color: var(--ads-radio-default-text-color);
   ${(props) =>
     props.columns && props.columns > 0
       ? `
@@ -101,7 +98,6 @@ export const Radio = styled.label<{
 
   input:disabled ~ .checkbox:after {
     background-color: var(--ads-radio-disabled-background-color);
-    //border: var(--ads-radio-disabled-border-color);
   }
 
   .checkbox:after {
@@ -147,7 +143,6 @@ export default function RadioComponent(props: RadioProps) {
       className={props.className}
       columns={props.columns}
       data-cy={props.cypressSelector}
-      onChange={onChangeHandler}
       rows={props.rows}
     >
       {props.options.map((option: OptionProps, index: number) => (
@@ -164,7 +159,7 @@ export default function RadioComponent(props: RadioProps) {
               checked={selected === option.value}
               disabled={props.disabled || option.disabled}
               name={props.name || "radio"}
-              onChange={(e) => onSelect && onSelect(e.target.value)}
+              onChange={onChangeHandler}
               type="radio"
               value={option.value}
             />
