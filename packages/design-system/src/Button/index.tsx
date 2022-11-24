@@ -394,13 +394,16 @@ const ButtonStyles = css<ButtonProps>`
       fill: ${(props) => btnColorStyles(props, "main").txtColor};
     }
   }
+  &,
+  & * {
+    cursor: ${(props) =>
+      props.isLoading || props.disabled ? `not-allowed` : `pointer`};
+  }
   &:hover {
     text-decoration: none;
     background-color: ${(props) => btnColorStyles(props, "hover").bgColor};
     color: ${(props) => btnColorStyles(props, "hover").txtColor};
     border: ${(props) => btnColorStyles(props, "hover").border};
-    cursor: ${(props) =>
-      props.isLoading || props.disabled ? `not-allowed` : `pointer`};
     .${Classes.ICON} {
       fill: ${(props) => btnColorStyles(props, "hover").txtColor};
     }
@@ -414,8 +417,6 @@ const ButtonStyles = css<ButtonProps>`
     background-color: ${(props) => btnColorStyles(props, "active").bgColor};
     color: ${(props) => btnColorStyles(props, "active").txtColor};
     border: ${(props) => btnColorStyles(props, "active").border};
-    cursor: ${(props) =>
-      props.isLoading || props.disabled ? `not-allowed` : `pointer`};
     .${Classes.ICON} {
       fill: ${(props) => btnColorStyles(props, "active").txtColor};
     }
