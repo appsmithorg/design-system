@@ -405,7 +405,6 @@ const ButtonStyles = css<ButtonProps>`
       fill: ${(props) => btnColorStyles(props, "hover").txtColor};
     }
   }
-  &:focus,
   &:focus-visible {
     outline: ${(props) => btnColorStyles(props, "active").outline};
     outline-offset: 0px;
