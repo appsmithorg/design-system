@@ -27,16 +27,26 @@ const TabsWrapper = styled.div<{
   --ads-tabs-default-tab-list-text-color: var(--ads-color-text);
   --ads-tabs-default-tab-list-svg-fill-color: var(--ads-color-white);
   // eslint-disable-next-line prettier/prettier
-  --ads-tabs-default-tab-list-response-viewer-background-color: var(--ads-color-white);
+  --ads-tabs-default-tab-list-response-viewer-background-color: var(
+    --ads-color-white
+  );
   // eslint-disable-next-line prettier/prettier
-  --ads-tabs-default-tab-focus-response-viewer-border-color: var(--ads-color-border);
+  --ads-tabs-default-tab-focus-response-viewer-border-color: var(
+    --ads-color-border
+  );
   --ads-tabs-tab-selected-svg-fill-color: var(--ads-color-black-750);
   // eslint-disable-next-line prettier/prettier
-  --ads-tabs-tab-selected-response-viewer-background-color: var(--ads-color-white);
+  --ads-tabs-tab-selected-response-viewer-background-color: var(
+    --ads-color-white
+  );
   // eslint-disable-next-line prettier/prettier
-  --ads-tabs-tab-selected-response-viewer-border-color: var(--ads-color-border-active);
+  --ads-tabs-tab-selected-response-viewer-border-color: var(
+    --ads-color-border-active
+  );
   // eslint-disable-next-line prettier/prettier
-  --ads-tabs-tab-title-response-viewer-text-color: var(--ads-primary-text-color);
+  --ads-tabs-tab-title-response-viewer-text-color: var(
+    --ads-primary-text-color
+  );
   --ads-tabs-count-background-color: var(--ads-color-brand-secondary-normal);
   --ads-tabs-title-wrapper-text-color: var(--ads-color-text);
   --ads-tabs-title-wrapper-hover-text-color: var(--ads-color-text-hover);
@@ -221,11 +231,11 @@ const TabTitleWrapper = styled.div<{
     props.selected
       ? `
   background-color: transparent;
-  color: var(--ads-color-black-900);
+  color: var(--ads-color-text-active);
   .${Classes.ICON} {
     svg {
       path {
-        fill:  var(--ads-color-black-900)
+        fill:  var(--ads-color-text-active)
       }
     }
   }
