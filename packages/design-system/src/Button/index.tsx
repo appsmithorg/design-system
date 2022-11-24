@@ -177,7 +177,7 @@ const getDisabledStyles = (props: ButtonProps) => {
     },
     [Category.tertiary]: {
       txtColorTertiary: "var(--ads-color-black-500)",
-      bgColorTertiary: "var(--ads-color-white)",
+      bgColorTertiary: "var(--ads-color-black-0)",
       borderColorTertiary: "transparent",
     },
   };
@@ -196,12 +196,12 @@ const getMainStateStyles = (props: ButtonProps) => {
       txtColorPrimary: "var(--ads-color-black-0)",
     },
     [Category.secondary]: {
-      bgColorSecondary: "transparent",
+      bgColorSecondary: "var(--ads-color-black-0)",
       borderColorSecondary: "var(--ads-color-black-300)",
       txtColorSecondary: "var(--ads-color-black-700)",
     },
     [Category.tertiary]: {
-      bgColorTertiary: "transparent",
+      bgColorTertiary: "var(--ads-color-black-0)",
       borderColorTertiary: "transparent",
       txtColorTertiary: "var(--ads-color-black-700)",
     },
