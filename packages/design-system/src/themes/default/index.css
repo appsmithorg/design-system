@@ -97,7 +97,7 @@
   --ads-dropdown-hover-background-color : var(--ads-old-color-gallery-2);
   --ads-dropdown-selected-text-color: var(--ads-old-color-gray-10);
   --ads-dropdown-disabled-header-text-color: #9F9F9F;
-  --ads-dropdown-disabled-header-background-color: var(--ads-color-black-0);
+  --ads-dropdown-disabled-header-background-color: var(--ads-color-black-75);
   --ads-dropdown-default-header-text-color: var(--ads-color-black-750);
   --ads-dropdown-selected-header-text-color: var(--ads-old-color-gray-10);
   --ads-dropdown-default-menu-border-color: var(--ads-color-black-100);

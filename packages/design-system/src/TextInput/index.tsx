@@ -4,13 +4,13 @@ import React, {
   forwardRef,
   Ref,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from "react";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 import { typography } from "Constants/typography";
-import { hexToRgba } from "Common/index";
 import { Classes as BlueprintClasses } from "@blueprintjs/core";
 import styled from "styled-components";
 import Text, { TextType } from "Text";
@@ -23,7 +23,7 @@ import Icon, { IconCollection, IconName, IconSize } from "Icon";
 import { AsyncControllableInput } from "@blueprintjs/core/lib/esm/components/forms/asyncControllableInput";
 import _ from "lodash";
 import { replayHighlightClass } from "Constants/classes";
-import { useEffect } from "react";
+import { hexToRgba } from "Utils/colors";
 
 export type InputType = "text" | "password" | "number" | "email" | "tel";
 
@@ -222,6 +222,7 @@ export const InputWrapper = styled.div<{
   isValid?: boolean;
   disabled?: boolean;
   $isLoading?: boolean;
+  readOnly?: boolean;
 }>`
   position: relative;
   display: flex;
@@ -235,7 +236,7 @@ export const InputWrapper = styled.div<{
   background-color: ${(props) => props.inputStyle.bgColor};
   color: ${(props) => props.inputStyle.color};
   ${(props) =>
-    props.isFocused && !props.noBorder
+    props.isFocused && !props.noBorder && !props.disabled && !props.readOnly
       ? `
       border: 1.2px solid
       ${
@@ -256,7 +257,7 @@ export const InputWrapper = styled.div<{
   }
   &:hover {
     background-color: ${(props) =>
-      props.disabled
+      props.disabled || props.readOnly
         ? props.inputStyle.bgColor
         : "var(--ads-text-input-text-box-hover-background-color)"};
   }
@@ -395,6 +396,7 @@ const TextInput = forwardRef(
         isFocused={isFocused}
         isValid={validation?.isValid}
         noBorder={props.noBorder}
+        readOnly={props.readOnly}
         value={inputValue}
         width={props.width || undefined}
       >

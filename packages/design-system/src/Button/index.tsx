@@ -1,13 +1,13 @@
 import React from "react";
 import _ from "lodash";
 import styled, { css } from "styled-components";
-import { hexToRgba } from "Common/index";
 import { Variant } from "Constants/variants";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 import Icon, { IconName, IconSize } from "Icon";
 import Spinner from "Spinner";
 import { typography } from "Constants/typography";
+import { hexToRgba } from "Utils/colors";
 
 const smallButton = css`
   font-size: ${typography.btnSmall.fontSize}px;
@@ -441,14 +441,17 @@ const ButtonStyles = css<ButtonProps>`
       fill: ${(props) => btnColorStyles(props, "main").txtColor};
     }
   }
+  &,
+  & * {
+    cursor: ${(props) =>
+      props.isLoading || props.disabled ? `not-allowed` : `pointer`};
+  }
   &:hover,
   &:focus {
     text-decoration: none;
     background-color: ${(props) => btnColorStyles(props, "hover").bgColor};
     color: ${(props) => btnColorStyles(props, "hover").txtColor};
     border: ${(props) => btnColorStyles(props, "hover").border};
-    cursor: ${(props) =>
-      props.isLoading || props.disabled ? `not-allowed` : `pointer`};
     .${Classes.ICON} {
       fill: ${(props) => btnColorStyles(props, "hover").txtColor};
     }
@@ -458,8 +461,6 @@ const ButtonStyles = css<ButtonProps>`
     background-color: ${(props) => btnColorStyles(props, "active").bgColor};
     color: ${(props) => btnColorStyles(props, "active").txtColor};
     border: ${(props) => btnColorStyles(props, "active").border};
-    cursor: ${(props) =>
-      props.isLoading || props.disabled ? `not-allowed` : `pointer`};
     .${Classes.ICON} {
       fill: ${(props) => btnColorStyles(props, "active").txtColor};
     }

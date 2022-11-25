@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FormGroup, Classes } from "@blueprintjs/core";
-import { getTypographyByKey } from "Common/index";
+import { getTypographyByKey } from "Constants/typography";
 
 type FormGroupProps = {
   fill?: boolean;
