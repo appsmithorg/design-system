@@ -222,6 +222,7 @@ export const InputWrapper = styled.div<{
   isValid?: boolean;
   disabled?: boolean;
   $isLoading?: boolean;
+  readOnly?: boolean;
 }>`
   --ads-text-input-text-box-default-background-color: var(--ads-color-white);
   --ads-text-input-text-box-default-text-color: var(--ads-color-text);
@@ -250,7 +251,7 @@ export const InputWrapper = styled.div<{
   background-color: ${(props) => props.inputStyle.bgColor};
   color: ${(props) => props.inputStyle.color};
   ${(props) =>
-    props.isFocused && !props.noBorder
+    props.isFocused && !props.noBorder && !props.disabled && !props.readOnly
       ? `
       border: 1.2px solid
       ${
@@ -271,7 +272,7 @@ export const InputWrapper = styled.div<{
   }
   &:hover {
     background-color: ${(props) =>
-      props.disabled
+      props.disabled || props.readOnly
         ? props.inputStyle.bgColor
         : "var(--ads-text-input-text-box-hover-background-color)"};
   }
@@ -410,6 +411,7 @@ const TextInput = forwardRef(
         isFocused={isFocused}
         isValid={validation?.isValid}
         noBorder={props.noBorder}
+        readOnly={props.readOnly}
         value={inputValue}
         width={props.width || undefined}
       >

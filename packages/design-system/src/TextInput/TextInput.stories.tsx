@@ -22,7 +22,7 @@ TextInputExample.args = {
   disabled: false,
   height: "40px",
   onChange: () => console.log("input has changed"),
-  placeholder: "This is a Text Input placeholder",
+  placeholder: "Enter text",
   trimValue: false,
   helperText: "Some text",
   value: "some text in the thing",
