@@ -38,6 +38,8 @@
   --ads-color-border-disabled: var(--ads-color-gray-200);
   --ads-color-border-danger: var(--ads-color-gray-200); /* red */
 
+  --ads-color-separator: var(--ads-color-gray-200);
+
   --ads-border-radius: 4px;
   --ads-border-width: 1.2px;
 
