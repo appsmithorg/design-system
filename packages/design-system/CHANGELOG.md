@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.34
+
+### Patch Changes
+
+- [#259](https://github.com/appsmithorg/design-system/pull/259) [`676a146`](https://github.com/appsmithorg/design-system/commit/676a146ab15b673355a5ecf1c79f214f166030c6) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Form message component react router issue
+
 ## 1.0.33
 
 ### Patch Changes
