@@ -401,7 +401,7 @@ function FilePickerComponent(props: FilePickerProps) {
         />
         {!props.containerClickable && (
           <Button
-            category={Category.tertiary}
+            category={Category.secondary}
             onClick={(el: React.MouseEvent<HTMLElement>) => ButtonClick(el)}
             size={Size.medium}
             text="Browse"
@@ -431,7 +431,7 @@ function FilePickerComponent(props: FilePickerProps) {
       </div>
       <div className="remove-button">
         <Button
-          category={Category.tertiary}
+          category={Category.secondary}
           icon="delete"
           onClick={() => removeFile()}
           size={Size.medium}
