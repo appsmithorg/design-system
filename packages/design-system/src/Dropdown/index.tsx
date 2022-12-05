@@ -944,7 +944,7 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                 subTextPosition={option.subTextPosition ?? SubTextPosition.LEFT}
               >
                 {option.leftElement && (
-                  <LeftIconWrapper>{option.leftElement}</LeftIconWrapper>
+                  <LeftIconWrapper className="left-icon-wrapper">{option.leftElement}</LeftIconWrapper>
                 )}
                 {option.icon ? (
                   <SelectedIcon
