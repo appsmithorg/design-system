@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.35
+
+### Patch Changes
+
+- [#250](https://github.com/appsmithorg/design-system/pull/250) [`12415dc`](https://github.com/appsmithorg/design-system/commit/12415dc0091cf279810afb986412fca3eeba712f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Updating the logic for suggestions in the tag input component
+
+* [#255](https://github.com/appsmithorg/design-system/pull/255) [`097dbd1`](https://github.com/appsmithorg/design-system/commit/097dbd10e9ca2934a673c0ec1a2c1fcc5455172b) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: update button states - tertiary becomes secondary and we have a new, more subtle, tertiary
+
 ## 1.0.34
 
 ### Patch Changes
