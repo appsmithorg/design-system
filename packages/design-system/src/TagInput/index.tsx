@@ -1,11 +1,10 @@
-import React, { useState, useEffect, ReactElement } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Classes, TagInput } from "@blueprintjs/core";
 import {
   createMessage,
   INVITE_USERS_VALIDATION_EMAIL_LIST,
 } from "Constants/messages";
-import { HighlightText } from "HighlightText";
 
 export const isEmail = (value: string) => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -50,35 +49,6 @@ const TagInputWrapper = styled.div`
   }
 `;
 
-const SuggestionsWrapper = styled.div`
-  margin-top: 4px;
-  position: relative;
-  left: 4px;
-  width: 100%;
-
-  svg {
-    path {
-      fill: var(--ads-color-gray-5);
-    }
-  }
-
-  > div {
-    position: absolute;
-    border: 1px solid var(--appsmith-color-black-250);
-    width: 100%;
-    background: var(--appsmith-color-black-0);
-  }
-`;
-
-const Suggestion = styled.div`
-  padding: 8px;
-  cursor: pointer;
-  display: flex;
-  &:hover {
-    background: var(--appsmith-color-black-100);
-  }
-`;
-
 type TagInputProps = {
   autofocus?: boolean;
   /** TagInput Placeholder */
@@ -93,14 +63,8 @@ type TagInputProps = {
   /** A delimiter which decides when to separate string into tags */
   separator?: string | RegExp | undefined;
   hasError?: boolean;
-  customError?: (error: any, values?: any) => void;
-  suggestions?: { id: string; name: string; icon?: string }[];
-  suggestionLeftIcon?: ReactElement;
+  customError?: (values?: any) => void;
 };
-
-function getValues(inputValues: any) {
-  return inputValues && inputValues.length > 0 ? inputValues.split(",") : [];
-}
 
 /**
  * TagInputComponent
@@ -109,30 +73,21 @@ function getValues(inputValues: any) {
  * @param props : TagInputProps
  */
 function TagInputComponent(props: TagInputProps) {
-  const [values, setValues] = useState<string[]>(
-    getValues(props?.input?.value),
-  );
-
+  const inputValues =
+    props.input.value && props.input.value.length > 0
+      ? props.input.value.split(",")
+      : [];
+  const [values, setValues] = useState<string[]>(inputValues || []);
   const [currentValue, setCurrentValue] = useState<string>("");
-  const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
-  const [suggestions, setSuggestions] = useState<
-    { id: string; name: string }[]
-  >(props?.suggestions || []);
-  const mappedSuggestions = (showSuggestions ? suggestions : []).map(
-    (each: any) => (
-      <Suggestion
-        key={each.id}
-        onClick={() => handleSuggestionClick(each.name)}
-      >
-        {props.suggestionLeftIcon ?? null}
-        <HighlightText highlight={currentValue} text={each.name} />
-      </Suggestion>
-    ),
-  );
 
   useEffect(() => {
-    setValues(getValues(props?.input?.value));
-  }, [props.input.value]);
+    if (inputValues.length === 0 && values.length > 0) {
+      setValues([]);
+    }
+    if (inputValues.length > 0 && values.length === 0) {
+      setValues(inputValues);
+    }
+  }, [inputValues, values]);
 
   const validateEmail = (newValues: string[]) => {
     if (newValues && newValues.length > 0) {
@@ -142,7 +97,7 @@ function TagInputComponent(props: TagInputProps) {
           error = createMessage(INVITE_USERS_VALIDATION_EMAIL_LIST);
         }
       });
-      props.customError?.(error, newValues);
+      props.customError?.(error);
     } else {
       props.customError?.("");
     }
@@ -152,20 +107,15 @@ function TagInputComponent(props: TagInputProps) {
     setValues(newValues);
     props.input.onChange &&
       props.input.onChange(newValues.filter(Boolean).join(","));
-    props.customError?.("", newValues);
     props.type === "email" && validateEmail(newValues);
   };
 
   const onTagsChange = (values: React.ReactNode[]) => {
     const _values = values as string[];
-    if (props?.suggestions) {
-      setSuggestions(props.suggestions);
-    }
     commitValues(_values);
   };
 
   const onKeyDown = (e: any) => {
-    let resetSuggestions = false;
     // Add new values to the tags on comma, return key, space and Tab press
     // only if user has typed something on input
     if (
@@ -178,17 +128,12 @@ function TagInputComponent(props: TagInputProps) {
       const newValues = [...values, e.target.value];
       commitValues(newValues);
       setCurrentValue("");
-      resetSuggestions = true;
       e.preventDefault();
     } else if (e.key === "Backspace") {
       if (e.target.value.length === 0) {
         const newValues = values.slice(0, -1);
         commitValues(newValues);
       }
-      resetSuggestions = true;
-    }
-    if (resetSuggestions && props?.suggestions) {
-      setSuggestions(props.suggestions);
     }
   };
 
@@ -197,40 +142,18 @@ function TagInputComponent(props: TagInputProps) {
   const handleInputChange = (e: any) => {
     if ([",", " ", "Enter"].indexOf(e.target.value) === -1) {
       setCurrentValue(e.target.value);
-      if (props?.suggestions) {
-        const results =
-          suggestions &&
-          suggestions.filter((s) => s.name?.includes(e.target.value));
-        setSuggestions(results);
-        setShowSuggestions(true);
-      }
     } else {
       setCurrentValue("");
-      if (props?.suggestions) {
-        setSuggestions(props.suggestions);
-      }
     }
   };
 
   const handleInputBlur = (e: any) => {
-    if (
-      (e?.target?.value?.trim() && !showSuggestions && !suggestions.length) ||
-      isEmail(e.target.value)
-    ) {
+    if (e?.target?.value?.trim() || isEmail(e.target.value)) {
       const newValues = [...values, e.target.value];
       commitValues(newValues);
       setCurrentValue("");
       e.preventDefault();
     }
-  };
-
-  const handleSuggestionClick = (value: string) => {
-    setCurrentValue("");
-    setSuggestions(props?.suggestions || []);
-    setShowSuggestions(false);
-    props?.input?.onChange?.(
-      [props?.input?.value, value].filter(Boolean).join(","),
-    );
   };
 
   return (
@@ -255,11 +178,6 @@ function TagInputComponent(props: TagInputProps) {
         })}
         values={values || [""]}
       />
-      {mappedSuggestions.length > 0 && (
-        <SuggestionsWrapper>
-          <div>{mappedSuggestions}</div>
-        </SuggestionsWrapper>
-      )}
     </TagInputWrapper>
   );
 }
