@@ -217,7 +217,7 @@ const getHoverStateStyles = (props: ButtonProps) => {
   const stylesByCategory = {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].dark,
-      txtColorPrimary: "var(--ads-color-black-0)",
+      txtColorPrimary: "var(--ads-color-brand-text)",
       borderColorPrimary: ButtonColors[variant].dark,
     },
     [Category.secondary]: {
@@ -243,7 +243,7 @@ const getActiveStateStyles = (props: ButtonProps) => {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].dark,
       borderColorPrimary: ButtonColors[variant].main,
-      txtColorPrimary: "var(--ads-color-black-0)",
+      txtColorPrimary: "var(--ads-color-brand-text)",
     },
     [Category.secondary]: {
       bgColorSecondary: "var(--ads-color-black-100)",
