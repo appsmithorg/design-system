@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.36
+
+### Patch Changes
+
+- [#267](https://github.com/appsmithorg/design-system/pull/267) [`56770ed`](https://github.com/appsmithorg/design-system/commit/56770ed5033462b7c2c2e3a46ee7fc67305be3c8) Thanks [@yaldram](https://github.com/yaldram)! - fix: Flag font issue in dropdown fixed.
+
 ## 1.0.35
 
 ### Patch Changes
