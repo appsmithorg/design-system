@@ -160,6 +160,8 @@ const ButtonColors: ButtonColorType = {
   },
 };
 
+const WhiteTextVariants = [Variant.danger, Variant.warning, Variant.success];
+
 const getDisabledStyles = (props: ButtonProps) => {
   const variant = props.variant || defaultProps.variant;
   const category = props.category || defaultProps.category;
@@ -193,7 +195,10 @@ const getMainStateStyles = (props: ButtonProps) => {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].main,
       borderColorPrimary: ButtonColors[variant].main,
-      txtColorPrimary: "var(--ads-color-brand-text)",
+      txtColorPrimary:
+        WhiteTextVariants.indexOf(variant) === -1
+          ? "var(--ads-color-brand-text)"
+          : "var(--ads-color-black-0)",
     },
     [Category.secondary]: {
       bgColorSecondary: "var(--ads-color-black-0)",
@@ -217,7 +222,10 @@ const getHoverStateStyles = (props: ButtonProps) => {
   const stylesByCategory = {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].dark,
-      txtColorPrimary: "var(--ads-color-brand-text)",
+      txtColorPrimary:
+        WhiteTextVariants.indexOf(variant) === -1
+          ? "var(--ads-color-brand-text)"
+          : "var(--ads-color-black-0)",
       borderColorPrimary: ButtonColors[variant].dark,
     },
     [Category.secondary]: {
@@ -243,7 +251,10 @@ const getActiveStateStyles = (props: ButtonProps) => {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].dark,
       borderColorPrimary: ButtonColors[variant].main,
-      txtColorPrimary: "var(--ads-color-brand-text)",
+      txtColorPrimary:
+        WhiteTextVariants.indexOf(variant) === -1
+          ? "var(--ads-color-brand-text)"
+          : "var(--ads-color-black-0)",
     },
     [Category.secondary]: {
       bgColorSecondary: "var(--ads-color-black-100)",
