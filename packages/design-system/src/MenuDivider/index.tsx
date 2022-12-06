@@ -4,6 +4,7 @@ import React from "react";
 type MenuDividerProps = {
   direction?: "horizontal" | "vertical";
   fullWidth?: boolean;
+  className?: string;
 };
 
 const StyledMenuDivider = styled.div<MenuDividerProps>`
