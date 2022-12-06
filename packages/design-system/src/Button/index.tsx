@@ -10,24 +10,24 @@ import { typography } from "Constants/typography";
 import { hexToRgba } from "Utils/colors";
 
 const smallButton = css`
-  font-size: ${typography.btnSmall.fontSize}px;
-  font-weight: ${typography.btnSmall.fontWeight};
-  line-height: ${typography.btnSmall.lineHeight}px;
-  letter-spacing: ${typography.btnSmall.letterSpacing}px;
+  font-size: ${typography.buttonSmall.fontSize}px;
+  font-weight: ${typography.buttonSmall.fontWeight};
+  line-height: ${typography.buttonSmall.lineHeight}px;
+  letter-spacing: ${typography.buttonSmall.letterSpacing}px;
 `;
 
 const mediumButton = css`
-  font-size: ${typography.btnMedium.fontSize}px;
-  font-weight: ${typography.btnMedium.fontWeight};
-  line-height: ${typography.btnMedium.lineHeight}px;
-  letter-spacing: ${typography.btnMedium.letterSpacing}px;
+  font-size: ${typography.buttonMedium.fontSize}px;
+  font-weight: ${typography.buttonMedium.fontWeight};
+  line-height: ${typography.buttonMedium.lineHeight}px;
+  letter-spacing: ${typography.buttonMedium.letterSpacing}px;
 `;
 
 const largeButton = css`
-  font-size: ${typography.btnLarge.fontSize}px;
-  font-weight: ${typography.btnLarge.fontWeight};
-  line-height: ${typography.btnLarge.lineHeight}px;
-  letter-spacing: ${typography.btnLarge.letterSpacing}px;
+  font-size: ${typography.buttonLarge.fontSize}px;
+  font-weight: ${typography.buttonLarge.fontWeight};
+  line-height: ${typography.buttonLarge.lineHeight}px;
+  letter-spacing: ${typography.buttonLarge.letterSpacing}px;
 `;
 
 export enum Category {
@@ -60,6 +60,7 @@ type BtnColorType = {
   bgColor: string;
   txtColor: string;
   border: string;
+  outline: string;
 };
 
 type BtnFontType = {
@@ -89,7 +90,6 @@ export type ButtonProps = CommonComponentProps & {
   target?: string;
   height?: string;
   width?: string;
-  isLink?: boolean;
   iconPosition?: IconPositions;
 };
 
@@ -144,6 +144,13 @@ const ButtonColors: ButtonColorType = {
     darker: "var(--ads-old-color-cinderella)",
     darkest: "var(--ads-old-color-fair-pink)",
   },
+  secondary: {
+    main: "var(--ads-old-color-mid-gray)",
+    light: "var(--ads-old-color-gray-10)",
+    dark: "var(--ads-color-black-5)",
+    darker: "var(--ads-old-color-gallery)",
+    darkest: "var(--ads-color-black-450)",
+  },
   tertiary: {
     main: "var(--ads-old-color-mid-gray)",
     light: "var(--ads-old-color-gray-10)",
@@ -157,19 +164,6 @@ const getDisabledStyles = (props: ButtonProps) => {
   const variant = props.variant || defaultProps.variant;
   const category = props.category || defaultProps.category;
 
-  if (props.isLink) {
-    return {
-      bgColorPrimary: "transparent",
-      borderColorPrimary: "transparent",
-      txtColorPrimary: "var(--ads-old-color-gray-7)",
-      bgColorSecondary: "transparent",
-      borderColorSecondary: "transparent",
-      txtColorSecondary: "var(--ads-old-color-gray-7)",
-      bgColorTertiary: "transparent",
-      borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-old-color-gray-7)",
-    };
-  }
   const stylesByCategory = {
     [Category.primary]: {
       txtColorPrimary: "var(--ads-old-color-gray-7)",
@@ -177,18 +171,14 @@ const getDisabledStyles = (props: ButtonProps) => {
       borderColorPrimary: ButtonColors[variant].darker,
     },
     [Category.secondary]: {
-      txtColorSecondary: "var(--ads-old-color-gray-7)",
-      bgColorSecondary: ButtonColors[variant].darker,
-      borderColorSecondary: props.isLoading
-        ? ButtonColors[variant].darkest
-        : ButtonColors.tertiary.darker,
+      txtColorSecondary: "var(--ads-color-black-500)",
+      bgColorSecondary: "var(--ads-color-black-50)",
+      borderColorSecondary: "var(--ads-color-black-300)",
     },
     [Category.tertiary]: {
-      txtColorTertiary: "var(--ads-old-color-gray-7)",
-      bgColorTertiary: ButtonColors.tertiary.dark,
-      borderColorTertiary: props.isLoading
-        ? ButtonColors.tertiary.darkest
-        : ButtonColors.tertiary.darker,
+      txtColorTertiary: "var(--ads-color-black-500)",
+      bgColorTertiary: "var(--ads-color-black-0)",
+      borderColorTertiary: "transparent",
     },
   };
 
@@ -199,19 +189,6 @@ const getMainStateStyles = (props: ButtonProps) => {
   const variant = props.variant || defaultProps.variant;
   const category = props.category || defaultProps.category;
 
-  if (props.isLink) {
-    return {
-      bgColorPrimary: "transparent",
-      borderColorPrimary: "transparent",
-      txtColorPrimary: "var(--ads-color-black-550)",
-      bgColorSecondary: "transparent",
-      borderColorSecondary: "transparent",
-      txtColorSecondary: "var(--ads-color-black-550)",
-      bgColorTertiary: "transparent",
-      borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-color-black-550)",
-    };
-  }
   const stylesByCategory = {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].main,
@@ -219,14 +196,14 @@ const getMainStateStyles = (props: ButtonProps) => {
       txtColorPrimary: "var(--ads-color-black-0)",
     },
     [Category.secondary]: {
-      borderColorSecondary: ButtonColors[variant].main,
-      txtColorSecondary: ButtonColors[variant].main,
-      bgColorSecondary: "transparent",
+      bgColorSecondary: "var(--ads-color-black-0)",
+      borderColorSecondary: "var(--ads-color-black-300)",
+      txtColorSecondary: "var(--ads-color-black-700)",
     },
     [Category.tertiary]: {
-      bgColorTertiary: "transparent",
-      borderColorTertiary: ButtonColors.tertiary.darker,
-      txtColorTertiary: ButtonColors.tertiary.main,
+      bgColorTertiary: "var(--ads-color-black-0)",
+      borderColorTertiary: "transparent",
+      txtColorTertiary: "var(--ads-color-black-700)",
     },
   };
 
@@ -237,35 +214,21 @@ const getHoverStateStyles = (props: ButtonProps) => {
   const variant = props.variant || defaultProps.variant;
   const category = props.category || defaultProps.category;
 
-  if (props.isLink) {
-    return {
-      bgColorPrimary: "transparent",
-      borderColorPrimary: "transparent",
-      txtColorPrimary: "var(--ads-old-color-gray-10)",
-      bgColorSecondary: "transparent",
-      borderColorSecondary: "transparent",
-      txtColorSecondary: "var(--ads-old-color-gray-10)",
-      bgColorTertiary: "transparent",
-      borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-old-color-gray-10)",
-    };
-  }
-
   const stylesByCategory = {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].dark,
-      borderColorPrimary: ButtonColors[variant].dark,
       txtColorPrimary: "var(--ads-color-black-0)",
+      borderColorPrimary: ButtonColors[variant].dark,
     },
     [Category.secondary]: {
-      bgColorSecondary: hexToRgba(ButtonColors[variant].main, 0.1),
-      txtColorSecondary: ButtonColors[variant].main,
-      borderColorSecondary: ButtonColors[variant].main,
+      bgColorSecondary: "var(--ads-color-black-50)",
+      txtColorSecondary: "var(--ads-color-black-700)",
+      borderColorSecondary: "var(--ads-color-black-300)",
     },
     [Category.tertiary]: {
-      bgColorTertiary: hexToRgba(ButtonColors.tertiary.main, 0.1),
-      borderColorTertiary: ButtonColors.tertiary.main,
-      txtColorTertiary: ButtonColors.tertiary.main,
+      bgColorTertiary: "var(--ads-color-black-100)",
+      txtColorTertiary: "var(--ads-color-black-700)",
+      borderColorTertiary: "transparent",
     },
   };
 
@@ -276,19 +239,6 @@ const getActiveStateStyles = (props: ButtonProps) => {
   const variant = props.variant || defaultProps.variant;
   const category = props.category || defaultProps.category;
 
-  if (props.isLink) {
-    return {
-      bgColorPrimary: "transparent",
-      borderColorPrimary: "transparent",
-      txtColorPrimary: "var(--ads-color-black-750)",
-      bgColorSecondary: "transparent",
-      borderColorSecondary: "transparent",
-      txtColorSecondary: "var(--ads-color-black-750)",
-      bgColorTertiary: "transparent",
-      borderColorTertiary: "transparent",
-      txtColorTertiary: "var(--ads-color-black-750)",
-    };
-  }
   const stylesByCategory = {
     [Category.primary]: {
       bgColorPrimary: ButtonColors[variant].dark,
@@ -296,14 +246,14 @@ const getActiveStateStyles = (props: ButtonProps) => {
       txtColorPrimary: "var(--ads-color-black-0)",
     },
     [Category.secondary]: {
-      bgColorSecondary: hexToRgba(ButtonColors[variant].main, 0.1),
-      txtColorSecondary: ButtonColors[variant].light,
-      borderColorSecondary: ButtonColors[variant].light,
+      bgColorSecondary: "var(--ads-color-black-100)",
+      borderColorSecondary: "var(--ads-color-black-600)",
+      txtColorSecondary: "var(--ads-color-black-800)",
     },
     [Category.tertiary]: {
-      bgColorTertiary: hexToRgba(ButtonColors.tertiary.main, 0.1),
-      borderColorTertiary: ButtonColors.tertiary.light,
-      txtColorTertiary: ButtonColors.tertiary.light,
+      bgColorTertiary: "var(--ads-color-black-200)",
+      borderColorTertiary: "transparent",
+      txtColorTertiary: "var(--ads-color-black-800)",
     },
   };
 
@@ -342,7 +292,8 @@ const stateStyles = (props: ButtonProps, stateArg: string): stateStyleType => {
 const btnColorStyles = (props: ButtonProps, state: string): BtnColorType => {
   let bgColor = "",
     txtColor = "",
-    border = "";
+    border = "",
+    outline = "";
   switch (props.category) {
     case Category.primary:
       bgColor = stateStyles(props, state).bgColorPrimary;
@@ -353,14 +304,16 @@ const btnColorStyles = (props: ButtonProps, state: string): BtnColorType => {
       bgColor = stateStyles(props, state).bgColorSecondary;
       txtColor = stateStyles(props, state).txtColorSecondary;
       border = `1.2px solid ${stateStyles(props, state).borderColorSecondary}`;
+      outline = "2px solid var(--ads-color-blue-150)";
       break;
     case Category.tertiary:
       bgColor = stateStyles(props, state).bgColorTertiary;
       txtColor = stateStyles(props, state).txtColorTertiary;
       border = `1.2px solid ${stateStyles(props, state).borderColorTertiary}`;
+      outline = "2px solid var(--ads-color-blue-150)";
       break;
   }
-  return { bgColor, txtColor, border };
+  return { bgColor, txtColor, border, outline };
 };
 
 const getPaddingBySize = (props: ButtonProps) => {
@@ -446,8 +399,7 @@ const ButtonStyles = css<ButtonProps>`
     cursor: ${(props) =>
       props.isLoading || props.disabled ? `not-allowed` : `pointer`};
   }
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: none;
     background-color: ${(props) => btnColorStyles(props, "hover").bgColor};
     color: ${(props) => btnColorStyles(props, "hover").txtColor};
@@ -455,6 +407,10 @@ const ButtonStyles = css<ButtonProps>`
     .${Classes.ICON} {
       fill: ${(props) => btnColorStyles(props, "hover").txtColor};
     }
+  }
+  &:focus-visible {
+    outline: ${(props) => btnColorStyles(props, "active").outline};
+    outline-offset: 0px;
   }
   font-style: normal;
   &:active {

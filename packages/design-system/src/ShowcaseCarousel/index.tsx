@@ -146,7 +146,7 @@ export default function ShowcaseCarousel(props: Props) {
         <Buttons>
           {componentProps.showSkipBtn && (
             <Button
-              category={Category.tertiary}
+              category={Category.secondary}
               onClick={componentProps.onSkip}
               size={Size.large}
               tag="button"
@@ -155,7 +155,7 @@ export default function ShowcaseCarousel(props: Props) {
           )}
           {!componentProps.hideBackBtn && (
             <Button
-              category={Category.tertiary}
+              category={Category.secondary}
               onClick={() => setCurrentIdx(Math.max(0, activeIndex - 1))}
               size={Size.large}
               tag="button"
