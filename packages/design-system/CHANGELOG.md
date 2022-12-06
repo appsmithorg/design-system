@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.37
+
+### Patch Changes
+
+- [#261](https://github.com/appsmithorg/design-system/pull/261) [`0c9351f`](https://github.com/appsmithorg/design-system/commit/0c9351f7305e1a1d95eeafc4cd35cc01508ae59b) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - chore: update dependency categorization
+
 ## 1.0.36
 
 ### Patch Changes
