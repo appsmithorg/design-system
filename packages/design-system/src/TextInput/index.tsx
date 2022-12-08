@@ -329,9 +329,18 @@ const TextInput = forwardRef(
       if (props.defaultValue) {
         const inputValue = props.defaultValue;
         setInputValue(inputValue);
+        checkValidator(inputValue);
         props.onChange && props.onChange(inputValue);
       }
     }, [props.defaultValue]);
+
+    const checkValidator = (inputValue: string) => {
+      const inputValueValidation =
+        props.validator && props.validator(inputValue);
+      if (inputValueValidation) {
+        props.validator && setValidation(inputValueValidation);
+      }
+    };
 
     const memoizedChangeHandler = useCallback(
       (el) => {
@@ -339,12 +348,7 @@ const TextInput = forwardRef(
           ? el.target.value.trim()
           : el.target.value;
         setInputValue(inputValue);
-        const inputValueValidation =
-          props.validator && props.validator(inputValue);
-        if (inputValueValidation) {
-          props.validator && setValidation(inputValueValidation);
-        }
-
+        checkValidator(inputValue);
         return props.onChange && props.onChange(inputValue);
       },
       [props.onChange, setValidation, trimValue],
