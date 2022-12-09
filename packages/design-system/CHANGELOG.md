@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.38
+
+### Patch Changes
+
+- [#272](https://github.com/appsmithorg/design-system/pull/272) [`7b557fa`](https://github.com/appsmithorg/design-system/commit/7b557fab7c501bcfac6246aa00022287fd396d11) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Text input not triggering validation on defaultValue change
+
 ## 1.0.37
 
 ### Patch Changes
