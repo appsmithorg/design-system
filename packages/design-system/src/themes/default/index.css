@@ -8,7 +8,7 @@
   --ads-border-radius: 0px;
   --ads-border-color: var(--ads-color-black-250);
   --ads-border-color-focus: var(--ads-color-black-900);
-  
+
 
   /** Naming convention for tokens
   *
@@ -337,8 +337,8 @@
   --ads-toggle-slider-loading-background-color: var(--ads-old-color-mercury);
   --ads-toggle-slider-disabled-on-background-color: var(--ads-color-black-0);
   --ads-toggle-slider-disabled-off-background-color: var(--ads-color-black-0);
-  --ads-toggle-on-background-color: var(--ads-color-orange-500);
-  --ads-toggle-hover-on-background-color: var(--ads-old-color-rock-spray);
+  --ads-toggle-on-background-color: var(--ads-old-color-gray-10);
+  --ads-toggle-hover-on-background-color: var(--ads-old-color-gray-7);
   --ads-toggle-hover-off-background-color: var(--ads-color-black-450);
   --ads-toggle-disabled-on-background-color: var(--ads-old-color-bridesmaid);
   --ads-toggle-disabled-off-background-color: var(--ads-color-black-250);
