@@ -171,6 +171,10 @@ import AlertLineIcon from "remixicon-react/AlertLineIcon";
 import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
 import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
 import PantoneLineIcon from "remixicon-react/PantoneLineIcon";
+import UserSharedLineIcon from "remixicon-react/UserSharedLineIcon";
+import UserReceived2LineIcon from "remixicon-react/UserReceived2LineIcon";
+import UserAddLineIcon from "remixicon-react/UserAddLineIcon";
+import UserUnfollowLineIcon from "remixicon-react/UserUnfollowLineIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -345,8 +349,12 @@ const ICON_LOOKUP = {
   "user-2": <UserV2Icon />,
   "user-2-line": <User2LineIcon />,
   "user-3-line": <User3LineIcon />,
+  "user-add-line": <UserAddLineIcon />,
   "user-follow-line": <UserFollowLineIcon />,
   "user-heart-line": <UserHeartLineIcon />,
+  "user-received-2-line": <UserReceived2LineIcon />,
+  "user-shared-line": <UserSharedLineIcon />,
+  "user-unfollow-line": <UserUnfollowLineIcon />,
   "view-all": <RightArrowIcon />,
   "view-less": <LeftArrowIcon />,
   "warning-line": <WarningLineIcon />,
