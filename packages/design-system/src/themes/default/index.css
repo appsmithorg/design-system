@@ -103,4 +103,44 @@
   /** Uneditable Text Field */
   --ads-uneditable-text-field-label-text-color: var(--ads-color-black-750);
 
+
+
+  /* Variables V2 */
+
+  /** Foreground/text **/
+  --ads-color-fg-emphasis-plus: var(--ads-color-gray-800);
+  --ads-color-fg-emphasis: var(--ads-color-gray-700);
+  --ads-color-fg: var(--ads-color-gray-600); /* default */
+  --ads-color-fg-muted: var(--ads-color-gray-500);
+  --ads-color-fg-subtle: var(--ads-color-gray-400);
+  --ads-color-fg-on-brand: var(--ads-color-white);
+  --ads-color-fg-on-brand-secondary: var(--ads-color-white);
+  --ads-color-fg-on-error: var(--ads-color-white);
+  --ads-color-fg-on-success: var(--ads-color-white);
+  --ads-color-fg-on-warning: var(--ads-color-white);
+  --ads-color-fg-on-emphasis: var(--ads-color-gray-100);
+
+  /** Background **/
+  /* brand */
+  --ads-color-bg-brand-emphasis-plus: var(--ads-color-orange-700);
+  --ads-color-bg-brand-emphasis: var(--ads-color-orange-600);
+  --ads-color-bg-brand: var(--ads-color-orange-500);
+  /* brand secondary */
+  --ads-color-bg-brand-secondary-emphasis-plus: var(--ads-color-gray-600);
+  --ads-color-bg-brand-secondary-emphasis: var(--ads-color-gray-600);
+  --ads-color-bg-brand-secondary: var(--ads-color-gray-600);
+  /* default */
+  --ads-color-bg-emphasis-plus: var(--ads-color-gray-200);
+  --ads-color-bg-emphasis: var(--ads-color-gray-100);
+  --ads-color-bg: var(--ads-color-white);
+  --ads-color-bg-muted: var(--ads-color-gray-50);
+
+  /** Border **/
+  --ads-color-border-emphasis-plus: var(--ads-color-gray-600);
+  --ads-color-border-emphasis: var(--ads-color-gray-400);
+  --ads-color-border: var(--ads-color-gray-300);
+  --ads-color-border-muted: var(--ads-color-gray-200);
+
+  /* variables V2 ends */
+
 }
