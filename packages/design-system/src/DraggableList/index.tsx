@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { clamp } from "lodash-es";
+import { clamp, head, last } from "lodash-es";
 import { useDrag } from "react-use-gesture";
 import { useSprings, animated, to } from "react-spring";
 import styled from "styled-components";
@@ -59,6 +59,12 @@ const DraggableListWrapper = styled.div`
   }
 `;
 
+const FrozenListWrapper = styled.div<{
+  height?: number;
+}>`
+  height: ${(props) => props.height}px;
+`;
+
 export function DraggableList(props: any) {
   const {
     className,
@@ -72,34 +78,71 @@ export function DraggableList(props: any) {
     updateDragging,
   } = props;
 
+  const topFrozenItems = items.filter((item: any) => item?.sticky === "left");
+  const bottomFrozenItems = items.filter(
+    (item: any) => item?.sticky === "right",
+  );
+  const unfrozenItems =
+    topFrozenItems.length > 0 || bottomFrozenItems.length > 0
+      ? items.filter((item: any) => item.sticky === undefined)
+      : items;
+
+  const topFrozenContainerHeight = topFrozenItems.length * itemHeight;
+  const bottomFrozenContainerHeight = bottomFrozenItems.length * itemHeight;
   const listContainerHeight =
     fixedHeight && fixedHeight < items.length * itemHeight
       ? fixedHeight
       : items.length * itemHeight;
+
   const shouldReRender = get(props, "shouldReRender", true);
   // order of items in the list
-  const order = useRef<any>(items.map((_: any, index: any) => index));
+  const order = useRef<any>(
+    unfrozenItems.map((_: any, index: number) => index),
+  );
   const displacement = useRef<number>(0);
   const dragging = useRef<boolean>(false);
 
   const listRef = useRef<HTMLDivElement | null>(null);
 
-  const onDrop = (originalIndex: number, newIndex: number) => {
-    onUpdate(order.current, originalIndex, newIndex);
+  const onDrop = (
+    itemOrder: number[],
+    originalIndex: number,
+    newIndex: number,
+  ) => {
+    /**
+     * On drop we have the updated order of the unfrozen items.
+     * We need to map this order with respect to the indices present in the actual column order.
+     * For example,
+     * order.current = [2, 0, 1];
+     * orderMapping = [unfrozenItems[2].index, unfrozenItems[0].index, unfrozenItems[1].index] // The actual column order.
+     */
+    const orderMapping = itemOrder.map(
+      (rowIdx: any) => unfrozenItems[rowIdx].index,
+    );
+    const updatedOrder = [
+      ...topFrozenItems.map((item: any) => item.index),
+      ...orderMapping,
+      ...bottomFrozenItems.map((item: any) => item.index),
+    ];
+    onUpdate(updatedOrder, originalIndex, newIndex);
+    order.current = itemOrder;
 
     if (shouldReRender) {
-      order.current = items.map((_: any, index: any) => index);
+      order.current = unfrozenItems.map((_: any, index: any) => index);
       setSprings(updateSpringStyles(order.current, itemHeight));
     }
   };
 
   useEffect(() => {
     // when items are updated(added/removed/updated) reassign order and animate springs.
-    if (items.length !== order.current.length || shouldReRender === false) {
-      order.current = items.map((_: any, index: any) => index);
+    if (
+      unfrozenItems.length !== order.current.length ||
+      shouldReRender === false
+    ) {
+      order.current = unfrozenItems.map((_: any, index: any) => index);
       setSprings(updateSpringStyles(order.current, itemHeight));
     }
-  }, [items]);
+  }, [unfrozenItems]);
 
   useEffect(() => {
     if (focusedIndex && listRef && listRef.current) {
@@ -125,7 +168,7 @@ export function DraggableList(props: any) {
   }, [focusedIndex]);
 
   const [springs, setSprings] = useSprings<any>(
-    items.length,
+    unfrozenItems.length,
     updateSpringStyles(order.current, itemHeight),
   );
 
@@ -191,10 +234,12 @@ export function DraggableList(props: any) {
             (curIndex * itemHeight + displacement.current) / itemHeight,
           ),
           0,
-          items.length - 1,
+          unfrozenItems.length - 1,
         );
+
         const newOrder = [...order.current];
         newOrder.splice(curRow, 0, newOrder.splice(curIndex, 1)[0]);
+        console.log("NEW ORDER = ", newOrder);
         setSprings(
           dragIdleSpringStyles(newOrder, {
             down: props.down,
@@ -209,7 +254,7 @@ export function DraggableList(props: any) {
           if (!props.down) {
             order.current = newOrder;
             setSprings(updateSpringStyles(order.current, itemHeight));
-            debounce(onDrop, 400)(curIndex, curRow);
+            debounce(onDrop, 400)(newOrder, curIndex, curRow);
           }
         }
       }
@@ -225,6 +270,15 @@ export function DraggableList(props: any) {
         zIndex: 1,
       }}
     >
+      {topFrozenItems.length > 0 && (
+        <FrozenListWrapper height={topFrozenContainerHeight}>
+          {topFrozenItems.map((item: any, i: number) => (
+            <div>
+              <ItemRenderer index={item.index} item={item} />
+            </div>
+          ))}
+        </FrozenListWrapper>
+      )}
       <DraggableListWrapper
         className="content"
         onMouseDown={() => {
@@ -233,16 +287,17 @@ export function DraggableList(props: any) {
           document.onmousemove = null;
         }}
         style={{
-          height: "100%",
+          height: `calc(100% - ${listContainerHeight -
+            (topFrozenContainerHeight + bottomFrozenContainerHeight)}px)`,
         }}
       >
         {springs.map(({ scale, y, zIndex }, i) => (
           <animated.div
             {...bind(i)}
-            data-rbd-draggable-id={items[i].id}
+            data-rbd-draggable-id={unfrozenItems[i].id}
             //having a key of items[i].id will break in few places,
             //eg, primary columns in propertyPane of Table widget
-            key={items[i][keyAccessor] || i}
+            key={unfrozenItems[i][keyAccessor] || i}
             style={{
               zIndex,
               width: "100%",
@@ -253,11 +308,23 @@ export function DraggableList(props: any) {
             }}
           >
             <div>
-              <ItemRenderer index={i} item={items[i]} />
+              <ItemRenderer
+                index={unfrozenItems[i].index ?? i}
+                item={unfrozenItems[i]}
+              />
             </div>
           </animated.div>
         ))}
       </DraggableListWrapper>
+      {bottomFrozenItems.length > 0 && (
+        <FrozenListWrapper height={bottomFrozenContainerHeight}>
+          {bottomFrozenItems.map((item: any, i: number) => (
+            <div>
+              <ItemRenderer index={item.index} item={item} />
+            </div>
+          ))}
+        </FrozenListWrapper>
+      )}
     </div>
   );
 }
