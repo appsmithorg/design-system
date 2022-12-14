@@ -1,5 +1,17 @@
 # @appsmithorg/design-system
 
+## 1.0.39
+
+### Patch Changes
+
+- [#277](https://github.com/appsmithorg/design-system/pull/277) [`2aa515a`](https://github.com/appsmithorg/design-system/commit/2aa515ad96f768f6913a5977ccf25f367ac7a7ad) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - chore: Adding new icons for using them on the audit logs page for Granular Access Control
+
+## 1.0.38
+
+### Patch Changes
+
+- [#272](https://github.com/appsmithorg/design-system/pull/272) [`7b557fa`](https://github.com/appsmithorg/design-system/commit/7b557fab7c501bcfac6246aa00022287fd396d11) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Text input not triggering validation on defaultValue change
+
 ## 1.0.37
 
 ### Patch Changes
