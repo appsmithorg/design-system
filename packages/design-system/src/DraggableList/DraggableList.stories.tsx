@@ -38,7 +38,7 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof DraggableListComponent> = (args) => {
-  return <DraggableListComponent {...args} canFreeze />;
+  return <DraggableListComponent {...args} />;
 };
 
 export const DraggableList = Template.bind({});
@@ -50,29 +50,12 @@ const draggableListRenderItem = ({ item }) => {
 DraggableList.args = {
   items: [
     {
-      index: 0,
+      id: 1,
       name: "Item 1",
-      sticky: "left",
     },
     {
-      index: 1,
+      id: 2,
       name: "Item 2",
-      sticky: undefined,
-    },
-    {
-      index: 2,
-      name: "Item 3",
-      sticky: undefined,
-    },
-    {
-      index: 3,
-      name: "Item 4",
-      sticky: undefined,
-    },
-    {
-      index: 4,
-      name: "Item 5",
-      sticky: "right",
     },
   ],
   keyAccessor: "id",
