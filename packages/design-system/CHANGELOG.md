@@ -1,5 +1,31 @@
 # @appsmithorg/design-system
 
+## 1.0.37
+
+### Patch Changes
+
+- [#261](https://github.com/appsmithorg/design-system/pull/261) [`0c9351f`](https://github.com/appsmithorg/design-system/commit/0c9351f7305e1a1d95eeafc4cd35cc01508ae59b) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - chore: update dependency categorization
+
+## 1.0.36
+
+### Patch Changes
+
+- [#267](https://github.com/appsmithorg/design-system/pull/267) [`56770ed`](https://github.com/appsmithorg/design-system/commit/56770ed5033462b7c2c2e3a46ee7fc67305be3c8) Thanks [@yaldram](https://github.com/yaldram)! - fix: Flag font issue in dropdown fixed.
+
+## 1.0.35
+
+### Patch Changes
+
+- [#250](https://github.com/appsmithorg/design-system/pull/250) [`12415dc`](https://github.com/appsmithorg/design-system/commit/12415dc0091cf279810afb986412fca3eeba712f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Updating the logic for suggestions in the tag input component
+
+* [#255](https://github.com/appsmithorg/design-system/pull/255) [`097dbd1`](https://github.com/appsmithorg/design-system/commit/097dbd10e9ca2934a673c0ec1a2c1fcc5455172b) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: update button states - tertiary becomes secondary and we have a new, more subtle, tertiary
+
+## 1.0.34
+
+### Patch Changes
+
+- [#259](https://github.com/appsmithorg/design-system/pull/259) [`676a146`](https://github.com/appsmithorg/design-system/commit/676a146ab15b673355a5ecf1c79f214f166030c6) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Form message component react router issue
+
 ## 1.0.33
 
 ### Patch Changes

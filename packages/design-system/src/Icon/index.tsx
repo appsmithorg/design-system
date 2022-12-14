@@ -170,6 +170,11 @@ import SearchEyeLineIcon from "remixicon-react/SearchEyeLineIcon";
 import AlertLineIcon from "remixicon-react/AlertLineIcon";
 import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
 import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
+import PantoneLineIcon from "remixicon-react/PantoneLineIcon";
+import UserSharedLineIcon from "remixicon-react/UserSharedLineIcon";
+import UserReceived2LineIcon from "remixicon-react/UserReceived2LineIcon";
+import UserAddLineIcon from "remixicon-react/UserAddLineIcon";
+import UserUnfollowLineIcon from "remixicon-react/UserUnfollowLineIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -302,7 +307,7 @@ const ICON_LOOKUP = {
   "group-2-line": <Group2LineIcon />,
   "group-line": <GroupLineIcon />,
   "invite-user": <InviteUserIcon />,
-  "key-2-line": <Key2LineIcon/>,
+  "key-2-line": <Key2LineIcon />,
   "left-arrow-2": <LeftArrowIcon2 />,
   "lightbulb-flash-line": <LightbulbFlashLine />,
   "line-dashed": <LineDashedIcon />,
@@ -325,7 +330,7 @@ const ICON_LOOKUP = {
   "read-pin": <ReadPin />,
   "right-arrow": <RightArrowIcon />,
   "right-arrow-2": <RightArrowIcon2 />,
-  "search-eye-line": <SearchEyeLineIcon/>,
+  "search-eye-line": <SearchEyeLineIcon />,
   "send-button": <SendButton />,
   "settings-2-line": <Settings2LineIcon />,
   "settings-line": <SettingsLineIcon />,
@@ -342,10 +347,14 @@ const ICON_LOOKUP = {
   "upload-cloud": <UploadCloud2LineIcon />,
   "upload-line": <UploadLineIcon />,
   "user-2": <UserV2Icon />,
-  "user-2-line": <User2LineIcon/>,
+  "user-2-line": <User2LineIcon />,
   "user-3-line": <User3LineIcon />,
+  "user-add-line": <UserAddLineIcon />,
   "user-follow-line": <UserFollowLineIcon />,
   "user-heart-line": <UserHeartLineIcon />,
+  "user-received-2-line": <UserReceived2LineIcon />,
+  "user-shared-line": <UserSharedLineIcon />,
+  "user-unfollow-line": <UserUnfollowLineIcon />,
   "view-all": <RightArrowIcon />,
   "view-less": <LeftArrowIcon />,
   "warning-line": <WarningLineIcon />,
@@ -395,6 +404,7 @@ const ICON_LOOKUP = {
   minus: <RemoveIcon />,
   mobile: <MobileIcon />,
   open: <OpenIcon />,
+  pantone: <PantoneLineIcon />,
   pin: <Pin />,
   play: <PlayIcon />,
   plus: <CreateNewIcon />,
