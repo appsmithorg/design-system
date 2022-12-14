@@ -110,21 +110,33 @@ export function DraggableList(props: any) {
     newIndex: number,
   ) => {
     /**
-     * On drop we have the updated order of the unfrozen items.
+     * On drop we have the itemOrder of the unfrozen items.
      * We need to map this order with respect to the indices present in the actual column order.
      * For example,
-     * order.current = [2, 0, 1];
+     * itemOrder = [2, 0, 1];
      * orderMapping = [unfrozenItems[2].index, unfrozenItems[0].index, unfrozenItems[1].index] // The actual column order.
      */
     const orderMapping = itemOrder.map(
       (rowIdx: any) => unfrozenItems[rowIdx].index,
     );
+
     const updatedOrder = [
       ...topFrozenItems.map((item: any) => item.index),
       ...orderMapping,
       ...bottomFrozenItems.map((item: any) => item.index),
     ];
-    onUpdate(updatedOrder, originalIndex, newIndex);
+
+    const columnOrderOrigIndex = orderMapping[originalIndex];
+    const columnOrderNewIndex = orderMapping[newIndex];
+    onUpdate(
+      updatedOrder,
+      updatedOrder.indexOf(columnOrderOrigIndex) !== 0
+        ? updatedOrder.indexOf(columnOrderOrigIndex)
+        : originalIndex,
+      updatedOrder.indexOf(columnOrderNewIndex) !== 0
+        ? updatedOrder.indexOf(columnOrderNewIndex)
+        : newIndex,
+    );
     order.current = itemOrder;
 
     if (shouldReRender) {
@@ -239,7 +251,6 @@ export function DraggableList(props: any) {
 
         const newOrder = [...order.current];
         newOrder.splice(curRow, 0, newOrder.splice(curIndex, 1)[0]);
-        console.log("NEW ORDER = ", newOrder);
         setSprings(
           dragIdleSpringStyles(newOrder, {
             down: props.down,
@@ -263,7 +274,6 @@ export function DraggableList(props: any) {
   return (
     <div
       className={className}
-      ref={listRef}
       style={{
         height: listContainerHeight,
         overflowY: "auto",
@@ -272,7 +282,7 @@ export function DraggableList(props: any) {
     >
       {topFrozenItems.length > 0 && (
         <FrozenListWrapper height={topFrozenContainerHeight}>
-          {topFrozenItems.map((item: any, i: number) => (
+          {topFrozenItems.map((item: any) => (
             <div>
               <ItemRenderer index={item.index} item={item} />
             </div>
@@ -281,14 +291,15 @@ export function DraggableList(props: any) {
       )}
       <DraggableListWrapper
         className="content"
+        ref={listRef}
         onMouseDown={() => {
           // set events to null to stop other parent draggable elements execution(ex: Property pane)
           document.onmouseup = null;
           document.onmousemove = null;
         }}
         style={{
-          height: `calc(100% - ${listContainerHeight -
-            (topFrozenContainerHeight + bottomFrozenContainerHeight)}px)`,
+          height: `${listContainerHeight -
+            (topFrozenContainerHeight + bottomFrozenContainerHeight)}px`,
         }}
       >
         {springs.map(({ scale, y, zIndex }, i) => (
@@ -309,7 +320,7 @@ export function DraggableList(props: any) {
           >
             <div>
               <ItemRenderer
-                index={unfrozenItems[i].index ?? i}
+                index={unfrozenItems[i]?.index || i}
                 item={unfrozenItems[i]}
               />
             </div>
@@ -318,7 +329,7 @@ export function DraggableList(props: any) {
       </DraggableListWrapper>
       {bottomFrozenItems.length > 0 && (
         <FrozenListWrapper height={bottomFrozenContainerHeight}>
-          {bottomFrozenItems.map((item: any, i: number) => (
+          {bottomFrozenItems.map((item: any) => (
             <div>
               <ItemRenderer index={item.index} item={item} />
             </div>
