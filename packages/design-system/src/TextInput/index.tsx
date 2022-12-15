@@ -159,6 +159,7 @@ const StyledInput = styled((props) => {
     "border",
     "asyncControl",
     "handleCopy",
+    "prefix",
   ];
 
   const HtmlTag = props.useTextArea ? "textarea" : "input";
@@ -293,9 +294,9 @@ const IconWrapper = styled.div`
 
 const PrefixWrapper = styled.div`
   .${Classes.TEXT} {
-    margin-right: var(--ads-spaces-2);
+    padding-left: var(--ads-spaces-2);
     // text color is set to red for errors
-    color: unset;
+    color: var(--ads-color-black-400);
   }
 `;
 
