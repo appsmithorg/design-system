@@ -424,10 +424,8 @@ const TextInput = forwardRef(
         )}
 
         {props.prefix && (
-          <PrefixWrapper>
-            <Text className="prefix" type={TextType.P1}>
-              {props.prefix}
-            </Text>
+          <PrefixWrapper className="prefix">
+            <Text type={TextType.P1}>{props.prefix}</Text>
           </PrefixWrapper>
         )}
 
