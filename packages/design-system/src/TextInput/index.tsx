@@ -70,6 +70,7 @@ export type TextInputProps = CommonComponentProps & {
   readOnly?: boolean;
   dataType?: string;
   leftIcon?: IconName;
+  prefix?: string;
   helperText?: string;
   rightSideComponent?: React.ReactNode;
   width?: string;
@@ -413,6 +414,7 @@ const TextInput = forwardRef(
             />
           </IconWrapper>
         )}
+        {props.prefix && <Text type={TextType.P1}>{props.prefix}</Text>}
 
         <InputLoader
           $height={props.height}
