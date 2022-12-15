@@ -291,6 +291,14 @@ const IconWrapper = styled.div`
   }
 `;
 
+const PrefixWrapper = styled.div`
+  .${Classes.TEXT} {
+    margin-right: var(--ads-spaces-2);
+    // text color is set to red for errors
+    color: unset;
+  }
+`;
+
 const initialValidation = (props: TextInputProps) => {
   let validationObj = { isValid: true, message: "" };
   if (props.defaultValue && props.validator) {
@@ -414,7 +422,14 @@ const TextInput = forwardRef(
             />
           </IconWrapper>
         )}
-        {props.prefix && <Text type={TextType.P1}>{props.prefix}</Text>}
+
+        {props.prefix && (
+          <PrefixWrapper>
+            <Text className="prefix" type={TextType.P1}>
+              {props.prefix}
+            </Text>
+          </PrefixWrapper>
+        )}
 
         <InputLoader
           $height={props.height}
