@@ -295,7 +295,6 @@ const IconWrapper = styled.div`
 const PrefixWrapper = styled.div`
   .${Classes.TEXT} {
     padding-left: var(--ads-spaces-2);
-    // text color is set to red for errors
     color: var(--ads-color-black-400);
   }
 `;
