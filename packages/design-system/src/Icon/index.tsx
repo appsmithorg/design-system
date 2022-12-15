@@ -100,13 +100,15 @@ import EyeOff from "remixicon-react/EyeOffLineIcon";
 import FileTransfer from "remixicon-react/FileTransferLineIcon";
 import FileLine from "remixicon-react/FileLineIcon";
 import Filter from "remixicon-react/Filter2FillIcon";
+import ForbidLineIcon from "remixicon-react/ForbidLineIcon";
 import GitMerge from "remixicon-react/GitMergeLineIcon";
 import GitCommit from "remixicon-react/GitCommitLineIcon";
 import GitPullRequst from "remixicon-react/GitPullRequestLineIcon";
+import GlobalLineIcon from "remixicon-react/GlobalLineIcon";
 import GuideIcon from "remixicon-react/GuideFillIcon";
 import HelpIcon from "remixicon-react/QuestionMarkIcon";
-// import HelpFillIcon from "remixicon-react/QuestionFillIcon";
 import LightbulbFlashLine from "remixicon-react/LightbulbFlashLineIcon";
+import LinksLineIcon from "remixicon-react/LinksLineIcon";
 import InfoIcon from "remixicon-react/InformationLineIcon";
 import KeyIcon from "remixicon-react/Key2LineIcon";
 import LeftArrowIcon2 from "remixicon-react/ArrowLeftSLineIcon";
@@ -122,6 +124,7 @@ import RightArrowIcon from "remixicon-react/ArrowRightLineIcon";
 import RightArrowIcon2 from "remixicon-react/ArrowRightSLineIcon";
 import RocketIcon from "remixicon-react/RocketLineIcon";
 import SearchIcon from "remixicon-react/SearchLineIcon";
+import ShareBoxLineIcon from "remixicon-react/ShareBoxLineIcon";
 import ShareBoxFillIcon from "remixicon-react/ShareBoxFillIcon";
 import ShareForwardIcon from "remixicon-react/ShareForwardFillIcon";
 import Trash from "remixicon-react/DeleteBinLineIcon";
@@ -171,6 +174,7 @@ import AlertLineIcon from "remixicon-react/AlertLineIcon";
 import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
 import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
 import PantoneLineIcon from "remixicon-react/PantoneLineIcon";
+import QuestionFillIcon from "remixicon-react/QuestionFillIcon";
 import UserSharedLineIcon from "remixicon-react/UserSharedLineIcon";
 import UserReceived2LineIcon from "remixicon-react/UserReceived2LineIcon";
 import UserAddLineIcon from "remixicon-react/UserAddLineIcon";
@@ -301,9 +305,11 @@ const ICON_LOOKUP = {
   "file-list-line": <FileListLineIcon />,
   "file-transfer": <FileTransfer />,
   "fork-2": <Fork2Icon />,
+  "forbid-line": <ForbidLineIcon />,
   "git-branch": <GitBranchLineIcon />,
   "git-commit": <GitCommit />,
   "git-pull-request": <GitPullRequst />,
+  "global-line": <GlobalLineIcon />,
   "group-2-line": <Group2LineIcon />,
   "group-line": <GroupLineIcon />,
   "invite-user": <InviteUserIcon />,
@@ -313,6 +319,7 @@ const ICON_LOOKUP = {
   "line-dashed": <LineDashedIcon />,
   "line-dotted": <LineDottedIcon />,
   "link-2": <Link2 />,
+  "links-line": <LinksLineIcon />,
   "lock-2-line": <Lock2LineIcon />,
   "lock-password-line": <LockPasswordLineIcon />,
   "lock-unlock-line": <LockUnlockLineIcon />,
@@ -326,6 +333,7 @@ const ICON_LOOKUP = {
   "oval-check": <OvalCheck />,
   "oval-check-fill": <OvalCheckFill />,
   "pin-3": <Pin3 />,
+  "question-fill": <QuestionFillIcon />,
   "reaction-2": <Reaction2 />,
   "read-pin": <ReadPin />,
   "right-arrow": <RightArrowIcon />,
@@ -336,6 +344,7 @@ const ICON_LOOKUP = {
   "settings-line": <SettingsLineIcon />,
   "share-2": <ShareIcon2 />,
   "share-box": <ShareBoxFillIcon />,
+  "share-box-line": <ShareBoxLineIcon />,
   "share-line": <ShareLineIcon />,
   "star-fill": <StarFillIcon />,
   "star-line": <StarLineIcon />,
