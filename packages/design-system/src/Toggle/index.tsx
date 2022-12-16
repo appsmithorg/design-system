@@ -48,12 +48,13 @@ const StyledToggle = styled.label<{
       display: none;
     }`
       : `.slider:before {
-      position: absolute;
+      display: inline-block;
+      position: relative;
       content: "";
       height: 19px;
       width: 19px;
       top: 2px;
-      left: 6px;
+      left: 2px;
       background-color: ${
         props.disabled && !props.value
           ? "var(--ads-toggle-slider-disabled-off-background-color)"
