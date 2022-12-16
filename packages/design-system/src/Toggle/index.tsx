@@ -25,10 +25,8 @@ const StyledToggle = styled.label<{
   }
 
   .slider {
-    position: absolute;
+    display: inline-block;
     cursor: pointer;
-    top: 0;
-    left: 0;
     background-color: ${(props) =>
       props.isLoading
         ? "var(--ads-toggle-slider-loading-background-color)"
@@ -55,7 +53,7 @@ const StyledToggle = styled.label<{
       height: 19px;
       width: 19px;
       top: 2px;
-      left: 2px;
+      left: 6px;
       background-color: ${
         props.disabled && !props.value
           ? "var(--ads-toggle-slider-disabled-off-background-color)"
