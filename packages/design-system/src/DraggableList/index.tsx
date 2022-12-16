@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { clamp, head, last } from "lodash-es";
+import React, { useEffect, useMemo, useRef } from "react";
+import { clamp, head, last, some } from "lodash-es";
 import { useDrag } from "react-use-gesture";
 import { useSprings, animated, to } from "react-spring";
 import styled from "styled-components";
@@ -62,7 +62,17 @@ const DraggableListWrapper = styled.div`
 const FrozenListWrapper = styled.div<{
   height?: number;
 }>`
+  position: relative;
   height: ${(props) => props.height}px;
+`;
+
+const FrozenItemWrapper = styled.div<{
+  index: number;
+  itemHeight: number;
+}>`
+  position: absolute;
+  width: 100%;
+  top: ${(props) => props.index * props.itemHeight}px;
 `;
 
 export function DraggableList(props: any) {
@@ -78,14 +88,17 @@ export function DraggableList(props: any) {
     updateDragging,
   } = props;
 
+  const hasFrozenItems = useMemo(() => {
+    return some(items, (value: any) => value.hasOwnProperty("sticky"));
+  }, [items]);
+
   const topFrozenItems = items.filter((item: any) => item?.sticky === "left");
   const bottomFrozenItems = items.filter(
     (item: any) => item?.sticky === "right",
   );
-  const unfrozenItems =
-    topFrozenItems.length > 0 || bottomFrozenItems.length > 0
-      ? items.filter((item: any) => item.sticky === undefined)
-      : items;
+  const unfrozenItems = hasFrozenItems
+    ? items.filter((item: any) => item.sticky === undefined)
+    : items;
 
   const topFrozenContainerHeight = topFrozenItems.length * itemHeight;
   const bottomFrozenContainerHeight = bottomFrozenItems.length * itemHeight;
@@ -109,34 +122,38 @@ export function DraggableList(props: any) {
     originalIndex: number,
     newIndex: number,
   ) => {
-    /**
-     * On drop we have the itemOrder of the unfrozen items.
-     * We need to map this order with respect to the indices present in the actual column order.
-     * For example,
-     * itemOrder = [2, 0, 1];
-     * orderMapping = [unfrozenItems[2].index, unfrozenItems[0].index, unfrozenItems[1].index] // The actual column order.
-     */
-    const orderMapping = itemOrder.map(
-      (rowIdx: any) => unfrozenItems[rowIdx].index,
-    );
+    if (hasFrozenItems) {
+      /**
+       * On drop we have the itemOrder of the unfrozen items.
+       * We need to map this order with respect to the indices present in the actual column order.
+       * For example,
+       * itemOrder = [2, 0, 1];
+       * orderMapping = [unfrozenItems[2].index, unfrozenItems[0].index, unfrozenItems[1].index] // The actual column order.
+       */
+      const orderMapping = itemOrder.map(
+        (rowIdx: any) => unfrozenItems[rowIdx].index,
+      );
 
-    const updatedOrder = [
-      ...topFrozenItems.map((item: any) => item.index),
-      ...orderMapping,
-      ...bottomFrozenItems.map((item: any) => item.index),
-    ];
+      const updatedOrder = [
+        ...topFrozenItems.map((item: any) => item.index),
+        ...orderMapping,
+        ...bottomFrozenItems.map((item: any) => item.index),
+      ];
 
-    const columnOrderOrigIndex = orderMapping[originalIndex];
-    const columnOrderNewIndex = orderMapping[newIndex];
-    onUpdate(
-      updatedOrder,
-      updatedOrder.indexOf(columnOrderOrigIndex) !== 0
-        ? updatedOrder.indexOf(columnOrderOrigIndex)
-        : originalIndex,
-      updatedOrder.indexOf(columnOrderNewIndex) !== 0
-        ? updatedOrder.indexOf(columnOrderNewIndex)
-        : newIndex,
-    );
+      const columnOrderOrigIndex = orderMapping[originalIndex];
+      const columnOrderNewIndex = orderMapping[newIndex];
+      onUpdate(
+        updatedOrder,
+        updatedOrder.indexOf(columnOrderOrigIndex) !== 0
+          ? updatedOrder.indexOf(columnOrderOrigIndex)
+          : originalIndex,
+        updatedOrder.indexOf(columnOrderNewIndex) !== 0
+          ? updatedOrder.indexOf(columnOrderNewIndex)
+          : newIndex,
+      );
+    } else {
+      onUpdate(itemOrder, originalIndex, newIndex);
+    }
     order.current = itemOrder;
 
     if (shouldReRender) {
@@ -282,10 +299,10 @@ export function DraggableList(props: any) {
     >
       {topFrozenItems.length > 0 && (
         <FrozenListWrapper height={topFrozenContainerHeight}>
-          {topFrozenItems.map((item: any) => (
-            <div>
+          {topFrozenItems.map((item: any, wrapperIndex: number) => (
+            <FrozenItemWrapper index={wrapperIndex} itemHeight={itemHeight}>
               <ItemRenderer index={item.index} item={item} />
-            </div>
+            </FrozenItemWrapper>
           ))}
         </FrozenListWrapper>
       )}
@@ -329,10 +346,10 @@ export function DraggableList(props: any) {
       </DraggableListWrapper>
       {bottomFrozenItems.length > 0 && (
         <FrozenListWrapper height={bottomFrozenContainerHeight}>
-          {bottomFrozenItems.map((item: any) => (
-            <div>
+          {bottomFrozenItems.map((item: any, wrapperIndex: number) => (
+            <FrozenItemWrapper index={wrapperIndex} itemHeight={itemHeight}>
               <ItemRenderer index={item.index} item={item} />
-            </div>
+            </FrozenItemWrapper>
           ))}
         </FrozenListWrapper>
       )}
