@@ -74,7 +74,7 @@ const StyledToggle = styled.label<{
     opacity: 1;
   }
 
-  input:focus + .slider:before {
+  input:active + .slider:before {
     opacity: 0.67;
   }
 
@@ -91,7 +91,7 @@ const StyledToggle = styled.label<{
   }
 
   input:hover + .slider,
-  input:focus + .slider {
+  input:active + .slider {
     background-color: ${(props) =>
       props.value
         ? "var(--ads-toggle-hover-on-background-color)"
