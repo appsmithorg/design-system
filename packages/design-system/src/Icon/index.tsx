@@ -179,6 +179,7 @@ import UserSharedLineIcon from "remixicon-react/UserSharedLineIcon";
 import UserReceived2LineIcon from "remixicon-react/UserReceived2LineIcon";
 import UserAddLineIcon from "remixicon-react/UserAddLineIcon";
 import UserUnfollowLineIcon from "remixicon-react/UserUnfollowLineIcon";
+import DeleteRowIcon from "remixicon-react/DeleteRowIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -289,6 +290,7 @@ const ICON_LOOKUP = {
   "context-menu": <ContextMenuIcon />,
   "database-2-line": <Database2Line />,
   "delete-blank": <DeleteBin7 />,
+  "delete-row": <DeleteRowIcon />,
   "double-arrow-right": <DoubleArrowRightIcon />,
   "down-arrow": <DownArrowIcon />,
   "down-arrow-2": <ArrowDownLineIcon />,

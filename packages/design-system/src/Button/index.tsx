@@ -542,12 +542,13 @@ function ButtonComponent(props: ButtonProps) {
 
 function LinkButtonComponent(props: ButtonProps) {
   const { className, cypressSelector, href, onClick } = props;
+  const filteredProps = _.omit(props, ["fill"]);
   return (
     <StyledLinkButton
       className={className}
       data-cy={cypressSelector}
       href={href}
-      {...props}
+      {...filteredProps}
       onClick={(e: React.MouseEvent<HTMLElement>) => onClick && onClick(e)}
     >
       {getButtonContent(props)}
