@@ -74,6 +74,10 @@ const StyledToggle = styled.label<{
     opacity: 1;
   }
 
+  && input[disabled]:hover + .slider:before {
+    opacity: 0.78;
+  }
+
   input:active + .slider:before {
     opacity: 0.67;
   }
