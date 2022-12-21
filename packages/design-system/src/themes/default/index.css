@@ -4,12 +4,14 @@
 :root {
 
   /* new variables */
-  --ads-color-brand: var(--ads-color-orange-500);
+  /* --ads-color-brand: var(--ads-color-orange-500); */
+  --ads-color-brand: #00ff00;
   --ads-color-brand-hover: var(--ads-old-color-rock-spray);
   --ads-color-brand-active: var(--ads-old-color-rock-spray);
   --ads-color-brand-focus: var(--ads-old-color-rock-spray);
   --ads-color-brand-disabled: var(--ads-old-color-bridesmaid);
-  --ads-color-brand-text: var(--ads-color-black-0);
+  /* --ads-color-brand-text: var(--ads-color-black-0); */
+  --ads-color-brand-text: #000;
   --ads-color-text: var(--ads-color-black-750);
   --ads-color-background: var(--ads-color-black-0);
   --ads-color-background-secondary: var(--ads-color-black-0);
@@ -22,7 +24,7 @@
   --ads-border-radius: 0px;
   /* new variables end here */
 
-  --ads-primary-color: var(--ads-color-orange-500);
+  --ads-primary-color: var(--ads-color-brand);
   --ads-primary-color-accent: var(--ads-orange-accent);
   --ads-primary-text-color: var(--ads-color-black-750);
   --ads-border-color: var(--ads-color-black-250);
@@ -76,7 +78,7 @@
   --ads-checkbox-disabled-checked-border-color: #E8E8E8;
   --ads-checkbox-default-unchecked-border-color: #404040;
   --ads-checkbox-after-disabled-checked-border-color: #939090;
-  --ads-checkbox-after-default-checked-border-color: var(--ads-color-black-0);
+  --ads-checkbox-after-default-checked-border-color: var(--ads-color-brand-text);
   --ads-checkbox-label-text-color: var(--ads-old-color-alto);
 
   /** ColorSelector */
@@ -173,7 +175,7 @@
   --ads-icon-selector-selected-icon-fill-color: var(--ads-color-black-0);
 
   /** Info */
-  --ads-info-main-text-color: #F86A2B;
+  --ads-info-main-text-color: var(--ads-color-brand);
 
   /** Input */
   --ads-input-focus-border-color: var(--ads-color-black-900);
@@ -243,7 +245,7 @@
   --ads-rectangular-switch-background-color: var(--ads-color-black-0);
   --ads-rectangular-switch-hover-background-color: var(--ads-color-black-0);
   --ads-rectangular-switch-slider-border-color: var(--ads-color-black-450);
-  --ads-rectangular-switch-slider-background-color: var(--ads-primary-color);
+  --ads-rectangular-switch-slider-background-color: var(--ads-color-brand);
   --ads-rectangular-switch-light-text-color: var(--ads-color-black-0);
   --ads-rectangular-switch-dark-text-color: var(--ads-color-black-470);
 
@@ -259,16 +261,16 @@
 
   /** Showcase Carousel */
   --ads-showcase-carousel-dot-background-color: var(--ads-old-color-bridesmaid);
-  --ads-showcase-carousel-dot-active-background-color: var(--ads-primary-color);
+  --ads-showcase-carousel-dot-active-background-color: var(--ads-color-brand);
 
   /** Statusbar */
-  --ads-statusbar-active-background-color: var(--ads-primary-color);
+  --ads-statusbar-active-background-color: var(--ads-color-brand);
   --ads-statusbar-height: 92px;
-  --ads-statusbar-active-p-text-color: var(--ads-color-black-0);
-  --ads-statusbar-active-svg-fill-color: var(--ads-color-black-0);
+  --ads-statusbar-active-p-text-color: var(--ads-color-brand-text);
+  --ads-statusbar-active-svg-fill-color: var(--ads-color-brand-text);
   --ads-statusbar-status-text-color: var(--ads-old-color-black);
-  --ads-statusbar-progress-bar-active-background-color: var(--ads-old-color-crusta);
-  --ads-statusbar-progress-bar-background-color: var(--ads-color-black-0);
+  --ads-statusbar-progress-bar-active-background-color: var(--ads-color-brand);
+  --ads-statusbar-progress-bar-background-color: var(--ads-color-brand-text);
 
   /** StepComponent */
   --ads-step-component-wrapper-background-color: var(--ads-color-black-250);
@@ -318,10 +320,10 @@
   --ads-tag-input-border-color: var(--ads-color-black-250);
   --ads-tag-input-text-color: var(--ads-color-black-850);
   --ads-tag-input-placeholder-color: var(--ads-old-color-alto);
-  --ads-tag-input-active-border-color: var(--ads-primary-color);
+  --ads-tag-input-active-border-color: var(--ads-color-brand);
   --ads-tag-input-active-box-shadow: "none";
   --ads-tag-input-tag-text-color: var(--ads-color-black-0);
-  --ads-tag-input-tag-background-color: var(--ads-primary-color);
+  --ads-tag-input-tag-background-color: var(--ads-color-brand);
 
   /** Text */
   --ads-text-color: var(--ads-primary-text-color);
@@ -348,16 +350,16 @@
   --ads-toast-icon-fill-color: #DCAD00;
   --ads-toast-icon-outline-color: var(--ads-old-color-pomegranate);
   --ads-toast-text-color: var(--ads-color-black-25);
-  --ads-toast-undo-text-color: var(--ads-old-color-crusta);
-  --ads-toast-redo-text-color: #F8682B;
+  --ads-toast-undo-text-color: var(--ads-color-brand);
+  --ads-toast-redo-text-color: var(--ads-color-brand);
 
   /* Toggle */
   --ads-toggle-slider-background-color: var(--ads-color-black-250);
   --ads-toggle-slider-loading-background-color: var(--ads-old-color-mercury);
   --ads-toggle-slider-disabled-on-background-color: var(--ads-color-black-0);
   --ads-toggle-slider-disabled-off-background-color: var(--ads-color-black-0);
-  --ads-toggle-on-background-color: var(--ads-color-orange-500);
-  --ads-toggle-hover-on-background-color: var(--ads-old-color-rock-spray);
+  --ads-toggle-on-background-color: var(--ads-color-brand);
+  --ads-toggle-hover-on-background-color: var(--ads-color-brand-hover);
   --ads-toggle-hover-off-background-color: var(--ads-color-black-450);
   --ads-toggle-disabled-on-background-color: var(--ads-old-color-bridesmaid);
   --ads-toggle-disabled-off-background-color: var(--ads-color-black-250);
