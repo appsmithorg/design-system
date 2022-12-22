@@ -70,6 +70,7 @@ export type TextInputProps = CommonComponentProps & {
   readOnly?: boolean;
   dataType?: string;
   leftIcon?: IconName;
+  prefix?: string;
   helperText?: string;
   rightSideComponent?: React.ReactNode;
   width?: string;
@@ -158,6 +159,7 @@ const StyledInput = styled((props) => {
     "border",
     "asyncControl",
     "handleCopy",
+    "prefix",
   ];
 
   const HtmlTag = props.useTextArea ? "textarea" : "input";
@@ -290,6 +292,13 @@ const IconWrapper = styled.div`
   }
 `;
 
+const PrefixWrapper = styled.div`
+  .${Classes.TEXT} {
+    padding-left: var(--ads-spaces-2);
+    color: var(--ads-color-black-400);
+  }
+`;
+
 const initialValidation = (props: TextInputProps) => {
   let validationObj = { isValid: true, message: "" };
   if (props.defaultValue && props.validator) {
@@ -412,6 +421,12 @@ const TextInput = forwardRef(
               size={IconSize.MEDIUM}
             />
           </IconWrapper>
+        )}
+
+        {props.prefix && (
+          <PrefixWrapper className="prefix">
+            <Text type={TextType.P1}>{props.prefix}</Text>
+          </PrefixWrapper>
         )}
 
         <InputLoader
