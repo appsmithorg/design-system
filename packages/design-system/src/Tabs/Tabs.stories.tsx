@@ -42,8 +42,5 @@ Tabs.args = {
       panelComponent: <PanelComponent title={"Tab 3"} />,
     },
   ],
-  onSelect: (key) => {
-    // eslint-disable-next-line no-console
-    console.log(key);
-  },
+  onSelect: undefined,
 };

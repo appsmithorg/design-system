@@ -390,8 +390,7 @@ export function TabComponent(
 
       <Tabs
         onSelect={(index: number) => {
-          onSelect && onSelect(index);
-          setSelectedIndex(index);
+          onSelect ? onSelect(index) : setSelectedIndex(index);
           !isExpanded && toggleCollapse();
         }}
         selectedIndex={props.selectedIndex}
