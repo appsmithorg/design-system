@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.40
+
+### Patch Changes
+
+- [#280](https://github.com/appsmithorg/design-system/pull/280) [`1ee473f`](https://github.com/appsmithorg/design-system/commit/1ee473f1b0f8effeaac2a2fa9cb3aeccb9e02ae9) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - chore: Added more remix icons to be used in-app-embed settings
+
+* [#284](https://github.com/appsmithorg/design-system/pull/284) [`ab044ce`](https://github.com/appsmithorg/design-system/commit/ab044ceb3b38415dc86ce80e4b8df5485d0da275) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Add delete row icon for Access control upgrade page
+
 ## 1.0.39
 
 ### Patch Changes
