@@ -1,5 +1,21 @@
 # @appsmithorg/design-system
 
+## 1.0.41
+
+### Patch Changes
+
+- [#285](https://github.com/appsmithorg/design-system/pull/285) [`1ffd0d7`](https://github.com/appsmithorg/design-system/commit/1ffd0d779387517cb385866d1964b41c73cd40d0) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: tag the latest commit with the alpha tag created
+
+* [#287](https://github.com/appsmithorg/design-system/pull/287) [`f8089a8`](https://github.com/appsmithorg/design-system/commit/f8089a86d5ea5ba8603f7fad2055756cbad15aa2) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Setting the active tab only via the onSelect function, if present in props
+
+## 1.0.40
+
+### Patch Changes
+
+- [#280](https://github.com/appsmithorg/design-system/pull/280) [`1ee473f`](https://github.com/appsmithorg/design-system/commit/1ee473f1b0f8effeaac2a2fa9cb3aeccb9e02ae9) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - chore: Added more remix icons to be used in-app-embed settings
+
+* [#284](https://github.com/appsmithorg/design-system/pull/284) [`ab044ce`](https://github.com/appsmithorg/design-system/commit/ab044ceb3b38415dc86ce80e4b8df5485d0da275) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Add delete row icon for Access control upgrade page
+
 ## 1.0.39
 
 ### Patch Changes
