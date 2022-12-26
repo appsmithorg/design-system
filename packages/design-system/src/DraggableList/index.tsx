@@ -97,7 +97,9 @@ export function DraggableList(props: any) {
     (item: any) => item?.sticky === "right",
   );
   const unfrozenItems = hasFrozenItems
-    ? items.filter((item: any) => item.sticky === undefined)
+    ? items.filter(
+        (item: any) => item.sticky === undefined || item.sticky === "",
+      )
     : items;
 
   const topFrozenContainerHeight = topFrozenItems.length * itemHeight;
