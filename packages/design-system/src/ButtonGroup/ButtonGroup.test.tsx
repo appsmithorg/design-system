@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import ButtonTab from "./index";
+import ButtonGroup from "./index";
 import userEvent from "@testing-library/user-event";
 import { noop } from "lodash";
 
@@ -20,12 +20,12 @@ const options = [
   },
 ];
 
-describe("<ButtonTab />", () => {
+describe("<ButtonGroup />", () => {
   const getTestComponent = (
     handleOnSelect: any = undefined,
     values: Array<string> = [],
   ) => (
-    <ButtonTab
+    <ButtonGroup
       options={options}
       selectButton={handleOnSelect}
       values={values}
@@ -37,14 +37,14 @@ describe("<ButtonTab />", () => {
     render(getTestComponent(noop, [firstItem.value]));
 
     expect(screen.getByRole("tab", { selected: true })).toHaveClass(
-      `t--button-tab-${firstItem.value}`,
+      `t--button-group-${firstItem.value}`,
     );
   });
 });
 
-describe("<ButtonTab /> - Keyboard Navigation", () => {
+describe("<ButtonGroup /> - Keyboard Navigation", () => {
   const getTestComponent = (handleOnSelect: any = undefined) => (
-    <ButtonTab options={options} selectButton={handleOnSelect} values={[]} />
+    <ButtonGroup options={options} selectButton={handleOnSelect} values={[]} />
   );
 
   it("Pressing tab should focus the component", () => {
