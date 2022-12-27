@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.42
+
+### Patch Changes
+
+- [#294](https://github.com/appsmithorg/design-system/pull/294) [`a77d291`](https://github.com/appsmithorg/design-system/commit/a77d29188987d72beeb427954785135abf9e9f67) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: update snippet button from 3ry to 2ry
+
 ## 1.0.41
 
 ### Patch Changes
