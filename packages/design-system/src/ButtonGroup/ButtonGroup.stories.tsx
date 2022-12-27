@@ -1,20 +1,21 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import ButtonTabComponent from "./index";
+import ButtonGroup from "./index";
 
 export default {
-  title: "Design System/ButtonTab",
-  component: ButtonTabComponent,
-} as ComponentMeta<typeof ButtonTabComponent>;
+  title: "Design System/ButtonGroup",
+  component: ButtonGroup,
+} as ComponentMeta<typeof ButtonGroup>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof ButtonTabComponent> = (args) => {
-  return <ButtonTabComponent {...args} />;
+const Template: ComponentStory<typeof ButtonGroup> = (args) => {
+  return <ButtonGroup {...args} />;
 };
 
-export const ButtonTab = Template.bind({});
-ButtonTab.args = {
+export const ButtonGroupExample = Template.bind({});
+ButtonGroupExample.storyName = "ButtonGroup";
+ButtonGroupExample.args = {
   options: [
     {
       icon: "DELETE_CONTROL",
@@ -34,8 +35,8 @@ ButtonTab.args = {
   },
 };
 
-export const ButtonTabWithLabel = Template.bind({});
-ButtonTabWithLabel.args = {
+export const ButtonGroupWithLabel = Template.bind({});
+ButtonGroupWithLabel.args = {
   options: [
     {
       label: "AUTO",
