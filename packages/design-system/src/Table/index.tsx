@@ -166,7 +166,9 @@ function Table(props: TableProps) {
             <tr {...headerGroup.getHeaderGroupProps()} key={index}>
               {headerGroup.headers.map((column, index: number) => (
                 <th
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  {...column.getHeaderProps(
+                    column.getSortByToggleProps({ title: undefined }),
+                  )}
                   key={index}
                 >
                   {column.render("Header")}
