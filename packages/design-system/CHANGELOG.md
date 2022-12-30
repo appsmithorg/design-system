@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.0.43
+
+### Patch Changes
+
+- [#299](https://github.com/appsmithorg/design-system/pull/299) [`ce7a5fc`](https://github.com/appsmithorg/design-system/commit/ce7a5fcd8d33bf43493f5e8f0bd5cba0fdf03dd9) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - chore: add more icons required in new editor header design
+
+* [#298](https://github.com/appsmithorg/design-system/pull/298) [`bb2077e`](https://github.com/appsmithorg/design-system/commit/bb2077e3bc60c9a3a38071b0a0b198489e96b3e1) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Removing tooltip on table header as it is not part of our design system
+
 ## 1.0.42
 
 ### Patch Changes
