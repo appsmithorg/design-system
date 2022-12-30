@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-chore: add play-circle-line icon
+chore: add more icons required in new editor header design
