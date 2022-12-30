@@ -118,6 +118,7 @@ import NewsPaperLine from "remixicon-react/NewspaperLineIcon";
 import OvalCheck from "remixicon-react/CheckboxCircleLineIcon";
 import OvalCheckFill from "remixicon-react/CheckboxCircleFillIcon";
 import Pin3 from "remixicon-react/Pushpin2FillIcon";
+import PlayCircleLineIcon from "remixicon-react/PlayCircleLineIcon";
 import QueryIcon from "remixicon-react/CodeSSlashLineIcon";
 import RemoveIcon from "remixicon-react/SubtractLineIcon";
 import RightArrowIcon from "remixicon-react/ArrowRightLineIcon";
@@ -335,6 +336,7 @@ const ICON_LOOKUP = {
   "oval-check": <OvalCheck />,
   "oval-check-fill": <OvalCheckFill />,
   "pin-3": <Pin3 />,
+  "play-circle-line": <PlayCircleLineIcon />,
   "question-fill": <QuestionFillIcon />,
   "reaction-2": <Reaction2 />,
   "read-pin": <ReadPin />,
