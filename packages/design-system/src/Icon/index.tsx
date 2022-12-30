@@ -76,6 +76,7 @@ import ChevronRight from "remixicon-react/ArrowRightSFillIcon";
 import CheckLineIcon from "remixicon-react/CheckLineIcon";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import CloseCircleIcon from "remixicon-react/CloseCircleFillIcon";
+import CloudOfflineIcon from "remixicon-react/CloudOffLineIcon";
 import CommentContextMenu from "remixicon-react/More2FillIcon";
 import More2FillIcon from "remixicon-react/More2FillIcon";
 import CompassesLine from "remixicon-react/CompassesLineIcon";
@@ -118,6 +119,7 @@ import NewsPaperLine from "remixicon-react/NewspaperLineIcon";
 import OvalCheck from "remixicon-react/CheckboxCircleLineIcon";
 import OvalCheckFill from "remixicon-react/CheckboxCircleFillIcon";
 import Pin3 from "remixicon-react/Pushpin2FillIcon";
+import PlayCircleLineIcon from "remixicon-react/PlayCircleLineIcon";
 import QueryIcon from "remixicon-react/CodeSSlashLineIcon";
 import RemoveIcon from "remixicon-react/SubtractLineIcon";
 import RightArrowIcon from "remixicon-react/ArrowRightLineIcon";
@@ -285,6 +287,7 @@ const ICON_LOOKUP = {
   "close-circle": <CloseCircleIcon />,
   "close-modal": <CloseLineIcon />,
   "close-x": <CloseLineIcon />,
+  "cloud-off-line": <CloudOfflineIcon />,
   "comment-context-menu": <CommentContextMenu />,
   "compasses-line": <CompassesLine />,
   "context-menu": <ContextMenuIcon />,
@@ -335,6 +338,7 @@ const ICON_LOOKUP = {
   "oval-check": <OvalCheck />,
   "oval-check-fill": <OvalCheckFill />,
   "pin-3": <Pin3 />,
+  "play-circle-line": <PlayCircleLineIcon />,
   "question-fill": <QuestionFillIcon />,
   "reaction-2": <Reaction2 />,
   "read-pin": <ReadPin />,
