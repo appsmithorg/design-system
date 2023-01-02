@@ -33,8 +33,8 @@
   /** Used for disabled components **/
   --ads-v2-color-bg-subtle: var(--ads-v2-color-black-50);
 
-  /** Used for error background **/
-  --ads-v2-color-bg-error: var(--ads-v2-color-red);
+  /** Used for danger background **/
+  --ads-v2-color-bg-danger: var(--ads-v2-color-red);
   /** Used for success background **/
   --ads-v2-color-bg-success: var(--ads-v2-color-green);
   /** Used for warning background **/
@@ -63,8 +63,8 @@
   --ads-v2-color-fg-on-brand-secondary: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-emphasis-plus **/
   --ads-v2-color-fg-on-emphasis-max: var(--ads-v2-color-white);
-  /** Text color for background --ads-v2-color-bg-error **/
-  --ads-v2-color-fg-on-error: var(--ads-v2-color-white);
+  /** Text color for background --ads-v2-color-bg-danger **/
+  --ads-v2-color-fg-on-danger: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-success **/
   --ads-v2-color-fg-on-success: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-warning **/
@@ -85,4 +85,19 @@
   --ads-v2-color-border: var(--ads-v2-color-black-300);
   /** Used for indicating disabled borders and dividers **/
   --ads-v2-color-border-muted: var(--ads-v2-color-black-300);
+  
+  /** Used for indicating danger borders **/
+  --ads-v2-color-border-danger: var(--ads-v2-color-red);
+  /** Used for indicating success borders **/
+  --ads-v2-color-border-success: var(--ads-v2-color-green);
+  /** Used for indicating warning borders **/
+  --ads-v2-color-border-warning: var(--ads-v2-color-yellow);
+
+
+  /**
+    * ===========================================*
+    * =========== Border Radius =================*
+    * ===========================================*
+  */
+  --ads-v2-border-radius: 4px;
 }
