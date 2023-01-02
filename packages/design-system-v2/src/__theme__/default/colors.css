@@ -1,0 +1,14 @@
+:root {
+  
+  /* orange */
+  --ads-color-orange-900 : #B7491A;
+  --ads-color-orange-800 : #D15420;
+  --ads-color-orange-700 : #DF5B23;
+  --ads-color-orange-600 : #ED6227;
+  --ads-color-orange-500 : #F86A2B; /* Primary */
+  --ads-color-orange-400 : #F97D4A;
+  --ads-color-orange-300 : #F9936B;
+  --ads-color-orange-200 : #FBB195;
+  --ads-color-orange-100 : #FCCFBF;
+  --ads-color-orange-50 : #FAEAE8;
+}
