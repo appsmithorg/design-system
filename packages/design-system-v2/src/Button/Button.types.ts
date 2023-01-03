@@ -17,4 +17,6 @@ export type ButtonProps = {
   variant?: Variant;
   /** Button loading attribute */
   isLoading?: boolean;
-};
+  /** Button as attribute */
+  as?: "button" | "a";
+} & React.ButtonHTMLAttributes<HTMLButtonElement> & React.AnchorHTMLAttributes<HTMLAnchorElement>;

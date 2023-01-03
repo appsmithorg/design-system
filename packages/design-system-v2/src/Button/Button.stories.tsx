@@ -17,5 +17,5 @@ export const Button = Template.bind({});
 
 Button.args = {
   onClick: () => console.log('Button clicked!'),
-  disabled: true,
+  disabled: false,
 }

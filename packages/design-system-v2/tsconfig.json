@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "paths": {},
+    "paths": {
+      "Utils/*": ["__utils__/*"],
+    },
     "strict": true,
     "declaration": true,
     "declarationDir": "build",
@@ -34,7 +36,5 @@
   "exclude": [
     "node_modules",
     "build",
-    "src/**/*.stories.tsx",
-    "src/**/*.test.tsx"
   ]
 }

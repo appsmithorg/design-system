@@ -19,7 +19,6 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
-    "@mantine/utils": "^5.9.6",
     "@react-aria/button": "^3.6.4",
     "@react-types/button": "^3.7.0",
     "@rollup/plugin-commonjs": "^22.0.0",
