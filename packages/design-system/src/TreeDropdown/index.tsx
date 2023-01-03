@@ -568,14 +568,15 @@ function TreeDropdown(props: TreeDropdownProps) {
     },
   );
 
-  const ToggleElement =
-    React.forwardRef(function render(props: any, ref) {
-      return (
-        <span ref={ref} {...props}>
-          {toggle}
-        </span>
-      );
-    }) || defaultToggle;
+  const ToggleElement = toggle
+    ? React.forwardRef(function render(props: any, ref) {
+        return (
+          <span ref={ref} {...props}>
+            {toggle}
+          </span>
+        );
+      })
+    : defaultToggle;
 
   return (
     <Popover2
