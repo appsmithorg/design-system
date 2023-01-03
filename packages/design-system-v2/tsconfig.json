@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "Utils/*": ["__utils__/*"],
+      // "Utils/*": ["__utils__/*"],
     },
     "strict": true,
     "declaration": true,
