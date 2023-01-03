@@ -1,68 +1,80 @@
 import styled, { css } from "styled-components";
-import { Size, Variant, Category } from "./Button.types";
+import { Size, Kind } from "./Button.types";
 
 const Variables = css`
   --btn-border-radius: var(--ads-v2-border-radius);
   --btn-color-bg: var(--ads-v2-color-bg);
   --btn-color-fg: var(--ads-v2-color-text);
   --btn-color-border: var(--ads-v2-color-border);
+  --btn-font-weight: 600;
 `;
 
 const Sizes = {
   sm: css`
-    padding: 4px 8px;
-    font-size: 12px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 500;
   `,
   md: css`
-    padding: 8px 12px;
-    font-size: 14px;
+    padding: 6px 16px;
+    font-size: 12px;
   `,
   lg: css`
-    padding: 8px 16px;
-    font-size: 16px;
+    padding: 10px 26px;
+    font-size: 13px;
   `,
 };
 
-const Variants = {
-  default: css``,
-  success: css`
-    --btn-color-bg: var(--ads-v2-color-bg-success);
-    --btn-color-fg: var(--ads-v2-color-fg-on-success);
-    --btn-color-border: var(--ads-v2-color-border-success);
-  `,
-  danger: css`
-    --btn-color-bg: var(--ads-v2-color-bg-danger);
-    --btn-color-fg: var(--ads-v2-color-fg-on-danger);
-    --btn-color-border: var(--ads-v2-color-border-danger);
-  `,
-  warning: css`
-    --btn-color-bg: var(--ads-v2-color-bg-warning);
-    --btn-color-fg: var(--ads-v2-color-fg-on-warning);
-    --btn-color-border: var(--ads-v2-color-border-warning);
-  `,
-};
-
-const Categories = {
+const Kinds = {
   primary: css`
-    --btn-color-bg: var(--ads-v2-color-bg-primary);
-    --btn-color-fg: var(--ads-v2-color-fg-on-primary);
-    --btn-color-border: var(--ads-v2-color-border-primary);
+    --btn-color-bg: var(--ads-v2-color-bg-brand);
+    --btn-color-fg: var(--ads-v2-color-fg-on-brand);
+    --btn-color-border: var(--ads-v2-color-border-brand);
+
+    &:hover {
+      --btn-color-bg: var(--ads-v2-color-bg-brand-emphasis);
+      --btn-color-fg: var(--ads-v2-color-fg-on-brand);
+      --btn-color-border: var(--ads-v2-color-border-brand-emphasis);
+    }
+
+    &:active {
+      --btn-color-bg: var(--ads-v2-color-bg-brand-emphasis);
+      --btn-color-fg: var(--ads-v2-color-fg-on-brand);
+      --btn-color-border: var(--ads-v2-color-border-brand-emphasis);
+    }
   `,
   secondary: css`
-    --btn-color-bg: var(--ads-v2-color-bg-secondary);
-    --btn-color-fg: var(--ads-v2-color-fg-on-secondary);
-    --btn-color-border: var(--ads-v2-color-border-secondary);
+    --btn-color-bg: var(--ads-v2-color-bg);
+    --btn-color-fg: var(--ads-v2-color-fg-muted);
+    --btn-color-border: var(--ads-v2-color-border);
+
+    &:hover {
+      --btn-color-bg: var(--ads-v2-color-bg-subtle);
+      --btn-color-fg: var(--ads-v2-color-fg-muted);
+      --btn-color-border: var(--ads-v2-color-border);
+    }
+
+    &:active {
+      --btn-color-bg: var(--ads-v2-color-bg-muted);
+      --btn-color-fg: var(--ads-v2-color-fg-muted);
+      --btn-color-border: var(--ads-v2-color-border-emphasis);
+    }
   `,
   tertiary: css`
-    --btn-color-bg: var(--ads-v2-color-bg-tertiary);
-    --btn-color-fg: var(--ads-v2-color-fg-on-tertiary);
-    --btn-color-border: var(--ads-v2-color-border-tertiary);
+    --btn-color-bg: transparent;
+    --btn-color-fg: var(--ads-v2-color-fg);
+    --btn-color-border: transparent;
+  `,
+  error: css`
+    --btn-color-bg: var(--ads-v2-color-bg-error);
+    --btn-color-fg: var(--ads-v2-color-fg-error);
+    --btn-color-border: var(--ads-v2-color-border-error);
   `,
 };
 
 export const StyledButton = styled.button<{
   size?: Size;
-  variant?: Variant;
+  kind?: Kind;
 }>`
   ${Variables}
 
@@ -70,18 +82,20 @@ export const StyledButton = styled.button<{
   ${({ size }) => size && Sizes[size]}
 
   /* Variant style */
-  ${({ variant }) => variant && Variants[variant]}
+  ${({ kind }) => kind && Kinds[kind]}
 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: var(--ads-spaces-2);
   cursor: pointer;
   border-radius: var(--btn-border-radius);
   border: 1px solid var(--btn-color-border);
   background-color: var(--btn-color-bg);
   color: var(--btn-color-fg);
+  font-family: var(--ads-v2-font-family);
+  font-weight: var(--btn-font-weight);
 
   &:disabled {
     cursor: not-allowed;

@@ -10,7 +10,7 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof ButtonComponent> = (args) => {
-  return <ButtonComponent {...args}>Hi</ButtonComponent>;
+  return <ButtonComponent {...args}>BUTTON</ButtonComponent>;
 };
 
 export const Button = Template.bind({});

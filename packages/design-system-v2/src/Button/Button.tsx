@@ -14,9 +14,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <StyledButton as={as || "button"} {...rest} ref={buttonRef}>
-        <span>0</span>
         {children}
-        <span>0</span>
       </StyledButton>
     );
   }
@@ -24,7 +22,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.defaultProps = {
   size: "sm",
-  variant: "default",
+  kind: "primary",
 }
 
 export { Button };
