@@ -17,7 +17,8 @@ import {
   Button,
   Classes,
 } from "@blueprintjs/core";
-import styled from "styled-components";
+import { Popover2 } from "@blueprintjs/popover2";
+import styled, { StyledComponent } from "styled-components";
 import Icon, { IconSize } from "Icon";
 import { replayHighlightClass } from "Constants/classes";
 import useDSEvent from "hooks/useDSEvent";
@@ -25,6 +26,8 @@ import { DSEventTypes } from "Types/common";
 import { typography } from "Constants/typography";
 import { Intent as BlueprintIntent } from "@blueprintjs/core";
 import { IconName } from "@blueprintjs/icons";
+import maxSize from "popper-max-size-modifier";
+import { applyMaxSize, sameWidth } from "Utils/popper-modifiers";
 
 export type TreeDropdownOption = {
   label: string;
@@ -273,6 +276,7 @@ function TreeDropdown(props: TreeDropdownProps) {
     displayValue,
     getDefaults,
     menuWidth,
+    onMenuToggle,
     onSelect,
     selectedLabelModifier,
     selectedValue,
@@ -539,49 +543,68 @@ function TreeDropdown(props: TreeDropdownProps) {
 
   const list = optionTree.map(RenderTreeOption);
   const menuItems = <StyledMenu width={menuWidth || 220}>{list}</StyledMenu>;
-  const defaultToggle = (
-    <DropdownTarget>
-      <Button
-        className={`t--open-dropdown-${defaultText.split(" ").join("-")} ${
-          selectedLabelModifier
-            ? "code-highlight " + replayHighlightClass
-            : replayHighlightClass
-        }`}
-        elementRef={buttonRef}
-        onKeyDown={handleKeydown}
-        rightIcon={<Icon name="downArrow" size={IconSize.XXL} />}
-        text={
-          selectedLabelModifier
-            ? selectedLabelModifier(selectedOptionFromProps, displayValue)
-            : selectedOptionFromProps.label
-        }
-      />
-    </DropdownTarget>
+  const defaultToggle: React.ReactNode = React.forwardRef<HTMLDivElement>(
+    function render(props: any, ref) {
+      return (
+        <DropdownTarget ref={ref}>
+          <Button
+            {...props}
+            className={`t--open-dropdown-${defaultText.split(" ").join("-")} ${
+              selectedLabelModifier
+                ? "code-highlight " + replayHighlightClass
+                : replayHighlightClass
+            }`}
+            elementRef={buttonRef}
+            onKeyDown={handleKeydown}
+            rightIcon={<Icon name="downArrow" size={IconSize.XXL} />}
+            text={
+              selectedLabelModifier
+                ? selectedLabelModifier(selectedOptionFromProps, displayValue)
+                : selectedOptionFromProps.label
+            }
+          />
+        </DropdownTarget>
+      );
+    },
   );
+
+  const ToggleElement =
+    React.forwardRef(function render(props: any, ref) {
+      return (
+        <span ref={ref} {...props}>
+          {toggle}
+        </span>
+      );
+    }) || defaultToggle;
+
   return (
-    <Popover
+    <Popover2
       className="wrapper-popover"
       content={menuItems}
       isOpen={isOpen}
       minimal
-      modifiers={props.modifiers}
+      // modifiers={props.modifiers}
+      modifiers={[maxSize, applyMaxSize, sameWidth]}
       onClose={() => {
         setIsOpen(false);
         props.onMenuToggle && props.onMenuToggle(false);
       }}
       position={props.position || PopoverPosition.LEFT}
-      targetProps={{
-        onClick: (e: any) => {
-          // e.detail will be 1 if the event is a mouse click
-          if (e.detail === 1) shouldOpen.current = true;
-          if (shouldOpen.current) setIsOpen(true);
-          props.onMenuToggle && props.onMenuToggle(true);
-          e.stopPropagation();
-        },
+      renderTarget={(props) => {
+        return (
+          <ToggleElement
+            {...props}
+            onClick={(e: any) => {
+              // e.detail will be 1 if the event is a mouse click
+              if (e.detail === 1) shouldOpen.current = true;
+              if (shouldOpen.current) setIsOpen(true);
+              onMenuToggle && onMenuToggle(true);
+              e.stopPropagation();
+            }}
+          />
+        );
       }}
-    >
-      {toggle ? toggle : defaultToggle}
-    </Popover>
+    />
   );
 }
 
