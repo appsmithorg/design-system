@@ -33,12 +33,23 @@
     "@svgr/rollup": "^6.2.1",
     "@types/react": "16.14.28",
     "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/parser": "^5.25.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
     "babel-loader": "^8.2.5",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-preset-react-app": "^10.0.1",
-    "eslint": "8.3.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sort-destructure-keys": "^1.4.0",
     "eslint-plugin-storybook": "^0.6.8",
+    "prettier": "^2.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rollup": "^2.75.5",
@@ -70,5 +81,6 @@
   },
   "resolutions": {
     "styled-components": "^5"
-  }
+  },
+  "dependencies": {}
 }

@@ -16,6 +16,7 @@ const Template: ComponentStory<typeof ButtonComponent> = (args) => {
 export const Button = Template.bind({});
 
 Button.args = {
-  onClick: () => console.log('Button clicked!'),
+  // eslint-disable-next-line no-console
+  onPress: () => alert("Button clicked!"),
   disabled: false,
-}
+};

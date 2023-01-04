@@ -1,3 +1,6 @@
+import { AriaButtonProps } from "@react-types/button";
+import React from "react";
+
 // Button types
 export type Kind = "primary" | "secondary" | "tertiary" | "error";
 
@@ -6,7 +9,6 @@ export type Size = "sm" | "md" | "lg";
 
 // Button props
 export type ButtonProps = {
-
   /** Button as attribute */
   as?: "button" | "a";
   /** Button loading attribute */
@@ -19,5 +21,6 @@ export type ButtonProps = {
   startIcon?: React.ReactNode | "string";
   /** Button endIcon attribute */
   endIcon?: React.ReactNode | "string";
-
-} & React.ButtonHTMLAttributes<HTMLButtonElement> & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> &
+  AriaButtonProps;

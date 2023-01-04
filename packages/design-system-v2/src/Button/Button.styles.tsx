@@ -64,6 +64,16 @@ const Kinds = {
     --btn-color-bg: transparent;
     --btn-color-fg: var(--ads-v2-color-fg);
     --btn-color-border: transparent;
+
+    &:hover {
+      --btn-color-bg: var(--ads-v2-color-bg-subtle);
+      --btn-color-fg: var(--ads-v2-color-fg-muted);
+    }
+
+    &:active {
+      --btn-color-bg: var(--ads-v2-color-bg-muted);
+      --btn-color-fg: var(--ads-v2-color-fg-muted);
+    }
   `,
   error: css`
     --btn-color-bg: var(--ads-v2-color-bg-error);
@@ -102,4 +112,3 @@ export const StyledButton = styled.button<{
     opacity: 0.5;
   }
 `;
-
