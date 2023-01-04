@@ -11,7 +11,7 @@ export type ButtonProps = {
   as?: "button" | "a";
   /** Button loading attribute */
   isLoading?: boolean;
-  /** Button category attribute */
+  /** Button kind attribute */
   kind?: Kind;
   /** Button size attribute */
   size?: Size;
