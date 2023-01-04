@@ -1,5 +1,4 @@
 import React, {
-  memo,
   useCallback,
   useEffect,
   useMemo,
@@ -267,6 +266,72 @@ function getSelectedOption(
   return selectedOption;
 }
 
+type RenderTreeOptionProps = {
+  option: TreeDropdownOption;
+  optionTree: TreeDropdownOption[];
+  selectedOption: TreeDropdownOption;
+  handleSelect: (
+    option: TreeDropdownOption,
+    isUpdatedViaKeyboard: boolean,
+  ) => any;
+  handleOptionClick: (
+    option: TreeDropdownOption,
+  ) => (e: any, isUpdatedViaKeyboard?: boolean) => void;
+};
+
+function RenderTreeOption({
+  handleOptionClick,
+  handleSelect,
+  option,
+  optionTree,
+  selectedOption,
+}: RenderTreeOptionProps) {
+  const isSelected =
+    selectedOption.value === option.value ||
+    selectedOption.type === option.value;
+
+  const popoverProps = useMemo(
+    () => ({
+      minimal: true,
+      isOpen: option.isChildrenOpen,
+      interactionKind: PopoverInteractionKind.CLICK,
+      position: PopoverPosition.RIGHT_TOP,
+      targetProps: { onClick: (e: any) => e.stopPropagation() },
+    }),
+    [option.isChildrenOpen],
+  );
+
+  const optionClickHandler = useCallback(handleOptionClick(option), [
+    optionTree,
+    handleSelect,
+  ]);
+
+  return (
+    <MenuItem
+      active={isSelected}
+      className={option.className || "single-select"}
+      icon={option.icon}
+      intent={option.intent}
+      key={option.value}
+      onClick={optionClickHandler}
+      popoverProps={popoverProps}
+      text={option.label}
+    >
+      {option.children &&
+        option.children.map((o) => (
+          <RenderTreeOption
+            handleOptionClick={handleOptionClick}
+            handleSelect={handleSelect}
+            key={o.id}
+            option={o}
+            optionTree={optionTree}
+            selectedOption={selectedOption}
+          />
+        ))}
+    </MenuItem>
+  );
+}
+
 function TreeDropdown(props: TreeDropdownProps) {
   const {
     defaultText,
@@ -281,6 +346,7 @@ function TreeDropdown(props: TreeDropdownProps) {
   const [optionTree, setOptionTree] = useState<TreeDropdownOption[]>(
     setSelfIndex(props.optionTree),
   );
+  const isFirstRender = useRef(true);
   const selectedOptionFromProps = getSelectedOption(
     selectedValue,
     defaultText,
@@ -322,6 +388,15 @@ function TreeDropdown(props: TreeDropdownProps) {
       });
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    // Skip setting the option tree on first render, minor optimization
+    if (!isFirstRender.current) {
+      setOptionTree(setSelfIndex(props.optionTree));
+    } else {
+      isFirstRender.current = false;
+    }
+  }, [props.optionTree]);
 
   const handleSelect = (
     option: TreeDropdownOption,
@@ -369,43 +444,6 @@ function TreeDropdown(props: TreeDropdownProps) {
       e?.stopPropagation && e.stopPropagation();
     };
   };
-
-  function RenderTreeOption(option: TreeDropdownOption) {
-    const isSelected =
-      selectedOption.value === option.value ||
-      selectedOption.type === option.value;
-
-    const popoverProps = useMemo(
-      () => ({
-        minimal: true,
-        isOpen: option.isChildrenOpen,
-        interactionKind: PopoverInteractionKind.CLICK,
-        position: PopoverPosition.RIGHT_TOP,
-        targetProps: { onClick: (e: any) => e.stopPropagation() },
-      }),
-      [option.isChildrenOpen],
-    );
-
-    const optionClickHandler = useCallback(handleOptionClick(option), [
-      optionTree,
-      handleSelect,
-    ]);
-
-    return (
-      <MenuItem
-        active={isSelected}
-        className={option.className || "single-select"}
-        icon={option.icon}
-        intent={option.intent}
-        key={option.value}
-        onClick={optionClickHandler}
-        popoverProps={popoverProps}
-        text={option.label}
-      >
-        {option.children && option.children.map(RenderTreeOption)}
-      </MenuItem>
-    );
-  }
 
   /**
    * shouldOpen flag is used to differentiate between a Keyboard
@@ -537,7 +575,17 @@ function TreeDropdown(props: TreeDropdownProps) {
     }
   };
 
-  const list = optionTree.map(RenderTreeOption);
+  const list = optionTree.map((o) => (
+    <RenderTreeOption
+      handleOptionClick={handleOptionClick}
+      handleSelect={handleSelect}
+      key={o.id}
+      option={o}
+      optionTree={optionTree}
+      selectedOption={selectedOption}
+    />
+  ));
+
   const menuItems = <StyledMenu width={menuWidth || 220}>{list}</StyledMenu>;
   const defaultToggle = (
     <DropdownTarget>
@@ -585,4 +633,4 @@ function TreeDropdown(props: TreeDropdownProps) {
   );
 }
 
-export default memo(TreeDropdown);
+export default TreeDropdown;
