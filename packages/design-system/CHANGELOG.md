@@ -1,5 +1,35 @@
 # @appsmithorg/design-system
 
+## 1.0.43
+
+### Patch Changes
+
+- [#299](https://github.com/appsmithorg/design-system/pull/299) [`ce7a5fc`](https://github.com/appsmithorg/design-system/commit/ce7a5fcd8d33bf43493f5e8f0bd5cba0fdf03dd9) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - chore: add more icons required in new editor header design
+
+* [#298](https://github.com/appsmithorg/design-system/pull/298) [`bb2077e`](https://github.com/appsmithorg/design-system/commit/bb2077e3bc60c9a3a38071b0a0b198489e96b3e1) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Removing tooltip on table header as it is not part of our design system
+
+## 1.0.42
+
+### Patch Changes
+
+- [#294](https://github.com/appsmithorg/design-system/pull/294) [`a77d291`](https://github.com/appsmithorg/design-system/commit/a77d29188987d72beeb427954785135abf9e9f67) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: update snippet button from 3ry to 2ry
+
+## 1.0.41
+
+### Patch Changes
+
+- [#285](https://github.com/appsmithorg/design-system/pull/285) [`1ffd0d7`](https://github.com/appsmithorg/design-system/commit/1ffd0d779387517cb385866d1964b41c73cd40d0) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: tag the latest commit with the alpha tag created
+
+* [#287](https://github.com/appsmithorg/design-system/pull/287) [`f8089a8`](https://github.com/appsmithorg/design-system/commit/f8089a86d5ea5ba8603f7fad2055756cbad15aa2) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Setting the active tab only via the onSelect function, if present in props
+
+## 1.0.40
+
+### Patch Changes
+
+- [#280](https://github.com/appsmithorg/design-system/pull/280) [`1ee473f`](https://github.com/appsmithorg/design-system/commit/1ee473f1b0f8effeaac2a2fa9cb3aeccb9e02ae9) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - chore: Added more remix icons to be used in-app-embed settings
+
+* [#284](https://github.com/appsmithorg/design-system/pull/284) [`ab044ce`](https://github.com/appsmithorg/design-system/commit/ab044ceb3b38415dc86ce80e4b8df5485d0da275) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Add delete row icon for Access control upgrade page
+
 ## 1.0.39
 
 ### Patch Changes
