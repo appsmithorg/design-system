@@ -322,7 +322,7 @@ function RenderTreeOption({
           <RenderTreeOption
             handleOptionClick={handleOptionClick}
             handleSelect={handleSelect}
-            key={o.id}
+            key={`${o.value}-${o.label}`}
             option={o}
             optionTree={optionTree}
             selectedOption={selectedOption}
@@ -579,7 +579,7 @@ function TreeDropdown(props: TreeDropdownProps) {
     <RenderTreeOption
       handleOptionClick={handleOptionClick}
       handleSelect={handleSelect}
-      key={o.id}
+      key={`${o.value}-${o.label}`}
       option={o}
       optionTree={optionTree}
       selectedOption={selectedOption}
