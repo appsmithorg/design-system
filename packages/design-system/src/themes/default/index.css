@@ -27,7 +27,7 @@
   --ads-primary-text-color: var(--ads-color-black-750);
   --ads-border-color: var(--ads-color-black-250);
   --ads-border-color-focus: var(--ads-color-black-900);
-  
+
 
   /** Naming convention for tokens
   *
@@ -54,12 +54,12 @@
   --ads-breadcrumbs-separator-text-color: var(--ads-old-color-dove-gray);
   --ads-breadcrumbs-active-text-color: var(--ads-color-black-900);
 
-  /** Button Tab */
-  --ads-button-tab-selected-border-color: var(--ads-old-color-gray-10);
-  --ads-button-tab-border-color: var(--ads-color-black-250);
-  --ads-button-tab-focus-background-color: var(--ads-old-color-gallery-2);
-  --ads-button-tab-hover-background-color: var(--ads-old-color-gallery-2);
-  --ads-button-tab-svg-path-fill-color: var(--ads-old-color-gray-7);
+  /** Button Group */
+  --ads-button-group-selected-border-color: var(--ads-old-color-gray-10);
+  --ads-button-group-border-color: var(--ads-color-black-250);
+  --ads-button-group-focus-background-color: var(--ads-old-color-gallery-2);
+  --ads-button-group-hover-background-color: var(--ads-old-color-gallery-2);
+  --ads-button-group-svg-path-fill-color: var(--ads-old-color-gray-7);
 
   /** Callout */
   --ads-callout-info-text-color: #D44100;

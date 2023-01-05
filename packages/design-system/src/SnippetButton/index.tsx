@@ -42,7 +42,7 @@ export default function SearchSnippets(props: Props) {
       position="bottom-right"
     >
       <StyledButton
-        category={Category.tertiary}
+        category={Category.secondary}
         className={`t--search-snippets ${className}`}
         icon="snippet"
         onClick={handleClick}

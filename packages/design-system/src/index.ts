@@ -11,8 +11,8 @@ export * from "./Breadcrumbs";
 export { default as Button } from "./Button";
 export * from "./Button";
 
-export { default as ButtonTab } from "./ButtonTab";
-export * from "./ButtonTab";
+export { default as ButtonGroup } from "./ButtonGroup";
+export * from "./ButtonGroup";
 
 export { default as Callout } from "./Callout";
 export * from "./Callout";
