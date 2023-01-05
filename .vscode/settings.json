@@ -1,0 +1,13 @@
+{
+  "githubPullRequests.ignoredPullRequestBranches": [
+    "release"
+  ],
+  "cSpell.words": [
+    "callout",
+    "datepicker",
+    "Multiswitch",
+    "tinycolor",
+    "toastify",
+    "Uppy"
+  ]
+}
