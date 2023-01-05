@@ -72,6 +72,7 @@ import AddMoreFillIcon from "remixicon-react/AddCircleFillIcon";
 import ArrowLeftRightIcon from "remixicon-react/ArrowLeftRightLineIcon";
 import ArrowDownLineIcon from "remixicon-react/ArrowDownLineIcon";
 import BookIcon from "remixicon-react/BookOpenLineIcon";
+import BugLineIcon from "remixicon-react/BugLineIcon";
 import ChevronRight from "remixicon-react/ArrowRightSFillIcon";
 import CheckLineIcon from "remixicon-react/CheckLineIcon";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
@@ -177,6 +178,7 @@ import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
 import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
 import PantoneLineIcon from "remixicon-react/PantoneLineIcon";
 import QuestionFillIcon from "remixicon-react/QuestionFillIcon";
+import QuestionLineIcon from "remixicon-react/QuestionLineIcon";
 import UserSharedLineIcon from "remixicon-react/UserSharedLineIcon";
 import UserReceived2LineIcon from "remixicon-react/UserReceived2LineIcon";
 import UserAddLineIcon from "remixicon-react/UserAddLineIcon";
@@ -277,6 +279,7 @@ const ICON_LOOKUP = {
   "arrow-right-s-fill": <ArrowRightSFillIcon />,
   "arrow-right-up-line": <ArrowRightUpLineIcon />,
   "book-line": <BookLineIcon />,
+  "bug-line": <BugLineIcon />,
   "cap-dot": <CapDotIcon />,
   "cap-solid": <CapSolidIcon />,
   "card-context-menu": <CardContextMenu />,
@@ -340,6 +343,7 @@ const ICON_LOOKUP = {
   "pin-3": <Pin3 />,
   "play-circle-line": <PlayCircleLineIcon />,
   "question-fill": <QuestionFillIcon />,
+  "question-line": <QuestionLineIcon />,
   "reaction-2": <Reaction2 />,
   "read-pin": <ReadPin />,
   "right-arrow": <RightArrowIcon />,
