@@ -39,10 +39,6 @@ export const StyledToggle = styled.input`
     --toggle-color-bg: var(--ads-v2-color-black-250)
   }
 
-  &:focus-visible {
-    outline-color: var(--ads-v2-color-focus);
-  }
-
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
