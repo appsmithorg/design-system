@@ -51,4 +51,7 @@
   --ads-font-size-8: 32px;
   --ads-font-size-9: 48px;
   --ads-font-size-10: 64px;
+
+  /* Border Radii */
+  --ads-border-radius-circle: 50%;
 }
