@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.44
+
+### Patch Changes
+
+- [#305](https://github.com/appsmithorg/design-system/pull/305) [`0c94439`](https://github.com/appsmithorg/design-system/commit/0c944390a3f2209f02b70a2e1545209194b8f804) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - feat: add more icons used in nav bar
+
 ## 1.0.43
 
 ### Patch Changes
