@@ -34,6 +34,15 @@ export const StyledToggle = styled.input`
     background-color: var(--thumb-color-bg);
   }
 
+  &:hover {
+    // TODO: needs a theme variable
+    --toggle-color-bg: var(--ads-v2-color-black-250)
+  }
+
+  &:focus-visible {
+    outline-color: var(--ads-v2-color-focus);
+  }
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;

@@ -73,9 +73,11 @@
   --ads-v2-color-fg-on-success: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-warning **/
   --ads-v2-color-fg-on-warning: var(--ads-v2-color-white);
-  /* Text color for error */
+  /** Text color for error */
   --ads-v2-color-fg-error: var(--ads-v2-color-red-900);
 
+  /** Focus outline color */
+  --ads-v2-color-focus: var(--ads-v2-color-blue);
 
   /**
     * ===========================================*
