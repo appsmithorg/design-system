@@ -198,6 +198,11 @@ export function DraggableList(props: any) {
             0,
             items.length - 1,
           );
+
+          /**
+           * We check if the final position's item's dragging is enabled.
+           * Dragging is enabled for items those who don't have sticky property or they have it but the value is "".
+           */
           if (
             !items[curRow].hasOwnProperty("sticky") ||
             (items[curRow].hasOwnProperty("sticky") &&
@@ -226,6 +231,7 @@ export function DraggableList(props: any) {
               }
             }
           } else {
+            // retain the order if an item's drag is disabled.
             setSprings(
               dragIdleSpringStyles(order.current, {
                 down: props.down,
@@ -265,6 +271,9 @@ export function DraggableList(props: any) {
         }}
       >
         {springs.map(({ scale, y, zIndex }, i) => (
+          /**
+           * Passing 2nd arg to bind is a boolean value that represents if the item's drag is disabled or not.
+           */
           <animated.div
             {...bind(
               i,
