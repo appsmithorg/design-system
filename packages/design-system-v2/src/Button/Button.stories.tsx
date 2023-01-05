@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Button as ButtonComponent } from "./Button";
+import { ButtonV2 as ButtonComponent } from "./Button";
 
 export default {
   title: "Design System V2/Button",

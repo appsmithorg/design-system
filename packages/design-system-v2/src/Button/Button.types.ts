@@ -9,8 +9,12 @@ export type Size = "sm" | "md" | "lg";
 
 // Button props
 export type ButtonProps = {
-  /** Button as attribute */
+  /** Attribute to change the rendering component */
   as?: "button" | "a";
+  /** Button className attribute */
+  className?: string;
+  /** Button children attribute */
+  children?: React.ReactNode | string;
   /** Button loading attribute */
   isLoading?: boolean;
   /** Button kind attribute */
@@ -21,6 +25,14 @@ export type ButtonProps = {
   startIcon?: React.ReactNode | "string";
   /** Button endIcon attribute */
   endIcon?: React.ReactNode | "string";
+  /** Button height attribute */
+  height?: string;
+  /** Button width attribute */
+  width?: string;
+  /** Button disabled attribute */
+  disabled?: boolean;
+  /** Button href attribute */
+  href?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.AnchorHTMLAttributes<HTMLAnchorElement> &
   AriaButtonProps;

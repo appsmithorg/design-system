@@ -85,6 +85,8 @@ const Kinds = {
 export const StyledButton = styled.button<{
   size?: Size;
   kind?: Kind;
+  height?: string;
+  width?: string;
 }>`
   ${Variables}
 
@@ -106,6 +108,8 @@ export const StyledButton = styled.button<{
   color: var(--btn-color-fg);
   font-family: var(--ads-v2-font-family);
   font-weight: var(--btn-font-weight);
+  ${({ height }) => height && `height: ${height};`}
+  ${({ width }) => width && `width: ${width};`}
 
   &:disabled {
     cursor: not-allowed;

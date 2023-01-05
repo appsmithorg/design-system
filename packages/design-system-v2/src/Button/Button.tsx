@@ -6,9 +6,9 @@ import { StyledButton } from "./Button.styles";
 import { ButtonProps } from "./Button.types";
 import { useDOMRef } from "Hooks/useDomRef";
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+const ButtonV2 = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref): JSX.Element => {
-    const { as, children, kind, size, ...rest } = props;
+    const { as, children, height, kind, size, width, ...rest } = props;
     const buttonRef = useDOMRef(ref);
     const { buttonProps } = useButton(
       {
@@ -21,9 +21,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <StyledButton
         as={as || "button"}
         {...buttonProps}
+        height={height}
         kind={kind}
         ref={buttonRef}
         size={size}
+        width={width}
       >
         {children}
       </StyledButton>
@@ -31,11 +33,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   },
 );
 
-Button.displayName = "Button";
+ButtonV2.displayName = "Button";
 
-Button.defaultProps = {
+ButtonV2.defaultProps = {
   size: "sm",
   kind: "primary",
 };
 
-export { Button };
+export { ButtonV2 };
