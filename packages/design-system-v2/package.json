@@ -20,6 +20,7 @@
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
     "@react-aria/button": "^3.6.4",
+    "@react-aria/radio": "^3.4.2",
     "@react-types/button": "^3.7.0",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@storybook/addon-actions": "^6.5.15",
