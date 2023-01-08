@@ -100,7 +100,7 @@ export const StyledButton = styled.button<{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: var(--ads-spaces-2);
+  gap: var(--ads-v2-spaces-2);
   cursor: pointer;
   border-radius: var(--button-border-radius);
   border: 1px solid var(--button-color-border);

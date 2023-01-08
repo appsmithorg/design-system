@@ -1,32 +1,69 @@
 import React, { useState } from "react";
 
-import { RadioProps } from "./Radio.types";
-import { RadioComponent } from "./Radio.styles";
+import { RadioProps, OptionProps } from "./Radio.types";
+import { RadioComponent, RadioGroup, RadioDescription } from "./Radio.styles";
 
 const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   (props, ref): JSX.Element => {
-    const { checked, disabled, label, name, value, ...rest } = props;
-    const [isChecked, setIsChecked] = useState(false);
+    const {
+      defaultValue,
+      disabled,
+      gap,
+      name,
+      onChange,
+      options,
+      showDescription,
+      ...otherProps
+    } = props;
+    const [selected, setSelected] = useState(defaultValue);
+
+    const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = event.target;
+      setSelected(value);
+      onChange && onChange(event);
+    };
+
+    function RadioButton(option: OptionProps) {
+      const {
+        description,
+        disabled: optionDisabled,
+        label,
+        value,
+        ...inputProps
+      } = option;
+      const isSelected = selected === value;
+      const isDisabled = disabled || optionDisabled;
+      const id = `ads-radio-${value}`;
+
+      return (
+        <RadioComponent disabled={isDisabled} key={value.toString()}>
+          <input
+            checked={isSelected}
+            disabled={isDisabled}
+            id={id}
+            name={name}
+            onChange={onChangeHandler}
+            type="radio"
+            value={value}
+            {...inputProps}
+          />
+          <label htmlFor={id}>{label}</label>
+          {description &&
+            showDescription !== "never" &&
+            (showDescription === "always" ||
+              (showDescription === "selected" && isSelected)) && (
+              <RadioDescription>{description}</RadioDescription>
+            )}
+        </RadioComponent>
+      );
+    }
 
     return (
-      <RadioComponent
-        disabled={disabled}
-        onClick={() => {
-          console.log("onChange");
-          setIsChecked(!isChecked);
-        }}
-      >
-        <input
-          checked={isChecked}
-          disabled={disabled}
-          name={name}
-          ref={ref}
-          type="radio"
-          value={value}
-          {...rest}
-        />
-        <label>{label}</label>
-      </RadioComponent>
+      <RadioGroup gap={gap} {...otherProps} ref={ref}>
+        {options.map((option, index) => (
+          <RadioButton key={index.toString()} {...option} />
+        ))}
+      </RadioGroup>
     );
   },
 );

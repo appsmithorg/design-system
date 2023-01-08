@@ -16,7 +16,7 @@ const BasicStyles = css`
   label {
     cursor: pointer;
     position: relative;
-    padding-left: 24px;
+    padding-left: var(--ads-v2-spaces-7);
     font-family: var(--ads-v2-font-family);
     color: var(--radio-color-label);
   }
@@ -63,7 +63,29 @@ export const RadioComponent = styled.div<{
 }>`
   ${Variables}
 
-  ${({ disabled }) => disabled && `opacity: 0.6;`}
+  ${({ disabled }) =>
+    disabled &&
+    `
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+  `}
 
   ${BasicStyles}
+`;
+
+export const RadioGroup = styled.div<{
+  direction?: "row" | "column";
+  gap?: string;
+}>`
+  display: flex;
+  flex-direction: ${({ direction }) => direction || "row"};
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: ${({ gap }) => gap || "var(--ads-v2-spaces-6)"};
+`;
+
+export const RadioDescription = styled.div`
+  margin-top: var(--ads-v2-spaces-2);
+  padding-left: var(--ads-v2-spaces-7);
 `;

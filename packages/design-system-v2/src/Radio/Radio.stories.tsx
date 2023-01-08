@@ -16,7 +16,28 @@ const Template: ComponentStory<typeof RadioComponent> = (args) => {
 export const Radio = Template.bind({});
 
 Radio.args = {
-  checked: true,
-  disabled: false,
-  label: "Radio",
+  name: "radio",
+  options: [
+    {
+      label: "Option 1",
+      value: "option1",
+      disabled: true,
+      description: "This is a description1",
+    },
+    {
+      label: "Option 2",
+      value: "option2",
+      description: "This is a description2",
+    },
+    {
+      label: "Option 3",
+      value: "option3",
+      description: "This is a description3",
+    },
+  ],
+  defaultValue: "option1",
+  onChange: (e) => {
+    // eslint-disable-next-line no-console
+    console.log((e.target as HTMLInputElement).value);
+  },
 };
