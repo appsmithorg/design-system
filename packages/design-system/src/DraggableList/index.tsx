@@ -201,12 +201,11 @@ export function DraggableList(props: any) {
 
           /**
            * We check if the final position's item's dragging is enabled.
-           * Dragging is enabled for items those who don't have sticky property or they have it but the value is "".
            */
           if (
-            !items[curRow].hasOwnProperty("sticky") ||
-            (items[curRow].hasOwnProperty("sticky") &&
-              items[curRow].sticky === "")
+            !items[curRow].hasOwnProperty("isDragDisabled") ||
+            (items[curRow].hasOwnProperty("isDragDisabled") &&
+              !items[curRow].isDragDisabled)
           ) {
             const newOrder = [...order.current];
             newOrder.splice(curRow, 0, newOrder.splice(curIndex, 1)[0]);
@@ -277,8 +276,8 @@ export function DraggableList(props: any) {
           <animated.div
             {...bind(
               i,
-              items[i].hasOwnProperty("sticky") &&
-                (items[i].sticky === "left" || items[i].sticky === "right"),
+              items[i].hasOwnProperty("isDragDisabled") &&
+                items[i].isDragDisabled,
             )}
             data-rbd-draggable-id={items[i].id}
             //having a key of items[i].id will break in few places,
