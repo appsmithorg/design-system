@@ -1,4 +1,4 @@
-# usage ./create_story.sh -f <Folder name under src fodler>
+# usage ./create_story.sh -f <Folder name under src folder>
 while getopts f: flag
 do
     case "${flag}" in
