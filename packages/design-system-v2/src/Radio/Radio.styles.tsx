@@ -88,4 +88,5 @@ export const RadioGroup = styled.div<{
 export const RadioDescription = styled.div`
   margin-top: var(--ads-v2-spaces-2);
   padding-left: var(--ads-v2-spaces-7);
+  font-family: var(--ads-v2-font-family);
 `;

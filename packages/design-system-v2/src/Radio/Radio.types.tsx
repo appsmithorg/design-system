@@ -16,14 +16,14 @@ export type RadioProps = {
   gap?: string;
   /** direction attribute - defines radio button render direction */
   direction?: "row" | "column";
-  /** disabled attribute - this will disable all radio buttons */
+  /** disabled attribute - disable all radio buttons */
   disabled?: boolean;
   /** defaultValue attribute */
   defaultValue?: string;
   /** showDescription attribute - this attribute allows to define when to show description.
-   * always: will be showing description for all radio always
-   * selected: will show description only for the selected item
-   * never: hides description
+   * always: show description for all items.
+   * selected: show description for selected item.
+   * never: never show description.
    */
   showDescription?: "always" | "selected" | "never";
   /** onChange attribute */
