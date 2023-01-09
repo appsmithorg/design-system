@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 import { FormGroup, Classes } from "@blueprintjs/core";
 import { getTypographyByKey } from "Constants/typography";
 
 type FormGroupProps = PropsWithChildren<{
+  children?: ReactNode;
   fill?: boolean;
 }>;
 
