@@ -4,7 +4,8 @@
 :root {
 
   /* new variables */
-  --ads-color-brand: var(--ads-color-orange-500);
+  --ads-color-brand: green;
+  --ads-color-brand-light: var(--ads-orange-accent);
   --ads-color-brand-hover: var(--ads-old-color-rock-spray);
   --ads-color-brand-active: var(--ads-old-color-rock-spray);
   --ads-color-brand-focus: var(--ads-old-color-rock-spray);

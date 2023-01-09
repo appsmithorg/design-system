@@ -45,7 +45,7 @@
 }
 
 .ds--date-range-picker-popover .bp3-daterangepicker .DayPicker-Day--selected-range {
-  background-color: var(--ads-primary-color-accent);
+  background-color: var(--ads-color-brand-light);
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--isToday .bp3-datepicker-day-wrapper {
