@@ -166,7 +166,9 @@ function Table(props: TableProps) {
             <tr {...headerGroup.getHeaderGroupProps()} key={index}>
               {headerGroup.headers.map((column, index: number) => (
                 <th
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  {...column.getHeaderProps(
+                    column.getSortByToggleProps({ title: undefined }),
+                  )}
                   key={index}
                 >
                   {column.render("Header")}
@@ -225,7 +227,12 @@ function Table(props: TableProps) {
                   ) : (
                     <TableColumnEmptyWrapper>
                       {/*<img alt="No data" src={NoDataImage} />*/}
-                      <div className="no-data-title">No data found</div>
+                      <div
+                        className="no-data-title"
+                        data-testid="t--no-data-title"
+                      >
+                        No data found
+                      </div>
                     </TableColumnEmptyWrapper>
                   )}
                 </CentralizedWrapper>
