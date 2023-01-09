@@ -19,8 +19,8 @@ const MenuHeader = styled.div`
 `;
 
 const MenuBody = styled.div<{ isOpen: boolean }>`
-  background-color: #fff;
-  color: #333;
+  background-color: var(--ads-color-black-0);
+  color: var(--ads-color-text);
   display: ${(props) => (props.isOpen ? "flex" : "none")};
   overflow: hidden;
   margin-left: 30px;
