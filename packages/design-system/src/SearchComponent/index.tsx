@@ -46,7 +46,9 @@ const HideDefaultSearchCancelIcon = `
     }
 `;
 
-const SearchInputWrapper = styled(InputGroup)`
+const SearchInputWrapper = styled(InputGroup)<{
+  children?: React.ReactNode;
+}>`
   &&& {
     input {
       border-radius: 0;

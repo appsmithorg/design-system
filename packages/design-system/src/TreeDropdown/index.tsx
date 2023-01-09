@@ -1,5 +1,6 @@
 import React, {
   memo,
+  PropsWithChildren,
   useCallback,
   useEffect,
   useMemo,
@@ -67,23 +68,23 @@ export type TreeDropdownProps = {
   menuWidth?: number;
 };
 
-export type StyledMenuProps = {
+export type StyledMenuProps = PropsWithChildren<{
   width?: number;
-};
+}>;
 
-export const StyledMenu = styled(Menu)`
+export const StyledMenu = styled(Menu)<StyledMenuProps>`
   max-height: calc(
     100vh - var(--ads-small-header-height) - var(--ads-bottom-bar-height)
   );
   overflow: auto;
   min-width: 220px;
-  width: ${(props: StyledMenuProps) => `${props.width}px`};
+  width: ${(props) => `${props.width}px`};
   padding: 0px;
   border-radius: 0px;
   background-color: var(--ads-tree-dropdown-menu-default-background-color);
   .${Classes.MENU} {
     min-width: 220px;
-    width: ${(props: StyledMenuProps) => `${props.width}px`};
+    width: ${(props) => `${props.width}px`};
     padding: 0px;
     border-radius: 0px;
     background-color: var(--ads-tree-dropdown-menu-default-background-color);

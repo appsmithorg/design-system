@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, PropsWithChildren } from "react";
 import { CommonComponentProps } from "Types/common";
 import {
   PopoverPosition,
@@ -41,10 +41,12 @@ const rootElementId = "tooltip-root";
 
 let portalContainer = document.getElementById(rootElementId);
 
-const TooltipWrapper = styled(Tooltip)<{
-  width?: string;
-  underline?: boolean;
-}>`
+const TooltipWrapper = styled(Tooltip)<
+  PropsWithChildren<{
+    width?: string;
+    underline?: boolean;
+  }>
+>`
   .bp3-popover-target {
     position: relative;
     cursor: ${({ underline }) => (underline ? "help" : "")};
