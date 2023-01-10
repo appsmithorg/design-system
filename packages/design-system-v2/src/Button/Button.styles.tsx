@@ -14,14 +14,29 @@ const Sizes = {
     padding: 2px 8px;
     font-size: 11px;
     font-weight: 500;
+
+    & svg {
+      width: 11px;
+      height: 11px;
+    }
   `,
   md: css`
     padding: 6px 16px;
     font-size: 12px;
+
+    & svg {
+      width: 12px;
+      height: 12px;
+    }
   `,
   lg: css`
     padding: 10px 26px;
     font-size: 13px;
+
+    & svg {
+      width: 13px;
+      height: 13px;
+    }
   `,
 };
 

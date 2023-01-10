@@ -70,7 +70,7 @@ export default {
     },
     startIcon: {
       control: {
-        type: "object",
+        type: "text",
       },
       description:
         "The icon to display before the button text. Pass name of the icon from remix-icon library(eg: home-2-line) or an svg icon.",
@@ -80,7 +80,7 @@ export default {
     },
     endIcon: {
       control: {
-        type: "object",
+        type: "text",
       },
       description:
         "The icon to display after the button text. Pass name of the icon from remix-icon library(eg: home-2-line) or an svg icon.",
