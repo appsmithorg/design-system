@@ -1,0 +1,20 @@
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+
+import { ${component} } from "./${component}";
+
+export default {
+  title: "Design System/${component}",
+  component: ${component},
+} as ComponentMeta<typeof ${component}>;
+
+// eslint-disable-next-line react/function-component-definition
+const Template: ComponentStory<typeof ${component}> = (args) => {
+  return <${component} {...args} />;
+};
+
+export const ${component}Example = Template.bind({});
+${component}Example.storyName = "${component}";
+${component}Example.args = {
+  //add arguments here
+};

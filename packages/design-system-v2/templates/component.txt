@@ -1,0 +1,18 @@
+import React from "react";
+import { ${component}Props } from "./${component}.types";
+import { Styled${component} } from "./${component}.styles";
+
+const ${component} = ({ YOUR_PROPS, children, ...rest }: ${component}Props) => {
+  return (
+    <Styled${component} {...rest}>
+      {children}
+    </Styled${component}>
+  );
+};
+
+${component}.displayName = "${component}";
+
+${component}.defaultProps = {
+};
+
+export { ${component} };
