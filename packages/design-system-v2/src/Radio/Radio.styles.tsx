@@ -61,6 +61,7 @@ const BasicStyles = css`
 
 export const RadioComponent = styled.label<{
   disabled?: boolean;
+  isFocusVisible?: boolean;
 }>`
   ${Variables}
 
@@ -71,6 +72,15 @@ export const RadioComponent = styled.label<{
     pointer-events: none;
     cursor: not-allowed;
   `}
+
+  ${({ isFocusVisible }) =>
+    isFocusVisible &&
+    `
+    input[type="radio"]:checked + label::before {
+      outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
+      outline-offset: var(--ads-v2-offset-outline);
+    }
+    `}
 
   ${BasicStyles}
 `;

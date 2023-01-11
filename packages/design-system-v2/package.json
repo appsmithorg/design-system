@@ -19,6 +19,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
+    "@react-aria/focus": "^3.10.1",
     "@react-aria/radio": "^3.4.2",
     "@react-types/button": "^3.7.0",
     "@rollup/plugin-commonjs": "^24.0.0",
