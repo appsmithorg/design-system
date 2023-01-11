@@ -1,73 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
+import { useRadioGroupState, RadioGroupState } from "react-stately";
+import { useRadio, useRadioGroup, AriaRadioProps } from "@react-aria/radio";
+import { VisuallyHidden } from "@react-aria/visually-hidden";
 
-import { RadioProps, OptionProps } from "./Radio.types";
-import { RadioComponent, RadioGroup, RadioDescription } from "./Radio.styles";
+import { RadioComponent, StyledRadioGroup } from "./Radio.styles";
+import { RadioGroupProps } from "./Radio.types";
 
-const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
-  (props, ref): JSX.Element => {
-    const {
-      defaultValue,
-      disabled,
-      gap,
-      name,
-      onChange,
-      options,
-      showDescription,
-      ...otherProps
-    } = props;
-    const [selected, setSelected] = useState(defaultValue);
+const RadioContext = React.createContext({} as RadioGroupState);
 
-    const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const { value } = event.target;
-      setSelected(value);
-      onChange && onChange(event);
-    };
+export function RadioGroup(props: RadioGroupProps) {
+  const { children, direction, gap } = props;
+  const state = useRadioGroupState(props);
+  const { radioGroupProps } = useRadioGroup(props, state);
 
-    function RadioButton(option: OptionProps) {
-      const {
-        description,
-        disabled: optionDisabled,
-        label,
-        value,
-        ...inputProps
-      } = option;
-      const isSelected = selected === value;
-      const isDisabled = disabled || optionDisabled;
-      const id = `ads-radio-${value}`;
+  return (
+    <StyledRadioGroup direction={direction} gap={gap} {...radioGroupProps}>
+      <RadioContext.Provider value={state}>{children}</RadioContext.Provider>
+    </StyledRadioGroup>
+  );
+}
 
-      return (
-        <RadioComponent disabled={isDisabled} key={value.toString()}>
-          <input
-            checked={isSelected}
-            disabled={isDisabled}
-            id={id}
-            name={name}
-            onChange={onChangeHandler}
-            type="radio"
-            value={value}
-            {...inputProps}
-          />
-          <label htmlFor={id}>{label}</label>
-          {description &&
-            showDescription !== "never" &&
-            (showDescription === "always" ||
-              (showDescription === "selected" && isSelected)) && (
-              <RadioDescription>{description}</RadioDescription>
-            )}
-        </RadioComponent>
-      );
-    }
+export function Radio(props: AriaRadioProps) {
+  const { children, isDisabled } = props;
+  const state = React.useContext(RadioContext);
+  const ref = React.useRef(null);
+  const { inputProps } = useRadio(props, state, ref);
+  const id = `ads-radio-${props.value}`;
 
-    return (
-      <RadioGroup gap={gap} {...otherProps} ref={ref}>
-        {options.map((option, index) => (
-          <RadioButton key={index.toString()} {...option} />
-        ))}
-      </RadioGroup>
-    );
-  },
-);
-
-Radio.displayName = "Radio";
-
-export { Radio };
+  return (
+    <RadioComponent disabled={isDisabled}>
+      <input {...inputProps} id={id} ref={ref} />
+      <label htmlFor={id}>{children}</label>
+    </RadioComponent>
+  );
+}

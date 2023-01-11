@@ -51,7 +51,7 @@ const BasicStyles = css`
   }
 
   /* remove this */
-  input[type="radio"] + label:before:focus {
+  input[type="radio"]:focus + label:before {
     outline: none;
     box-shadow: 0 0px 8px red;
   }
@@ -65,7 +65,7 @@ const BasicStyles = css`
   }
 `;
 
-export const RadioComponent = styled.div<{
+export const RadioComponent = styled.label<{
   disabled?: boolean;
 }>`
   ${Variables}
@@ -81,7 +81,7 @@ export const RadioComponent = styled.div<{
   ${BasicStyles}
 `;
 
-export const RadioGroup = styled.div<{
+export const StyledRadioGroup = styled.div<{
   direction?: "row" | "column";
   gap?: string;
 }>`
