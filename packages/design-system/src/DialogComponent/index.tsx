@@ -1,17 +1,24 @@
-import React, { ReactNode, useState, useEffect } from "react";
+import React, {
+  ReactNode,
+  useState,
+  useEffect,
+  PropsWithChildren,
+} from "react";
 import styled from "styled-components";
 import { Dialog, Classes } from "@blueprintjs/core";
 import Icon, { IconName, IconSize } from "Icon";
 import { typography } from "Constants/typography";
 
-const StyledDialog = styled(Dialog)<{
+type DialogProps = PropsWithChildren<{
   setMaxWidth?: boolean;
   width?: string;
   maxHeight?: string;
   maxWidth?: string;
   showHeaderUnderline?: boolean;
   noModalBodyMarginTop?: boolean;
-}>`
+}>;
+
+const StyledDialog = styled(Dialog)<DialogProps>`
   && {
     border-radius: 0;
     padding: 24px;

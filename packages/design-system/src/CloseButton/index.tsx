@@ -1,14 +1,14 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import styled from "styled-components";
 import { Button } from "@blueprintjs/core";
 
-type CloseButtonProps = {
+type CloseButtonProps = PropsWithChildren<{
   // TODO: fix the type on color, make rigid or add a default
   color: any;
   size: number;
   onClick: React.MouseEventHandler;
   className?: string;
-};
+}>;
 
 const StyledButton = styled(Button)<CloseButtonProps>`
   position: absolute;

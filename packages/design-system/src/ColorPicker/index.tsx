@@ -32,7 +32,9 @@ const ColorPickerIconContainer = styled.div`
   z-index: 1;
 `;
 
-const StyledInputGroup = styled(InputGroup)`
+const StyledInputGroup = styled(InputGroup)<{
+  children?: React.ReactNode;
+}>`
   .${Classes.INPUT} {
     box-shadow: none;
     border-radius: 0;
