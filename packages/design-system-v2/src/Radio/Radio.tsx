@@ -8,12 +8,12 @@ import { RadioGroupProps } from "./Radio.types";
 const RadioContext = React.createContext({} as RadioGroupState);
 
 export function RadioGroup(props: RadioGroupProps) {
-  const { children, direction, gap } = props;
+  const { children, gap } = props;
   const state = useRadioGroupState(props);
   const { radioGroupProps } = useRadioGroup(props, state);
 
   return (
-    <StyledRadioGroup direction={direction} gap={gap} {...radioGroupProps}>
+    <StyledRadioGroup gap={gap} {...radioGroupProps}>
       <RadioContext.Provider value={state}>{children}</RadioContext.Provider>
     </StyledRadioGroup>
   );

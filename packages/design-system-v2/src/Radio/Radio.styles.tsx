@@ -25,8 +25,8 @@ const BasicStyles = css`
   label::before {
     content: "";
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: var(--ads-v2-spaces-5);
+    height: var(--ads-v2-spaces-5);
     background-color: var(--radio-color-background);
     border: 1px solid var(--radio-color-border);
     border-radius: 50%;
@@ -39,8 +39,8 @@ const BasicStyles = css`
   label::after {
     content: "";
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: var(--ads-v2-spaces-5);
+    height: var(--ads-v2-spaces-5);
     background-color: var(--radio-color-check-mark);
     border: 1px solid var(--radio-color-check-mark);
     border-radius: 50%;
@@ -76,14 +76,22 @@ export const RadioComponent = styled.label<{
 `;
 
 export const StyledRadioGroup = styled.div<{
-  direction?: "row" | "column";
   gap?: string;
 }>`
   display: flex;
-  flex-direction: ${({ direction }) => direction || "row"};
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: ${({ gap }) => gap || "var(--ads-v2-spaces-6)"};
+
+  /* This Aria field is added by react-aria library */
+  &[aria-orientation="vertical"] {
+    flex-direction: column;
+  }
+
+  &[aria-orientation="horizontal"] {
+    flex-direction: row;
+  }
 `;
 
 export const RadioDescription = styled.div`
