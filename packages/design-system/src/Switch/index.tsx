@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { ISwitchProps, Switch } from "@blueprintjs/core";
 import { replayHighlightClass } from "Constants/classes";
 
-const StyledSwitch = styled(Switch)`
+const StyledSwitch = styled(Switch)<{
+  children?: React.ReactNode;
+}>`
   &&&&& input:checked ~ span {
     background: var(--ads-old-color-gray-10);
   }

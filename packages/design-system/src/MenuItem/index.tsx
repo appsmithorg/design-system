@@ -111,6 +111,7 @@ const MenuItemContent = forwardRef(
       <ItemRow
         className={props.className}
         data-cy={props.cypressSelector}
+        data-testid={`t--${props.className}`}
         disabled={props.disabled}
         href={props.href}
         onClick={onSelect}
