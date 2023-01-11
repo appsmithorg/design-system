@@ -5,12 +5,14 @@ import _ from "lodash";
 import { DSEventTypes } from "Types/common";
 import { useDSEvent } from "hooks";
 
-const ItemWrapper = styled.div<{ selected: boolean }>`
+const ItemWrapper = styled.div<{ selected: boolean, gap?: string }>`
   min-width: 36px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: ${({ gap }) => gap || "0px"};
+  padding: 0 8px;
   border: 1px solid
     ${(props) =>
       props.selected
@@ -151,6 +153,7 @@ const ButtonGroup = React.forwardRef((props: ButtonGroupProps, ref: any) => {
               }}
               role="tab"
               selected={isSelected}
+              gap={ControlIcon && label && "4px"}
             >
               {ControlIcon} {label}
             </ItemWrapper>
