@@ -9,6 +9,7 @@ import {
 export default {
   title: "Design System V2/Radio/Radio Group",
   component: RadioGroupElement,
+  subcomponents: { RadioComponent },
 } as ComponentMeta<typeof RadioGroupElement>;
 
 // eslint-disable-next-line react/function-component-definition

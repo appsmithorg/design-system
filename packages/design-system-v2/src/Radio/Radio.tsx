@@ -1,7 +1,6 @@
 import React from "react";
 import { useRadioGroupState, RadioGroupState } from "react-stately";
 import { useRadio, useRadioGroup, AriaRadioProps } from "@react-aria/radio";
-import { VisuallyHidden } from "@react-aria/visually-hidden";
 
 import { RadioComponent, StyledRadioGroup } from "./Radio.styles";
 import { RadioGroupProps } from "./Radio.types";

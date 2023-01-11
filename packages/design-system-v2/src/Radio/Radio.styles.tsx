@@ -50,12 +50,6 @@ const BasicStyles = css`
     transition: transform 200ms ease;
   }
 
-  /* remove this */
-  input[type="radio"]:focus + label:before {
-    outline: none;
-    box-shadow: 0 0px 8px red;
-  }
-
   input[type="radio"]:checked + label::before {
     border-color: var(--radio-color-border-checked);
   }
