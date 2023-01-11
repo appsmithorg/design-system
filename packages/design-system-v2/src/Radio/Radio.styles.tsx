@@ -10,7 +10,8 @@ const Variables = css`
 
 const BasicStyles = css`
   input[type="radio"] {
-    display: none;
+    position: absolute;
+    opacity: 0;
   }
 
   label {
@@ -47,6 +48,12 @@ const BasicStyles = css`
     left: 0;
     transform: translateY(-50%) scale(0);
     transition: transform 200ms ease;
+  }
+
+  /* remove this */
+  input[type="radio"] + label:before:focus {
+    outline: none;
+    box-shadow: 0 0px 8px red;
   }
 
   input[type="radio"]:checked + label::before {
