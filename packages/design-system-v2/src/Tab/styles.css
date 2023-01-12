@@ -1,0 +1,48 @@
+/*  temp shit: rehome or get wrecked*/
+
+.tabs {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs.vertical {
+  flex-direction: row;
+}
+
+[role=tablist] {
+  display: flex;
+}
+
+[role=tablist][aria-orientation=horizontal] {
+  border-bottom: 1px solid gray;
+}
+
+[role=tablist][aria-orientation=vertical] {
+  flex-direction: column;
+  border-right: 1px solid gray;
+}
+
+[role=tab] {
+  padding: 10px;
+}
+
+[role=tablist][aria-orientation=horizontal] [role=tab] {
+  border-bottom: 3px solid transparent;
+}
+
+[role=tablist][aria-orientation=vertical] [role=tab] {
+  border-right: 3px solid transparent;
+}
+
+[role=tablist] [role=tab][aria-selected=true] {
+  border-color: blue;
+}
+
+[role=tab][aria-disabled] {
+  opacity: 0.5;
+}
+
+[role=tabpanel] {
+  padding: 10px;
+}
