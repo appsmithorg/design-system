@@ -3278,11 +3278,41 @@
     "@react-types/shared" "^3.16.0"
     "@swc/helpers" "^0.4.14"
 
+"@react-aria/selection@^3.12.1":
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/selection/-/selection-3.12.1.tgz#a21ea85952c55b5a7ce8c846478226fe3d03f1f8"
+  integrity sha512-UX1vSY+iUdHe0itFZIOizX1BCI8SAeFnEh5VIQ1bYRt93+kAxeC914fsxFPPgrodJyqWRCX1dblPyRUIWAzQiw==
+  dependencies:
+    "@react-aria/focus" "^3.10.1"
+    "@react-aria/i18n" "^3.6.3"
+    "@react-aria/interactions" "^3.13.1"
+    "@react-aria/utils" "^3.14.2"
+    "@react-stately/collections" "^3.5.1"
+    "@react-stately/selection" "^3.11.2"
+    "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
+
 "@react-aria/ssr@^3.4.1":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@react-aria/ssr/-/ssr-3.4.1.tgz#79e8bb621487e8f52890c917d3c734f448ba95e7"
   integrity sha512-NmhoilMDyIfQiOSdQgxpVH2tC2u85Y0mVijtBNbI9kcDYLEiW/r6vKYVKtkyU+C4qobXhGMPfZ70PTc0lysSVA==
   dependencies:
+    "@swc/helpers" "^0.4.14"
+
+"@react-aria/tabs@^3.3.4":
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/@react-aria/tabs/-/tabs-3.3.4.tgz#0cbe65d4c99c9c9e5d8ebd5e1442da68964b9e14"
+  integrity sha512-SqlgfPvpRHlWelFk/lF9Ziu/8881NVErhKcpyyi+A9jASv5tvILWiwK8na82oI22UXXzyp0Y1EojLB25HnCB+w==
+  dependencies:
+    "@react-aria/focus" "^3.10.1"
+    "@react-aria/i18n" "^3.6.3"
+    "@react-aria/interactions" "^3.13.1"
+    "@react-aria/selection" "^3.12.1"
+    "@react-aria/utils" "^3.14.2"
+    "@react-stately/list" "^3.6.1"
+    "@react-stately/tabs" "^3.2.4"
+    "@react-types/shared" "^3.16.0"
+    "@react-types/tabs" "^3.1.5"
     "@swc/helpers" "^0.4.14"
 
 "@react-aria/utils@^3.14.2":
@@ -3382,6 +3412,25 @@
     "@react-spring/shared" "~9.5.0"
     "@react-spring/types" "~9.5.0"
 
+"@react-stately/collections@^3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@react-stately/collections/-/collections-3.5.1.tgz#502a56658e4859aa7d31bd4b9189879b5b5a0255"
+  integrity sha512-egzVrZC5eFc5RJBpqUkzxd2aJOHZ2T1o7horEi8tAWZkg4YI+AmKrqela4ijVrrB9l1GO9z06qPT1UoPkFrC1w==
+  dependencies:
+    "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
+
+"@react-stately/list@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@react-stately/list/-/list-3.6.1.tgz#75d07a4e04111b804fb13c975df5a0c1265f3aa1"
+  integrity sha512-+/fVkK3UO+N2NoUGpe57k9gcnfIsyEgWP8SD6CXZUkJho7BTp6mwrH0Wm8tcOclT3uBk+fZaQrk8mR3uWsPZGw==
+  dependencies:
+    "@react-stately/collections" "^3.5.1"
+    "@react-stately/selection" "^3.11.2"
+    "@react-stately/utils" "^3.5.2"
+    "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
+
 "@react-stately/radio@^3.6.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@react-stately/radio/-/radio-3.6.2.tgz#6a13e3f97d130fccc1b404673cbe1414ac018621"
@@ -3390,6 +3439,26 @@
     "@react-stately/utils" "^3.5.2"
     "@react-types/radio" "^3.3.1"
     "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
+
+"@react-stately/selection@^3.11.2":
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/@react-stately/selection/-/selection-3.11.2.tgz#15c35dfb386e5218b8106070137a8b3ecded5a8b"
+  integrity sha512-g21Y36xhYkXO3yzz0BYSBqnD38olvEwsJUqBXGZfx//bshMC2FNmI5sRYMAi36stxWbwzBvB01OytxfLLxCXCA==
+  dependencies:
+    "@react-stately/collections" "^3.5.1"
+    "@react-stately/utils" "^3.5.2"
+    "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
+
+"@react-stately/tabs@^3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@react-stately/tabs/-/tabs-3.2.4.tgz#e596623de62731efc769ee0d58e54f9f1400551c"
+  integrity sha512-qSnkoxzbC21KXZYGtg6TEDaex34WSNmPN4sJzXc9Xe39L6+wXNCA2tqZxWCfpIcWQklFm+BmnnNNCO8/PDDrMA==
+  dependencies:
+    "@react-stately/list" "^3.6.1"
+    "@react-stately/utils" "^3.5.2"
+    "@react-types/tabs" "^3.1.5"
     "@swc/helpers" "^0.4.14"
 
 "@react-stately/toggle@^3.4.4":
@@ -3441,6 +3510,13 @@
   version "3.16.0"
   resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.16.0.tgz#cab7bf0376969d1773480ecb2d6da5aa91391db5"
   integrity sha512-IQgU4oAEvMwylEvaTsr2XB1G/mAoMe1JFYLD6G78v++oAR9l8o9MQxZ0YSeANDkqTamb2gKezGoT1RxvSKjVxw==
+
+"@react-types/tabs@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@react-types/tabs/-/tabs-3.1.5.tgz#8676dd16e0dc4be2d4d1cc33bb89cc679ef93abe"
+  integrity sha512-YgWY8IajCDBZmBzR3eii0aW6+SjcAT/dmqDNmfIuVVnDN7sHQ3PFa0nbmByvb0SfjOkJYumt8TJwFUCugohS8A==
+  dependencies:
+    "@react-types/shared" "^3.16.0"
 
 "@rollup/plugin-commonjs@^22.0.0":
   version "22.0.1"
