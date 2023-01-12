@@ -70,7 +70,7 @@
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--selected {
-  background-color: var(--ads-primary-color) !important;
+  background-color: var(--ads-color-brand) !important;
   color: var(--ads-color-black-0) !important;
   border-radius: var(--ads-border-radius) !important;
 }

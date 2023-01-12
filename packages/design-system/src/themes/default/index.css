@@ -23,9 +23,6 @@
   --ads-border-radius: 0px;
   /* new variables end here */
 
-  --ads-primary-color: var(--ads-color-brand);
-  --ads-primary-color-accent: var(--ads-orange-accent);
-  --ads-primary-text-color: var(--ads-color-black-750);
   --ads-border-color: var(--ads-color-black-250);
   --ads-border-color-focus: var(--ads-color-black-900);
 
@@ -303,14 +300,14 @@
   --ads-tabs-tab-selected-svg-fill-color: var(--ads-color-black-750);
   --ads-tabs-tab-selected-response-viewer-background-color: var(--ads-color-black-0);
   --ads-tabs-tab-selected-response-viewer-border-color: var(--ads-color-black-250);
-  --ads-tabs-tab-title-response-viewer-text-color: var(--ads-primary-text-color);
+  --ads-tabs-tab-title-response-viewer-text-color: var(--ads-color-text);
   --ads-tabs-count-background-color: var(--ads-old-color-mercury);
   --ads-tabs-title-wrapper-text-color: var(--ads-old-color-gray-7);
   --ads-tabs-title-wrapper-hover-text-color: var(--ads-color-black-750);
   --ads-tabs-title-wrapper-icon-fill-color: var(--ads-old-color-gray-7);
 
   /** Tab Item Background fill */
-  --ads-tab-item-text-color: var(--ads-primary-text-color);
+  --ads-tab-item-text-color: var(--ads-color-text);
   --ads-tab-item-focus-background-color: var(--ads-color-black-75);
   --ads-tab-item-focus-text-color: var(--ads-color-black-900);
 
@@ -325,7 +322,7 @@
   --ads-tag-input-tag-background-color: var(--ads-color-brand);
 
   /** Text */
-  --ads-text-color: var(--ads-primary-text-color);
+  --ads-text-color: var(--ads-color-text);
   --ads-text-heading-color: var(--ads-color-black-850);
   --ads-text-highlight-color: var(--ads-color-black-0);
 
