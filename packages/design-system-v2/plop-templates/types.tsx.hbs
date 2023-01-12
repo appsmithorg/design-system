@@ -1,4 +1,17 @@
-export type {{capitalize name}}Props = {
-  /** add proper comment in order to storybook to generate story */
-  children?: string;
+import React from "react";
+
+// {{capitalize name}} prop types
+export type YOUR_PROP_TYPE_1 = {
+  /** YOUR_PROP_TYPE_1 description */
 };
+
+// {{capitalize name}} props
+export type {{capitalize name}}Props = {
+  /** this prop is used when... */
+  prop1: undefined;
+
+  /** (try not to) pass addition classes here */
+  className?: string;
+  /** the words you want to display */
+  children: string;
+} & React.{{capitalize name}}HTMLAttribute<HTML{{capitalize name}}Element>;

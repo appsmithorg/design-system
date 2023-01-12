@@ -1,9 +1,15 @@
 import React from "react";
 import { useFocusRing } from "@react-aria/focus";
 
-import {} from "./{{capitalize name}}.styles";
 import { {{capitalize name}}Props } from "./{{capitalize name}}.types";
+import { Styled{{capitalize name}} } from "./{{capitalize name}}.styles";
 
-export function {{capitalize name}}(props: {{capitalize name}}Props) {
-  return <div>{{capitalize name}} Component</div>;
+function {{capitalize name}}({ children, YOUR_PROPS, ...rest }: {{capitalize name}}Props) {
+  return <Styled{{capitalize name}} {...rest}>{children}</Styled{{capitalize name}}>;
 }
+
+{{capitalize name}}.displayName = "{{capitalize name}}";
+
+{{capitalize name}}.defaultProps = {};
+
+export { {{capitalize name}} };
