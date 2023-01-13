@@ -92,6 +92,7 @@
   },
   "dependencies": {
     "@react-aria/button": "^3.6.4",
+    "react-toastify": "9.0.3",
     "styled-components": "^5.3.6"
   }
 }
