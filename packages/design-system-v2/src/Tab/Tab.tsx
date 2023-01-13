@@ -6,6 +6,13 @@ import "./styles.css";
 import { useTab, useTabList, useTabPanel } from "@react-aria/tabs";
 import { useTabListState } from "@react-stately/tabs";
 
+/*
+  TODO:
+  - Add icon
+  - Add badge
+  - Animation of active state
+ */
+
 function Tabs(props) {
   let state = useTabListState(props);
   // efObject<HTMLElement
