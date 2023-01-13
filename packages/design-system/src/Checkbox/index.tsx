@@ -40,7 +40,7 @@ export const Checkmark = styled.span<{
         props.isChecked
           ? props.disabled
             ? "var(--ads-checkbox-disabled-checked-background-color)"
-            : props.backgroundColor || "var(--ads-primary-color)"
+            : props.backgroundColor || "var(--ads-color-brand)"
           : props.disabled
           ? "var(--ads-checkbox-disabled-checked-background-color)"
           : "transparent"
@@ -50,7 +50,7 @@ export const Checkmark = styled.span<{
           props.isChecked
             ? props.disabled
               ? "var(--ads-checkbox-disabled-checked-border-color)"
-              : props.backgroundColor || "var(--ads-primary-color)"
+              : props.backgroundColor || "var(--ads-color-brand)"
             : props.disabled
             ? "var(--ads-checkbox-disabled-checked-border-color)"
             : "var(--ads-checkbox-default-unchecked-border-color)"
@@ -77,7 +77,7 @@ export const Checkmark = styled.span<{
           props.isChecked
             ? props.disabled
               ? "var(--ads-checkbox-disabled-checked-border-color)"
-              : props.backgroundColor || "var(--ads-primary-color)"
+              : props.backgroundColor || "var(--ads-color-brand)"
             : props.disabled
             ? "var(--ads-checkbox-disabled-checked-border-color)"
             : "var(--ads-checkbox-default-unchecked-border-color)"
@@ -86,8 +86,8 @@ export const Checkmark = styled.span<{
           border: solid
             ${
               props.disabled
-                ? props.backgroundColor || "var(--ads-primary-color)"
-                : props.backgroundColor || "var(--ads-primary-color)"
+                ? props.backgroundColor || "var(--ads-color-brand)"
+                : props.backgroundColor || "var(--ads-color-brand)"
             };
         }
       `;

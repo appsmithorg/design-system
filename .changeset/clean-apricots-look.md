@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: update snippet button from 3ry to 2ry
+fix: Changes to support branding components
