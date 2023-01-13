@@ -92,6 +92,8 @@
   },
   "dependencies": {
     "@react-aria/button": "^3.6.4",
-    "styled-components": "^5.3.6"
+    "@uppy/react": "^3.0.2",
+    "styled-components": "^5.3.6",
+    "uppy": "^3.3.1"
   }
 }
