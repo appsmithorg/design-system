@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import typescript from "rollup-plugin-typescript2";
+import typescript from "@rollup/plugin-typescript";
 import { resolve } from "path";
 
 import { peerDependencies } from "./package.json";
@@ -9,7 +9,6 @@ export default defineConfig({
     outDir: "build",
     sourcemap: true,
     lib: {
-      name: "design-system-v2",
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es"],
       fileName: "index",
