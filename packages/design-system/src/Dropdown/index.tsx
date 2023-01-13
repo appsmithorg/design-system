@@ -209,6 +209,10 @@ const SquareBox = styled.div<{
     display: ${(props) => (props.checked ? "block" : "none")};
     width: 14px;
     height: 14px;
+
+    & path {
+      fill: var(--ads-color-brand-text);
+    }
   }
 `;
 
@@ -957,8 +961,8 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                 {props.isMultiSelect ? (
                   isSelected ? (
                     <SquareBox
-                      backgroundColor="#f86a2b"
-                      borderColor="#f86a2b"
+                      backgroundColor="var(--ads-color-brand)"
+                      borderColor="var(--ads-color-brand)"
                       checked={isSelected}
                     >
                       <Check />

@@ -65,6 +65,7 @@ import { ReactComponent as DropdownIcon } from "../assets/icons/ads/dropdown.svg
 import { ReactComponent as ChatIcon } from "../assets/icons/ads/app-icons/chat.svg";
 import { ReactComponent as JsIcon } from "../assets/icons/ads/js.svg";
 import { ReactComponent as ExecuteIcon } from "../assets/icons/ads/execute.svg";
+import { ReactComponent as PackageIcon } from "../assets/icons/ads/package.svg";
 
 // remix icons
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
@@ -451,6 +452,7 @@ const ICON_LOOKUP = {
   warning: <WarningIcon />,
   widget: <WidgetIcon />,
   workspace: <WorkspaceIcon />,
+  package: <PackageIcon />,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);
