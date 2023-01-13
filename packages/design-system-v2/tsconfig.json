@@ -36,5 +36,7 @@
   "exclude": [
     "node_modules",
     "build",
+    "**/*.stories.tsx", 
+    "**/*.test.tsx"
   ]
 }
