@@ -105,3 +105,7 @@ build
 .DS_Store
 
 .idea
+
+.vscode
+
+.fleet
