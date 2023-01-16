@@ -8,12 +8,10 @@ import { StyledToast, ToastBody } from "./Toast.styles";
 
 /**
  * TODO:
- * - Style the toast with our variables
  * - Add a variant that carries a link
  * - Add a way to attach an action to that link
  * - look up accessibility features for toasts (spectrum, MDN, what toastify does and does not support)
  * - use <Icon /> for the kinds of toast
- * - use <Text /> for the component
  * @constructor
  */
 
