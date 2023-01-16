@@ -1,8 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Toast } from "./Toast";
-import { toast } from "react-toastify";
+import { Toast, toast } from "./Toast";
 
 export default {
   title: "Design System/Toast",
@@ -19,7 +18,7 @@ const Template: ComponentStory<typeof Toast> = (args) => {
   );
 };
 
-const notify = () => toast("Wow so easy !");
+const notify = () => toast("Filepicker was removed successfully");
 
 export const ToastExample = Template.bind({});
 ToastExample.storyName = "Toast";

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { ToastContainer } from "react-toastify";
+import { Text } from "../Text";
 
 const Variables = css`
   --toastify-color-info: var(--ads-v2-color-fg-information);
@@ -14,7 +15,7 @@ const Variables = css`
 
   --toastify-toast-width: 320px;
   --toastify-toast-background: var(--ads-v2-color-bg);
-  --toastify-toast-min-height: 64px;
+  --toastify-toast-min-height: 2.5rem;
   --toastify-toast-max-height: 800px;
   --toastify-font-family: var(--ads-v2-font-family);
   --toastify-z-index: 9999;
@@ -36,16 +37,31 @@ const YOUR_VARIANTS = css`
 
 export const StyledToast = styled(ToastContainer).attrs({
   toastClassName: "toast",
+  bodyClassName: "body",
 })`
   .toast {
     box-shadow: var(--ads-v2-toast-box-shadow);
+    padding: 0;
   }
 
-  ${Variables}
+  .body {
+    padding: 0;
+  }
 
-  /* Variant styles */
+  ${Variables} /* Variant styles */
 
   /* Base style */
 
   /* Additional styles and classes */
+`;
+
+export const ToastBody = styled(Text)`
+
+  // TODO: add props for the typography style this text will be following instead
+  //  of the font styles here.
+  font-size: 12px;
+  line-height: 1.4;
+  // font-weight: 500; // Acc to Zeplin
+
+  padding: 0.5rem;
 `;

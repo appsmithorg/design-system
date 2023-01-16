@@ -1,10 +1,10 @@
 import React from "react";
 import { useFocusRing } from "@react-aria/focus";
-import { Slide, toast } from "react-toastify";
+import { Slide, toast as toastifyToast, ToastOptions } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
 import { ToastProps } from "./Toast.types";
-import { StyledToast } from "./Toast.styles";
+import { StyledToast, ToastBody } from "./Toast.styles";
 
 /**
  * TODO:
@@ -12,6 +12,8 @@ import { StyledToast } from "./Toast.styles";
  * - Add a variant that carries a link
  * - Add a way to attach an action to that link
  * - look up accessibility features for toasts (spectrum, MDN, what toastify does and does not support)
+ * - use <Icon /> for the kinds of toast
+ * - use <Text /> for the component
  * @constructor
  */
 
@@ -22,7 +24,7 @@ function Toast({ ...rest }: ToastProps) {
       className="t--toast-action"
       closeButton={false}
       hideProgressBar={true}
-      position={toast.POSITION.TOP_CENTER}
+      position={toastifyToast.POSITION.TOP_CENTER}
       rtl={false}
       transition={Slide}
       {...rest}
@@ -30,10 +32,15 @@ function Toast({ ...rest }: ToastProps) {
   );
 }
 
+// content is of type string and not type ToastContent because we do not want to
+// allow developers to pass in their own components.
+function toast(content: string, options?: ToastOptions) {
+  return toastifyToast(<ToastBody>{content}</ToastBody>, { ...options });
+}
+
 Toast.displayName = "Toast";
 
 Toast.defaultProps = {
-  kind: undefined,
 };
 
-export { Toast };
+export { Toast, toast };
