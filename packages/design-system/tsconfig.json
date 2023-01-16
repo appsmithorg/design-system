@@ -1,16 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
+    "outDir": "build",
     "paths": {
-      "Assets/*": ["assets/*"],
-      "Types/*": ["types/*"],
-      "Constants/*": ["constants/*"],
-      "Common/*": ["common/*"],
-      "Utils/*": ["utils/*"],
+      "Hooks/*": ["__hooks__/*"],
     },
     "strict": true,
     "declaration": true,
-    "declarationDir": "build",
     "module": "esnext",
     "allowJs": true,
     "target": "ES6",
@@ -40,7 +36,7 @@
   "exclude": [
     "node_modules",
     "build",
-    "src/**/*.stories.tsx",
-    "src/**/*.test.tsx"
+    "**/*.stories.tsx", 
+    "**/*.test.tsx"
   ]
 }
