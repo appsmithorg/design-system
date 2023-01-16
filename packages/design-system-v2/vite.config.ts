@@ -35,4 +35,9 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      "Hooks/*": resolve(__dirname, "./src/__hooks__/*"),
+    },
+  },
 });
