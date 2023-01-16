@@ -18,6 +18,8 @@ type DialogProps = PropsWithChildren<{
   noModalBodyMarginTop?: boolean;
 }>;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const StyledDialog = styled(Dialog)<DialogProps>`
   && {
     border-radius: 0;

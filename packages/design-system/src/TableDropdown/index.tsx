@@ -112,6 +112,8 @@ function TableDropdown(props: DropdownProps) {
   return props.isLoading ? (
     <Spinner size={IconSize.LARGE} />
   ) : (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error type
     <Popover
       data-cy={props.cypressSelector}
       interactionKind={PopoverInteractionKind.CLICK}

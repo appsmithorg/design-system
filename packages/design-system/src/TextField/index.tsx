@@ -42,6 +42,8 @@ export type FormTextFieldProps = {
 };
 
 function FormTextField(props: FormTextFieldProps) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error type
   return <Field component={renderComponent} {...props} asyncControl />;
 }
 

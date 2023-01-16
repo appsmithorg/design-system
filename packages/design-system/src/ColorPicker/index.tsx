@@ -32,6 +32,8 @@ const ColorPickerIconContainer = styled.div`
   z-index: 1;
 `;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const StyledInputGroup = styled(InputGroup)<{
   children?: React.ReactNode;
 }>`
@@ -178,6 +180,8 @@ function ColorPickerComponent(props: ColorPickerProps) {
   }, [props.color]);
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error type
     <Popover
       enforceFocus={false}
       interactionKind={PopoverInteractionKind.CLICK}

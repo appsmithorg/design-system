@@ -125,7 +125,7 @@ function ScrollIndicator({
     setIsScrollVisible(alwaysShowScrollbar || false);
   }, 1500);
 
-  const setScrollVisibilityOnHover = useCallback((e) => {
+  const setScrollVisibilityOnHover = useCallback((e: any) => {
     if (e?.type === "mouseenter") {
       setIsScrollVisible(true);
       /*

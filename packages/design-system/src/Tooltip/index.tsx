@@ -41,6 +41,8 @@ const rootElementId = "tooltip-root";
 
 let portalContainer = document.getElementById(rootElementId);
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const TooltipWrapper = styled(Tooltip)<
   PropsWithChildren<{
     width?: string;

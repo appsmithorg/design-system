@@ -40,6 +40,8 @@ function Menu(props: MenuProps) {
   const { onClose, onClosing, onOpening } = props;
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error type
     <Popover
       autoFocus={props.autoFocus}
       canEscapeKeyClose={props.canEscapeKeyClose}

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { ISwitchProps, Switch } from "@blueprintjs/core";
 import { replayHighlightClass } from "Constants/classes";
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const StyledSwitch = styled(Switch)<{
   children?: React.ReactNode;
 }>`

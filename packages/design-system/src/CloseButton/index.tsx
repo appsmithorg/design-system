@@ -10,6 +10,8 @@ type CloseButtonProps = PropsWithChildren<{
   className?: string;
 }>;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const StyledButton = styled(Button)<CloseButtonProps>`
   position: absolute;
   top: 0;

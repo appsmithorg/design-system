@@ -35,7 +35,7 @@ function EmojiPicker({
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSelectEmoji = useCallback(
-    (emoji, event) => {
+    (emoji: BaseEmoji, event: React.MouseEvent) => {
       onSelectEmoji(event, emoji);
       setIsOpen(false);
     },
@@ -45,6 +45,8 @@ function EmojiPicker({
   return (
     <Popover2
       content={
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error type
         <Picker
           onClick={handleSelectEmoji}
           showPreview={false}

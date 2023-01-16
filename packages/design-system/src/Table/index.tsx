@@ -165,6 +165,8 @@ function Table(props: TableProps) {
           {headerGroups.map((headerGroup, index: number) => (
             <tr {...headerGroup.getHeaderGroupProps()} key={index}>
               {headerGroup.headers.map((column, index: number) => (
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error type
                 <th
                   {...column.getHeaderProps(
                     column.getSortByToggleProps({ title: undefined }),
@@ -204,17 +206,21 @@ function Table(props: TableProps) {
               prepareRow(row);
               return (
                 <tr {...row.getRowProps()} key={index}>
-                  {row.cells.map((cell, index) => {
-                    return (
-                      <td
-                        {...cell.getCellProps()}
-                        data-colindex={index}
-                        key={index}
-                      >
-                        {cell.render("Cell")}
-                      </td>
-                    );
-                  })}
+                  {row.cells.map(
+                    (cell, index): React.ReactNode => {
+                      return (
+                        /* eslint-disable */
+                        <td
+                          {...cell.getCellProps()}
+                          data-colindex={index}
+                          key={index}
+                        >
+                          <>{cell.render("Cell")}</>
+                        </td>
+                        /* eslint-enable */
+                      );
+                    },
+                  )}
                 </tr>
               );
             })

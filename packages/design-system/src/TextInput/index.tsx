@@ -352,7 +352,7 @@ const TextInput = forwardRef(
     };
 
     const memoizedChangeHandler = useCallback(
-      (el) => {
+      (el: any) => {
         const inputValue: string = trimValue
           ? el.target.value.trim()
           : el.target.value;

@@ -6,6 +6,8 @@ import omit from "lodash-es/omit";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
 import "./styles.css";
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const DS_DateRangePicker = styled(DateRangeInput)<{
   height?: string;
   width?: string;

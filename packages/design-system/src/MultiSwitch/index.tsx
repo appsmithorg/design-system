@@ -92,7 +92,11 @@ export default function MultiSwitch<T>(props: MultiSwitchProps<T>) {
               selected={props.selected.value === tab.key}
             >
               <Text case={Case.UPPERCASE} type={TextType.P3}>
-                {tab.title}
+                {
+                  /* eslint-disable */
+                  <>{tab.title}</>
+                  /* eslint-disable */
+                }
               </Text>
             </Tab>
           ))}

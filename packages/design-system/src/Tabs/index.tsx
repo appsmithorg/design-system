@@ -388,35 +388,47 @@ export function TabComponent(
         </CollapseIconWrapper>
       )}
 
-      <Tabs
-        onSelect={(index: number) => {
-          onSelect ? onSelect(index) : setSelectedIndex(index);
-          !isExpanded && toggleCollapse();
-        }}
-        selectedIndex={props.selectedIndex}
-      >
-        <TabList>
-          {props.tabs.map((tab, index) => (
-            <Tab
-              data-cy={`t--tab-${tab.key}`}
-              data-replay-id={tab.key}
-              key={tab.key}
-            >
-              <TabItem
-                responseViewer={props.responseViewer}
-                selected={
-                  index === props.selectedIndex || index === selectedIndex
-                }
-                tab={tab}
-                vertical={!!props.vertical}
-              />
-            </Tab>
+      {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error type
+        <Tabs
+          onSelect={(index: number) => {
+            onSelect ? onSelect(index) : setSelectedIndex(index);
+            !isExpanded && toggleCollapse();
+          }}
+          selectedIndex={props.selectedIndex}
+        >
+          {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error type
+            <TabList>
+              {props.tabs.map((tab, index) => (
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error type
+                <Tab
+                  data-cy={`t--tab-${tab.key}`}
+                  data-replay-id={tab.key}
+                  key={tab.key}
+                >
+                  <TabItem
+                    responseViewer={props.responseViewer}
+                    selected={
+                      index === props.selectedIndex || index === selectedIndex
+                    }
+                    tab={tab}
+                    vertical={!!props.vertical}
+                  />
+                </Tab>
+              ))}
+            </TabList>
+          }
+          {props.tabs.map((tab) => (
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error type
+            <TabPanel key={tab.key}>{tab.panelComponent}</TabPanel>
           ))}
-        </TabList>
-        {props.tabs.map((tab) => (
-          <TabPanel key={tab.key}>{tab.panelComponent}</TabPanel>
-        ))}
-      </Tabs>
+        </Tabs>
+      }
     </TabsWrapper>
   );
 }

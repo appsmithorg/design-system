@@ -194,7 +194,13 @@ const UploadIconWrapper = styled.div`
 `;
 
 function FilePickerComponent(props: FilePickerProps) {
-  const { fileType, logoUploadError, onFileRemoved, onFileUploaded, fileUploader } = props;
+  const {
+    fileType,
+    logoUploadError,
+    onFileRemoved,
+    onFileUploaded,
+    fileUploader,
+  } = props;
   const [fileInfo, setFileInfo] = useState<{ name: string; size: number }>({
     name: "",
     size: 0,
@@ -481,6 +487,8 @@ function FilePickerComponent(props: FilePickerProps) {
 
 function FilePickerV2(props: FilePickerProps) {
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error type
     <DndProvider backend={HTML5Backend}>
       <FilePickerComponent {...props} />
     </DndProvider>

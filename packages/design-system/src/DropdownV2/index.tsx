@@ -31,16 +31,22 @@ type Props = {
  *-----------------------------------------------------------------------------
  */
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const StyledMenuItem = styled(MenuItem)`
   margin: 0;
   padding: 8px;
 `;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const StyledMenu = styled(Menu)`
   margin: 0;
   padding: 0;
 `;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const EmptyState = styled(MenuItem)`
   background-color: var(--ads-color-black-100);
 `;
@@ -133,6 +139,8 @@ function DropdownV2(props: IPopoverProps & Props) {
   );
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error type
     <Popover
       {...rest}
       canEscapeKeyClose

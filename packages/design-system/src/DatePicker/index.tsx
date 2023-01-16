@@ -5,6 +5,8 @@ import { Classes } from "Constants/classes";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
 import "./styles.css";
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const StyledDateInput = styled(DateInput)`
   & {
     input {

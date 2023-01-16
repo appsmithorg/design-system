@@ -948,7 +948,9 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                 subTextPosition={option.subTextPosition ?? SubTextPosition.LEFT}
               >
                 {option.leftElement && (
-                  <LeftIconWrapper className="left-icon-wrapper">{option.leftElement}</LeftIconWrapper>
+                  <LeftIconWrapper className="left-icon-wrapper">
+                    {option.leftElement}
+                  </LeftIconWrapper>
                 )}
                 {option.icon ? (
                   <SelectedIcon
@@ -1353,33 +1355,37 @@ export default function Dropdown(props: DropdownProps) {
       tabIndex={0}
       width={dropdownWidth}
     >
-      <Popover
-        boundary={props.boundary || "scrollParent"}
-        isOpen={isOpen && !disabled}
-        minimal
-        modifiers={{ arrow: { enabled: true } }}
-        onInteraction={(state) => !disabled && setIsOpen(state)}
-        popoverClassName={`${props.className} none-shadow-popover ds--dropdown-popover`}
-        portalClassName={props.portalClassName}
-        portalContainer={props.portalContainer}
-        position={Position.BOTTOM_LEFT}
-        usePortal={!props.dontUsePortal}
-      >
-        {dropdownTrigger}
-        <RenderDropdownOptions
-          {...props}
-          allowDeselection={props.allowDeselection}
-          highlightIndex={highlight}
-          isMultiSelect={props.isMultiSelect}
-          isOpen={isOpen}
-          optionClickHandler={optionClickHandler}
-          optionWidth={dropdownOptionWidth}
-          removeSelectedOptionClickHandler={removeSelectedOptionClickHandler}
-          searchAutoFocus={props.enableSearch}
-          selected={selected ? selected : { id: undefined, value: undefined }}
-          wrapperBgColor={wrapperBgColor}
-        />
-      </Popover>
+      {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error type
+        <Popover
+          boundary={props.boundary || "scrollParent"}
+          isOpen={isOpen && !disabled}
+          minimal
+          modifiers={{ arrow: { enabled: true } }}
+          onInteraction={(state) => !disabled && setIsOpen(state)}
+          popoverClassName={`${props.className} none-shadow-popover ds--dropdown-popover`}
+          portalClassName={props.portalClassName}
+          portalContainer={props.portalContainer}
+          position={Position.BOTTOM_LEFT}
+          usePortal={!props.dontUsePortal}
+        >
+          {dropdownTrigger}
+          <RenderDropdownOptions
+            {...props}
+            allowDeselection={props.allowDeselection}
+            highlightIndex={highlight}
+            isMultiSelect={props.isMultiSelect}
+            isOpen={isOpen}
+            optionClickHandler={optionClickHandler}
+            optionWidth={dropdownOptionWidth}
+            removeSelectedOptionClickHandler={removeSelectedOptionClickHandler}
+            searchAutoFocus={props.enableSearch}
+            selected={selected ? selected : { id: undefined, value: undefined }}
+            wrapperBgColor={wrapperBgColor}
+          />
+        </Popover>
+      }
     </DropdownContainer>
   );
 }

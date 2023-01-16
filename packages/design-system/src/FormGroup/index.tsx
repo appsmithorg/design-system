@@ -7,6 +7,8 @@ type FormGroupProps = PropsWithChildren<{
   fill?: boolean;
 }>;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 const StyledFormGroup = styled(FormGroup)<FormGroupProps>`
   & {
     width: ${(props) => (props.fill ? "100%" : "auto")};

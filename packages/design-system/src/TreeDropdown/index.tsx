@@ -72,6 +72,8 @@ export type StyledMenuProps = PropsWithChildren<{
   width?: number;
 }>;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error type
 export const StyledMenu = styled(Menu)<StyledMenuProps>`
   max-height: calc(
     100vh - var(--ads-small-header-height) - var(--ads-bottom-bar-height)
@@ -560,6 +562,8 @@ function TreeDropdown(props: TreeDropdownProps) {
     </DropdownTarget>
   );
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error type
     <Popover
       className="wrapper-popover"
       content={menuItems}

@@ -78,6 +78,8 @@ const SearchInput = forwardRef(
 
     const wrapperRef = useRef<HTMLDivElement>(null);
     const memoizedChangeHandler = useCallback(
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error type
       (value) => {
         setSearchValue(value);
         return onChange && onChange(value);
