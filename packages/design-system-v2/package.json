@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system-v2",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha.0",
   "description": "",
   "module": "build/index.mjs",
   "types": "build/index.d.ts",
