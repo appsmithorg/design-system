@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, ToastOptions } from "react-toastify";
 import { Text } from "../Text";
+import { ToastProps } from "./Toast.types";
 
 const Variables = css`
   --toastify-color-info: var(--ads-v2-color-fg-information);
@@ -35,17 +36,23 @@ const YOUR_VARIANTS = css`
   // Styles for the variants defined in your type
 `;
 
-export const StyledToast = styled(ToastContainer).attrs({
+export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
   toastClassName: "toast",
   bodyClassName: "body",
 })`
   .toast {
     box-shadow: var(--ads-v2-toast-box-shadow);
-    padding: 0;
+    padding: 0.5rem;
   }
 
   .body {
     padding: 0;
+  }
+
+  .Toastify__toast-icon {
+    margin-right: 0.5rem;
+    align-items: flex-start;
+    width: 1rem;
   }
 
   ${Variables} /* Variant styles */
@@ -56,12 +63,13 @@ export const StyledToast = styled(ToastContainer).attrs({
 `;
 
 export const ToastBody = styled(Text)`
-
   // TODO: add props for the typography style this text will be following instead
   //  of the font styles here.
   font-size: 12px;
   line-height: 1.4;
-  // font-weight: 500; // Acc to Zeplin
+  // font-weight: 500; // Acc to Zeplin, but it doesn't look good.
 
-  padding: 0.5rem;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
 `;
