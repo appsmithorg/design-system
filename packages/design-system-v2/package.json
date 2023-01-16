@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system-v2",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha.0",
   "description": "",
   "module": "build/index.mjs",
   "types": "build/index.d.ts",
@@ -29,7 +29,7 @@
     "@storybook/builder-vite": "^0.2.7",
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
-    "@types/react": "17.0.2",
+    "@types/react": "^17.0.2",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
