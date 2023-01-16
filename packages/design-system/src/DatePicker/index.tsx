@@ -3,6 +3,7 @@ import { DateInput, TimePrecision } from "@blueprintjs/datetime";
 import styled from "styled-components";
 import { Classes } from "Constants/classes";
 import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
+import "./styles.css";
 
 const StyledDateInput = styled(DateInput)`
   & {
@@ -299,6 +300,9 @@ function DatePickerComponent(props: DatePickerComponentProps) {
         onInteraction: handleInteraction,
         usePortal: true,
         isOpen: isDatePickerVisible,
+        minimal: true,
+        popoverClassName: "ds--date-picker-popover",
+        position: "bottom",
       }}
       showActionsBar={props.showActionsBar}
       timePickerProps={{

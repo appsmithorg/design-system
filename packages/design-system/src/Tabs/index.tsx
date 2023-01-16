@@ -229,7 +229,7 @@ const TabTitleWrapper = styled.div<{
     };
     left: var(--ads-spaces-0);
     height: ${props.vertical ? "100%" : `calc(var(--ads-spaces-1) - 2px)`};
-    background-color: var(--ads-primary-color);
+    background-color: var(--ads-color-brand);
     z-index: var(--ads-z-index-3);
 
     ${props.responseViewer &&

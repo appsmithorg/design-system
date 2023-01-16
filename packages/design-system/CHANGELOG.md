@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.45
+
+### Patch Changes
+
+- [#302](https://github.com/appsmithorg/design-system/pull/302) [`4dcb50b`](https://github.com/appsmithorg/design-system/commit/4dcb50bb45fea6142dde0cdd4fded773746b9d8d) Thanks [@yaldram](https://github.com/yaldram)! - feat: updated styled components library
+
 ## 1.0.44
 
 ### Patch Changes
