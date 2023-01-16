@@ -6,6 +6,14 @@ import { Icon as IconComponent } from "./Icon";
 export default {
   title: "Design System V2/Icon",
   component: IconComponent,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Icon component which accepts name of any remix icon or any custom svg element.",
+      },
+    },
+  },
 } as ComponentMeta<typeof IconComponent>;
 
 // eslint-disable-next-line react/function-component-definition
