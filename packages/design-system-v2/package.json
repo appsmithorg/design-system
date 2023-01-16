@@ -22,6 +22,7 @@
     "@babel/preset-typescript": "^7.17.12",
     "@react-aria/focus": "^3.10.1",
     "@react-aria/radio": "^3.4.2",
+    "@react-aria/textfield": "^3.8.1",
     "@react-types/button": "^3.7.0",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-image": "^3.0.1",
