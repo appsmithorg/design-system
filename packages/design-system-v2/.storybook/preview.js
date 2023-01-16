@@ -1,3 +1,6 @@
+import React from "react";
+import "./styles.css";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,11 +9,20 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+  // layout: "centered",
+};
+
+const containerStyle = {
+  display: "flex",
+  width: "100%",
+  height: "100%",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
 export const decorators = [
   (Story) => (
-    <div>
+    <div style={containerStyle}>
       <Story />
     </div>
   ),

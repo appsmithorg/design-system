@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "outDir": "build",
     "paths": {
       "Hooks/*": ["__hooks__/*"],
     },
     "strict": true,
     "declaration": true,
+    "declarationDir": "build",
     "module": "esnext",
     "allowJs": true,
     "target": "ES6",
