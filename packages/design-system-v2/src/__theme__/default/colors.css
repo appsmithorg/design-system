@@ -1,5 +1,5 @@
 :root {
-  
+
   /* orange */
   --ads-v2-color-orange-900 : #BF4109;
   --ads-v2-color-orange-800 : #D15420;
@@ -43,5 +43,6 @@
 
   --ads-v2-color-yellow : #E0B30E;
   --ads-v2-color-green : #03B365;
+  --ads-v2-color-blue : #399dff;
 
 }

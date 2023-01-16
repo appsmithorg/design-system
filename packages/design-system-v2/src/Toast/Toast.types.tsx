@@ -12,6 +12,4 @@ export type ToastProps = {
 
   /** (try not to) pass addition classes here */
   className?: string;
-  /** the words you want to display */
-  children: string;
-} & React.ToastHTMLAttribute<HTMLToastElement>;
+};
