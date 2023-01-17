@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.47
+
+### Patch Changes
+
+- [#340](https://github.com/appsmithorg/design-system/pull/340) [`2f2e797`](https://github.com/appsmithorg/design-system/commit/2f2e79713c5a837cd54c509a6ad149d19e4fb092) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Readme updates for new DS
+
 ## 1.0.46
 
 ### Patch Changes
