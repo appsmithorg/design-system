@@ -5,7 +5,7 @@ import { Toast, toast } from "./Toast";
 import { ToastProps } from "./Toast.types";
 
 export default {
-  title: "Design System/Toast",
+  title: "Design System V2/Toast",
   component: Toast,
 } as ComponentMeta<typeof Toast>;
 
@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof Toast> = (args) => {
 
   return (
     <div>
-      <button onClick={() => notify(args)}>Notify !</button>
+      <button onClick={() => notify}>Click me</button>
       <Toast />
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { useFocusRing } from "@react-aria/focus";
-import { Slide, toast as toastifyToast, ToastOptions } from "react-toastify";
+import { Slide, toast as toastifyToast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
 import { Kind, ToastProps } from "./Toast.types";
@@ -11,7 +11,8 @@ import { Icon } from "../Icon";
  * TODO:
  * - Add a variant that carries a link
  * - Add a way to attach an action to that link
- * - look up accessibility features for toasts (spectrum, MDN, what toastify does and does not support)
+ * - Look up accessibility features for toasts (spectrum, MDN, what toastify does and does not support)
+ * - Add a control for the content of toast in the story
  * @constructor
  */
 
@@ -21,6 +22,7 @@ function Toast({ ...rest }: ToastProps) {
       autoClose={5000}
       className="t--toast-action"
       closeButton={false}
+      draggable={false}
       hideProgressBar={true}
       position={toastifyToast.POSITION.TOP_CENTER}
       rtl={false}
