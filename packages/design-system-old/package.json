@@ -1,5 +1,5 @@
 {
-  "name": "@appsmithorg/design-system",
+  "name": "@appsmithorg/design-system-old",
   "version": "1.0.46",
   "description": "This is the package for the Appsmith design system components",
   "module": "build/index.js",
