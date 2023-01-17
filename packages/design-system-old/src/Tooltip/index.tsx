@@ -4,7 +4,7 @@ import {
   PopoverPosition,
   PopperBoundary,
 } from "@blueprintjs/core/lib/esnext/components/popover/popoverSharedProps";
-import { Tooltip } from "@blueprintjs/core/lib/esnext/components/tooltip/tooltip.js";
+import { Tooltip } from "@blueprintjs/core/lib/esnext/components/tooltip/tooltip";
 import { Modifiers } from "popper.js";
 import noop from "lodash/noop";
 import "./styles.module.css";

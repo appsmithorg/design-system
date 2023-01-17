@@ -28,7 +28,7 @@ export default {
       minimize: true,
       sourceMap: true,
       plugins: [postcssImport()],
-      extract: path.resolve("build/css/design-system.css"),
+      extract: path.resolve("build/css/design-system-old.css"),
     }),
     url(),
     svgr({
