@@ -1,6 +1,6 @@
 import React from "react";
 import { useCheckbox } from "@react-aria/checkbox";
-import { useToggleState } from "react-stately";
+import { useToggleState } from "@react-stately/toggle";
 import { useFocusRing } from "@react-aria/focus";
 
 import { CheckboxProps } from "./Checkbox.types";
