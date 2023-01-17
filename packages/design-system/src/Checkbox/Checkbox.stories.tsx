@@ -104,9 +104,9 @@ const Template: ComponentStory<typeof Checkbox> = ({ children, ...args }) => {
   return <Checkbox {...args}>{children}</Checkbox>;
 };
 
-export const CheckboxExample = Template.bind({});
-CheckboxExample.storyName = "Checkbox";
-CheckboxExample.args = {
+export const CheckboxStory = Template.bind({});
+CheckboxStory.storyName = "Checkbox";
+CheckboxStory.args = {
   isIndeterminate: true,
   value: "soccer",
   children: "Soccer",
