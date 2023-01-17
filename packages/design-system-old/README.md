@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Appsmith Design System</h1>
+<h1 align="center">Appsmith Design System - Old</h1>
 
 <div align="center">
 
@@ -22,24 +22,24 @@ UI Design system of Appsmith
 ## Install
 
 ```bash
-npm install @appsmith/design-system
+npm install @appsmith/design-system-old
 ```
 or
 ```bash
-yarn add @appsmithorg/design-system
+yarn add @appsmithorg/design-system-old
 ```
 
 ## Including CSS
 
 Add css import in the root index css file
 ```bash
-@import "~@appsmithorg/design-system/build/css/design-system.css";
+@import "~@appsmithorg/design-system-old/build/css/design-system-old.css";
 ```
 
 ## Usage
 
 ```jsx
-import { TooltipComponent } from "@appsmithorg/design-system";
+import { TooltipComponent } from "@appsmithorg/design-system-old";
 
 <TooltipComponent content="Some useful content 🤷🏽‍♂️">
   Hover here 😁
@@ -47,13 +47,14 @@ import { TooltipComponent } from "@appsmithorg/design-system";
 ```
 
 ## Contribute
+> 🚫 This package is closed for contributions. We welcome contributions to the `design-system` package.
 
 ```bash
 git clone https://github.com/appsmithorg/design-system.git
 ```
 Get all dependencies with
 ```bash 
-cd design-system/packages/design-system
+cd design-system/packages/design-system-old
 yarn install
 ```
 
@@ -62,7 +63,7 @@ Then run storybook in development and watch mode with
 yarn run design-system:storybook
 ```
 
-Any stories you write within `design-system/packages/design-system/src/**` will show up here. 
+Any stories you write within `design-system/packages/design-system-old/src/**` will show up here. 
 
 To use your local version of the package, run 
 ```bash
@@ -76,7 +77,7 @@ yarn install
 again to be able to import the components using 
 
 ```jsx
-import { TooltipComponent } from "@appsmithorg/design-system";
+import { TooltipComponent } from "@appsmithorg/design-system-old";
 ```
 
 ### Create story template
