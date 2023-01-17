@@ -1,5 +1,21 @@
 # @appsmithorg/design-system
 
+## 1.0.46
+
+### Patch Changes
+
+- [#286](https://github.com/appsmithorg/design-system/pull/286) [`19723ee`](https://github.com/appsmithorg/design-system/commit/19723ee66318d59e2ec5342f15b72fc5b850389a) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Changes to support branding components
+
+* [#303](https://github.com/appsmithorg/design-system/pull/303) [`7c8c552`](https://github.com/appsmithorg/design-system/commit/7c8c5528c934556e5d7bee2ee662a866bca1369e) Thanks [@yaldram](https://github.com/yaldram)! - chore: updated react versions to 17
+
+- [#320](https://github.com/appsmithorg/design-system/pull/320) [`776fb11`](https://github.com/appsmithorg/design-system/commit/776fb11cc56bb979e94bbb87c84ebcbb8a462d71) Thanks [@berzerkeer](https://github.com/berzerkeer)! - feat: collapsible component
+
+## 1.0.45
+
+### Patch Changes
+
+- [#302](https://github.com/appsmithorg/design-system/pull/302) [`4dcb50b`](https://github.com/appsmithorg/design-system/commit/4dcb50bb45fea6142dde0cdd4fded773746b9d8d) Thanks [@yaldram](https://github.com/yaldram)! - feat: updated styled components library
+
 ## 1.0.44
 
 ### Patch Changes
