@@ -1,5 +1,5 @@
 import React from "react";
-import { useRadioGroupState, RadioGroupState } from "react-stately";
+import { useRadioGroupState, RadioGroupState } from "@react-stately/radio";
 import { useRadio, useRadioGroup, AriaRadioProps } from "@react-aria/radio";
 import { useFocusRing } from "@react-aria/focus";
 

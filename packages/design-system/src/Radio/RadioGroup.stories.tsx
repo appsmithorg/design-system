@@ -1,14 +1,11 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import {
-  Radio as RadioComponent,
-  RadioGroup as RadioGroupElement,
-} from "./Radio";
+import { Radio, RadioGroup } from "./Radio";
 
 export default {
-  title: "Design System V2/Radio/Radio Group",
-  component: RadioGroupElement,
+  title: "Design System/Radio/Radio Group",
+  component: RadioGroup,
   argTypes: {
     orientation: {
       control: {
@@ -46,24 +43,24 @@ export default {
       description: "Handler that is called when the value changes.",
     },
   },
-} as ComponentMeta<typeof RadioGroupElement>;
+} as ComponentMeta<typeof RadioGroup>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof RadioGroupElement> = (args) => {
+const Template: ComponentStory<typeof RadioGroup> = (args) => {
   return (
-    <RadioGroupElement {...args}>
-      <RadioComponent value={"Value1"}>Radio1</RadioComponent>
-      <RadioComponent value={"Value2"}>Radio2</RadioComponent>
-      <RadioComponent isDisabled value={"Value3"}>
+    <RadioGroup {...args}>
+      <Radio value={"Value1"}>Radio1</Radio>
+      <Radio value={"Value2"}>Radio2</Radio>
+      <Radio isDisabled value={"Value3"}>
         Radio3
-      </RadioComponent>
-      <RadioComponent value={"Value4"}>Radio4</RadioComponent>
-    </RadioGroupElement>
+      </Radio>
+      <Radio value={"Value4"}>Radio4</Radio>
+    </RadioGroup>
   );
 };
 
-export const RadioGroup = Template.bind({});
-
-RadioGroup.args = {
+export const RadioGroupExample = Template.bind({});
+RadioGroupExample.storyName = "Radio Group";
+RadioGroupExample.args = {
   defaultValue: "Value1",
 };

@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Radio as RadioComponent } from "./Radio";
+import { Radio } from "./Radio";
 
 export default {
-  title: "Design System V2/Radio",
-  component: RadioComponent,
+  title: "Design System/Radio",
+  component: Radio,
   argTypes: {
     children: {
       description: "The label for the Radio. Accepts any renderable node.",
@@ -28,17 +28,17 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof RadioComponent>;
+} as ComponentMeta<typeof Radio>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof RadioComponent> = (args) => {
+const Template: ComponentStory<typeof Radio> = (args) => {
   const { children, ...rest } = args;
-  return <RadioComponent {...rest}>{children}</RadioComponent>;
+  return <Radio {...rest}>{children}</Radio>;
 };
 
-export const Radio = Template.bind({});
-
-Radio.args = {
+export const RadioExample = Template.bind({});
+RadioExample.storyName = "Radio";
+RadioExample.args = {
   children: "Radio",
   value: "Radio",
 };
