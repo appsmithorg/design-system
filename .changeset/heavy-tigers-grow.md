@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: collapsible component
+feat: Design system version 2
