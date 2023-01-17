@@ -52,6 +52,7 @@ import { TooltipComponent } from "@appsmithorg/design-system-old";
 ```bash
 git clone https://github.com/appsmithorg/design-system.git
 ```
+
 Get all dependencies with
 ```bash 
 cd design-system/packages/design-system-old
