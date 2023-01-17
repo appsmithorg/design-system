@@ -1,6 +1,0 @@
-@import url("../src/__theme__/default/index.css"); /* This is to make theme variable available for stories */
-
-html, body, #root {
-  height: 100%;
-  width: 100%;
-}
