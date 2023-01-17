@@ -59,8 +59,8 @@ const Template: ComponentStory<typeof RadioGroup> = (args) => {
   );
 };
 
-export const RadioGroupExample = Template.bind({});
-RadioGroupExample.storyName = "Radio Group";
-RadioGroupExample.args = {
+export const RadioGroupStory = Template.bind({});
+RadioGroupStory.storyName = "Radio Group";
+RadioGroupStory.args = {
   defaultValue: "Value1",
 };

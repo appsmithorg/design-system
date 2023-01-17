@@ -36,9 +36,9 @@ const Template: ComponentStory<typeof Radio> = (args) => {
   return <Radio {...rest}>{children}</Radio>;
 };
 
-export const RadioExample = Template.bind({});
-RadioExample.storyName = "Radio";
-RadioExample.args = {
+export const RadioStory = Template.bind({});
+RadioStory.storyName = "Radio";
+RadioStory.args = {
   children: "Radio",
   value: "Radio",
 };
