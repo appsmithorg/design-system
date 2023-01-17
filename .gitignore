@@ -109,3 +109,5 @@ build
 .vscode
 
 .fleet
+
+storybook-static
