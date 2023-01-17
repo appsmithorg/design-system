@@ -8,7 +8,8 @@ export default {
   component: Checkbox,
   argTypes: {
     name: {
-      description: "The name of the checkbox.",
+      description:
+        "The name of the checkbox which is used when submitting an HTML form. [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname).",
       control: {
         type: "text",
       },
@@ -20,7 +21,8 @@ export default {
       },
     },
     value: {
-      description: "The value of the checkbox.",
+      description:
+        "The value of the checkbox which is used when submitting an HTML form. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefvalue).",
       control: {
         type: "text",
       },
@@ -82,7 +84,7 @@ export default {
     },
     isIndeterminate: {
       description:
-        "Indicates whether the checkbox is in an indeterminate state.Indeterminism is presentational only.The indeterminate visual representation remains regardless of user interaction.",
+        "Indicates whether the checkbox is in an indeterminate state. Indeterminism is presentational only. The indeterminate visual representation remains regardless of user interaction.",
       control: {
         type: "boolean",
       },
@@ -94,7 +96,8 @@ export default {
       },
     },
     onChange: {
-      description: "Called when the checkbox is selected or unselected.",
+      description:
+        "Handler that is called according to the state changes of checkbox.",
     },
   },
 } as ComponentMeta<typeof Checkbox>;
