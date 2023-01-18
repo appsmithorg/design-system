@@ -1,4 +1,10 @@
 {
+  "buildCommand": "./build-stories.sh",
+  "installCommand": "",
+  "outputDirectory": "storybook-static",
+  "regions": [
+    "bom1"
+  ],
   "rewrites": [
     {
       "source": "/",

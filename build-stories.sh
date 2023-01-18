@@ -1,18 +1,19 @@
+#!/usr/bin/env bash
 
-# Build stories for new DS components
-cd packages/design-system
+set -o errexit
+set -o xtrace
+
+cd "$(dirname "$0")"
+
+_build-storybook() {
+  yarn install --frozen-lockfile
+  yarn build-storybook --loglevel warn --quiet --disable-telemetry --output-dir "$1"
+}
+
 echo "Building stories for new DS components"
-yarn && yarn build-storybook
-# move stories to output folder
-echo "moving story to parent folder"
-mv storybook-static ../../storybook-static
+cd packages/design-system
+_build-storybook ../../storybook-static
 
-
-# Build stories for old DS components
-cd ../design-system-old
 echo "Building stories for old DS components"
-yarn && yarn build-storybook
-# move stories to output folder
-echo "moving story to parent folder"
-mv storybook-static ../../storybook-static/old
-
+cd ../design-system-old
+_build-storybook ../../storybook-static/old
