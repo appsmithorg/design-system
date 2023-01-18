@@ -1,7 +1,13 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "handle": "filesystem"
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/old/",
+      "destination": "/old/index.html"
     }
-  ]
+  ],
+  "trailingSlash": true
 }
