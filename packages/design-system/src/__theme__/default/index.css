@@ -128,6 +128,13 @@
   --ads-v2-color-outline: var(--ads-v2-color-blue);
   --ads-v2-border-width-outline: 2px;
   --ads-v2-offset-outline: 0.5px;
+
+  /**
+    * ===========================================*
+    * =========== Disabled Opacity===============*
+    * ===========================================*
+  */
+  --ads-v2-opacity-disabled: 0.6;
 }
 
 .ads-v2-focus-ring {

@@ -21,4 +21,8 @@ TextInputExample.args = {
   errorMessage: "Error Message",
   description: "Description",
   isRequired: true,
+  startIcon: "home-5-fill",
+  endIcon: "building-line",
+  isDisabled: true,
+  size: "sm",
 };
