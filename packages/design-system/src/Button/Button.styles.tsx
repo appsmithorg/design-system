@@ -1,4 +1,5 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+import { ButtonIconClassName } from "./Button.constants";
 import { Size, Kind } from "./Button.types";
 
 const Variables = css`
@@ -16,8 +17,8 @@ const Sizes = {
     font-weight: 500;
 
     & svg {
-      width: 11px;
-      height: 11px;
+      width: 12px;
+      height: 12px;
     }
   `,
   md: css`
@@ -25,8 +26,8 @@ const Sizes = {
     font-size: 12px;
 
     & svg {
-      width: 12px;
-      height: 12px;
+      width: 16px;
+      height: 16px;
     }
   `,
   lg: css`
@@ -34,8 +35,8 @@ const Sizes = {
     font-size: 13px;
 
     & svg {
-      width: 13px;
-      height: 13px;
+      width: 18px;
+      height: 18px;
     }
   `,
 };
@@ -102,6 +103,7 @@ export const StyledButton = styled.button<{
   kind?: Kind;
   height?: string;
   width?: string;
+  isLoading?: boolean;
 }>`
   ${Variables}
 
@@ -129,5 +131,26 @@ export const StyledButton = styled.button<{
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  ${({ isLoading }) =>
+    isLoading &&
+    css`
+      pointer-events: none;
+
+      & .${ButtonIconClassName} {
+        animation: ${spin} 1s linear infinite;
+      }
+    `}
+  };
+`;
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 `;

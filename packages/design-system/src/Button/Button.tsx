@@ -6,14 +6,17 @@ import { StyledButton } from "./Button.styles";
 import { ButtonProps } from "./Button.types";
 import { useDOMRef } from "Hooks/useDomRef";
 import { Icon } from "Icon";
+import { ButtonIconClassName } from "./Button.constants";
 
 const ButtonV2 = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref): JSX.Element => {
     const {
       as,
       children,
+      disabled,
       endIcon,
       height,
+      isLoading,
       kind,
       size,
       startIcon,
@@ -28,23 +31,44 @@ const ButtonV2 = forwardRef<HTMLButtonElement, ButtonProps>(
       } as AriaButtonProps,
       buttonRef,
     );
+
     return (
       <StyledButton
         as={as || "button"}
         {...buttonProps}
+        disabled={disabled}
         height={height}
+        isLoading={isLoading}
         kind={kind}
         ref={buttonRef}
         size={size}
         width={width}
       >
-        {startIcon && typeof startIcon === "string" && (
-          <Icon name={startIcon} />
+        {isLoading ? (
+          // TODO: add a loader component
+          <Icon className={ButtonIconClassName} name="loader-5-line" />
+        ) : (
+          <>
+            {/* Start Icon Section */}
+            {startIcon ? (
+              typeof startIcon === "string" ? (
+                <Icon className={ButtonIconClassName} name={startIcon} />
+              ) : (
+                <Icon className={ButtonIconClassName}>{startIcon}</Icon>
+              )
+            ) : null}
+            {/* Children section */}
+            {children}
+            {/* End Icon Section */}
+            {endIcon ? (
+              typeof endIcon === "string" ? (
+                <Icon className={ButtonIconClassName} name={endIcon} />
+              ) : (
+                <Icon className={ButtonIconClassName}>{endIcon}</Icon>
+              )
+            ) : null}
+          </>
         )}
-        {startIcon && typeof startIcon !== "string" && <Icon>{startIcon}</Icon>}
-        {children}
-        {endIcon && typeof endIcon === "string" && <Icon name={endIcon} />}
-        {endIcon && typeof endIcon !== "string" && <Icon>{endIcon}</Icon>}
       </StyledButton>
     );
   },
