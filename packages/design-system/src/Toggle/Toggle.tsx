@@ -3,13 +3,14 @@ import { StyledToggle } from "./Toggle.styles";
 import { ToggleProps } from "./Toggle.types";
 
 const Toggle = (props: ToggleProps) => {
-  const { checked, ...rest } = props;
+  const { checked, onChange, ...rest } = props;
 
   return (
     <StyledToggle
       type="checkbox"
       role="switch"
       defaultChecked={checked}
+      onChange={onChange}
       {...rest}
     />
   );
