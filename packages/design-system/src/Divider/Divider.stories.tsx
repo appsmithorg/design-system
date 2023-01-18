@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Divider } from "./Divider";
 import { DividerProps } from "./Divider.types";
@@ -15,7 +15,8 @@ export default {
   },
 } as ComponentMeta<typeof Divider>;
 
-export const DividerExample = (props: DividerProps) => {
+// eslint-disable-next-line react/function-component-definition
+const Template: ComponentStory<typeof Divider> = (args) => {
   return (
     <div
       style={{
@@ -27,7 +28,10 @@ export const DividerExample = (props: DividerProps) => {
         justifyContent: "center",
       }}
     >
-      <Divider {...props} />
+      <Divider {...args} />
     </div>
   );
 };
+
+export const DividerExample = Template.bind({});
+DividerExample.storyName = "Divider";
