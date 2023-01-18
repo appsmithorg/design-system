@@ -14,7 +14,7 @@ export const StyledDivider = styled.span<{
   ${Variables}
 
   /* Base style */
-  background-color: var(--ads-v2-divider-color);
+  background-color: var(--ads-v2-color-bg-emphasis);
   width: ${(props) =>
     props.orientation === "horizontal"
       ? "var(--divider-length)"
