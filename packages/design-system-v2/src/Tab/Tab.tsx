@@ -10,7 +10,8 @@ import { useTabListState } from "@react-stately/tabs";
   - Add icon
   - Add badge
   - Animation of active state
-  - Focus ring activates only on navigation via keyboard
+  - Focus ring to activate only on navigation via keyboard
+  - decouple Tab from Item
  */
 
 function Tabs(props) {
