@@ -1,10 +1,10 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta } from "@storybook/react";
 
 import { Toggle } from "./Toggle";
 
 export default {
-  title: "Design System V2/Toggle",
+  title: "Design System/Toggle",
   component: Toggle,
 } as ComponentMeta<typeof Toggle>;
 
