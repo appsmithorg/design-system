@@ -41,7 +41,7 @@ export const StyledToggle = styled.input`
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: var(--ads-v2-opacity-disabled);
   }
 
   &:checked {

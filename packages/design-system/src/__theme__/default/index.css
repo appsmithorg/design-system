@@ -135,8 +135,17 @@
   --ads-v2-color-outline: var(--ads-v2-color-blue);
   --ads-v2-border-width-outline: 2px;
   --ads-v2-offset-outline: 0.5px;
+
+  /**
+    * ===========================================*
+    * =============== Opacity ===================*
+    * ===========================================*
+  */
+  --ads-v2-opacity-disabled: 0.6;
+
 }
 
+/* react-aria useFocusRing helper class*/
 .ads-v2-focus-ring {
   outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
   outline-offset: var(--ads-v2-offset-outline);
