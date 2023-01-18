@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "Hooks/*": ["__hooks__/*"],
+      "Assets/*": ["assets/*"],
+      "Types/*": ["types/*"],
+      "Constants/*": ["constants/*"],
+      "Common/*": ["common/*"],
+      "Utils/*": ["utils/*"],
     },
     "strict": true,
     "declaration": true,
@@ -36,5 +40,7 @@
   "exclude": [
     "node_modules",
     "build",
+    "src/**/*.stories.tsx",
+    "src/**/*.test.tsx"
   ]
 }
