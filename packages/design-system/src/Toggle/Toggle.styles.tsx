@@ -36,7 +36,7 @@ export const StyledToggle = styled.input`
 
   &:hover {
     // TODO: needs a theme variable
-    --toggle-color-bg: var(--ads-v2-color-black-250)
+    --toggle-color-bg: var(--ads-v2-color-black-250);
   }
 
   &:disabled {
