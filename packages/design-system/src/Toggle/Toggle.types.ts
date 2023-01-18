@@ -1,3 +1,5 @@
+import { InputHTMLAttributes } from "react";
+
 export type ToggleProps = {
 
   /** toggle cannot be interacted with */
@@ -8,4 +10,4 @@ export type ToggleProps = {
   onChange?: any;
 
 
-} & React.InputHTMLAttributes<HTMLInputElement>;
+} & InputHTMLAttributes<HTMLInputElement>;
