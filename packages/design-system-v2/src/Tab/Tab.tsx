@@ -1,7 +1,6 @@
 import React from "react";
 import { TabProps } from "./Tab.types";
-import { StyledTab } from "./Tab.styles";
-import "./styles.css";
+import { StyledTab, StyledTabList, StyledTabs } from "./Tab.styles";
 
 import { useTab, useTabList, useTabPanel } from "@react-aria/tabs";
 import { useTabListState } from "@react-stately/tabs";
@@ -11,6 +10,7 @@ import { useTabListState } from "@react-stately/tabs";
   - Add icon
   - Add badge
   - Animation of active state
+  - Focus ring activates only on navigation via keyboard
  */
 
 function Tabs(props) {
@@ -19,8 +19,8 @@ function Tabs(props) {
   let ref = React.useRef<HTMLDivElement>(null);
   let { tabListProps } = useTabList(props, state, ref);
   return (
-    <div className={`tabs ${props.orientation || ""}`}>
-      <div {...tabListProps} ref={ref}>
+    <StyledTabs>
+      <StyledTabList {...tabListProps} ref={ref}>
         {[...state.collection].map((item) => (
           <Tab
             key={item.key}
@@ -29,9 +29,9 @@ function Tabs(props) {
             orientation={props.orientation}
           />
         ))}
-      </div>
+      </StyledTabList>
       <TabPanel key={state.selectedItem?.key} state={state} />
-    </div>
+    </StyledTabs>
   );
 }
 
@@ -40,9 +40,9 @@ function Tab({ item, state, orientation }) {
   let ref = React.useRef<HTMLDivElement>(null);
   let { tabProps, isSelected, isDisabled } = useTab({ key }, state, ref);
   return (
-    <div {...tabProps} ref={ref}>
+    <StyledTab {...tabProps} ref={ref}>
       {rendered}
-    </div>
+    </StyledTab>
   );
 }
 

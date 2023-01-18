@@ -1,27 +1,43 @@
 import styled, { css } from "styled-components";
-import { YOUR_PROP_TYPE_1, } from "./Tab.types";
 
 const Variables = css`
-  // Variables that are controlled, changed, or toggled entirely within this component
-  // are defined here and used in the component's styles.
+  --tab-color-border-bottom: transparent;
+  // TODO: muted doesn't look good here as a default, and neither does subtle.
+  // We need a 600 for this.
+  --tab-color: var(--ads-v2-color-fg-muted);
 `;
 
-// Variant style definitions
-const YOUR_VARIANTS = css`
-  // Styles for the variants defined in your type
+export const StyledTab = styled.div<{}>`
+  ${Variables} :not(:first-child) {
+    margin-left: 0.75rem;
+  }
+  :not(:last-child) {
+    margin-right: 0.75rem;
+  }
+
+  :hover {
+    --tab-color-border-bottom: var(--ads-v2-color-border-emphasis);
+    --tab-color: var(--ads-v2-color-fg-emphasis);
+  }
+
+  :focus {
+    --tab-color-border-bottom: var(--ads-v2-color-border-brand);
+    --tab-color: var(--ads-v2-color-fg-emphasis);
+  }
+
+  border-bottom: 3px solid var(--tab-color-border-bottom);
+  color: var(--tab-color);
 `;
 
-export const StyledTab = styled.span<{
-// Props that affect styles are passed through here.
-YOUR_PROP: YOUR_PROP_TYPE_1;
-}>`
-  ${Variables}
+export const StyledTabList = styled.div`
+  display: flex;
 
-  /* Variant styles */
-  ${({ YOUR_PROP }) => YOUR_PROP && YOUR_VARIANTS[YOUR_PROP]}
+  box-sizing: border-box;
+  height: 2rem;
+  border-bottom: 1px solid var(--ads-v2-color-border);
+`;
 
-  /* Base style */
-
-  /* Additional styles and classes */
-
+export const StyledTabs = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
