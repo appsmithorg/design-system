@@ -23,7 +23,7 @@ Text.displayName = "Text";
 
 Text.defaultProps = {
   as: "span",
-  kind: "p",
+  kind: "span",
 };
 
 export { Text };

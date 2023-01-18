@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Text } from "./index";
 
 export default {
-  title: "Design System V2/Text",
+  title: "Design System/Text",
   component: Text,
 } as ComponentMeta<typeof Text>;
 
