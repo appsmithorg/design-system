@@ -48,6 +48,7 @@ const Variables = css`
 `;
 
 const Kinds = {
+  // The default, span, uses the same values as p for now.
   span: css`
     --font-size: var(--ads-v2-p-font-size);
     --font-weight: var(--ads-v2-p-font-weight);
