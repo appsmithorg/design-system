@@ -6,7 +6,7 @@ import { ToastProps } from "./Toast.types";
 const Variables = css`
   // All the --toastify prefixed variables are changing tokens defined in react-toastify
   // For a complete list, see https://fkhadra.github.io/react-toastify/how-to-style/#override-css-variables
-  
+
   --toastify-color-info: var(--ads-v2-color-fg-information);
   --toastify-color-success: var(--ads-v2-color-fg-success);
   --toastify-color-warning: var(--ads-v2-color-fg-warning);
@@ -40,7 +40,7 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
 })`
   .toast {
     box-shadow: var(--ads-v2-toast-box-shadow);
-    padding: 0.5rem;
+    padding: var(--ads-v2-spaces-3);
   }
 
   .body {
@@ -48,7 +48,7 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
   }
 
   .Toastify__toast-icon {
-    margin-right: 0.5rem;
+    margin-right: var(--ads-v2-spaces-3);
     align-items: flex-start;
     width: 1rem;
   }
