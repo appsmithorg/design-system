@@ -44,6 +44,10 @@ export const StyledToggle = styled.input`
     opacity: var(--ads-v2-opacity-disabled);
   }
 
+  &:focus-visible {
+    outline-color: var(--ads-v2-color-focus);
+  }
+
   &:checked {
     justify-content: flex-end;
     --toggle-color-bg: var(--ads-v2-color-bg-brand-secondary);

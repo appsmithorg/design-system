@@ -1,10 +1,6 @@
 @import "colors.css";
 @import "variables.css";
 
-*:focus-visible {
-  outline-color: var(--ads-v2-color-focus);
-}
-
 :root {
   /**
     * ===========================================*
