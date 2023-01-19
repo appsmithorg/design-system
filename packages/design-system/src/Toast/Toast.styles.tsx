@@ -4,6 +4,9 @@ import { Text } from "../Text";
 import { ToastProps } from "./Toast.types";
 
 const Variables = css`
+  // All the --toastify prefixed variables are changing tokens defined in react-toastify
+  // For a complete list, see https://fkhadra.github.io/react-toastify/how-to-style/#override-css-variables
+  
   --toastify-color-info: var(--ads-v2-color-fg-information);
   --toastify-color-success: var(--ads-v2-color-fg-success);
   --toastify-color-warning: var(--ads-v2-color-fg-warning);
@@ -31,11 +34,6 @@ const Variables = css`
     0 8px 12px 0 rgba(0, 0, 0, 0.15);
 `;
 
-// Variant style definitions
-const YOUR_VARIANTS = css`
-  // Styles for the variants defined in your type
-`;
-
 export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
   toastClassName: "toast",
   bodyClassName: "body",
@@ -55,11 +53,7 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
     width: 1rem;
   }
 
-  ${Variables} /* Variant styles */
-
-  /* Base style */
-
-  /* Additional styles and classes */
+  ${Variables}
 `;
 
 export const ToastBody = styled(Text)`
