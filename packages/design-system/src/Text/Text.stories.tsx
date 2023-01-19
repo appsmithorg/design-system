@@ -13,8 +13,8 @@ const Template: ComponentStory<typeof Text> = (args) => {
   return <Text {...args} />;
 };
 
-export const ComponentDisplay = Template.bind({});
-ComponentDisplay.storyName = "Text";
-ComponentDisplay.args = {
+export const TextStory = Template.bind({});
+TextStory.storyName = "Text";
+TextStory.args = {
   children: "Text",
 };
