@@ -20,7 +20,6 @@ function Toast({ ...rest }: ToastProps) {
   return (
     <StyledToast
       autoClose={5000}
-      className="t--toast-action"
       closeButton={false}
       draggable={false}
       hideProgressBar={true}
