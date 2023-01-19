@@ -33,5 +33,5 @@ const Template: ComponentStory<typeof Divider> = (args) => {
   );
 };
 
-export const DividerExample = Template.bind({});
-DividerExample.storyName = "Divider";
+export const DividerStory = Template.bind({});
+DividerStory.storyName = "Divider";
