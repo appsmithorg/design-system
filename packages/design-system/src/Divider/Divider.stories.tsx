@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof Divider> = (args) => {
       style={{
         width: "6rem",
         height: "6rem",
-        border: "2px solid blue",
+        border: "2px solid bisque",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
