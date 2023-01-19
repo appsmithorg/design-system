@@ -5,7 +5,7 @@ import { Toast, toast } from "./Toast";
 import { ToastProps } from "./Toast.types";
 
 export default {
-  title: "Design System V2/Toast",
+  title: "Design System/Toast",
   component: Toast,
 } as ComponentMeta<typeof Toast>;
 
