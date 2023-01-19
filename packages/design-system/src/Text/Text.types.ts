@@ -14,7 +14,7 @@ export type Kind =
 // Text props
 export type TextProps = {
   /** To change the rendering component */
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "label";
   /** (try not to) pass addition classes here */
   className?: string;
   /** the words you want to display */
