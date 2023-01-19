@@ -22,8 +22,8 @@ const Template: ComponentStory<typeof Toast> = (args) => {
   );
 };
 
-export const ToastExample = Template.bind({});
-ToastExample.storyName = "Toast";
+export const ToastStory = Template.bind({});
+ToastStory.storyName = "Toast";
 
 export const Success = Template.bind({});
 Success.args = {
