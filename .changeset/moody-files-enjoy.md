@@ -1,5 +1,4 @@
 ---
-"design-system-v2": patch
 "@appsmithorg/design-system": patch
 ---
 
