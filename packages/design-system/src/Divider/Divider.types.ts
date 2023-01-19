@@ -1,4 +1,4 @@
-import React from "react";
+import { HTMLAttributes } from "react";
 
 export type DividerProps = {
 
@@ -7,4 +7,4 @@ export type DividerProps = {
   /** (try not to) pass addition classes here */
   className?: string;
 
-}
+} & HTMLAttributes<HTMLSpanElement>
