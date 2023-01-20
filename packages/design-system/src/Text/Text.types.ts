@@ -1,6 +1,7 @@
 import React from "react";
 
-// Text types
+// TODO: replace these values with names from the typography scale
+// this will also replace the values within typography scale in style.
 export type Kind =
   | "h1"
   | "h2"
@@ -9,7 +10,8 @@ export type Kind =
   | "h5"
   | "h6"
   | "p"
-  | "span";
+  | "span"
+  | "error";
 
 // Text props
 export type TextProps = {
