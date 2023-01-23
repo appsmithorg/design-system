@@ -23,7 +23,6 @@ const Template: ComponentStory<typeof Link> = (args) => {
 export const LinkExample = Template.bind({});
 LinkExample.storyName = "Link";
 LinkExample.args = {
-  href: "https://appsmith.com",
-  children: "the missing link",
-  target: "_blank"
+  to: "old",
+  children: "deprecated appsmith design system",
 };
