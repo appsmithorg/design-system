@@ -3263,6 +3263,18 @@
     "@react-types/shared" "^3.16.0"
     "@swc/helpers" "^0.4.14"
 
+"@react-aria/link@^3.3.6":
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/@react-aria/link/-/link-3.3.6.tgz#e9e3203c41c4dd5c4113d0a06b7620b476f78345"
+  integrity sha512-UjbdBJ8EB+jCC3mPZD6cYykHqZKTy6/VvI5RGJoKtF8cg9639tRy6g102pd4ncFTdD4DfU5PPWtthC24nQRCyQ==
+  dependencies:
+    "@react-aria/focus" "^3.10.1"
+    "@react-aria/interactions" "^3.13.1"
+    "@react-aria/utils" "^3.14.2"
+    "@react-types/link" "^3.3.6"
+    "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
+
 "@react-aria/radio@^3.4.2":
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@react-aria/radio/-/radio-3.4.2.tgz#bcd2deb8326f934046545fee9b2568f9d3b0655b"
@@ -3428,6 +3440,14 @@
   resolved "https://registry.yarnpkg.com/@react-types/label/-/label-3.7.1.tgz#ad4d3d7a6b5ea6aca70f89661d7c358cf2ab5f94"
   integrity sha512-wFpdtjSDBWO4xQQGF57V3PqvVVyE9TPj9ELWLs1yzL09fpXosycuEl5d79RywVlC9aF9dQYUfES09q/DZhRhMQ==
   dependencies:
+    "@react-types/shared" "^3.16.0"
+
+"@react-types/link@^3.3.6":
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/@react-types/link/-/link-3.3.6.tgz#74ff1602c7aba38d3200f0d597a04e1f94989e25"
+  integrity sha512-HMFd94CW8WrHbwXeTtCP/WOZmGugrEkN8f16R0i7T9xlTumk5GxubDMjA41ND/ehH72Xq7lP9VX8qezHWCGSoQ==
+  dependencies:
+    "@react-aria/interactions" "^3.13.1"
     "@react-types/shared" "^3.16.0"
 
 "@react-types/radio@^3.3.1":

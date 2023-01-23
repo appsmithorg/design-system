@@ -90,6 +90,7 @@
     ]
   },
   "dependencies": {
-    "@react-aria/button": "^3.6.4"
+    "@react-aria/button": "^3.6.4",
+    "@react-aria/link": "^3.3.6"
   }
 }
