@@ -38,11 +38,20 @@
   /* red */
   --ads-v2-color-red-900: #DC2626;
   --ads-v2-color-red-300 : #FF9494;
+  --ads-v2-color-red-200 : #FFF2F2;
   --ads-v2-color-red-200 : rgba(220, 38, 38, 0.1);
   --ads-v2-color-red-100 : rgba(220, 38, 38, 0.05);
 
-  --ads-v2-color-yellow : #E0B30E;
-  --ads-v2-color-green : #03B365;
-  --ads-v2-color-blue : #0094ff;
+  /* yellow */
+  --ads-v2-color-yellow-900 : #E0B30E;
+  --ads-v2-color-yellow-200: #FFFBEB;
+
+  /* green */
+  --ads-v2-color-green-900 : #03B365;
+  --ads-v2-color-green-200: #ECFDF5;
+
+  /* blue */
+  --ads-v2-color-blue-900 : #0094ff;
+  --ads-v2-color-blue-200: #EFF6FF;
 
 }

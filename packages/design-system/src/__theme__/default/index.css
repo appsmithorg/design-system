@@ -38,12 +38,15 @@
   --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-200);
   /** Used for error background hover  */
   --ads-v2-color-bg-error-emphasis: var(--ads-v2-color-red-100);
+
   /** Used for error background **/
-  --ads-v2-color-bg-error: var(--ads-v2-color-white);
+  --ads-v2-color-bg-error: var(--ads-v2-color-red-200);
   /** Used for success background **/
-  --ads-v2-color-bg-success: var(--ads-v2-color-green);
+  --ads-v2-color-bg-success: var(--ads-v2-color-green-200);
   /** Used for warning background **/
-  --ads-v2-color-bg-warning: var(--ads-v2-color-yellow);
+  --ads-v2-color-bg-warning: var(--ads-v2-color-yellow-200);
+  /** Used for information background **/
+  --ads-v2-color-bg-info: var(--ads-v2-color-blue-200);
 
   /**
     * ===========================================*
@@ -74,8 +77,16 @@
   --ads-v2-color-fg-on-success: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-warning **/
   --ads-v2-color-fg-on-warning: var(--ads-v2-color-white);
+
   /* Text color for error */
   --ads-v2-color-fg-error: var(--ads-v2-color-red-900);
+  /* Text color for success */
+  --ads-v2-color-fg-success: var(--ads-v2-color-green-900);
+  /* Text color for warning */
+  --ads-v2-color-fg-warning: var(--ads-v2-color-yellow-900);
+  /* Text color for information */
+  --ads-v2-color-fg-info: var(--ads-v2-color-blue-900);
+
 
 
   /**
@@ -101,10 +112,6 @@
   --ads-v2-color-border-brand: var(--ads-v2-color-orange-500);
   /** Used for indicating error borders **/
   --ads-v2-color-border-error: var(--ads-v2-color-red-300);
-  /** Used for indicating success borders **/
-  --ads-v2-color-border-success: var(--ads-v2-color-green);
-  /** Used for indicating warning borders **/
-  --ads-v2-color-border-warning: var(--ads-v2-color-yellow);
 
 
   /**
@@ -112,7 +119,7 @@
     * =========== Border Radius =================*
     * ===========================================*
   */
-  --ads-v2-border-radius: 0px;
+  --ads-v2-border-radius: 4px;
 
   /**
     * ===========================================*
@@ -126,7 +133,7 @@
     * =============== Outline ===================*
     * ===========================================*
   */
-  --ads-v2-color-outline: var(--ads-v2-color-blue);
+  --ads-v2-color-outline: var(--ads-v2-color-blue-900);
   --ads-v2-border-width-outline: 2px;
   --ads-v2-offset-outline: 0.5px;
 }
