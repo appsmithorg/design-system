@@ -1,11 +1,9 @@
 import React from "react";
-import { useFocusRing } from "@react-aria/focus";
 
 import { LinkProps } from "./Link.types";
 import { StyledLink } from "./Link.styles";
 
 import { useLink } from "@react-aria/link";
-import { Link as RouterLink } from "react-router-dom";
 
 /**
  *
@@ -17,31 +15,25 @@ import { Link as RouterLink } from "react-router-dom";
  * - Add text dependency
  * - get list of available typography link can be from design
  * - add ability to have icon
- * - styles
  * @param props
  * @constructor
  */
 
 function Link(props: LinkProps) {
-  let ref = React.useRef();
+  let ref = React.useRef(null);
   let { linkProps } = useLink(props, ref);
 
   return (
-    <RouterLink
+    <StyledLink
       {...linkProps}
       innerRef={ref}
       to={props.to}
       target={props.target}
     >
       {props.children}
-    </a>
+    </StyledLink>
   );
 }
-
-//
-// function Link({ children, YOUR_PROPS, ...rest }: LinkProps) {
-//   return <StyledLink {...rest}>{children}</StyledLink>;
-// }
 
 Link.displayName = "Link";
 

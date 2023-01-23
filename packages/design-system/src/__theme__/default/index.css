@@ -62,6 +62,9 @@
   /** Used for all least important texts like placeholders, disabled text **/
   --ads-v2-color-fg-subtle: var(--ads-v2-color-black-400);
 
+  /** Text color with special meaning link Link */
+  --ads-v2-color-fg-brand: var(--ads-v2-color-orange-500);
+
   /** Text color for background --ads-v2-color-bg-brand **/
   --ads-v2-color-fg-on-brand: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-brand-secondary **/
