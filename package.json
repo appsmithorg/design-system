@@ -17,7 +17,8 @@
     "design-system:prepublishOnly": "yarn workspace @appsmithorg/design-system prepublishOnly",
     "design-system:storybook": "yarn workspace @appsmithorg/design-system storybook",
     "design-system:build-storybook": "yarn workspace @appsmithorg/design-system build-storybook",
-    "build": "yarn design-system:build",
+    "design-system-old:build": "yarn workspace @appsmithorg/design-system-old build",
+    "build": "yarn design-system:build && yarn design-system-old:build",
     "release": "changeset publish"
   },
   "dependencies": {
@@ -26,7 +27,6 @@
   },
   "resolutions": {
     "trim-newlines": "3.0.1",
-    "glob-parent": "6.0.2",
     "trim": "0.0.3",
     "nth-check": "2.0.1",
     "terser": "5.14.2",

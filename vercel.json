@@ -1,0 +1,19 @@
+{
+  "buildCommand": "./build-stories.sh",
+  "installCommand": "",
+  "outputDirectory": "storybook-static",
+  "regions": [
+    "bom1"
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/old/",
+      "destination": "/old/index.html"
+    }
+  ],
+  "trailingSlash": true
+}
