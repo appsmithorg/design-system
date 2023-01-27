@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ButtonV2 as ButtonComponent } from "./Button";
+import { Button } from "./Button";
 
 export default {
   title: "Design System/Button",
-  component: ButtonComponent,
+  component: Button,
   argTypes: {
     as: {
       control: {
@@ -144,19 +144,20 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof ButtonComponent>;
+} as ComponentMeta<typeof Button>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof ButtonComponent> = (args) => {
-  return <ButtonComponent {...args}>BUTTON</ButtonComponent>;
+const Template: ComponentStory<typeof Button> = (args) => {
+  return <Button {...args}>BUTTON</Button>;
 };
 
-export const Button = Template.bind({});
-
-Button.args = {
-  // eslint-disable-next-line no-console
+export const ButtonStory = Template.bind({});
+ButtonStory.storyName = "Button";
+ButtonStory.args = {
   onPress: () => alert("Button clicked!"),
   disabled: false,
   endIcon: "arrow-right-line",
   startIcon: "arrow-left-line",
+  size: "md",
+  kind: "primary",
 };

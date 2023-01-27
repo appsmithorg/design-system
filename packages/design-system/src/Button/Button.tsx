@@ -18,7 +18,7 @@ import {
 } from "./Button.constants";
 import { Spinner } from "Spinner";
 
-const ButtonV2 = forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref): JSX.Element => {
     const {
       as,
@@ -99,13 +99,13 @@ const ButtonV2 = forwardRef<HTMLButtonElement, ButtonProps>(
   },
 );
 
-ButtonV2.displayName = "Button";
+Button.displayName = "Button";
 
-ButtonV2.defaultProps = {
+Button.defaultProps = {
   size: "sm",
   kind: "primary",
   isLoading: false,
   disabled: false,
 };
 
-export { ButtonV2 };
+export { Button };

@@ -8,7 +8,6 @@ import {
 import { Size, Kind } from "./Button.types";
 
 const Variables = css`
-  --button-border-radius: var(--ads-v2-border-radius);
   --button-color-bg: var(--ads-v2-color-bg);
   --button-color-fg: var(--ads-v2-color-text);
   --button-color-border: var(--ads-v2-color-border);
@@ -188,7 +187,7 @@ export const StyledButton = styled.button<{
 
   position: relative;
   cursor: pointer;
-  border-radius: var(--button-border-radius);
+  border-radius: var(--ads-v2-border-radius);
   border: none;
   background-color: transparent;
   color: var(--button-color-fg);
