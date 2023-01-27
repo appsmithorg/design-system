@@ -1,18 +1,29 @@
 import React, { forwardRef } from "react";
 import { useButton } from "@react-aria/button";
 import { AriaButtonProps } from "@react-types/button";
+import clsx from "classnames";
 
-import { StyledButton } from "./Button.styles";
+import { StyledButton, ButtonContent } from "./Button.styles";
 import { ButtonProps } from "./Button.types";
 import { useDOMRef } from "Hooks/useDomRef";
 import { Icon } from "Icon";
-import { ButtonIconClassName } from "./Button.constants";
+import {
+  ButtonClassName,
+  ButtonLoadingClassName,
+  ButtonLoadingIconClassName,
+  ButtonContentClassName,
+  ButtonContentChildrenClassName,
+  ButtonContentIconStartClassName,
+  ButtonContentIconEndClassName,
+} from "./Button.constants";
+import { Spinner } from "Spinner";
 
 const ButtonV2 = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref): JSX.Element => {
     const {
       as,
       children,
+      className,
       disabled,
       endIcon,
       height,
@@ -36,6 +47,7 @@ const ButtonV2 = forwardRef<HTMLButtonElement, ButtonProps>(
       <StyledButton
         as={as || "button"}
         {...buttonProps}
+        className={clsx(ButtonClassName, className)}
         disabled={disabled}
         height={height}
         isLoading={isLoading}
@@ -44,31 +56,44 @@ const ButtonV2 = forwardRef<HTMLButtonElement, ButtonProps>(
         size={size}
         width={width}
       >
-        {isLoading ? (
-          // TODO: add a loader component
-          <Icon className={ButtonIconClassName} name="loader-5-line" />
-        ) : (
-          <>
-            {/* Start Icon Section */}
-            {startIcon ? (
-              typeof startIcon === "string" ? (
-                <Icon className={ButtonIconClassName} name={startIcon} />
-              ) : (
-                <Icon className={ButtonIconClassName}>{startIcon}</Icon>
-              )
-            ) : null}
-            {/* Children section */}
-            {children}
-            {/* End Icon Section */}
-            {endIcon ? (
-              typeof endIcon === "string" ? (
-                <Icon className={ButtonIconClassName} name={endIcon} />
-              ) : (
-                <Icon className={ButtonIconClassName}>{endIcon}</Icon>
-              )
-            ) : null}
-          </>
+        {/* Loading section */}
+        {isLoading === true && (
+          <Spinner
+            className={ButtonLoadingClassName}
+            iconProps={{ className: ButtonLoadingIconClassName }}
+          />
         )}
+
+        {/* Button content */}
+        <ButtonContent className={ButtonContentClassName} size={size}>
+          {/* Start Icon Section */}
+          {startIcon ? (
+            typeof startIcon === "string" ? (
+              <Icon
+                className={ButtonContentIconStartClassName}
+                name={startIcon}
+              />
+            ) : (
+              <Icon className={ButtonContentIconStartClassName}>
+                {startIcon}
+              </Icon>
+            )
+          ) : null}
+
+          {/* Children section */}
+          {children && (
+            <span className={ButtonContentChildrenClassName}>{children}</span>
+          )}
+
+          {/* End Icon Section */}
+          {endIcon ? (
+            typeof endIcon === "string" ? (
+              <Icon className={ButtonContentIconEndClassName} name={endIcon} />
+            ) : (
+              <Icon className={ButtonContentIconEndClassName}>{endIcon}</Icon>
+            )
+          ) : null}
+        </ButtonContent>
       </StyledButton>
     );
   },

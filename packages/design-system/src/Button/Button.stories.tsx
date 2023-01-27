@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ButtonV2 as ButtonComponent } from "./Button";
 
 export default {
-  title: "Design System V2/Button",
+  title: "Design System/Button",
   component: ButtonComponent,
   argTypes: {
     as: {
@@ -157,4 +157,6 @@ Button.args = {
   // eslint-disable-next-line no-console
   onPress: () => alert("Button clicked!"),
   disabled: false,
+  endIcon: "arrow-right-line",
+  startIcon: "arrow-left-line",
 };

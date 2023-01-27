@@ -1,5 +1,10 @@
-import styled, { css, keyframes } from "styled-components";
-import { ButtonIconClassName } from "./Button.constants";
+import styled, { css } from "styled-components";
+import {
+  ButtonContentIconEndClassName,
+  ButtonContentIconStartClassName,
+  ButtonLoadingClassName,
+  ButtonLoadingIconClassName,
+} from "./Button.constants";
 import { Size, Kind } from "./Button.types";
 
 const Variables = css`
@@ -12,29 +17,37 @@ const Variables = css`
 
 const Sizes = {
   sm: css`
-    padding: 2px 8px;
-    font-size: 11px;
+    padding: 4px 8px;
+    font-size: 12px;
     font-weight: 500;
 
-    & svg {
+    /* Button icon sizes */
+    & > .${ButtonContentIconStartClassName} > svg,
+    & > .${ButtonContentIconEndClassName} > svg {
       width: 12px;
       height: 12px;
     }
   `,
   md: css`
-    padding: 6px 16px;
-    font-size: 12px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
 
-    & svg {
+    /* Button icon sizes */
+    & > .${ButtonContentIconStartClassName} > svg,
+    & > .${ButtonContentIconEndClassName} > svg {
       width: 16px;
       height: 16px;
     }
   `,
   lg: css`
-    padding: 10px 26px;
-    font-size: 13px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
 
-    & svg {
+    /* Button icon sizes */
+    & > .${ButtonContentIconStartClassName} > svg,
+    & > .${ButtonContentIconEndClassName} > svg {
       width: 18px;
       height: 18px;
     }
@@ -90,67 +103,143 @@ const Kinds = {
       --button-color-bg: var(--ads-v2-color-bg-muted);
       --button-color-fg: var(--ads-v2-color-fg-muted);
     }
+
+    &:disabled {
+      --button-color-bg: transparent;
+    }
   `,
   error: css`
     --button-color-bg: var(--ads-v2-color-bg-error);
-    --button-color-fg: var(--ads-v2-color-fg-error);
-    --button-color-border: var(--ads-v2-color-border-error);
+    --button-color-fg: var(--ads-v2-color-fg-on-error);
+    --button-color-border: transparent;
+
+    &:hover {
+      --button-color-bg: var(--ads-v2-color-bg-error-emphasis);
+      --button-color-fg: var(--ads-v2-color-fg-on-error-emphasis);
+      --button-color-border: transparent;
+    }
+
+    &:active {
+      --button-color-bg: var(--ads-v2-color-bg-error-emphasis-plus);
+      --button-color-fg: var(--ads-v2-color-fg-on-error-emphasis);
+      --button-color-border: transparent;
+    }
   `,
 };
 
-export const StyledButton = styled.button<{
-  size?: Size;
-  kind?: Kind;
-  height?: string;
-  width?: string;
-  isLoading?: boolean;
-}>`
-  ${Variables}
+const LoaderSizes = {
+  sm: css`
+    /* Loading icon size */
+    & > .${ButtonLoadingClassName} > .${ButtonLoadingIconClassName} > svg {
+      width: 12px;
+      height: 12px;
+    }
+  `,
+  md: css`
+    /* Loading icon size */
+    & > .${ButtonLoadingClassName} > .${ButtonLoadingIconClassName} > svg {
+      width: 16px;
+      height: 16px;
+    }
+  `,
+  lg: css`
+    /* Loading icon size */
+    & > .${ButtonLoadingClassName} > .${ButtonLoadingIconClassName} > svg {
+      width: 20px;
+      height: 20px;
+    }
+  `,
+};
 
+export const ButtonContent = styled.div<{
+  size?: Size;
+}>`
+  /* Content is separated out to make opacity driven loader functionality. */
   /* Size style */
   ${({ size }) => size && Sizes[size]}
-
-  /* Variant style */
-  ${({ kind }) => kind && Kinds[kind]}
 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: var(--ads-v2-spaces-2);
+  background-color: var(--button-color-bg);
+  border: 1px solid var(--button-color-border);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+`;
+
+export const StyledButton = styled.button<{
+  kind?: Kind;
+  height?: string;
+  size?: Size;
+  width?: string;
+  isLoading?: boolean;
+  disabled?: boolean;
+}>`
+  ${Variables}
+
+  /* Variant style */
+  ${({ kind }) => kind && Kinds[kind]}
+
+  /* Loader size style */
+  ${({ size }) => size && LoaderSizes[size]}
+
+  position: relative;
   cursor: pointer;
   border-radius: var(--button-border-radius);
-  border: 1px solid var(--button-color-border);
-  background-color: var(--button-color-bg);
+  border: none;
+  background-color: transparent;
   color: var(--button-color-fg);
   font-family: var(--ads-v2-font-family);
   font-weight: var(--button-font-weight);
   ${({ height }) => height && `height: ${height};`}
   ${({ width }) => width && `width: ${width};`}
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
+  /* button disabled style */
+  ${({ disabled }) =>
+    disabled === true &&
+    css`
+      cursor: not-allowed;
+      opacity: var(--ads-v2-opacity-disabled);
+    `}
+
+  /* Loader styles */
+  & > .${ButtonLoadingClassName} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
   }
 
+  /* Loading styles */
   ${({ isLoading }) =>
-    isLoading &&
+    isLoading === true &&
     css`
       pointer-events: none;
 
-      & .${ButtonIconClassName} {
-        animation: ${spin} 1s linear infinite;
+      & > ${ButtonContent} {
+        opacity: var(--ads-v2-opacity-disabled);
+      }
+
+      & > ${ButtonContent} > * {
+        visibility: hidden;
       }
     `}
-  };
-`;
 
-const spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
+  /* Focus styles */
+  &:focus, &:focus-visible {
+    outline: var(--ads-v2-border-width-outline) solid
+      var(--ads-v2-color-outline);
+    outline-offset: var(--ads-v2-offset-outline);
   }
 `;
