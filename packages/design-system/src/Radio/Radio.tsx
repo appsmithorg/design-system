@@ -3,7 +3,7 @@ import { useRadioGroupState, RadioGroupState } from "@react-stately/radio";
 import { useRadio, useRadioGroup, AriaRadioProps } from "@react-aria/radio";
 import { useFocusRing } from "@react-aria/focus";
 
-import { RadioComponent, StyledRadioGroup } from "./Radio.styles";
+import { StyledRadio, StyledRadioGroup } from "./Radio.styles";
 import { RadioGroupProps } from "./Radio.types";
 
 const RadioContext = React.createContext({} as RadioGroupState);
@@ -29,9 +29,9 @@ export function Radio(props: AriaRadioProps) {
   const id = `ads-radio-${props.value}`;
 
   return (
-    <RadioComponent disabled={isDisabled} isFocusVisible={isFocusVisible}>
+    <StyledRadio disabled={isDisabled} isFocusVisible={isFocusVisible}>
       <input {...inputProps} {...focusProps} id={id} ref={ref} />
       <label htmlFor={id}>{children}</label>
-    </RadioComponent>
+    </StyledRadio>
   );
 }

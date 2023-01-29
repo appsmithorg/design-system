@@ -59,7 +59,7 @@ const BasicStyles = css`
   }
 `;
 
-export const RadioComponent = styled.label<{
+export const StyledRadio = styled.label<{
   disabled?: boolean;
   isFocusVisible?: boolean;
 }>`
