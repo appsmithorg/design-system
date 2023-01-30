@@ -38,6 +38,7 @@ Checkbox.displayName = "Checkbox";
 
 Checkbox.defaultProps = {
   isIndeterminate: false,
+  isDisabled: false,
 };
 
 export { Checkbox };
