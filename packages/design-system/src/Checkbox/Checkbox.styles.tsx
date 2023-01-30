@@ -153,7 +153,7 @@ export const StyledCheckbox = styled.label<{
   ${({ isDisabled }) => {
     if (isDisabled) {
       return css`
-        opacity: 0.5;
+        opacity: var(--ads-v2-opacity-disabled);
         &,
         & > * {
           cursor: not-allowed !important;
