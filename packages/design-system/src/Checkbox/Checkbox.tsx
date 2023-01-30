@@ -24,7 +24,7 @@ function Checkbox(props: CheckboxProps) {
       isChecked={state.isSelected}
       isDisabled={isDisabled}
       isFocusVisible={isFocusVisible}
-      isIndeterminate={isIndeterminate || false}
+      isIndeterminate={isIndeterminate}
     >
       <input {...inputProps} {...focusProps} id={id} ref={ref} />
       <label className={CheckboxClassNameLabel} htmlFor={id}>
@@ -36,6 +36,8 @@ function Checkbox(props: CheckboxProps) {
 
 Checkbox.displayName = "Checkbox";
 
-Checkbox.defaultProps = {};
+Checkbox.defaultProps = {
+  isIndeterminate: false,
+};
 
 export { Checkbox };
