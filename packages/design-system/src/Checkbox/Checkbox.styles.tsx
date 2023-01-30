@@ -3,8 +3,7 @@ import styled, { css } from "styled-components";
 const Variables = css`
   --checkbox-color-label: var(--ads-v2-color-fg);
   --checkbox-color-border: var(--ads-v2-color-border);
-  --checkbox-color-background-selected: var(--ads-v2-color-bg-brand-secondary);
-  --checkbox-color-border-selected: var(--ads-v2-color-bg-brand-secondary);
+  --checkbox-color-background: var(--ads-v2-color-bg);
   --checkbox-color-background-checkmark: var(
     --ads-v2-color-fg-on-brand-secondary
   );
@@ -48,8 +47,8 @@ const Checkbox = css`
     width: var(--ads-v2-spaces-5);
     height: var(--ads-v2-spaces-5);
     border-radius: var(--ads-v2-border-radius);
-    background-color: var(--checkbox-color-background-selected);
-    border: 1px solid var(--checkbox-color-border-selected);
+    background-color: var(--ads-v2-color-bg-brand-secondary);
+    border: 1px solid var(--ads-v2-color-bg-brand-secondary);
     box-sizing: border-box;
     transform: scale(0);
     transition: transform 0.2s ease;
