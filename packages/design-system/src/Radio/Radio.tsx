@@ -2,19 +2,26 @@ import React from "react";
 import { useRadioGroupState, RadioGroupState } from "@react-stately/radio";
 import { useRadio, useRadioGroup, AriaRadioProps } from "@react-aria/radio";
 import { useFocusRing } from "@react-aria/focus";
+import clsx from "classnames";
 
 import { StyledRadio, StyledRadioGroup } from "./Radio.styles";
 import { RadioGroupProps } from "./Radio.types";
+import {
+  RadioClassName,
+  RadioGroupClassName,
+  RadioLabelClassName,
+} from "./Radio.constants";
 
 const RadioContext = React.createContext({} as RadioGroupState);
 
 export function RadioGroup(props: RadioGroupProps) {
-  const { children, gap } = props;
+  const { children, className, gap } = props;
   const state = useRadioGroupState(props);
   const { radioGroupProps } = useRadioGroup(props, state);
+  const classnames = clsx(className, RadioGroupClassName);
 
   return (
-    <StyledRadioGroup gap={gap} {...radioGroupProps}>
+    <StyledRadioGroup gap={gap} {...radioGroupProps} className={classnames}>
       <RadioContext.Provider value={state}>{children}</RadioContext.Provider>
     </StyledRadioGroup>
   );
@@ -29,9 +36,15 @@ export function Radio(props: AriaRadioProps) {
   const id = `ads-radio-${props.value}`;
 
   return (
-    <StyledRadio disabled={isDisabled} isFocusVisible={isFocusVisible}>
+    <StyledRadio
+      className={RadioClassName}
+      disabled={isDisabled}
+      isFocusVisible={isFocusVisible}
+    >
       <input {...inputProps} {...focusProps} id={id} ref={ref} />
-      <label htmlFor={id}>{children}</label>
+      <label className={RadioLabelClassName} htmlFor={id}>
+        {children}
+      </label>
     </StyledRadio>
   );
 }
