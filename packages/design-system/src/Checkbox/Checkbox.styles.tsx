@@ -31,9 +31,9 @@ const Checkbox = css`
     content: "";
     position: absolute;
     left: 0;
-    top: var(--ads-v2-spaces-1);
-    width: var(--ads-v2-spaces-5);
-    height: var(--ads-v2-spaces-5);
+    top: 2px;
+    width: 16px;
+    height: 16px;
     border: 1px solid var(--ads-v2-color-border);
     border-radius: var(--ads-v2-border-radius);
     box-sizing: border-box;
@@ -43,9 +43,9 @@ const Checkbox = css`
     content: "";
     position: absolute;
     left: 0;
-    top: var(--ads-v2-spaces-1);
-    width: var(--ads-v2-spaces-5);
-    height: var(--ads-v2-spaces-5);
+    top: 2px;
+    width: 16px;
+    height: 16px;
     border-radius: var(--ads-v2-border-radius);
     background-color: var(--ads-v2-color-bg-brand-secondary);
     border: 1px solid var(--ads-v2-color-bg-brand-secondary);
