@@ -5,6 +5,10 @@ import { useFocusRing } from "@react-aria/focus";
 
 import { CheckboxProps } from "./Checkbox.types";
 import { StyledCheckbox } from "./Checkbox.styles";
+import {
+  CheckboxClassName,
+  CheckboxClassNameLabel,
+} from "./Checkbox.constants";
 
 function Checkbox(props: CheckboxProps) {
   const { children, isDisabled, isIndeterminate } = props;
@@ -16,13 +20,16 @@ function Checkbox(props: CheckboxProps) {
 
   return (
     <StyledCheckbox
+      className={CheckboxClassName}
       isChecked={state.isSelected}
       isDisabled={isDisabled}
       isFocusVisible={isFocusVisible}
       isIndeterminate={isIndeterminate || false}
     >
       <input {...inputProps} {...focusProps} id={id} ref={ref} />
-      <label htmlFor={id}>{children}</label>
+      <label className={CheckboxClassNameLabel} htmlFor={id}>
+        {children}
+      </label>
     </StyledCheckbox>
   );
 }
