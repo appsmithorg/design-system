@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { TextInput } from "./TextInput";
 
 export default {
-  title: "Design System V2/TextInput",
+  title: "Design System/TextInput",
   component: TextInput,
 } as ComponentMeta<typeof TextInput>;
 
@@ -24,5 +24,5 @@ TextInputExample.args = {
   startIcon: "home-5-fill",
   endIcon: "building-line",
   isDisabled: true,
-  size: "sm",
+  size: "md",
 };
