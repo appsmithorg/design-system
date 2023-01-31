@@ -17,7 +17,6 @@ import {
   ButtonContentIconEndClassName,
 } from "./Button.constants";
 import { Spinner } from "Spinner";
-import { Text } from "Text";
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref): JSX.Element => {
@@ -83,15 +82,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
           {/* Children section */}
           {children && (
-            <span className={ButtonContentChildrenClassName}>
-              {typeof children === "string" ? (
-                <Text as="span" kind="span">
-                  {children}
-                </Text>
-              ) : (
-                children
-              )}
-            </span>
+            <span className={ButtonContentChildrenClassName}>{children}</span>
           )}
 
           {/* End Icon Section */}
