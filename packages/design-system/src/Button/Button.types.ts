@@ -17,6 +17,8 @@ export type ButtonProps = {
   children?: React.ReactNode | string;
   /** Button loading attribute */
   isLoading?: boolean;
+  /** Button disabled attribute */
+  isDisabled?: boolean;
   /** Button kind attribute */
   kind?: Kind;
   /** Button size attribute */
@@ -26,11 +28,9 @@ export type ButtonProps = {
   /** Button endIcon attribute */
   endIcon?: React.ReactNode | "string";
   /** Button height attribute */
-  height?: string;
+  UNSAFE_height?: string;
   /** Button width attribute */
-  width?: string;
-  /** Button disabled attribute */
-  disabled?: boolean;
+  UNSAFE_width?: string;
   /** Button href attribute */
   href?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &

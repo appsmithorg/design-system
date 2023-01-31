@@ -24,14 +24,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       as,
       children,
       className,
-      disabled,
       endIcon,
-      height,
+      isDisabled,
       isLoading,
       kind,
       size,
       startIcon,
-      width,
+      UNSAFE_height,
+      UNSAFE_width,
       ...rest
     } = props;
     const buttonRef = useDOMRef(ref);
@@ -47,14 +47,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <StyledButton
         as={as || "button"}
         {...buttonProps}
+        UNSAFE_height={UNSAFE_height}
+        UNSAFE_width={UNSAFE_width}
         className={clsx(ButtonClassName, className)}
-        disabled={disabled}
-        height={height}
+        disabled={isDisabled}
         isLoading={isLoading}
         kind={kind}
         ref={buttonRef}
         size={size}
-        width={width}
       >
         {/* Loading section */}
         {isLoading === true && (
@@ -105,7 +105,7 @@ Button.defaultProps = {
   size: "sm",
   kind: "primary",
   isLoading: false,
-  disabled: false,
+  isDisabled: false,
 };
 
 export { Button };

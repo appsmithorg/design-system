@@ -88,7 +88,7 @@ export default {
         type: { summary: "React.ReactNode | string" },
       },
     },
-    height: {
+    UNSAFE_height: {
       control: {
         type: "text",
       },
@@ -97,7 +97,7 @@ export default {
         type: { summary: "string" },
       },
     },
-    width: {
+    UNSAFE_width: {
       control: {
         type: "text",
       },
@@ -106,7 +106,7 @@ export default {
         type: { summary: "string" },
       },
     },
-    disabled: {
+    isDisabled: {
       control: {
         type: "boolean",
       },
@@ -155,7 +155,6 @@ export const ButtonStory = Template.bind({});
 ButtonStory.storyName = "Button";
 ButtonStory.args = {
   onPress: () => alert("Button clicked!"),
-  disabled: false,
   endIcon: "arrow-right-line",
   startIcon: "arrow-left-line",
   size: "md",

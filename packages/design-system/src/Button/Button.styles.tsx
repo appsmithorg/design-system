@@ -171,9 +171,9 @@ export const ButtonContent = styled.div<{
 
 export const StyledButton = styled.button<{
   kind?: Kind;
-  height?: string;
+  UNSAFE_height?: string;
   size?: Size;
-  width?: string;
+  UNSAFE_width?: string;
   isLoading?: boolean;
   disabled?: boolean;
 }>`
@@ -193,8 +193,8 @@ export const StyledButton = styled.button<{
   color: var(--button-color-fg);
   font-family: var(--ads-v2-font-family);
   font-weight: var(--button-font-weight);
-  ${({ height }) => height && `height: ${height};`}
-  ${({ width }) => width && `width: ${width};`}
+  ${({ UNSAFE_height }) => UNSAFE_height && `height: ${UNSAFE_height};`}
+  ${({ UNSAFE_width }) => UNSAFE_width && `width: ${UNSAFE_width};`}
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
