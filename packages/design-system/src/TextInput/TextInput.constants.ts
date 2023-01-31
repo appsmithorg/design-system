@@ -1,3 +1,6 @@
-export const TextInputIconClassName = "ads-v2-text-input-icon";
-export const TextInputStartIconClassName = "ads-v2-text-input-start-icon";
-export const TextInputEndIconClassName = "ads-v2-text-input-end-icon";
+import { CLASS_NAME_PREFIX } from "__config__/constants";
+
+export const TextInputClassName = `${CLASS_NAME_PREFIX}-text-input`;
+export const TextInputIconClassName = `${TextInputClassName}__icon`;
+export const TextInputStartIconClassName = `${TextInputIconClassName}-start`;
+export const TextInputEndIconClassName = `${TextInputIconClassName}-end`;
