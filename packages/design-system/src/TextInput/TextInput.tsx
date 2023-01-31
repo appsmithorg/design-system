@@ -110,9 +110,11 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             ) : null}
           </TextInputContainer>
           {description && (
+            // TODO: Replace with text component
             <Description {...descriptionProps}>{description}</Description>
           )}
           {errorMessage && (
+            // TODO: Replace with text component
             <ErrorMessage {...errorMessageProps}>{errorMessage}</ErrorMessage>
           )}
         </TextInputSection>
