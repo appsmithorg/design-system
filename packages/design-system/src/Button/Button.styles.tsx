@@ -166,6 +166,7 @@ export const ButtonContent = styled.div<{
   & > .${ButtonContentIconEndClassName} > svg {
     width: var(--button-icon-size);
     height: var(--button-icon-size);
+    color: var(--button-color-fg);
   }
 `;
 
@@ -190,9 +191,6 @@ export const StyledButton = styled.button<{
   border-radius: var(--ads-v2-border-radius);
   border: none;
   background-color: transparent;
-  color: var(--button-color-fg);
-  font-family: var(--ads-v2-font-family);
-  font-weight: var(--button-font-weight);
   ${({ UNSAFE_height }) => UNSAFE_height && `height: ${UNSAFE_height};`}
   ${({ UNSAFE_width }) => UNSAFE_width && `width: ${UNSAFE_width};`}
   padding: 0;
