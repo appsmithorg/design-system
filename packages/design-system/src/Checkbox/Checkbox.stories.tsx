@@ -100,6 +100,7 @@ export default {
         "Handler that is called according to the state changes of checkbox.",
     },
   },
+  parameters: { controls: { sort: "requiredFirst" } },
 } as ComponentMeta<typeof Checkbox>;
 
 // eslint-disable-next-line react/function-component-definition
