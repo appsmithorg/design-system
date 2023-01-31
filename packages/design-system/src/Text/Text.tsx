@@ -11,13 +11,13 @@ TODO:
  - create uneditable field with prop `uneditable`
  */
 
-const Text = ({ as, children, kind, ...rest }: TextProps) => {
+function Text({ as, children, kind, ...rest }: TextProps) {
   return (
     <StyledText as={as} kind={kind} {...rest}>
       {children}
     </StyledText>
   );
-};
+}
 
 Text.displayName = "Text";
 

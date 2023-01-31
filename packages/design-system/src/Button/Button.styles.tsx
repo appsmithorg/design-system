@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import {
+  ButtonContentChildrenClassName,
   ButtonContentIconEndClassName,
   ButtonContentIconStartClassName,
   ButtonLoadingClassName,
@@ -12,44 +13,29 @@ const Variables = css`
   --button-color-fg: var(--ads-v2-color-text);
   --button-color-border: var(--ads-v2-color-border);
   --button-font-weight: 600;
+  --button-font-size: 14px;
+  --button-icon-size: 16px;
+  --button-padding: 8px 12px;
 `;
 
 const Sizes = {
   sm: css`
-    padding: 4px 8px;
-    font-size: 12px;
-    font-weight: 500;
-
-    /* Button icon sizes */
-    & > .${ButtonContentIconStartClassName} > svg,
-    & > .${ButtonContentIconEndClassName} > svg {
-      width: 12px;
-      height: 12px;
-    }
+    --button-font-weight: 500;
+    --button-font-size: 12px;
+    --button-padding: 4px 8px;
+    --button-icon-size: 12px;
   `,
   md: css`
-    padding: 8px 12px;
-    font-size: 14px;
-    font-weight: 600;
-
-    /* Button icon sizes */
-    & > .${ButtonContentIconStartClassName} > svg,
-    & > .${ButtonContentIconEndClassName} > svg {
-      width: 16px;
-      height: 16px;
-    }
+    --button-font-weight: 600;
+    --button-font-size: 14px;
+    --button-padding: 8px 12px;
+    --button-icon-size: 16px;
   `,
   lg: css`
-    padding: 8px 16px;
-    font-size: 16px;
-    font-weight: 600;
-
-    /* Button icon sizes */
-    & > .${ButtonContentIconStartClassName} > svg,
-    & > .${ButtonContentIconEndClassName} > svg {
-      width: 18px;
-      height: 18px;
-    }
+    --button-font-weight: 600;
+    --button-font-size: 16px;
+    --button-padding: 8px 16px;
+    --button-icon-size: 18px;
   `,
 };
 
@@ -167,6 +153,20 @@ export const ButtonContent = styled.div<{
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  padding: var(--button-padding);
+
+  & > .${ButtonContentChildrenClassName} > * {
+    color: var(--button-color-fg);
+    font-family: var(--ads-v2-font-family);
+    font-weight: var(--button-font-weight);
+    font-size: var(--button-font-size);
+  }
+
+  & > .${ButtonContentIconStartClassName} > svg,
+  & > .${ButtonContentIconEndClassName} > svg {
+    width: var(--button-icon-size);
+    height: var(--button-icon-size);
+  }
 `;
 
 export const StyledButton = styled.button<{
