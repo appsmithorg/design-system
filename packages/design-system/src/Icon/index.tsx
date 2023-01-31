@@ -65,6 +65,24 @@ import { ReactComponent as DropdownIcon } from "../assets/icons/ads/dropdown.svg
 import { ReactComponent as ChatIcon } from "../assets/icons/ads/app-icons/chat.svg";
 import { ReactComponent as JsIcon } from "../assets/icons/ads/js.svg";
 import { ReactComponent as ExecuteIcon } from "../assets/icons/ads/execute.svg";
+import { ReactComponent as ClearInterval } from "../assets/icons/action/clearInterval.svg";
+import { ReactComponent as ClearStore } from "../assets/icons/action/clearStore.svg";
+import { ReactComponent as CopyToClipboard } from "../assets/icons/action/copyToClipboard.svg";
+import { ReactComponent as DownloadAction } from "../assets/icons/action/download.svg";
+import { ReactComponent as ExecuteJs } from "../assets/icons/action/executeJs.svg";
+import { ReactComponent as ExecuteQuery } from "../assets/icons/action/executeQuery.svg";
+import { ReactComponent as GetGeolocation } from "../assets/icons/action/getGeolocation.svg";
+import { ReactComponent as Modal } from "../assets/icons/action/modal.svg";
+import { ReactComponent as NavigateTo } from "../assets/icons/action/navigateTo.svg";
+import { ReactComponent as RemoveStore } from "../assets/icons/action/removeStore.svg";
+import { ReactComponent as ResetWidget } from "../assets/icons/action/resetWidget.svg";
+import { ReactComponent as SetInterval } from "../assets/icons/action/setInterval.svg";
+import { ReactComponent as ShowAlert } from "../assets/icons/action/showAlert.svg";
+import { ReactComponent as StopWatchGeolocation } from "../assets/icons/action/stopWatchGeolocation.svg";
+import { ReactComponent as StoreValue } from "../assets/icons/action/storeValue.svg";
+import { ReactComponent as WatchGeolocation } from "../assets/icons/action/watchGeolocation.svg";
+import { ReactComponent as RunAPI } from "../assets/icons/action/runApi.svg";
+import { ReactComponent as PostMessage } from "../assets/icons/action/postMessage.svg";
 
 // remix icons
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
@@ -451,6 +469,24 @@ const ICON_LOOKUP = {
   warning: <WarningIcon />,
   widget: <WidgetIcon />,
   workspace: <WorkspaceIcon />,
+  "clear-interval": <ClearInterval />,
+  "clear-store": <ClearStore />,
+  "copy-to-clipboard": <CopyToClipboard />,
+  "download-action": <DownloadAction />,
+  "execute-js": <ExecuteJs />,
+  "execute-query": <ExecuteQuery />,
+  "get-geolocation": <GetGeolocation />,
+  modal: <Modal />,
+  "navigate-to": <NavigateTo />,
+  "remove-store": <RemoveStore />,
+  "reset-widget": <ResetWidget />,
+  "set-interval": <SetInterval />,
+  "show-alert": <ShowAlert />,
+  "stop-watch-geolocation": <StopWatchGeolocation />,
+  "store-value": <StoreValue />,
+  "watch-geolocation": <WatchGeolocation />,
+  "run-api": <RunAPI />,
+  "post-message": <PostMessage />,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);
