@@ -1,19 +1,20 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import TextComponent, { TextType } from "./index";
+import { Text } from "./index";
 
 export default {
   title: "Design System/Text",
-  component: TextComponent,
-} as ComponentMeta<typeof TextComponent>;
+  component: Text,
+} as ComponentMeta<typeof Text>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof TextComponent> = (args) => {
-  return <TextComponent {...args}> Some Content 🍎 </TextComponent>;
+const Template: ComponentStory<typeof Text> = (args) => {
+  return <Text {...args} />;
 };
 
-export const Text = Template.bind({});
-Text.args = {
-  type: TextType.P0,
+export const TextStory = Template.bind({});
+TextStory.storyName = "Text";
+TextStory.args = {
+  children: "Text",
 };
