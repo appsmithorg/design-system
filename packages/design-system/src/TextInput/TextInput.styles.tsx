@@ -93,10 +93,12 @@ export const TextInputContainer = styled.div<{
 
 export const StyledInput = styled.input<{
   isFocusVisible?: boolean;
-  width?: string;
-  height?: string;
+  UNSAFE_width?: string;
+  UNSAFE_height?: string;
   hasStartIcon?: boolean;
   hasEndIcon?: boolean;
+  renderer?: "input" | "textarea";
+  hasError?: boolean;
 }>`
   background-color: var(--ads-v2-color-background);
   border: 1px solid var(--text-input-color-border);
@@ -106,12 +108,14 @@ export const StyledInput = styled.input<{
   color: var(--text-input-color);
   padding: var(--text-input-padding);
   box-sizing: border-box;
-  width: ${({ width }) => width || "300px"};
-  ${({ height }) => height && `height: ${height};`}
+  width: ${({ UNSAFE_width }) => UNSAFE_width || "300px"};
+  ${({ UNSAFE_height }) => UNSAFE_height && `height: ${UNSAFE_height};`}
+  resize: none;
 
   /* adjust padding start according to icon present or not */
-  ${({ hasStartIcon }) =>
+  ${({ hasStartIcon, renderer }) =>
     hasStartIcon &&
+    renderer === "input" &&
     css`
       padding-left: calc(
         var(--text-input-padding) + var(--ads-v2-spaces-5) +
@@ -120,8 +124,9 @@ export const StyledInput = styled.input<{
     `};
 
   /* adjust padding end according to icon present or not */
-  ${({ hasEndIcon }) =>
+  ${({ hasEndIcon, renderer }) =>
     hasEndIcon &&
+    renderer === "input" &&
     css`
       padding-right: calc(
         var(--text-input-padding) + var(--ads-v2-spaces-5) +
@@ -136,13 +141,19 @@ export const StyledInput = styled.input<{
   }
 
   &:hover {
-    border-color: var(--ads-v2-color-border-emphasis);
+    --text-input-color-border: var(--ads-v2-color-border-emphasis);
   }
 
   &:active,
   &:focus {
-    border-color: var(--ads-v2-color-border-emphasis-plus);
+    --text-input-color-border: var(--ads-v2-color-border-emphasis-plus);
   }
+
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      --text-input-color-border: var(--ads-v2-color-border-error);
+    `}
 `;
 
 export const Description = styled.div`

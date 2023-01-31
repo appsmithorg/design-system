@@ -28,7 +28,6 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       description,
       endIcon,
       errorMessage,
-      height,
       isDisabled,
       isReadOnly,
       isRequired,
@@ -36,7 +35,8 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       labelPosition,
       size,
       startIcon,
-      width,
+      UNSAFE_height,
+      UNSAFE_width,
     } = props;
     const textInputRef = useDOMRef(ref);
     const { descriptionProps, errorMessageProps, inputProps, labelProps } =
@@ -52,7 +52,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         <TextInputSection>
           <TextInputContainer disabled={isDisabled || isReadOnly}>
             {/* Start Icon Section */}
-            {startIcon ? (
+            {startIcon && as === "input" ? (
               typeof startIcon === "string" ? (
                 <Icon
                   className={clsx(
@@ -78,15 +78,17 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
               type={"text"}
               {...focusProps}
               {...inputProps}
+              UNSAFE_height={UNSAFE_height}
+              UNSAFE_width={UNSAFE_width}
               hasEndIcon={!!endIcon}
+              hasError={!!errorMessage}
               hasStartIcon={!!startIcon}
-              height={height}
               isFocusVisible={isFocusVisible}
               ref={textInputRef}
-              width={width}
+              renderer={as}
             />
             {/* End Icon Section */}
-            {endIcon ? (
+            {endIcon && as === "input" ? (
               typeof endIcon === "string" ? (
                 <Icon
                   className={clsx(
@@ -121,6 +123,12 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 
 TextInput.displayName = "TextInput";
 
-TextInput.defaultProps = {};
+TextInput.defaultProps = {
+  as: "input",
+  labelPosition: "top",
+  size: "sm",
+  isRequired: false,
+  isDisabled: false,
+};
 
 export { TextInput };
