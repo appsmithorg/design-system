@@ -64,16 +64,22 @@ export type TreeDropdownProps = {
   onMenuToggle?: (isOpen: boolean) => void;
   position?: PopoverPosition;
   menuWidth?: number;
+  menuHeight?: number;
+  popoverClassName?: string;
 };
 
 export type StyledMenuProps = {
   width?: number;
+  height?: number;
 };
 
 export const StyledMenu = styled(Menu)`
-  max-height: calc(
+  max-height: ${(props: StyledMenuProps) =>
+    props.height
+      ? `${props.height}px`
+      : `calc(
     100vh - var(--ads-small-header-height) - var(--ads-bottom-bar-height)
-  );
+  )`};
   overflow: auto;
   min-width: 220px;
   width: ${(props: StyledMenuProps) => `${props.width}px`};
@@ -127,7 +133,7 @@ export const StyledMenu = styled(Menu)`
 
     &.${Classes.ACTIVE} {
       background-color: var(--ads-old-color-gallery-2);
-      color: var(--ads-tree-dropdown-menu-selected-text-color);
+      color: var(--ads-tree-dropdown-menu-selected-text-color) !important;
       .${Classes.ICON} > svg:not([fill]) {
         fill: var(--ads-tree-dropdown-menu-selected-text-color);
       }
@@ -337,8 +343,10 @@ function TreeDropdown(props: TreeDropdownProps) {
     defaultText,
     displayValue,
     getDefaults,
+    menuHeight,
     menuWidth,
     onSelect,
+    popoverClassName = "",
     selectedLabelModifier,
     selectedValue,
     toggle,
@@ -586,7 +594,11 @@ function TreeDropdown(props: TreeDropdownProps) {
     />
   ));
 
-  const menuItems = <StyledMenu width={menuWidth || 220}>{list}</StyledMenu>;
+  const menuItems = (
+    <StyledMenu height={menuHeight} width={menuWidth || 220}>
+      {list}
+    </StyledMenu>
+  );
   const defaultToggle = (
     <DropdownTarget>
       <Button
@@ -617,6 +629,7 @@ function TreeDropdown(props: TreeDropdownProps) {
         setIsOpen(false);
         props.onMenuToggle && props.onMenuToggle(false);
       }}
+      popoverClassName={popoverClassName}
       position={props.position || PopoverPosition.LEFT}
       targetProps={{
         onClick: (e: any) => {
