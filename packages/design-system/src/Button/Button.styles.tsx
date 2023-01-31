@@ -155,7 +155,11 @@ export const ButtonContent = styled.div<{
   box-sizing: border-box;
   padding: var(--button-padding);
 
-  & > .${ButtonContentChildrenClassName} > * {
+  &
+    > .${ButtonContentChildrenClassName},
+    &
+    > .${ButtonContentChildrenClassName}
+    > * {
     color: var(--button-color-fg);
     font-family: var(--ads-v2-font-family);
     font-weight: var(--button-font-weight);
