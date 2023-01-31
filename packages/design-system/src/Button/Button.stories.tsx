@@ -143,6 +143,7 @@ export default {
           "A button component with different variants and sizes. It can be used as a button or an anchor. Other than the defined props button component accepts all the props of the button and a elements. ",
       },
     },
+    controls: { sort: "requiredFirst" },
   },
 } as ComponentMeta<typeof Button>;
 
