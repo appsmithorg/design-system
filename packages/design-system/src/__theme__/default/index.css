@@ -1,5 +1,6 @@
 @import "colors.css";
 @import "variables.css";
+@import "typography.css";
 
 :root {
   /**
@@ -91,7 +92,7 @@
   --ads-v2-color-border: var(--ads-v2-color-black-300);
   /** Used for indicating disabled borders and dividers **/
   --ads-v2-color-border-muted: var(--ads-v2-color-black-300);
-  
+
   /** Used as active border when --ads-v2-color-bg-brand is the default bg **/
   --ads-v2-color-border-brand-emphasis-plus: var(--ads-v2-color-orange-900);
   /** Used as hover border when --ads-v2-color-bg-brand is the default bg **/
