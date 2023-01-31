@@ -43,6 +43,7 @@ export default {
       description: "Handler that is called when the value changes.",
     },
   },
+  parameters: { controls: { sort: "requiredFirst" } },
 } as ComponentMeta<typeof RadioGroup>;
 
 // eslint-disable-next-line react/function-component-definition

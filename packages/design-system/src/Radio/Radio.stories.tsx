@@ -28,6 +28,7 @@ export default {
       },
     },
   },
+  parameters: { controls: { sort: "requiredFirst" } },
 } as ComponentMeta<typeof Radio>;
 
 // eslint-disable-next-line react/function-component-definition
