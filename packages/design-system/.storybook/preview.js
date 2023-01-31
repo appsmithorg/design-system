@@ -9,7 +9,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  // layout: "centered",
+  expanded: true,
 };
 
 const containerStyle = {
