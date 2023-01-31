@@ -67,6 +67,7 @@ export type TreeDropdownProps = {
   menuWidth?: number;
   menuHeight?: number;
   popoverClassName?: string;
+  usePortal?: boolean;
 };
 
 export type StyledMenuProps = PropsWithChildren<{
@@ -351,6 +352,7 @@ function TreeDropdown(props: TreeDropdownProps) {
     selectedLabelModifier,
     selectedValue,
     toggle,
+    usePortal = true,
   } = props;
   const [optionTree, setOptionTree] = useState<TreeDropdownOption[]>(
     setSelfIndex(props.optionTree),
@@ -641,6 +643,7 @@ function TreeDropdown(props: TreeDropdownProps) {
           e.stopPropagation();
         },
       }}
+      usePortal={usePortal}
     >
       {toggle ? toggle : defaultToggle}
     </Popover>
