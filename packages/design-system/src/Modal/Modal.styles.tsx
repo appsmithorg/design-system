@@ -1,24 +1,72 @@
-import styled, { css } from "styled-components";
-import { YOUR_PROP_TYPE_1 } from "./Modal.types";
+import styled, { keyframes } from "styled-components";
+import { Overlay, Content, Close } from "@radix-ui/react-dialog";
 
-const Variables = css`
-  // Variables that are controlled, changed, or toggled entirely within this component
-  // are defined here and used in the component's styles.
+const overlayShow = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 `;
 
-// Variant style definitions
-const YOUR_VARIANTS = css`
-  // Styles for the variants defined in your type
+const contentShow = keyframes`
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 `;
 
-export const StyledModal = styled.span<{
-  // Props that affect styles are passed through here.
-  YOUR_PROP: YOUR_PROP_TYPE_1;
-}>`
-  ${Variables}
+export const StyledOverlay = styled(Overlay)`
+  /* TODO: Opacity for colors needs to be handled in a better way*/
+  background-color: #39393999;
+  position: fixed;
+  inset: 0;
+  animation: ${overlayShow} 250ms cubic-bezier(0.16, 1, 0.3, 1);
+`;
 
-  /* Variant styles */
-  ${({ YOUR_PROP }) => YOUR_PROP && YOUR_VARIANTS[YOUR_PROP]} /* Base style */
+export const StyledContent = styled(Content)`
+  background-color: var(--ads-v2-color-bg);
+  border-radius: var(--ads-v2-border-radius);
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  max-width: 90vw;
+  max-height: 85vh;
+  padding: var(--ads-v2-spaces-6) var(--ads-v2-spaces-5);
+  font-family: var(--ads-v2-font-family);
+  color: var(--ads-v2-color-fg);
+  animation: ${contentShow} 250ms cubic-bezier(0.16, 1, 0.3, 1);
+`;
 
-  /* Additional styles and classes */
+export const StyledHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--ads-v2-font-family);
+  font-size: var(--ads-v2-font-size-10);
+  font-weight: 600;
+  padding-bottom: var(--ads-v2-spaces-3);
+`;
+
+export const StyledClose = styled(Close)`
+  all: unset;
+  cursor: pointer;
+`;
+
+export const StyledBody = styled.div`
+  padding-top: var(--ads-v2-spaces-3);
+`;
+
+export const StyledFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--ads-v2-spaces-5);
+  gap: var(--ads-v2-spaces-3);
 `;
