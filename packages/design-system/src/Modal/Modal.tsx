@@ -11,23 +11,34 @@ import {
   StyledFooter,
 } from "./Modal.styles";
 import { Icon } from "Icon";
+import {
+  ModalContentClassName,
+  ModalContentHeaderClassName,
+  ModalContentHeaderCloseButtonClassName,
+} from "./Modal.constants";
 
 function ModalContent(props: ModalContentProps) {
   const { children, ...rest } = props;
   return (
     <Portal>
       <StyledOverlay />
-      <StyledContent {...rest}>{children}</StyledContent>
+      <StyledContent {...rest} className={ModalContentClassName}>
+        {children}
+      </StyledContent>
     </Portal>
   );
 }
 
 function ModalHeader({ children, onClose }: ModalHeaderProps) {
   return (
-    <StyledHeader>
+    <StyledHeader className={ModalContentHeaderClassName}>
       {/* TODO: Replace this with text component */}
       {children}
-      <StyledClose aria-label="Close" onClick={onClose}>
+      <StyledClose
+        aria-label="Close"
+        className={ModalContentHeaderCloseButtonClassName}
+        onClick={onClose}
+      >
         <Icon
           color="var(--ads-v2-color-fg-muted)"
           name="close-line"

@@ -1,5 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import { Overlay, Content, Close } from "@radix-ui/react-dialog";
+import {
+  ModalContentBodyClassName,
+  ModalContentFooterClassName,
+} from "./Modal.constants";
 
 const overlayShow = keyframes`
   from {
@@ -60,11 +64,15 @@ export const StyledClose = styled(Close)`
   cursor: pointer;
 `;
 
-export const StyledBody = styled.div`
+export const StyledBody = styled.div.attrs({
+  className: ModalContentBodyClassName,
+})`
   padding-top: var(--ads-v2-spaces-3);
 `;
 
-export const StyledFooter = styled.div`
+export const StyledFooter = styled.div.attrs({
+  className: ModalContentFooterClassName,
+})`
   display: flex;
   justify-content: flex-end;
   padding-top: var(--ads-v2-spaces-5);
