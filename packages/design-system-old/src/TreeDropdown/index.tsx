@@ -400,7 +400,7 @@ function TreeDropdown(props: TreeDropdownProps) {
         return defaultSelectedOption;
       });
     }
-  }, [isOpen]);
+  }, [isOpen, selectedValue]);
 
   useEffect(() => {
     // Skip setting the option tree on first render, minor optimization
