@@ -68,6 +68,7 @@ export type TreeDropdownProps = {
   menuHeight?: number;
   popoverClassName?: string;
   usePortal?: boolean;
+  defaultOpen?: boolean;
 };
 
 export type StyledMenuProps = PropsWithChildren<{
@@ -353,6 +354,7 @@ function TreeDropdown(props: TreeDropdownProps) {
     selectedValue,
     toggle,
     usePortal = true,
+    defaultOpen = false,
   } = props;
   const [optionTree, setOptionTree] = useState<TreeDropdownOption[]>(
     setSelfIndex(props.optionTree),
@@ -368,7 +370,7 @@ function TreeDropdown(props: TreeDropdownProps) {
   );
   const selectedOptionIndex = useRef([findIndex(optionTree, selectedOption)]);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(defaultOpen);
   const { emitDSEvent } = useDSEvent<HTMLButtonElement>(false, buttonRef);
 
   const emitKeyPressEvent = useCallback(
