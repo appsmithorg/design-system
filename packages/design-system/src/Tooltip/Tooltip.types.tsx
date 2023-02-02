@@ -1,17 +1,30 @@
-import React from "react";
+import type { TooltipProps as RcTooltipProps } from "rc-tooltip/lib/Tooltip";
 
-// Tooltip prop types
-export type YOUR_PROP_TYPE_1 = {
-  /** YOUR_PROP_TYPE_1 description */
-};
+type Placement =
+  | "left"
+  | "right"
+  | "top"
+  | "bottom"
+  | "topLeft"
+  | "topRight"
+  | "bottomLeft"
+  | "bottomRight"
+  | "rightTop"
+  | "rightBottom"
+  | "leftTop"
+  | "leftBottom";
 
 // Tooltip props
 export type TooltipProps = {
-  /** this prop is used when... */
-  prop1: undefined;
-
-  /** (try not to) pass addition classes here */
-  className?: string;
-  /** the words you want to display */
-  children: string;
-} & React.TooltipHTMLAttribute<HTMLTooltipElement>;
+  /** Tooltip content to be shown */
+  content: (() => React.ReactNode) | React.ReactNode;
+  /** Tooltip placement */
+  placement?: Placement;
+} & Omit<
+  RcTooltipProps,
+  | "overlayStyle"
+  | "prefixCls"
+  | "overlayClassName"
+  | "overlayInnerStyle"
+  | "overlay"
+>;

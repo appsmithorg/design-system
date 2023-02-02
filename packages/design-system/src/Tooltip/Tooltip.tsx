@@ -2,24 +2,25 @@ import React from "react";
 import RCTooltip from "rc-tooltip";
 
 import { TooltipProps } from "./Tooltip.types";
-// import { StyledTooltip } from "./Tooltip.styles";
 import "rc-tooltip/assets/bootstrap.css";
+import "./Tooltip.css";
+import { TooltipClassName } from "./Tooltip.constants";
 
 function Tooltip(props: TooltipProps) {
+  const { children, content, ...rest } = props;
   return (
-    <RCTooltip
-      overlay={<span>tooltip</span>}
-      overlayClassName="rc-tooltip-abt-test"
-      placement="topRight"
-      trigger={["click"]}
-    >
-      <a href="#">hover</a>
+    <RCTooltip overlay={content} overlayClassName={TooltipClassName} {...rest}>
+      {children}
     </RCTooltip>
   );
 }
 
 Tooltip.displayName = "Tooltip";
 
-Tooltip.defaultProps = {};
+Tooltip.defaultProps = {
+  placement: "top",
+  trigger: ["hover"],
+  showArrow: true,
+};
 
 export { Tooltip };
