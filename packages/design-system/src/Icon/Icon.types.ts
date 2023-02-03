@@ -9,4 +9,4 @@ export type IconProps = {
   className?: string;
   /** custom Svg */
   children?: React.ReactNode;
-};
+} & React.HTMLAttributes<HTMLSpanElement>;

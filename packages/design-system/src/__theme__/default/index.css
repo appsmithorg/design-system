@@ -67,7 +67,7 @@
   /** Text color for background --ads-v2-color-bg-brand-secondary **/
   --ads-v2-color-fg-on-brand-secondary: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-emphasis-plus **/
-  --ads-v2-color-fg-on-emphasis-max: var(--ads-v2-color-white);
+  --ads-v2-color-fg-on-emphasis-plus: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-error **/
   --ads-v2-color-fg-on-error: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-success **/
@@ -128,7 +128,14 @@
   */
   --ads-v2-color-outline: var(--ads-v2-color-blue);
   --ads-v2-border-width-outline: 2px;
-  --ads-v2-offset-outline: 0.5px;
+  --ads-v2-offset-outline: 1px;
+
+  /**
+    * ===========================================*
+    * ========== disabled opacity ===============*
+    * ===========================================*
+  */
+  --ads-v2-opacity-disabled: 0.6;
 }
 
 .ads-v2-focus-ring {
