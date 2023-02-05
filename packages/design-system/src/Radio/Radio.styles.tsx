@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 const Variables = css`
   --radio-color-border: var(--ads-v2-color-border);
   --radio-color-background: transparent;
-  --radio-color-border-checked: var(--ads-v2-color-bg-brand-secondary);
   --radio-color-check-mark: var(--ads-v2-color-bg-brand-secondary);
   --radio-color-label: var(--ads-v2-color-fg);
 `;
@@ -51,11 +50,27 @@ const BasicStyles = css`
   }
 
   input[type="radio"]:checked + label::before {
-    border-color: var(--radio-color-border-checked);
+    --radio-color-border: var(--ads-v2-color-border-brand-secondary);
   }
 
   input[type="radio"]:checked + label::after {
     transform: translateY(-50%) scale(0.55);
+  }
+
+  /* unchecked hover - outer circle */
+  input[type="radio"]:hover + label::before {
+    --radio-color-border: var(--ads-v2-color-border-emphasis);
+  }
+  /* checked hover - outer circle */
+  input[type="radio"]:checked:hover + label::before {
+    --radio-color-border: var(--ads-v2-color-border-brand-secondary-emphasis);
+  }
+
+  /* checked hover - inner circle */
+  input[type="radio"]:checked:hover + label::after {
+    --radio-color-check-mark: var(
+      --ads-v2-color-border-brand-secondary-emphasis
+    );
   }
 `;
 
