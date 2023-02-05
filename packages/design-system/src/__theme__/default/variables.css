@@ -15,13 +15,6 @@
   --ads-v2-z-index-21: 21;
   --ads-v2-z-index-max: 99999;
 
-  /* font-weights */
-  --ads-v2-font-weight-0: 0;
-  --ads-v2-font-weight-normal: 400;
-  --ads-v2-font-weight-bold: 500;
-  --ads-v2-font-weight-bold-xl: 600;
-  --ads-v2-font-weight-bold-xxl: 700;
-
   /* Spaces */
   --ads-v2-spaces-0: 0;
   --ads-v2-spaces-1: 2px;
@@ -39,20 +32,4 @@
   --ads-v2-spaces-13: 48px;
   --ads-v2-spaces-14: 52px;
 
-  /* Font Sizes */
-  --ads-font-size-0: 0px;
-  --ads-font-size-1: 10px;
-  --ads-font-size-2: 12px;
-  --ads-font-size-3: 14px;
-  --ads-font-size-4: 16px;
-  --ads-font-size-5: 18px;
-  --ads-font-size-6: 24px;
-  --ads-font-size-7: 28px;
-  --ads-font-size-8: 32px;
-  --ads-font-size-9: 48px;
-  --ads-font-size-10: 64px;
-
-  /* Border Radii */
-  --ads-border-radius-circle: 50%;
 }
-
