@@ -59,18 +59,18 @@ const Kinds = {
   `,
   secondary: css`
     --button-color-bg: var(--ads-v2-color-bg);
-    --button-color-fg: var(--ads-v2-color-fg-muted);
+    --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: var(--ads-v2-color-border);
 
     &:hover {
       --button-color-bg: var(--ads-v2-color-bg-subtle);
-      --button-color-fg: var(--ads-v2-color-fg-muted);
+      --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border);
     }
 
     &:active {
       --button-color-bg: var(--ads-v2-color-bg-muted);
-      --button-color-fg: var(--ads-v2-color-fg-muted);
+      --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border-emphasis);
     }
   `,
@@ -80,13 +80,13 @@ const Kinds = {
     --button-color-border: transparent;
 
     &:hover {
-      --button-color-bg: var(--ads-v2-color-bg-subtle);
-      --button-color-fg: var(--ads-v2-color-fg-muted);
+      --button-color-bg: var(--ads-v2-color-bg-muted);
+      --button-color-fg: var(--ads-v2-color-fg);
     }
 
     &:active {
-      --button-color-bg: var(--ads-v2-color-bg-muted);
-      --button-color-fg: var(--ads-v2-color-fg-muted);
+      --button-color-bg: var(--ads-v2-color-bg-emphasis);
+      --button-color-fg: var(--ads-v2-color-fg);
     }
 
     &:disabled {
@@ -154,6 +154,7 @@ export const ButtonContent = styled.div<{
   height: 100%;
   box-sizing: border-box;
   padding: var(--button-padding);
+  border-radius: inherit;
 
   &
     > .${ButtonContentChildrenClassName},
