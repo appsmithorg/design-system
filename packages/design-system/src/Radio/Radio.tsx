@@ -11,6 +11,7 @@ import {
   RadioGroupClassName,
   RadioLabelClassName,
 } from "./Radio.constants";
+import { Text } from "Text";
 
 const RadioContext = React.createContext({} as RadioGroupState);
 
@@ -42,9 +43,9 @@ export function Radio(props: AriaRadioProps) {
       isFocusVisible={isFocusVisible}
     >
       <input {...inputProps} {...focusProps} id={id} ref={ref} />
-      <label className={RadioLabelClassName} htmlFor={id}>
+      <Text as="label" className={RadioLabelClassName} htmlFor={id}>
         {children}
-      </label>
+      </Text>
     </StyledRadio>
   );
 }
