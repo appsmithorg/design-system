@@ -23,3 +23,4 @@ const Template: ComponentStory<typeof Toast> = (args) => {
 };
 
 export const Default = Template.bind({});
+Default.storyName = "Toast";
