@@ -40,6 +40,7 @@ const TypographyScales = css`
 
 const Variables = css`
   --font-family: var(--ads-v2-font-family);
+  --text-color: var(--ads-v2-color-fg);
 
   --font-size: var(--ads-v2-p-font-size);
   --font-weight: var(--ads-v2-p-font-weight);
@@ -48,6 +49,13 @@ const Variables = css`
 `;
 
 const Kinds = {
+  error: css`
+    --font-size: var(--ads-v2-p-font-size);
+    --font-weight: var(--ads-v2-p-font-weight);
+    --line-height: var(--ads-v2-p-line-height);
+    --letter-spacing: var(--ads-v2-p-letter-spacing);
+    --text-color: var(--ads-v2-color-fg-error);
+  `,
   // The default, span, uses the same values as p for now.
   span: css`
     --font-size: var(--ads-v2-p-font-size);
@@ -110,6 +118,8 @@ export const StyledText = styled.span<{
 
   /* Base style */
   font-family: var(--font-family);
+  color: var(--text-color);
+
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
