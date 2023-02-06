@@ -35,8 +35,8 @@ export default function (plop) {
       },
       {
         type: "add",
-        path: "src/{{capitalize name}}/{{capitalize name}}.types.ts",
-        templateFile: "plop-templates/types.ts.hbs",
+        path: "src/{{capitalize name}}/{{capitalize name}}.classes.ts",
+        templateFile: "plop-templates/classes.ts.hbs",
       },
     ],
   });
