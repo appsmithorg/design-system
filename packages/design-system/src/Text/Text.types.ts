@@ -26,4 +26,5 @@ export type TextProps = {
 } & React.HTMLAttributes<HTMLLabelElement> &
   React.HTMLAttributes<HTMLHeadingElement> &
   React.HTMLAttributes<HTMLParagraphElement> &
-  React.HTMLAttributes<HTMLSpanElement>;
+  React.HTMLAttributes<HTMLSpanElement> &
+  React.HTMLAttributes<HTMLLabelElement>;
