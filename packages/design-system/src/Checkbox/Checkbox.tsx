@@ -9,6 +9,7 @@ import {
   CheckboxClassName,
   CheckboxClassNameLabel,
 } from "./Checkbox.constants";
+import { Text } from "Text";
 
 function Checkbox(props: CheckboxProps) {
   const { children, isDisabled, isIndeterminate } = props;
@@ -27,9 +28,9 @@ function Checkbox(props: CheckboxProps) {
       isIndeterminate={isIndeterminate}
     >
       <input {...inputProps} {...focusProps} id={id} ref={ref} />
-      <label className={CheckboxClassNameLabel} htmlFor={id}>
+      <Text as="label" className={CheckboxClassNameLabel} htmlFor={id}>
         {children}
-      </label>
+      </Text>
     </StyledCheckbox>
   );
 }
