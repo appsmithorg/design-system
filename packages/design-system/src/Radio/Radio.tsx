@@ -23,7 +23,7 @@ export function RadioGroup(props: RadioGroupProps) {
 
   return (
     <StyledRadioGroup
-      gap={UNSAFE_gap}
+      UNSAFE_gap={UNSAFE_gap}
       {...radioGroupProps}
       className={classnames}
     >

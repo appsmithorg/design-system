@@ -101,13 +101,13 @@ export const StyledRadio = styled.label<{
 `;
 
 export const StyledRadioGroup = styled.div<{
-  gap?: string;
+  UNSAFE_gap?: string;
 }>`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: ${({ gap }) => gap || "var(--ads-v2-spaces-6)"};
+  gap: ${({ UNSAFE_gap }) => UNSAFE_gap || "var(--ads-v2-spaces-6)"};
 
   /* This Aria field is added by react-aria library */
   &[aria-orientation="vertical"] {
