@@ -16,6 +16,10 @@ const Checkbox = css`
     left: 0;
   }
 
+  & > * {
+    cursor: pointer;
+  }
+
   & {
     cursor: pointer;
     position: relative;
@@ -53,6 +57,15 @@ const Checkbox = css`
     transform: scale(0);
     transition: transform 0.2s ease;
     z-index: 1;
+  }
+
+  &:hover::before {
+    border-color: var(--ads-v2-color-border-emphasis);
+  }
+
+  &:hover::after {
+    background-color: var(--ads-v2-color-bg-brand-secondary-emphasis);
+    border: 1px solid var(--ads-v2-color-border-brand-secondary-emphasis);
   }
 
   label {
