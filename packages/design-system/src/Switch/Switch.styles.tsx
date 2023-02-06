@@ -7,7 +7,32 @@ const Variables = css`
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
-export const StyledToggleInput = styled.input`
+export const StyledSwitch = styled.span`
+`;
+
+export const StyledSwitchLabel = styled(Text)<{
+  isDisabled?: boolean;
+}>`
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+
+  min-width: 9rem;
+
+  ${({ isDisabled }) =>
+    isDisabled &&
+    css`
+      cursor: not-allowed;
+      opacity: var(--ads-v2-opacity-disabled);
+    `}
+`;
+
+export const StyledSwitchInput = styled.input<{
+  isDisabled?: boolean;
+  isSelected?: boolean;
+  onClick?: any;
+}>`
   ${Variables};
 
   -moz-appearance: none;
@@ -43,10 +68,10 @@ export const StyledToggleInput = styled.input`
   &:disabled {
     cursor: not-allowed;
     opacity: var(--ads-v2-opacity-disabled);
-  }
 
-  &:focus-visible {
-    outline-color: var(--ads-v2-color-focus);
+    &:hover {
+      --toggle-color-bg: var(--ads-v2-color-bg-emphasis);
+    }
   }
 
   &:checked {
@@ -58,30 +83,4 @@ export const StyledToggleInput = styled.input`
       grid-area: on;
     }
   }
-`;
-
-export const StyledToggleLabel = styled(Text)`
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: space-between;
-
-  min-width: 9rem;
-`;
-
-export const StyledToggle = styled.span<{
-  isDisabled?: boolean;
-}>`
-  ${({ isDisabled }) => {
-    if (isDisabled) {
-      return css`
-        opacity: var(--ads-v2-opacity-disabled);
-        &,
-        & * {
-          cursor: not-allowed !important;
-        }
-      `;
-    }
-  }}
-
 `;
