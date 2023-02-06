@@ -11,6 +11,9 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Toast> = (args) => {
+  const notify = () =>
+    toast("Filepicker was removed successfully", { ...args });
+
   return (
     <div>
       <button onClick={notify}>Click me</button>
@@ -19,27 +22,4 @@ const Template: ComponentStory<typeof Toast> = (args) => {
   );
 };
 
-const notify = (args) =>
-  toast("Filepicker was removed successfully", { ...args });
-
 export const Default = Template.bind({});
-
-export const Success = Template.bind({});
-Success.args = {
-  kind: "success",
-};
-
-export const Warning = Template.bind({});
-Warning.args = {
-  kind: "warning",
-};
-
-export const Information = Template.bind({});
-Information.args = {
-  kind: "info",
-};
-
-export const Error = Template.bind({});
-Error.args = {
-  kind: "error",
-};
