@@ -45,7 +45,7 @@
   /** Used for warning background **/
   --ads-v2-color-bg-warning: var(--ads-v2-color-yellow);
   /** Used for information background **/
-  --ads-v2-color-bg-information: var(--ads-v2-color-blue);
+  --ads-v2-color-bg-information: var(--ads-v2-color-blue-300);
 
 
   /**
@@ -87,7 +87,7 @@
   /** Foreground color for warning **/
   --ads-v2-color-fg-warning: var(--ads-v2-color-yellow);
   /** Foreground color for information**/
-  --ads-v2-color-fg-information: var(--ads-v2-color-blue);
+  --ads-v2-color-fg-information: var(--ads-v2-color-blue-500);
 
 
   /**
@@ -142,7 +142,7 @@
     * =============== Outline ===================*
     * ===========================================*
   */
-  --ads-v2-color-outline: var(--ads-v2-color-blue);
+  --ads-v2-color-outline: var(--ads-v2-color-blue-300);
   --ads-v2-border-width-outline: 2px;
   --ads-v2-offset-outline: 1px;
 
