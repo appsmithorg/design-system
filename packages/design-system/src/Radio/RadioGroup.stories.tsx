@@ -6,43 +6,6 @@ import { Radio, RadioGroup } from "./Radio";
 export default {
   title: "Design System/Radio/Radio Group",
   component: RadioGroup,
-  argTypes: {
-    orientation: {
-      control: {
-        type: "select",
-        options: ["horizontal", "vertical"],
-      },
-      description: "The axis the Radio Button(s) should align with.",
-      table: {
-        type: {
-          summary: "horizontal | vertical",
-        },
-        defaultValue: { summary: "vertical" },
-      },
-    },
-    children: {
-      description: "The list of Radio components.",
-    },
-    gap: {
-      description:
-        "The gap between the Radio components. This accepts all css units.",
-    },
-    value: {
-      description: "The current value (controlled).",
-      control: {
-        type: "text",
-      },
-    },
-    defaultValue: {
-      description: "The default value (uncontrolled).",
-      control: {
-        type: "text",
-      },
-    },
-    onChange: {
-      description: "Handler that is called when the value changes.",
-    },
-  },
   parameters: { controls: { sort: "requiredFirst" } },
 } as ComponentMeta<typeof RadioGroup>;
 

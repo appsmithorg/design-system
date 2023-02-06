@@ -1,11 +1,11 @@
 import React from "react";
 import { useRadioGroupState, RadioGroupState } from "@react-stately/radio";
-import { useRadio, useRadioGroup, AriaRadioProps } from "@react-aria/radio";
+import { useRadio, useRadioGroup } from "@react-aria/radio";
 import { useFocusRing } from "@react-aria/focus";
 import clsx from "classnames";
 
 import { StyledRadio, StyledRadioGroup } from "./Radio.styles";
-import { RadioGroupProps } from "./Radio.types";
+import { RadioProps, RadioGroupProps } from "./Radio.types";
 import {
   RadioClassName,
   RadioGroupClassName,
@@ -32,7 +32,7 @@ export function RadioGroup(props: RadioGroupProps) {
   );
 }
 
-export function Radio(props: AriaRadioProps) {
+export function Radio(props: RadioProps) {
   const { children, isDisabled } = props;
   const state = React.useContext(RadioContext);
   const ref = React.useRef(null);

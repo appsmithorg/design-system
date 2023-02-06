@@ -6,28 +6,6 @@ import { Radio } from "./Radio";
 export default {
   title: "Design System/Radio",
   component: Radio,
-  argTypes: {
-    children: {
-      description: "The label for the Radio. Accepts any renderable node.",
-    },
-    value: {
-      description:
-        "The value of the radio button, used when submitting an HTML form.",
-      control: {
-        type: "text",
-      },
-    },
-    isDisabled: {
-      type: "boolean",
-      description: "Whether the radio button is disabled.",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: { summary: "false" },
-      },
-    },
-  },
   parameters: { controls: { sort: "requiredFirst" } },
 } as ComponentMeta<typeof Radio>;
 
