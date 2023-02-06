@@ -21,11 +21,7 @@ function Switch(props: SwitchProps) {
     <StyledSwitch>
       <StyledSwitchLabel isDisabled={props.isDisabled}>
         {props.children}
-        <StyledSwitchInput
-          {...inputProps}
-          {...focusProps}
-          ref={ref}
-        />
+        <StyledSwitchInput {...inputProps} {...focusProps} ref={ref} />
       </StyledSwitchLabel>
     </StyledSwitch>
   );
