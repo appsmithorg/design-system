@@ -39,12 +39,16 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
   bodyClassName: "body",
 })`
   .toast {
-    box-shadow: var(--ads-v2-toast-box-shadow);
+    border: solid 1px var(--ads-v2-color-border);
     padding: var(--ads-v2-spaces-3);
   }
 
   .body {
     padding: 0;
+  }
+
+  .Toastify__toast {
+    box-shadow: none;
   }
 
   .Toastify__toast-icon {
