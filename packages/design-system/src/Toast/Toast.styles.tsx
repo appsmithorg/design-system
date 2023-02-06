@@ -57,12 +57,6 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
 `;
 
 export const ToastBody = styled(Text)`
-  // TODO: add props for the typography style this text will be following instead
-  //  of the font styles here.
-  font-size: 12px;
-  line-height: 1.4;
-  // font-weight: 500; // Acc to Zeplin, but it doesn't look good.
-
   padding: 0;
   display: flex;
   align-items: flex-start;
