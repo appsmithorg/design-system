@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import { Text } from "../Text";
 
 const Variables = css`
-  --switch-border-radius: var(--ads-v2-pill-border-radius);
   --switch-color-bg: var(--ads-v2-color-bg-emphasis);
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
@@ -46,7 +45,7 @@ export const StyledSwitchInput = styled.input<{
 
   padding: 2px;
   cursor: pointer;
-  border-radius: var(--switch-border-radius);
+  border-radius: 10px;
   background-color: var(--switch-color-bg);
 
   // the thumb
