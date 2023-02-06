@@ -9,6 +9,7 @@ import {
   StyledSwitchLabel,
   StyledSwitchInput,
 } from "./Switch.styles";
+import { SwitchClassName, SwitchClassNameLabel } from "./Switch.constants";
 
 function Switch(props: SwitchProps) {
   let state = useToggleState(props);
@@ -16,10 +17,12 @@ function Switch(props: SwitchProps) {
   let { inputProps } = useSwitch(props, state, ref);
   let { isFocusVisible, focusProps } = useFocusRing();
 
-  // state.isSelected, props.isDisabled
   return (
-    <StyledSwitch>
-      <StyledSwitchLabel isDisabled={props.isDisabled}>
+    <StyledSwitch className={SwitchClassName}>
+      <StyledSwitchLabel
+        isDisabled={props.isDisabled}
+        className={SwitchClassNameLabel}
+      >
         {props.children}
         <StyledSwitchInput {...inputProps} {...focusProps} ref={ref} />
       </StyledSwitchLabel>
