@@ -38,6 +38,11 @@ export default function (plop) {
         path: "src/{{capitalize name}}/{{capitalize name}}.types.ts",
         templateFile: "plop-templates/types.ts.hbs",
       },
+      {
+        type: "add",
+        path: "src/{{capitalize name}}/{{capitalize name}}.constants.ts",
+        templateFile: "plop-templates/constants.ts.hbs",
+      },
     ],
   });
 }
