@@ -58,16 +58,16 @@ const BasicStyles = css`
   }
 
   /* unchecked hover - outer circle */
-  input[type="radio"]:hover + label::before {
+  input[type="radio"]:hover:not(:disabled) + label::before {
     --radio-color-border: var(--ads-v2-color-border-emphasis);
   }
   /* checked hover - outer circle */
-  input[type="radio"]:checked:hover + label::before {
+  input[type="radio"]:checked:hover:not(:disabled) + label::before {
     --radio-color-border: var(--ads-v2-color-border-brand-secondary-emphasis);
   }
 
   /* checked hover - inner circle */
-  input[type="radio"]:checked:hover + label::after {
+  input[type="radio"]:checked:hover:not(:disabled) + label::after {
     --radio-color-check-mark: var(
       --ads-v2-color-border-brand-secondary-emphasis
     );
@@ -80,12 +80,15 @@ export const StyledRadio = styled.label<{
 }>`
   ${Variables}
 
+  ${BasicStyles}
+
   ${({ disabled }) =>
     disabled &&
     `
     opacity: 0.6;
-    pointer-events: none;
-    cursor: not-allowed;
+    & > * {
+      cursor: not-allowed !important;
+    }
   `}
 
   ${({ isFocusVisible }) =>
@@ -96,8 +99,6 @@ export const StyledRadio = styled.label<{
       outline-offset: var(--ads-v2-offset-outline);
     }
     `}
-
-  ${BasicStyles}
 `;
 
 export const StyledRadioGroup = styled.div<{
