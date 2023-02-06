@@ -1,18 +1,41 @@
 import React from "react";
-import { StyledToggle } from "./Toggle.styles";
+import {
+  StyledToggle,
+  StyledToggleInput,
+  StyledToggleLabel,
+} from "./Toggle.styles";
 import { ToggleProps } from "./Toggle.types";
 
+/**
+ * TODO:
+ * Add label
+ * group's min and max width
+ * is label optional?
+ * fix square thumb
+ * confirm all colors work as expected on all states
+ * use with yalc in main repo
+ *
+ * This Toggle will expand to fill all available space
+ *
+ * @param props
+ * @constructor
+ */
 const Toggle = (props: ToggleProps) => {
-  const { checked, onChange, ...rest } = props;
+  const { checked, onChange, children, isDisabled, ...rest } = props;
 
   return (
-    <StyledToggle
-      type="checkbox"
-      role="switch"
-      defaultChecked={checked}
-      onChange={onChange}
-      {...rest}
-    />
+    <StyledToggle isDisabled={isDisabled}>
+      <StyledToggleLabel>
+        {children}
+        <StyledToggleInput
+          type="checkbox"
+          role="switch"
+          defaultChecked={checked}
+          onChange={onChange}
+          {...rest}
+        />
+      </StyledToggleLabel>
+    </StyledToggle>
   );
 };
 

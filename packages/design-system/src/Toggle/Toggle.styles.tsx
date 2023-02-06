@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Text } from "../Text";
 
 const Variables = css`
   --toggle-border-radius: var(--ads-v2-pill-border-radius);
@@ -6,8 +7,8 @@ const Variables = css`
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
-export const StyledToggle = styled.input`
-  ${Variables}
+export const StyledToggleInput = styled.input`
+  ${Variables};
 
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -57,5 +58,30 @@ export const StyledToggle = styled.input`
       grid-area: on;
     }
   }
+`;
+
+export const StyledToggleLabel = styled(Text)`
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+
+  min-width: 9rem;
+`;
+
+export const StyledToggle = styled.span<{
+  isDisabled?: boolean;
+}>`
+  ${({ isDisabled }) => {
+    if (isDisabled) {
+      return css`
+        opacity: var(--ads-v2-opacity-disabled);
+        &,
+        & * {
+          cursor: not-allowed !important;
+        }
+      `;
+    }
+  }}
 
 `;
