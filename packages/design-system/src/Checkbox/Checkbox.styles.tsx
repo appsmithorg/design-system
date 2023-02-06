@@ -152,7 +152,7 @@ export const StyledCheckbox = styled.span<{
   }}
 
   ${({ isFocusVisible }) => {
-    if (isFocusVisible) {
+    if (isFocusVisible === true) {
       return css`
         &::before {
           outline: var(--ads-v2-border-width-outline) solid
@@ -164,12 +164,13 @@ export const StyledCheckbox = styled.span<{
   }}
 
   ${({ isDisabled }) => {
-    if (isDisabled) {
+    if (isDisabled === true) {
       return css`
         opacity: var(--ads-v2-opacity-disabled);
         &,
         & > * {
           cursor: not-allowed !important;
+          pointer-events: none;
         }
       `;
     }
