@@ -59,15 +59,6 @@ const Checkbox = css`
     z-index: 1;
   }
 
-  &:hover::before {
-    border-color: var(--ads-v2-color-border-emphasis);
-  }
-
-  &:hover::after {
-    background-color: var(--ads-v2-color-bg-brand-secondary-emphasis);
-    border: 1px solid var(--ads-v2-color-border-brand-secondary-emphasis);
-  }
-
   label {
     user-select: none;
     cursor: pointer;
@@ -164,13 +155,23 @@ export const StyledCheckbox = styled.span<{
   }}
 
   ${({ isDisabled }) => {
-    if (isDisabled === true) {
+    if (isDisabled) {
       return css`
         opacity: var(--ads-v2-opacity-disabled);
         &,
         & > * {
           cursor: not-allowed !important;
-          pointer-events: none;
+        }
+      `;
+    } else {
+      return css`
+        &:hover::before {
+          border-color: var(--ads-v2-color-border-emphasis);
+        }
+
+        &:hover::after {
+          background-color: var(--ads-v2-color-bg-brand-secondary-emphasis);
+          border: 1px solid var(--ads-v2-color-border-brand-secondary-emphasis);
         }
       `;
     }
