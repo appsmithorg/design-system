@@ -16,13 +16,17 @@ import { Text } from "Text";
 const RadioContext = React.createContext({} as RadioGroupState);
 
 export function RadioGroup(props: RadioGroupProps) {
-  const { children, className, gap } = props;
+  const { children, className, UNSAFE_gap } = props;
   const state = useRadioGroupState(props);
   const { radioGroupProps } = useRadioGroup(props, state);
   const classnames = clsx(className, RadioGroupClassName);
 
   return (
-    <StyledRadioGroup gap={gap} {...radioGroupProps} className={classnames}>
+    <StyledRadioGroup
+      gap={UNSAFE_gap}
+      {...radioGroupProps}
+      className={classnames}
+    >
       <RadioContext.Provider value={state}>{children}</RadioContext.Provider>
     </StyledRadioGroup>
   );
