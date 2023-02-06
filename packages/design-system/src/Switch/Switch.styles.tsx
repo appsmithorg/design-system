@@ -2,8 +2,8 @@ import styled, { css } from "styled-components";
 import { Text } from "../Text";
 
 const Variables = css`
-  --toggle-border-radius: var(--ads-v2-pill-border-radius);
-  --toggle-color-bg: var(--ads-v2-color-bg-emphasis);
+  --switch-border-radius: var(--ads-v2-pill-border-radius);
+  --switch-color-bg: var(--ads-v2-color-bg-emphasis);
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
@@ -31,7 +31,6 @@ export const StyledSwitchLabel = styled(Text)<{
 export const StyledSwitchInput = styled.input<{
   isDisabled?: boolean;
   isSelected?: boolean;
-  onClick?: any;
 }>`
   ${Variables};
 
@@ -47,8 +46,8 @@ export const StyledSwitchInput = styled.input<{
 
   padding: 2px;
   cursor: pointer;
-  border-radius: var(--toggle-border-radius);
-  background-color: var(--toggle-color-bg);
+  border-radius: var(--switch-border-radius);
+  background-color: var(--switch-color-bg);
 
   // the thumb
   &::before {
@@ -62,7 +61,7 @@ export const StyledSwitchInput = styled.input<{
 
   &:hover {
     // TODO: needs a theme variable
-    --toggle-color-bg: var(--ads-v2-color-black-250);
+    --switch-color-bg: var(--ads-v2-color-black-250);
   }
 
   &:disabled {
@@ -70,13 +69,13 @@ export const StyledSwitchInput = styled.input<{
     opacity: var(--ads-v2-opacity-disabled);
 
     &:hover {
-      --toggle-color-bg: var(--ads-v2-color-bg-emphasis);
+      --switch-color-bg: var(--ads-v2-color-bg-emphasis);
     }
   }
 
   &:checked {
     justify-content: flex-end;
-    --toggle-color-bg: var(--ads-v2-color-bg-brand-secondary);
+    --switch-color-bg: var(--ads-v2-color-bg-brand-secondary);
 
     // set position of thumb when checked
     &::before {
