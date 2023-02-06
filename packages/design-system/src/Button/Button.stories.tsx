@@ -143,7 +143,6 @@ export default {
           "A button component with different variants and sizes. It can be used as a button or an anchor. Other than the defined props button component accepts all the props of the button and a elements. ",
       },
     },
-    controls: { sort: "requiredFirst" },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -156,8 +155,8 @@ export const ButtonStory = Template.bind({});
 ButtonStory.storyName = "Button";
 ButtonStory.args = {
   onPress: () => alert("Button clicked!"),
-  endIcon: "arrow-right-line",
   startIcon: "arrow-left-line",
+  endIcon: "arrow-right-line",
   size: "md",
   kind: "primary",
 };
