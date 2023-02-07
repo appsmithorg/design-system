@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const Variables = css`
   --radio-color-border: var(--ads-v2-color-border);
-  --radio-color-background: transparent;
+  --radio-color-background: var(--ads-v2-color-bg);
   --radio-color-check-mark: var(--ads-v2-color-bg-brand-secondary);
   --radio-color-label: var(--ads-v2-color-fg);
 `;
