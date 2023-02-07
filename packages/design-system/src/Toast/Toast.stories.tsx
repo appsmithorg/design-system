@@ -12,7 +12,7 @@ export default {
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Toast> = (args) => {
   const notify = () =>
-    toast("Filepicker was removed successfully", { ...args });
+    toast("Filepicker was removed", { ...args });
 
   return (
     <div>
@@ -23,4 +23,11 @@ const Template: ComponentStory<typeof Toast> = (args) => {
 };
 
 export const Default = Template.bind({});
-Default.storyName = "Toast";
+
+export const ToastWithAction = Template.bind({});
+ToastWithAction.args = {
+  action: {
+    actionText: "undo",
+    effect: () => console.log("effect affected"),
+  }
+}

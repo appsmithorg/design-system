@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { ToastContainer, ToastOptions } from "react-toastify";
 import { Text } from "../Text";
 import { ToastProps } from "./Toast.types";
+import { Button } from "../Button";
 
 const Variables = css`
   // All the --toastify prefixed variables are changing tokens defined in react-toastify
@@ -63,5 +64,11 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
 export const ToastBody = styled(Text)`
   padding: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const StyledButton = styled(Button)`
+  margin-right: -var(--ads-v2-spaces-3);
+  margin-left: var(--ads-v2-spaces-3);
 `;
