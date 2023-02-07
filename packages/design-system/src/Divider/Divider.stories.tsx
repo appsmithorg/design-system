@@ -20,8 +20,8 @@ const Template: ComponentStory<typeof Divider> = (args) => {
   return (
     <div
       style={{
-        width: "6rem",
-        height: "6rem",
+        width: "40vh",
+        height: "40vh",
         border: "2px solid bisque",
         display: "flex",
         alignItems: "center",
