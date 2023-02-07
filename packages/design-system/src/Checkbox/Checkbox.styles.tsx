@@ -102,7 +102,7 @@ const Checkbox = css`
   }
 `;
 
-export const StyledCheckbox = styled.span<{
+export const StyledCheckbox = styled.label<{
   isChecked: boolean;
   isIndeterminate?: boolean;
   isFocusVisible?: boolean;
