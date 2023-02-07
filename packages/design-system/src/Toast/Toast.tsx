@@ -61,6 +61,25 @@ function getIconForToast(kind: Kind) {
           size="16px"
         />
       );
+
+    case "warning":
+      return (
+        <Icon
+          name="alert-fill"
+          color="var(--ads-v2-color-fg-warning)"
+          size="16px"
+        />
+      );
+
+    case "info":
+      return (
+        <Icon
+          name="information-fill"
+          color="var(--ads-v2-color-fg-information)"
+          size="16px"
+        />
+      );
+
     default:
       return null;
   }
