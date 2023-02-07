@@ -1,22 +1,28 @@
 import React from "react";
 import { TabProps } from "./Tab.types";
-import { StyledTab, StyledTabList, StyledTabs } from "./Tab.styles";
+import { StyledTab, StyledTabList, StyledTabPanel, StyledTabs } from "./Tab.styles";
 
-import { useTab, useTabList, useTabPanel } from "@react-aria/tabs";
+import {
+  AriaTabListProps,
+  AriaTabPanelProps,
+  AriaTabProps,
+  useTab,
+  useTabList,
+  useTabPanel,
+} from "@react-aria/tabs";
 import { useTabListState } from "@react-stately/tabs";
+import { Text } from "../Text";
 
 /*
   TODO:
-  - Add icon
+  - Write the story to be usable
   - Add badge
   - Animation of active state
-  - Focus ring to activate only on navigation via keyboard
   - decouple Tab from Item
  */
 
-function Tabs(props) {
+function Tabs(props: AriaTabListProps<AriaTabProps>) {
   let state = useTabListState(props);
-  // efObject<HTMLElement
   let ref = React.useRef<HTMLDivElement>(null);
   let { tabListProps } = useTabList(props, state, ref);
   return (
@@ -36,7 +42,7 @@ function Tabs(props) {
   );
 }
 
-function Tab({ item, state, orientation }) {
+function Tab({ item, state, orientation }: AriaTabProps) {
   let { key, rendered } = item;
   let ref = React.useRef<HTMLDivElement>(null);
   let { tabProps, isSelected, isDisabled } = useTab({ key }, state, ref);
@@ -47,13 +53,13 @@ function Tab({ item, state, orientation }) {
   );
 }
 
-function TabPanel({ state, ...props }) {
+function TabPanel({ state, ...props }: AriaTabPanelProps) {
   let ref = React.useRef<HTMLDivElement>(null);
   let { tabPanelProps } = useTabPanel(props, state, ref);
   return (
-    <div {...tabPanelProps} ref={ref}>
+    <StyledTabPanel {...tabPanelProps} ref={ref}>
       {state.selectedItem?.props.children}
-    </div>
+    </StyledTabPanel>
   );
 }
 
