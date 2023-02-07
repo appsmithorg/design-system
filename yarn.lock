@@ -3309,6 +3309,7 @@
     "@react-aria/utils" "^3.14.2"
     "@react-types/shared" "^3.16.0"
     "@react-types/textfield" "^3.6.2"
+    "@swc/helpers" "^0.4.14"
 
 "@react-aria/toggle@^3.4.2":
   version "3.4.2"
@@ -3498,6 +3499,13 @@
   integrity sha512-DlUL0Bz79SUTRje/i8m6qn4Ipn+q8QnyIkyJhkoHeH1R0YNude8xZrBPWbj3zfdddAGDFSF1NzP69q0xmNAcTQ==
   dependencies:
     "@react-types/checkbox" "^3.4.1"
+    "@react-types/shared" "^3.16.0"
+
+"@react-types/textfield@^3.6.2":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@react-types/textfield/-/textfield-3.6.2.tgz#6cc87c2bac286a06ba04b9465d23fa9078bf280e"
+  integrity sha512-QhFcpXvmSEW1/PwkWkvHJkcjsVezLW0OAvA0kMt/FMOChQNxnO36Pha+WjfcVbiFHXMhCBl6akbY2xG9NsHJrQ==
+  dependencies:
     "@react-types/shared" "^3.16.0"
 
 "@rollup/plugin-commonjs@^22.0.0":
