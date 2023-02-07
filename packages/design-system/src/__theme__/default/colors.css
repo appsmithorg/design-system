@@ -3,9 +3,9 @@
   /* orange */
   --ads-v2-color-orange-900 : #BF4109;
   --ads-v2-color-orange-800 : #D15420;
-  --ads-v2-color-orange-700 : #DF5B23;
-  --ads-v2-color-orange-600 : #ED6227;
-  --ads-v2-color-orange-500 : #F86A2B; /* Primary */
+  --ads-v2-color-orange-700 : #CA520F;
+  --ads-v2-color-orange-600 : #CF4D10;
+  --ads-v2-color-orange-500 : #E15615; /* Primary */
   --ads-v2-color-orange-400 : #F97D4A;
   --ads-v2-color-orange-300 : #F9936B;
   --ads-v2-color-orange-200 : #FBB195;
@@ -35,15 +35,31 @@
   --ads-v2-color-black-5 : #FAFAFA;
   --ads-v2-color-white : #FFFFFF;
 
+  /* Grey */
+  --ads-v2-color-grey-900 : #12192B;
+  --ads-v2-color-grey-800 : #202939;
+  --ads-v2-color-grey-700 : #364252;
+  --ads-v2-color-grey-600 : #4C5664;
+  --ads-v2-color-grey-500 : #6A7585;
+  --ads-v2-color-grey-400 : #99A4B3;
+  --ads-v2-color-grey-300 : #CDD5DF;
+  --ads-v2-color-grey-200 : #E3E8EF;
+  --ads-v2-color-grey-100 : #F1F5F9;
+  --ads-v2-color-grey-50 : #F8FAFC;
+
   /* red */
-  --ads-v2-color-red-900: #DC2626;
-  --ads-v2-color-red-300 : #FF9494;
-  --ads-v2-color-red-250 : #FFC2C2;
+  --ads-v2-color-red-800: #dc2626;
+  --ads-v2-color-red-700: #f22b2b;
+  --ads-v2-color-red-500: #FFE5E5;
+  --ads-v2-color-red-400: #FFEBEB;
+  --ads-v2-color-red-300 : #FFF2F2;
   --ads-v2-color-red-200 : rgba(220, 38, 38, 0.1);
   --ads-v2-color-red-100 : rgba(220, 38, 38, 0.05);
 
+  --ads-v2-color-blue-300 : #8BB0FA;
+  --ads-v2-color-blue-500 : #2d6bf4;
+
   --ads-v2-color-yellow : #E0B30E;
   --ads-v2-color-green : #03B365;
-  --ads-v2-color-blue : #8BB0FA;
 
 }
