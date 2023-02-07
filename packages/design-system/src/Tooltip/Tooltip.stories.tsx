@@ -115,5 +115,5 @@ export const TooltipStory = Template.bind({});
 TooltipStory.storyName = "Tooltip";
 TooltipStory.args = {
   content: "This is a tooltip",
-  trigger: "click",
+  trigger: "hover",
 };
