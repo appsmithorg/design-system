@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Tabs } from "./Tab";
 import { Item } from "@react-stately/collections";
+import { Text } from "../Text";
 
 export default {
   title: "Design System/Tab",
@@ -24,13 +25,13 @@ export const TabExample = () => {
   return (
     <Tabs aria-label="History of Ancient Rome">
       <Item key="FoR" title="Founding of Rome">
-        Arma virumque cano, Troiae qui primus ab oris.
+        <Text>Arma virumque cano, Troiae qui primus ab oris.</Text>
       </Item>
       <Item key="MaR" title="Monarchy and Republic">
-        Senatus Populusque Romanus.
+        <Text>Senatus Populusque Romanus.</Text>
       </Item>
       <Item key="Emp" title="Empire">
-        Alea jacta est.
+        <Text>Alea jacta est.</Text>
       </Item>
     </Tabs>
   );
