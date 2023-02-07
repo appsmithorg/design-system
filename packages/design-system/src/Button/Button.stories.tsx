@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ButtonV2 as ButtonComponent } from "./Button";
+import { Button } from "./Button";
 
 export default {
-  title: "Design System V2/Button",
-  component: ButtonComponent,
+  title: "Design System/Button",
+  component: Button,
   argTypes: {
     as: {
       control: {
@@ -88,7 +88,7 @@ export default {
         type: { summary: "React.ReactNode | string" },
       },
     },
-    height: {
+    UNSAFE_height: {
       control: {
         type: "text",
       },
@@ -97,7 +97,7 @@ export default {
         type: { summary: "string" },
       },
     },
-    width: {
+    UNSAFE_width: {
       control: {
         type: "text",
       },
@@ -106,7 +106,7 @@ export default {
         type: { summary: "string" },
       },
     },
-    disabled: {
+    isDisabled: {
       control: {
         type: "boolean",
       },
@@ -144,17 +144,19 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof ButtonComponent>;
+} as ComponentMeta<typeof Button>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof ButtonComponent> = (args) => {
-  return <ButtonComponent {...args}>BUTTON</ButtonComponent>;
+const Template: ComponentStory<typeof Button> = (args) => {
+  return <Button {...args}>BUTTON</Button>;
 };
 
-export const Button = Template.bind({});
-
-Button.args = {
-  // eslint-disable-next-line no-console
+export const ButtonStory = Template.bind({});
+ButtonStory.storyName = "Button";
+ButtonStory.args = {
   onPress: () => alert("Button clicked!"),
-  disabled: false,
+  startIcon: "arrow-left-line",
+  endIcon: "arrow-right-line",
+  size: "md",
+  kind: "primary",
 };

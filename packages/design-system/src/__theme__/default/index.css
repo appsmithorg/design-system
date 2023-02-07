@@ -10,9 +10,9 @@
   */
 
    /** Used as active bg when --ads-v2-color-bg-brand is the default bg **/
-  --ads-v2-color-bg-brand-emphasis-plus: var(--ads-v2-color-orange-900);
+  --ads-v2-color-bg-brand-emphasis-plus: var(--ads-v2-color-orange-700);
   /** Used as hover bg when --ads-v2-color-bg-brand is the default bg **/
-  --ads-v2-color-bg-brand-emphasis: var(--ads-v2-color-orange-900);
+  --ads-v2-color-bg-brand-emphasis: var(--ads-v2-color-orange-600);
   /** Brand primary color **/
   --ads-v2-color-bg-brand: var(--ads-v2-color-orange-500);
 
@@ -31,15 +31,15 @@
   --ads-v2-color-bg: var(--ads-v2-color-white);
   /* Used for emphasis default bg, hover state for components without border */
   --ads-v2-color-bg-muted: var(--ads-v2-color-grey-100);
-  /** Used for disabled components **/
-  --ads-v2-color-bg-subtle: var(--ads-v2-color-grey-50);
+  /** Used for disabled components / hover for components with border **/
+  --ads-v2-color-bg-subtle: var(--ads-v2-color-grey-0);
 
   /** Used for error background active **/
-  --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-200);
+  --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-500);
   /** Used for error background hover  */
-  --ads-v2-color-bg-error-emphasis: var(--ads-v2-color-red-100);
+  --ads-v2-color-bg-error-emphasis: var(--ads-v2-color-red-400);
   /** Used for error background **/
-  --ads-v2-color-bg-error: var(--ads-v2-color-white);
+  --ads-v2-color-bg-error: var(--ads-v2-color-red-300);
   /** Used for success background **/
   --ads-v2-color-bg-success: var(--ads-v2-color-green);
   /** Used for warning background **/

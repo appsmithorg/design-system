@@ -36,7 +36,7 @@ const TypographyScales = css`
   --ads-v2-p-font-weight: var(--ads-v2-font-weight-normal);
   --ads-v2-p-line-height: var(--ads-v2-line-height-3);
   --ads-v2-p-letter-spacing: var(--ads-v2-letter-spacing-0);
-`
+`;
 
 const Variables = css`
   --font-family: var(--ads-v2-font-family);
@@ -80,7 +80,7 @@ const Kinds = {
     --font-weight: var(--ads-v2-h2-font-weight);
     --line-height: var(--ads-v2-h2-line-height);
     --letter-spacing: var(--ads-v2-h2-letter-spacing);
-    `,
+  `,
   h3: css`
     --font-size: var(--ads-v2-h3-font-size);
     --font-weight: var(--ads-v2-h3-font-weight);
@@ -92,19 +92,19 @@ const Kinds = {
     --font-weight: var(--ads-v2-h4-font-weight);
     --line-height: var(--ads-v2-h4-line-height);
     --letter-spacing: var(--ads-v2-h4-letter-spacing);
-    `,
+  `,
   h5: css`
     --font-size: var(--ads-v2-h5-font-size);
     --font-weight: var(--ads-v2-h5-font-weight);
     --line-height: var(--ads-v2-h5-line-height);
     --letter-spacing: var(--ads-v2-h5-letter-spacing);
-    `,
+  `,
   h6: css`
     --font-size: var(--ads-v2-h6-font-size);
     --font-weight: var(--ads-v2-h6-font-weight);
     --line-height: var(--ads-v2-h6-line-height);
     --letter-spacing: var(--ads-v2-h6-letter-spacing);
-    `,
+  `,
 };
 
 export const StyledText = styled.span<{
@@ -124,5 +124,4 @@ export const StyledText = styled.span<{
   font-weight: var(--font-weight);
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
-
 `;
