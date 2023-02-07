@@ -56,8 +56,10 @@
   --ads-v2-color-red-200 : rgba(220, 38, 38, 0.1);
   --ads-v2-color-red-100 : rgba(220, 38, 38, 0.05);
 
+  --ads-v2-color-blue-300 : #8BB0FA;
+  --ads-v2-color-blue-500 : #2d6bf4;
+
   --ads-v2-color-yellow : #E0B30E;
   --ads-v2-color-green : #03B365;
-  --ads-v2-color-blue : #8BB0FA;
 
 }
