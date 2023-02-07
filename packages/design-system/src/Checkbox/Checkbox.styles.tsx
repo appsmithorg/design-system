@@ -41,6 +41,7 @@ const Checkbox = css`
     border: 1px solid var(--ads-v2-color-border);
     border-radius: var(--ads-v2-border-radius);
     box-sizing: border-box;
+    background-color: var(--checkbox-color-background);
   }
 
   &::after {
