@@ -88,7 +88,6 @@
   /** Foreground color for information**/
   --ads-v2-color-fg-information: var(--ads-v2-color-blue-500);
 
-
   /**
     * ===========================================*
     * ============ Border Colors ================*
@@ -128,6 +127,7 @@
     * ===========================================*
   */
   --ads-v2-border-radius: 4px;
+  --ads-border-radius-circle: 50%;
 
   /**
     * ===========================================*
@@ -147,12 +147,14 @@
 
   /**
     * ===========================================*
-    * ========== Opacity ===============*
+    * =============== Opacity ===================*
     * ===========================================*
   */
   --ads-v2-opacity-disabled: 0.6;
+
 }
 
+/* react-aria useFocusRing helper class*/
 .ads-v2-focus-ring {
   outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
   outline-offset: var(--ads-v2-offset-outline);
