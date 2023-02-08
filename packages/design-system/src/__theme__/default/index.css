@@ -79,7 +79,6 @@
   --ads-v2-color-fg-on-success: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-warning **/
   --ads-v2-color-fg-on-warning: var(--ads-v2-color-white);
-
   /** Foreground color for error **/
   --ads-v2-color-fg-error: var(--ads-v2-color-red-800);
   /** Foreground color for success **/
