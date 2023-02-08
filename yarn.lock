@@ -3219,6 +3219,20 @@
     "@react-types/shared" "^3.16.0"
     "@swc/helpers" "^0.4.14"
 
+"@react-aria/checkbox@^3.7.1":
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/checkbox/-/checkbox-3.7.1.tgz#217ea3173ad37ae85cb39bcb9932eb5c1cde2e0b"
+  integrity sha512-3KRg/KrTRwQdw5Yg7gpbIKWWVt57PbGSEXAS/diQvRf9pTXbOuChTES8uVlcwF8q+3mKXc4ppzE3gsNQ5jOMqg==
+  dependencies:
+    "@react-aria/label" "^3.4.4"
+    "@react-aria/toggle" "^3.4.2"
+    "@react-aria/utils" "^3.14.2"
+    "@react-stately/checkbox" "^3.3.2"
+    "@react-stately/toggle" "^3.4.4"
+    "@react-types/checkbox" "^3.4.1"
+    "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
+
 "@react-aria/focus@^3.10.1":
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/@react-aria/focus/-/focus-3.10.1.tgz#624d02d2565151030a4156aeb17685d87f18ad58"
@@ -3405,6 +3419,17 @@
     "@react-spring/core" "~9.5.0"
     "@react-spring/shared" "~9.5.0"
     "@react-spring/types" "~9.5.0"
+
+"@react-stately/checkbox@^3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@react-stately/checkbox/-/checkbox-3.3.2.tgz#fd81866a7624c79cab2ec2c32234f164205a85e8"
+  integrity sha512-eU3zvWgQrcqS8UK8ZVkb3fMP816PeuN9N0/dOJKuOXXhkoLPuxtuja1oEqKU3sFMa5+bx3czZhhNIRpr60NAdw==
+  dependencies:
+    "@react-stately/toggle" "^3.4.4"
+    "@react-stately/utils" "^3.5.2"
+    "@react-types/checkbox" "^3.4.1"
+    "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
 
 "@react-stately/radio@^3.6.2":
   version "3.6.2"

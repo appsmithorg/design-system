@@ -44,6 +44,9 @@
   --ads-v2-color-bg-success: var(--ads-v2-color-green);
   /** Used for warning background **/
   --ads-v2-color-bg-warning: var(--ads-v2-color-yellow);
+  /** Used for information background **/
+  --ads-v2-color-bg-information: var(--ads-v2-color-blue-300);
+
 
   /**
     * ===========================================*
@@ -76,8 +79,14 @@
   --ads-v2-color-fg-on-success: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-warning **/
   --ads-v2-color-fg-on-warning: var(--ads-v2-color-white);
-  /** Text color for error */
-  --ads-v2-color-fg-error: var(--ads-v2-color-red-900);
+  /** Foreground color for error **/
+  --ads-v2-color-fg-error: var(--ads-v2-color-red-800);
+  /** Foreground color for success **/
+  --ads-v2-color-fg-success: var(--ads-v2-color-green);
+  /** Foreground color for warning **/
+  --ads-v2-color-fg-warning: var(--ads-v2-color-yellow);
+  /** Foreground color for information**/
+  --ads-v2-color-fg-information: var(--ads-v2-color-blue-500);
 
   /** Focus outline color */
   --ads-v2-color-focus: var(--ads-v2-color-blue);
@@ -135,7 +144,7 @@
     * =============== Outline ===================*
     * ===========================================*
   */
-  --ads-v2-color-outline: var(--ads-v2-color-blue);
+  --ads-v2-color-outline: var(--ads-v2-color-blue-300);
   --ads-v2-border-width-outline: 2px;
   --ads-v2-offset-outline: 1px;
 
