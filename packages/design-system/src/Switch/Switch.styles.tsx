@@ -37,6 +37,7 @@ export const StyledSwitchInput = styled.input<{
   -webkit-appearance: none;
   appearance: none;
 
+  // the pill
   width: 2rem;
   height: 1.25rem;
   min-width: 2rem;
@@ -59,20 +60,24 @@ export const StyledSwitchInput = styled.input<{
         outline-offset: var(--ads-v2-offset-outline);
     `}}
 
-
-// the thumb
-  &::before {
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    grid-area: off;
-    border-radius: var(--ads-border-radius-circle);
-    background-color: var(--thumb-color-bg);
-    box-shadow: 0 1px 4px 0 rgba(76, 86, 100, 0.2);
-  }
   &:hover {
     // TODO: needs a theme variable
     --switch-color-bg: var(--ads-v2-color-grey-300);
+  }
+
+  &:checked {
+    justify-content: flex-end;
+    --switch-color-bg: var(--ads-v2-color-bg-brand-secondary);
+
+    // set position of thumb when checked
+    &::before {
+      grid-area: on;
+      box-shadow: 0 1px 4px 0 var(--ads-v2-color-grey-900);
+    }
+  }
+
+  &:checked:hover {
+    --switch-color-bg: var(--ads-v2-color-bg-brand-secondary-emphasis)
   }
 
   &:disabled {
@@ -88,13 +93,15 @@ export const StyledSwitchInput = styled.input<{
     }
   }
 
-  &:checked {
-    justify-content: flex-end;
-    --switch-color-bg: var(--ads-v2-color-bg-brand-secondary);
+  // the thumb
+  &::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    grid-area: off;
+    border-radius: var(--ads-border-radius-circle);
+    background-color: var(--thumb-color-bg);
 
-    // set position of thumb when checked
-    &::before {
-      grid-area: on;
-    }
-  }
+    box-shadow: 0 1px 4px 0 rgba(76, 86, 100, 0.2);
+}
 `;
