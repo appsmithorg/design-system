@@ -6,8 +6,7 @@ const Variables = css`
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
-export const StyledSwitch = styled.span`
-`;
+export const StyledSwitch = styled.span``;
 
 export const StyledSwitchLabel = styled(Text)<{
   isDisabled?: boolean;
@@ -69,6 +68,10 @@ export const StyledSwitchInput = styled.input<{
 
     &:hover {
       --switch-color-bg: var(--ads-v2-color-bg-emphasis);
+    }
+
+    &:checked:hover {
+      --switch-color-bg: var(--ads-v2-color-bg-brand-secondary);
     }
   }
 
