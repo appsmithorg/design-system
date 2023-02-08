@@ -26,5 +26,5 @@ IconStory.storyName = "Icon";
 IconStory.args = {
   name: "account-box-line",
   children: "",
-  size: "2rem",
+  size: "md",
 };
