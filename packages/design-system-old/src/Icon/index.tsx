@@ -185,6 +185,7 @@ import UserReceived2LineIcon from "remixicon-react/UserReceived2LineIcon";
 import UserAddLineIcon from "remixicon-react/UserAddLineIcon";
 import UserUnfollowLineIcon from "remixicon-react/UserUnfollowLineIcon";
 import DeleteRowIcon from "remixicon-react/DeleteRowIcon";
+import ArrowUpLineIcon from "remixicon-react/ArrowUpLineIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -279,6 +280,7 @@ const ICON_LOOKUP = {
   "arrow-left": <ArrowLeft />,
   "arrow-right-s-fill": <ArrowRightSFillIcon />,
   "arrow-right-up-line": <ArrowRightUpLineIcon />,
+  "arrow-up-line": <ArrowUpLineIcon />,
   "book-line": <BookLineIcon />,
   "bug-line": <BugLineIcon />,
   "cap-dot": <CapDotIcon />,
