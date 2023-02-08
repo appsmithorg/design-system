@@ -38,6 +38,8 @@ export const StyledSwitchInput = styled.input<{
 
   width: 2rem;
   height: 1.25rem;
+  min-width: 2rem;
+  min-height: 1.25rem;
 
   display: grid;
   grid: [on] 1fr / [off] 1fr;
