@@ -143,7 +143,7 @@
   */
   --ads-v2-color-outline: var(--ads-v2-color-blue-300);
   --ads-v2-border-width-outline: 2px;
-  --ads-v2-offset-outline: 1px;
+  --ads-v2-offset-outline: 0;
 
   /**
     * ===========================================*
