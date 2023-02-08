@@ -88,9 +88,6 @@
   /** Foreground color for information**/
   --ads-v2-color-fg-information: var(--ads-v2-color-blue-500);
 
-  /** Focus outline color */
-  --ads-v2-color-focus: var(--ads-v2-color-blue-300);
-
   /**
     * ===========================================*
     * ============ Border Colors ================*

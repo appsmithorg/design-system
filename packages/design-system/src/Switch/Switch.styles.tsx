@@ -29,6 +29,7 @@ export const StyledSwitchLabel = styled(Text)<{
 export const StyledSwitchInput = styled.input<{
   isDisabled?: boolean;
   isSelected?: boolean;
+  isFocusVisible?: boolean;
 }>`
   ${Variables};
 
@@ -49,7 +50,17 @@ export const StyledSwitchInput = styled.input<{
   border-radius: 10px;
   background-color: var(--switch-color-bg);
 
-  // the thumb
+  outline: none;
+
+  ${({ isFocusVisible }) =>
+    isFocusVisible &&
+    `
+        outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
+        outline-offset: var(--ads-v2-offset-outline);
+    `}}
+
+
+// the thumb
   &::before {
     content: "";
     width: 1rem;

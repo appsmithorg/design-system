@@ -12,19 +12,24 @@ import {
 import { SwitchClassName, SwitchClassNameLabel } from "./Switch.constants";
 
 function Switch(props: SwitchProps) {
-  let state = useToggleState(props);
-  let ref = React.useRef(null);
-  let { inputProps } = useSwitch(props, state, ref);
-  let { isFocusVisible, focusProps } = useFocusRing();
+  const state = useToggleState(props);
+  const ref = React.useRef(null);
+  const { inputProps } = useSwitch(props, state, ref);
+  const { focusProps, isFocusVisible } = useFocusRing();
 
   return (
     <StyledSwitch className={SwitchClassName}>
       <StyledSwitchLabel
-        isDisabled={props.isDisabled}
         className={SwitchClassNameLabel}
+        isDisabled={props.isDisabled}
       >
         {props.children}
-        <StyledSwitchInput {...inputProps} {...focusProps} ref={ref} />
+        <StyledSwitchInput
+          {...inputProps}
+          {...focusProps}
+          isFocusVisible={isFocusVisible}
+          ref={ref}
+        />
       </StyledSwitchLabel>
     </StyledSwitch>
   );
