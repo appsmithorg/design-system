@@ -2,31 +2,31 @@ import styled, { css } from "styled-components";
 
 const Variables = css`
   --tab-color-border-bottom: transparent;
-  // TODO: muted doesn't look good here as a default, and neither does subtle.
-  // We need a 600 for this.
-  --tab-color: var(--ads-v2-color-fg-muted);
 `;
 
 export const StyledTab = styled.div<{}>`
-  ${Variables} :not(:first-child) {
-    margin-left: 0.75rem;
+  ${Variables}
+
+  :not(:first-child) {
+    margin-left: var(--ads-v2-spaces-3);
   }
   :not(:last-child) {
-    margin-right: 0.75rem;
+    margin-right: var(--ads-v2-spaces-3);
   }
 
   :hover {
-    --tab-color-border-bottom: var(--ads-v2-color-border-emphasis);
-    --tab-color: var(--ads-v2-color-fg-emphasis);
+    --tab-color-border-bottom: var(--ads-v2-color-border);
   }
 
   :focus {
     --tab-color-border-bottom: var(--ads-v2-color-border-brand);
-    --tab-color: var(--ads-v2-color-fg-emphasis);
   }
 
-  border-bottom: 3px solid var(--tab-color-border-bottom);
-  color: var(--tab-color);
+  &[aria-selected="true"] {
+    --tab-color-border-bottom: var(--ads-v2-color-border-brand);
+  }
+
+  border-bottom: 2px solid var(--tab-color-border-bottom);
 `;
 
 export const StyledTabList = styled.div`
@@ -40,4 +40,8 @@ export const StyledTabList = styled.div`
 export const StyledTabs = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const StyledTabPanel = styled.div`
+  margin-top: var(--ads-v2-spaces-5);
 `;

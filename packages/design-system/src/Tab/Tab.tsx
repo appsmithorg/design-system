@@ -1,6 +1,11 @@
 import React from "react";
 import { TabProps } from "./Tab.types";
-import { StyledTab, StyledTabList, StyledTabPanel, StyledTabs } from "./Tab.styles";
+import {
+  StyledTab,
+  StyledTabList,
+  StyledTabPanel,
+  StyledTabs,
+} from "./Tab.styles";
 
 import {
   AriaTabListProps,
@@ -48,7 +53,7 @@ function Tab({ item, state, orientation }: AriaTabProps) {
   let { tabProps, isSelected, isDisabled } = useTab({ key }, state, ref);
   return (
     <StyledTab {...tabProps} ref={ref}>
-      {rendered}
+      <Text>{rendered}</Text>
     </StyledTab>
   );
 }
@@ -62,14 +67,6 @@ function TabPanel({ state, ...props }: AriaTabPanelProps) {
     </StyledTabPanel>
   );
 }
-
-// const Tab = ({ YOUR_PROPS, children, ...rest }: TabProps) => {
-//   return (
-//     <StyledTab {...rest}>
-//       {children}
-//     </StyledTab>
-//   );
-// };
 
 Tab.displayName = "Tab";
 
