@@ -1,5 +1,15 @@
 # @appsmithorg/design-system
 
+## 2.0.2
+
+### Patch Changes
+
+- [#324](https://github.com/appsmithorg/design-system/pull/324) [`9967a1f`](https://github.com/appsmithorg/design-system/commit/9967a1f6ee9d3979cdde06611dc7fdd6addc6029) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: refactor divider
+
+* [#311](https://github.com/appsmithorg/design-system/pull/311) [`dbb1c32`](https://github.com/appsmithorg/design-system/commit/dbb1c32d1d25085a0cf70125a2199796b4e5cbde) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add toggle
+
+- [#337](https://github.com/appsmithorg/design-system/pull/337) [`95f482c`](https://github.com/appsmithorg/design-system/commit/95f482c133bca1b3a0c341fcbb1b8f734c419e3d) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added refactored radio component
+
 ## 2.0.1
 
 ### Patch Changes

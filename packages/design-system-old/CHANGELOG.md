@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.49
+
+### Patch Changes
+
+- [#363](https://github.com/appsmithorg/design-system/pull/363) [`c4f9880`](https://github.com/appsmithorg/design-system/commit/c4f9880e2713aef24a0596d1c557acda00ff11a0) Thanks [@berzerkeer](https://github.com/berzerkeer)! - chore: added arrow up icon
+
 ## 1.0.48
 
 ### Patch Changes
