@@ -1,4 +1,5 @@
 /* TODO: Find a better way to style */
+/* wrapping in styled component is not working anymore */
 .ads-v2-tooltip {
   --tooltip-background-color: var(--ads-v2-color-bg-emphasis-max);
   --tooltip-color: var(--ads-v2-color-fg-on-emphasis-max);
