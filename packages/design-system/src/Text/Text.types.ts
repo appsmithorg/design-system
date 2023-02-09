@@ -1,17 +1,17 @@
 import React, { ReactNode } from "react";
 
-// TODO: replace these values with names from the typography scale
-// this will also replace the values within typography scale in style.
 export type Kind =
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "h5"
-  | "h6"
-  | "p"
-  | "span"
-  | "error";
+  | "heading-xl"
+  | "heading-l"
+  | "heading-m"
+  | "heading-s"
+  | "heading-xs"
+  | "body-m"
+  | "body-s"
+  | "action-l"
+  | "action-m"
+  | "action-s"
+  | "code";
 
 // Text props
 export type TextProps = {
@@ -23,7 +23,10 @@ export type TextProps = {
   children: ReactNode;
   /** style the text based on it's function */
   kind?: Kind;
-} & React.HTMLAttributes<HTMLHeadingElement> &
+  /** the color of the text. Accepts any valid css value. */
+  color?: string;
+} & React.HTMLAttributes<HTMLLabelElement> &
+  React.HTMLAttributes<HTMLHeadingElement> &
   React.HTMLAttributes<HTMLParagraphElement> &
   React.HTMLAttributes<HTMLSpanElement> &
   React.LabelHTMLAttributes<HTMLLabelElement>;

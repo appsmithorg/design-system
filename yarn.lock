@@ -3306,6 +3306,16 @@
   dependencies:
     "@swc/helpers" "^0.4.14"
 
+"@react-aria/switch@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/switch/-/switch-3.3.1.tgz#c0f92f417a78972a3a9d10592eb474698b827d5a"
+  integrity sha512-o9MvXiSK9c7rUZjA6oQ0PNlVCnHEctue6v6W8Vn4HNbQMfhJiWqiSSff4RFcgRgs8WsPsEqbT+vHi2kXykQzdA==
+  dependencies:
+    "@react-aria/toggle" "^3.4.2"
+    "@react-stately/toggle" "^3.4.4"
+    "@react-types/switch" "^3.2.5"
+    "@swc/helpers" "^0.4.14"
+
 "@react-aria/toggle@^3.4.2":
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@react-aria/toggle/-/toggle-3.4.2.tgz#1c57539a26722219979c80dcebfbd0701c518789"
