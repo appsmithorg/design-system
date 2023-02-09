@@ -35,17 +35,17 @@
   --ads-v2-color-black-5 : #FAFAFA;
   --ads-v2-color-white : #FFFFFF;
 
-  /* Grey */
-  --ads-v2-color-grey-900 : #12192B;
-  --ads-v2-color-grey-800 : #202939;
-  --ads-v2-color-grey-700 : #364252;
-  --ads-v2-color-grey-600 : #4C5664;
-  --ads-v2-color-grey-500 : #6A7585;
-  --ads-v2-color-grey-400 : #99A4B3;
-  --ads-v2-color-grey-300 : #CDD5DF;
-  --ads-v2-color-grey-200 : #E3E8EF;
-  --ads-v2-color-grey-100 : #F1F5F9;
-  --ads-v2-color-grey-50 : #F8FAFC;
+  /* gray */
+  --ads-v2-color-gray-900 : #12192B;
+  --ads-v2-color-gray-800 : #202939;
+  --ads-v2-color-gray-700 : #364252;
+  --ads-v2-color-gray-600 : #4C5664;
+  --ads-v2-color-gray-500 : #6A7585;
+  --ads-v2-color-gray-400 : #99A4B3;
+  --ads-v2-color-gray-300 : #CDD5DF;
+  --ads-v2-color-gray-200 : #E3E8EF;
+  --ads-v2-color-gray-100 : #F1F5F9;
+  --ads-v2-color-gray-50 : #F8FAFC;
 
   /* red */
   --ads-v2-color-red-800: #dc2626;

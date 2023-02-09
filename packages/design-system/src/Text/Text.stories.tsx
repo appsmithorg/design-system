@@ -16,5 +16,5 @@ const Template: ComponentStory<typeof Text> = (args) => {
 export const TextStory = Template.bind({});
 TextStory.storyName = "Text";
 TextStory.args = {
-  children: "Text",
+  children: "How vexingly quick daft zebras jump!",
 };
