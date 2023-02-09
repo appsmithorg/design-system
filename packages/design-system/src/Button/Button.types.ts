@@ -1,12 +1,13 @@
 import React from "react";
 import { AriaButtonProps } from "@react-types/button";
 import { PressEvent } from "@react-types/shared";
+import { Sizes } from "__config__/types";
 
 // Button types
 export type Kind = "primary" | "secondary" | "tertiary" | "error";
 
 // Button sizes
-export type Size = "sm" | "md" | "lg";
+export type ButtonSizes = Extract<Sizes, "sm" | "md" | "lg">;
 
 // Button props
 export type ButtonProps = {
@@ -23,7 +24,7 @@ export type ButtonProps = {
   /** The visual style to apply to the button. */
   kind?: Kind;
   /** The size of the button. */
-  size?: Size;
+  size?: ButtonSizes;
   /** The icon to display before the button text. Pass name of the icon from remix-icon library(eg: home-2-line) or an svg icon. */
   startIcon?: React.ReactNode | "string";
   /** The icon to display after the button text. Pass name of the icon from remix-icon library(eg: home-2-line) or an svg icon. */

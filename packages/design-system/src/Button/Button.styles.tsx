@@ -4,9 +4,8 @@ import {
   ButtonContentIconEndClassName,
   ButtonContentIconStartClassName,
   ButtonLoadingClassName,
-  ButtonLoadingIconClassName,
 } from "./Button.constants";
-import { Size, Kind } from "./Button.types";
+import { ButtonSizes, Kind } from "./Button.types";
 
 const Variables = css`
   --button-color-bg: var(--ads-v2-color-bg);
@@ -52,7 +51,7 @@ const Kinds = {
     }
 
     &:active:enabled {
-      --button-color-bg: var(--ads-v2-color-bg-brand-emphasis);
+      --button-color-bg: var(--ads-v2-color-bg-brand-emphasis-plus);
       --button-color-fg: var(--ads-v2-color-fg-on-brand);
       --button-color-border: var(--ads-v2-color-border-brand-emphasis);
     }
@@ -112,32 +111,8 @@ const Kinds = {
   `,
 };
 
-const LoaderSizes = {
-  sm: css`
-    /* Loading icon size */
-    & > .${ButtonLoadingClassName} > .${ButtonLoadingIconClassName} > svg {
-      width: 12px;
-      height: 12px;
-    }
-  `,
-  md: css`
-    /* Loading icon size */
-    & > .${ButtonLoadingClassName} > .${ButtonLoadingIconClassName} > svg {
-      width: 16px;
-      height: 16px;
-    }
-  `,
-  lg: css`
-    /* Loading icon size */
-    & > .${ButtonLoadingClassName} > .${ButtonLoadingIconClassName} > svg {
-      width: 20px;
-      height: 20px;
-    }
-  `,
-};
-
 export const ButtonContent = styled.div<{
-  size?: Size;
+  size?: ButtonSizes;
 }>`
   /* Content is separated out to make opacity driven loader functionality. */
   /* Size style */
@@ -178,7 +153,7 @@ export const ButtonContent = styled.div<{
 export const StyledButton = styled.button<{
   kind?: Kind;
   UNSAFE_height?: string;
-  size?: Size;
+  size?: ButtonSizes;
   UNSAFE_width?: string;
   isLoading?: boolean;
   disabled?: boolean;
@@ -188,14 +163,12 @@ export const StyledButton = styled.button<{
   /* Variant style */
   ${({ kind }) => kind && Kinds[kind]}
 
-  /* Loader size style */
-  ${({ size }) => size && LoaderSizes[size]}
-
   position: relative;
   cursor: pointer;
   border-radius: var(--ads-v2-border-radius);
   border: none;
   background-color: transparent;
+  color: var(--button-color-fg);
   ${({ UNSAFE_height }) => UNSAFE_height && `height: ${UNSAFE_height};`}
   ${({ UNSAFE_width }) => UNSAFE_width && `width: ${UNSAFE_width};`}
   padding: 0;
