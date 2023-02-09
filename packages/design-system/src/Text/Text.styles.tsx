@@ -36,11 +36,11 @@ const TypographyScales = css`
   --ads-v2-p-font-weight: var(--ads-v2-font-weight-normal);
   --ads-v2-p-line-height: var(--ads-v2-line-height-3);
   --ads-v2-p-letter-spacing: var(--ads-v2-letter-spacing-0);
-`
+`;
 
 const Variables = css`
   --font-family: var(--ads-v2-font-family);
-  --text-color: var(--ads-v2-color-fg);
+  --color: var(--ads-v2-color-fg);
 
   --font-size: var(--ads-v2-p-font-size);
   --font-weight: var(--ads-v2-p-font-weight);
@@ -54,7 +54,7 @@ const Kinds = {
     --font-weight: var(--ads-v2-p-font-weight);
     --line-height: var(--ads-v2-p-line-height);
     --letter-spacing: var(--ads-v2-p-letter-spacing);
-    --text-color: var(--ads-v2-color-fg-error);
+    --color: var(--ads-v2-color-fg-error);
   `,
   // The default, span, uses the same values as p for now.
   span: css`
@@ -63,48 +63,55 @@ const Kinds = {
     --line-height: var(--ads-v2-p-line-height);
     --letter-spacing: var(--ads-v2-p-letter-spacing);
   `,
-  p: css`
-    --font-size: var(--ads-v2-p-font-size);
-    --font-weight: var(--ads-v2-p-font-weight);
-    --line-height: var(--ads-v2-p-line-height);
-    --letter-spacing: var(--ads-v2-p-letter-spacing);
+  code: css`
+    --font-family: var(--ads-v2-font-family-code);
+    --font-size: var(--ads-v2-font-size-4);
   `,
-  h1: css`
-    --font-size: var(--ads-v2-h1-font-size);
+  "body-s": css`
+    --font-size: var(--ads-v2-font-size-2);
+  `,
+  "body-m": css`
+    --font-size: var(--ads-v2-font-size-4);
+  `,
+  "action-l": css`
+    --font-size: var(--ads-v2-font-size-6);
+  `,
+  "action-m": css`
+    --font-size: var(--ads-v2-font-size-4);
+  `,
+  "action-s": css`
+    --font-size: var(--ads-v2-font-size-2);
+  `,
+  "heading-xl": css`
+    --font-size: var(--ads-v2-font-size-14);
     --font-weight: var(--ads-v2-h1-font-weight);
     --line-height: var(--ads-v2-h1-line-height);
     --letter-spacing: var(--ads-v2-h1-letter-spacing);
   `,
-  h2: css`
-    --font-size: var(--ads-v2-h2-font-size);
+  "heading-l": css`
+    --font-size: var(--ads-v2-font-size-12);
     --font-weight: var(--ads-v2-h2-font-weight);
     --line-height: var(--ads-v2-h2-line-height);
     --letter-spacing: var(--ads-v2-h2-letter-spacing);
-    `,
-  h3: css`
-    --font-size: var(--ads-v2-h3-font-size);
+  `,
+  "heading-m": css`
+    --font-size: var(--ads-v2-font-size-10);
     --font-weight: var(--ads-v2-h3-font-weight);
     --line-height: var(--ads-v2-h3-line-height);
     --letter-spacing: var(--ads-v2-h3-letter-spacing);
   `,
-  h4: css`
-    --font-size: var(--ads-v2-h4-font-size);
+  "heading-s": css`
+    --font-size: var(--ads-v2-font-size-6);
     --font-weight: var(--ads-v2-h4-font-weight);
     --line-height: var(--ads-v2-h4-line-height);
     --letter-spacing: var(--ads-v2-h4-letter-spacing);
-    `,
-  h5: css`
-    --font-size: var(--ads-v2-h5-font-size);
+  `,
+  "heading-xs": css`
+    --font-size: var(--ads-v2-font-size-4);
     --font-weight: var(--ads-v2-h5-font-weight);
     --line-height: var(--ads-v2-h5-line-height);
     --letter-spacing: var(--ads-v2-h5-letter-spacing);
-    `,
-  h6: css`
-    --font-size: var(--ads-v2-h6-font-size);
-    --font-weight: var(--ads-v2-h6-font-weight);
-    --line-height: var(--ads-v2-h6-line-height);
-    --letter-spacing: var(--ads-v2-h6-letter-spacing);
-    `,
+  `,
 };
 
 export const StyledText = styled.span<{
@@ -118,11 +125,10 @@ export const StyledText = styled.span<{
 
   /* Base style */
   font-family: var(--font-family);
-  color: var(--text-color);
+  color: var(--color);
 
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
-
 `;
