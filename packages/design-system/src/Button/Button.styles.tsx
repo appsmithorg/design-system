@@ -45,13 +45,13 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg-on-brand);
     --button-color-border: var(--ads-v2-color-border-brand);
 
-    &:hover {
+    &:hover:enabled {
       --button-color-bg: var(--ads-v2-color-bg-brand-emphasis);
       --button-color-fg: var(--ads-v2-color-fg-on-brand);
       --button-color-border: var(--ads-v2-color-border-brand-emphasis);
     }
 
-    &:active {
+    &:active:enabled {
       --button-color-bg: var(--ads-v2-color-bg-brand-emphasis);
       --button-color-fg: var(--ads-v2-color-fg-on-brand);
       --button-color-border: var(--ads-v2-color-border-brand-emphasis);
@@ -62,13 +62,13 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: var(--ads-v2-color-border);
 
-    &:hover {
+    &:hover:enabled {
       --button-color-bg: var(--ads-v2-color-bg-subtle);
       --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border);
     }
 
-    &:active {
+    &:active:enabled {
       --button-color-bg: var(--ads-v2-color-bg-muted);
       --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border-emphasis);
@@ -79,12 +79,12 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: transparent;
 
-    &:hover {
+    &:hover:enabled {
       --button-color-bg: var(--ads-v2-color-bg-muted);
       --button-color-fg: var(--ads-v2-color-fg);
     }
 
-    &:active {
+    &:active:enabled {
       --button-color-bg: var(--ads-v2-color-bg-emphasis);
       --button-color-fg: var(--ads-v2-color-fg);
     }
@@ -98,13 +98,13 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg-on-error);
     --button-color-border: transparent;
 
-    &:hover {
+    &:hover:enabled {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis);
       --button-color-fg: var(--ads-v2-color-fg-on-error-emphasis);
       --button-color-border: transparent;
     }
 
-    &:active {
+    &:active:enabled {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis-plus);
       --button-color-fg: var(--ads-v2-color-fg-on-error-emphasis);
       --button-color-border: transparent;

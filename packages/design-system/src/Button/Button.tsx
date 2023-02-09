@@ -25,7 +25,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       className,
       endIcon,
-      isDisabled,
       isLoading,
       kind,
       size,
@@ -50,7 +49,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         UNSAFE_height={UNSAFE_height}
         UNSAFE_width={UNSAFE_width}
         className={clsx(ButtonClassName, className)}
-        disabled={isDisabled}
         isLoading={isLoading}
         kind={kind}
         ref={buttonRef}
