@@ -1,7 +1,7 @@
 import React from "react";
 import { LinkProps as RouterLinkProps } from "react-router-dom";
 
-// Link props
+// TODO: startIcon, endIcon type should be a list containing names of allowed icons
 export type LinkProps = {
   /** (try not to) pass addition classes here */
   className?: string;
@@ -9,6 +9,8 @@ export type LinkProps = {
   children: string;
   /** the place to navigate to */
   to: string;
-  // TODO: Should be a type containing list of names of allowed icons
-  icon?: string;
+  /** the icon at the beginning of the link */
+  startIcon?: string;
+  /** the icon at the end of the link */
+  endIcon?: string;
 } & RouterLinkProps;

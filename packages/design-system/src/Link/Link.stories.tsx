@@ -6,6 +6,11 @@ import { Link } from "./Link";
 export default {
   title: "Design System/Link",
   component: Link,
+  argTypes: {
+    endIcon: {
+      control: "text",
+    },
+  },
 } as ComponentMeta<typeof Link>;
 
 // eslint-disable-next-line react/function-component-definition
@@ -18,5 +23,5 @@ LinkExample.storyName = "Link";
 LinkExample.args = {
   to: "old",
   children: "deprecated appsmith design system",
-  icon: "arrow-right-line",
+  startIcon: "arrow-right-line",
 };

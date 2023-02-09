@@ -30,7 +30,8 @@ function Link(props: LinkProps) {
       to={props.to}
     >
       {props.children}
-      {props.icon && <StyledIcon name={props.icon} size="1rem" />}
+      {props.endIcon && <StyledIcon name={props.endIcon} size="1rem" />}
+      {props.startIcon && <StyledIcon name={props.startIcon} size="1rem" />}
     </StyledLink>
   );
 }
