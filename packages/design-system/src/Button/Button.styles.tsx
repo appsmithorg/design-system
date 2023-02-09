@@ -15,26 +15,26 @@ const Variables = css`
   --button-font-weight: 600;
   --button-font-size: 14px;
   --button-icon-size: 16px;
-  --button-padding: 8px 12px;
+  --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
 `;
 
 const Sizes = {
   sm: css`
     --button-font-weight: 500;
     --button-font-size: 12px;
-    --button-padding: 4px 8px;
+    --button-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
     --button-icon-size: 12px;
   `,
   md: css`
     --button-font-weight: 600;
     --button-font-size: 14px;
-    --button-padding: 8px 12px;
+    --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
     --button-icon-size: 16px;
   `,
   lg: css`
     --button-font-weight: 600;
     --button-font-size: 16px;
-    --button-padding: 8px 16px;
+    --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-5);
     --button-icon-size: 18px;
   `,
 };
