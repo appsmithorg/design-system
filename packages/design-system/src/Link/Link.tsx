@@ -4,6 +4,7 @@ import { LinkProps } from "./Link.types";
 import { StyledIcon, StyledLink } from "./Link.styles";
 
 import { useLink } from "@react-aria/link";
+import { Text } from "../Text";
 
 /**
  *
@@ -29,8 +30,8 @@ function Link(props: LinkProps) {
       target={props.target}
       to={props.to}
     >
-      {props.children}
       {props.endIcon && <StyledIcon name={props.endIcon} size="1rem" />}
+      <Text color="inherit">{props.children}</Text>
       {props.startIcon && <StyledIcon name={props.startIcon} size="1rem" />}
     </StyledLink>
   );
