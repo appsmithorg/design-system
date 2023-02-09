@@ -1,11 +1,14 @@
 import { Sizes } from "__config__/types";
 
-export type IconSizes = Extract<Sizes, "sm" | "md" | "lg" | "xl">;
+export type IconSizes = Extract<
+  Sizes,
+  "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl"
+>;
 
 export type IconProps = {
   /** name of the icon from remix icon library */
   name?: string;
-  /** size of the icon - sm,md,lg,xl */
+  /** size of the icon - sm,md,lg,xl, xxl, xxxl */
   size: IconSizes;
   /** color of the icon */
   color?: string;
