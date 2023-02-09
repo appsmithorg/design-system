@@ -24,8 +24,8 @@
     "@react-aria/focus": "^3.10.1",
     "@react-aria/radio": "^3.4.2",
     "@react-aria/textfield": "^3.8.1",
+    "@react-stately/radio": "^3.6.2",
     "@react-types/button": "^3.7.0",
-    "@react-types/textfield": "^3.6.2",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-image": "^3.0.1",
     "@rollup/plugin-terser": "^0.3.0",
@@ -94,6 +94,8 @@
     ]
   },
   "dependencies": {
-    "@react-aria/button": "^3.6.4"
+    "@react-aria/button": "^3.6.4",
+    "@react-aria/switch": "^3.3.1",
+    "@react-stately/toggle": "^3.4.4"
   }
 }

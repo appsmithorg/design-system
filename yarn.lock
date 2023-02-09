@@ -3309,6 +3309,15 @@
     "@react-aria/utils" "^3.14.2"
     "@react-types/shared" "^3.16.0"
     "@react-types/textfield" "^3.6.2"
+
+"@react-aria/switch@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/switch/-/switch-3.3.1.tgz#c0f92f417a78972a3a9d10592eb474698b827d5a"
+  integrity sha512-o9MvXiSK9c7rUZjA6oQ0PNlVCnHEctue6v6W8Vn4HNbQMfhJiWqiSSff4RFcgRgs8WsPsEqbT+vHi2kXykQzdA==
+  dependencies:
+    "@react-aria/toggle" "^3.4.2"
+    "@react-stately/toggle" "^3.4.4"
+    "@react-types/switch" "^3.2.5"
     "@swc/helpers" "^0.4.14"
 
 "@react-aria/toggle@^3.4.2":
