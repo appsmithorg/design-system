@@ -1,7 +1,7 @@
 /* TODO: Find a better way to style */
 .ads-v2-tooltip {
-  --tooltip-background-color: var(--ads-v2-color-bg-emphasis-plus);
-  --tooltip-color: var(--ads-v2-color-fg-on-emphasis-plus);
+  --tooltip-background-color: var(--ads-v2-color-bg-emphasis-max);
+  --tooltip-color: var(--ads-v2-color-fg-on-emphasis-max);
 
   opacity: 1;
   z-index: 100000;

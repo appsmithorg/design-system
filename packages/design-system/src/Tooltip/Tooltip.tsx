@@ -5,11 +5,20 @@ import { TooltipProps } from "./Tooltip.types";
 import "rc-tooltip/assets/bootstrap.css";
 import "./Tooltip.css";
 import { TooltipClassName } from "./Tooltip.constants";
+import { Text } from "Text";
 
 function Tooltip(props: TooltipProps) {
   const { children, content, ...rest } = props;
   return (
-    <RCTooltip overlay={content} overlayClassName={TooltipClassName} {...rest}>
+    <RCTooltip
+      overlay={
+        <Text color="var(--tooltip-color)" kind="body-s">
+          {content}
+        </Text>
+      }
+      overlayClassName={TooltipClassName}
+      {...rest}
+    >
       {children}
     </RCTooltip>
   );
