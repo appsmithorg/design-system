@@ -1,8 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 // TODO: replace these values with names from the typography scale
 // this will also replace the values within typography scale in style.
 export type Kind =
+  | "error"
   | "h1"
   | "h2"
   | "h3"
@@ -10,8 +11,7 @@ export type Kind =
   | "h5"
   | "h6"
   | "p"
-  | "span"
-  | "error";
+  | "span";
 
 // Text props
 export type TextProps = {
@@ -20,9 +20,11 @@ export type TextProps = {
   /** (try not to) pass addition classes here */
   className?: string;
   /** the words you want to display */
-  children: string;
+  children: ReactNode;
   /** style the text based on it's function */
   kind?: Kind;
-} & React.HTMLAttributes<HTMLHeadingElement> &
+} & React.HTMLAttributes<HTMLLabelElement> &
+  React.HTMLAttributes<HTMLHeadingElement> &
   React.HTMLAttributes<HTMLParagraphElement> &
-  React.HTMLAttributes<HTMLSpanElement>;
+  React.HTMLAttributes<HTMLSpanElement> &
+  React.LabelHTMLAttributes<HTMLLabelElement>;
