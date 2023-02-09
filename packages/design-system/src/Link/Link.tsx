@@ -1,7 +1,7 @@
 import React from "react";
 
 import { LinkProps } from "./Link.types";
-import { StyledLink } from "./Link.styles";
+import { StyledIcon, StyledLink } from "./Link.styles";
 
 import { useLink } from "@react-aria/link";
 
@@ -14,23 +14,23 @@ import { useLink } from "@react-aria/link";
  * TODO
  * - Add text dependency
  * - get list of available typography link can be from design
- * - add ability to have icon
  * @param props
  * @constructor
  */
 
 function Link(props: LinkProps) {
-  let ref = React.useRef(null);
-  let { linkProps } = useLink(props, ref);
+  const ref = React.useRef(null);
+  const { linkProps } = useLink(props, ref);
 
   return (
     <StyledLink
       {...linkProps}
       innerRef={ref}
-      to={props.to}
       target={props.target}
+      to={props.to}
     >
       {props.children}
+      {props.icon && <StyledIcon name={props.icon} size="1rem" />}
     </StyledLink>
   );
 }

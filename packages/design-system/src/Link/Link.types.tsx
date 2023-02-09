@@ -9,4 +9,6 @@ export type LinkProps = {
   children: string;
   /** the place to navigate to */
   to: string;
+  // TODO: Should be a type containing list of names of allowed icons
+  icon?: string;
 } & RouterLinkProps;

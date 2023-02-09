@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Link } from "./Link";
 
 export default {
-title: "Design System/Link",
+  title: "Design System/Link",
   component: Link,
 } as ComponentMeta<typeof Link>;
 
@@ -18,4 +18,5 @@ LinkExample.storyName = "Link";
 LinkExample.args = {
   to: "old",
   children: "deprecated appsmith design system",
+  icon: "arrow-right-line",
 };
