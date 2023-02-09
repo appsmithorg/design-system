@@ -9,8 +9,7 @@ const iconSizes: Record<IconSizes, string> = {
   md: "16px",
   lg: "20px",
   xl: "24px",
-  xxl: "28px",
-  xxxl: "32px",
+  xxl: "32px",
 };
 
 function Icon(props: IconProps) {
