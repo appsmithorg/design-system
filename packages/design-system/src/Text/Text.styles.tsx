@@ -115,6 +115,7 @@ const Kinds = {
 };
 
 export const StyledText = styled.span<{
+  color?: string;
   kind?: Kind;
 }>`
   ${TypographyScales}
@@ -125,7 +126,7 @@ export const StyledText = styled.span<{
 
   /* Base style */
   font-family: var(--font-family);
-  color: var(--color);
+  color: ${({ color }) => (color ? color : "var(--color)")};
 
   font-size: var(--font-size);
   font-weight: var(--font-weight);

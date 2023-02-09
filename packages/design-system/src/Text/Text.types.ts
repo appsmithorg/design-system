@@ -1,7 +1,5 @@
 import React, { ReactNode } from "react";
 
-// TODO: replace these values with names from the typography scale
-// this will also replace the values within typography scale in style.
 export type Kind =
   | "heading-xl"
   | "heading-l"
@@ -25,6 +23,8 @@ export type TextProps = {
   children: ReactNode;
   /** style the text based on it's function */
   kind?: Kind;
+  /** the color of the text. Accepts any valid css value. */
+  color?: string;
 } & React.HTMLAttributes<HTMLLabelElement> &
   React.HTMLAttributes<HTMLHeadingElement> &
   React.HTMLAttributes<HTMLParagraphElement> &
