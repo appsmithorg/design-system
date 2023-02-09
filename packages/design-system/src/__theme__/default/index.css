@@ -9,42 +9,44 @@
     * ===========================================*
   */
 
-   /** Used as active bg when --ads-v2-color-bg-brand is the default bg **/
-  --ads-v2-color-bg-brand-emphasis-plus: var(--ads-v2-color-orange-700);
-  /** Used as hover bg when --ads-v2-color-bg-brand is the default bg **/
-  --ads-v2-color-bg-brand-emphasis: var(--ads-v2-color-orange-600);
-  /** Brand primary color **/
+  /** Used as active bg when --ads-v2-color-bg-brand is the default bg */
+  --ads-v2-color-bg-brand-emphasis-plus: var(--ads-v2-color-orange-900);
+  /** Used as hover bg when --ads-v2-color-bg-brand is the default bg */
+  --ads-v2-color-bg-brand-emphasis: var(--ads-v2-color-orange-900);
+  /** Brand primary color */
   --ads-v2-color-bg-brand: var(--ads-v2-color-orange-500);
 
-  /** Used as active bg when --ads-v2-color-bg-brand-secondary is the default bg **/
-  --ads-v2-color-bg-brand-secondary-emphasis-plus: var(--ads-v2-color-grey-600);
-  /** Used as hover bg when --ads-v2-color-bg-brand-secondary is the default bg **/
-  --ads-v2-color-bg-brand-secondary-emphasis: var(--ads-v2-color-grey-700);
-  /** Brand secondary color **/
-  --ads-v2-color-bg-brand-secondary: var(--ads-v2-color-grey-600);
+  /** Used as active bg when --ads-v2-color-bg-brand-secondary is the default bg */
+  --ads-v2-color-bg-brand-secondary-emphasis-plus: var(--ads-v2-color-gray-600);
+  /** Used as hover bg when --ads-v2-color-bg-brand-secondary is the default bg */
+  --ads-v2-color-bg-brand-secondary-emphasis: var(--ads-v2-color-gray-700);
+  /** Brand secondary color */
+  --ads-v2-color-bg-brand-secondary: var(--ads-v2-color-gray-600);
 
-  /** Used for tooltips or any high contrast components **/
-  --ads-v2-color-bg-emphasis-plus: var(--ads-v2-color-grey-800);
-  /** Used for components without border **/
-  --ads-v2-color-bg-emphasis: var(--ads-v2-color-grey-200);
-  /** Default BG **/
+  /** Used for tooltips or any high contrast components */
+  --ads-v2-color-bg-emphasis-max: var(--ads-v2-color-gray-800);
+  /** Used for hover state for components without border */
+  --ads-v2-color-bg-emphasis-plus: var(--ads-v2-color-gray-300);
+  /** Used for components without border */
+  --ads-v2-color-bg-emphasis: var(--ads-v2-color-gray-200);
+  /** Default BG */
   --ads-v2-color-bg: var(--ads-v2-color-white);
-  /* Used for emphasis default bg, hover state for components without border */
-  --ads-v2-color-bg-muted: var(--ads-v2-color-grey-100);
-  /** Used for disabled components / hover for components with border **/
-  --ads-v2-color-bg-subtle: var(--ads-v2-color-grey-0);
+  /* Used for emphasis default bg */
+  --ads-v2-color-bg-muted: var(--ads-v2-color-gray-100);
+  /** Used for disabled components */
+  --ads-v2-color-bg-subtle: var(--ads-v2-color-gray-50);
 
-  /** Used for error background active **/
-  --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-500);
+  /** Used for error background active */
+  --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-200);
   /** Used for error background hover  */
-  --ads-v2-color-bg-error-emphasis: var(--ads-v2-color-red-400);
-  /** Used for error background **/
-  --ads-v2-color-bg-error: var(--ads-v2-color-red-300);
-  /** Used for success background **/
+  --ads-v2-color-bg-error-emphasis: var(--ads-v2-color-red-100);
+  /** Used for error background */
+  --ads-v2-color-bg-error: var(--ads-v2-color-white);
+  /** Used for success background */
   --ads-v2-color-bg-success: var(--ads-v2-color-green);
-  /** Used for warning background **/
+  /** Used for warning background */
   --ads-v2-color-bg-warning: var(--ads-v2-color-yellow);
-  /** Used for information background **/
+  /** Used for information background */
   --ads-v2-color-bg-information: var(--ads-v2-color-blue-300);
 
 
@@ -54,40 +56,39 @@
     * ===========================================*
   */
 
-  /** Used for content with high importance like main heading **/
-  --ads-v2-color-fg-emphasis-plus: var(--ads-v2-color-grey-800);
-  /** Used for content with lesser importance than title. Like subtitle **/
-  --ads-v2-color-fg-emphasis: var(--ads-v2-color-grey-700);
-  /** Default foreground color **/
-  --ads-v2-color-fg: var(--ads-v2-color-grey-600);
-  /** Used for content with lesser importance than body content **/
-  --ads-v2-color-fg-muted: var(--ads-v2-color-grey-500);
-  /** Used for all least important texts like placeholders, disabled text **/
-  --ads-v2-color-fg-subtle: var(--ads-v2-color-grey-400);
+  /** Used for content with high importance like main heading */
+  --ads-v2-color-fg-emphasis-plus: var(--ads-v2-color-gray-800);
+  /** Used for content with lesser importance than title. Like subtitle */
+  --ads-v2-color-fg-emphasis: var(--ads-v2-color-gray-700);
+  /** Default foreground color */
+  --ads-v2-color-fg: var(--ads-v2-color-gray-600);
+  /** Used for content with lesser importance than body content */
+  --ads-v2-color-fg-muted: var(--ads-v2-color-gray-500);
+  /** Used for all least important texts like placeholders, disabled text */
+  --ads-v2-color-fg-subtle: var(--ads-v2-color-gray-400);
 
-  /** Text color for background --ads-v2-color-bg-brand **/
+  /** Text color for background --ads-v2-color-bg-brand */
   --ads-v2-color-fg-on-brand: var(--ads-v2-color-white);
-  /** Text color for background --ads-v2-color-bg-brand-secondary **/
+  /** Text color for background --ads-v2-color-bg-brand-secondary */
   --ads-v2-color-fg-on-brand-secondary: var(--ads-v2-color-white);
-  /** Text color for background --ads-v2-color-bg-emphasis-plus **/
+  /** Text color for background --ads-v2-color-bg-emphasis-plus */
   --ads-v2-color-fg-on-emphasis-plus: var(--ads-v2-color-white);
-  /** Text color for background --ads-v2-color-bg-error-emphasis **/
+  /** Text color for background --ads-v2-color-bg-error-emphasis */
   --ads-v2-color-fg-on-error-emphasis: var(--ads-v2-color-red-800);
-  /** Text color for background --ads-v2-color-bg-error **/
+  /** Text color for background --ads-v2-color-bg-error */
   --ads-v2-color-fg-on-error: var(--ads-v2-color-red-700);
-  /** Text color for background --ads-v2-color-bg-success **/
+  /** Text color for background --ads-v2-color-bg-success */
   --ads-v2-color-fg-on-success: var(--ads-v2-color-white);
-  /** Text color for background --ads-v2-color-bg-warning **/
+  /** Text color for background --ads-v2-color-bg-warning */
   --ads-v2-color-fg-on-warning: var(--ads-v2-color-white);
-  /** Foreground color for error **/
+  /** Foreground color for error */
   --ads-v2-color-fg-error: var(--ads-v2-color-red-800);
-  /** Foreground color for success **/
+  /** Foreground color for success */
   --ads-v2-color-fg-success: var(--ads-v2-color-green);
-  /** Foreground color for warning **/
+  /** Foreground color for warning */
   --ads-v2-color-fg-warning: var(--ads-v2-color-yellow);
-  /** Foreground color for information**/
+  /** Foreground color for information*/
   --ads-v2-color-fg-information: var(--ads-v2-color-blue-500);
-
 
   /**
     * ===========================================*
@@ -95,30 +96,30 @@
     * ===========================================*
   */
 
-  /** Used for indicating active borders **/
-  --ads-v2-color-border-emphasis-plus: var(--ads-v2-color-grey-600);
-  /** Used for indicating hover borders **/
-  --ads-v2-color-border-emphasis: var(--ads-v2-color-grey-400);
-  /** Default border color **/
-  --ads-v2-color-border: var(--ads-v2-color-grey-300);
-  /** Used for indicating disabled borders and dividers **/
-  --ads-v2-color-border-muted: var(--ads-v2-color-grey-200);
+  /** Used for indicating active borders */
+  --ads-v2-color-border-emphasis-plus: var(--ads-v2-color-gray-600);
+  /** Used for indicating hover borders */
+  --ads-v2-color-border-emphasis: var(--ads-v2-color-gray-400);
+  /** Default border color */
+  --ads-v2-color-border: var(--ads-v2-color-gray-300);
+  /** Used for indicating disabled borders and dividers */
+  --ads-v2-color-border-muted: var(--ads-v2-color-gray-200);
 
-  /** Used as active border when --ads-v2-color-bg-brand is the default bg **/
+  /** Used as active border when --ads-v2-color-bg-brand is the default bg */
   --ads-v2-color-border-brand-emphasis-plus: var(--ads-v2-color-orange-900);
-  /** Used as hover border when --ads-v2-color-bg-brand is the default bg **/
+  /** Used as hover border when --ads-v2-color-bg-brand is the default bg */
   --ads-v2-color-border-brand-emphasis: var(--ads-v2-color-orange-900);
   /** Used as active border hover color of secondary items like radio checkbox etc */
-  --ads-v2-color-border-brand-secondary-emphasis: var(--ads-v2-color-grey-700);
+  --ads-v2-color-border-brand-secondary-emphasis: var(--ads-v2-color-gray-700);
   /** Used as active border color of secondary items like radio checkbox etc */
-  --ads-v2-color-border-brand-secondary: var(--ads-v2-color-grey-600);
-  /** Used as default border color when --ads-v2-color-bg-brand is the default bg **/
+  --ads-v2-color-border-brand-secondary: var(--ads-v2-color-gray-600);
+  /** Used as default border color when --ads-v2-color-bg-brand is the default bg */
   --ads-v2-color-border-brand: var(--ads-v2-color-orange-500);
-  /** Used for indicating error borders **/
+  /** Used for indicating error borders */
   --ads-v2-color-border-error: var(--ads-v2-color-red-300);
-  /** Used for indicating success borders **/
+  /** Used for indicating success borders */
   --ads-v2-color-border-success: var(--ads-v2-color-green);
-  /** Used for indicating warning borders **/
+  /** Used for indicating warning borders */
   --ads-v2-color-border-warning: var(--ads-v2-color-yellow);
 
 
@@ -128,6 +129,7 @@
     * ===========================================*
   */
   --ads-v2-border-radius: 4px;
+  --ads-border-radius-circle: 50%;
 
   /**
     * ===========================================*
@@ -135,6 +137,7 @@
     * ===========================================*
   */
   --ads-v2-font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Icons16", sans-serif;
+  --ads-v2-font-family-code: source-code-pro, "Menlo", "Monaco", "Consolas", "Courier New", monospace;
 
   /**
     * ===========================================*
@@ -143,16 +146,18 @@
   */
   --ads-v2-color-outline: var(--ads-v2-color-blue-300);
   --ads-v2-border-width-outline: 2px;
-  --ads-v2-offset-outline: 1px;
+  --ads-v2-offset-outline: 0;
 
   /**
     * ===========================================*
-    * ========== Opacity ===============*
+    * =============== Opacity ===================*
     * ===========================================*
   */
   --ads-v2-opacity-disabled: 0.6;
+
 }
 
+/* react-aria useFocusRing helper class*/
 .ads-v2-focus-ring {
   outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
   outline-offset: var(--ads-v2-offset-outline);

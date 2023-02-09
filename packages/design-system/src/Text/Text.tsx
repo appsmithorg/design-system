@@ -11,9 +11,9 @@ TODO:
  - create uneditable field with prop `uneditable`
  */
 
-function Text({ as, children, kind, ...rest }: TextProps) {
+function Text({ as, children, color, kind, ...rest }: TextProps) {
   return (
-    <StyledText as={as} kind={kind} {...rest}>
+    <StyledText as={as} color={color} kind={kind} {...rest}>
       {children}
     </StyledText>
   );
