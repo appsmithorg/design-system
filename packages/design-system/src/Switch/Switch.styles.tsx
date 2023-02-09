@@ -62,7 +62,7 @@ export const StyledSwitchInput = styled.input<{
 
   &:hover {
     // TODO: needs a theme variable
-    --switch-color-bg: var(--ads-v2-color-grey-300);
+    --switch-color-bg: var(--ads-v2-color-gray-300);
   }
 
   &:checked {
@@ -72,7 +72,7 @@ export const StyledSwitchInput = styled.input<{
     // set position of thumb when checked
     &::before {
       grid-area: on;
-      box-shadow: 0 1px 4px 0 var(--ads-v2-color-grey-900);
+      box-shadow: 0 1px 4px 0 var(--ads-v2-color-gray-900);
     }
   }
 

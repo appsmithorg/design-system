@@ -17,22 +17,22 @@
   --ads-v2-color-bg-brand: var(--ads-v2-color-orange-500);
 
   /** Used as active bg when --ads-v2-color-bg-brand-secondary is the default bg **/
-  --ads-v2-color-bg-brand-secondary-emphasis-plus: var(--ads-v2-color-grey-600);
+  --ads-v2-color-bg-brand-secondary-emphasis-plus: var(--ads-v2-color-gray-600);
   /** Used as hover bg when --ads-v2-color-bg-brand-secondary is the default bg **/
-  --ads-v2-color-bg-brand-secondary-emphasis: var(--ads-v2-color-grey-700);
+  --ads-v2-color-bg-brand-secondary-emphasis: var(--ads-v2-color-gray-700);
   /** Brand secondary color **/
-  --ads-v2-color-bg-brand-secondary: var(--ads-v2-color-grey-600);
+  --ads-v2-color-bg-brand-secondary: var(--ads-v2-color-gray-600);
 
   /** Used for tooltips or any high contrast components **/
-  --ads-v2-color-bg-emphasis-plus: var(--ads-v2-color-grey-800);
+  --ads-v2-color-bg-emphasis-plus: var(--ads-v2-color-gray-800);
   /** Used for components without border **/
-  --ads-v2-color-bg-emphasis: var(--ads-v2-color-grey-200);
+  --ads-v2-color-bg-emphasis: var(--ads-v2-color-gray-200);
   /** Default BG **/
   --ads-v2-color-bg: var(--ads-v2-color-white);
   /* Used for emphasis default bg, hover state for components without border */
-  --ads-v2-color-bg-muted: var(--ads-v2-color-grey-100);
+  --ads-v2-color-bg-muted: var(--ads-v2-color-gray-100);
   /** Used for disabled components **/
-  --ads-v2-color-bg-subtle: var(--ads-v2-color-grey-50);
+  --ads-v2-color-bg-subtle: var(--ads-v2-color-gray-50);
 
   /** Used for error background active **/
   --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-200);
@@ -55,15 +55,15 @@
   */
 
   /** Used for content with high importance like main heading **/
-  --ads-v2-color-fg-emphasis-plus: var(--ads-v2-color-grey-800);
+  --ads-v2-color-fg-emphasis-plus: var(--ads-v2-color-gray-800);
   /** Used for content with lesser importance than title. Like subtitle **/
-  --ads-v2-color-fg-emphasis: var(--ads-v2-color-grey-700);
+  --ads-v2-color-fg-emphasis: var(--ads-v2-color-gray-700);
   /** Default foreground color **/
-  --ads-v2-color-fg: var(--ads-v2-color-grey-600);
+  --ads-v2-color-fg: var(--ads-v2-color-gray-600);
   /** Used for content with lesser importance than body content **/
-  --ads-v2-color-fg-muted: var(--ads-v2-color-grey-500);
+  --ads-v2-color-fg-muted: var(--ads-v2-color-gray-500);
   /** Used for all least important texts like placeholders, disabled text **/
-  --ads-v2-color-fg-subtle: var(--ads-v2-color-grey-400);
+  --ads-v2-color-fg-subtle: var(--ads-v2-color-gray-400);
 
   /** Text color for background --ads-v2-color-bg-brand **/
   --ads-v2-color-fg-on-brand: var(--ads-v2-color-white);
@@ -95,22 +95,22 @@
   */
 
   /** Used for indicating active borders **/
-  --ads-v2-color-border-emphasis-plus: var(--ads-v2-color-grey-600);
+  --ads-v2-color-border-emphasis-plus: var(--ads-v2-color-gray-600);
   /** Used for indicating hover borders **/
-  --ads-v2-color-border-emphasis: var(--ads-v2-color-grey-400);
+  --ads-v2-color-border-emphasis: var(--ads-v2-color-gray-400);
   /** Default border color **/
-  --ads-v2-color-border: var(--ads-v2-color-grey-300);
+  --ads-v2-color-border: var(--ads-v2-color-gray-300);
   /** Used for indicating disabled borders and dividers **/
-  --ads-v2-color-border-muted: var(--ads-v2-color-grey-200);
+  --ads-v2-color-border-muted: var(--ads-v2-color-gray-200);
 
   /** Used as active border when --ads-v2-color-bg-brand is the default bg **/
   --ads-v2-color-border-brand-emphasis-plus: var(--ads-v2-color-orange-900);
   /** Used as hover border when --ads-v2-color-bg-brand is the default bg **/
   --ads-v2-color-border-brand-emphasis: var(--ads-v2-color-orange-900);
   /** Used as active border hover color of secondary items like radio checkbox etc */
-  --ads-v2-color-border-brand-secondary-emphasis: var(--ads-v2-color-grey-700);
+  --ads-v2-color-border-brand-secondary-emphasis: var(--ads-v2-color-gray-700);
   /** Used as active border color of secondary items like radio checkbox etc */
-  --ads-v2-color-border-brand-secondary: var(--ads-v2-color-grey-600);
+  --ads-v2-color-border-brand-secondary: var(--ads-v2-color-gray-600);
   /** Used as default border color when --ads-v2-color-bg-brand is the default bg **/
   --ads-v2-color-border-brand: var(--ads-v2-color-orange-500);
   /** Used for indicating error borders **/
