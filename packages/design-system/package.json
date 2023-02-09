@@ -96,6 +96,8 @@
   },
   "dependencies": {
     "@react-aria/button": "^3.6.4",
-    "@react-aria/link": "^3.3.6"
+    "@react-aria/link": "^3.3.6",
+    "@react-aria/switch": "^3.3.1",
+    "@react-stately/toggle": "^3.4.4"
   }
 }
