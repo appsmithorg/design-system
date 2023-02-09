@@ -23,7 +23,7 @@ function Toast({ ...rest }: ToastProps) {
       autoClose={5000}
       closeButton={false}
       draggable={false}
-      hideProgressBar={true}
+      hideProgressBar
       position={toastifyToast.POSITION.TOP_CENTER}
       rtl={false}
       transition={Slide}
@@ -44,7 +44,7 @@ function toast(content: string, options?: ToastProps) {
         <StyledButton
           kind="tertiary"
           onPress={() => {
-            options?.action?.effect && options?.action?.effect()
+            options?.action?.effect && options?.action?.effect();
             toastifyToast.dismiss();
           }}
         >
@@ -66,8 +66,8 @@ function getIconForToast(kind: Kind) {
     case "success":
       return (
         <Icon
-          name="checkbox-circle-fill"
           color="var(--ads-v2-color-fg-success)"
+          name="checkbox-circle-fill"
           size="16px"
         />
       );
@@ -75,8 +75,8 @@ function getIconForToast(kind: Kind) {
     case "error":
       return (
         <Icon
-          name="close-circle-fill"
           color="var(--ads-v2-color-fg-error)"
+          name="close-circle-fill"
           size="16px"
         />
       );
@@ -84,8 +84,8 @@ function getIconForToast(kind: Kind) {
     case "warning":
       return (
         <Icon
-          name="alert-fill"
           color="var(--ads-v2-color-fg-warning)"
+          name="alert-fill"
           size="16px"
         />
       );
@@ -93,8 +93,8 @@ function getIconForToast(kind: Kind) {
     case "info":
       return (
         <Icon
-          name="information-fill"
           color="var(--ads-v2-color-fg-information)"
+          name="information-fill"
           size="16px"
         />
       );
