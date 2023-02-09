@@ -61,8 +61,7 @@ export const StyledSwitchInput = styled.input<{
     `}}
 
   &:hover {
-    // TODO: needs a theme variable
-    --switch-color-bg: var(--ads-v2-color-gray-300);
+    --switch-color-bg: var(--ads-v2-color-bg-emphasis-plus);
   }
 
   &:checked {
