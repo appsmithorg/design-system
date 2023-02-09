@@ -203,12 +203,10 @@ export const StyledButton = styled.button<{
   overflow: hidden;
 
   /* button disabled style */
-  ${({ disabled }) =>
-    disabled === true &&
-    css`
-      cursor: not-allowed;
-      opacity: var(--ads-v2-opacity-disabled);
-    `}
+  &:disabled {
+    cursor: not-allowed;
+    opacity: var(--ads-v2-opacity-disabled);
+  }
 
   /* Loader styles */
   & > .${ButtonLoadingClassName} {
