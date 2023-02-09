@@ -9,6 +9,7 @@
   font-size: 12px;
 }
 
+/* Tooltip inner element styles */
 .ads-v2-tooltip > .rc-tooltip-content > .rc-tooltip-inner {
   background-color: var(--tooltip-background-color);
   color: var(--tooltip-color);
@@ -19,6 +20,7 @@
   box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.06), 0 4px 8px -2px rgba(0, 0, 0, 0.1);
 }
 
+/* arrow color for different placement */
 .ads-v2-tooltip.rc-tooltip-placement-right .rc-tooltip-arrow,
 .ads-v2-tooltip.rc-tooltip-placement-rightTop .rc-tooltip-arrow,
 .ads-v2-tooltip.rc-tooltip-placement-rightBottom .rc-tooltip-arrow {
