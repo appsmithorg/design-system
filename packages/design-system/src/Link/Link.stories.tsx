@@ -7,6 +7,10 @@ export default {
   title: "Design System/Link",
   component: Link,
   argTypes: {
+    startIcon: {
+      control: "text",
+      description: "the icon at the beginning of the link",
+    },
     endIcon: {
       control: "text",
       description: "the icon at the end of the link",
@@ -16,10 +20,6 @@ export default {
       options: ["primary", "secondary"],
       description: "the kind of link",
       defaultValue: "secondary",
-    },
-    startIcon: {
-      control: "text",
-      description: "the icon at the beginning of the link",
     },
     target: {
       control: "text",
@@ -47,6 +47,6 @@ LinkExample.storyName = "Link";
 LinkExample.args = {
   to: "old",
   children: "deprecated appsmith design system",
-  startIcon: "arrow-right-line",
+  endIcon: "arrow-right-line",
   kind: "primary",
 };

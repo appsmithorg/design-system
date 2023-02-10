@@ -30,11 +30,11 @@ function Link(props: LinkProps) {
       target={props.target}
       to={props.to}
     >
-      {props.endIcon && <StyledIcon name={props.endIcon} size="md" />}
+      {props.startIcon && <StyledIcon name={props.startIcon} size="md" />}
       <Text color="inherit" kind="action-m">
         {props.children}
       </Text>
-      {props.startIcon && <StyledIcon name={props.startIcon} size="md" />}
+      {props.endIcon && <StyledIcon name={props.endIcon} size="md" />}
     </StyledLink>
   );
 }
