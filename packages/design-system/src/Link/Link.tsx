@@ -27,11 +27,14 @@ function Link(props: LinkProps) {
     <StyledLink
       {...linkProps}
       innerRef={ref}
+      kind={props.kind}
       target={props.target}
       to={props.to}
     >
       {props.endIcon && <StyledIcon name={props.endIcon} size="1rem" />}
-      <Text color="inherit">{props.children}</Text>
+      <Text color="inherit" kind="body-m">
+        {props.children}
+      </Text>
       {props.startIcon && <StyledIcon name={props.startIcon} size="1rem" />}
     </StyledLink>
   );
@@ -41,6 +44,7 @@ Link.displayName = "Link";
 
 Link.defaultProps = {
   target: "_blank",
+  kind: "secondary",
 };
 
 export { Link };

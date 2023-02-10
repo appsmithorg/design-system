@@ -68,6 +68,8 @@
   --ads-v2-color-fg-subtle: var(--ads-v2-color-gray-400);
   /** Text color with special meaning */
   --ads-v2-color-fg-brand: var(--ads-v2-color-orange-500);
+  /** Hover for text color with special meaning */
+  --ads-v2-color-fg-brand-emphasis: var(--ads-v2-color-orange-600);
 
   /** Text color for background --ads-v2-color-bg-brand */
   --ads-v2-color-fg-on-brand: var(--ads-v2-color-white);
