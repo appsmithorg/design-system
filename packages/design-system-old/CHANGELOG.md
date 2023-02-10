@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.50
+
+### Patch Changes
+
+- [#368](https://github.com/appsmithorg/design-system/pull/368) [`83ae938`](https://github.com/appsmithorg/design-system/commit/83ae938d12863d695ffeb49291c17e5aaac648b9) Thanks [@berzerkeer](https://github.com/berzerkeer)! - chore: added money dollar icon
+
 ## 1.0.49
 
 ### Patch Changes
