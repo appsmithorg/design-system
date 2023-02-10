@@ -18,7 +18,7 @@ export default {
         type: "select",
         options: ["click", "hover", "focus"],
       },
-      description: "The trigger that will show the tooltip",
+      description: "The action that will trigger the tooltip",
       table: {
         type: {
           summary: "click | hover | focus",
