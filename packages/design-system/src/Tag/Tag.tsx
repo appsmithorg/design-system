@@ -10,12 +10,18 @@ import { Text } from "../Text";
  * Should just the icon have a focus style? Should the whole tag have a focus style?
  * Should the escape key dismiss the tag? Or should the enter key dismiss the tag when the icon is focused?
  */
-function Tag({ children, ...rest }: TagProps) {
+function Tag({ children, isClosable, ...rest }: TagProps) {
   const [isClosed, setClosed] = React.useState(false);
   return (
     <StyledTag isClosed={isClosed} {...rest}>
       <Text kind="body-s">{children}</Text>
-      <StyledIcon name="close-line" onClick={() => setClosed(true)} size="md" />
+      {isClosable && (
+        <StyledIcon
+          name="close-line"
+          onClick={() => setClosed(true)}
+          size="md"
+        />
+      )}
     </StyledTag>
   );
 }
@@ -24,6 +30,7 @@ Tag.displayName = "Tag";
 
 Tag.defaultProps = {
   size: "sm",
+  isClosable: true,
 };
 
 export { Tag };

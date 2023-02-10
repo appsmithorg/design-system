@@ -12,4 +12,7 @@ export type TagProps = {
 
   /** the words you want to display */
   children: string;
+
+  /** whether or not the tag can be dismissed*/
+  isClosable?: boolean;
 } & React.HTMLAttributes<HTMLSpanElement>;
