@@ -106,7 +106,26 @@ export default {
 const Template: ComponentStory<typeof Tooltip> = (args) => {
   return (
     <Tooltip {...args}>
-      <Text>Hover here</Text>
+      <Text>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        <br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        <br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        <br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        <br />
+      </Text>
+    </Tooltip>
+  );
+};
+
+// eslint-disable-next-line react/function-component-definition
+const TemplateButton: ComponentStory<typeof Tooltip> = (args) => {
+  return (
+    <Tooltip {...args}>
+      {/* Replace this with DS button once button is in live */}
+      <button>Focus here</button>
     </Tooltip>
   );
 };
@@ -116,4 +135,11 @@ TooltipStory.storyName = "Tooltip";
 TooltipStory.args = {
   content: "This is a tooltip",
   trigger: "hover",
+};
+
+export const TooltipButtonStory = TemplateButton.bind({});
+TooltipButtonStory.storyName = "Tooltip Button Trigger";
+TooltipButtonStory.args = {
+  content: "This is a tooltip",
+  trigger: "focus",
 };
