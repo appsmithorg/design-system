@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const IconContainer = styled.span<{
-  size?: string;
+  size: string;
   color?: string;
 }>`
   display: flex;

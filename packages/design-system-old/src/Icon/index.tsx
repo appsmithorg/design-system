@@ -186,6 +186,7 @@ import UserAddLineIcon from "remixicon-react/UserAddLineIcon";
 import UserUnfollowLineIcon from "remixicon-react/UserUnfollowLineIcon";
 import DeleteRowIcon from "remixicon-react/DeleteRowIcon";
 import ArrowUpLineIcon from "remixicon-react/ArrowUpLineIcon";
+import MoneyDollarCircleLineIcon from "remixicon-react/MoneyDollarCircleLineIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -381,6 +382,7 @@ const ICON_LOOKUP = {
   "view-less": <LeftArrowIcon />,
   "warning-line": <WarningLineIcon />,
   "warning-triangle": <WarningTriangleIcon />,
+  "money-dollar-circle-line": <MoneyDollarCircleLineIcon />,
   billing: <BillingIcon />,
   book: <BookIcon />,
   bug: <BugIcon />,
