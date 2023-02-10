@@ -38,6 +38,12 @@ export const StyledLink = styled(RouterLink)<{
 
   display: flex;
   align-content: center;
+
+  :focus-visible {
+    outline: var(--ads-v2-border-width-outline) solid
+      var(--ads-v2-color-outline);
+    outline-offset: var(--ads-v2-offset-outline);
+  }
 `;
 
 export const StyledIcon = styled(Icon)`
