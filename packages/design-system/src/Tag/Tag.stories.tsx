@@ -17,4 +17,5 @@ export const TagExample = Template.bind({});
 TagExample.storyName = "Tag";
 TagExample.args = {
   children: "contact@appsmith.com",
+  size: "small",
 };

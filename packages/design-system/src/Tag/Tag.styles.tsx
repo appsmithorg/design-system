@@ -1,41 +1,25 @@
 import styled, { css } from "styled-components";
-import { Kind } from "./Tag.types";
+import { Size } from "./Tag.types";
 
-const Variables = css`
-  --tag-bg-color: var(--ads-v2-color-bg);
-  --tag-fg-color: var(--ads-v2-color-fg);
-`;
+const Variables = css``;
 
-const Kinds = {
-  success: css`
-    --tag-bg-color: var(--ads-v2-color-bg-success);
-    --tag-fg-color: var(--ads-v2-color-fg-success);
+const TagSize = {
+  small: css`
+    padding: 0 var(--ads-v2-spaces-2);
   `,
-  error: css`
-    --tag-bg-color: var(--ads-v2-color-bg-error);
-    --tag-fg-color: var(--ads-v2-color-fg-error);
-  `,
-  warning: css`
-    --tag-bg-color: var(--ads-v2-color-bg-warning);
-    --tag-fg-color: var(--ads-v2-color-fg-warning);
-  `,
-  info: css`
-    --tag-bg-color: var(--ads-v2-color-bg-info);
-    --tag-fg-color: var(--ads-v2-color-fg-info);
+  medium: css`
+    padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
   `,
 };
 
 export const StyledTag = styled.span<{
-  kind?: Kind;
+  size?: Size;
 }>`
   ${Variables}
 
-  ${({ kind }) => kind && Kinds[kind]}
+  ${({ size }) => size && TagSize[size]}
 
-  background-color: var(--tag-bg-color);
-  color: var(--tag-fg-color);
+  background-color: var(--ads-v2-color-bg-muted);
+  color: var(--ads-v2-color-fg);
   border-radius: var(--ads-v2-border-radius);
-
-  padding: 0 var(--ads-v2-spaces-2);
-
 `;
