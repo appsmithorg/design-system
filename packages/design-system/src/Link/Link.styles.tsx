@@ -26,11 +26,8 @@ export const StyledLink = styled(RouterLink)<{
 }>`
   ${Variables}
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   ${({ kind }) => kind && Kinds[kind]}
-
-
+  
   font-family: var(--ads-v2-font-family);
   color: var(--color);
 
