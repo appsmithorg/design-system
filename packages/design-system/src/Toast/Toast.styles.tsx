@@ -54,8 +54,11 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
 
   .Toastify__toast-icon {
     margin-right: var(--ads-v2-spaces-3);
-    align-items: flex-start;
+    align-self: flex-start;
     width: 1rem;
+
+    // TODO: This margin is not present in design. Remove this once heights are updated.
+    margin-top: var(--ads-v2-spaces-1);
   }
 
   ${Variables}
