@@ -1,5 +1,15 @@
 # @appsmithorg/design-system
 
+## 2.0.3
+
+### Patch Changes
+
+- [#367](https://github.com/appsmithorg/design-system/pull/367) [`7c15fd6`](https://github.com/appsmithorg/design-system/commit/7c15fd6250f5cc8f4fc5885cf2c39b5e02ee0d91) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Added icon size variations
+
+* [#366](https://github.com/appsmithorg/design-system/pull/366) [`79c60bb`](https://github.com/appsmithorg/design-system/commit/79c60bb8bd17e7cec9574a7fd65f323699c625e2) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add typescales to text
+
+- [#279](https://github.com/appsmithorg/design-system/pull/279) [`cee9d38`](https://github.com/appsmithorg/design-system/commit/cee9d3827d4b6fab09e79a1dbb688945ac77fc1a) Thanks [@keyurparalkar](https://github.com/keyurparalkar)! - feat: added item freeze functionality to draggable list
+
 ## 2.0.2
 
 ### Patch Changes
