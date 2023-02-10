@@ -2,4 +2,4 @@
 "@appsmithorg/design-system-old": patch
 ---
 
-fix: Ds build script
+chore: added money dollar icon

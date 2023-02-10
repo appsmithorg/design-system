@@ -3219,6 +3219,20 @@
     "@react-types/shared" "^3.16.0"
     "@swc/helpers" "^0.4.14"
 
+"@react-aria/checkbox@^3.7.1":
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/checkbox/-/checkbox-3.7.1.tgz#217ea3173ad37ae85cb39bcb9932eb5c1cde2e0b"
+  integrity sha512-3KRg/KrTRwQdw5Yg7gpbIKWWVt57PbGSEXAS/diQvRf9pTXbOuChTES8uVlcwF8q+3mKXc4ppzE3gsNQ5jOMqg==
+  dependencies:
+    "@react-aria/label" "^3.4.4"
+    "@react-aria/toggle" "^3.4.2"
+    "@react-aria/utils" "^3.14.2"
+    "@react-stately/checkbox" "^3.3.2"
+    "@react-stately/toggle" "^3.4.4"
+    "@react-types/checkbox" "^3.4.1"
+    "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
+
 "@react-aria/focus@^3.10.1":
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/@react-aria/focus/-/focus-3.10.1.tgz#624d02d2565151030a4156aeb17685d87f18ad58"
@@ -3283,6 +3297,30 @@
   resolved "https://registry.yarnpkg.com/@react-aria/ssr/-/ssr-3.4.1.tgz#79e8bb621487e8f52890c917d3c734f448ba95e7"
   integrity sha512-NmhoilMDyIfQiOSdQgxpVH2tC2u85Y0mVijtBNbI9kcDYLEiW/r6vKYVKtkyU+C4qobXhGMPfZ70PTc0lysSVA==
   dependencies:
+    "@swc/helpers" "^0.4.14"
+
+"@react-aria/switch@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/switch/-/switch-3.3.1.tgz#c0f92f417a78972a3a9d10592eb474698b827d5a"
+  integrity sha512-o9MvXiSK9c7rUZjA6oQ0PNlVCnHEctue6v6W8Vn4HNbQMfhJiWqiSSff4RFcgRgs8WsPsEqbT+vHi2kXykQzdA==
+  dependencies:
+    "@react-aria/toggle" "^3.4.2"
+    "@react-stately/toggle" "^3.4.4"
+    "@react-types/switch" "^3.2.5"
+    "@swc/helpers" "^0.4.14"
+
+"@react-aria/toggle@^3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@react-aria/toggle/-/toggle-3.4.2.tgz#1c57539a26722219979c80dcebfbd0701c518789"
+  integrity sha512-xokCGf0fn96mOMqQku5QW672iQoMsN9RMpFbKvvgg2seceh8ifblyAXElWf/6YmluOZSgUSZljDkFrbMMYlzVA==
+  dependencies:
+    "@react-aria/focus" "^3.10.1"
+    "@react-aria/interactions" "^3.13.1"
+    "@react-aria/utils" "^3.14.2"
+    "@react-stately/toggle" "^3.4.4"
+    "@react-types/checkbox" "^3.4.1"
+    "@react-types/shared" "^3.16.0"
+    "@react-types/switch" "^3.2.5"
     "@swc/helpers" "^0.4.14"
 
 "@react-aria/utils@^3.14.2":
@@ -3382,6 +3420,17 @@
     "@react-spring/shared" "~9.5.0"
     "@react-spring/types" "~9.5.0"
 
+"@react-stately/checkbox@^3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@react-stately/checkbox/-/checkbox-3.3.2.tgz#fd81866a7624c79cab2ec2c32234f164205a85e8"
+  integrity sha512-eU3zvWgQrcqS8UK8ZVkb3fMP816PeuN9N0/dOJKuOXXhkoLPuxtuja1oEqKU3sFMa5+bx3czZhhNIRpr60NAdw==
+  dependencies:
+    "@react-stately/toggle" "^3.4.4"
+    "@react-stately/utils" "^3.5.2"
+    "@react-types/checkbox" "^3.4.1"
+    "@react-types/shared" "^3.16.0"
+    "@swc/helpers" "^0.4.14"
+
 "@react-stately/radio@^3.6.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@react-stately/radio/-/radio-3.6.2.tgz#6a13e3f97d130fccc1b404673cbe1414ac018621"
@@ -3441,6 +3490,14 @@
   version "3.16.0"
   resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.16.0.tgz#cab7bf0376969d1773480ecb2d6da5aa91391db5"
   integrity sha512-IQgU4oAEvMwylEvaTsr2XB1G/mAoMe1JFYLD6G78v++oAR9l8o9MQxZ0YSeANDkqTamb2gKezGoT1RxvSKjVxw==
+
+"@react-types/switch@^3.2.5":
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/@react-types/switch/-/switch-3.2.5.tgz#e1db722e8beeed846cfcf9de94cad81b4e0ead78"
+  integrity sha512-DlUL0Bz79SUTRje/i8m6qn4Ipn+q8QnyIkyJhkoHeH1R0YNude8xZrBPWbj3zfdddAGDFSF1NzP69q0xmNAcTQ==
+  dependencies:
+    "@react-types/checkbox" "^3.4.1"
+    "@react-types/shared" "^3.16.0"
 
 "@rollup/plugin-commonjs@^22.0.0":
   version "22.0.1"
@@ -8472,6 +8529,11 @@ classnames@^2.2, classnames@^2.2.6:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
+
+classnames@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
+  integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
 
 clean-css@^4.2.3:
   version "4.2.4"

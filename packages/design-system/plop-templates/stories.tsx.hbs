@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { {{capitalize name}} } from "./{{capitalize name}}";
 
 export default {
-title: "Design System/{{capitalize name}}",
+  title: "Design System/{{capitalize name}}",
   component: {{capitalize name}},
 } as ComponentMeta<typeof {{capitalize name}}>;
 
@@ -13,8 +13,8 @@ const Template: ComponentStory<typeof {{capitalize name}}> = (args) => {
   return <{{capitalize name}} {...args} />;
 };
 
-export const {{capitalize name}}Example = Template.bind({});
-{{capitalize name}}Example.storyName = "{{capitalize name}}";
-{{capitalize name}}Example.args = {
+export const {{capitalize name}}Story = Template.bind({});
+{{capitalize name}}Story.storyName = "{{capitalize name}}";
+{{capitalize name}}Story.args = {
   //add arguments here
 };
