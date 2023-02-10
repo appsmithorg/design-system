@@ -38,7 +38,7 @@ function toast(content: string, options?: ToastProps) {
   const actionText = _.capitalize(options?.action?.actionText);
   const icon = getIconForToast(options?.kind);
   return toastifyToast(
-    <ToastBody>
+    <ToastBody kind="body-m">
       {content}
       {actionText && (
         <StyledButton
