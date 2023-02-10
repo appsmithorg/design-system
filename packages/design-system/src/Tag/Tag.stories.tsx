@@ -13,9 +13,9 @@ const Template: ComponentStory<typeof Tag> = (args) => {
   return <Tag {...args} />;
 };
 
-export const TagExample = Template.bind({});
-TagExample.storyName = "Tag";
-TagExample.args = {
+export const TagStory = Template.bind({});
+TagStory.storyName = "Tag";
+TagStory.args = {
   children: "contact@appsmith.com",
   size: "sm",
 };
