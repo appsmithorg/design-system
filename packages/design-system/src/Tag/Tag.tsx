@@ -23,7 +23,7 @@ function Tag({ children, ...rest }: TagProps) {
 Tag.displayName = "Tag";
 
 Tag.defaultProps = {
-  size: "small",
+  size: "sm",
 };
 
 export { Tag };

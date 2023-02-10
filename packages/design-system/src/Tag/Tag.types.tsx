@@ -1,6 +1,7 @@
 import React from "react";
+import { Sizes } from "../__config__/types";
 
-export type Size = "small" | "medium";
+export type Size = Extract<Sizes, "sm" | "md">;
 
 export type TagProps = {
   /** the size of the tag */

@@ -5,10 +5,10 @@ import { Icon } from "../Icon";
 const Variables = css``;
 
 const TagSize = {
-  small: css`
+  sm: css`
     padding: 0 var(--ads-v2-spaces-2);
   `,
-  medium: css`
+  md: css`
     padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
   `,
 };
