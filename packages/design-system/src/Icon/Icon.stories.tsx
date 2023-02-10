@@ -14,6 +14,13 @@ export default {
       },
     },
   },
+  argTypes: {
+    // adding this specifically to bring that sorting order in storybook
+    sizes: {
+      options: ["sm", "md", "lg", "xl", "xxl"],
+      control: { type: "radio" },
+    },
+  },
 } as ComponentMeta<typeof Icon>;
 
 // eslint-disable-next-line react/function-component-definition
@@ -26,5 +33,5 @@ IconStory.storyName = "Icon";
 IconStory.args = {
   name: "account-box-line",
   children: "",
-  size: "2rem",
+  size: "md",
 };
