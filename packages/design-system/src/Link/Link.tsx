@@ -13,7 +13,6 @@ import { Text } from "../Text";
  * It does not take an href prop and will do nothing with one.
  *
  * TODO
- * - Add text dependency
  * - get list of available typography link can be from design
  * @param props
  * @constructor
@@ -32,7 +31,7 @@ function Link(props: LinkProps) {
       to={props.to}
     >
       {props.endIcon && <StyledIcon name={props.endIcon} size="md" />}
-      <Text color="inherit" kind="body-m">
+      <Text color="inherit" kind="action-m">
         {props.children}
       </Text>
       {props.startIcon && <StyledIcon name={props.startIcon} size="md" />}
