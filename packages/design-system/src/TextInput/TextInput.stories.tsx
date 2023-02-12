@@ -80,7 +80,7 @@ export default {
     size: {
       control: {
         type: "radio",
-        options: ["sm", "md"],
+        options: ["md", "lg"],
       },
       description: "Size of the input",
       table: {

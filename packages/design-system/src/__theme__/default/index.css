@@ -115,7 +115,7 @@
   /** Used as default border color when --ads-v2-color-bg-brand is the default bg */
   --ads-v2-color-border-brand: var(--ads-v2-color-orange-500);
   /** Used for indicating error borders */
-  --ads-v2-color-border-error: var(--ads-v2-color-red-300);
+  --ads-v2-color-border-error: var(--ads-v2-color-red-400);
   /** Used for indicating success borders */
   --ads-v2-color-border-success: var(--ads-v2-color-green-600);
   /** Used for indicating warning borders */

@@ -5,8 +5,6 @@ import clsx from "classnames";
 
 import { TextInputProps } from "./TextInput.types";
 import {
-  Description,
-  ErrorMessage,
   Label,
   MainContainer,
   StyledInput,
@@ -15,6 +13,7 @@ import {
 } from "./TextInput.styles";
 import { useDOMRef } from "Hooks/useDomRef";
 import { Icon } from "Icon";
+import { Text } from "Text";
 import {
   TextInputEndIconClassName,
   TextInputIconClassName,
@@ -24,16 +23,16 @@ import {
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   (props, ref): JSX.Element => {
     const {
-      as,
+      as = "input",
       description,
       endIcon,
       errorMessage,
-      isDisabled,
-      isReadOnly,
-      isRequired,
+      isDisabled = false,
+      isReadOnly = false,
+      isRequired = false,
       label,
-      labelPosition,
-      size,
+      labelPosition = "top",
+      size = "md",
       startIcon,
       UNSAFE_height,
       UNSAFE_width,
@@ -60,6 +59,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
                     TextInputStartIconClassName,
                   )}
                   name={startIcon}
+                  size={size}
                 />
               ) : (
                 <Icon
@@ -67,6 +67,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
                     TextInputIconClassName,
                     TextInputStartIconClassName,
                   )}
+                  size={size}
                 >
                   {startIcon}
                 </Icon>
@@ -96,6 +97,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
                     TextInputEndIconClassName,
                   )}
                   name={endIcon}
+                  size={size}
                 />
               ) : (
                 <Icon
@@ -103,6 +105,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
                     TextInputIconClassName,
                     TextInputEndIconClassName,
                   )}
+                  size={size}
                 >
                   {endIcon}
                 </Icon>
@@ -111,11 +114,26 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           </TextInputContainer>
           {description && (
             // TODO: Replace with text component
-            <Description {...descriptionProps}>{description}</Description>
+            <Text
+              {...descriptionProps}
+              color="var(--ads-v2-color-fg)"
+              kind="body-s"
+              style={
+                isDisabled ? { opacity: "var(--ads-v2-opacity-disabled)" } : {}
+              }
+            >
+              {description}
+            </Text>
           )}
           {errorMessage && (
             // TODO: Replace with text component
-            <ErrorMessage {...errorMessageProps}>{errorMessage}</ErrorMessage>
+            <Text
+              {...errorMessageProps}
+              color="var(--ads-v2-color-fg-error)"
+              kind="body-s"
+            >
+              {errorMessage}
+            </Text>
           )}
         </TextInputSection>
       </MainContainer>
@@ -124,13 +142,5 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 );
 
 TextInput.displayName = "TextInput";
-
-TextInput.defaultProps = {
-  as: "input",
-  labelPosition: "top",
-  size: "sm",
-  isRequired: false,
-  isDisabled: false,
-};
 
 export { TextInput };

@@ -4,7 +4,7 @@ import {
   TextInputIconClassName,
   TextInputStartIconClassName,
 } from "./TextInput.constants";
-import { Size } from "./TextInput.types";
+import { TextInputSizes } from "./TextInput.types";
 
 const Variables = css`
   --text-input-color-border: var(--ads-v2-color-border);
@@ -14,19 +14,19 @@ const Variables = css`
 `;
 
 const Sizes = {
-  sm: css`
-    --text-input-padding: var(--ads-v2-spaces-3);
-    --text-input-font-size: 13px;
-  `,
   md: css`
-    --text-input-padding: var(--ads-v2-spaces-4);
+    --text-input-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
+    --text-input-font-size: 12px;
+  `,
+  lg: css`
+    --text-input-padding: var(--ads-v2-spaces-3);
     --text-input-font-size: 14px;
   `,
 };
 
 export const MainContainer = styled.div<{
   labelPosition?: "top" | "left";
-  size?: Size;
+  size?: TextInputSizes;
 }>`
   ${Variables}
 
@@ -46,7 +46,7 @@ export const MainContainer = styled.div<{
 `;
 
 export const Label = styled.label`
-  color: var(--ads-v2-color-fg-muted);
+  color: var(--ads-v2-color-fg);
 
   & > span {
     color: var(--ads-v2-color-fg-error);
@@ -74,8 +74,6 @@ export const TextInputContainer = styled.div<{
     padding: var(--text-input-padding);
 
     & > svg {
-      width: var(--ads-v2-spaces-5);
-      height: var(--ads-v2-spaces-5);
       color: inherit;
     }
   }
@@ -88,7 +86,10 @@ export const TextInputContainer = styled.div<{
     right: 0;
   }
 
-  ${({ disabled }) => disabled && `opacity: var(--ads-v2-opacity-disabled);`};
+  ${({ disabled }) =>
+    disabled &&
+    `opacity: var(--ads-v2-opacity-disabled);
+    cursor: not-allowed;`};
 `;
 
 export const StyledInput = styled.input<{
@@ -134,19 +135,23 @@ export const StyledInput = styled.input<{
       );
     `};
 
-  &:focus {
+  &:focus:enabled {
     outline: var(--ads-v2-border-width-outline) solid
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
   }
 
-  &:hover {
+  &:hover:enabled {
     --text-input-color-border: var(--ads-v2-color-border-emphasis);
   }
 
-  &:active,
-  &:focus {
+  &:active:enabled,
+  &:focus:enabled {
     --text-input-color-border: var(--ads-v2-color-border-emphasis-plus);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 
   ${({ hasError }) =>
@@ -154,14 +159,4 @@ export const StyledInput = styled.input<{
     css`
       --text-input-color-border: var(--ads-v2-color-border-error);
     `}
-`;
-
-export const Description = styled.div`
-  font-size: 13px;
-  color: var(--ads-v2-color-fg-muted);
-`;
-
-export const ErrorMessage = styled.div`
-  color: var(--ads-v2-color-fg-error);
-  font-size: 13px;
 `;
