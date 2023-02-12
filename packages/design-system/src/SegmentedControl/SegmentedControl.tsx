@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import clsx from "classnames";
 
 import { SegmentedControlProps } from "./SegmentedControl.types";
 import {
@@ -8,6 +9,11 @@ import {
 } from "./SegmentedControl.styles";
 import { Icon } from "Icon";
 import { Text } from "Text";
+import {
+  SegmentedControlClassName,
+  SegmentedControlOptionClassName,
+  SegmentedControlOptionContainerClassName,
+} from "./SegmentedControl.constants";
 
 function SegmentedControl(props: SegmentedControlProps) {
   const { className, defaultValue, onChange, options, ...rest } = props;
@@ -19,7 +25,10 @@ function SegmentedControl(props: SegmentedControlProps) {
   };
 
   return (
-    <StyledSegmentedControl className={className} {...rest}>
+    <StyledSegmentedControl
+      className={clsx(SegmentedControlClassName, className)}
+      {...rest}
+    >
       {options.map((option) => {
         const {
           endIcon,
@@ -31,12 +40,16 @@ function SegmentedControl(props: SegmentedControlProps) {
 
         return (
           <ControlContainer
+            className={SegmentedControlOptionContainerClassName}
             data-disabled={disableControl}
             data-selected={selectedValue === value}
             key={value}
             onClick={() => !disableControl && handleOnChange(value)}
           >
-            <ControlOption data-selected={selectedValue === value}>
+            <ControlOption
+              className={SegmentedControlOptionClassName}
+              data-selected={selectedValue === value}
+            >
               {/* if icon name is passed */}
               {startIcon && typeof startIcon === "string" && (
                 <Icon name={startIcon} size="lg" />
