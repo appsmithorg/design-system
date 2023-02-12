@@ -1,47 +1,24 @@
 import styled, { css } from "styled-components";
+import { YOUR_PROP_TYPE_1 } from "./Tab.types";
 
 const Variables = css`
-  --tab-color-border-bottom: transparent;
+  // Variables that are controlled, changed, or toggled entirely within this component
+  // are defined here and used in the component's styles.
 `;
 
-export const StyledTab = styled.div<{}>`
+// Variant style definitions
+const YOUR_VARIANTS = css`
+  // Styles for the variants defined in your type
+`;
+
+export const StyledTab = styled.span<{
+  // Props that affect styles are passed through here.
+  YOUR_PROP: YOUR_PROP_TYPE_1;
+}>`
   ${Variables}
 
-  :not(:first-child) {
-    margin-left: var(--ads-v2-spaces-3);
-  }
-  :not(:last-child) {
-    margin-right: var(--ads-v2-spaces-3);
-  }
+  /* Variant styles */
+  ${({ YOUR_PROP }) => YOUR_PROP && YOUR_VARIANTS[YOUR_PROP]} /* Base style */
 
-  :hover {
-    --tab-color-border-bottom: var(--ads-v2-color-border);
-  }
-
-  :focus {
-    --tab-color-border-bottom: var(--ads-v2-color-border-brand);
-  }
-
-  &[aria-selected="true"] {
-    --tab-color-border-bottom: var(--ads-v2-color-border-brand);
-  }
-
-  border-bottom: 2px solid var(--tab-color-border-bottom);
-`;
-
-export const StyledTabList = styled.div`
-  display: flex;
-
-  box-sizing: border-box;
-  height: 2rem;
-  border-bottom: 1px solid var(--ads-v2-color-border);
-`;
-
-export const StyledTabs = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const StyledTabPanel = styled.div`
-  margin-top: var(--ads-v2-spaces-5);
+  /* Additional styles and classes */
 `;
