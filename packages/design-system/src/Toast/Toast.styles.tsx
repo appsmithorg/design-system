@@ -29,10 +29,6 @@ const Variables = css`
 
   --toastify-spinner-color: #616161;
   --toastify-spinner-color-empty-area: #e0e0e0;
-
-  // TODO: Move box-shadow to theme once https://www.notion.so/appsmith/Box-shadows-enumerate-name-and-document-29c2d8490b4c4a42b4f381d82e761b87 is complete
-  --ads-v2-toast-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3),
-    0 8px 12px 0 rgba(0, 0, 0, 0.15);
 `;
 
 export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
@@ -49,7 +45,9 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
   }
 
   .Toastify__toast {
-    box-shadow: none;
+    // TODO: Move box-shadow to theme once https://www.notion.so/appsmith/Box-shadows-enumerate-name-and-document-29c2d8490b4c4a42b4f381d82e761b87 is complete
+    box-shadow: 0 1.9px 7px 0 rgba(42, 42, 42, 0.01),
+      0 15px 56px 0 rgba(42, 42, 42, 0.07);
   }
 
   .Toastify__toast-icon {
