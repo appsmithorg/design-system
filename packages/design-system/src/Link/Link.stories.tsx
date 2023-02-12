@@ -42,11 +42,18 @@ const Template: ComponentStory<typeof Link> = (args) => {
   return <Link {...args} />;
 };
 
-export const LinkExample = Template.bind({});
-LinkExample.storyName = "Link";
-LinkExample.args = {
+export const InternalLink = Template.bind({});
+InternalLink.args = {
   to: "old",
   children: "deprecated appsmith design system",
+  endIcon: "arrow-right-line",
+  kind: "primary",
+};
+
+export const ExternalLink = Template.bind({});
+ExternalLink.args = {
+  to: "https://appsmith.com",
+  children: "Appsmith",
   endIcon: "arrow-right-line",
   kind: "primary",
 };

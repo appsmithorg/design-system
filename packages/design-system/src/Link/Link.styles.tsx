@@ -21,9 +21,7 @@ const Kinds = {
     }
   `,
 };
-export const StyledLink = styled(RouterLink)<{
-  kind?: Kind;
-}>`
+export const Styles = css<{ kind?: Kind }>`
   ${Variables}
 
   ${({ kind }) => kind && Kinds[kind]}
@@ -41,6 +39,14 @@ export const StyledLink = styled(RouterLink)<{
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
   }
+`;
+
+export const StyledRouterLink = styled(RouterLink)<{ kind?: Kind }>`
+  ${Styles}
+`;
+
+export const StyledAnchor = styled.a<{ kind?: Kind }>`
+  ${Styles}
 `;
 
 export const StyledIcon = styled(Icon)`
