@@ -99,13 +99,13 @@ const Kinds = {
 
     &:hover:enabled {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis);
-      --button-color-fg: var(--ads-v2-color-fg-on-error-emphasis);
+      --button-color-fg: var(--ads-v2-color-fg-on-error);
       --button-color-border: transparent;
     }
 
     &:active:enabled {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis-plus);
-      --button-color-fg: var(--ads-v2-color-fg-on-error-emphasis);
+      --button-color-fg: var(--ads-v2-color-fg-on-error);
       --button-color-border: transparent;
     }
   `,
