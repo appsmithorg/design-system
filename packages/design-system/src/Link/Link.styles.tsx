@@ -27,7 +27,7 @@ export const StyledLink = styled(RouterLink)<{
   ${Variables}
 
   ${({ kind }) => kind && Kinds[kind]}
-  
+
   font-family: var(--ads-v2-font-family);
   color: var(--color);
 
@@ -44,5 +44,5 @@ export const StyledLink = styled(RouterLink)<{
 `;
 
 export const StyledIcon = styled(Icon)`
-  margin-left: var(--ads-v2-spaces-2);
+  margin: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2) var(--ads-v2-spaces-1) 0;
 `;
