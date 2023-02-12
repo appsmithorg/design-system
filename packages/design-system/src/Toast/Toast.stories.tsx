@@ -9,6 +9,17 @@ export default {
   argTypes: {
     content: {
       control: "text",
+      description: "The content the toast contains",
+      type: {
+        required: true,
+      },
+    },
+    kind: {
+      description: "visual style to be used indicating type of toast ",
+    },
+    action: {
+      description:
+        "An object that displays an action that can be triggered from the toast",
     },
   },
 } as ComponentMeta<typeof Toast>;
