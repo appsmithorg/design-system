@@ -68,7 +68,7 @@ function getIconForToast(kind: Kind) {
         <Icon
           color="var(--ads-v2-color-fg-success)"
           name="checkbox-circle-fill"
-          size="md"
+          size="lg"
         />
       );
 
@@ -77,7 +77,7 @@ function getIconForToast(kind: Kind) {
         <Icon
           color="var(--ads-v2-color-fg-error)"
           name="close-circle-fill"
-          size="md"
+          size="lg"
         />
       );
 
@@ -86,7 +86,7 @@ function getIconForToast(kind: Kind) {
         <Icon
           color="var(--ads-v2-color-fg-warning)"
           name="alert-fill"
-          size="md"
+          size="lg"
         />
       );
 
@@ -95,7 +95,7 @@ function getIconForToast(kind: Kind) {
         <Icon
           color="var(--ads-v2-color-fg-information)"
           name="information-fill"
-          size="md"
+          size="lg"
         />
       );
 
