@@ -1,5 +1,6 @@
 import React from "react";
 import { LinkProps as RouterLinkProps } from "react-router-dom";
+import { AriaLinkOptions } from "@react-aria/link";
 
 export type Kind = "primary" | "secondary";
 
@@ -17,4 +18,5 @@ export type LinkProps = {
   endIcon?: string;
   /** the kind of link */
   kind?: Kind;
-} & RouterLinkProps;
+} & RouterLinkProps &
+  AriaLinkOptions;

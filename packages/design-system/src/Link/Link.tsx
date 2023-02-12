@@ -24,7 +24,7 @@ function Link(props: LinkProps) {
 
   return (
     <StyledLink
-      {...linkProps}
+      {...(linkProps as LinkProps)}
       innerRef={ref}
       kind={props.kind}
       target={props.target}
