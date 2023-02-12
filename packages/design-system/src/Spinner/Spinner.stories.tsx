@@ -16,7 +16,5 @@ const Template: ComponentStory<typeof Spinner> = (args) => {
 export const SpinnerStory = Template.bind({});
 SpinnerStory.storyName = "Spinner";
 SpinnerStory.args = {
-  iconProps: {
-    size: "20px",
-  },
+  size: "sm",
 };

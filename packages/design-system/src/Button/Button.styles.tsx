@@ -4,9 +4,8 @@ import {
   ButtonContentIconEndClassName,
   ButtonContentIconStartClassName,
   ButtonLoadingClassName,
-  ButtonLoadingIconClassName,
 } from "./Button.constants";
-import { Size, Kind } from "./Button.types";
+import { ButtonSizes, Kind } from "./Button.types";
 
 const Variables = css`
   --button-color-bg: var(--ads-v2-color-bg);
@@ -15,26 +14,26 @@ const Variables = css`
   --button-font-weight: 600;
   --button-font-size: 14px;
   --button-icon-size: 16px;
-  --button-padding: 8px 12px;
+  --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
 `;
 
 const Sizes = {
   sm: css`
     --button-font-weight: 500;
     --button-font-size: 12px;
-    --button-padding: 4px 8px;
+    --button-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
     --button-icon-size: 12px;
   `,
   md: css`
     --button-font-weight: 600;
     --button-font-size: 14px;
-    --button-padding: 8px 12px;
+    --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
     --button-icon-size: 16px;
   `,
   lg: css`
     --button-font-weight: 600;
     --button-font-size: 16px;
-    --button-padding: 8px 16px;
+    --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-5);
     --button-icon-size: 18px;
   `,
 };
@@ -45,32 +44,32 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg-on-brand);
     --button-color-border: var(--ads-v2-color-border-brand);
 
-    &:hover {
+    &:hover:enabled {
       --button-color-bg: var(--ads-v2-color-bg-brand-emphasis);
       --button-color-fg: var(--ads-v2-color-fg-on-brand);
       --button-color-border: var(--ads-v2-color-border-brand-emphasis);
     }
 
-    &:active {
-      --button-color-bg: var(--ads-v2-color-bg-brand-emphasis);
+    &:active:enabled {
+      --button-color-bg: var(--ads-v2-color-bg-brand-emphasis-plus);
       --button-color-fg: var(--ads-v2-color-fg-on-brand);
       --button-color-border: var(--ads-v2-color-border-brand-emphasis);
     }
   `,
   secondary: css`
     --button-color-bg: var(--ads-v2-color-bg);
-    --button-color-fg: var(--ads-v2-color-fg-muted);
+    --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: var(--ads-v2-color-border);
 
-    &:hover {
+    &:hover:enabled {
       --button-color-bg: var(--ads-v2-color-bg-subtle);
-      --button-color-fg: var(--ads-v2-color-fg-muted);
+      --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border);
     }
 
-    &:active {
+    &:active:enabled {
       --button-color-bg: var(--ads-v2-color-bg-muted);
-      --button-color-fg: var(--ads-v2-color-fg-muted);
+      --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border-emphasis);
     }
   `,
@@ -79,14 +78,14 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: transparent;
 
-    &:hover {
-      --button-color-bg: var(--ads-v2-color-bg-subtle);
-      --button-color-fg: var(--ads-v2-color-fg-muted);
+    &:hover:enabled {
+      --button-color-bg: var(--ads-v2-color-bg-muted);
+      --button-color-fg: var(--ads-v2-color-fg);
     }
 
-    &:active {
-      --button-color-bg: var(--ads-v2-color-bg-muted);
-      --button-color-fg: var(--ads-v2-color-fg-muted);
+    &:active:enabled {
+      --button-color-bg: var(--ads-v2-color-bg-emphasis);
+      --button-color-fg: var(--ads-v2-color-fg);
     }
 
     &:disabled {
@@ -98,46 +97,22 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg-on-error);
     --button-color-border: transparent;
 
-    &:hover {
+    &:hover:enabled {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis);
-      --button-color-fg: var(--ads-v2-color-fg-on-error-emphasis);
+      --button-color-fg: var(--ads-v2-color-fg-on-error);
       --button-color-border: transparent;
     }
 
-    &:active {
+    &:active:enabled {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis-plus);
-      --button-color-fg: var(--ads-v2-color-fg-on-error-emphasis);
+      --button-color-fg: var(--ads-v2-color-fg-on-error);
       --button-color-border: transparent;
-    }
-  `,
-};
-
-const LoaderSizes = {
-  sm: css`
-    /* Loading icon size */
-    & > .${ButtonLoadingClassName} > .${ButtonLoadingIconClassName} > svg {
-      width: 12px;
-      height: 12px;
-    }
-  `,
-  md: css`
-    /* Loading icon size */
-    & > .${ButtonLoadingClassName} > .${ButtonLoadingIconClassName} > svg {
-      width: 16px;
-      height: 16px;
-    }
-  `,
-  lg: css`
-    /* Loading icon size */
-    & > .${ButtonLoadingClassName} > .${ButtonLoadingIconClassName} > svg {
-      width: 20px;
-      height: 20px;
     }
   `,
 };
 
 export const ButtonContent = styled.div<{
-  size?: Size;
+  size?: ButtonSizes;
 }>`
   /* Content is separated out to make opacity driven loader functionality. */
   /* Size style */
@@ -154,6 +129,7 @@ export const ButtonContent = styled.div<{
   height: 100%;
   box-sizing: border-box;
   padding: var(--button-padding);
+  border-radius: inherit;
 
   &
     > .${ButtonContentChildrenClassName},
@@ -177,7 +153,7 @@ export const ButtonContent = styled.div<{
 export const StyledButton = styled.button<{
   kind?: Kind;
   UNSAFE_height?: string;
-  size?: Size;
+  size?: ButtonSizes;
   UNSAFE_width?: string;
   isLoading?: boolean;
   disabled?: boolean;
@@ -187,14 +163,12 @@ export const StyledButton = styled.button<{
   /* Variant style */
   ${({ kind }) => kind && Kinds[kind]}
 
-  /* Loader size style */
-  ${({ size }) => size && LoaderSizes[size]}
-
   position: relative;
   cursor: pointer;
   border-radius: var(--ads-v2-border-radius);
   border: none;
   background-color: transparent;
+  color: var(--button-color-fg);
   ${({ UNSAFE_height }) => UNSAFE_height && `height: ${UNSAFE_height};`}
   ${({ UNSAFE_width }) => UNSAFE_width && `width: ${UNSAFE_width};`}
   padding: 0;
@@ -202,12 +176,10 @@ export const StyledButton = styled.button<{
   overflow: hidden;
 
   /* button disabled style */
-  ${({ disabled }) =>
-    disabled === true &&
-    css`
-      cursor: not-allowed;
-      opacity: var(--ads-v2-opacity-disabled);
-    `}
+  &:disabled {
+    cursor: not-allowed;
+    opacity: var(--ads-v2-opacity-disabled);
+  }
 
   /* Loader styles */
   & > .${ButtonLoadingClassName} {

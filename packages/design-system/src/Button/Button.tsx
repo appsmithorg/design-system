@@ -25,10 +25,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       className,
       endIcon,
-      isDisabled,
       isLoading,
       kind,
-      size,
+      size = "sm",
       startIcon,
       UNSAFE_height,
       UNSAFE_width,
@@ -50,7 +49,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         UNSAFE_height={UNSAFE_height}
         UNSAFE_width={UNSAFE_width}
         className={clsx(ButtonClassName, className)}
-        disabled={isDisabled}
         isLoading={isLoading}
         kind={kind}
         ref={buttonRef}
@@ -60,7 +58,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {isLoading === true && (
           <Spinner
             className={ButtonLoadingClassName}
-            iconProps={{ className: ButtonLoadingIconClassName }}
+            iconProps={{
+              className: ButtonLoadingIconClassName,
+            }}
+            size={size}
           />
         )}
 
@@ -72,9 +73,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               <Icon
                 className={ButtonContentIconStartClassName}
                 name={startIcon}
+                size={size}
               />
             ) : (
-              <Icon className={ButtonContentIconStartClassName}>
+              <Icon className={ButtonContentIconStartClassName} size={size}>
                 {startIcon}
               </Icon>
             )
@@ -88,9 +90,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {/* End Icon Section */}
           {endIcon ? (
             typeof endIcon === "string" ? (
-              <Icon className={ButtonContentIconEndClassName} name={endIcon} />
+              <Icon
+                className={ButtonContentIconEndClassName}
+                name={endIcon}
+                size={size}
+              />
             ) : (
-              <Icon className={ButtonContentIconEndClassName}>{endIcon}</Icon>
+              <Icon className={ButtonContentIconEndClassName} size={size}>
+                {endIcon}
+              </Icon>
             )
           ) : null}
         </ButtonContent>

@@ -13,7 +13,7 @@ const iconSizes: Record<IconSizes, string> = {
 };
 
 function Icon(props: IconProps) {
-  const { children, className, color, name, size, ...rest } = props;
+  const { children, className, color, name, size = "sm", ...rest } = props;
 
   if (!name && !children) return null;
 
