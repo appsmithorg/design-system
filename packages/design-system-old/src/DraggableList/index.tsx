@@ -131,85 +131,118 @@ export function DraggableList(props: any) {
 
   const bind: any = useDrag<any>((props: any) => {
     const originalIndex = props.args[0];
+    const isDragDisabled = props.args[1];
     const curIndex = order.current.indexOf(originalIndex);
     const pointerFromTop = props.xy[1];
-    /**
-     *  Checking for props.distance > 0 because:
-     *  this container is the first recipient of all mouse events
-     *  for self and children. Consequently, it treats a click as a drag request
-     *  and updates the position of the list item.
-     *  Checking for drag distance prevents this behavior.
-     */
-    if (listRef && listRef.current && props?.distance > 0) {
-      const containerCoordinates = listRef?.current.getBoundingClientRect();
-      const container = listRef.current;
-      if (containerCoordinates) {
-        const containerDistanceFromTop = containerCoordinates.top;
-        if (props.dragging) {
-          if (pointerFromTop < containerDistanceFromTop + itemHeight / 2) {
-            // Scroll inside container till first element in list is completely visible
-            if (container.scrollTop > 0) {
-              container.scrollTop -= itemHeight / 10;
-            }
-          } else if (
-            pointerFromTop >=
-            containerDistanceFromTop + container.clientHeight - itemHeight / 2
-          ) {
-            // Scroll inside container till container cannnot be scrolled more towards bottom
-            if (
-              container.scrollTop <=
-              springs.length * itemHeight -
-                container.clientHeight -
-                itemHeight / 2
+
+    if (isDragDisabled) {
+      props.cancel();
+    } else {
+      /**
+       *  Checking for props.distance > 0 because:
+       *  this container is the first recipient of all mouse events
+       *  for self and children. Consequently, it treats a click as a drag request
+       *  and updates the position of the list item.
+       *  Checking for drag distance prevents this behavior.
+       */
+      if (listRef && listRef.current && props?.distance > 0) {
+        const containerCoordinates = listRef?.current.getBoundingClientRect();
+        const container = listRef.current;
+        if (containerCoordinates) {
+          const containerDistanceFromTop = containerCoordinates.top;
+          if (props.dragging) {
+            if (pointerFromTop < containerDistanceFromTop + itemHeight / 2) {
+              // Scroll inside container till first element in list is completely visible
+              if (container.scrollTop > 0) {
+                container.scrollTop -= itemHeight / 10;
+              }
+            } else if (
+              pointerFromTop >=
+              containerDistanceFromTop + container.clientHeight - itemHeight / 2
             ) {
-              container.scrollTop += itemHeight / 10;
+              // Scroll inside container till container cannnot be scrolled more towards bottom
+              if (
+                container.scrollTop <=
+                springs.length * itemHeight -
+                  container.clientHeight -
+                  itemHeight / 2
+              ) {
+                container.scrollTop += itemHeight / 10;
+              }
+            }
+            // finding distance of current pointer from the top of the container to find the final position
+            // currIndex *  itemHeight for the initial position
+            // subtraction formar with latter for displacement
+            displacement.current =
+              pointerFromTop -
+              containerDistanceFromTop +
+              container.scrollTop -
+              curIndex * itemHeight -
+              itemHeight / 2;
+
+            if (!dragging.current && Math.abs(displacement.current) > 10) {
+              dragging.current = props.dragging;
+              updateDragging && updateDragging(dragging.current);
+            }
+          } else {
+            if (dragging.current) {
+              dragging.current = props.dragging;
+              updateDragging && updateDragging(dragging.current);
             }
           }
-          // finding distance of current pointer from the top of the container to find the final position
-          // currIndex *  itemHeight for the initial position
-          // subtraction formar with latter for displacement
-          displacement.current =
-            pointerFromTop -
-            containerDistanceFromTop +
-            container.scrollTop -
-            curIndex * itemHeight -
-            itemHeight / 2;
 
-          if (!dragging.current && Math.abs(displacement.current) > 10) {
-            dragging.current = props.dragging;
-            updateDragging && updateDragging(dragging.current);
-          }
-        } else {
-          if (dragging.current) {
-            dragging.current = props.dragging;
-            updateDragging && updateDragging(dragging.current);
-          }
-        }
+          const curRow = clamp(
+            Math.round(
+              (curIndex * itemHeight + displacement.current) / itemHeight,
+            ),
+            0,
+            items.length - 1,
+          );
 
-        const curRow = clamp(
-          Math.round(
-            (curIndex * itemHeight + displacement.current) / itemHeight,
-          ),
-          0,
-          items.length - 1,
-        );
-        const newOrder = [...order.current];
-        newOrder.splice(curRow, 0, newOrder.splice(curIndex, 1)[0]);
-        setSprings(
-          dragIdleSpringStyles(newOrder, {
-            down: props.down,
-            originalIndex,
-            curIndex,
-            y: Math.abs(displacement.current) > 10 ? displacement.current : 0,
-            itemHeight,
-          }),
-        );
-        if (curRow !== curIndex) {
-          // Feed springs new style data, they'll animate the view without causing a single render
-          if (!props.down) {
-            order.current = newOrder;
-            setSprings(updateSpringStyles(order.current, itemHeight));
-            debounce(onDrop, 400)(curIndex, curRow);
+          /**
+           * We check if the final position's item's dragging is enabled.
+           */
+          if (
+            !items[curRow].hasOwnProperty("isDragDisabled") ||
+            (items[curRow].hasOwnProperty("isDragDisabled") &&
+              !items[curRow].isDragDisabled)
+          ) {
+            const newOrder = [...order.current];
+            newOrder.splice(curRow, 0, newOrder.splice(curIndex, 1)[0]);
+            setSprings(
+              dragIdleSpringStyles(newOrder, {
+                down: props.down,
+                originalIndex,
+                curIndex,
+                y:
+                  Math.abs(displacement.current) > 10
+                    ? displacement.current
+                    : 0,
+                itemHeight,
+              }),
+            );
+            if (curRow !== curIndex) {
+              // Feed springs new style data, they'll animate the view without causing a single render
+              if (!props.down) {
+                order.current = newOrder;
+                setSprings(updateSpringStyles(order.current, itemHeight));
+                debounce(onDrop, 400)(curIndex, curRow);
+              }
+            }
+          } else {
+            // retain the order if an item's drag is disabled.
+            setSprings(
+              dragIdleSpringStyles(order.current, {
+                down: props.down,
+                originalIndex,
+                curIndex,
+                y:
+                  Math.abs(displacement.current) > 10
+                    ? displacement.current
+                    : 0,
+                itemHeight,
+              }),
+            );
           }
         }
       }
@@ -237,8 +270,15 @@ export function DraggableList(props: any) {
         }}
       >
         {springs.map(({ scale, y, zIndex }, i) => (
+          /**
+           * Passing 2nd arg to bind is a boolean value that represents if the item's drag is disabled or not.
+           */
           <animated.div
-            {...bind(i)}
+            {...bind(
+              i,
+              items[i].hasOwnProperty("isDragDisabled") &&
+                items[i].isDragDisabled,
+            )}
             data-rbd-draggable-id={items[i].id}
             //having a key of items[i].id will break in few places,
             //eg, primary columns in propertyPane of Table widget
