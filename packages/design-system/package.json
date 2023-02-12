@@ -91,6 +91,7 @@
     ]
   },
   "dependencies": {
+    "@radix-ui/react-tabs": "^1.0.2",
     "@react-aria/button": "^3.6.4",
     "@react-aria/tabs": "^3.3.4",
     "@react-stately/collections": "^3.5.1",
