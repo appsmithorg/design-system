@@ -8,9 +8,25 @@ export const StyledSegmentedControl = styled.div<{
   justify-content: space-between;
   gap: var(--ads-v2-spaces-2);
   background-color: var(--ads-v2-color-bg-muted);
-  color: var(--ads-v2-color-fg);
   padding: var(--ads-v2-spaces-1);
   border-radius: var(--ads-v2-border-radius);
+`;
+
+export const StyledSegment = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: var(--ads-v2-spaces-2);
+  height: 100%;
+  border: 1px solid transparent;
+  user-select: none;
+  border-radius: var(--ads-v2-border-radius);
+  padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
+
+  & > * {
+    color: var(--ads-v2-color-fg-muted);
+  }
 `;
 
 export const StyledControlContainer = styled.div`
@@ -30,6 +46,10 @@ export const StyledControlContainer = styled.div`
   &[data-selected="true"] {
     background-color: var(--ads-v2-color-bg);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+
+    & > ${StyledSegment} > * {
+      color: var(--ads-v2-color-fg);
+    }
   }
 
   /* Select all segments which is not a selected and last child */
@@ -51,17 +71,4 @@ export const StyledControlContainer = styled.div`
     height: 16px;
     background-color: var(--ads-v2-color-bg-muted);
   }
-`;
-
-export const StyledSegment = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  gap: var(--ads-v2-spaces-2);
-  height: 100%;
-  border: 1px solid transparent;
-  user-select: none;
-  border-radius: var(--ads-v2-border-radius);
-  padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
 `;
