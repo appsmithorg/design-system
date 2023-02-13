@@ -27,7 +27,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       endIcon,
       isLoading,
       kind,
-      size = "sm",
+      size,
       startIcon,
       UNSAFE_height,
       UNSAFE_width,
