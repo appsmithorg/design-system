@@ -65,6 +65,7 @@ import SettingsIcon from "remixicon-react/Settings5LineIcon";
 import EyeIcon from "remixicon-react/EyeLineIcon";
 import EyeOffIcon from "remixicon-react/EyeOffLineIcon";
 import CloseIcon from "remixicon-react/CloseLineIcon";
+import SubtractIcon from "remixicon-react/SubtractFillIcon";
 
 /* eslint-disable react/display-name */
 
@@ -398,6 +399,11 @@ export const ControlIcons: {
   QUESTION: (props: IconProps) => (
     <IconWrapper {...props}>
       <QuestionIcon />
+    </IconWrapper>
+  ),
+  COLUMN_UNFREEZE: (props: IconProps) => (
+    <IconWrapper {...props}>
+      <SubtractIcon />
     </IconWrapper>
   ),
 };
