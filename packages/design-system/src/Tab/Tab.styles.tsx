@@ -1,24 +1,50 @@
 import styled, { css } from "styled-components";
-import { YOUR_PROP_TYPE_1 } from "./Tab.types";
+import * as RadixTabs from "@radix-ui/react-tabs";
 
 const Variables = css`
-  // Variables that are controlled, changed, or toggled entirely within this component
-  // are defined here and used in the component's styles.
+  --tab-color: var(--ads-v2-color-fg-muted);
+  //--tab-border-bottom: none;
+  --tab-border-bottom: 1px solid var(--ads-v2-color-border);
 `;
 
-// Variant style definitions
-const YOUR_VARIANTS = css`
-  // Styles for the variants defined in your type
+export const StyledTabsList = styled(RadixTabs.List)`
+  //border-bottom: 1px solid var(--ads-v2-color-border);
 `;
+export const StyledTab = styled(RadixTabs.TabsTrigger)`
+  ${Variables};
 
-export const StyledTab = styled.span<{
-  // Props that affect styles are passed through here.
-  YOUR_PROP: YOUR_PROP_TYPE_1;
-}>`
-  ${Variables}
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 
-  /* Variant styles */
-  ${({ YOUR_PROP }) => YOUR_PROP && YOUR_VARIANTS[YOUR_PROP]} /* Base style */
+  &:hover {
+    --tab-border-bottom: 2px solid var(--ads-v2-color-border);
+    --tab-color: var(--ads-v2-color-fg);
+  }
 
-  /* Additional styles and classes */
+  &[aria-selected="true"],
+  &:active {
+    --tab-border-bottom: 2px solid var(--ads-v2-color-border-brand);
+    --tab-color: var(--ads-v2-color-fg);
+  }
+
+  &:focus {
+    --tab-color: var(--ads-v2-color-fg);
+  }
+
+  background-color: var(--ads-v2-color-bg);
+  border: none; // get rid of button styles
+  border-bottom: var(--tab-border-bottom);
+  color: var(--tab-color);
+
+  :not(:first-child) {
+    //margin-left: var(--ads-v2-spaces-2);
+    padding-left: var(--ads-v2-spaces-2);
+  }
+  :not(:last-child) {
+    //margin-right: var(--ads-v2-spaces-2);
+    padding-right: var(--ads-v2-spaces-2);
+  }
+
+  padding-bottom: var(--ads-v2-spaces-3);
 `;

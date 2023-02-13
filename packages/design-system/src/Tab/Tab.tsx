@@ -1,15 +1,43 @@
 import React from "react";
 import { useFocusRing } from "@react-aria/focus";
 
-import { TabProps } from "./Tab.types";
-import { StyledTab } from "./Tab.styles";
+import { StyledTab, StyledTabsList } from "./Tab.styles";
 
-function Tab({ children, YOUR_PROPS, ...rest }: TabProps) {
-  return <StyledTab {...rest}>{children}</StyledTab>;
+import * as RadixTabs from "@radix-ui/react-tabs";
+import {
+  TabsContentProps,
+  TabsListProps,
+  TabsProps,
+  TabsTriggerProps,
+} from "@radix-ui/react-tabs";
+
+import { Text } from "../Text";
+
+function Tabs(props: TabsProps) {
+  return (
+    <RadixTabs.Root defaultValue={props.defaultValue}>
+      {props.children}
+    </RadixTabs.Root>
+  );
 }
 
-Tab.displayName = "Tab";
+function TabsList(props: TabsListProps) {
+  return <StyledTabsList>{props.children}</StyledTabsList>;
+}
 
-Tab.defaultProps = {};
+function Tab(props: TabsTriggerProps) {
+  return (
+    <StyledTab value={props.value}>
+      <Text color="inherit" kind="action-m">
+        {props.children}
+      </Text>
+    </StyledTab>
+  );
+}
 
-export { Tab };
+function TabPanel(props: TabsContentProps) {
+  return (
+    <RadixTabs.Content value={props.value}>{props.children}</RadixTabs.Content>
+  );
+}
+export { Tabs, TabsList, Tab, TabPanel };
