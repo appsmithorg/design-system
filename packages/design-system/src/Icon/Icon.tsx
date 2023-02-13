@@ -35,8 +35,4 @@ function Icon(props: IconProps) {
 
 Icon.displayName = "Icon";
 
-Icon.defaultProps = {
-  size: "md",
-};
-
 export { Icon };
