@@ -4,15 +4,15 @@ import clsx from "classnames";
 import { SegmentedControlProps } from "./SegmentedControl.types";
 import {
   StyledSegmentedControl,
-  ControlOption,
-  ControlContainer,
+  StyledSegment,
+  StyledControlContainer,
 } from "./SegmentedControl.styles";
 import { Icon } from "Icon";
 import { Text } from "Text";
 import {
   SegmentedControlClassName,
-  SegmentedControlOptionClassName,
-  SegmentedControlOptionContainerClassName,
+  SegmentedControlSegmentClassName,
+  SegmentedControlSegmentsContainerClassName,
 } from "./SegmentedControl.constants";
 
 function SegmentedControl(props: SegmentedControlProps) {
@@ -32,22 +32,22 @@ function SegmentedControl(props: SegmentedControlProps) {
       {options.map((option) => {
         const {
           endIcon,
-          isDisabled: disableControl,
+          isDisabled: isSegmentDisabled,
           label,
           startIcon,
           value,
         } = option;
 
         return (
-          <ControlContainer
-            className={SegmentedControlOptionContainerClassName}
-            data-disabled={disableControl}
+          <StyledControlContainer
+            className={SegmentedControlSegmentsContainerClassName}
+            data-disabled={isSegmentDisabled}
             data-selected={selectedValue === value}
             key={value}
-            onClick={() => !disableControl && handleOnChange(value)}
+            onClick={() => !isSegmentDisabled && handleOnChange(value)}
           >
-            <ControlOption
-              className={SegmentedControlOptionClassName}
+            <StyledSegment
+              className={SegmentedControlSegmentClassName}
               data-selected={selectedValue === value}
             >
               {/* if icon name is passed */}
@@ -70,8 +70,8 @@ function SegmentedControl(props: SegmentedControlProps) {
               {endIcon && typeof endIcon !== "string" && (
                 <Icon size="lg">endIcon</Icon>
               )}
-            </ControlOption>
-          </ControlContainer>
+            </StyledSegment>
+          </StyledControlContainer>
         );
       })}
     </StyledSegmentedControl>

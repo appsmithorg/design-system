@@ -13,7 +13,7 @@ export const StyledSegmentedControl = styled.div<{
   border-radius: var(--ads-v2-border-radius);
 `;
 
-export const ControlContainer = styled.div`
+export const StyledControlContainer = styled.div`
   display: flex;
   align-items: center;
   position: relative;
@@ -32,6 +32,7 @@ export const ControlContainer = styled.div`
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
   }
 
+  /* Select all segments which is not a selected and last child */
   &:not(:last-child):not([data-selected="true"]):after {
     content: "";
     position: absolute;
@@ -52,7 +53,7 @@ export const ControlContainer = styled.div`
   }
 `;
 
-export const ControlOption = styled.span`
+export const StyledSegment = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
