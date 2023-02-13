@@ -44,8 +44,6 @@ export const StyledContent = styled(Content)`
   max-width: 90vw;
   max-height: 85vh;
   padding: var(--ads-v2-spaces-6) var(--ads-v2-spaces-5);
-  font-family: var(--ads-v2-font-family);
-  color: var(--ads-v2-color-fg);
   animation: ${contentShow} 250ms cubic-bezier(0.16, 1, 0.3, 1);
 `;
 
@@ -53,9 +51,6 @@ export const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: var(--ads-v2-font-family);
-  font-size: var(--ads-v2-font-size-10);
-  font-weight: 600;
   padding-bottom: var(--ads-v2-spaces-3);
 `;
 

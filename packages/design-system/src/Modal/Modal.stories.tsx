@@ -10,6 +10,7 @@ import {
   ModalFooter,
 } from "./Modal";
 import { Button } from "../Button";
+import { Text } from "../Text";
 
 export default {
   title: "Design System/Modal",
@@ -69,11 +70,19 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 
   return (
     <>
-      <Button onClick={handleClose}>Open Modal</Button>
+      <Button onPress={handleClose}>Open Modal</Button>
       <Modal {...args}>
         <ModalContent>
           <ModalHeader onClose={handleClose}>Modal Header</ModalHeader>
-          <ModalBody>Test body</ModalBody>
+          <ModalBody>
+            <Text kind="body-m">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              tincidunt, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, et
+              aliquam nisl nisl sit amet nisl. Sed tincidunt, nisl eget aliquam
+              tincidunt, nunc nisl aliquam nisl, et aliquam nisl nisl sit amet
+              nisl.
+            </Text>
+          </ModalBody>
           <ModalFooter>
             <Button kind="secondary" size="md">
               Cancel
@@ -89,7 +98,39 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 };
 
 export const ModalStory = Template.bind({});
-ModalStory.storyName = "Modal";
+ModalStory.storyName = "With Footer";
 ModalStory.args = {
+  open: false,
+};
+
+// eslint-disable-next-line react/function-component-definition
+const TemplateTwo: ComponentStory<typeof Modal> = (args) => {
+  const [{ open }, updateArgs] = useArgs();
+  const handleClose = () => updateArgs({ open: !open });
+
+  return (
+    <>
+      <Button onPress={handleClose}>Open Modal</Button>
+      <Modal {...args}>
+        <ModalContent>
+          <ModalHeader onClose={handleClose}>Modal Header</ModalHeader>
+          <ModalBody>
+            <Text kind="body-m">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              tincidunt, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, et
+              aliquam nisl nisl sit amet nisl. Sed tincidunt, nisl eget aliquam
+              tincidunt, nunc nisl aliquam nisl, et aliquam nisl nisl sit amet
+              nisl.
+            </Text>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+};
+
+export const ModalStoryTwo = TemplateTwo.bind({});
+ModalStoryTwo.storyName = "Without Footer";
+ModalStoryTwo.args = {
   open: false,
 };

@@ -16,6 +16,7 @@ import {
   ModalContentHeaderClassName,
   ModalContentHeaderCloseButtonClassName,
 } from "./Modal.constants";
+import { Text } from "Text";
 
 function ModalContent(props: ModalContentProps) {
   const { children, ...rest } = props;
@@ -32,8 +33,9 @@ function ModalContent(props: ModalContentProps) {
 function ModalHeader({ children, onClose }: ModalHeaderProps) {
   return (
     <StyledHeader className={ModalContentHeaderClassName}>
-      {/* TODO: Replace this with text component */}
-      {children}
+      <Text as="h3" kind="heading-m">
+        {children}
+      </Text>
       <StyledClose
         aria-label="Close"
         className={ModalContentHeaderCloseButtonClassName}
@@ -42,7 +44,7 @@ function ModalHeader({ children, onClose }: ModalHeaderProps) {
         <Icon
           color="var(--ads-v2-color-fg-muted)"
           name="close-line"
-          size="24px"
+          size="xl"
         />
       </StyledClose>
     </StyledHeader>
