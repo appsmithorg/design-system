@@ -11,6 +11,7 @@ function Tooltip(props: TooltipProps) {
   const { children, content, ...rest } = props;
   return (
     <RCTooltip
+      mouseEnterDelay={0.5}
       overlay={
         <Text color="var(--tooltip-color)" kind="body-s">
           {content}
