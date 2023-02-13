@@ -4,14 +4,9 @@ import { useFocusRing } from "@react-aria/focus";
 import { StyledTab, StyledTabsList } from "./Tab.styles";
 
 import * as RadixTabs from "@radix-ui/react-tabs";
-import {
-  TabsContentProps,
-  TabsListProps,
-  TabsProps,
-  TabsTriggerProps,
-} from "@radix-ui/react-tabs";
 
 import { Text } from "../Text";
+import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
 
 function Tabs(props: TabsProps) {
   return (
@@ -25,7 +20,7 @@ function TabsList(props: TabsListProps) {
   return <StyledTabsList>{props.children}</StyledTabsList>;
 }
 
-function Tab(props: TabsTriggerProps) {
+function Tab(props: TabProps) {
   return (
     <StyledTab value={props.value}>
       <Text color="inherit" kind="action-m">
@@ -35,7 +30,7 @@ function Tab(props: TabsTriggerProps) {
   );
 }
 
-function TabPanel(props: TabsContentProps) {
+function TabPanel(props: TabPanelProps) {
   return (
     <RadixTabs.Content value={props.value}>{props.children}</RadixTabs.Content>
   );
