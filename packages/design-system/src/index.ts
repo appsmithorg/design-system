@@ -6,5 +6,7 @@ export * from "./Divider";
 export * from "./Icon";
 export * from "./Radio";
 export * from "./Switch";
+export * from "./Tag";
 export * from "./Text";
 export * from "./Toast";
+export * from "./Tooltip";

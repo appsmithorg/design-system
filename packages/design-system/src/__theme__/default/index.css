@@ -49,7 +49,6 @@
   /** Used for information background */
   --ads-v2-color-bg-information: var(--ads-v2-color-blue-100);
 
-
   /**
     * ===========================================*
     * ========== Foreground Colors ==============*
@@ -73,6 +72,8 @@
   --ads-v2-color-fg-on-brand-secondary: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-emphasis-plus */
   --ads-v2-color-fg-on-emphasis-plus: var(--ads-v2-color-white);
+  /** Text color for background --ads-v2-color-bg-emphasis-max */
+  --ads-v2-color-fg-on-emphasis-max: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-error */
   --ads-v2-color-fg-on-error: var(--ads-v2-color-red-600);
   /** Text color for background --ads-v2-color-bg-success */
