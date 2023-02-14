@@ -64,7 +64,76 @@ export default {
 } as ComponentMeta<typeof Modal>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Modal> = (args) => {
+const ModalHeaderTemplate: ComponentStory<typeof Modal> = (args) => {
+  const [{ open }, updateArgs] = useArgs();
+  const handleClose = () => updateArgs({ open: !open });
+
+  return (
+    <Modal {...args}>
+      <ModalContent>
+        <ModalHeader onClose={handleClose}>Modal Header</ModalHeader>
+      </ModalContent>
+    </Modal>
+  );
+};
+
+export const ModalHeaderStory = ModalHeaderTemplate.bind({});
+ModalHeaderStory.storyName = "Header";
+ModalHeaderStory.args = {
+  open: true,
+};
+
+// eslint-disable-next-line react/function-component-definition
+const ModalBodyTemplate: ComponentStory<typeof Modal> = (args) => {
+  return (
+    <Modal {...args}>
+      <ModalContent>
+        <ModalBody>
+          <Text kind="body-m">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            tincidunt, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, et
+            aliquam nisl nisl sit amet nisl. Sed tincidunt, nisl eget aliquam
+            tincidunt, nunc nisl aliquam nisl, et aliquam nisl nisl sit amet
+            nisl.
+          </Text>
+        </ModalBody>
+      </ModalContent>
+    </Modal>
+  );
+};
+
+export const ModalBodyStory = ModalBodyTemplate.bind({});
+ModalBodyStory.storyName = "Body";
+ModalBodyStory.args = {
+  open: true,
+};
+
+// eslint-disable-next-line react/function-component-definition
+const ModalFooterTemplate: ComponentStory<typeof Modal> = (args) => {
+  return (
+    <Modal {...args}>
+      <ModalContent>
+        <ModalFooter>
+          <Button kind="secondary" size="md">
+            Cancel
+          </Button>
+          <Button kind="primary" size="md">
+            Save
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  );
+};
+
+export const ModalFooterStory = ModalFooterTemplate.bind({});
+ModalFooterStory.storyName = "Footer";
+ModalFooterStory.args = {
+  open: true,
+};
+
+// eslint-disable-next-line react/function-component-definition
+const ModalWithFooterTemplate: ComponentStory<typeof Modal> = (args) => {
   const [{ open }, updateArgs] = useArgs();
   const handleClose = () => updateArgs({ open: !open });
 
@@ -97,14 +166,14 @@ const Template: ComponentStory<typeof Modal> = (args) => {
   );
 };
 
-export const ModalStory = Template.bind({});
+export const ModalStory = ModalWithFooterTemplate.bind({});
 ModalStory.storyName = "With Footer";
 ModalStory.args = {
   open: false,
 };
 
 // eslint-disable-next-line react/function-component-definition
-const TemplateTwo: ComponentStory<typeof Modal> = (args) => {
+const ModalWithoutFooter: ComponentStory<typeof Modal> = (args) => {
   const [{ open }, updateArgs] = useArgs();
   const handleClose = () => updateArgs({ open: !open });
 
@@ -129,7 +198,7 @@ const TemplateTwo: ComponentStory<typeof Modal> = (args) => {
   );
 };
 
-export const ModalStoryTwo = TemplateTwo.bind({});
+export const ModalStoryTwo = ModalWithoutFooter.bind({});
 ModalStoryTwo.storyName = "Without Footer";
 ModalStoryTwo.args = {
   open: false,
