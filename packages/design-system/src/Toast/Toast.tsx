@@ -10,10 +10,7 @@ import { Icon } from "../Icon";
 
 /**
  * TODO:
- * - Add a variant that carries a link
- * - Add a way to attach an action to that link
  * - Look up accessibility features for toasts (spectrum, MDN, what toastify does and does not support)
- * - Add a control for the content of toast in the story
  * @constructor
  */
 
