@@ -7,3 +7,4 @@ export * from "./Radio";
 export * from "./Switch";
 export * from "./Tab";
 export * from "./Text";
+export * from "./Tooltip";
