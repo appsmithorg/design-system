@@ -214,7 +214,7 @@ export const StyledButton = styled.button<{
 
   /* Loading styles */
   &[data-loading="true"] {
-    cursor: wait;
+    cursor: not-allowed;
 
     & > ${ButtonContent} {
       opacity: var(--ads-v2-opacity-disabled);
