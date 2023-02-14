@@ -44,6 +44,10 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 
     return (
       <MainContainer labelPosition={labelPosition} size={size}>
+        {/* TODO: replace this with text component */}
+        {/* Issue: adding kind while implementing
+        text is throwing typescript error. 
+        https://stackoverflow.com/questions/68073958/cant-use-href-with-iconbuttonprops*/}
         <Label {...labelProps}>
           {label}
           {isRequired && <span>*</span>}
