@@ -57,13 +57,13 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg-on-brand);
     --button-color-border: var(--ads-v2-color-border-brand);
 
-    &:hover:enabled {
+    &:hover:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-brand-emphasis);
       --button-color-fg: var(--ads-v2-color-fg-on-brand);
       --button-color-border: var(--ads-v2-color-border-brand-emphasis);
     }
 
-    &:active:enabled {
+    &:active:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-brand-emphasis-plus);
       --button-color-fg: var(--ads-v2-color-fg-on-brand);
       --button-color-border: var(--ads-v2-color-border-brand-emphasis);
@@ -74,13 +74,13 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: var(--ads-v2-color-border);
 
-    &:hover:enabled {
+    &:hover:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-subtle);
       --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border);
     }
 
-    &:active:enabled {
+    &:active:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-muted);
       --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border-emphasis);
@@ -91,12 +91,12 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: transparent;
 
-    &:hover:enabled {
+    &:hover:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-muted);
       --button-color-fg: var(--ads-v2-color-fg);
     }
 
-    &:active:enabled {
+    &:active:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-emphasis);
       --button-color-fg: var(--ads-v2-color-fg);
     }
@@ -110,13 +110,13 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg-on-error);
     --button-color-border: transparent;
 
-    &:hover:enabled {
+    &:hover:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis);
       --button-color-fg: var(--ads-v2-color-fg-on-error);
       --button-color-border: transparent;
     }
 
-    &:active:enabled {
+    &:active:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis-plus);
       --button-color-fg: var(--ads-v2-color-fg-on-error);
       --button-color-border: transparent;
@@ -167,7 +167,6 @@ export const StyledButton = styled.button<{
   UNSAFE_height?: string;
   size?: ButtonSizes;
   UNSAFE_width?: string;
-  isLoading?: boolean;
   disabled?: boolean;
 }>`
   ${Variables}
@@ -214,19 +213,17 @@ export const StyledButton = styled.button<{
   }
 
   /* Loading styles */
-  ${({ isLoading }) =>
-    isLoading === true &&
-    css`
-      pointer-events: none;
+  &[data-loading="true"] {
+    cursor: wait;
 
-      & > ${ButtonContent} {
-        opacity: var(--ads-v2-opacity-disabled);
-      }
+    & > ${ButtonContent} {
+      opacity: var(--ads-v2-opacity-disabled);
+    }
 
-      & > ${ButtonContent} > * {
-        visibility: hidden;
-      }
-    `}
+    & > ${ButtonContent} > * {
+      visibility: hidden;
+    }
+  }
 
   /* Focus styles */
   &:focus-visible {

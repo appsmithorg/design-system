@@ -33,6 +33,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       UNSAFE_width,
       ...rest
     } = props;
+    // disable button when loading
+    rest.onPress = props.isLoading ? undefined : props.onPress;
     const buttonRef = useDOMRef(ref);
     const { buttonProps } = useButton(
       {
@@ -49,7 +51,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         UNSAFE_height={UNSAFE_height}
         UNSAFE_width={UNSAFE_width}
         className={clsx(ButtonClassName, className)}
-        isLoading={isLoading}
+        data-loading={isLoading}
         kind={kind}
         ref={buttonRef}
         size={size}
