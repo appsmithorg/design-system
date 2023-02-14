@@ -17,13 +17,14 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Button> = (args) => {
-  return <Button {...args}>button</Button>;
+const Template: ComponentStory<typeof Button> = ({ children, ...args }) => {
+  return <Button {...args}>{children}</Button>;
 };
 
 export const ButtonStory = Template.bind({});
 ButtonStory.storyName = "Button";
 ButtonStory.args = {
+  children: "button",
   onPress: () => alert("Button clicked!"),
   startIcon: "arrow-left-line",
   endIcon: "arrow-right-line",
