@@ -3,24 +3,24 @@ import { useFocusRing } from "@react-aria/focus";
 import { useTextField } from "@react-aria/textfield";
 import clsx from "classnames";
 
-import { TextInputProps } from "./TextInput.types";
+import { InputProps } from "./Input.types";
 import {
   Label,
   MainContainer,
   StyledInput,
-  TextInputSection,
-  TextInputContainer,
-} from "./TextInput.styles";
+  InputSection,
+  InputContainer,
+} from "./Input.styles";
 import { useDOMRef } from "Hooks/useDomRef";
 import { Icon } from "Icon";
 import { Text } from "Text";
 import {
-  TextInputEndIconClassName,
-  TextInputIconClassName,
-  TextInputStartIconClassName,
-} from "./TextInput.constants";
+  InputEndIconClassName,
+  InputIconClassName,
+  InputStartIconClassName,
+} from "./Input.constants";
 
-const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   (props, ref): JSX.Element => {
     const {
       as = "input",
@@ -37,9 +37,9 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       UNSAFE_height,
       UNSAFE_width,
     } = props;
-    const textInputRef = useDOMRef(ref);
+    const inputRef = useDOMRef(ref);
     const { descriptionProps, errorMessageProps, inputProps, labelProps } =
-      useTextField(props, textInputRef);
+      useTextField(props, inputRef);
     const { focusProps, isFocusVisible } = useFocusRing();
 
     return (
@@ -52,25 +52,19 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           {label}
           {isRequired && <span>*</span>}
         </Label>
-        <TextInputSection>
-          <TextInputContainer disabled={isDisabled || isReadOnly}>
+        <InputSection>
+          <InputContainer disabled={isDisabled || isReadOnly}>
             {/* Start Icon Section */}
             {startIcon && as === "input" ? (
               typeof startIcon === "string" ? (
                 <Icon
-                  className={clsx(
-                    TextInputIconClassName,
-                    TextInputStartIconClassName,
-                  )}
+                  className={clsx(InputIconClassName, InputStartIconClassName)}
                   name={startIcon}
                   size={size}
                 />
               ) : (
                 <Icon
-                  className={clsx(
-                    TextInputIconClassName,
-                    TextInputStartIconClassName,
-                  )}
+                  className={clsx(InputIconClassName, InputStartIconClassName)}
                   size={size}
                 >
                   {startIcon}
@@ -89,33 +83,27 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
               hasError={!!errorMessage}
               hasStartIcon={!!startIcon}
               isFocusVisible={isFocusVisible}
-              ref={textInputRef}
+              ref={inputRef}
               renderer={as}
             />
             {/* End Icon Section */}
             {endIcon && as === "input" ? (
               typeof endIcon === "string" ? (
                 <Icon
-                  className={clsx(
-                    TextInputIconClassName,
-                    TextInputEndIconClassName,
-                  )}
+                  className={clsx(InputIconClassName, InputEndIconClassName)}
                   name={endIcon}
                   size={size}
                 />
               ) : (
                 <Icon
-                  className={clsx(
-                    TextInputIconClassName,
-                    TextInputEndIconClassName,
-                  )}
+                  className={clsx(InputIconClassName, InputEndIconClassName)}
                   size={size}
                 >
                   {endIcon}
                 </Icon>
               )
             ) : null}
-          </TextInputContainer>
+          </InputContainer>
           {description && (
             // TODO: Replace with text component
             <Text
@@ -139,12 +127,12 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
               {errorMessage}
             </Text>
           )}
-        </TextInputSection>
+        </InputSection>
       </MainContainer>
     );
   },
 );
 
-TextInput.displayName = "TextInput";
+Input.displayName = "Input";
 
-export { TextInput };
+export { Input };

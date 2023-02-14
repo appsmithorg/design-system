@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { TextInput } from "./TextInput";
+import { Input } from "./Input";
 
 export default {
-  title: "Design System/TextInput",
-  component: TextInput,
+  title: "Design System/Input",
+  component: Input,
   argTypes: {
     as: {
       control: {
@@ -147,16 +147,16 @@ export default {
     },
   },
   parameters: { controls: { sort: "requiredFirst" } },
-} as ComponentMeta<typeof TextInput>;
+} as ComponentMeta<typeof Input>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof TextInput> = (args) => {
-  return <TextInput {...args} />;
+const Template: ComponentStory<typeof Input> = (args) => {
+  return <Input {...args} />;
 };
 
-export const TextInputExample = Template.bind({});
-TextInputExample.storyName = "TextInput";
-TextInputExample.args = {
+export const InputExample = Template.bind({});
+InputExample.storyName = "Input";
+InputExample.args = {
   label: "Label",
   placeholder: "Placeholder",
   description: "Description",

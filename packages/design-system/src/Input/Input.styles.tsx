@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 import {
-  TextInputEndIconClassName,
-  TextInputIconClassName,
-  TextInputStartIconClassName,
-} from "./TextInput.constants";
-import { TextInputSizes } from "./TextInput.types";
+  InputEndIconClassName,
+  InputIconClassName,
+  InputStartIconClassName,
+} from "./Input.constants";
+import { InputSizes } from "./Input.types";
 
 const Variables = css`
   --text-input-color-border: var(--ads-v2-color-border);
@@ -32,7 +32,7 @@ const Sizes = {
 
 export const MainContainer = styled.div<{
   labelPosition?: "top" | "left";
-  size?: TextInputSizes;
+  size?: InputSizes;
 }>`
   ${Variables}
 
@@ -60,13 +60,13 @@ export const Label = styled.label`
   }
 `;
 
-export const TextInputSection = styled.div`
+export const InputSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: var(--ads-v2-spaces-2);
 `;
 
-export const TextInputContainer = styled.div<{
+export const InputContainer = styled.div<{
   disabled?: boolean;
 }>`
   position: relative;
@@ -75,7 +75,7 @@ export const TextInputContainer = styled.div<{
   width: 100%;
   color: var(--text-input-color);
 
-  & .${TextInputIconClassName} {
+  & .${InputIconClassName} {
     position: absolute;
     padding: var(--text-input-padding-y) var(--text-input-padding-x);
 
@@ -84,11 +84,11 @@ export const TextInputContainer = styled.div<{
     }
   }
 
-  & .${TextInputIconClassName}.${TextInputStartIconClassName} {
+  & .${InputIconClassName}.${InputStartIconClassName} {
     left: 0;
   }
 
-  & .${TextInputIconClassName}.${TextInputEndIconClassName} {
+  & .${InputIconClassName}.${InputEndIconClassName} {
     right: 0;
   }
 
