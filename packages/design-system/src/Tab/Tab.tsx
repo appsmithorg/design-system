@@ -10,7 +10,7 @@ import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
 
 function Tabs(props: TabsProps) {
   return (
-    <RadixTabs.Root defaultValue={props.defaultValue}>
+    <RadixTabs.Root defaultValue={props.defaultValue} {...props}>
       {props.children}
     </RadixTabs.Root>
   );
