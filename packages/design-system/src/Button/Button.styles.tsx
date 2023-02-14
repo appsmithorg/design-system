@@ -15,6 +15,7 @@ const Variables = css`
   --button-font-size: 14px;
   --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
   --button-height: 24px;
+  --button-gap: var(--ads-v2-spaces-2);
 `;
 
 const Sizes = {
@@ -22,16 +23,19 @@ const Sizes = {
     --button-font-weight: 500;
     --button-font-size: 12px;
     --button-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
+    --button-gap: var(--ads-v2-spaces-2);
   `,
   md: css`
     --button-font-weight: 600;
     --button-font-size: 14px;
     --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
+    --button-gap: var(--ads-v2-spaces-2);
   `,
   lg: css`
     --button-font-weight: 600;
     --button-font-size: 16px;
     --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-5);
+    --button-gap: var(--ads-v2-spaces-3);
   `,
 };
 
@@ -131,7 +135,7 @@ export const ButtonContent = styled.div<{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: var(--ads-v2-spaces-2);
+  gap: var(--button-gap);
   background-color: var(--button-color-bg);
   border: 1px solid var(--button-color-border);
   width: 100%;
@@ -225,7 +229,7 @@ export const StyledButton = styled.button<{
     `}
 
   /* Focus styles */
-  &:focus, &:focus-visible {
+  &:focus-visible {
     outline: var(--ads-v2-border-width-outline) solid
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
