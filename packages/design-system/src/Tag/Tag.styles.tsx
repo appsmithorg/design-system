@@ -33,6 +33,8 @@ export const StyledTag = styled.span<{
 
 export const StyledIcon = styled(Icon)`
   margin-left: var(--ads-v2-spaces-1);
+  margin-top: var(--ads-v2-spaces-1);
+  margin-bottom: var(--ads-v2-spaces-1);
   &:hover {
     cursor: pointer;
   }
