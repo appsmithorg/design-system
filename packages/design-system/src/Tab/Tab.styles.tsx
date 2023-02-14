@@ -10,6 +10,10 @@ const Variables = css`
 export const StyledTabsList = styled(RadixTabs.List)`
   //border-bottom: 1px solid var(--ads-v2-color-border);
 `;
+
+export const StyledTabPanel = styled(RadixTabs.Content)`
+  margin-top: var(--ads-v2-spaces-4);
+`;
 export const StyledTab = styled(RadixTabs.TabsTrigger)`
   ${Variables};
 

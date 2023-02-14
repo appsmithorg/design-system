@@ -1,7 +1,7 @@
 import React from "react";
 import { useFocusRing } from "@react-aria/focus";
 
-import { StyledTab, StyledTabsList } from "./Tab.styles";
+import { StyledTab, StyledTabPanel, StyledTabsList } from "./Tab.styles";
 
 import * as RadixTabs from "@radix-ui/react-tabs";
 
@@ -17,7 +17,7 @@ function Tabs(props: TabsProps) {
 }
 
 function TabsList(props: TabsListProps) {
-  return <StyledTabsList>{props.children}</StyledTabsList>;
+  return <StyledTabsList loop>{props.children}</StyledTabsList>;
 }
 
 function Tab(props: TabProps) {
@@ -31,8 +31,6 @@ function Tab(props: TabProps) {
 }
 
 function TabPanel(props: TabPanelProps) {
-  return (
-    <RadixTabs.Content value={props.value}>{props.children}</RadixTabs.Content>
-  );
+  return <StyledTabPanel value={props.value}>{props.children}</StyledTabPanel>;
 }
 export { Tabs, TabsList, Tab, TabPanel };
