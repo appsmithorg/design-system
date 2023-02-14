@@ -8,18 +8,21 @@ import { TextInputSizes } from "./TextInput.types";
 
 const Variables = css`
   --text-input-color-border: var(--ads-v2-color-border);
-  --text-input-padding: var(--ads-v2-spaces-4);
+  --text-input-padding-x: var(--ads-v2-spaces-4); // padding left and right
+  --text-input-padding-y: var(--ads-v2-spaces-4); // padding top and bottom
   --text-input-color: var(--ads-v2-color-fg);
   --text-input-font-size: 14px;
 `;
 
 const Sizes = {
   md: css`
-    --text-input-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
+    --text-input-padding-x: var(--ads-v2-spaces-3);
+    --text-input-padding-y: var(--ads-v2-spaces-2);
     --text-input-font-size: 12px;
   `,
   lg: css`
-    --text-input-padding: var(--ads-v2-spaces-3);
+    --text-input-padding-x: var(--ads-v2-spaces-3);
+    --text-input-padding-y: var(--ads-v2-spaces-3);
     --text-input-font-size: 14px;
   `,
 };
@@ -71,7 +74,7 @@ export const TextInputContainer = styled.div<{
 
   & .${TextInputIconClassName} {
     position: absolute;
-    padding: var(--text-input-padding);
+    padding: var(--text-input-padding-y) var(--text-input-padding-x);
 
     & > svg {
       color: inherit;
@@ -107,7 +110,7 @@ export const StyledInput = styled.input<{
   font-family: var(--ads-v2-font-family);
   font-size: var(--text-input-font-size);
   color: var(--text-input-color);
-  padding: var(--text-input-padding);
+  padding: var(--text-input-padding-y) var(--text-input-padding-x);
   box-sizing: border-box;
   width: ${({ UNSAFE_width }) => UNSAFE_width || "300px"};
   ${({ UNSAFE_height }) => UNSAFE_height && `height: ${UNSAFE_height};`}
@@ -119,8 +122,8 @@ export const StyledInput = styled.input<{
     renderer === "input" &&
     css`
       padding-left: calc(
-        var(--text-input-padding) + var(--ads-v2-spaces-5) +
-          var(--text-input-padding)
+        var(--text-input-padding-x) + var(--ads-v2-spaces-5) +
+          var(--text-input-padding-x)
       );
     `};
 
@@ -130,8 +133,8 @@ export const StyledInput = styled.input<{
     renderer === "input" &&
     css`
       padding-right: calc(
-        var(--text-input-padding) + var(--ads-v2-spaces-5) +
-          var(--text-input-padding)
+        var(--text-input-padding-x) + var(--ads-v2-spaces-5) +
+          var(--text-input-padding-x)
       );
     `};
 
