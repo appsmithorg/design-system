@@ -14,6 +14,7 @@ const Variables = css`
   --button-font-weight: 600;
   --button-font-size: 14px;
   --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
+  --button-height: 24px;
 `;
 
 const Sizes = {
@@ -36,13 +37,13 @@ const Sizes = {
 
 const Heights = {
   sm: css`
-    height: 24px;
+    --button-height: 24px;
   `,
   md: css`
-    height: 32px;
+    --button-height: 32px;
   `,
   lg: css`
-    height: 40px;
+    --button-height: 40px;
   `,
 };
 
@@ -179,7 +180,10 @@ export const StyledButton = styled.button<{
   border: none;
   background-color: transparent;
   color: var(--button-color-fg);
-  ${({ UNSAFE_height }) => UNSAFE_height && `height: ${UNSAFE_height};`}
+  ${({ UNSAFE_height }) =>
+    UNSAFE_height
+      ? `height: ${UNSAFE_height};`
+      : `height: var(--button-height);`}
   ${({ UNSAFE_width }) => UNSAFE_width && `width: ${UNSAFE_width};`}
   padding: 0;
   box-sizing: border-box;

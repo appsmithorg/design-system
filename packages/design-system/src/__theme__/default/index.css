@@ -107,15 +107,15 @@
   --ads-v2-color-border-muted: var(--ads-v2-color-gray-200);
 
   /** Used as active border when --ads-v2-color-bg-brand is the default bg */
-  --ads-v2-color-border-brand-emphasis-plus: var(--ads-v2-color-orange-900);
+  --ads-v2-color-border-brand-emphasis-plus: var(--ads-v2-color-orange-800);
   /** Used as hover border when --ads-v2-color-bg-brand is the default bg */
-  --ads-v2-color-border-brand-emphasis: var(--ads-v2-color-orange-900);
+  --ads-v2-color-border-brand-emphasis: var(--ads-v2-color-orange-700);
   /** Used as active border hover color of secondary items like radio checkbox etc */
   --ads-v2-color-border-brand-secondary-emphasis: var(--ads-v2-color-gray-700);
   /** Used as active border color of secondary items like radio checkbox etc */
   --ads-v2-color-border-brand-secondary: var(--ads-v2-color-gray-600);
   /** Used as default border color when --ads-v2-color-bg-brand is the default bg */
-  --ads-v2-color-border-brand: var(--ads-v2-color-orange-500);
+  --ads-v2-color-border-brand: var(--ads-v2-color-orange-600);
   /** Used for indicating error borders */
   --ads-v2-color-border-error: var(--ads-v2-color-red-300);
   /** Used for indicating success borders */
