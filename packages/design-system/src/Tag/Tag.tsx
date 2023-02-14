@@ -19,7 +19,7 @@ function Tag({ children, isClosable, ...rest }: TagProps) {
         <StyledIcon
           name="close-line"
           onClick={() => setClosed(true)}
-          size="md"
+          size="sm"
         />
       )}
     </StyledTag>
