@@ -206,6 +206,7 @@ export const StyledButton = styled.button<{
     justify-content: center;
     align-items: center;
     z-index: 1;
+    color: var(--button-color-fg);
   }
 
   /* Loading styles */

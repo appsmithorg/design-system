@@ -11,7 +11,7 @@ const spin = keyframes`
 `;
 
 export const StyledSpinner = styled.span`
-  color: inherit;
+  color: var(--ads-v2-color-fg);
 
   .${SpinnerIconClassName} {
     animation: 1.8s ${spin} linear infinite;
