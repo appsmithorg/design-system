@@ -43,11 +43,11 @@
   /** Used for error background */
   --ads-v2-color-bg-error: var(--ads-v2-color-white);
   /** Used for success background */
-  --ads-v2-color-bg-success: var(--ads-v2-color-green);
+  --ads-v2-color-bg-success: var(--ads-v2-color-green-600);
   /** Used for warning background */
-  --ads-v2-color-bg-warning: var(--ads-v2-color-yellow);
+  --ads-v2-color-bg-warning: var(--ads-v2-color-yellow-600);
   /** Used for information background */
-  --ads-v2-color-bg-information: var(--ads-v2-color-blue-300);
+  --ads-v2-color-bg-information: var(--ads-v2-color-blue-100);
 
 
   /**
@@ -77,22 +77,23 @@
   --ads-v2-color-fg-on-brand-secondary: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-emphasis-plus */
   --ads-v2-color-fg-on-emphasis-plus: var(--ads-v2-color-white);
-  /** Text color for background --ads-v2-color-bg-error-emphasis */
-  --ads-v2-color-fg-on-error-emphasis: var(--ads-v2-color-red-800);
+  /** Text color for background --ads-v2-color-bg-emphasis-max */
+  --ads-v2-color-fg-on-emphasis-max: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-error */
-  --ads-v2-color-fg-on-error: var(--ads-v2-color-red-700);
+  --ads-v2-color-fg-on-error: var(--ads-v2-color-red-600);
   /** Text color for background --ads-v2-color-bg-success */
   --ads-v2-color-fg-on-success: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-warning */
   --ads-v2-color-fg-on-warning: var(--ads-v2-color-white);
+
   /** Foreground color for error */
-  --ads-v2-color-fg-error: var(--ads-v2-color-red-800);
+  --ads-v2-color-fg-error: var(--ads-v2-color-red-600);
   /** Foreground color for success */
-  --ads-v2-color-fg-success: var(--ads-v2-color-green);
+  --ads-v2-color-fg-success: var(--ads-v2-color-green-600);
   /** Foreground color for warning */
-  --ads-v2-color-fg-warning: var(--ads-v2-color-yellow);
+  --ads-v2-color-fg-warning: var(--ads-v2-color-yellow-600);
   /** Foreground color for information*/
-  --ads-v2-color-fg-information: var(--ads-v2-color-blue-500);
+  --ads-v2-color-fg-information: var(--ads-v2-color-blue-600);
 
   /**
     * ===========================================*
@@ -122,9 +123,9 @@
   /** Used for indicating error borders */
   --ads-v2-color-border-error: var(--ads-v2-color-red-300);
   /** Used for indicating success borders */
-  --ads-v2-color-border-success: var(--ads-v2-color-green);
+  --ads-v2-color-border-success: var(--ads-v2-color-green-600);
   /** Used for indicating warning borders */
-  --ads-v2-color-border-warning: var(--ads-v2-color-yellow);
+  --ads-v2-color-border-warning: var(--ads-v2-color-yellow-600);
 
 
   /**
