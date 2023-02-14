@@ -13,7 +13,6 @@ const Variables = css`
   --button-color-border: var(--ads-v2-color-border);
   --button-font-weight: 600;
   --button-font-size: 14px;
-  --button-icon-size: 16px;
   --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
 `;
 
@@ -22,19 +21,28 @@ const Sizes = {
     --button-font-weight: 500;
     --button-font-size: 12px;
     --button-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
-    --button-icon-size: 12px;
   `,
   md: css`
     --button-font-weight: 600;
     --button-font-size: 14px;
     --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
-    --button-icon-size: 16px;
   `,
   lg: css`
     --button-font-weight: 600;
     --button-font-size: 16px;
     --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-5);
-    --button-icon-size: 18px;
+  `,
+};
+
+const Heights = {
+  sm: css`
+    height: 24px;
+  `,
+  md: css`
+    height: 32px;
+  `,
+  lg: css`
+    height: 40px;
   `,
 };
 
@@ -145,8 +153,6 @@ export const ButtonContent = styled.div<{
 
   & > .${ButtonContentIconStartClassName} > svg,
   & > .${ButtonContentIconEndClassName} > svg {
-    width: var(--button-icon-size);
-    height: var(--button-icon-size);
     color: var(--button-color-fg);
   }
 `;
@@ -163,6 +169,9 @@ export const StyledButton = styled.button<{
 
   /* Variant style */
   ${({ kind }) => kind && Kinds[kind]}
+
+  /* Button heights */
+  ${({ size }) => size && Heights[size]}
 
   position: relative;
   cursor: pointer;
