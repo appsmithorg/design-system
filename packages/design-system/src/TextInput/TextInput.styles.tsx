@@ -8,10 +8,11 @@ import { TextInputSizes } from "./TextInput.types";
 
 const Variables = css`
   --text-input-color-border: var(--ads-v2-color-border);
-  --text-input-padding-x: var(--ads-v2-spaces-4); // padding left and right
-  --text-input-padding-y: var(--ads-v2-spaces-4); // padding top and bottom
+  --text-input-padding-x: var(--ads-v2-spaces-3); // padding left and right
+  --text-input-padding-y: var(--ads-v2-spaces-2); // padding top and bottom
   --text-input-color: var(--ads-v2-color-fg);
   --text-input-font-size: 14px;
+  --text-input-height: 32px;
 `;
 
 const Sizes = {
@@ -19,11 +20,13 @@ const Sizes = {
     --text-input-padding-x: var(--ads-v2-spaces-3);
     --text-input-padding-y: var(--ads-v2-spaces-2);
     --text-input-font-size: 12px;
+    --text-input-height: 32px;
   `,
   lg: css`
     --text-input-padding-x: var(--ads-v2-spaces-3);
     --text-input-padding-y: var(--ads-v2-spaces-3);
     --text-input-font-size: 14px;
+    --text-input-height: 40px;
   `,
 };
 
@@ -113,7 +116,7 @@ export const StyledInput = styled.input<{
   padding: var(--text-input-padding-y) var(--text-input-padding-x);
   box-sizing: border-box;
   width: ${({ UNSAFE_width }) => UNSAFE_width || "300px"};
-  ${({ UNSAFE_height }) => UNSAFE_height && `height: ${UNSAFE_height};`}
+  height: ${({ UNSAFE_height }) => UNSAFE_height || "var(--text-input-height)"};
   resize: none;
 
   /* adjust padding start according to icon present or not */

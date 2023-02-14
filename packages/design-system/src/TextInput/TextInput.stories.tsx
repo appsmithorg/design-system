@@ -85,10 +85,10 @@ export default {
       description: "Size of the input",
       table: {
         type: {
-          summary: "sm | md",
+          summary: "md | lg",
         },
         defaultValue: {
-          summary: "sm",
+          summary: "md",
         },
       },
     },
@@ -159,11 +159,8 @@ TextInputExample.storyName = "TextInput";
 TextInputExample.args = {
   label: "Label",
   placeholder: "Placeholder",
-  errorMessage: "Error Message",
   description: "Description",
-  isRequired: true,
   startIcon: "home-5-fill",
   endIcon: "building-line",
-  isDisabled: true,
-  size: "sm",
+  size: "md",
 };
