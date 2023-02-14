@@ -1,5 +1,7 @@
 import React from "react";
 import "./styles.css";
+import { addDecorator } from "@storybook/react";
+import { MemoryRouter } from "react-router-dom";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -27,3 +29,7 @@ export const decorators = [
     </div>
   ),
 ];
+
+addDecorator((Story) => (
+  <MemoryRouter initialEntries={["/"]}>{<Story />}</MemoryRouter>
+));
