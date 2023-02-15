@@ -38,6 +38,7 @@ function ModalHeader({ children, onClose }: ModalHeaderProps) {
       </Text>
       <StyledClose
         aria-label="Close"
+        asChild
         className={ModalContentHeaderCloseButtonClassName}
         onClick={onClose}
       >

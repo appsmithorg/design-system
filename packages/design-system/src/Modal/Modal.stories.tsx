@@ -67,13 +67,16 @@ export default {
 const ModalHeaderTemplate: ComponentStory<typeof ModalHeader> = (args) => {
   const [{ open }, updateArgs] = useArgs();
   const handleClose = () => updateArgs({ open: !open });
-
+  const changeOpenState = (state: boolean) => updateArgs({ open: state });
   return (
-    <Modal open>
-      <ModalContent>
-        <ModalHeader onClose={handleClose}>{args.children}</ModalHeader>
-      </ModalContent>
-    </Modal>
+    <>
+      <Button onPress={handleClose}>Open Modal</Button>
+      <Modal onOpenChange={changeOpenState}>
+        <ModalContent>
+          <ModalHeader onClose={handleClose}>{args.children}</ModalHeader>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 
@@ -85,14 +88,20 @@ ModalHeaderStory.args = {
 
 // eslint-disable-next-line react/function-component-definition
 const ModalBodyTemplate: ComponentStory<typeof ModalBody> = (args) => {
+  const [{ open }, updateArgs] = useArgs();
+  const handleClose = () => updateArgs({ open: !open });
+  const changeOpenState = (state: boolean) => updateArgs({ open: state });
   return (
-    <Modal open>
-      <ModalContent>
-        <ModalBody>
-          <Text kind="body-m">{args.children}</Text>
-        </ModalBody>
-      </ModalContent>
-    </Modal>
+    <>
+      <Button onPress={handleClose}>Open Modal</Button>
+      <Modal onOpenChange={changeOpenState}>
+        <ModalContent>
+          <ModalBody>
+            <Text kind="body-m">{args.children}</Text>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 
@@ -105,19 +114,26 @@ ModalBodyStory.args = {
 
 // eslint-disable-next-line react/function-component-definition
 const ModalFooterTemplate: ComponentStory<typeof ModalFooter> = () => {
+  const [{ open }, updateArgs] = useArgs();
+  const handleClose = () => updateArgs({ open: !open });
+  const changeOpenState = (state: boolean) => updateArgs({ open: state });
+
   return (
-    <Modal open>
-      <ModalContent>
-        <ModalFooter>
-          <Button kind="secondary" size="md">
-            Cancel
-          </Button>
-          <Button kind="primary" size="md">
-            Save
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+    <>
+      <Button onPress={handleClose}>Open Modal</Button>
+      <Modal onOpenChange={changeOpenState}>
+        <ModalContent>
+          <ModalFooter>
+            <Button kind="secondary" size="md">
+              Cancel
+            </Button>
+            <Button kind="primary" size="md">
+              Save
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 
@@ -129,11 +145,12 @@ ModalFooterStory.args = {};
 const ModalWithFooterTemplate: ComponentStory<typeof Modal> = (args) => {
   const [{ open }, updateArgs] = useArgs();
   const handleClose = () => updateArgs({ open: !open });
+  const changeOpenState = (state: boolean) => updateArgs({ open: state });
 
   return (
     <>
       <Button onPress={handleClose}>Open Modal</Button>
-      <Modal {...args}>
+      <Modal {...args} onOpenChange={changeOpenState}>
         <ModalContent>
           <ModalHeader onClose={handleClose}>Modal Header</ModalHeader>
           <ModalBody>
@@ -173,11 +190,12 @@ ModalStory.args = {
 const ModalWithoutFooter: ComponentStory<typeof Modal> = (args) => {
   const [{ open }, updateArgs] = useArgs();
   const handleClose = () => updateArgs({ open: !open });
+  const changeOpenState = (state: boolean) => updateArgs({ open: state });
 
   return (
     <>
       <Button onPress={handleClose}>Open Modal</Button>
-      <Modal {...args}>
+      <Modal {...args} onOpenChange={changeOpenState}>
         <ModalContent>
           <ModalHeader onClose={handleClose}>Modal Header</ModalHeader>
           <ModalBody>

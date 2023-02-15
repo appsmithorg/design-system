@@ -17,11 +17,11 @@ const overlayShow = keyframes`
 const contentShow = keyframes`
   from {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.9);
+    transform: translate(-50%, -40%) scale(0.9);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -40%) scale(1);
   }
 `;
 
@@ -69,7 +69,7 @@ export const StyledClose = styled(Close)`
 export const StyledBody = styled.div.attrs({
   className: ModalContentBodyClassName,
 })`
-  padding-top: var(--ads-v2-spaces-3);
+  padding-top: var(--ads-v2-spaces-5);
   flex: 1;
   overflow-y: auto;
 `;
