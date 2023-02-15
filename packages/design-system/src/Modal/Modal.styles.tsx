@@ -43,7 +43,7 @@ export const StyledContent = styled(Content)`
   width: 50vw;
   max-width: 90vw;
   max-height: 85vh;
-  padding: var(--ads-v2-spaces-6) var(--ads-v2-spaces-5);
+  padding: var(--ads-v2-spaces-5) var(--ads-v2-spaces-6);
   animation: ${contentShow} 250ms cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
