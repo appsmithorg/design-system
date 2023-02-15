@@ -25,7 +25,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       className,
       endIcon,
-      isDisabled,
       isLoading,
       kind,
       size,
@@ -34,6 +33,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       UNSAFE_width,
       ...rest
     } = props;
+    // disable button when loading
+    rest.onPress = props.isLoading ? undefined : props.onPress;
     const buttonRef = useDOMRef(ref);
     const { buttonProps } = useButton(
       {
@@ -50,8 +51,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         UNSAFE_height={UNSAFE_height}
         UNSAFE_width={UNSAFE_width}
         className={clsx(ButtonClassName, className)}
-        disabled={isDisabled}
-        isLoading={isLoading}
+        data-loading={isLoading}
         kind={kind}
         ref={buttonRef}
         size={size}
@@ -60,7 +60,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {isLoading === true && (
           <Spinner
             className={ButtonLoadingClassName}
-            iconProps={{ className: ButtonLoadingIconClassName }}
+            iconProps={{
+              className: ButtonLoadingIconClassName,
+            }}
+            size={size}
           />
         )}
 
@@ -72,9 +75,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               <Icon
                 className={ButtonContentIconStartClassName}
                 name={startIcon}
+                size={size}
               />
             ) : (
-              <Icon className={ButtonContentIconStartClassName}>
+              <Icon className={ButtonContentIconStartClassName} size={size}>
                 {startIcon}
               </Icon>
             )
@@ -88,9 +92,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {/* End Icon Section */}
           {endIcon ? (
             typeof endIcon === "string" ? (
-              <Icon className={ButtonContentIconEndClassName} name={endIcon} />
+              <Icon
+                className={ButtonContentIconEndClassName}
+                name={endIcon}
+                size={size}
+              />
             ) : (
-              <Icon className={ButtonContentIconEndClassName}>{endIcon}</Icon>
+              <Icon className={ButtonContentIconEndClassName} size={size}>
+                {endIcon}
+              </Icon>
             )
           ) : null}
         </ButtonContent>

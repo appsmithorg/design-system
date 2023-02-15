@@ -7,7 +7,7 @@ import { Icon } from "Icon";
 import { SpinnerClassName, SpinnerIconClassName } from "./Spinner.constants";
 
 function Spinner(props: SpinnerProps) {
-  const { className, iconProps, ...rest } = props;
+  const { className, iconProps, size: spinnerSize = "sm", ...rest } = props;
   const classes = clsx(SpinnerClassName, className);
   const iconClasses = clsx(
     SpinnerIconClassName,
@@ -16,7 +16,12 @@ function Spinner(props: SpinnerProps) {
 
   return (
     <StyledSpinner {...rest} className={classes}>
-      <Icon {...iconProps} className={iconClasses} name="loader-line" />
+      <Icon
+        {...iconProps}
+        className={iconClasses}
+        name="loader-line"
+        size={spinnerSize} // IconProps of size will be ignored by the spinner
+      />
     </StyledSpinner>
   );
 }
