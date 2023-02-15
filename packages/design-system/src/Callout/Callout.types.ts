@@ -10,4 +10,6 @@ export type CalloutProps = {
   children: string;
   /** visual style to be used indicating type of callout */
   kind?: Kind;
+  /** whether or not the callout should be closable */
+  isClosable?: boolean;
 } & React.HTMLAttributes<HTMLDivElement>;

@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Callout } from "./Callout";
+import { Text } from "../Text";
 
 export default {
   title: "Design System/Callout",
@@ -16,5 +17,11 @@ const Template: ComponentStory<typeof Callout> = (args) => {
 export const CalloutStory = Template.bind({});
 CalloutStory.storyName = "Callout";
 CalloutStory.args = {
-  //add arguments here
+  children: <Text kind="body-m">This is a successful callout</Text>,
+};
+CalloutStory.argTypes = {
+  kind: {
+    defaultValue: "info",
+    control: {},
+  },
 };
