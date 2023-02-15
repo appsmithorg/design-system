@@ -1,7 +1,8 @@
 import React from "react";
 import { ToastOptions } from "react-toastify";
+import { Kinds } from "../__config__/types";
 
-export type Kind = "success" | "warning" | "info" | "error" | undefined;
+export type Kind = Kinds | undefined;
 // Toast props
 export type ToastProps = {
   /** visual style to be used indicating type of toast */

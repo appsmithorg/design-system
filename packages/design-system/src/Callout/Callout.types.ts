@@ -1,6 +1,7 @@
 import React from "react";
+import { Kinds } from "../__config__/types";
 
-export type Kind = "success" | "warning" | "info" | "error" | undefined;
+export type Kind = Kinds | undefined;
 
 export type CalloutProps = {
   /** (try not to) pass addition classes here */
