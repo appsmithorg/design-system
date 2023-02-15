@@ -191,6 +191,7 @@ export const StyledButton = styled.button<{
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+  min-width: min-content;
 
   /* button disabled style */
   &:disabled {
