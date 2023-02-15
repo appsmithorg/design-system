@@ -15,7 +15,6 @@ export type ButtonProps = {
   as?: "button" | "a";
   /** The class name to apply to the button component. */
   className?: string;
-  /** The content to display within the button. */
   children?: React.ReactNode | string;
   /** Whether the button should display a loading spinner. */
   isLoading?: boolean;

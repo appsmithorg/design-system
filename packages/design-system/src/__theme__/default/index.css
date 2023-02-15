@@ -49,7 +49,6 @@
   /** Used for information background */
   --ads-v2-color-bg-information: var(--ads-v2-color-blue-100);
 
-
   /**
     * ===========================================*
     * ========== Foreground Colors ==============*
@@ -66,6 +65,10 @@
   --ads-v2-color-fg-muted: var(--ads-v2-color-gray-500);
   /** Used for all least important texts like placeholders, disabled text */
   --ads-v2-color-fg-subtle: var(--ads-v2-color-gray-400);
+  /** Text color with special meaning */
+  --ads-v2-color-fg-brand: var(--ads-v2-color-orange-500);
+  /** Hover for text color with special meaning */
+  --ads-v2-color-fg-brand-emphasis: var(--ads-v2-color-orange-600);
 
   /** Text color for background --ads-v2-color-bg-brand */
   --ads-v2-color-fg-on-brand: var(--ads-v2-color-white);
@@ -73,6 +76,8 @@
   --ads-v2-color-fg-on-brand-secondary: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-emphasis-plus */
   --ads-v2-color-fg-on-emphasis-plus: var(--ads-v2-color-white);
+  /** Text color for background --ads-v2-color-bg-emphasis-max */
+  --ads-v2-color-fg-on-emphasis-max: var(--ads-v2-color-white);
   /** Text color for background --ads-v2-color-bg-error */
   --ads-v2-color-fg-on-error: var(--ads-v2-color-red-600);
   /** Text color for background --ads-v2-color-bg-success */
@@ -105,15 +110,15 @@
   --ads-v2-color-border-muted: var(--ads-v2-color-gray-200);
 
   /** Used as active border when --ads-v2-color-bg-brand is the default bg */
-  --ads-v2-color-border-brand-emphasis-plus: var(--ads-v2-color-orange-900);
+  --ads-v2-color-border-brand-emphasis-plus: var(--ads-v2-color-orange-800);
   /** Used as hover border when --ads-v2-color-bg-brand is the default bg */
-  --ads-v2-color-border-brand-emphasis: var(--ads-v2-color-orange-900);
+  --ads-v2-color-border-brand-emphasis: var(--ads-v2-color-orange-700);
   /** Used as active border hover color of secondary items like radio checkbox etc */
   --ads-v2-color-border-brand-secondary-emphasis: var(--ads-v2-color-gray-700);
   /** Used as active border color of secondary items like radio checkbox etc */
   --ads-v2-color-border-brand-secondary: var(--ads-v2-color-gray-600);
   /** Used as default border color when --ads-v2-color-bg-brand is the default bg */
-  --ads-v2-color-border-brand: var(--ads-v2-color-orange-500);
+  --ads-v2-color-border-brand: var(--ads-v2-color-orange-600);
   /** Used for indicating error borders */
   --ads-v2-color-border-error: var(--ads-v2-color-red-300);
   /** Used for indicating success borders */

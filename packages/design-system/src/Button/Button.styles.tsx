@@ -13,8 +13,9 @@ const Variables = css`
   --button-color-border: var(--ads-v2-color-border);
   --button-font-weight: 600;
   --button-font-size: 14px;
-  --button-icon-size: 16px;
   --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
+  --button-height: 24px;
+  --button-gap: var(--ads-v2-spaces-2);
 `;
 
 const Sizes = {
@@ -22,19 +23,31 @@ const Sizes = {
     --button-font-weight: 500;
     --button-font-size: 12px;
     --button-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
-    --button-icon-size: 12px;
+    --button-gap: var(--ads-v2-spaces-2);
   `,
   md: css`
     --button-font-weight: 600;
     --button-font-size: 14px;
     --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
-    --button-icon-size: 16px;
+    --button-gap: var(--ads-v2-spaces-2);
   `,
   lg: css`
     --button-font-weight: 600;
     --button-font-size: 16px;
     --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-5);
-    --button-icon-size: 18px;
+    --button-gap: var(--ads-v2-spaces-3);
+  `,
+};
+
+const Heights = {
+  sm: css`
+    --button-height: 24px;
+  `,
+  md: css`
+    --button-height: 32px;
+  `,
+  lg: css`
+    --button-height: 40px;
   `,
 };
 
@@ -44,13 +57,13 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg-on-brand);
     --button-color-border: var(--ads-v2-color-border-brand);
 
-    &:hover:enabled {
+    &:hover:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-brand-emphasis);
       --button-color-fg: var(--ads-v2-color-fg-on-brand);
       --button-color-border: var(--ads-v2-color-border-brand-emphasis);
     }
 
-    &:active:enabled {
+    &:active:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-brand-emphasis-plus);
       --button-color-fg: var(--ads-v2-color-fg-on-brand);
       --button-color-border: var(--ads-v2-color-border-brand-emphasis);
@@ -61,13 +74,13 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: var(--ads-v2-color-border);
 
-    &:hover:enabled {
+    &:hover:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-subtle);
       --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border);
     }
 
-    &:active:enabled {
+    &:active:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-muted);
       --button-color-fg: var(--ads-v2-color-fg);
       --button-color-border: var(--ads-v2-color-border-emphasis);
@@ -78,12 +91,12 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: transparent;
 
-    &:hover:enabled {
+    &:hover:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-muted);
       --button-color-fg: var(--ads-v2-color-fg);
     }
 
-    &:active:enabled {
+    &:active:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-emphasis);
       --button-color-fg: var(--ads-v2-color-fg);
     }
@@ -97,13 +110,13 @@ const Kinds = {
     --button-color-fg: var(--ads-v2-color-fg-on-error);
     --button-color-border: transparent;
 
-    &:hover:enabled {
+    &:hover:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis);
       --button-color-fg: var(--ads-v2-color-fg-on-error);
       --button-color-border: transparent;
     }
 
-    &:active:enabled {
+    &:active:enabled:not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-error-emphasis-plus);
       --button-color-fg: var(--ads-v2-color-fg-on-error);
       --button-color-border: transparent;
@@ -122,7 +135,7 @@ export const ButtonContent = styled.div<{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: var(--ads-v2-spaces-2);
+  gap: var(--button-gap);
   background-color: var(--button-color-bg);
   border: 1px solid var(--button-color-border);
   width: 100%;
@@ -130,6 +143,7 @@ export const ButtonContent = styled.div<{
   box-sizing: border-box;
   padding: var(--button-padding);
   border-radius: inherit;
+  text-transform: capitalize;
 
   &
     > .${ButtonContentChildrenClassName},
@@ -144,8 +158,6 @@ export const ButtonContent = styled.div<{
 
   & > .${ButtonContentIconStartClassName} > svg,
   & > .${ButtonContentIconEndClassName} > svg {
-    width: var(--button-icon-size);
-    height: var(--button-icon-size);
     color: var(--button-color-fg);
   }
 `;
@@ -155,7 +167,6 @@ export const StyledButton = styled.button<{
   UNSAFE_height?: string;
   size?: ButtonSizes;
   UNSAFE_width?: string;
-  isLoading?: boolean;
   disabled?: boolean;
 }>`
   ${Variables}
@@ -163,17 +174,24 @@ export const StyledButton = styled.button<{
   /* Variant style */
   ${({ kind }) => kind && Kinds[kind]}
 
+  /* Button heights */
+  ${({ size }) => size && Heights[size]}
+
   position: relative;
   cursor: pointer;
   border-radius: var(--ads-v2-border-radius);
   border: none;
   background-color: transparent;
   color: var(--button-color-fg);
-  ${({ UNSAFE_height }) => UNSAFE_height && `height: ${UNSAFE_height};`}
+  ${({ UNSAFE_height }) =>
+    UNSAFE_height
+      ? `height: ${UNSAFE_height};`
+      : `height: var(--button-height);`}
   ${({ UNSAFE_width }) => UNSAFE_width && `width: ${UNSAFE_width};`}
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+  min-width: min-content;
 
   /* button disabled style */
   &:disabled {
@@ -192,25 +210,24 @@ export const StyledButton = styled.button<{
     justify-content: center;
     align-items: center;
     z-index: 1;
+    color: var(--button-color-fg);
   }
 
   /* Loading styles */
-  ${({ isLoading }) =>
-    isLoading === true &&
-    css`
-      pointer-events: none;
+  &[data-loading="true"] {
+    cursor: not-allowed;
 
-      & > ${ButtonContent} {
-        opacity: var(--ads-v2-opacity-disabled);
-      }
+    & > ${ButtonContent} {
+      opacity: var(--ads-v2-opacity-disabled);
+    }
 
-      & > ${ButtonContent} > * {
-        visibility: hidden;
-      }
-    `}
+    & > ${ButtonContent} > * {
+      visibility: hidden;
+    }
+  }
 
   /* Focus styles */
-  &:focus, &:focus-visible {
+  &:focus-visible {
     outline: var(--ads-v2-border-width-outline) solid
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
