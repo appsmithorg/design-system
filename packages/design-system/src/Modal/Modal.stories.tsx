@@ -64,14 +64,14 @@ export default {
 } as ComponentMeta<typeof Modal>;
 
 // eslint-disable-next-line react/function-component-definition
-const ModalHeaderTemplate: ComponentStory<typeof Modal> = (args) => {
+const ModalHeaderTemplate: ComponentStory<typeof ModalHeader> = (args) => {
   const [{ open }, updateArgs] = useArgs();
   const handleClose = () => updateArgs({ open: !open });
 
   return (
-    <Modal {...args}>
+    <Modal open>
       <ModalContent>
-        <ModalHeader onClose={handleClose}>Modal Header</ModalHeader>
+        <ModalHeader onClose={handleClose}>{args.children}</ModalHeader>
       </ModalContent>
     </Modal>
   );
@@ -80,22 +80,16 @@ const ModalHeaderTemplate: ComponentStory<typeof Modal> = (args) => {
 export const ModalHeaderStory = ModalHeaderTemplate.bind({});
 ModalHeaderStory.storyName = "Header";
 ModalHeaderStory.args = {
-  open: true,
+  children: "Modal Header",
 };
 
 // eslint-disable-next-line react/function-component-definition
-const ModalBodyTemplate: ComponentStory<typeof Modal> = (args) => {
+const ModalBodyTemplate: ComponentStory<typeof ModalBody> = (args) => {
   return (
-    <Modal {...args}>
+    <Modal open>
       <ModalContent>
         <ModalBody>
-          <Text kind="body-m">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            tincidunt, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, et
-            aliquam nisl nisl sit amet nisl. Sed tincidunt, nisl eget aliquam
-            tincidunt, nunc nisl aliquam nisl, et aliquam nisl nisl sit amet
-            nisl.
-          </Text>
+          <Text kind="body-m">{args.children}</Text>
         </ModalBody>
       </ModalContent>
     </Modal>
@@ -105,13 +99,14 @@ const ModalBodyTemplate: ComponentStory<typeof Modal> = (args) => {
 export const ModalBodyStory = ModalBodyTemplate.bind({});
 ModalBodyStory.storyName = "Body";
 ModalBodyStory.args = {
-  open: true,
+  children:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, et aliquam nisl nisl eget nisl.",
 };
 
 // eslint-disable-next-line react/function-component-definition
-const ModalFooterTemplate: ComponentStory<typeof Modal> = (args) => {
+const ModalFooterTemplate: ComponentStory<typeof ModalFooter> = () => {
   return (
-    <Modal {...args}>
+    <Modal open>
       <ModalContent>
         <ModalFooter>
           <Button kind="secondary" size="md">
@@ -128,9 +123,7 @@ const ModalFooterTemplate: ComponentStory<typeof Modal> = (args) => {
 
 export const ModalFooterStory = ModalFooterTemplate.bind({});
 ModalFooterStory.storyName = "Footer";
-ModalFooterStory.args = {
-  open: true,
-};
+ModalFooterStory.args = {};
 
 // eslint-disable-next-line react/function-component-definition
 const ModalWithFooterTemplate: ComponentStory<typeof Modal> = (args) => {
@@ -146,6 +139,10 @@ const ModalWithFooterTemplate: ComponentStory<typeof Modal> = (args) => {
           <ModalBody>
             <Text kind="body-m">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              tincidunt, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, et
+              aliquam nisl nisl sit amet nisl. Sed tincidunt, nisl eget aliquam
+              tincidunt, nunc nisl aliquam nisl, et aliquam nisl nisl sit amet
+              nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               tincidunt, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, et
               aliquam nisl nisl sit amet nisl. Sed tincidunt, nisl eget aliquam
               tincidunt, nunc nisl aliquam nisl, et aliquam nisl nisl sit amet

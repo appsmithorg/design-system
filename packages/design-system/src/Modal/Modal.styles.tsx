@@ -39,12 +39,14 @@ export const StyledContent = styled(Content)`
   position: fixed;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   width: 50vw;
   max-width: 90vw;
   max-height: 85vh;
   padding: var(--ads-v2-spaces-6) var(--ads-v2-spaces-5);
   animation: ${contentShow} 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
 `;
 
 export const StyledHeader = styled.div`
@@ -52,6 +54,11 @@ export const StyledHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-bottom: var(--ads-v2-spaces-3);
+
+  & > h3 {
+    max-width: 90%;
+    word-wrap: break-word;
+  }
 `;
 
 export const StyledClose = styled(Close)`
@@ -63,6 +70,8 @@ export const StyledBody = styled.div.attrs({
   className: ModalContentBodyClassName,
 })`
   padding-top: var(--ads-v2-spaces-3);
+  flex: 1;
+  overflow-y: auto;
 `;
 
 export const StyledFooter = styled.div.attrs({
