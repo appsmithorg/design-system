@@ -1,24 +1,36 @@
 import styled, { css } from "styled-components";
-import { YOUR_PROP_TYPE_1 } from "./Callout.types";
+import { Kind } from "./Callout.types";
 
 const Variables = css`
-  // Variables that are controlled, changed, or toggled entirely within this component
-  // are defined here and used in the component's styles.
+  --callout-color-background: var(--ads-v2-color-bg);
 `;
 
-// Variant style definitions
-const YOUR_VARIANTS = css`
-  // Styles for the variants defined in your type
-`;
+const Kinds = {
+  success: css`
+    --callout-color-background: var(--ads-v2-color-bg-success);
+  `,
+  warning: css`
+    --callout-color-background: var(--ads-v2-color-bg-warning);
+  `,
+  info: css`
+    --callout-color-background: var(--ads-v2-color-bg-information);
+  `,
+  error: css`
+    --callout-color-background: var(--ads-v2-color-bg-error);
+  `,
+};
 
-export const StyledCallout = styled.span<{
+export const StyledCallout = styled.div<{
   // Props that affect styles are passed through here.
-  YOUR_PROP: YOUR_PROP_TYPE_1;
+  kind: Kind;
 }>`
   ${Variables}
 
-  /* Variant styles */
-  ${({ YOUR_PROP }) => YOUR_PROP && YOUR_VARIANTS[YOUR_PROP]} /* Base style */
+  ${({ kind }) => kind && Kinds[kind]}
 
-  /* Additional styles and classes */
+  // TODO: get minh, minw from vasanth (with all optionals switched off)
+  width: 450px;
+  height: 88px;
+
+  background-color: var(--callout-color-background);
 `;
