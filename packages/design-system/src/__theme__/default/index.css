@@ -166,3 +166,17 @@
   outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
   outline-offset: var(--ads-v2-offset-outline);
 }
+
+/* Placeholder color */
+::placeholder {
+  color: var(--ads-v2-color-fg-subtle);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: var(--ads-v2-color-fg-subtle);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: var(--ads-v2-color-fg-subtle);
+}

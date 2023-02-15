@@ -7,26 +7,26 @@ import {
 import { InputSizes } from "./Input.types";
 
 const Variables = css`
-  --text-input-color-border: var(--ads-v2-color-border);
-  --text-input-padding-x: var(--ads-v2-spaces-3); // padding left and right
-  --text-input-padding-y: var(--ads-v2-spaces-2); // padding top and bottom
-  --text-input-color: var(--ads-v2-color-fg);
-  --text-input-font-size: 14px;
-  --text-input-height: 32px;
+  --input-color-border: var(--ads-v2-color-border);
+  --input-padding-x: var(--ads-v2-spaces-3); // padding left and right
+  --input-padding-y: var(--ads-v2-spaces-2); // padding top and bottom
+  --input-color: var(--ads-v2-color-fg);
+  --input-font-size: 14px;
+  --input-height: 32px;
 `;
 
 const Sizes = {
   md: css`
-    --text-input-padding-x: var(--ads-v2-spaces-3);
-    --text-input-padding-y: var(--ads-v2-spaces-2);
-    --text-input-font-size: 12px;
-    --text-input-height: 32px;
+    --input-padding-x: var(--ads-v2-spaces-3);
+    --input-padding-y: var(--ads-v2-spaces-2);
+    --input-font-size: 12px;
+    --input-height: 32px;
   `,
   lg: css`
-    --text-input-padding-x: var(--ads-v2-spaces-3);
-    --text-input-padding-y: var(--ads-v2-spaces-3);
-    --text-input-font-size: 14px;
-    --text-input-height: 40px;
+    --input-padding-x: var(--ads-v2-spaces-3);
+    --input-padding-y: var(--ads-v2-spaces-3);
+    --input-font-size: 14px;
+    --input-height: 40px;
   `,
 };
 
@@ -45,7 +45,7 @@ export const MainContainer = styled.div<{
       : "var(--ads-v2-spaces-2)"};
   align-items: baseline;
   font-family: var(--ads-v2-font-family);
-  font-size: var(--text-input-font-size);
+  font-size: var(--input-font-size);
 
   /* Size style */
   ${({ size }) => size && Sizes[size]}
@@ -73,11 +73,11 @@ export const InputContainer = styled.div<{
   display: flex;
   align-items: center;
   width: 100%;
-  color: var(--text-input-color);
+  color: var(--input-color);
 
   & .${InputIconClassName} {
     position: absolute;
-    padding: var(--text-input-padding-y) var(--text-input-padding-x);
+    padding: var(--input-padding-y) var(--input-padding-x);
 
     & > svg {
       color: inherit;
@@ -108,15 +108,15 @@ export const StyledInput = styled.input<{
   hasError?: boolean;
 }>`
   background-color: var(--ads-v2-color-background);
-  border: 1px solid var(--text-input-color-border);
+  border: 1px solid var(--input-color-border);
   border-radius: var(--ads-v2-border-radius);
   font-family: var(--ads-v2-font-family);
-  font-size: var(--text-input-font-size);
-  color: var(--text-input-color);
-  padding: var(--text-input-padding-y) var(--text-input-padding-x);
+  font-size: var(--input-font-size);
+  color: var(--input-color);
+  padding: var(--input-padding-y) var(--input-padding-x);
   box-sizing: border-box;
   width: ${({ UNSAFE_width }) => UNSAFE_width || "300px"};
-  height: ${({ UNSAFE_height }) => UNSAFE_height || "var(--text-input-height)"};
+  height: ${({ UNSAFE_height }) => UNSAFE_height || "var(--input-height)"};
   resize: none;
 
   /* adjust padding start according to icon present or not */
@@ -125,8 +125,7 @@ export const StyledInput = styled.input<{
     renderer === "input" &&
     css`
       padding-left: calc(
-        var(--text-input-padding-x) + var(--ads-v2-spaces-5) +
-          var(--text-input-padding-x)
+        var(--input-padding-x) + var(--ads-v2-spaces-5) + var(--input-padding-x)
       );
     `};
 
@@ -136,8 +135,7 @@ export const StyledInput = styled.input<{
     renderer === "input" &&
     css`
       padding-right: calc(
-        var(--text-input-padding-x) + var(--ads-v2-spaces-5) +
-          var(--text-input-padding-x)
+        var(--input-padding-x) + var(--ads-v2-spaces-5) + var(--input-padding-x)
       );
     `};
 
@@ -148,12 +146,12 @@ export const StyledInput = styled.input<{
   }
 
   &:hover:enabled {
-    --text-input-color-border: var(--ads-v2-color-border-emphasis);
+    --input-color-border: var(--ads-v2-color-border-emphasis);
   }
 
   &:active:enabled,
   &:focus:enabled {
-    --text-input-color-border: var(--ads-v2-color-border-emphasis-plus);
+    --input-color-border: var(--ads-v2-color-border-emphasis-plus);
   }
 
   &:disabled {
@@ -163,6 +161,6 @@ export const StyledInput = styled.input<{
   ${({ hasError }) =>
     hasError &&
     css`
-      --text-input-color-border: var(--ads-v2-color-border-error);
+      --input-color-border: var(--ads-v2-color-border-error);
     `}
 `;
