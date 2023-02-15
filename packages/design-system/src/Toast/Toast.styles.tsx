@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ToastContainer, ToastOptions } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { Text } from "../Text";
 import { ToastProps } from "./Toast.types";
 import { Button } from "../Button";
@@ -7,16 +7,6 @@ import { Button } from "../Button";
 const Variables = css`
   // All the --toastify prefixed variables are changing tokens defined in react-toastify
   // For a complete list, see https://fkhadra.github.io/react-toastify/how-to-style/#override-css-variables
-
-  --toastify-color-info: var(--ads-v2-color-fg-information);
-  --toastify-color-success: var(--ads-v2-color-fg-success);
-  --toastify-color-warning: var(--ads-v2-color-fg-warning);
-  --toastify-color-error: var(--ads-v2-color-fg-danger);
-
-  --toastify-icon-color-info: var(--toastify-color-info);
-  --toastify-icon-color-success: var(--toastify-color-success);
-  --toastify-icon-color-warning: var(--toastify-color-warning);
-  --toastify-icon-color-error: var(--toastify-color-error);
 
   --toastify-toast-width: 320px;
   --toastify-toast-background: var(--ads-v2-color-bg);
@@ -26,9 +16,6 @@ const Variables = css`
   --toastify-z-index: 9999;
 
   --toastify-text-color-light: var(--ads-v2-color-fg);
-
-  --toastify-spinner-color: #616161;
-  --toastify-spinner-color-empty-area: #e0e0e0;
 `;
 
 export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
@@ -62,11 +49,13 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
 export const ToastBody = styled(Text)`
   padding: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 `;
 
 export const StyledButton = styled(Button)`
   margin-right: -var(--ads-v2-spaces-3);
   margin-left: var(--ads-v2-spaces-3);
+
+  align-self: center;
 `;
