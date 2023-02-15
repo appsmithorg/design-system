@@ -42,11 +42,7 @@ function ModalHeader({ children, onClose }: ModalHeaderProps) {
         className={ModalContentHeaderCloseButtonClassName}
         onClick={onClose}
       >
-        <Icon
-          color="var(--ads-v2-color-fg-muted)"
-          name="close-line"
-          size="xl"
-        />
+        <Icon color="var(--ads-v2-color-fg)" name="close-line" size="xl" />
       </StyledClose>
     </StyledHeader>
   );
