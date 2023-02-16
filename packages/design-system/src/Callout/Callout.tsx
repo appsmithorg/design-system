@@ -1,5 +1,4 @@
 import React from "react";
-import { useFocusRing } from "@react-aria/focus";
 
 import { CalloutProps } from "./Callout.types";
 import {
@@ -11,6 +10,7 @@ import {
 } from "./Callout.styles";
 import { getIconByKind } from "../__theme__/getIconByKind";
 import { Link } from "../Link";
+import { CalloutClassName } from "./Callout.constants";
 
 function Callout({
   children,
@@ -22,7 +22,12 @@ function Callout({
   const [isClosed, setClosed] = React.useState(false);
 
   return (
-    <StyledCallout isClosed={isClosed} kind={kind} {...rest}>
+    <StyledCallout
+      className={CalloutClassName}
+      isClosed={isClosed}
+      kind={kind}
+      {...rest}
+    >
       <StyledIconContainer>{kind && getIconByKind(kind)}</StyledIconContainer>
       <StyledChildrenContainer>
         {children}
