@@ -45,7 +45,23 @@ export const StyledCallout = styled.div<{
   ${({ isClosed }) => isClosed && `display: none;`}
 `;
 
-export const StyledIcon = styled(Icon)`
+export const StyledCloseIcon = styled(Icon)`
   margin-left: auto;
   cursor: pointer;
+`;
+
+export const StyledLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: var(--ads-v2-spaces-4);
+  margin-top: var(--ads-v2-spaces-3);
+  margin-bottom: var(--ads-v2-spaces-1);
+`;
+
+export const StyledIconContainer = styled.div`
+  margin-top: var(--ads-v2-spaces-1);
+`;
+
+export const StyledChildrenContainer = styled.div`
+  margin-top: var(--ads-v2-spaces-1);
 `;
