@@ -20,6 +20,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
+    "@radix-ui/react-dropdown-menu": "^2.0.2",
     "@react-aria/checkbox": "^3.7.1",
     "@react-aria/focus": "^3.10.1",
     "@react-aria/radio": "^3.4.2",
@@ -100,9 +101,9 @@
   "dependencies": {
     "@react-aria/button": "^3.6.4",
     "@react-aria/focus": "^3.10.1",
-    "react-toastify": "9.0.3",
     "@react-aria/link": "^3.3.6",
     "@react-aria/switch": "^3.3.1",
-    "@react-stately/toggle": "^3.4.4"
+    "@react-stately/toggle": "^3.4.4",
+    "react-toastify": "9.0.3"
   }
 }
