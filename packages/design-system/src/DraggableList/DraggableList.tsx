@@ -29,7 +29,6 @@ function DraggableList(props: DraggableListProps) {
         y: order.indexOf(index) * itemHeight,
         scale: 1,
         zIndex: "0",
-        shadow: 1,
         immediate,
       };
     };
@@ -47,7 +46,6 @@ function DraggableList(props: DraggableListProps) {
           y: curIndex * itemHeight + y,
           scale: 1,
           zIndex: "1",
-          shadow: 15,
           immediate: true,
         };
       } else {

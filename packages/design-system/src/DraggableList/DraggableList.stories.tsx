@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { DraggableList } from "./DraggableList";
 import styled from "styled-components";
+import { Text } from "../Text";
 
 const StoryDecorator = styled.div`
   width: 80vw;
@@ -31,8 +32,9 @@ const ItemRenderer = styled.div`
   height: 100%;
   padding: 10px;
   cursor: grab;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
-  background-color: var(--ads-color-black-5);
+  background-color: var(--ads-v2-color-bg);
+  border: 1px solid var(--ads-v2-color-border);
+  border-radius: var(--ads-v2-border-radius);
 `;
 
 // eslint-disable-next-line react/function-component-definition
@@ -62,7 +64,11 @@ DraggableListStory.args = {
     // eslint-disable-next-line no-console
     console.log(items);
   },
-  ItemRenderer: ({ item }) => <ItemRenderer>{item.name}</ItemRenderer>,
+  ItemRenderer: ({ item }) => (
+    <ItemRenderer>
+      <Text>{item.name}</Text>
+    </ItemRenderer>
+  ),
   itemHeight: 70,
   shouldReRender: false,
 };
