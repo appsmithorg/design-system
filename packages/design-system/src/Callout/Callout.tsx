@@ -12,6 +12,10 @@ import { getIconByKind } from "../__theme__/getIconByKind";
 import { Link } from "../Link";
 import { CalloutClassName } from "./Callout.constants";
 
+/*
+ * TODO:
+ *  - What will keyboard navigation for this look like?
+ */
 function Callout({
   children,
   isClosable,
