@@ -66,14 +66,15 @@ export default {
 // eslint-disable-next-line react/function-component-definition
 const ModalHeaderTemplate: ComponentStory<typeof ModalHeader> = (args) => {
   const [{ open }, updateArgs] = useArgs();
-  const handleClose = () => updateArgs({ open: !open });
   const changeOpenState = (state: boolean) => updateArgs({ open: state });
   return (
     <>
-      <Button onPress={handleClose}>Open Modal</Button>
-      <Modal onOpenChange={changeOpenState}>
+      <Button onPress={() => changeOpenState(true)}>Open Modal</Button>
+      <Modal onOpenChange={changeOpenState} open={open}>
         <ModalContent>
-          <ModalHeader onClose={handleClose}>{args.children}</ModalHeader>
+          <ModalHeader onClose={() => changeOpenState(false)}>
+            {args.children}
+          </ModalHeader>
         </ModalContent>
       </Modal>
     </>
@@ -89,12 +90,11 @@ ModalHeaderStory.args = {
 // eslint-disable-next-line react/function-component-definition
 const ModalBodyTemplate: ComponentStory<typeof ModalBody> = (args) => {
   const [{ open }, updateArgs] = useArgs();
-  const handleClose = () => updateArgs({ open: !open });
   const changeOpenState = (state: boolean) => updateArgs({ open: state });
   return (
     <>
-      <Button onPress={handleClose}>Open Modal</Button>
-      <Modal onOpenChange={changeOpenState}>
+      <Button onPress={() => changeOpenState(true)}>Open Modal</Button>
+      <Modal onOpenChange={changeOpenState} open={open}>
         <ModalContent>
           <ModalBody>
             <Text kind="body-m">{args.children}</Text>
@@ -115,13 +115,12 @@ ModalBodyStory.args = {
 // eslint-disable-next-line react/function-component-definition
 const ModalFooterTemplate: ComponentStory<typeof ModalFooter> = () => {
   const [{ open }, updateArgs] = useArgs();
-  const handleClose = () => updateArgs({ open: !open });
   const changeOpenState = (state: boolean) => updateArgs({ open: state });
 
   return (
     <>
-      <Button onPress={handleClose}>Open Modal</Button>
-      <Modal onOpenChange={changeOpenState}>
+      <Button onPress={() => changeOpenState(true)}>Open Modal</Button>
+      <Modal onOpenChange={changeOpenState} open={open}>
         <ModalContent>
           <ModalFooter>
             <Button kind="secondary" size="md">
