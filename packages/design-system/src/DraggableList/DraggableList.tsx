@@ -8,6 +8,11 @@ import _ from "lodash";
 import { useDrag } from "react-use-gesture";
 import { useSprings, animated, to } from "@react-spring/web";
 
+/*
+  TODO: This component is a wrapper around the actual item being rendered that gives it the ability to be dragged.
+    Can we extract this functionality into a hook? Alternatively, we can use the `useDrag` hook directly in the items to be rendered,
+    and define those items as separate components in the design system.
+ */
 function DraggableList(props: DraggableListProps) {
   const {
     className,
