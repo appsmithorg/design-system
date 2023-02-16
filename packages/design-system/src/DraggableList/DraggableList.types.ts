@@ -1,7 +1,4 @@
 export type DraggableListProps = {
-  /** this prop is used when... */
-  prop1: undefined;
-
   /** (try not to) pass addition classes here */
   className?: string;
   /** the words you want to display */

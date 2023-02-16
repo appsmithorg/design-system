@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import { useFocusRing } from "@react-aria/focus";
 
 import { DraggableListProps, SpringStyleProps } from "./DraggableList.types";
 import { StyledDraggableList } from "./DraggableList.styles";
