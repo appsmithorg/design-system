@@ -17,3 +17,5 @@ _build-storybook ../../storybook-static
 echo "Building stories for old DS components"
 cd ../design-system-old
 _build-storybook ../../storybook-static/old
+
+
