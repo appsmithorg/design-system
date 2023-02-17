@@ -66,6 +66,11 @@ import { ReactComponent as ChatIcon } from "../assets/icons/ads/app-icons/chat.s
 import { ReactComponent as JsIcon } from "../assets/icons/ads/js.svg";
 import { ReactComponent as ExecuteIcon } from "../assets/icons/ads/execute.svg";
 import { ReactComponent as PackageIcon } from "../assets/icons/ads/package.svg";
+import { ReactComponent as DevicesIcon } from "../assets/icons/ads/devices.svg";
+import { ReactComponent as GridIcon } from "../assets/icons/ads/grid.svg";
+import { ReactComponent as HistoryLineIcon } from "../assets/icons/ads/history-line.svg";
+import { ReactComponent as SuccessLineIcon } from "../assets/icons/ads/success-line.svg";
+import { ReactComponent as ErrorLineIcon } from "../assets/icons/ads/error-line.svg";
 
 // remix icons
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
@@ -229,6 +234,15 @@ export const IconWrapper = styled.span<IconProps>`
   align-items: center;
   cursor: ${(props) =>
     props.disabled ? "not-allowed" : props.clickable ? "pointer" : "default"};
+  ${(props) =>
+    props.withWrapper &&
+    `
+    min-width: ${sizeHandler(props.size) * 2}px;
+    height: ${sizeHandler(props.size) * 2}px;
+    border-radius: 9999px;
+    justify-content: center;
+    background-color: ${props.wrapperColor || "rgba(0, 0, 0, 0.1)"};
+  `}
   svg {
     width: ${(props) => sizeHandler(props.size)}px;
     height: ${(props) => sizeHandler(props.size)}px;
@@ -383,6 +397,9 @@ const ICON_LOOKUP = {
   "warning-line": <WarningLineIcon />,
   "warning-triangle": <WarningTriangleIcon />,
   "money-dollar-circle-line": <MoneyDollarCircleLineIcon />,
+  "success-line": <SuccessLineIcon />,
+  "error-line": <ErrorLineIcon />,
+  "history-line": <HistoryLineIcon />,
   billing: <BillingIcon />,
   book: <BookIcon />,
   bug: <BugIcon />,
@@ -457,6 +474,8 @@ const ICON_LOOKUP = {
   widget: <WidgetIcon />,
   workspace: <WorkspaceIcon />,
   package: <PackageIcon />,
+  devices: <DevicesIcon />,
+  grid: <GridIcon />,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);
@@ -475,6 +494,8 @@ export type IconProps = {
   loaderWithIconWrapper?: boolean;
   clickable?: boolean;
   disabled?: boolean;
+  withWrapper?: boolean;
+  wrapperColor?: string;
 };
 
 const Icon = forwardRef(
