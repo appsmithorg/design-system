@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "../Icon";
+import { Icon } from "./index";
 import { Kinds } from "../__config__/types";
 
 export function getIconByKind(kind: Kinds) {

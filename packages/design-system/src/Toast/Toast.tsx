@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.min.css";
 
 import { ToastProps } from "./Toast.types";
 import { StyledButton, StyledToast, ToastBody } from "./Toast.styles";
-import { getIconByKind } from "../__theme__/getIconByKind";
+import { getIconByKind } from "../Icon/getIconByKind";
 
 /**
  * TODO:

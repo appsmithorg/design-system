@@ -8,7 +8,7 @@ import {
   StyledIconContainer,
   StyledLinks,
 } from "./Callout.styles";
-import { getIconByKind } from "../__theme__/getIconByKind";
+import { getIconByKind } from "../Icon/getIconByKind";
 import { Link } from "../Link";
 import { CalloutClassName } from "./Callout.constants";
 
