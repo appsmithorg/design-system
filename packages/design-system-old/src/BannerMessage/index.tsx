@@ -5,7 +5,7 @@ import Icon, { IconSize } from "Icon";
 
 type Props = {
   backgroundColor: string;
-  className: string;
+  className?: string;
   icon: string;
   iconColor: string;
   iconSize: IconSize;
@@ -14,18 +14,24 @@ type Props = {
   ctaURL?: string;
   message: string;
   textColor: string;
+  fontWeight?: string;
+  intentLine?: boolean;
 };
 
 const MessageContainer = styled.div<{
-  backgroundColor: string;
-  textColor: string;
+  $backgroundColor: string;
+  $iconColor: string;
+  $intentLine: boolean;
+  $textColor: string;
 }>`
   display: flex;
-  padding: 8px;
+  padding: 2px 8px;
   margin-bottom: 8px;
   flex-direction: row;
-  color: ${(props) => props.textColor};
-  background: ${(props) => props.backgroundColor};
+  color: ${(props) => props.$textColor};
+  background: ${(props) => props.$backgroundColor};
+  ${(props) =>
+    props.$intentLine && `border-left: solid ${props.$iconColor} 2px;`}
   }
 `;
 const StyledIcon = styled(Icon)`
@@ -47,9 +53,11 @@ const MessageWrapper = styled.div`
   line-height: 16px;
 `;
 
-const MessageText = styled.p`
+const MessageText = styled.p<{
+  $fontWeight?: string;
+}>`
   font-size: 13px;
-  font-weight: 400;
+  font-weight: ${(props) => props.$fontWeight || `400`};
   margin-bottom: 0;
 `;
 
@@ -80,9 +88,11 @@ export function BannerMessage(props: Props) {
   };
   return (
     <MessageContainer
-      backgroundColor={props.backgroundColor}
+      $backgroundColor={props.backgroundColor}
       className={props.className}
-      textColor={props.textColor}
+      $iconColor={props.iconColor}
+      $intentLine={!!props.intentLine}
+      $textColor={props.textColor}
     >
       <StyledIcon
         fillColor={props.iconColor}
@@ -93,7 +103,9 @@ export function BannerMessage(props: Props) {
         {props.messageHeader && (
           <MessageHeader>{props.messageHeader}</MessageHeader>
         )}
-        <MessageText>{props.message}</MessageText>
+        <MessageText $fontWeight={props.fontWeight}>
+          {props.message}
+        </MessageText>
         {props.ctaText && props.ctaURL && (
           <CTALink
             href={props.ctaURL}
