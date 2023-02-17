@@ -3,6 +3,7 @@ import "./__theme__/default/index.css";
 export * from "./Button";
 export * from "./Checkbox";
 export * from "./Divider";
+export * from "./DraggableList";
 export * from "./Icon";
 export * from "./Link";
 export * from "./Radio";
