@@ -6,7 +6,7 @@ export type IconProps = {
   /** name of the icon from remix icon library */
   name?: string;
   /** size of the icon - sm,md,lg,xl, xxl */
-  size: IconSizes;
+  size?: IconSizes;
   /** color of the icon */
   color?: string;
   /** class name to be applied to the icon */
