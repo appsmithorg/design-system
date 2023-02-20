@@ -8,6 +8,14 @@ import * as RadixTabs from "@radix-ui/react-tabs";
 import { Text } from "../Text";
 import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
 
+/* TODO
+- Add Tag to tab
+  - figure out naming
+- border styles using ::before
+- vertical tabs
+- focus styles
+ */
+
 function Tabs(props: TabsProps) {
   return (
     <RadixTabs.Root defaultValue={props.defaultValue} {...props}>
