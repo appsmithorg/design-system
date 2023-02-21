@@ -10,8 +10,6 @@ import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
 import { Tag } from "../Tag";
 
 /* TODO
-- Add Tag to tab
-  - account for 0 case
 - border styles using ::before
 - vertical tabs
 - focus styles
