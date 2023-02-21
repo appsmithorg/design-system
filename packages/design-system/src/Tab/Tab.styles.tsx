@@ -20,6 +20,10 @@ export const StyledTab = styled(RadixTabs.TabsTrigger)`
   -webkit-appearance: none;
   appearance: none;
 
+  display: flex;
+  align-items: center;
+  gap: var(--ads-v2-spaces-3);
+
   &:hover {
     --tab-border-bottom: 2px solid var(--ads-v2-color-border);
     --tab-color: var(--ads-v2-color-fg);

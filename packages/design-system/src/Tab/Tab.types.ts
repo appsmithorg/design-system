@@ -7,5 +7,8 @@ import {
 
 export type TabsProps = RadixTabsProps;
 export type TabsListProps = RadixTabsListProps;
-export type TabProps = TabsTriggerProps;
+export type TabProps = {
+  /** the number of notifications the tab contains */
+  notificationCount?: number;
+} & TabsTriggerProps;
 export type TabPanelProps = TabsContentProps;
