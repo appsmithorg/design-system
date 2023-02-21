@@ -70,19 +70,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {/* Button content */}
         <ButtonContent className={ButtonContentClassName} size={size}>
           {/* Start Icon Section */}
-          {startIcon ? (
-            typeof startIcon === "string" ? (
-              <Icon
-                className={ButtonContentIconStartClassName}
-                name={startIcon}
-                size={size}
-              />
-            ) : (
-              <Icon className={ButtonContentIconStartClassName} size={size}>
-                {startIcon}
-              </Icon>
-            )
-          ) : null}
+          {startIcon && (
+            <Icon
+              className={ButtonContentIconStartClassName}
+              icon={startIcon}
+              size={size}
+            />
+          )}
 
           {/* Children section */}
           {children && (
@@ -90,19 +84,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           )}
 
           {/* End Icon Section */}
-          {endIcon ? (
-            typeof endIcon === "string" ? (
-              <Icon
-                className={ButtonContentIconEndClassName}
-                name={endIcon}
-                size={size}
-              />
-            ) : (
-              <Icon className={ButtonContentIconEndClassName} size={size}>
-                {endIcon}
-              </Icon>
-            )
-          ) : null}
+          {endIcon && (
+            <Icon
+              className={ButtonContentIconEndClassName}
+              icon={endIcon}
+              size={size}
+            />
+          )}
         </ButtonContent>
       </StyledButton>
     );

@@ -31,7 +31,6 @@ const Template: ComponentStory<typeof Icon> = (args) => {
 export const IconStory = Template.bind({});
 IconStory.storyName = "Icon";
 IconStory.args = {
-  name: "account-box-line",
-  children: "",
+  icon: "account-box-line",
   size: "md",
 };

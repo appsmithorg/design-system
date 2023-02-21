@@ -17,7 +17,7 @@ function Tag({ children, isClosable, ...rest }: TagProps) {
       <Text kind="body-s">{children}</Text>
       {isClosable && (
         <StyledIcon
-          name="close-line"
+          icon="close-line"
           onClick={() => setClosed(true)}
           size="sm"
         />

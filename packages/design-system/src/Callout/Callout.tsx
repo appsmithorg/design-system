@@ -53,7 +53,7 @@ function Callout({
       </StyledChildrenContainer>
       {isClosable && (
         <StyledCloseIcon
-          name="close-line"
+          icon="close-line"
           onClick={() => setClosed(true)}
           size="xl"
         />

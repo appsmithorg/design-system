@@ -19,7 +19,7 @@ function Spinner(props: SpinnerProps) {
       <Icon
         {...iconProps}
         className={iconClasses}
-        name="loader-line"
+        icon="loader-line"
         size={spinnerSize} // IconProps of size will be ignored by the spinner
       />
     </StyledSpinner>

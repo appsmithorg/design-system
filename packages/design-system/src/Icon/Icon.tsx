@@ -13,9 +13,9 @@ const iconSizes: Record<IconSizes, string> = {
 };
 
 function Icon(props: IconProps) {
-  const { children, className, color, name, size = "sm", ...rest } = props;
+  const { className, color, icon, size = "sm", ...rest } = props;
 
-  if (!name && !children) return null;
+  if (!icon) return null;
 
   return (
     <IconContainer
@@ -24,10 +24,10 @@ function Icon(props: IconProps) {
       size={iconSizes[size]}
       {...rest}
     >
-      {name ? (
-        <IconProvider color={color} iconName={name} size={iconSizes[size]} />
+      {typeof icon === "string" ? (
+        <IconProvider color={color} iconName={icon} size={iconSizes[size]} />
       ) : (
-        children
+        icon
       )}
     </IconContainer>
   );
