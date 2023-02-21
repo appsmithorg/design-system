@@ -144,9 +144,9 @@ const ButtonColors: ButtonColorType = {
     darkest: "var(--ads-old-color-fair-pink)",
   },
   secondary: {
-    main: "var(--ads-color-black-800)",
+    main: "var(--ads-old-color-mid-gray)",
     light: "var(--ads-old-color-gray-10)",
-    dark: "var(--ads-color-black-900)",
+    dark: "var(--ads-color-black-5)",
     darker: "var(--ads-old-color-gallery)",
     darkest: "var(--ads-color-black-450)",
   },
