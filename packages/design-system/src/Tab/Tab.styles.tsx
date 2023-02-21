@@ -7,6 +7,7 @@ const Variables = css`
 `;
 
 export const StyledTabsList = styled(RadixTabs.List)`
+  display: flex;
   border-bottom: 1px solid var(--ads-v2-color-border);
 `;
 
