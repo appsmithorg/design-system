@@ -1,24 +1,55 @@
 import styled, { css } from "styled-components";
-import { YOUR_PROP_TYPE_1 } from "./Toggle.types";
+import { Size } from "./Toggle.types";
 
 const Variables = css`
-  // Variables that are controlled, changed, or toggled entirely within this component
-  // are defined here and used in the component's styles.
+  --toggle-padding: var(--ads-v2-spaces-2);
+  --toggle-color-border: var(--ads-v2-color-border);
+  --toggle-color-background: var(--ads-v2-color-bg);
 `;
 
-// Variant style definitions
-const YOUR_VARIANTS = css`
-  // Styles for the variants defined in your type
-`;
+const Sizes = {
+  sm: css`
+    --toggle-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-1);
+  `,
+  md: css`
+    --toggle-padding: var(--ads-v2-spaces-2);
+  `,
+};
 
 export const StyledToggle = styled.span<{
-  // Props that affect styles are passed through here.
-  YOUR_PROP: YOUR_PROP_TYPE_1;
+  size: Size;
 }>`
-  ${Variables}
+  ${Variables};
 
-  /* Variant styles */
-  ${({ YOUR_PROP }) => YOUR_PROP && YOUR_VARIANTS[YOUR_PROP]} /* Base style */
+  ${({ size }) => size && Sizes[size]};
 
-  /* Additional styles and classes */
+  padding: var(--toggle-padding);
+  border-radius: var(--ads-v2-border-radius);
+
+  &:hover {
+    // TODO: get exact variable
+    --toggle-color-background: var(--ads-v2-color-bg-emphasis);
+    // TODO: use a theme variable
+    --toggle-color-border: var(--ads-v2-color-gray-400);
+  }
+
+  &:active {
+    --toggle-color-background: var(--ads-v2-color-bg-brand-secondary);
+    --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
+  }
+  &:disabled {
+    opacity: var(--ads-v2-opacity-disabled);
+
+    &:hover {
+      --toggle-color-border: var(--ads-v2-color-border);
+      --toggle-color-background: var(--ads-v2-color-bg);
+    }
+
+    &:focus {
+      --toggle-color-border: var(--ads-v2-color-border);
+      --toggle-color-background: var(--ads-v2-color-bg);
+    }
+  }
+  border: 1px solid var(--toggle-color-border);
+  background-color: var(--toggle-color-background);
 `;

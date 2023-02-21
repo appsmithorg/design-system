@@ -1,17 +1,14 @@
-import React from "react";
+import React, { ReactNode } from "react";
+import { Sizes } from "../__config__/types";
 
-// Toggle prop types
-export type YOUR_PROP_TYPE_1 = {
-  /** YOUR_PROP_TYPE_1 description */
-};
+export type Size = Extract<Sizes, "sm" | "md">;
 
 // Toggle props
 export type ToggleProps = {
-  /** this prop is used when... */
-  prop1: undefined;
-
   /** (try not to) pass addition classes here */
   className?: string;
   /** the words you want to display */
-  children: string;
-} & React.ToggleHTMLAttribute<HTMLToggleElement>;
+  children: ReactNode;
+  /** the size of the toggle button */
+  size: Size;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
