@@ -11,7 +11,6 @@ import { Tag } from "../Tag";
 
 /* TODO
 - Add Tag to tab
-  - figure out naming
   - account for 0 case
 - border styles using ::before
 - vertical tabs
@@ -38,7 +37,9 @@ function Tab(props: TabProps) {
       </Text>
       {props.notificationCount && (
         <Tag isClosable={false}>
-          {props.notificationCount > 9 ? "9+" : props.notificationCount}
+          {props.notificationCount != 0 && props.notificationCount > 9
+            ? "9+"
+            : props.notificationCount}
         </Tag>
       )}
     </StyledTab>
