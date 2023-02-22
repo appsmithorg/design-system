@@ -40,13 +40,12 @@
   --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-300);
   /** Used for error background hover  */
   --ads-v2-color-bg-error-emphasis: var(--ads-v2-color-red-200);
-
   /** Used for error background */
   --ads-v2-color-bg-error: var(--ads-v2-color-red-100);
   /** Used for success background */
-  --ads-v2-color-bg-success: var(--ads-v2-color-green-100);
+  --ads-v2-color-bg-success: var(--ads-v2-color-green-600);
   /** Used for warning background */
-  --ads-v2-color-bg-warning: var(--ads-v2-color-yellow-100);
+  --ads-v2-color-bg-warning: var(--ads-v2-color-yellow-600);
   /** Used for information background */
   --ads-v2-color-bg-information: var(--ads-v2-color-blue-100);
 
