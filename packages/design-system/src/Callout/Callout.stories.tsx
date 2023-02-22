@@ -41,11 +41,11 @@ CalloutWithLink.args = {
   links: [
     {
       to: "https://www.appsmith.com",
-      text: "Home",
+      children: "Home",
     },
     {
       to: "https://docs.appsmith.com",
-      text: "Docs",
+      children: "Docs",
     },
   ],
 };
