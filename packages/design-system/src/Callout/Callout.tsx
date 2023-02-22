@@ -45,7 +45,7 @@ function Callout({
                 startIcon={link.startIcon}
                 to={link.to}
               >
-                {link.text}
+                {link.children}
               </Link>
             ))}
           </StyledLinks>
