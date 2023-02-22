@@ -5,6 +5,7 @@ const Variables = css`
   --toggle-padding: var(--ads-v2-spaces-2);
   --toggle-color-border: var(--ads-v2-color-border);
   --toggle-color-background: var(--ads-v2-color-bg);
+  --toggle-color-icon: var(--ads-v2-color-fg);
 `;
 
 const Sizes = {
@@ -34,16 +35,11 @@ export const StyledToggle = styled.button<{
     --toggle-color-border: var(--ads-v2-color-border-emphasis);
   }
 
-  // TODO:  this is the "pressed" state and designs aren't there for this right now
-  //&:active {
-  //  --toggle-color-background: var(--ads-v2-color-bg-brand-secondary);
-  //  --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
-  //}
-
   ${({ isSelected }) =>
     isSelected &&
     `--toggle-color-background: var(--ads-v2-color-bg-brand-secondary);
      --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
+     --toggle-color-icon: var(--ads-v2-color-fg-on-brand-secondary);
 
      :hover {
        --toggle-color-background: var(--ads-v2-color-bg-brand-secondary-emphasis);
@@ -67,4 +63,7 @@ export const StyledToggle = styled.button<{
 
   border: 1px solid var(--toggle-color-border);
   background-color: var(--toggle-color-background);
+  & path {
+    color: var(--toggle-color-icon);
+  }
 `;
