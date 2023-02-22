@@ -16,8 +16,11 @@ const Sizes = {
   `,
 };
 
-export const StyledToggle = styled.span<{
-  size: Size;
+export const StyledToggle = styled.button<{
+  isPressed?: boolean;
+  isSelected?: boolean;
+  isDisabled?: boolean;
+  size?: Size;
 }>`
   ${Variables};
 
@@ -33,10 +36,18 @@ export const StyledToggle = styled.span<{
     --toggle-color-border: var(--ads-v2-color-gray-400);
   }
 
+  // TODO:  this is the "pressed" state and designs aren't there for this right now
   &:active {
     --toggle-color-background: var(--ads-v2-color-bg-brand-secondary);
     --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
   }
+
+  ${({ isSelected }) =>
+    isSelected &&
+    `--toggle-color-background: var(--ads-v2-color-bg-brand-secondary);
+     --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
+  `}
+
   &:disabled {
     opacity: var(--ads-v2-opacity-disabled);
 
@@ -50,6 +61,7 @@ export const StyledToggle = styled.span<{
       --toggle-color-background: var(--ads-v2-color-bg);
     }
   }
+
   border: 1px solid var(--toggle-color-border);
   background-color: var(--toggle-color-background);
 `;

@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { Sizes } from "../__config__/types";
+import { AriaToggleButtonProps } from "@react-types/button";
 
 export type Size = Extract<Sizes, "sm" | "md">;
 
@@ -11,4 +12,8 @@ export type ToggleProps = {
   children: ReactNode;
   /** the size of the toggle button */
   size: Size;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+  isDisabled: boolean;
+  isSelected: boolean;
+} & AriaToggleButtonProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
