@@ -30,22 +30,25 @@ export const StyledToggle = styled.button<{
   border-radius: var(--ads-v2-border-radius);
 
   &:hover {
-    // TODO: get exact variable
-    --toggle-color-background: var(--ads-v2-color-bg-emphasis);
-    // TODO: use a theme variable
-    --toggle-color-border: var(--ads-v2-color-gray-400);
+    --toggle-color-background: var(--ads-v2-color-bg-muted);
+    --toggle-color-border: var(--ads-v2-color-border-emphasis);
   }
 
   // TODO:  this is the "pressed" state and designs aren't there for this right now
-  &:active {
-    --toggle-color-background: var(--ads-v2-color-bg-brand-secondary);
-    --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
-  }
+  //&:active {
+  //  --toggle-color-background: var(--ads-v2-color-bg-brand-secondary);
+  //  --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
+  //}
 
   ${({ isSelected }) =>
     isSelected &&
     `--toggle-color-background: var(--ads-v2-color-bg-brand-secondary);
      --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
+
+     :hover {
+       --toggle-color-background: var(--ads-v2-color-bg-brand-secondary-emphasis);
+       --toggle-color-border: var(--ads-v2-color-border-brand-secondary-emphasis);
+     }
   `}
 
   &:disabled {
