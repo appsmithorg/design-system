@@ -18,9 +18,9 @@ const Sizes = {
 };
 
 export const StyledToggle = styled.button<{
-  isPressed?: boolean;
-  isSelected?: boolean;
   isDisabled?: boolean;
+  isFocusVisible?: boolean;
+  isSelected?: boolean;
   size?: Size;
 }>`
   ${Variables};
@@ -47,15 +47,16 @@ export const StyledToggle = styled.button<{
      }
   `}
 
+  ${({ isFocusVisible }) =>
+    isFocusVisible &&
+    ` outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
+      outline-offset: var(--ads-v2-offset-outline);
+    `}}
+
   &:disabled {
     opacity: var(--ads-v2-opacity-disabled);
 
     &:hover {
-      --toggle-color-border: var(--ads-v2-color-border);
-      --toggle-color-background: var(--ads-v2-color-bg);
-    }
-
-    &:focus {
       --toggle-color-border: var(--ads-v2-color-border);
       --toggle-color-background: var(--ads-v2-color-bg);
     }
