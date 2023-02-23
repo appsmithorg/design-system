@@ -4,6 +4,8 @@
   --ads-v2-font-weight-0: 0;
   --ads-v2-font-weight-normal: 400;
   --ads-v2-font-weight-bold: 500;
+  --ads-v2-font-weight-extra-bold: 600;
+
 
   /* Font Sizes */
   --ads-v2-font-size-0: 10px;
@@ -22,22 +24,13 @@
   --ads-v2-font-size-14: 28px;
 
   /* Line Heights */
-  --ads-v2-line-height-0: 0px;
-  --ads-v2-line-height-1: 14px;
-  --ads-v2-line-height-2: 17px;
-  --ads-v2-line-height-3: 19px;
-  --ads-v2-line-height-4: 20px;
-  --ads-v2-line-height-5: 21px;
-  --ads-v2-line-height-6: 22px;
-  --ads-v2-line-height-7: 25px;
-  --ads-v2-line-height-8: 27px;
+  --ads-v2-line-height-0: 1.14;
+  --ads-v2-line-height-1: 1.33;
+  --ads-v2-line-height-2: 1.4;
+  --ads-v2-line-height-3: 1.43;
+  --ads-v2-line-height-4: 1.5;
+  --ads-v2-line-height-5: 1.71;
 
   /* Letter Spacings */
-  --ads-v2-letter-spacing-0: -0.24;
-  --ads-v2-letter-spacing-1: -0.221538;
-  --ads-v2-letter-spacing-2: -0.204;
-  --ads-v2-letter-spacing-3: 0.4;
-  --ads-v2-letter-spacing-4: 0.6;
-  --ads-v2-letter-spacing-5: 0.8;
-
+  --ads-v2-letter-spacing-0: 0;
 }
