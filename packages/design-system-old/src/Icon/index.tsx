@@ -83,6 +83,7 @@ import { ReactComponent as StoreValue } from "../assets/icons/action/storeValue.
 import { ReactComponent as WatchGeolocation } from "../assets/icons/action/watchGeolocation.svg";
 import { ReactComponent as RunAPI } from "../assets/icons/action/runApi.svg";
 import { ReactComponent as PostMessage } from "../assets/icons/action/postMessage.svg";
+import { ReactComponent as NoAction } from "../assets/icons/action/noAction.svg";
 import { ReactComponent as PackageIcon } from "../assets/icons/ads/package.svg";
 
 // remix icons
@@ -488,6 +489,7 @@ const ICON_LOOKUP = {
   "watch-geolocation": <WatchGeolocation />,
   "run-api": <RunAPI />,
   "post-message": <PostMessage />,
+  "no-action": <NoAction />,
   package: <PackageIcon />,
 };
 
