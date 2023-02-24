@@ -1,5 +1,17 @@
 # @appsmithorg/design-system
 
+## 2.0.4
+
+### Patch Changes
+
+- [#357](https://github.com/appsmithorg/design-system/pull/357) [`7b97731`](https://github.com/appsmithorg/design-system/commit/7b9773197f13317cc1a66933c1fc6a8c3cd0a7c2) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Refactored Tooltip component
+
+* [#351](https://github.com/appsmithorg/design-system/pull/351) [`d02e111`](https://github.com/appsmithorg/design-system/commit/d02e111e0204d9af3b57025b1bc791cf1b5d0ea5) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add link
+
+- [#352](https://github.com/appsmithorg/design-system/pull/352) [`06929a6`](https://github.com/appsmithorg/design-system/commit/06929a6fff59744fc59367182c4dca3ec85cf0bd) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add tag
+
+* [#334](https://github.com/appsmithorg/design-system/pull/334) [`aa1331f`](https://github.com/appsmithorg/design-system/commit/aa1331f47bb0dd62e6fdf60cf905917d9b11eb9d) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added refactored button component
+
 ## 2.0.3
 
 ### Patch Changes
