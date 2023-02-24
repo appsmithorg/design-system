@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.51
+
+### Patch Changes
+
+- [#369](https://github.com/appsmithorg/design-system/pull/369) [`ca37154`](https://github.com/appsmithorg/design-system/commit/ca37154e9c636b35797a8c0c3ff5841893a535bf) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - chore: add sorting icons
+
 ## 1.0.50
 
 ### Patch Changes
