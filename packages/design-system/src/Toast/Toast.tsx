@@ -21,6 +21,7 @@ function Toast({ ...rest }: ToastProps) {
       closeButton={false}
       draggable={false}
       hideProgressBar
+      pauseOnHover={false}
       position={toastifyToast.POSITION.TOP_CENTER}
       rtl={false}
       transition={Slide}
