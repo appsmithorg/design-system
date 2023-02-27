@@ -32,7 +32,6 @@ export const StyledMenuSubContent = styled(RadixMenu.SubContent)`
 const MenuItemStyle = css`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--ads-v2-spaces-3);
   padding: var(--ads-v2-spaces-3);
   border-radius: var(--ads-v2-border-radius);

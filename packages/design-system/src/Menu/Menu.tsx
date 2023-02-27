@@ -8,6 +8,7 @@ import {
   StyledMenuSubTrigger,
 } from "./Menu.styles";
 import { MenuItemProps } from "./Menu.types";
+import { SIDE_OFFSET } from "./Menu.constants";
 
 function MenuContent({
   children,
@@ -15,8 +16,7 @@ function MenuContent({
 }: RadixMenu.DropdownMenuContentProps) {
   return (
     <RadixMenu.Portal>
-      {/* sideOffset is a number in Radix. */}
-      <StyledMenuContent sideOffset={4} {...props}>
+      <StyledMenuContent sideOffset={SIDE_OFFSET} {...props}>
         {children}
       </StyledMenuContent>
     </RadixMenu.Portal>
@@ -29,8 +29,7 @@ function MenuSubContent({
 }: RadixMenu.DropdownMenuSubContentProps) {
   return (
     <RadixMenu.Portal>
-      {/* sideOffset is a number in Radix. */}
-      <StyledMenuSubContent sideOffset={4} {...props}>
+      <StyledMenuSubContent sideOffset={SIDE_OFFSET} {...props}>
         {children}
       </StyledMenuSubContent>
     </RadixMenu.Portal>
@@ -48,13 +47,20 @@ function MenuTrigger({
   );
 }
 
-function MenuItem({ children, endIcon, startIcon, ...props }: MenuItemProps) {
-  return (
-    <StyledMenuItem {...props}>
-      {startIcon && <span>{startIcon}</span>}
-      {children}
-    </StyledMenuItem>
-  );
+function MenuItemLeftSlot({ children }: { children: React.ReactNode }) {
+  return <div>{children}</div>;
+}
+
+function MenuItemRightSlot({ children }: { children: React.ReactNode }) {
+  return <div>{children}</div>;
+}
+
+function MenuItemContent({ children }: { children: React.ReactNode }) {
+  return <div>{children}</div>;
+}
+
+function MenuItem({ children, ...props }: MenuItemProps) {
+  return <StyledMenuItem {...props}>{children}</StyledMenuItem>;
 }
 
 function MenuSubTrigger({
@@ -73,6 +79,8 @@ export {
   MenuSubContent,
   MenuTrigger,
   MenuItem,
+  MenuItemLeftSlot,
+  MenuItemRightSlot,
   MenuSub,
   MenuSubTrigger,
 };
