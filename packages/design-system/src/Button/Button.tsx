@@ -50,7 +50,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...buttonProps}
         UNSAFE_height={UNSAFE_height}
         UNSAFE_width={UNSAFE_width}
-        className={clsx(ButtonClassName, className)}
+        className={clsx(ButtonClassName, className, buttonProps.className)}
         data-loading={isLoading}
         kind={kind}
         ref={buttonRef}
