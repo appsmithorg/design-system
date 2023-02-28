@@ -46,6 +46,7 @@ const toast = {
               options?.action?.effect && options?.action?.effect();
               toastifyToast.dismiss();
             }}
+            {...options?.action}
           >
             {actionText}
           </StyledButton>
