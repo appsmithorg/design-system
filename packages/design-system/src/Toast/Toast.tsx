@@ -32,32 +32,35 @@ function Toast({ ...rest }: ToastProps) {
 
 // content is of type string and not type ToastContent because we do not want to
 // allow developers to pass in their own components.
-function toast(content: string, options?: ToastProps) {
-  const actionText = _.capitalize(options?.action?.actionText);
-  const icon = getIconForToast(options?.kind);
-  return toastifyToast(
-    <ToastBody kind="body-m">
-      {content}
-      {actionText && (
-        <StyledButton
-          kind="tertiary"
-          onPress={() => {
-            options?.action?.effect && options?.action?.effect();
-            toastifyToast.dismiss();
-          }}
-        >
-          {actionText}
-        </StyledButton>
-      )}
-    </ToastBody>,
-    {
-      icon: icon,
-      type: options?.kind,
-      closeOnClick: !actionText,
-      ...options,
-    },
-  );
-}
+const toast = {
+  show: (content: string, options?: ToastProps) => {
+    const actionText = _.capitalize(options?.action?.actionText);
+    const icon = getIconForToast(options?.kind);
+    return toastifyToast(
+      <ToastBody kind="body-m">
+        {content}
+        {actionText && (
+          <StyledButton
+            kind="tertiary"
+            onPress={() => {
+              options?.action?.effect && options?.action?.effect();
+              toastifyToast.dismiss();
+            }}
+          >
+            {actionText}
+          </StyledButton>
+        )}
+      </ToastBody>,
+      {
+        icon: icon,
+        type: options?.kind,
+        closeOnClick: !actionText,
+        ...options,
+      },
+    );
+  },
+  dismiss: () => toastifyToast.dismiss(),
+};
 
 function getIconForToast(kind: Kind) {
   switch (kind) {
