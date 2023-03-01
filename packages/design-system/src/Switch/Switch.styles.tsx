@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { Text } from "../Text";
 
 const Variables = css`
-  --switch-color-bg: var(--ads-v2-color-bg-emphasis-plus);
+  --switch-color-bg: var(--ads-v2-color-bg-emphasis);
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
