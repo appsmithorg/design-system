@@ -209,7 +209,7 @@ export function ToastComponent(
             }}
             type={TextType.H6}
           >
-            UNDO (⌘+Z)
+            UNDO
           </Text>
         ) : null}
       </div>
