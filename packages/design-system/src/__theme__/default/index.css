@@ -3,6 +3,52 @@
 @import "typography.css";
 
 :root {
+    /* generic tokens */
+    /* bg */
+    --ads-v2-color-bg-default: var(--ads-v2-color-white);
+    --ads-v2-color-bg-muted: var(--ads-v2-color-gray-100);
+    --ads-v2-color-bg-emphasis: var(--ads-v2-color-gray-200);
+
+    --ads-v2-color-bg-primary: var(--ads-v2-color-orange-600);
+    --ads-v2-color-bg-primary-emphasis: var(--ads-v2-color-orange-700);
+    --ads-v2-color-bg-primary-emphasis-plus: var(--ads-v2-color-orange-800);
+
+    --ads-v2-color-bg-secondary: var(--ads-v2-color-white);
+    --ads-v2-color-bg-secondary-emphasis: var(--ads-v2-color-gray-50);
+    --ads-v2-color-bg-secondary-emphasis-plus: var(--ads-v2-color-gray-100);
+
+    --ads-v2-color-bg-tertiary: var(--ads-v2-color-white);
+    --ads-v2-color-bg-tertiary-emphasis: var(--ads-v2-color-gray-100);
+    --ads-v2-color-bg-tertiary-emphasis-plus: var(--ads-v2-color-gray-200);
+
+    --ads-v2-color-bg-error: var(--ads-v2-color-red-50);
+    --ads-v2-color-bg-error-emphasis: var(--ads-v2-color-red-100);
+    --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-200);
+
+    --ads-v2-color-bg-warning: var(--ads-v2-color-yellow-100);
+    --ads-v2-color-bg-warning-emphasis: var(--ads-v2-color-yellow-600);
+
+    --ads-v2-color-bg-success: var(--ads-v2-color-green-100);
+    --ads-v2-color-bg-success-emphasis: var(--ads-v2-color-green-600);
+
+    --ads-v2-color-bg-info: var(--ads-v2-color-blue-100);
+    --ads-v2-color-bg-info-emphasis: var(--ads-v2-color-blue-600);
+
+    /* fg */
+    --ads-v2-color-fg-default: var(--ads-v2-color-gray-600);
+    --ads-v2-color-fg-muted: var(--ads-v2-color-gray-500);
+    --ads-v2-color-fg-subtle: var(--ads-v2-color-gray-400);
+    --ads-v2-color-fg-inverse: var(--ads-v2-color-white);
+    --ads-v2-color-fg-emphasis: var(--ads-v2-color-gray-700);
+
+    --ads-v2-color-fg-error: var(--ads-v2-color-red-600);
+    --ads-v2-color-fg-success: var(--ads-v2-color-green-600);
+    --ads-v2-color-fg-warning: var(--ads-v2-color-yellow-600);
+    --ads-v2-color-fg-info: var(--ads-v2-color-blue-600);
+    /* generic tokens ends here */
+
+
+
   /**
     * ===========================================*
     * ========== Background Colors ==============*
@@ -28,11 +74,11 @@
   /** Used for hover state for components without border */
   --ads-v2-color-bg-emphasis-plus: var(--ads-v2-color-gray-300);
   /** Used for components without border */
-  --ads-v2-color-bg-emphasis: var(--ads-v2-color-gray-200);
+  /* --ads-v2-color-bg-emphasis: var(--ads-v2-color-gray-200); */
   /** Default BG */
   --ads-v2-color-bg: var(--ads-v2-color-white);
   /* Used for emphasis default bg */
-  --ads-v2-color-bg-muted: var(--ads-v2-color-gray-100);
+  /* --ads-v2-color-bg-muted: var(--ads-v2-color-gray-100); */
   /** Used for disabled components */
   --ads-v2-color-bg-subtle: var(--ads-v2-color-gray-0);
 
@@ -58,13 +104,13 @@
   /** Used for content with high importance like main heading */
   --ads-v2-color-fg-emphasis-plus: var(--ads-v2-color-gray-800);
   /** Used for content with lesser importance than title. Like subtitle */
-  --ads-v2-color-fg-emphasis: var(--ads-v2-color-gray-700);
+  /* --ads-v2-color-fg-emphasis: var(--ads-v2-color-gray-700); */
   /** Default foreground color */
   --ads-v2-color-fg: var(--ads-v2-color-gray-600);
   /** Used for content with lesser importance than body content */
-  --ads-v2-color-fg-muted: var(--ads-v2-color-gray-500);
+  /* --ads-v2-color-fg-muted: var(--ads-v2-color-gray-500); */
   /** Used for all least important texts like placeholders, disabled text */
-  --ads-v2-color-fg-subtle: var(--ads-v2-color-gray-400);
+  /* --ads-v2-color-fg-subtle: var(--ads-v2-color-gray-400); */
   /** Text color with special meaning */
   --ads-v2-color-fg-brand: var(--ads-v2-color-orange-500);
   /** Hover for text color with special meaning */
