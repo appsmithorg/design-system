@@ -15,7 +15,7 @@ const Variables = css`
   --toastify-font-family: var(--ads-v2-font-family);
   --toastify-z-index: 9999;
 
-  --toastify-text-color-light: var(--ads-v2-color-fg);
+  --toastify-text-color-light: var(--ads-v2-color-fg-emphasis);
 `;
 
 export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
@@ -51,6 +51,7 @@ export const ToastBody = styled(Text)`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  color: var(--ads-v2-color-fg-emphasis);
 `;
 
 export const StyledButton = styled(Button)`
