@@ -16,7 +16,7 @@ export default {
   },
   argTypes: {
     // adding this specifically to bring that sorting order in storybook
-    sizes: {
+    size: {
       options: ["sm", "md", "lg", "xl", "xxl"],
       control: { type: "radio" },
     },
