@@ -45,6 +45,21 @@
     --ads-v2-color-fg-success: var(--ads-v2-color-green-600);
     --ads-v2-color-fg-warning: var(--ads-v2-color-yellow-600);
     --ads-v2-color-fg-info: var(--ads-v2-color-blue-600);
+
+    /* border */
+    --ads-v2-color-border-default: var(--ads-v2-color-gray-300);
+    --ads-v2-color-border-muted: var(--ads-v2-color-gray-200);
+    --ads-v2-color-border-emphasis: var(--ads-v2-color-gray-400);
+
+    --ads-v2-color-border-primary: var(--ads-v2-color-orange-600);
+    --ads-v2-color-border-primary-emphasis: var(--ads-v2-color-orange-700);
+    --ads-v2-color-border-primary-emphasis-plus: var(--ads-v2-color-orange-800);
+
+    --ads-v2-color-border-secondary: var(--ads-v2-color-gray-300);
+    --ads-v2-color-border-secondary-emphasis: var(--ads-v2-color-gray-400);
+    --ads-v2-color-border-secondary-emphasis-plus: var(--ads-v2-color-gray-500);
+
+    --ads-v2-color-border-error: var(--ads-v2-color-gray-200);
     /* generic tokens ends here */
 
 
@@ -149,11 +164,11 @@
   /** Used for indicating active borders */
   --ads-v2-color-border-emphasis-plus: var(--ads-v2-color-gray-600);
   /** Used for indicating hover borders */
-  --ads-v2-color-border-emphasis: var(--ads-v2-color-gray-400);
+  /* --ads-v2-color-border-emphasis: var(--ads-v2-color-gray-400); */
   /** Default border color */
   --ads-v2-color-border: var(--ads-v2-color-gray-300);
   /** Used for indicating disabled borders and dividers */
-  --ads-v2-color-border-muted: var(--ads-v2-color-gray-200);
+  /* --ads-v2-color-border-muted: var(--ads-v2-color-gray-200); */
 
   /** Used as active border when --ads-v2-color-bg-brand is the default bg */
   --ads-v2-color-border-brand-emphasis-plus: var(--ads-v2-color-orange-800);
