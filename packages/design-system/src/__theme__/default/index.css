@@ -120,7 +120,7 @@
   /** Used as default border color when --ads-v2-color-bg-brand is the default bg */
   --ads-v2-color-border-brand: var(--ads-v2-color-orange-600);
   /** Used for indicating error borders */
-  --ads-v2-color-border-error: var(--ads-v2-color-red-300);
+  --ads-v2-color-border-error: var(--ads-v2-color-red-400);
   /** Used for indicating success borders */
   --ads-v2-color-border-success: var(--ads-v2-color-green-600);
   /** Used for indicating warning borders */
@@ -165,4 +165,18 @@
 .ads-v2-focus-ring {
   outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
   outline-offset: var(--ads-v2-offset-outline);
+}
+
+/* Placeholder color */
+::placeholder {
+  color: var(--ads-v2-color-fg-subtle);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: var(--ads-v2-color-fg-subtle);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: var(--ads-v2-color-fg-subtle);
 }
