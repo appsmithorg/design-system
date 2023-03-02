@@ -1,4 +1,4 @@
-import { useTable, useSortBy } from "react-table";
+import { useTable, useSortBy, useExpanded } from "react-table";
 import React from "react";
 import styled from "styled-components";
 import { ReactComponent as DownArrow } from "../assets/icons/ads/down_arrow.svg";
@@ -156,7 +156,7 @@ function Table(props: TableProps) {
     headerGroups,
     prepareRow,
     rows,
-  } = useTable({ columns, data }, useSortBy);
+  } = useTable({ columns, data }, useSortBy, useExpanded);
 
   return (
     <Styles>
