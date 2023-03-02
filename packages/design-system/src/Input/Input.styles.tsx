@@ -5,34 +5,41 @@ import {
   InputStartIconClassName,
 } from "./Input.constants";
 import { InputSizes } from "./Input.types";
+import { Text } from "Text";
+import { iconSizes } from "Icon";
 
 const Variables = css`
   --input-color-border: var(--ads-v2-color-border);
-  --input-padding-x: var(--ads-v2-spaces-3); // padding left and right
+  --input-padding-x: var(--ads-v2-spaces-2); // padding left and right
   --input-padding-y: var(--ads-v2-spaces-2); // padding top and bottom
   --input-color: var(--ads-v2-color-fg);
-  --input-font-size: 14px;
-  --input-height: 32px;
+  --input-font-size: 12px;
+  --input-height: 24px;
 `;
 
-const Sizes = {
-  md: css`
-    --input-padding-x: var(--ads-v2-spaces-3);
-    --input-padding-y: var(--ads-v2-spaces-2);
-    --input-font-size: 12px;
-    --input-height: 32px;
-  `,
-  lg: css`
-    --input-padding-x: var(--ads-v2-spaces-3);
-    --input-padding-y: var(--ads-v2-spaces-3);
-    --input-font-size: 14px;
-    --input-height: 40px;
-  `,
+const getSizes = (size: InputSizes, component: "input" | "textarea") => {
+  const Sizes = {
+    sm: css`
+      --input-padding-x: var(--ads-v2-spaces-2);
+      --input-padding-y: var(--ads-v2-spaces-2);
+      --input-font-size: 12px;
+      --input-height: ${component === "input" ? "24px" : "60px"};
+    `,
+    md: css`
+      --input-padding-x: var(--ads-v2-spaces-3);
+      --input-padding-y: var(--ads-v2-spaces-3);
+      --input-font-size: 14px;
+      --input-height: ${component === "input" ? "36px" : "72px"};
+    `,
+  };
+
+  return Sizes[size];
 };
 
 export const MainContainer = styled.div<{
   labelPosition?: "top" | "left";
   size?: InputSizes;
+  component: "input" | "textarea";
 }>`
   ${Variables}
 
@@ -46,9 +53,10 @@ export const MainContainer = styled.div<{
   align-items: baseline;
   font-family: var(--ads-v2-font-family);
   font-size: var(--input-font-size);
+  width: 100%;
 
   /* Size style */
-  ${({ size }) => size && Sizes[size]}
+  ${({ component, size }) => size && getSizes(size, component)}
 `;
 
 export const Label = styled.label`
@@ -64,6 +72,7 @@ export const InputSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: var(--ads-v2-spaces-2);
+  width: 100%;
 `;
 
 export const InputContainer = styled.div<{
@@ -106,7 +115,10 @@ export const StyledInput = styled.input<{
   hasEndIcon?: boolean;
   renderer?: "input" | "textarea";
   hasError?: boolean;
+  inputSize?: InputSizes;
 }>`
+  --icon-size: ${({ inputSize }) => inputSize && iconSizes[inputSize]};
+
   background-color: var(--ads-v2-color-background);
   border: 1px solid var(--input-color-border);
   border-radius: var(--ads-v2-border-radius);
@@ -115,18 +127,20 @@ export const StyledInput = styled.input<{
   color: var(--input-color);
   padding: var(--input-padding-y) var(--input-padding-x);
   box-sizing: border-box;
-  width: ${({ UNSAFE_width }) => UNSAFE_width || "300px"};
+  width: ${({ UNSAFE_width }) => UNSAFE_width || "100%"};
   height: ${({ UNSAFE_height }) => UNSAFE_height || "var(--input-height)"};
   resize: none;
 
   /* adjust padding start according to icon present or not */
+  /* 
+   * add left right padding to icon width = padding left right
+   * minus 1px border width
+  */
   ${({ hasStartIcon, renderer }) =>
     hasStartIcon &&
     renderer === "input" &&
     css`
-      padding-left: calc(
-        var(--input-padding-x) + var(--ads-v2-spaces-5) + var(--input-padding-x)
-      );
+      padding-left: calc((var(--input-padding-x) * 2) + var(--icon-size) - 1px);
     `};
 
   /* adjust padding end according to icon present or not */
@@ -135,7 +149,7 @@ export const StyledInput = styled.input<{
     renderer === "input" &&
     css`
       padding-right: calc(
-        var(--input-padding-x) + var(--ads-v2-spaces-5) + var(--input-padding-x)
+        (var(--input-padding-x) * 2) + var(--icon-size) - 1px
       );
     `};
 
@@ -163,4 +177,12 @@ export const StyledInput = styled.input<{
     css`
       --input-color-border: var(--ads-v2-color-border-error);
     `}
+`;
+
+export const Description = styled(Text)`
+  line-height: unset;
+`;
+
+export const Error = styled(Text)`
+  line-height: unset;
 `;

@@ -5,6 +5,8 @@ import clsx from "classnames";
 
 import { InputProps } from "./Input.types";
 import {
+  Description,
+  Error,
   Label,
   MainContainer,
   StyledInput,
@@ -13,7 +15,6 @@ import {
 } from "./Input.styles";
 import { useDOMRef } from "Hooks/useDomRef";
 import { Icon } from "Icon";
-import { Text } from "Text";
 import {
   InputEndIconClassName,
   InputIconClassName,
@@ -32,7 +33,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       isRequired = false,
       label,
       labelPosition = "top",
-      size = "md",
+      size = "sm",
       startIcon,
       UNSAFE_height,
       UNSAFE_width,
@@ -43,7 +44,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const { focusProps, isFocusVisible } = useFocusRing();
 
     return (
-      <MainContainer labelPosition={labelPosition} size={size}>
+      <MainContainer component={as} labelPosition={labelPosition} size={size}>
         {/* TODO: replace this with text component */}
         {/* Issue: adding kind while implementing
         text is throwing typescript error. 
@@ -82,6 +83,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               hasEndIcon={!!endIcon}
               hasError={!!errorMessage}
               hasStartIcon={!!startIcon}
+              inputSize={size}
               isFocusVisible={isFocusVisible}
               ref={inputRef}
               renderer={as}
@@ -105,27 +107,25 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ) : null}
           </InputContainer>
           {description && (
-            // TODO: Replace with text component
-            <Text
+            <Description
               {...descriptionProps}
-              color="var(--ads-v2-color-fg)"
+              color="var(--ads-v2-color-fg-muted)"
               kind="body-s"
               style={
                 isDisabled ? { opacity: "var(--ads-v2-opacity-disabled)" } : {}
               }
             >
               {description}
-            </Text>
+            </Description>
           )}
           {errorMessage && (
-            // TODO: Replace with text component
-            <Text
+            <Error
               {...errorMessageProps}
               color="var(--ads-v2-color-fg-error)"
               kind="body-s"
             >
               {errorMessage}
-            </Text>
+            </Error>
           )}
         </InputSection>
       </MainContainer>

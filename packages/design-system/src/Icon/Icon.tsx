@@ -4,7 +4,7 @@ import { IconContainer } from "./Icon.styles";
 import { IconProps, IconSizes } from "./Icon.types";
 import { IconProvider } from "./Icon.provider";
 
-const iconSizes: Record<IconSizes, string> = {
+export const iconSizes: Record<IconSizes, string> = {
   sm: "12px",
   md: "16px",
   lg: "24px",

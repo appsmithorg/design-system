@@ -1,7 +1,7 @@
 import { TextFieldProps } from "@react-types/textfield";
 import { Sizes } from "__config__/types";
 
-export type InputSizes = Extract<Sizes, "md" | "lg">;
+export type InputSizes = Extract<Sizes, "sm" | "md">;
 
 // TextInput props
 export type InputProps = TextFieldProps & {

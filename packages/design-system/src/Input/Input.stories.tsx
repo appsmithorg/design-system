@@ -80,15 +80,15 @@ export default {
     size: {
       control: {
         type: "radio",
-        options: ["md", "lg"],
+        options: ["sm", "md"],
       },
       description: "Size of the input",
       table: {
         type: {
-          summary: "md | lg",
+          summary: "sm | md",
         },
         defaultValue: {
-          summary: "md",
+          summary: "sm",
         },
       },
     },
@@ -147,6 +147,13 @@ export default {
     },
   },
   parameters: { controls: { sort: "requiredFirst" } },
+  decorators: [
+    (Story) => (
+      <div style={{ width: "100%", maxWidth: "250px", margin: "0 auto" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Input>;
 
 // eslint-disable-next-line react/function-component-definition
