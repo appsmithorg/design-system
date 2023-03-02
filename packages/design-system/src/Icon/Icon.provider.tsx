@@ -255,7 +255,6 @@ function PlayIconPNGWrapper() {
 }
 
 const ICON_LOOKUP = {
-  undefined: null,
   "delete-control": DeleteIcon,
   "move-control": MoveIcon,
   "edit-control": EditIcon,
@@ -528,6 +527,16 @@ export function IconProvider(props: {
   color?: string;
 }) {
   const { color, iconName, size } = props;
+
+  const pascalCaseIconName = iconName
+    .split("-")
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join("");
+
   const Icon = ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP];
-  return Icon && <Icon color={color} size={size} />;
+  return Icon ? (
+    <Icon color={color} size={size} />
+  ) : (
+    require(`remixicon-react/${pascalCaseIconName}Icon`)
+  );
 }
