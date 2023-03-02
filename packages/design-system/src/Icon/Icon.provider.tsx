@@ -244,6 +244,16 @@ import { ReactComponent as BoxShadowVariant4Icon } from "../__assets__/icons/con
 import { ReactComponent as BoxShadowVariant5Icon } from "../__assets__/icons/control/box-shadow-variant5.svg";
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 
+function PlayIconPNGWrapper() {
+  return (
+    <img
+      alt="Datasource"
+      src={PlayIconPNG}
+      style={{ height: "30px", width: "30px" }}
+    />
+  );
+}
+
 const ICON_LOOKUP = {
   undefined: null,
   "delete-control": DeleteIcon,
@@ -262,13 +272,7 @@ const ICON_LOOKUP = {
   "pick-my-location-selected-control": PickMyLocationSelectedIcon,
   "settings-control": SettingsIcon,
   "help-control": HelpIcon,
-  "play-video": (
-    <img
-      alt="Datasource"
-      src={PlayIconPNG}
-      style={{ height: "30px", width: "30px" }}
-    />
-  ),
+  "play-video": PlayIconPNGWrapper,
   "remove-control": RemoveIcon,
   "drag-control": DragIcon,
   "collapse-control": CollapseIcon,
