@@ -1,5 +1,4 @@
 import React from "react";
-import { ControlIcons } from "@appsmithorg/design-system-old/src";
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
 import AddMoreFillIcon from "remixicon-react/AddCircleFillIcon";
 import ArrowLeftRightIcon from "remixicon-react/ArrowLeftRightLineIcon";
@@ -247,11 +246,78 @@ import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 
 const ICON_LOOKUP = {
   undefined: null,
-  HEADING_ONE: HeadingOneIcon,
-  HEADING_TWO: HeadingTwoIcon,
-  HEADING_THREE: HeadingThreeIcon,
-  PARAGRAPH: ParagraphIcon,
-  PARAGRAPH_TWO: ParagraphTwoIcon,
+  "delete-control": DeleteIcon,
+  "move-control": MoveIcon,
+  "edit-control": EditIcon,
+  "view-control": ViewIcon,
+  "more-vertical-control": MoreVerticalIcon,
+  "more-horizontal-control": OverflowMenuIcon,
+  "js-toggle": JsToggleIcon,
+  "increase-control": IncreaseIcon,
+  "decrease-control": DecreaseIcon,
+  "draggable-control": DraggableIcon,
+  "close-control": CloseIcon,
+  "close-circle-control": CloseCircleIcon,
+  "add-circle-control": AddCircleIcon,
+  "pick-my-location-selected-control": PickMyLocationSelectedIcon,
+  "settings-control": SettingsIcon,
+  "help-control": HelpIcon,
+  "play-video": (
+    <img
+      alt="Datasource"
+      src={PlayIconPNG}
+      style={{ height: "30px", width: "30px" }}
+    />
+  ),
+  "remove-control": RemoveIcon,
+  "drag-control": DragIcon,
+  "collapse-control": CollapseIcon,
+  "sort-control": SortIcon,
+  "edit-white": EditWhiteIcon,
+  "launch-control": LaunchIcon,
+  "back-control": BackIcon,
+  "show-column": EyeIcon,
+  "hide-column": EyeOffIcon,
+  "delete-column": DeleteColumnIcon,
+  "bold-font": BoldFontIcon,
+  underline: UnderlineIcon,
+  "italics-font": ItalicsFontIcon,
+  "center-align": CenterAlignIcon,
+  "left-align": LeftAlignIcon,
+  "right-align": RightAlignIcon,
+  "vertical-right": VerticalAlignRight,
+  "vertical-left": VerticalAlignLeft,
+  "vertical-top": VerticalAlignTop,
+  "vertical-bottom": VerticalAlignBottom,
+  "vertical-center": VerticalAlignCenter,
+  "copy-control": CopyIcon,
+  "copy2-control": Copy2Icon,
+  "cut-control": CutIcon,
+  "group-control": GroupIcon,
+  bullets: BulletsIcon,
+  "divider-cap-right": DividerCapRightIcon,
+  "divider-cap-left": DividerCapLeftIcon,
+  "divider-cap-all": DividerCapAllIcon,
+  "bind-data-control": TrendingFlat,
+  "icon-align-left": AlignLeftIcon,
+  "icon-align-right": AlignRightIcon,
+  "border-radius-sharp": BorderRadiusSharpIcon,
+  "border-radius-rounded": BorderRadiusRoundedIcon,
+  "border-radius-circle": BorderRadiusCircleIcon,
+  "box-shadow-none": BoxShadowNoneIcon,
+  "box-shadow-variant1": BoxShadowVariant1Icon,
+  "box-shadow-variant2": BoxShadowVariant2Icon,
+  "box-shadow-variant3": BoxShadowVariant3Icon,
+  "box-shadow-variant4": BoxShadowVariant4Icon,
+  "box-shadow-variant5": BoxShadowVariant5Icon,
+  "increase-control-v2": IncreaseV2Icon,
+  question: QuestionIcon,
+  "column-unfreeze": SubtractIcon,
+  "heading-one": HeadingOneIcon,
+  "heading-two": HeadingTwoIcon,
+  "heading-three": HeadingThreeIcon,
+  paragraph: ParagraphIcon,
+  "paragraph-two": ParagraphTwoIcon,
   "add-box-line": AddBoxLineIcon,
   "add-more": AddMoreIcon,
   "add-more-fill": AddMoreFillIcon,
@@ -324,10 +390,12 @@ const ICON_LOOKUP = {
   "no-response": NoResponseIcon,
   "oval-check": OvalCheck,
   "oval-check-fill": OvalCheckFill,
+  "pencil-fill-icon": PencilFillIcon,
   "pin-3": Pin3,
   "play-circle-line": PlayCircleLineIcon,
   "question-fill": QuestionFillIcon,
   "question-line": QuestionLineIcon,
+  "question-mark": QuestionMarkIcon,
   "reaction-2": Reaction2,
   "read-pin": ReadPin,
   "right-arrow": RightArrowIcon,
@@ -344,6 +412,7 @@ const ICON_LOOKUP = {
   "sort-desc": SortDescIcon,
   "star-fill": StarFillIcon,
   "star-line": StarLineIcon,
+  "subtract-line": SubtractLine,
   "swap-horizontal": ArrowLeftRightIcon,
   "timer-2-line": Timer2LineIcon,
   "trash-outline": TrashOutline,
@@ -448,7 +517,7 @@ export const IconCollection = Object.keys(ICON_LOOKUP);
   - fix path and colors for inverse icons
   - some icons with colors show up correctly on the individual story but not on the all stories one. fix. (ex: wand, pin, headings)
   - icon lookup should not be case sensitive
-  - remove unused imports   
+  - remove unused imports
  */
 export function IconProvider(props: {
   iconName: string;
