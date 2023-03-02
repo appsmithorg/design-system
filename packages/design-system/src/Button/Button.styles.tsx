@@ -18,37 +18,49 @@ const Variables = css`
   --button-gap: var(--ads-v2-spaces-2);
 `;
 
-const Sizes = {
-  sm: css`
-    --button-font-weight: 500;
-    --button-font-size: 12px;
-    --button-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
-    --button-gap: var(--ads-v2-spaces-2);
-  `,
-  md: css`
-    --button-font-weight: 600;
-    --button-font-size: 14px;
-    --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
-    --button-gap: var(--ads-v2-spaces-2);
-  `,
-  lg: css`
-    --button-font-weight: 600;
-    --button-font-size: 16px;
-    --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-5);
-    --button-gap: var(--ads-v2-spaces-3);
-  `,
+const getSizes = (size: ButtonSizes, isIconButton?: boolean) => {
+  const Sizes = {
+    sm: css`
+      --button-font-weight: 500;
+      --button-font-size: 12px;
+      --button-padding: ${isIconButton
+        ? "var(--ads-v2-spaces-2)"
+        : "var(--ads-v2-spaces-2) var(--ads-v2-spaces-3)"};
+      --button-gap: var(--ads-v2-spaces-2);
+    `,
+    md: css`
+      --button-font-weight: 600;
+      --button-font-size: 14px;
+      --button-padding: ${isIconButton
+        ? "var(--ads-v2-spaces-3)"
+        : "var(--ads-v2-spaces-3) var(--ads-v2-spaces-4)"};
+      --button-gap: var(--ads-v2-spaces-2);
+    `,
+    // lg: css`
+    //   --button-font-weight: 600;
+    //   --button-font-size: 16px;
+    //   --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-5);
+    //   --button-gap: var(--ads-v2-spaces-3);
+    // `,
+  };
+  return Sizes[size];
 };
 
-const Heights = {
-  sm: css`
-    --button-height: 24px;
-  `,
-  md: css`
-    --button-height: 32px;
-  `,
-  lg: css`
-    --button-height: 40px;
-  `,
+const getHeights = (size: ButtonSizes, isIconButton?: boolean) => {
+  const Heights = {
+    sm: css`
+      --button-height: 24px;
+      ${isIconButton && `width: 24px;`}
+    `,
+    md: css`
+      --button-height: 36px;
+      ${isIconButton && `width: 36px;`}
+    `,
+    // lg: css`
+    //   --button-height: 40px;
+    // `,
+  };
+  return Heights[size];
 };
 
 const Kinds = {
@@ -92,12 +104,12 @@ const Kinds = {
     --button-color-border: transparent;
 
     &:hover:enabled:not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-muted);
+      --button-color-bg: var(--ads-v2-color-bg-subtle);
       --button-color-fg: var(--ads-v2-color-fg);
     }
 
     &:active:enabled:not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-emphasis);
+      --button-color-bg: var(--ads-v2-color-bg-muted);
       --button-color-fg: var(--ads-v2-color-fg);
     }
 
@@ -125,11 +137,12 @@ const Kinds = {
 };
 
 export const ButtonContent = styled.div<{
+  isIconButton?: boolean;
   size?: ButtonSizes;
 }>`
   /* Content is separated out to make opacity driven loader functionality. */
   /* Size style */
-  ${({ size }) => size && Sizes[size]}
+  ${({ isIconButton, size }) => size && getSizes(size, isIconButton)}
 
   display: flex;
   flex-direction: row;
@@ -168,6 +181,7 @@ export const StyledButton = styled.button<{
   size?: ButtonSizes;
   UNSAFE_width?: string;
   disabled?: boolean;
+  isIconButton?: boolean;
 }>`
   ${Variables}
 
@@ -175,7 +189,7 @@ export const StyledButton = styled.button<{
   ${({ kind }) => kind && Kinds[kind]}
 
   /* Button heights */
-  ${({ size }) => size && Heights[size]}
+  ${({ isIconButton, size }) => size && getHeights(size, isIconButton)}
 
   position: relative;
   cursor: pointer;
@@ -191,7 +205,7 @@ export const StyledButton = styled.button<{
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
-  min-width: min-content;
+  min-width: ${({ isIconButton }) => (isIconButton ? "unset" : "isIconButton")};
 
   /* button disabled style */
   &:disabled {

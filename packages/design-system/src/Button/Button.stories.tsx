@@ -31,3 +31,13 @@ ButtonStory.args = {
   size: "md",
   kind: "primary",
 };
+
+export const IconButtonStory = Template.bind({});
+ButtonStory.storyName = "Icon Button";
+ButtonStory.args = {
+  onPress: () => alert("Button clicked!"),
+  startIcon: "arrow-left-line",
+  size: "md",
+  kind: "primary",
+  isIconButton: true,
+};

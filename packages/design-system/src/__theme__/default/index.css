@@ -32,9 +32,9 @@
   /** Default BG */
   --ads-v2-color-bg: var(--ads-v2-color-white);
   /* Used for emphasis default bg */
-  --ads-v2-color-bg-muted: var(--ads-v2-color-gray-100);
+  --ads-v2-color-bg-muted: var(--ads-v2-color-gray-200);
   /** Used for disabled components */
-  --ads-v2-color-bg-subtle: var(--ads-v2-color-gray-0);
+  --ads-v2-color-bg-subtle: var(--ads-v2-color-gray-100);
 
   /** Used for error background active */
   --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-300);

@@ -7,7 +7,7 @@ import { Sizes } from "__config__/types";
 export type Kind = "primary" | "secondary" | "tertiary" | "error";
 
 // Button sizes
-export type ButtonSizes = Extract<Sizes, "sm" | "md" | "lg">;
+export type ButtonSizes = Extract<Sizes, "sm" | "md">;
 
 // Button props
 export type ButtonProps = {
@@ -20,6 +20,8 @@ export type ButtonProps = {
   isLoading?: boolean;
   /** Whether the button is disabled. */
   isDisabled?: boolean;
+  /** Whether the button is a icon button. */
+  isIconButton?: boolean;
   /** The visual style to apply to the button. */
   kind?: Kind;
   /** The size of the button. */

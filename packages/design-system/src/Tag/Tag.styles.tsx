@@ -21,7 +21,7 @@ export const StyledTag = styled.span<{
 
   ${({ size }) => size && TagSize[size]}
 
-  background-color: var(--ads-v2-color-bg-muted);
+  background-color: var(--ads-v2-color-bg-subtle);
   color: var(--ads-v2-color-fg);
   border-radius: var(--ads-v2-border-radius);
 
