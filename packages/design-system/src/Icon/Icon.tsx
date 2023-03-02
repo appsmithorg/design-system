@@ -7,9 +7,7 @@ import { IconProvider } from "./Icon.provider";
 const iconSizes: Record<IconSizes, string> = {
   sm: "12px",
   md: "16px",
-  lg: "20px",
-  xl: "24px",
-  xxl: "32px",
+  lg: "24px",
 };
 
 function Icon(props: IconProps) {
