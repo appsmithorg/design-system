@@ -6,10 +6,10 @@ const Variables = css``;
 
 const TagSize = {
   sm: css`
-    padding: 0 var(--ads-v2-spaces-2);
+    padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
   `,
   md: css`
-    padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
+    padding: var(--ads-v2-spaces-2);
   `,
 };
 
