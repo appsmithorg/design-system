@@ -521,7 +521,6 @@ export const IconCollection = Object.keys(ICON_LOOKUP);
   - fix path and colors for inverse icons
   - some icons with colors show up correctly on the individual story but not on the all stories one. fix. (ex: wand, pin, headings)
   - icon lookup should not be case sensitive
-  - remove unused imports
  */
 export function IconProvider(props: {
   iconName: string;
