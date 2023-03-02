@@ -12,3 +12,4 @@ export * from "./Text";
 export * from "./Toast";
 export * from "./Tooltip";
 export * from "./Input";
+export * from "./Modal";
