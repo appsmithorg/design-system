@@ -193,7 +193,7 @@ export const StyledButton = styled.button<{
 
   position: relative;
   cursor: pointer;
-  border-radius: var(--ads-v2-border-radius);
+  border-radius: var(--ads-v2-border-radius) !important;
   border: none;
   background-color: transparent;
   color: var(--button-color-fg);

@@ -10,13 +10,13 @@ import {
   StyledBody,
   StyledFooter,
 } from "./Modal.styles";
-import { Icon } from "Icon";
 import {
   ModalContentClassName,
   ModalContentHeaderClassName,
   ModalContentHeaderCloseButtonClassName,
 } from "./Modal.constants";
 import { Text } from "Text";
+import { Button } from "Button";
 
 function ModalContent(props: ModalContentProps) {
   const { children, ...rest } = props;
@@ -42,7 +42,7 @@ function ModalHeader({ children, onClose }: ModalHeaderProps) {
         className={ModalContentHeaderCloseButtonClassName}
         onClick={onClose}
       >
-        <Icon color="var(--ads-v2-color-fg)" name="close-line" size="xl" />
+        <Button isIconButton kind="tertiary" size="md" startIcon="close-line" />
       </StyledClose>
     </StyledHeader>
   );
