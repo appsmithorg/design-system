@@ -533,10 +533,8 @@ export function IconProvider(props: {
     .map((word) => word[0].toUpperCase() + word.slice(1))
     .join("");
 
-  const Icon = ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP];
-  return Icon ? (
-    <Icon color={color} size={size} />
-  ) : (
-    require(`remixicon-react/${pascalCaseIconName}Icon`)
-  );
+  const Icon = ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP]
+    ? ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP]
+    : require(`remixicon-react/${pascalCaseIconName}Icon`);
+  return Icon && <Icon color={color} size={size} />;
 }
