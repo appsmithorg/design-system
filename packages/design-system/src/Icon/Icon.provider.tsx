@@ -449,9 +449,6 @@ export function IconProvider(props: {
   color?: string;
 }) {
   const { color, iconName, size } = props;
-
   const Icon = ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP];
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  return <Icon color={color} size={size} />;
+  return Icon && <Icon color={color} size={size} />;
 }
