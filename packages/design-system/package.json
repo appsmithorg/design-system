@@ -94,16 +94,16 @@
     ]
   },
   "dependencies": {
-    "@react-aria/button": "^3.6.4",
-    "@react-aria/focus": "^3.10.1",
-    "react-toastify": "9.0.3",
     "@radix-ui/react-dialog": "^1.0.2",
+    "@react-aria/button": "^3.6.4",
     "@react-aria/checkbox": "^3.7.1",
+    "@react-aria/focus": "^3.10.1",
     "@react-aria/link": "^3.3.6",
     "@react-aria/radio": "^3.4.2",
     "@react-aria/switch": "^3.3.1",
     "@react-stately/radio": "^3.6.2",
     "@react-stately/toggle": "^3.4.4",
+    "react-toastify": "9.0.3",
     "rc-tooltip": "^5.3.1"
   }
 }
