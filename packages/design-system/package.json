@@ -94,6 +94,7 @@
     ]
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.2",
     "@react-aria/button": "^3.6.4",
     "@react-aria/checkbox": "^3.7.1",
     "@react-aria/focus": "^3.10.1",
