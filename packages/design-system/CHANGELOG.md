@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.0.5
+
+### Patch Changes
+
+- [#373](https://github.com/appsmithorg/design-system/pull/373) [`6fa3d3c`](https://github.com/appsmithorg/design-system/commit/6fa3d3c352d8d5d9bcdaf196b75353e6694f4c7b) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Refactored segmented controls
+
+* [#355](https://github.com/appsmithorg/design-system/pull/355) [`f9dc374`](https://github.com/appsmithorg/design-system/commit/f9dc37460b5917c72be433d257f7e876031aa05a) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Refactored modal component
+
 ## 2.0.4
 
 ### Patch Changes
