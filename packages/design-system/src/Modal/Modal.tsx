@@ -42,7 +42,16 @@ function ModalHeader({ children, onClose }: ModalHeaderProps) {
         className={ModalContentHeaderCloseButtonClassName}
         onClick={onClose}
       >
-        <Button isIconButton kind="tertiary" size="md" startIcon="close-line" />
+        {/* Using unsafe here, asChild of radix have some issues while passing down props */}
+        {/* TODO: figure a way to avoid this */}
+        <Button
+          UNSAFE_height="36px !important"
+          UNSAFE_width="36px !important"
+          isIconButton
+          kind="tertiary"
+          size="md"
+          startIcon="close-line"
+        />
       </StyledClose>
     </StyledHeader>
   );

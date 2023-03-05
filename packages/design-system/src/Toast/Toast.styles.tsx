@@ -29,6 +29,8 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
 
   .body {
     padding: 0;
+    gap: var(--ads-v2-spaces-3);
+    align-items: center;
   }
 
   .Toastify__toast {
@@ -38,9 +40,9 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
   }
 
   .Toastify__toast-icon {
-    margin-right: var(--ads-v2-spaces-3);
-    align-self: flex-start;
-    width: 1rem;
+    align-self: center;
+    width: fit-content;
+    margin-right: 0;
   }
 
   ${Variables}
@@ -49,14 +51,14 @@ export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
 export const ToastBody = styled(Text)`
   padding: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   color: var(--ads-v2-color-fg-emphasis);
+  gap: var(--ads-v2-spaces-3);
 `;
 
 export const StyledButton = styled(Button)`
-  margin-right: -var(--ads-v2-spaces-3);
-  margin-left: var(--ads-v2-spaces-3);
+  min-width: fit-content;
 
   align-self: center;
 `;

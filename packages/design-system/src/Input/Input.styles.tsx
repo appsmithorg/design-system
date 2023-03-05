@@ -50,7 +50,6 @@ export const MainContainer = styled.div<{
     labelPosition === "left"
       ? "var(--ads-v2-spaces-4)"
       : "var(--ads-v2-spaces-2)"};
-  align-items: baseline;
   font-family: var(--ads-v2-font-family);
   font-size: var(--input-font-size);
   width: 100%;
@@ -61,6 +60,7 @@ export const MainContainer = styled.div<{
 
 export const Label = styled.label`
   color: var(--ads-v2-color-fg);
+  word-wrap: break-word;
 
   & > span {
     color: var(--ads-v2-color-fg-error);
@@ -82,6 +82,7 @@ export const InputContainer = styled.div<{
   display: flex;
   align-items: center;
   width: 100%;
+  min-width: 180px;
   color: var(--input-color);
 
   & .${InputIconClassName} {

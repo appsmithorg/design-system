@@ -34,7 +34,7 @@ const getSizes = (size: ButtonSizes, isIconButton?: boolean) => {
       --button-padding: ${isIconButton
         ? "var(--ads-v2-spaces-3)"
         : "var(--ads-v2-spaces-3) var(--ads-v2-spaces-4)"};
-      --button-gap: var(--ads-v2-spaces-2);
+      --button-gap: var(--ads-v2-spaces-3);
     `,
     // lg: css`
     //   --button-font-weight: 600;
