@@ -87,30 +87,35 @@ const Kinds = {
     --font-weight: var(--ads-v2-h1-font-weight);
     --line-height: var(--ads-v2-h1-line-height);
     --letter-spacing: var(--ads-v2-h1-letter-spacing);
+    --color: var(--ads-v2-color-fg-emphasis-plus);
   `,
   "heading-l": css`
     --font-size: var(--ads-v2-font-size-12);
     --font-weight: var(--ads-v2-h2-font-weight);
     --line-height: var(--ads-v2-h2-line-height);
     --letter-spacing: var(--ads-v2-h2-letter-spacing);
+    --color: var(--ads-v2-color-fg-emphasis-plus);
   `,
   "heading-m": css`
     --font-size: var(--ads-v2-font-size-10);
     --font-weight: var(--ads-v2-h3-font-weight);
     --line-height: var(--ads-v2-h3-line-height);
     --letter-spacing: var(--ads-v2-h3-letter-spacing);
+    --color: var(--ads-v2-color-fg-emphasis-plus);
   `,
   "heading-s": css`
     --font-size: var(--ads-v2-font-size-6);
     --font-weight: var(--ads-v2-h4-font-weight);
     --line-height: var(--ads-v2-h4-line-height);
     --letter-spacing: var(--ads-v2-h4-letter-spacing);
+    --color: var(--ads-v2-color-fg-emphasis-plus);
   `,
   "heading-xs": css`
     --font-size: var(--ads-v2-font-size-4);
     --font-weight: var(--ads-v2-h5-font-weight);
     --line-height: var(--ads-v2-h5-line-height);
     --letter-spacing: var(--ads-v2-h5-letter-spacing);
+    --color: var(--ads-v2-color-fg-emphasis-plus);
   `,
 };
 
@@ -132,4 +137,5 @@ export const StyledText = styled.span<{
   font-weight: var(--font-weight);
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
+  margin: 0;
 `;

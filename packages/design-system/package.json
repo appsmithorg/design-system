@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "description": "This is the package for the design system that powers the Appsmith platform",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -20,10 +20,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
-    "@react-aria/checkbox": "^3.7.1",
     "@react-aria/focus": "^3.10.1",
-    "@react-aria/radio": "^3.4.2",
-    "@react-stately/radio": "^3.6.2",
     "@react-types/button": "^3.7.0",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-image": "^3.0.1",
@@ -63,7 +60,6 @@
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "prettier": "^2.8.1",
-    "rc-tooltip": "^5.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.0.0",
@@ -99,11 +95,16 @@
   },
   "dependencies": {
     "@radix-ui/react-tabs": "^1.0.2",
+    "@radix-ui/react-dialog": "^1.0.2",
     "@react-aria/button": "^3.6.4",
+    "@react-aria/checkbox": "^3.7.1",
     "@react-aria/focus": "^3.10.1",
-    "react-toastify": "9.0.3",
     "@react-aria/link": "^3.3.6",
+    "@react-aria/radio": "^3.4.2",
     "@react-aria/switch": "^3.3.1",
-    "@react-stately/toggle": "^3.4.4"
+    "@react-stately/radio": "^3.6.2",
+    "@react-stately/toggle": "^3.4.4",
+    "react-toastify": "9.0.3",
+    "rc-tooltip": "^5.3.1"
   }
 }
