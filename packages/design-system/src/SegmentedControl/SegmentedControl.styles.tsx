@@ -10,6 +10,8 @@ export const StyledSegmentedControl = styled.div<{
   background-color: var(--ads-v2-color-bg-muted);
   padding: var(--ads-v2-spaces-1);
   border-radius: var(--ads-v2-border-radius);
+  height: 32px;
+  box-sizing: border-box;
 `;
 
 export const StyledSegment = styled.span`
@@ -33,8 +35,10 @@ export const StyledControlContainer = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  border: 1px solid transparent;
   border-radius: var(--ads-v2-border-radius);
   background-color: transparent;
+  box-sizing: border-box;
   cursor: pointer;
   transition: box-shadow 600ms ease;
 
@@ -46,6 +50,7 @@ export const StyledControlContainer = styled.div`
   &[data-selected="true"] {
     background-color: var(--ads-v2-color-bg);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--ads-v2-color-border);
 
     & > ${StyledSegment} > * {
       color: var(--ads-v2-color-fg);
@@ -66,7 +71,7 @@ export const StyledControlContainer = styled.div`
   &[data-selected="true"]:not(:first-child):after {
     content: "";
     position: absolute;
-    left: -5px;
+    left: -7px;
     width: 1px;
     height: 16px;
     background-color: var(--ads-v2-color-bg-muted);

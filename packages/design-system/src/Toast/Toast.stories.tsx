@@ -45,7 +45,8 @@ Default.args = {
 
 export const ToastWithAction = Template.bind({});
 ToastWithAction.args = {
-  content: "Widget was removed",
+  content:
+    "Widget was removed. Widget was removed. Widget was removed. Widget was removed. Widget was removed. Widget was removed. Widget was removed",
   kind: "success",
   action: {
     actionText: "undo",

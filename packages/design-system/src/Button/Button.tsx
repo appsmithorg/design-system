@@ -25,6 +25,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       className,
       endIcon,
+      isIconButton,
       isLoading,
       kind,
       size,
@@ -52,6 +53,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         UNSAFE_width={UNSAFE_width}
         className={clsx(ButtonClassName, className)}
         data-loading={isLoading}
+        isIconButton={isIconButton}
         kind={kind}
         ref={buttonRef}
         size={size}
@@ -63,22 +65,26 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             iconProps={{
               className: ButtonLoadingIconClassName,
             }}
-            size={size}
+            size="md"
           />
         )}
 
         {/* Button content */}
-        <ButtonContent className={ButtonContentClassName} size={size}>
+        <ButtonContent
+          className={ButtonContentClassName}
+          isIconButton={isIconButton}
+          size={size}
+        >
           {/* Start Icon Section */}
           {startIcon ? (
             typeof startIcon === "string" ? (
               <Icon
                 className={ButtonContentIconStartClassName}
                 name={startIcon}
-                size={size}
+                size="md"
               />
             ) : (
-              <Icon className={ButtonContentIconStartClassName} size={size}>
+              <Icon className={ButtonContentIconStartClassName} size="md">
                 {startIcon}
               </Icon>
             )
@@ -95,10 +101,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               <Icon
                 className={ButtonContentIconEndClassName}
                 name={endIcon}
-                size={size}
+                size="md"
               />
             ) : (
-              <Icon className={ButtonContentIconEndClassName} size={size}>
+              <Icon className={ButtonContentIconEndClassName} size="md">
                 {endIcon}
               </Icon>
             )

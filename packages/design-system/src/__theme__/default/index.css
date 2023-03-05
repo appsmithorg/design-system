@@ -26,15 +26,15 @@
   /** Used for tooltips or any high contrast components */
   --ads-v2-color-bg-emphasis-max: var(--ads-v2-color-gray-800);
   /** Used for hover state for components without border */
-  --ads-v2-color-bg-emphasis-plus: var(--ads-v2-color-gray-300);
+  --ads-v2-color-bg-emphasis-plus: var(--ads-v2-color-gray-400);
   /** Used for components without border */
-  --ads-v2-color-bg-emphasis: var(--ads-v2-color-gray-200);
+  --ads-v2-color-bg-emphasis: var(--ads-v2-color-gray-300);
   /** Default BG */
   --ads-v2-color-bg: var(--ads-v2-color-white);
   /* Used for emphasis default bg */
-  --ads-v2-color-bg-muted: var(--ads-v2-color-gray-100);
+  --ads-v2-color-bg-muted: var(--ads-v2-color-gray-200);
   /** Used for disabled components */
-  --ads-v2-color-bg-subtle: var(--ads-v2-color-gray-0);
+  --ads-v2-color-bg-subtle: var(--ads-v2-color-gray-100);
 
   /** Used for error background active */
   --ads-v2-color-bg-error-emphasis-plus: var(--ads-v2-color-red-300);
@@ -120,7 +120,7 @@
   /** Used as default border color when --ads-v2-color-bg-brand is the default bg */
   --ads-v2-color-border-brand: var(--ads-v2-color-orange-600);
   /** Used for indicating error borders */
-  --ads-v2-color-border-error: var(--ads-v2-color-red-300);
+  --ads-v2-color-border-error: var(--ads-v2-color-red-400);
   /** Used for indicating success borders */
   --ads-v2-color-border-success: var(--ads-v2-color-green-600);
   /** Used for indicating warning borders */
@@ -165,4 +165,18 @@
 .ads-v2-focus-ring {
   outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
   outline-offset: var(--ads-v2-offset-outline);
+}
+
+/* Placeholder color */
+::placeholder {
+  color: var(--ads-v2-color-fg-subtle);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: var(--ads-v2-color-fg-subtle);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: var(--ads-v2-color-fg-subtle);
 }
