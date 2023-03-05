@@ -1,5 +1,6 @@
 import React from "react";
 import { ToastOptions } from "react-toastify";
+import { ButtonProps } from "../Button/Button.types";
 
 export type Kind = "success" | "warning" | "info" | "error" | undefined;
 // Toast props
@@ -13,5 +14,5 @@ export type ToastProps = {
     actionText: string;
     /** A function that carries out the action */
     effect: any;
-  };
+  } & ButtonProps;
 } & ToastOptions;

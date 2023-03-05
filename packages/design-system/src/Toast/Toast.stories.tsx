@@ -28,7 +28,7 @@ export default {
 const Template: ComponentStory<typeof Toast> = (args) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  const notify = () => toast(args.content, { ...args });
+  const notify = () => toast.show(args.content, { ...args });
 
   return (
     <div>
