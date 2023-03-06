@@ -120,7 +120,7 @@ export const StyledInput = styled.input<{
 }>`
   --icon-size: ${({ inputSize }) => inputSize && iconSizes[inputSize]};
 
-  background-color: var(--ads-v2-color-background);
+  background-color: var(--ads-v2-color-bg);
   border: 1px solid var(--input-color-border);
   border-radius: var(--ads-v2-border-radius);
   font-family: var(--ads-v2-font-family);
