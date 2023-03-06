@@ -7,10 +7,9 @@ import * as RadixTabs from "@radix-ui/react-tabs";
 
 import { Text } from "../Text";
 import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
+import { Tag } from "../Tag";
 
 /* TODO
-- Add Tag to tab
-  - figure out naming
 - border styles using ::before
 - vertical tabs
 - focus styles
@@ -34,6 +33,13 @@ function Tab(props: TabProps) {
       <Text color="inherit" kind="action-m">
         {props.children}
       </Text>
+      {props.notificationCount && (
+        <Tag isClosable={false}>
+          {props.notificationCount != 0 && props.notificationCount > 9
+            ? "9+"
+            : props.notificationCount}
+        </Tag>
+      )}
     </StyledTab>
   );
 }

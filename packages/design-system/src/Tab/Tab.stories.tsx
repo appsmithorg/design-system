@@ -44,6 +44,12 @@ TabExample.argTypes = {
       "A unique id given to the tab that must match with the corresponding Tab Panel.",
     required: true,
   },
+  notificationCount: {
+    description: "the number of notifications the tab contains",
+    control: {
+      type: "number",
+    },
+  },
 };
 
 // eslint-disable-next-line react/function-component-definition

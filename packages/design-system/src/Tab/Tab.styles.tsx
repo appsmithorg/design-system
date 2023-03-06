@@ -7,6 +7,7 @@ const Variables = css`
 `;
 
 export const StyledTabsList = styled(RadixTabs.List)`
+  display: flex;
   border-bottom: 1px solid var(--ads-v2-color-border);
   display: flex;
   gap: var(--ads-v2-spaces-4);
@@ -38,6 +39,10 @@ export const StyledTab = styled(RadixTabs.TabsTrigger)`
     right: 0;
     background-color: var(--tab-selection-color);
   }
+
+  display: flex;
+  align-items: center;
+  gap: var(--ads-v2-spaces-3);
 
   &:hover {
     --tab-selection-color: var(--ads-v2-color-border);
