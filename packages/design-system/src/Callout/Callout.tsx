@@ -7,6 +7,7 @@ import {
   StyledCloseIcon,
   StyledIconContainer,
   StyledLinks,
+  StyledChildren,
 } from "./Callout.styles";
 import { getIconByKind } from "../Icon/getIconByKind";
 import { Link } from "../Link";
@@ -34,7 +35,7 @@ function Callout({
     >
       <StyledIconContainer>{kind && getIconByKind(kind)}</StyledIconContainer>
       <StyledChildrenContainer>
-        {children}
+        <StyledChildren kind="body-m">{children}</StyledChildren>
         {links && (
           <StyledLinks>
             {links.map((link) => (
@@ -53,9 +54,12 @@ function Callout({
       </StyledChildrenContainer>
       {isClosable && (
         <StyledCloseIcon
-          name="close-line"
-          onClick={() => setClosed(true)}
-          size="xl"
+          aria-label="Close"
+          isIconButton
+          kind="tertiary"
+          onPress={() => setClosed(true)}
+          size="sm"
+          startIcon="close-line"
         />
       )}
     </StyledCallout>

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { Kind } from "./Callout.types";
-import { Icon } from "../Icon";
+import { Button } from "Button";
+import { Text } from "Text";
 
 const Variables = css`
   --callout-color-background: var(--ads-v2-color-bg);
@@ -45,7 +46,7 @@ export const StyledCallout = styled.div<{
   ${({ isClosed }) => isClosed && `display: none;`}
 `;
 
-export const StyledCloseIcon = styled(Icon)`
+export const StyledCloseIcon = styled(Button)`
   margin-left: auto;
   cursor: pointer;
 `;
@@ -64,4 +65,8 @@ export const StyledIconContainer = styled.div`
 
 export const StyledChildrenContainer = styled.div`
   margin-top: var(--ads-v2-spaces-1);
+`;
+
+export const StyledChildren = styled(Text)`
+  color: var(--ads-v2-color-fg-emphasis);
 `;

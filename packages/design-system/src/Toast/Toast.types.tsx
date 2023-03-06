@@ -1,4 +1,3 @@
-import React from "react";
 import { ToastOptions } from "react-toastify";
 import { ButtonProps } from "../Button/Button.types";
 import { Kinds } from "../__config__/types";

@@ -11,11 +11,7 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Callout> = (args) => {
-  return (
-    <Callout {...args}>
-      <Text kind="body-m">{args.children}</Text>
-    </Callout>
-  );
+  return <Callout {...args}>{args.children}</Callout>;
 };
 
 export const CalloutStory = Template.bind({});

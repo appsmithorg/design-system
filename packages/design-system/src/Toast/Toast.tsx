@@ -1,6 +1,5 @@
 import React from "react";
 import _ from "lodash";
-import { useFocusRing } from "@react-aria/focus";
 import { Slide, toast as toastifyToast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
