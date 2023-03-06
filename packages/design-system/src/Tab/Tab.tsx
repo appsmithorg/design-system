@@ -1,9 +1,11 @@
 import React from "react";
-import { useFocusRing } from "@react-aria/focus";
 
-import { StyledTab, StyledTabPanel, StyledTabsList } from "./Tab.styles";
-
-import * as RadixTabs from "@radix-ui/react-tabs";
+import {
+  StyledTabs,
+  StyledTab,
+  StyledTabPanel,
+  StyledTabsList,
+} from "./Tab.styles";
 
 import { Text } from "../Text";
 import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
@@ -17,9 +19,9 @@ import { Tag } from "../Tag";
 
 function Tabs(props: TabsProps) {
   return (
-    <RadixTabs.Root defaultValue={props.defaultValue} {...props}>
+    <StyledTabs defaultValue={props.defaultValue} {...props}>
       {props.children}
-    </RadixTabs.Root>
+    </StyledTabs>
   );
 }
 
