@@ -49,7 +49,7 @@ ToastWithAction.args = {
     "Widget was removed. Widget was removed. Widget was removed. Widget was removed. Widget was removed. Widget was removed. Widget was removed",
   kind: "success",
   action: {
-    actionText: "undo",
+    text: "undo",
     effect: () => console.log("effect affected"),
   },
 };
