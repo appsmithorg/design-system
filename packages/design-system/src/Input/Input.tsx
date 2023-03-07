@@ -54,7 +54,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {isRequired && <span>*</span>}
         </Label>
         <InputSection>
-          <InputContainer disabled={isDisabled || isReadOnly}>
+          <InputContainer isDisabled={isDisabled || isReadOnly}>
             {/* Start Icon Section */}
             {startIcon && as === "input" ? (
               typeof startIcon === "string" ? (

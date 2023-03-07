@@ -13,7 +13,7 @@ const Variables = css`
   --input-padding-x: var(--ads-v2-spaces-2); // padding left and right
   --input-padding-y: var(--ads-v2-spaces-2); // padding top and bottom
   --input-color: var(--ads-v2-color-fg);
-  --input-font-size: 12px;
+  --input-font-size: var(--ads-v2-font-size-2);
   --input-height: 24px;
 `;
 
@@ -22,13 +22,13 @@ const getSizes = (size: InputSizes, component: "input" | "textarea") => {
     sm: css`
       --input-padding-x: var(--ads-v2-spaces-2);
       --input-padding-y: var(--ads-v2-spaces-2);
-      --input-font-size: 12px;
+      --input-font-size: var(--ads-v2-font-size-2);
       --input-height: ${component === "input" ? "24px" : "60px"};
     `,
     md: css`
       --input-padding-x: var(--ads-v2-spaces-3);
       --input-padding-y: var(--ads-v2-spaces-3);
-      --input-font-size: 14px;
+      --input-font-size: var(--ads-v2-font-size-4);
       --input-height: ${component === "input" ? "36px" : "72px"};
     `,
   };
@@ -76,7 +76,7 @@ export const InputSection = styled.div`
 `;
 
 export const InputContainer = styled.div<{
-  disabled?: boolean;
+  isDisabled?: boolean;
 }>`
   position: relative;
   display: flex;
@@ -102,8 +102,8 @@ export const InputContainer = styled.div<{
     right: 0;
   }
 
-  ${({ disabled }) =>
-    disabled &&
+  ${({ isDisabled }) =>
+    isDisabled &&
     `opacity: var(--ads-v2-opacity-disabled);
     cursor: not-allowed;`};
 `;

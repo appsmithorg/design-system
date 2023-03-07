@@ -20,7 +20,7 @@ export type ButtonProps = {
   isLoading?: boolean;
   /** Whether the button is disabled. */
   isDisabled?: boolean;
-  /** Whether the button is a icon button. */
+  /** Whether the button contains only an icon or not. If true, only pass the icon value to startIcon. */
   isIconButton?: boolean;
   /** The visual style to apply to the button. */
   kind?: Kind;
