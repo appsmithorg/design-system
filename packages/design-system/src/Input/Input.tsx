@@ -28,7 +28,6 @@ import {
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (props, ref): JSX.Element => {
     const {
-      as = "input",
       className,
       description,
       endIcon,
@@ -40,6 +39,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       label,
       labelPosition = "top",
       onChange,
+      renderAs = "input",
       size = "sm",
       startIcon,
       startIconProps,
@@ -63,7 +63,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <MainContainer
         className={clsx(InputClassName, className)}
-        component={as}
+        component={renderAs}
         labelPosition={labelPosition}
         testSize={size}
       >
@@ -80,7 +80,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <InputSection className={InputSectionClassName}>
           <InputContainer disabled={isDisabled || isReadOnly}>
             {/* Start Icon Section */}
-            {startIcon && as === "input" ? (
+            {startIcon && renderAs === "input" ? (
               typeof startIcon === "string" ? (
                 <Icon
                   className={clsx(
@@ -108,7 +108,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ) : null}
             {/* Input Section */}
             <StyledInput
-              as={as}
+              as={renderAs}
               type={"text"}
               {...focusProps}
               {...inputProps}
@@ -122,11 +122,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               isFocusVisible={isFocusVisible}
               onChange={handleOnChange}
               ref={inputRef}
-              renderer={as}
+              renderer={renderAs}
               value={value}
             />
             {/* End Icon Section */}
-            {endIcon && as === "input" ? (
+            {endIcon && renderAs === "input" ? (
               typeof endIcon === "string" ? (
                 <Icon
                   className={clsx(

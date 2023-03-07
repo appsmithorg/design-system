@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Input } from "./Input";
-import { InputEndIconClassName } from "./Input.constants";
+import { Input } from "../Input/Input";
+import { InputEndIconClassName } from "../Input/Input.constants";
 
 export const StyledSearchInput = styled(Input)`
   --input-font-size: 14px;

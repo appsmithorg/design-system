@@ -12,7 +12,7 @@ export type ButtonSizes = Extract<Sizes, "sm" | "md">;
 // Button props
 export type ButtonProps = {
   /** The HTML element to render the button as. */
-  as?: "button" | "a";
+  renderAs?: "button" | "a";
   /** The class name to apply to the button component. */
   className?: string;
   children?: React.ReactNode | string;

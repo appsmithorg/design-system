@@ -17,7 +17,7 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof SearchInput> = (args) => {
-  return <SearchInput />;
+  return <SearchInput {...args} />;
 };
 
 export const InputExample = Template.bind({});
