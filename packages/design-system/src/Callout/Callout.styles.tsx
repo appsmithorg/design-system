@@ -49,6 +49,7 @@ export const StyledCallout = styled.div<{
 export const StyledCloseIcon = styled(Button)`
   margin-left: auto;
   cursor: pointer;
+  min-width: fit-content;
 `;
 
 export const StyledLinks = styled.div`
@@ -59,9 +60,7 @@ export const StyledLinks = styled.div`
   margin-bottom: var(--ads-v2-spaces-1);
 `;
 
-export const StyledIconContainer = styled.div`
-  margin-top: var(--ads-v2-spaces-1);
-`;
+export const StyledIconContainer = styled.div``;
 
 export const StyledChildrenContainer = styled.div`
   margin-top: var(--ads-v2-spaces-1);
