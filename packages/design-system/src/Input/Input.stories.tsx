@@ -145,6 +145,12 @@ export default {
         },
       },
     },
+    onChange: {
+      control: {
+        type: "text",
+      },
+      description: "onChange trigger of the input.",
+    },
   },
   parameters: { controls: { sort: "requiredFirst" } },
   decorators: [

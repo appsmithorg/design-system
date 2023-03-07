@@ -38,7 +38,7 @@ const getSizes = (size: InputSizes, component: "input" | "textarea") => {
 
 export const MainContainer = styled.div<{
   labelPosition?: "top" | "left";
-  size?: InputSizes;
+  testSize?: InputSizes;
   component: "input" | "textarea";
 }>`
   ${Variables}
@@ -55,7 +55,7 @@ export const MainContainer = styled.div<{
   width: 100%;
 
   /* Size style */
-  ${({ component, size }) => size && getSizes(size, component)}
+  ${({ component, testSize }) => testSize && getSizes(testSize, component)}
 `;
 
 export const Label = styled.label`
