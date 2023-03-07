@@ -27,9 +27,9 @@ export type ButtonProps = {
   /** The size of the button. */
   size?: ButtonSizes;
   /** The icon to display before the button text. Pass name of the icon from remix-icon library(eg: home-2-line) or an svg icon. */
-  startIcon?: "string";
+  startIcon?: string;
   /** The icon to display after the button text. Pass name of the icon from remix-icon library(eg: home-2-line) or an svg icon. */
-  endIcon?: "string";
+  endIcon?: string;
   /** The height of the button. Accepts all css units. */
   UNSAFE_height?: string;
   /** The width of the button. Accepts all css units. */
