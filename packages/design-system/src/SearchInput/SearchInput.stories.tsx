@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { SearchInput } from "./SearchInput";
 
 export default {
-  title: "Design System/SearchInput",
+  title: "Design System/Input/SearchInput",
   component: SearchInput,
   decorators: [
     (Story) => (
