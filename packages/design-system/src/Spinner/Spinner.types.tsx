@@ -2,7 +2,7 @@ import { IconProps } from "Icon/Icon.types";
 import React from "react";
 import { Sizes } from "__config__/types";
 
-export type SpinnerSize = Extract<Sizes, "sm" | "md" | "lg" | "xl">;
+export type SpinnerSize = Extract<Sizes, "sm" | "md" | "lg">;
 
 // Spinner props
 export type SpinnerProps = {

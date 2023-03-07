@@ -12,9 +12,9 @@ export interface InputProps extends TextFieldProps {
   /** label position  */
   labelPosition?: "top" | "left";
   /** start icon  */
-  startIcon?: React.ReactNode;
+  startIcon?: string;
   /** end icon  */
-  endIcon?: React.ReactNode;
+  endIcon?: string;
   /** size */
   size: InputSizes;
   /** width */

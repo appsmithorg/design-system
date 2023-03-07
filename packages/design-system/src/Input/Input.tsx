@@ -57,20 +57,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <InputContainer isDisabled={isDisabled || isReadOnly}>
             {/* Start Icon Section */}
             {startIcon && as === "input" ? (
-              typeof startIcon === "string" ? (
-                <Icon
-                  className={clsx(InputIconClassName, InputStartIconClassName)}
-                  name={startIcon}
-                  size={size}
-                />
-              ) : (
-                <Icon
-                  className={clsx(InputIconClassName, InputStartIconClassName)}
-                  size={size}
-                >
-                  {startIcon}
-                </Icon>
-              )
+              <Icon
+                className={clsx(InputIconClassName, InputStartIconClassName)}
+                name={startIcon}
+                size={size}
+              />
             ) : null}
             {/* Input Section */}
             <StyledInput
@@ -90,20 +81,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             />
             {/* End Icon Section */}
             {endIcon && as === "input" ? (
-              typeof endIcon === "string" ? (
-                <Icon
-                  className={clsx(InputIconClassName, InputEndIconClassName)}
-                  name={endIcon}
-                  size={size}
-                />
-              ) : (
-                <Icon
-                  className={clsx(InputIconClassName, InputEndIconClassName)}
-                  size={size}
-                >
-                  {endIcon}
-                </Icon>
-              )
+              <Icon
+                className={clsx(InputIconClassName, InputEndIconClassName)}
+                name={endIcon}
+                size={size}
+              />
             ) : null}
           </InputContainer>
           {description && (
