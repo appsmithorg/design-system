@@ -58,7 +58,5 @@ export const ToastBody = styled(Text)`
 `;
 
 export const StyledButton = styled(Button)`
-  min-width: fit-content;
-
   align-self: center;
 `;

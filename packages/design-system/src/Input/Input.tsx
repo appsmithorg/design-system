@@ -71,40 +71,24 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {/* Issue: adding kind while implementing
         text is throwing typescript error. 
         https://stackoverflow.com/questions/68073958/cant-use-href-with-iconbuttonprops*/}
-        {label && (
-          <Label className={InputLabelClassName} {...labelProps}>
-            {label}
-            {isRequired && <span>*</span>}
-          </Label>
-        )}
-        <InputSection className={InputSectionClassName}>
-          <InputContainer disabled={isDisabled || isReadOnly}>
+        <Label {...labelProps}>
+          {label}
+          {isRequired && <span>*</span>}
+        </Label>
+        <InputSection>
+          <InputContainer isDisabled={isDisabled || isReadOnly}>
             {/* Start Icon Section */}
             {startIcon && renderAs === "input" ? (
-              typeof startIcon === "string" ? (
-                <Icon
-                  className={clsx(
-                    InputIconClassName,
-                    InputStartIconClassName,
-                    startIconClassName,
-                  )}
-                  name={startIcon}
-                  size={size}
-                  {...restOfStartIconProps}
-                />
-              ) : (
-                <Icon
-                  className={clsx(
-                    InputIconClassName,
-                    InputStartIconClassName,
-                    startIconClassName,
-                  )}
-                  size={size}
-                  {...restOfStartIconProps}
-                >
-                  {startIcon}
-                </Icon>
-              )
+              <Icon
+                className={clsx(
+                  InputIconClassName,
+                  InputStartIconClassName,
+                  startIconClassName,
+                )}
+                name={startIcon}
+                size={size}
+                {...restOfStartIconProps}
+              />
             ) : null}
             {/* Input Section */}
             <StyledInput
@@ -127,30 +111,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             />
             {/* End Icon Section */}
             {endIcon && renderAs === "input" ? (
-              typeof endIcon === "string" ? (
-                <Icon
-                  className={clsx(
-                    InputIconClassName,
-                    InputEndIconClassName,
-                    endIconClassName,
-                  )}
-                  name={endIcon}
-                  size={size}
-                  {...restOfEndIconProps}
-                />
-              ) : (
-                <Icon
-                  className={clsx(
-                    InputIconClassName,
-                    InputEndIconClassName,
-                    endIconClassName,
-                  )}
-                  size={size}
-                  {...restOfEndIconProps}
-                >
-                  {endIcon}
-                </Icon>
-              )
+              <Icon
+                className={clsx(
+                  InputIconClassName,
+                  InputEndIconClassName,
+                  endIconClassName,
+                )}
+                name={endIcon}
+                size={size}
+                {...restOfEndIconProps}
+              />
             ) : null}
           </InputContainer>
           {description && (

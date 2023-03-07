@@ -11,6 +11,4 @@ export type IconProps = {
   color?: string;
   /** class name to be applied to the icon */
   className?: string;
-  /** custom Svg */
-  children?: React.ReactNode;
 } & React.HTMLAttributes<HTMLSpanElement>;
