@@ -123,6 +123,7 @@ type DialogComponentProps = {
     hoverColor?: string;
     bgColor?: string;
   };
+  isCloseButtonShown?: boolean;
   trigger?: ReactNode;
   setMaxWidth?: boolean;
   children: ReactNode;
@@ -167,6 +168,9 @@ export function DialogComponent(props: DialogComponentProps) {
     </HeaderIconWrapper>
   ) : null;
 
+  const isCloseButtonShown =
+    props.isCloseButtonShown === undefined ? true : props.isCloseButtonShown;
+
   return (
     <>
       {props.trigger && (
@@ -186,6 +190,7 @@ export function DialogComponent(props: DialogComponentProps) {
         className={props.className}
         icon={headerIcon}
         isOpen={isOpen}
+        isCloseButtonShown={isCloseButtonShown}
         maxHeight={props.maxHeight}
         maxWidth={props.maxWidth}
         noModalBodyMarginTop={props.noModalBodyMarginTop}

@@ -9,13 +9,13 @@ type Props = {
   icon: string;
   iconColor: string;
   iconSize: IconSize;
+  ctaChildren?: React.ReactNode;
   messageHeader?: string;
-  ctaText?: string;
-  ctaURL?: string;
   message: string;
   textColor: string;
   fontWeight?: string;
   intentLine?: boolean;
+  iconFlexPosition?: "start" | "center" | "end";
 };
 
 const MessageContainer = styled.div<{
@@ -34,10 +34,15 @@ const MessageContainer = styled.div<{
     props.$intentLine && `border-left: solid ${props.$iconColor} 2px;`}
   }
 `;
-const StyledIcon = styled(Icon)`
+
+const StyledIcon = styled(Icon)<{
+  $iconFlexPosition?: "start" | "center" | "end";
+}>`
   padding: 8px 4px;
   cursor: default;
 
+  ${({ $iconFlexPosition }) =>
+    $iconFlexPosition ? `align-items: ${$iconFlexPosition};` : ""}
   svg {
     cursor: default;
   }
@@ -65,27 +70,15 @@ const MessageHeader = styled.h2`
   font-size: 14px;
   font-weight: 600;
   padding-bottom: 5px;
+  margin: 0;
 `;
 
-const CTALink = styled.a<{
-  textColor: string;
-}>`
+const CTAChild = styled.div`
   padding-top: 8px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  :hover {
-    color: ${(props) => props.textColor};
-  }
+  display: flex;
 `;
 
 export function BannerMessage(props: Props) {
-  const handleCTAOnClick = (e: any) => {
-    if (props.ctaURL) {
-      window.open(props.ctaURL, "_blank");
-    }
-    e.preventDefault();
-  };
   return (
     <MessageContainer
       $backgroundColor={props.backgroundColor}
@@ -95,6 +88,7 @@ export function BannerMessage(props: Props) {
       $textColor={props.textColor}
     >
       <StyledIcon
+        $iconFlexPosition={props.iconFlexPosition}
         fillColor={props.iconColor}
         name={props.icon}
         size={props.iconSize}
@@ -106,15 +100,7 @@ export function BannerMessage(props: Props) {
         <MessageText $fontWeight={props.fontWeight}>
           {props.message}
         </MessageText>
-        {props.ctaText && props.ctaURL && (
-          <CTALink
-            href={props.ctaURL}
-            onClick={handleCTAOnClick}
-            textColor={props.textColor}
-          >
-            {props.ctaText}
-          </CTALink>
-        )}
+        {props.ctaChildren && <CTAChild>{props.ctaChildren}</CTAChild>}
       </MessageWrapper>
     </MessageContainer>
   );
