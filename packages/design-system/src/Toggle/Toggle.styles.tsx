@@ -10,10 +10,10 @@ const Variables = css`
 
 const Sizes = {
   sm: css`
-    --toggle-padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-1);
+    --toggle-padding: var(--ads-v2-spaces-2);
   `,
   md: css`
-    --toggle-padding: var(--ads-v2-spaces-2);
+    --toggle-padding: var(--ads-v2-spaces-3);
   `,
 };
 
@@ -30,6 +30,8 @@ export const StyledToggle = styled.button<{
   padding: var(--toggle-padding);
   border-radius: var(--ads-v2-border-radius);
   cursor: pointer;
+  height: var(--toggle-height);
+  width: var(--toggle-width);
 
   &:hover:enabled {
     --toggle-color-background: var(--ads-v2-color-bg-subtle);

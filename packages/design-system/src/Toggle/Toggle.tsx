@@ -7,17 +7,18 @@ import { useToggleState } from "@react-stately/toggle";
 import { useToggleButton } from "@react-aria/button";
 
 function Toggle(props: ToggleProps) {
+  const { size } = props;
   const ref = useRef(null);
   const state = useToggleState(props);
-  const { buttonProps, isPressed } = useToggleButton(props, state, ref);
+  const { buttonProps } = useToggleButton(props, state, ref);
   const { focusProps, isFocusVisible } = useFocusRing();
 
   return (
     <StyledToggle
       isFocusVisible={isFocusVisible}
-      isPressed={isPressed}
       isSelected={state.isSelected}
       ref={ref}
+      size={size}
       {...buttonProps}
       {...focusProps}
     >
