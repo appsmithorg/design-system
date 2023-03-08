@@ -54,8 +54,7 @@ export const StyledTab = styled(RadixTabs.TabsTrigger)`
   gap: var(--ads-v2-spaces-3);
 
   &:hover {
-    --tab-selection-color: var(--ads-v2-color-border);
-    --tab-color: var(--ads-v2-color-fg);
+    --tab-selection-color: var(--ads-v2-color-border-emphasis);
   }
 
   &[aria-selected="true"],
@@ -64,7 +63,6 @@ export const StyledTab = styled(RadixTabs.TabsTrigger)`
     --tab-color: var(--ads-v2-color-fg);
   }
 
-  &:focus,
   &:focus-visible {
     --tab-color: var(--ads-v2-color-fg);
     outline: var(--ads-v2-border-width-outline) solid

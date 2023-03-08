@@ -14,7 +14,7 @@ const Variables = css`
   --input-padding-y: var(--ads-v2-spaces-2); // padding top and bottom
   --input-color: var(--ads-v2-color-fg);
   --input-font-size: var(--ads-v2-font-size-2);
-  --input-height: 24px;
+  --input-height: 22px;
 `;
 
 const getSizes = (size: InputSizes, component: "input" | "textarea") => {
@@ -23,7 +23,7 @@ const getSizes = (size: InputSizes, component: "input" | "textarea") => {
       --input-padding-x: var(--ads-v2-spaces-2);
       --input-padding-y: var(--ads-v2-spaces-2);
       --input-font-size: var(--ads-v2-font-size-2);
-      --input-height: ${component === "input" ? "24px" : "60px"};
+      --input-height: ${component === "input" ? "22px" : "60px"};
     `,
     md: css`
       --input-padding-x: var(--ads-v2-spaces-3);

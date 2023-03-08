@@ -1,5 +1,4 @@
 import React from "react";
-import { useFocusRing } from "@react-aria/focus";
 
 import { TagProps } from "./Tag.types";
 import { StyledIcon, StyledTag } from "./Tag.styles";
