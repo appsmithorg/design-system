@@ -61,6 +61,7 @@ export const MainContainer = styled.div<{
 
 export const Label = styled.label`
   color: var(--ads-v2-color-fg);
+  width: 100%;
   word-wrap: break-word;
 
   & > span {
@@ -178,6 +179,7 @@ export const StyledInput = styled.input<{
 
   &:disabled {
     cursor: not-allowed;
+    user-select: none;
   }
 
   ${({ hasError }) =>

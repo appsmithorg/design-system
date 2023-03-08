@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import clsx from "classnames";
 
 import { NumberInputProps } from "./NumberInput.types";
 import { StyledNumberInput } from "./NumberInput.styles";
@@ -7,6 +8,7 @@ import { NumberInputClassName } from "./NumberInput.constants";
 function NumberInput(props: NumberInputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const {
+    className,
     description,
     errorMessage,
     isDisabled = false,
@@ -20,7 +22,8 @@ function NumberInput(props: NumberInputProps) {
     scale = 1,
     suffix = "",
   } = props;
-  const initialValue = prefix + (props.value || "0") + suffix;
+  const initialValue =
+    props.value !== undefined ? prefix + (props.value || "") + suffix : "";
   const [value, setValue] = useState<string>(initialValue);
 
   const handleKeyDown = (e: KeyboardEvent) => {
@@ -41,7 +44,8 @@ function NumberInput(props: NumberInputProps) {
   }, [handleKeyDown]);
 
   useEffect(() => {
-    setValue(prefix + (props.value || "0") + suffix);
+    if (props.value !== undefined)
+      setValue(prefix + (props.value || "") + suffix);
   }, [props.value]);
 
   const handleChange = (operation?: "add" | "subtract", _value?: string) => {
@@ -63,7 +67,7 @@ function NumberInput(props: NumberInputProps) {
 
   return (
     <StyledNumberInput
-      className={NumberInputClassName}
+      className={clsx(NumberInputClassName, className)}
       description={description}
       endIcon="add-line"
       endIconProps={{

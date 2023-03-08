@@ -145,6 +145,20 @@ export default {
         },
       },
     },
+    isReadOnly: {
+      control: {
+        type: "boolean",
+      },
+      description: "Whether the input is read only or not.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     onChange: {
       control: {
         type: "text",
