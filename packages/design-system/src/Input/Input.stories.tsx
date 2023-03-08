@@ -7,7 +7,7 @@ export default {
   title: "Design System/Input",
   component: Input,
   argTypes: {
-    as: {
+    renderAs: {
       control: {
         type: "radio",
         options: ["input", "textarea"],
