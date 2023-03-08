@@ -1,11 +1,14 @@
-# Workflow trigger on any push and pull request
+# Workflow trigger on any push and pull request.
+# For now this will only run on commenting /build-design-system
 name:  Test, build and push
 
 on:
-  push:
-    branches: [release, main]
-    paths:
-      - "packages/design-system/**"
+#  push:
+#    branches: [ release, main ]
+#    paths:
+#      - "packages/design-system/**"
+  issue_comment:
+    types: [ created ]
 
 # Change the working directory for all the jobs in this workflow
 defaults:

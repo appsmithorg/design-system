@@ -1,12 +1,11 @@
 import React from "react";
 import _ from "lodash";
-import { useFocusRing } from "@react-aria/focus";
 import { Slide, toast as toastifyToast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
-import { Kind, ToastProps } from "./Toast.types";
+import { ToastProps } from "./Toast.types";
 import { StyledButton, StyledToast, ToastBody } from "./Toast.styles";
-import { Icon } from "../Icon";
+import { getIconByKind } from "../Icon/getIconByKind";
 
 /**
  * TODO:
@@ -21,6 +20,7 @@ function Toast({ ...rest }: ToastProps) {
       closeButton={false}
       draggable={false}
       hideProgressBar
+      pauseOnHover={false}
       position={toastifyToast.POSITION.TOP_CENTER}
       rtl={false}
       transition={Slide}
@@ -31,75 +31,36 @@ function Toast({ ...rest }: ToastProps) {
 
 // content is of type string and not type ToastContent because we do not want to
 // allow developers to pass in their own components.
-function toast(content: string, options?: ToastProps) {
-  const actionText = _.capitalize(options?.action?.actionText);
-  const icon = getIconForToast(options?.kind);
-  return toastifyToast(
-    <ToastBody kind="body-m">
-      {content}
-      {actionText && (
-        <StyledButton
-          kind="tertiary"
-          onPress={() => {
-            options?.action?.effect && options?.action?.effect();
-            toastifyToast.dismiss();
-          }}
-        >
-          {actionText}
-        </StyledButton>
-      )}
-    </ToastBody>,
-    {
-      icon: icon,
-      type: options?.kind,
-      closeOnClick: !actionText,
-      ...options,
-    },
-  );
-}
-
-function getIconForToast(kind: Kind) {
-  switch (kind) {
-    case "success":
-      return (
-        <Icon
-          color="var(--ads-v2-color-fg-success)"
-          name="checkbox-circle-fill"
-          size="lg"
-        />
-      );
-
-    case "error":
-      return (
-        <Icon
-          color="var(--ads-v2-color-fg-error)"
-          name="close-circle-fill"
-          size="lg"
-        />
-      );
-
-    case "warning":
-      return (
-        <Icon
-          color="var(--ads-v2-color-fg-warning)"
-          name="alert-fill"
-          size="lg"
-        />
-      );
-
-    case "info":
-      return (
-        <Icon
-          color="var(--ads-v2-color-fg-information)"
-          name="information-fill"
-          size="lg"
-        />
-      );
-
-    default:
-      return null;
-  }
-}
+const toast = {
+  show: (content: string, options?: ToastProps) => {
+    const actionText = _.capitalize(options?.action?.text);
+    const icon = getIconByKind(options?.kind);
+    return toastifyToast(
+      <ToastBody kind="body-m">
+        {content}
+        {actionText && (
+          <StyledButton
+            kind="tertiary"
+            onPress={() => {
+              options?.action?.effect && options?.action?.effect();
+              toastifyToast.dismiss();
+            }}
+            {...options?.action}
+          >
+            {actionText}
+          </StyledButton>
+        )}
+      </ToastBody>,
+      {
+        icon: icon,
+        type: options?.kind,
+        closeOnClick: !actionText,
+        ...options,
+      },
+    );
+  },
+  dismiss: () => toastifyToast.dismiss(),
+};
 
 Toast.displayName = "Toast";
 
