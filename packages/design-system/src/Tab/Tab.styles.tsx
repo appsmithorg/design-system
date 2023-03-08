@@ -6,10 +6,18 @@ const Variables = css`
   --tab-selection-color: transparent;
 `;
 
+export const StyledTabs = styled(RadixTabs.Root)`
+  width: 100%;
+`;
+
 export const StyledTabsList = styled(RadixTabs.List)`
+  display: flex;
   border-bottom: 1px solid var(--ads-v2-color-border);
   display: flex;
   gap: var(--ads-v2-spaces-4);
+  width: 100%;
+  overflow: scroll;
+  padding: var(--ads-v2-spaces-1);
 `;
 
 export const StyledTabPanel = styled(RadixTabs.Content)`
@@ -28,20 +36,25 @@ export const StyledTab = styled(RadixTabs.TabsTrigger)`
   background-color: var(--ads-v2-color-bg);
   border: none; // get rid of button styles
   color: var(--tab-color);
+  min-width: fit-content;
+  border-radius: var(--ads-v2-border-radius);
 
   &:after {
     content: "";
     height: 2px;
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     right: 0;
     background-color: var(--tab-selection-color);
   }
 
+  display: flex;
+  align-items: center;
+  gap: var(--ads-v2-spaces-3);
+
   &:hover {
-    --tab-selection-color: var(--ads-v2-color-border);
-    --tab-color: var(--ads-v2-color-fg);
+    --tab-selection-color: var(--ads-v2-color-border-emphasis);
   }
 
   &[aria-selected="true"],
@@ -50,7 +63,10 @@ export const StyledTab = styled(RadixTabs.TabsTrigger)`
     --tab-color: var(--ads-v2-color-fg);
   }
 
-  &:focus {
+  &:focus-visible {
     --tab-color: var(--ads-v2-color-fg);
+    outline: var(--ads-v2-border-width-outline) solid
+      var(--ads-v2-color-outline);
+    outline-offset: var(--ads-v2-offset-outline);
   }
 `;

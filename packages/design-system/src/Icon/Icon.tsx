@@ -24,9 +24,7 @@ function Icon(props: IconProps) {
     >
       {name ? (
         <IconProvider color={color} iconName={name} size={iconSizes[size]} />
-      ) : (
-        children
-      )}
+      ) : null}
     </IconContainer>
   );
 }

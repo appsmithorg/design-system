@@ -3,8 +3,8 @@ import { Sizes } from "__config__/types";
 
 export type InputSizes = Extract<Sizes, "sm" | "md">;
 
-// TextInput props
-export type InputProps = TextFieldProps & {
+// Input props
+export interface InputProps extends TextFieldProps {
   /** Attribute to change the rendering component */
   as: "input" | "textarea";
   /** (try not to) pass addition classes here */
@@ -12,13 +12,13 @@ export type InputProps = TextFieldProps & {
   /** label position  */
   labelPosition?: "top" | "left";
   /** start icon  */
-  startIcon?: React.ReactNode;
+  startIcon?: string;
   /** end icon  */
-  endIcon?: React.ReactNode;
+  endIcon?: string;
   /** size */
   size: InputSizes;
   /** width */
   UNSAFE_width?: string;
   /** height */
   UNSAFE_height?: string;
-} & React.InputHTMLAttributes<HTMLInputElement>;
+}

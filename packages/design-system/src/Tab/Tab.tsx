@@ -1,16 +1,17 @@
 import React from "react";
-import { useFocusRing } from "@react-aria/focus";
 
-import { StyledTab, StyledTabPanel, StyledTabsList } from "./Tab.styles";
-
-import * as RadixTabs from "@radix-ui/react-tabs";
+import {
+  StyledTabs,
+  StyledTab,
+  StyledTabPanel,
+  StyledTabsList,
+} from "./Tab.styles";
 
 import { Text } from "../Text";
 import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
+import { Tag } from "../Tag";
 
 /* TODO
-- Add Tag to tab
-  - figure out naming
 - border styles using ::before
 - vertical tabs
 - focus styles
@@ -18,9 +19,9 @@ import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
 
 function Tabs(props: TabsProps) {
   return (
-    <RadixTabs.Root defaultValue={props.defaultValue} {...props}>
+    <StyledTabs defaultValue={props.defaultValue} {...props}>
       {props.children}
-    </RadixTabs.Root>
+    </StyledTabs>
   );
 }
 
@@ -34,6 +35,11 @@ function Tab(props: TabProps) {
       <Text color="inherit" kind="action-m">
         {props.children}
       </Text>
+      {!!props.notificationCount && props.notificationCount > 0 && (
+        <Tag isClosable={false}>
+          {props.notificationCount > 9 ? "9+" : props.notificationCount}
+        </Tag>
+      )}
     </StyledTab>
   );
 }
