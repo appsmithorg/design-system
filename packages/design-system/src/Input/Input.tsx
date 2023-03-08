@@ -65,7 +65,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         className={clsx(InputClassName, className)}
         component={renderAs}
         labelPosition={labelPosition}
-        testSize={size}
+        size={size}
       >
         {/* TODO: replace this with text component */}
         {/* Issue: adding kind while implementing
