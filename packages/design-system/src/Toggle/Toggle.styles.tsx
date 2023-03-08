@@ -29,9 +29,10 @@ export const StyledToggle = styled.button<{
 
   padding: var(--toggle-padding);
   border-radius: var(--ads-v2-border-radius);
+  cursor: pointer;
 
-  &:hover {
-    --toggle-color-background: var(--ads-v2-color-bg-muted);
+  &:hover:enabled {
+    --toggle-color-background: var(--ads-v2-color-bg-subtle);
     --toggle-color-border: var(--ads-v2-color-border-emphasis);
   }
 
@@ -41,7 +42,7 @@ export const StyledToggle = styled.button<{
      --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
      --toggle-color-icon: var(--ads-v2-color-fg-on-brand-secondary);
 
-     :hover {
+     &:hover:enabled {
        --toggle-color-background: var(--ads-v2-color-bg-brand-secondary-emphasis);
        --toggle-color-border: var(--ads-v2-color-border-brand-secondary-emphasis);
      }
@@ -55,11 +56,7 @@ export const StyledToggle = styled.button<{
 
   &:disabled {
     opacity: var(--ads-v2-opacity-disabled);
-
-    &:hover {
-      --toggle-color-border: var(--ads-v2-color-border);
-      --toggle-color-background: var(--ads-v2-color-bg);
-    }
+    cursor: not-allowed;
   }
 
   border: 1px solid var(--toggle-color-border);

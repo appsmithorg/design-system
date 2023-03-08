@@ -3,7 +3,6 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Toggle } from "./Toggle";
 import { Icon } from "../Icon";
-import { Text } from "../Text";
 
 export default {
   title: "Design System/Toggle",
@@ -24,7 +23,5 @@ Medium.args = {
 export const Small = Template.bind({});
 Small.args = {
   size: "sm",
-  children: (
-    <div style={{ width: "12px", height: "8px", border: "1px solid gray" }} />
-  ),
+  children: <Icon name="js-toggle" size="sm" />,
 };
