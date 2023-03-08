@@ -18,6 +18,7 @@ export const Medium = Template.bind({});
 Medium.args = {
   size: "md",
   children: <Icon name="bold" size="md" />,
+  className: "text-gray-900",
 };
 
 export const Small = Template.bind({});
