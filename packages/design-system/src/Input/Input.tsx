@@ -43,6 +43,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       size = "sm",
       startIcon,
       startIconProps,
+      type = "text",
       UNSAFE_height,
       UNSAFE_width,
       value,
@@ -93,7 +94,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {/* Input Section */}
             <StyledInput
               as={renderAs}
-              type={"text"}
+              type={type}
               {...focusProps}
               {...inputProps}
               UNSAFE_height={UNSAFE_height}

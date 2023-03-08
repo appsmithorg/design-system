@@ -23,6 +23,8 @@ export interface InputProps extends TextFieldProps {
   endIconProps?: IconProps;
   /** size */
   size: InputSizes;
+  /** type */
+  type?: "text" | "password" | "email" | "number" | "tel" | "url";
   /** width */
   UNSAFE_width?: string;
   /** height */

@@ -5,8 +5,21 @@ import { StyledNumberInput } from "./NumberInput.styles";
 import { NumberInputClassName } from "./NumberInput.constants";
 
 function NumberInput(props: NumberInputProps) {
-  const inputRef = React.useRef<HTMLInputElement>(null);
-  const { onChange, prefix = "", scale = 1, suffix = "" } = props;
+  const inputRef = useRef<HTMLInputElement>(null);
+  const {
+    description,
+    errorMessage,
+    isDisabled = false,
+    isReadOnly = false,
+    isRequired = false,
+    label,
+    labelPosition = "top",
+    onChange,
+    placeholder = "0",
+    prefix = "",
+    scale = 1,
+    suffix = "",
+  } = props;
   const initialValue = prefix + (props.value || "0") + suffix;
   const [value, setValue] = useState<string>(initialValue);
 
@@ -51,18 +64,27 @@ function NumberInput(props: NumberInputProps) {
   return (
     <StyledNumberInput
       className={NumberInputClassName}
+      description={description}
       endIcon="add-line"
       endIconProps={{
-        onClick: () => handleChange("add"),
+        onClick: () => !isDisabled && !isReadOnly && handleChange("add"),
       }}
-      onChange={(val) => handleChange(undefined, val)}
-      placeholder="Search"
+      errorMessage={errorMessage}
+      isDisabled={isDisabled}
+      isReadOnly={isReadOnly}
+      isRequired={isRequired}
+      label={label}
+      labelPosition={labelPosition}
+      onChange={(val) =>
+        !isDisabled && !isReadOnly && handleChange(undefined, val)
+      }
+      placeholder={placeholder}
       ref={inputRef}
       renderAs="input"
       size="md"
       startIcon="subtract-line"
       startIconProps={{
-        onClick: () => handleChange("subtract"),
+        onClick: () => !isDisabled && !isReadOnly && handleChange("subtract"),
       }}
       value={value}
     />
