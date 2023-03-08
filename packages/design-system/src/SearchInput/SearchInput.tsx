@@ -6,7 +6,7 @@ import { StyledSearchInput } from "./SearchInput.styles";
 import { SearchInputClassName } from "./SearchInput.constants";
 
 function SearchInput(props: SearchInputProps) {
-  const { className, onChange } = props;
+  const { className, onChange, placeholder } = props;
   const [value, setValue] = useState<string>(props.value || "");
 
   const handleChange = (val: string) => {
@@ -17,10 +17,10 @@ function SearchInput(props: SearchInputProps) {
   return (
     <StyledSearchInput
       className={clsx(SearchInputClassName, className)}
-      endIcon="close-circle-line"
+      endIcon={value ? "close-circle-line" : undefined}
       endIconProps={{ onClick: () => handleChange("") }}
       onChange={handleChange}
-      placeholder="Search"
+      placeholder={placeholder || "Search"}
       renderAs="input"
       size="md"
       startIcon="search-line"
