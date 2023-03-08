@@ -133,6 +133,8 @@ import RightArrowIcon from "remixicon-react/ArrowRightLineIcon";
 import RightArrowIcon2 from "remixicon-react/ArrowRightSLineIcon";
 import RocketIcon from "remixicon-react/RocketLineIcon";
 import SearchIcon from "remixicon-react/SearchLineIcon";
+import SortAscIcon from "remixicon-react/SortAscIcon"; 
+import SortDescIcon from "remixicon-react/SortDescIcon"; 
 import ShareBoxLineIcon from "remixicon-react/ShareBoxLineIcon";
 import ShareBoxFillIcon from "remixicon-react/ShareBoxFillIcon";
 import ShareForwardIcon from "remixicon-react/ShareForwardFillIcon";
@@ -374,6 +376,8 @@ const ICON_LOOKUP = {
   "share-box": <ShareBoxFillIcon />,
   "share-box-line": <ShareBoxLineIcon />,
   "share-line": <ShareLineIcon />,
+  "sort-asc": <SortAscIcon />,
+  "sort-desc": <SortDescIcon />,
   "star-fill": <StarFillIcon />,
   "star-line": <StarLineIcon />,
   "swap-horizontal": <ArrowLeftRightIcon />,
