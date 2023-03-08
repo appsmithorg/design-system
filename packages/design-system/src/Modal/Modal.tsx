@@ -10,13 +10,13 @@ import {
   StyledBody,
   StyledFooter,
 } from "./Modal.styles";
-import { Icon } from "Icon";
 import {
   ModalContentClassName,
   ModalContentHeaderClassName,
   ModalContentHeaderCloseButtonClassName,
 } from "./Modal.constants";
 import { Text } from "Text";
+import { Button } from "Button";
 
 function ModalContent(props: ModalContentProps) {
   const { children, ...rest } = props;
@@ -42,7 +42,16 @@ function ModalHeader({ children, onClose }: ModalHeaderProps) {
         className={ModalContentHeaderCloseButtonClassName}
         onClick={onClose}
       >
-        <Icon color="var(--ads-v2-color-fg)" name="close-line" size="xl" />
+        {/* Using unsafe here, asChild of radix have some issues while passing down props */}
+        {/* TODO: figure a way to avoid this */}
+        <Button
+          UNSAFE_height="36px !important"
+          UNSAFE_width="36px !important"
+          isIconButton
+          kind="tertiary"
+          size="md"
+          startIcon="close-line"
+        />
       </StyledClose>
     </StyledHeader>
   );

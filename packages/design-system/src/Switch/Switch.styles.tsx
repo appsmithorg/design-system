@@ -6,7 +6,10 @@ const Variables = css`
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
-export const StyledSwitch = styled.span``;
+export const StyledSwitch = styled.span`
+  display: block;
+  width: 100%;
+`;
 
 export const StyledSwitchLabel = styled(Text)<{
   isDisabled?: boolean;
@@ -46,7 +49,8 @@ export const StyledSwitchInput = styled.input<{
   display: grid;
   grid: [on] 1fr / [off] 1fr;
 
-  padding: 2px;
+  padding: var(--ads-v2-spaces-1);
+  margin: 0;
   cursor: pointer;
   border-radius: 10px;
   background-color: var(--switch-color-bg);
