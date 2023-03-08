@@ -35,13 +35,9 @@ function Tab(props: TabProps) {
       <Text color="inherit" kind="action-m">
         {props.children}
       </Text>
-      {!!props.notificationCount && (
+      {!!props.notificationCount && props.notificationCount > 0 && (
         <Tag isClosable={false}>
-          {props.notificationCount > 9
-            ? "9+"
-            : props.notificationCount < 0
-            ? 0
-            : props.notificationCount}
+          {props.notificationCount > 9 ? "9+" : props.notificationCount}
         </Tag>
       )}
     </StyledTab>
