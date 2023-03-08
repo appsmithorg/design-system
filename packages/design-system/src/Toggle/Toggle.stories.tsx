@@ -23,5 +23,5 @@ Medium.args = {
 export const Small = Template.bind({});
 Small.args = {
   size: "sm",
-  children: <Icon name="js-toggle" size="sm" />,
+  children: <Icon name="js-toggle-v2" size="sm" />,
 };
