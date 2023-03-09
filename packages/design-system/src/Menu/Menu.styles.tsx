@@ -1,15 +1,43 @@
 import styled, { css } from "styled-components";
 import * as RadixMenu from "@radix-ui/react-dropdown-menu";
+import { MenuSizes } from "./Menu.types";
+import {
+  MenuItemChildrenClassName,
+  MenuItemEndIconClassName,
+} from "./Menu.constants";
 
 const Variables = css`
-  --item-color-bg: var(--ads-v2-color-bg);
+  --menu-item-padding: var(--ads-v2-spaces-3);
+  --menu-item-gap: var(--ads-v2-spaces-3);
+  --menu-item-color-bg: var(--ads-v2-color-bg);
+  --menu-item-font-size: var(--ads-v2-font-size-4);
+  --menu-item-height: 36px;
 `;
+
+const MenuItemSizeStyles = {
+  sm: css`
+    --menu-item-padding: var(--ads-v2-spaces-2);
+    --menu-item-gap: var(--ads-v2-spaces-2);
+    --menu-item-font-size: var(--ads-v2-font-size-2);
+    --menu-item-height: 22px;
+  `,
+  md: css`
+    --menu-item-padding: var(--ads-v2-spaces-3);
+    --menu-item-gap: var(--ads-v2-spaces-3);
+    --menu-item-font-size: var(--ads-v2-font-size-4);
+    --menu-item-height: 36px;
+  `,
+};
 
 const MenuStyle = css`
   ${Variables}
 
-  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ads-v2-spaces-1);
+  width: fit-content;
   max-width: 280px;
+  max-height: calc(var(--radix-dropdown-menu-content-available-height) - 20px);
   background-color: var(--ads-v2-color-bg);
   border-radius: var(--ads-v2-border-radius);
   border: 1px solid var(--ads-v2-color-border-muted);
@@ -19,28 +47,58 @@ const MenuStyle = css`
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
+  overflow: scroll;
 `;
 
-export const StyledMenuContent = styled(RadixMenu.Content)`
+export const StyledMenuContent = styled(RadixMenu.Content)<{
+  height?: string;
+  width?: string;
+}>`
   ${MenuStyle}
+  ${({ width }) => width && `width: ${width};`}
+  ${({ height }) => height && `height: ${height};`}
 `;
 
-export const StyledMenuSubContent = styled(RadixMenu.SubContent)`
+export const StyledMenuSubContent = styled(RadixMenu.SubContent)<{
+  height?: string;
+  width?: string;
+}>`
   ${MenuStyle}
+  ${({ width }) => width && `width: ${width};`}
+  ${({ height }) => height && `height: ${height};`}
 `;
 
 const MenuItemStyle = css`
   display: flex;
   align-items: center;
-  gap: var(--ads-v2-spaces-3);
-  padding: var(--ads-v2-spaces-3);
+  padding: var(--menu-item-padding);
+  gap: var(--menu-item-gap);
   border-radius: var(--ads-v2-border-radius);
   cursor: pointer;
-  background-color: var(--item-color-bg);
+  background-color: var(--menu-item-color-bg);
+  position: relative;
+  color: var(--ads-v2-color-fg);
+  height: var(--menu-item-height);
+  box-sizing: border-box;
 
-  &:hover,
+  & > .${MenuItemEndIconClassName} {
+    position: relative;
+    right: 0;
+  }
+
+  & > .${MenuItemChildrenClassName} {
+    flex: 1;
+    width: 100%;
+    font-size: var(--menu-item-font-size);
+    line-height: unset;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &:hover:not([data-disabled]),
   &:focus-visible {
-    --item-color-bg: var(--ads-v2-color-bg-subtle);
+    --menu-item-color-bg: var(--ads-v2-color-bg-subtle);
     outline: none;
   }
 
@@ -50,19 +108,38 @@ const MenuItemStyle = css`
     outline-offset: var(--ads-v2-offset-outline);
   }
 
-  &:active {
-    --item-color-bg: var(--ads-v2-color-bg-emphasis);
+  &:active:not([data-disabled]) {
+    --menu-item-color-bg: var(--ads-v2-color-bg-muted);
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    opacity: var(--ads-v2-opacity-disabled);
   }
 `;
 
-export const StyledMenuItem = styled(RadixMenu.Item)`
+export const StyledMenuItem = styled(RadixMenu.Item)<{
+  size?: MenuSizes;
+}>`
   ${MenuItemStyle}
+
+  ${({ size }) => size && MenuItemSizeStyles[size]}
 `;
 
-export const StyledMenuSubTrigger = styled(RadixMenu.SubTrigger)`
+export const StyledMenuSubTrigger = styled(RadixMenu.SubTrigger)<{
+  size?: MenuSizes;
+}>`
   ${MenuItemStyle}
+
+  ${({ size }) => size && MenuItemSizeStyles[size]}
 
   &[data-state="open"] {
-    --item-color-bg: var(--ads-v2-color-bg-emphasis);
+    --menu-item-color-bg: var(--ads-v2-color-bg-muted);
   }
+`;
+
+export const StyledMenuSeparator = styled(RadixMenu.Separator)`
+  height: 1px;
+  background-color: var(--ads-v2-color-border-muted);
+  width: 100%;
 `;

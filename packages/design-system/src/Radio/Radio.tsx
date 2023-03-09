@@ -47,7 +47,7 @@ export function Radio(props: RadioProps) {
       isFocusVisible={isFocusVisible}
     >
       <input {...inputProps} {...focusProps} id={id} ref={ref} />
-      <Text as="label" className={RadioLabelClassName} htmlFor={id}>
+      <Text className={RadioLabelClassName} htmlFor={id} renderAs="label">
         {children}
       </Text>
     </StyledRadio>

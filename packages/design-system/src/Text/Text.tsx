@@ -1,5 +1,5 @@
 import React from "react";
-import { Kind, TextProps } from "./Text.types";
+import { TextProps } from "./Text.types";
 import { StyledText } from "./Text.styles";
 
 /*
@@ -11,9 +11,9 @@ TODO:
  - create uneditable field with prop `uneditable`
  */
 
-function Text({ as, children, color, kind, ...rest }: TextProps) {
+function Text({ children, color, kind, renderAs, ...rest }: TextProps) {
   return (
-    <StyledText as={as} color={color} kind={kind} {...rest}>
+    <StyledText as={renderAs} color={color} kind={kind} {...rest}>
       {children}
     </StyledText>
   );
@@ -22,7 +22,7 @@ function Text({ as, children, color, kind, ...rest }: TextProps) {
 Text.displayName = "Text";
 
 Text.defaultProps = {
-  as: "span",
+  renderAs: "span",
   kind: "span",
 };
 
