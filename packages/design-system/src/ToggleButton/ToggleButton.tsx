@@ -4,12 +4,12 @@ import { useToggleState } from "@react-stately/toggle";
 import { useToggleButton } from "@react-aria/button";
 import clsx from "classnames";
 
-import { ToggleProps } from "./Toggle.types";
-import { StyledToggle } from "./Toggle.styles";
-import { ToggleClassName, ToggleIconClassName } from "./Toggle.constants";
+import { ToggleButtonProps } from "./ToggleButton.types";
+import { StyledToggleButton } from "./ToggleButton.styles";
+import { ToggleClassName, ToggleIconClassName } from "./ToggleButton.constants";
 import { Icon } from "Icon";
 
-function Toggle(props: ToggleProps) {
+function ToggleButton(props: ToggleButtonProps) {
   const { className, icon, size, ...rest } = props;
   const ref = useRef(null);
   const state = useToggleState(rest);
@@ -17,7 +17,7 @@ function Toggle(props: ToggleProps) {
   const { focusProps, isFocusVisible } = useFocusRing();
 
   return (
-    <StyledToggle
+    <StyledToggleButton
       className={clsx(ToggleClassName, className)}
       isFocusVisible={isFocusVisible}
       isSelected={state.isSelected}
@@ -27,14 +27,14 @@ function Toggle(props: ToggleProps) {
       {...focusProps}
     >
       <Icon className={ToggleIconClassName} name={icon} size={size} />
-    </StyledToggle>
+    </StyledToggleButton>
   );
 }
 
-Toggle.displayName = "Toggle";
+ToggleButton.displayName = "ToggleButton";
 
-Toggle.defaultProps = {
+ToggleButton.defaultProps = {
   size: "md",
 };
 
-export { Toggle };
+export { ToggleButton };
