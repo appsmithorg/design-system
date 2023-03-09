@@ -15,3 +15,4 @@ export * from "./Toast";
 export * from "./Tooltip";
 export * from "./Input";
 export * from "./Modal";
+export * from "./Toggle";

@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Toggle } from "./Toggle";
-import { Icon } from "../Icon";
 
 export default {
   title: "Design System/Toggle",
@@ -14,15 +13,9 @@ const Template: ComponentStory<typeof Toggle> = (args) => {
   return <Toggle {...args} />;
 };
 
-export const Medium = Template.bind({});
-Medium.args = {
-  size: "md",
-  children: <Icon name="bold" size="md" />,
-  className: "text-gray-900",
-};
-
-export const Small = Template.bind({});
-Small.args = {
+export const ToggleStroy = Template.bind({});
+ToggleStroy.storyName = "Toggle";
+ToggleStroy.args = {
   size: "sm",
-  children: <Icon name="js-toggle-v2" size="sm" />,
+  icon: "js-toggle-v2",
 };

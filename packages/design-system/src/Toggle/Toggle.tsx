@@ -6,10 +6,11 @@ import clsx from "classnames";
 
 import { ToggleProps } from "./Toggle.types";
 import { StyledToggle } from "./Toggle.styles";
-import { ToggleClassName } from "./Toggle.constants";
+import { ToggleClassName, ToggleIconClassName } from "./Toggle.constants";
+import { Icon } from "Icon";
 
 function Toggle(props: ToggleProps) {
-  const { className, size, ...rest } = props;
+  const { className, icon, size, ...rest } = props;
   const ref = useRef(null);
   const state = useToggleState(rest);
   const { buttonProps } = useToggleButton(rest, state, ref);
@@ -25,7 +26,7 @@ function Toggle(props: ToggleProps) {
       {...buttonProps}
       {...focusProps}
     >
-      {props.children}
+      <Icon className={ToggleIconClassName} name={icon} size={size} />
     </StyledToggle>
   );
 }

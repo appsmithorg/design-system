@@ -1,4 +1,3 @@
-import React from "react";
 import { Sizes } from "../__config__/types";
 import { AriaToggleButtonProps } from "@react-types/button";
 
@@ -8,11 +7,12 @@ export type Size = Extract<Sizes, "sm" | "md">;
 export type ToggleProps = {
   /** (try not to) pass addition classes here */
   className?: string;
-  /** the words you want to display */
-  children: React.ReactNode;
+  /** the icon to be rendered */
+  icon: string;
   /** the size of the toggle button */
   size: Size;
-
+  /** Whether the toggle is disabled or not. */
   isDisabled: boolean;
+  /** Whether the toggle is selected or not. */
   isSelected: boolean;
 } & AriaToggleButtonProps;
