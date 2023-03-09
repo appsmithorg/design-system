@@ -6,7 +6,11 @@ import { LabelPosition } from "Types/common";
 import { FontStyleTypes } from "Constants/typography";
 import Tooltip from "Tooltip";
 import { IconWrapper } from "Icon";
-import { ReactComponent as HelpIcon } from "../assets/icons/control/help.svg";
+import { loadableForSvg } from "Utils/icon-loadables";
+
+const HelpIcon = loadableForSvg(() =>
+  import("../assets/icons/control/help.svg"),
+);
 
 export interface LabelWithTooltipProps {
   alignment?: Alignment;

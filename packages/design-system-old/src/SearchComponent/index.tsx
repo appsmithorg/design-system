@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { InputGroup } from "@blueprintjs/core";
 import { debounce } from "lodash";
-import { ReactComponent as CrossIcon } from "../assets/icons/ads/cross.svg";
+import { loadableForSvg } from "Utils/icon-loadables";
+
+const CrossIcon = loadableForSvg(() => import("../assets/icons/ads/cross.svg"));
 
 interface SearchProps {
   onSearch: (value: any) => void;

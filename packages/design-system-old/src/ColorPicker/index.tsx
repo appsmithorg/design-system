@@ -7,10 +7,16 @@ import {
   Position,
   Classes,
 } from "@blueprintjs/core";
-import { ReactComponent as CheckedIcon } from "../assets/icons/control/checkmark.svg";
-import { ReactComponent as ColorPickerIcon } from "../assets/icons/control/color-picker.svg";
 import debounce from "lodash/debounce";
 import { replayHighlightClass } from "Constants/classes";
+import { loadableForSvg } from "Utils/icon-loadables";
+
+const CheckedIcon = loadableForSvg(() =>
+  import("../assets/icons/control/checkmark.svg"),
+);
+const ColorPickerIcon = loadableForSvg(() =>
+  import("../assets/icons/control/color-picker.svg"),
+);
 
 const ColorIcon = styled.div<{ color: string }>`
   width: 24px;
