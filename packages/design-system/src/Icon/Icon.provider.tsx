@@ -243,6 +243,7 @@ import { ReactComponent as BoxShadowVariant3Icon } from "../__assets__/icons/con
 import { ReactComponent as BoxShadowVariant4Icon } from "../__assets__/icons/control/box-shadow-variant4.svg";
 import { ReactComponent as BoxShadowVariant5Icon } from "../__assets__/icons/control/box-shadow-variant5.svg";
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
+import { ReactComponent as JsToggleV2 } from "../__assets__/icons/ads/js-toggle-v2.svg";
 
 function PlayIconPNGWrapper() {
   return (
@@ -437,6 +438,7 @@ const ICON_LOOKUP = {
   "warning-line": WarningLineIcon,
   "warning-triangle": WarningTriangleIcon,
   "money-dollar-circle-line": MoneyDollarCircleLineIcon,
+  "js-toggle-v2": JsToggleV2,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,

@@ -20,3 +20,4 @@ export * from "./NumberInput";
 export * from "./SearchInput";
 export * from "./SegmentedControl";
 export * from "./Spinner";
+export * from "./ToggleButton";
