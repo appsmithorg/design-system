@@ -16,6 +16,10 @@ import {
 import { useDOMRef } from "Hooks/useDomRef";
 import { Icon } from "Icon";
 import {
+  InputClassName,
+  InputLabelClassName,
+  InputSectionClassName,
+  InputSectionInputClassName,
   InputEndIconClassName,
   InputIconClassName,
   InputStartIconClassName,
@@ -24,67 +28,98 @@ import {
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (props, ref): JSX.Element => {
     const {
-      as = "input",
+      className,
       description,
       endIcon,
+      endIconProps,
       errorMessage,
       isDisabled = false,
       isReadOnly = false,
       isRequired = false,
       label,
       labelPosition = "top",
+      onChange,
+      renderAs = "input",
       size = "sm",
       startIcon,
+      startIconProps,
       UNSAFE_height,
       UNSAFE_width,
+      value,
     } = props;
     const inputRef = useDOMRef(ref);
     const { descriptionProps, errorMessageProps, inputProps, labelProps } =
       useTextField(props, inputRef);
     const { focusProps, isFocusVisible } = useFocusRing();
+    const { className: startIconClassName, ...restOfStartIconProps } =
+      startIconProps || {};
+    const { className: endIconClassName, ...restOfEndIconProps } =
+      endIconProps || {};
+
+    const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      onChange?.(event.target.value);
+    };
 
     return (
-      <MainContainer component={as} labelPosition={labelPosition} size={size}>
+      <MainContainer
+        className={clsx(InputClassName, className)}
+        component={renderAs}
+        labelPosition={labelPosition}
+        size={size}
+      >
         {/* TODO: replace this with text component */}
         {/* Issue: adding kind while implementing
         text is throwing typescript error. 
         https://stackoverflow.com/questions/68073958/cant-use-href-with-iconbuttonprops*/}
-        <Label {...labelProps}>
+        <Label {...labelProps} className={InputLabelClassName}>
           {label}
           {isRequired && <span>*</span>}
         </Label>
-        <InputSection>
+        <InputSection className={InputSectionClassName}>
           <InputContainer isDisabled={isDisabled || isReadOnly}>
             {/* Start Icon Section */}
-            {startIcon && as === "input" ? (
+            {startIcon && renderAs === "input" ? (
               <Icon
-                className={clsx(InputIconClassName, InputStartIconClassName)}
+                className={clsx(
+                  InputIconClassName,
+                  InputStartIconClassName,
+                  startIconClassName,
+                )}
                 name={startIcon}
                 size={size}
+                {...restOfStartIconProps}
               />
             ) : null}
             {/* Input Section */}
             <StyledInput
-              as={as}
+              as={renderAs}
               type={"text"}
               {...focusProps}
               {...inputProps}
               UNSAFE_height={UNSAFE_height}
               UNSAFE_width={UNSAFE_width}
+              className={InputSectionInputClassName}
               hasEndIcon={!!endIcon}
               hasError={!!errorMessage}
               hasStartIcon={!!startIcon}
               inputSize={size}
               isFocusVisible={isFocusVisible}
+              onChange={handleOnChange}
               ref={inputRef}
-              renderer={as}
+              renderer={renderAs}
+              value={value}
             />
             {/* End Icon Section */}
-            {endIcon && as === "input" ? (
+            {endIcon && renderAs === "input" ? (
               <Icon
-                className={clsx(InputIconClassName, InputEndIconClassName)}
+                className={clsx(
+                  InputIconClassName,
+                  InputEndIconClassName,
+                  endIconClassName,
+                )}
                 name={endIcon}
                 size={size}
+                {...restOfEndIconProps}
               />
             ) : null}
           </InputContainer>
