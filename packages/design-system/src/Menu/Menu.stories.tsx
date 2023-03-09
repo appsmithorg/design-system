@@ -26,7 +26,7 @@ const Template: ComponentStory<typeof Menu> = () => {
       <MenuTrigger>
         <Button>Menu</Button>
       </MenuTrigger>
-      <MenuContent width="200px">
+      <MenuContent loop width="200px">
         <MenuItem startIcon="hospital-line">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
         </MenuItem>
@@ -49,7 +49,9 @@ const Template: ComponentStory<typeof Menu> = () => {
         </MenuSub>
         <MenuItem startIcon="hospital-line">Item 4</MenuItem>
         <MenuItem startIcon="hospital-line">Item 5</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 6</MenuItem>
+        <MenuItem disabled startIcon="hospital-line">
+          Item 6
+        </MenuItem>
         <MenuItem startIcon="hospital-line">Item 7</MenuItem>
         <MenuItem startIcon="hospital-line">Item 8</MenuItem>
         <MenuItem startIcon="hospital-line">Item 9</MenuItem>

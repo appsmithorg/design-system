@@ -36,8 +36,8 @@ const MenuStyle = css`
   flex-direction: column;
   gap: var(--ads-v2-spaces-1);
   width: fit-content;
-  max-height: var(--radix-dropdown-menu-content-available-height);
   max-width: 280px;
+  max-height: calc(var(--radix-dropdown-menu-content-available-height) - 20px);
   background-color: var(--ads-v2-color-bg);
   border-radius: var(--ads-v2-border-radius);
   border: 1px solid var(--ads-v2-color-border-muted);
@@ -78,8 +78,7 @@ const MenuItemStyle = css`
   background-color: var(--menu-item-color-bg);
   position: relative;
   color: var(--ads-v2-color-fg);
-  min-height: var(--menu-item-height);
-  height: fit-content;
+  height: var(--menu-item-height);
   box-sizing: border-box;
 
   & > .${MenuItemEndIconClassName} {
@@ -91,8 +90,10 @@ const MenuItemStyle = css`
     flex: 1;
     width: 100%;
     font-size: var(--menu-item-font-size);
-    overflow-wrap: break-word;
     line-height: unset;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &:hover:not([data-disabled]),
