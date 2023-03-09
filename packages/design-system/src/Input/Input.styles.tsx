@@ -46,6 +46,7 @@ export const MainContainer = styled.div<{
   display: flex;
   flex-direction: ${({ labelPosition }) =>
     labelPosition === "left" ? "row" : "column"};
+  align-items: baseline;
   gap: ${({ labelPosition }) =>
     labelPosition === "left"
       ? "var(--ads-v2-spaces-4)"
@@ -60,6 +61,7 @@ export const MainContainer = styled.div<{
 
 export const Label = styled.label`
   color: var(--ads-v2-color-fg);
+  width: 100%;
   word-wrap: break-word;
 
   & > span {
@@ -103,9 +105,15 @@ export const InputContainer = styled.div<{
   }
 
   ${({ isDisabled }) =>
+    isDisabled && `opacity: var(--ads-v2-opacity-disabled);`};
+
+  ${({ isDisabled }) =>
     isDisabled &&
-    `opacity: var(--ads-v2-opacity-disabled);
-    cursor: not-allowed;`};
+    `
+    & * {
+      cursor: not-allowed !important;
+    }
+  `};
 `;
 
 export const StyledInput = styled.input<{
@@ -154,23 +162,24 @@ export const StyledInput = styled.input<{
       );
     `};
 
-  &:focus:enabled {
+  &:focus:enabled:not(:read-only) {
     outline: var(--ads-v2-border-width-outline) solid
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
   }
 
-  &:hover:enabled {
+  &:hover:enabled:not(:read-only) {
     --input-color-border: var(--ads-v2-color-border-emphasis);
   }
 
-  &:active:enabled,
-  &:focus:enabled {
+  &:active:enabled:not(:read-only),
+  &:focus:enabled:not(:read-only) {
     --input-color-border: var(--ads-v2-color-border-emphasis-plus);
   }
 
   &:disabled {
     cursor: not-allowed;
+    user-select: none;
   }
 
   ${({ hasError }) =>
