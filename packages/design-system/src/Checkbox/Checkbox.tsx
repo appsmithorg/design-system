@@ -28,7 +28,7 @@ function Checkbox(props: CheckboxProps) {
       isIndeterminate={isIndeterminate}
     >
       <input {...inputProps} {...focusProps} id={id} ref={ref} />
-      <Text as="label" className={CheckboxClassNameLabel} htmlFor={id}>
+      <Text className={CheckboxClassNameLabel} htmlFor={id} renderAs="label">
         {children}
       </Text>
     </StyledCheckbox>
