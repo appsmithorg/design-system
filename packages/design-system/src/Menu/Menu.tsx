@@ -27,6 +27,7 @@ import {
   SubMenuClassName,
 } from "./Menu.constants";
 import { Icon } from "Icon";
+import { Text } from "Text";
 
 function MenuContent({
   children,
@@ -94,7 +95,7 @@ function MenuItemContent(props: MenuItemContentProps) {
           size={size}
         />
       )}
-      <div className={MenuItemChildrenClassName}>{children}</div>
+      <Text className={MenuItemChildrenClassName}>{children}</Text>
       {endIcon && (
         <Icon className={MenuItemEndIconClassName} name={endIcon} size={size} />
       )}

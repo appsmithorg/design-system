@@ -28,41 +28,47 @@ const Template: ComponentStory<typeof Menu> = () => {
       </MenuTrigger>
       <MenuContent width="200px">
         <MenuItem startIcon="hospital-line">
-          <Text>Item 1</Text>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
         </MenuItem>
-        <MenuItem startIcon="hospital-line">
-          <Text>Item 2</Text>
-        </MenuItem>
+        <MenuItem startIcon="hospital-line">Item 2</MenuItem>
         <MenuSeparator />
-        <MenuItem startIcon="hospital-line">
-          <Text>Item 3</Text>
-        </MenuItem>
+        <MenuItem startIcon="hospital-line">Item 3</MenuItem>
         <MenuSub>
-          <MenuSubTrigger startIcon="hospital-line">
-            <Text>Sub Menu</Text>
-          </MenuSubTrigger>
+          <MenuSubTrigger startIcon="hospital-line">Sub Menu</MenuSubTrigger>
           <MenuSubContent width="200px">
-            <MenuItem>
-              <Text>Sub Item 1</Text>
-            </MenuItem>
+            <MenuItem>Sub Item 1</MenuItem>
             <MenuSub>
-              <MenuSubTrigger>
-                <Text>Sub Menu 2</Text>
-              </MenuSubTrigger>
+              <MenuSubTrigger>Sub Menu 2</MenuSubTrigger>
               <MenuSubContent width="200px">
-                <MenuItem>
-                  <Text>Sub Item 2.1</Text>
-                </MenuItem>
-                <MenuItem>
-                  <Text>Sub Item 2.2</Text>
-                </MenuItem>
-                <MenuItem>
-                  <Text>Sub Item 2.3</Text>
-                </MenuItem>
+                <MenuItem>Sub Item 2.1</MenuItem>
+                <MenuItem>Sub Item 2.2</MenuItem>
+                <MenuItem>Sub Item 2.3</MenuItem>
               </MenuSubContent>
             </MenuSub>
           </MenuSubContent>
         </MenuSub>
+        <MenuItem startIcon="hospital-line">Item 4</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 5</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 6</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 7</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 8</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 9</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
       </MenuContent>
     </Menu>
   );
@@ -346,7 +352,7 @@ MenuItemStory.argTypes = {
   },
 };
 MenuItemStory.args = {
-  children: <Text>Item</Text>,
+  children: "Item",
 };
 
 export function MenuSeparatorStory({ ...args }) {
@@ -373,22 +379,14 @@ export function MenuSubmenuStory({ ...args }) {
         <Button>Open Menu</Button>
       </MenuTrigger>
       <MenuContent width="150px">
-        <MenuItem>
-          <Text>Item</Text>
-        </MenuItem>
+        <MenuItem>Item</MenuItem>
         <MenuSub {...args}>
-          <MenuSubTrigger>
-            <Text>Item Sub</Text>
-          </MenuSubTrigger>
+          <MenuSubTrigger>Item Sub</MenuSubTrigger>
           <MenuSubContent width="200px">
-            <MenuItem>
-              <Text>Sub Item</Text>
-            </MenuItem>
+            <MenuItem>Sub Item</MenuItem>
           </MenuSubContent>
         </MenuSub>
-        <MenuItem>
-          <Text>Item</Text>
-        </MenuItem>
+        <MenuItem>Item</MenuItem>
       </MenuContent>
     </Menu>
   );
