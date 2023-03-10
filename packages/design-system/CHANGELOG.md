@@ -1,5 +1,17 @@
 # @appsmithorg/design-system
 
+## 2.0.6
+
+### Patch Changes
+
+- [#401](https://github.com/appsmithorg/design-system/pull/401) [`3c94d86`](https://github.com/appsmithorg/design-system/commit/3c94d86d6e95c214e052ca307b2ecbc47921590a) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add notification counter to tab
+
+* [#394](https://github.com/appsmithorg/design-system/pull/394) [`d37f674`](https://github.com/appsmithorg/design-system/commit/d37f674fa90472d0e783bfbeff0a37428d700ff4) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: add callout
+
+- [#374](https://github.com/appsmithorg/design-system/pull/374) [`6fbc8ad`](https://github.com/appsmithorg/design-system/commit/6fbc8ada9953c8cba60b415e04525a1847ad769d) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: refactor tab
+
+* [#384](https://github.com/appsmithorg/design-system/pull/384) [`fc9fd77`](https://github.com/appsmithorg/design-system/commit/fc9fd771de6eb2bc3e360d5d2877ffe960172257) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: refactor toggle button
+
 ## 2.0.5
 
 ### Patch Changes
