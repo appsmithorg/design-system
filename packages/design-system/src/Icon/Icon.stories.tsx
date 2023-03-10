@@ -19,7 +19,7 @@ export default {
   argTypes: {
     // adding this specifically to bring that sorting order in storybook
     size: {
-      options: ["sm", "md", "lg", "xl", "xxl"],
+      options: ["sm", "md", "lg"],
       control: { type: "radio" },
     },
   },
@@ -33,7 +33,7 @@ const Template: ComponentStory<typeof Icon> = (args) => {
 export const IconStory = Template.bind({});
 IconStory.storyName = "Icon";
 IconStory.args = {
-  name: "add-box-line",
+  name: "account-box-line",
   children: "",
   size: "md",
 };

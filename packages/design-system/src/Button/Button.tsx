@@ -21,12 +21,13 @@ import { Spinner } from "Spinner";
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref): JSX.Element => {
     const {
-      as,
       children,
       className,
       endIcon,
+      isIconButton,
       isLoading,
       kind,
+      renderAs,
       size,
       startIcon,
       UNSAFE_height,
@@ -39,19 +40,20 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const { buttonProps } = useButton(
       {
         ...rest,
-        elementType: as,
+        elementType: renderAs,
       } as AriaButtonProps,
       buttonRef,
     );
 
     return (
       <StyledButton
-        as={as || "button"}
+        as={renderAs || "button"}
         {...buttonProps}
         UNSAFE_height={UNSAFE_height}
         UNSAFE_width={UNSAFE_width}
         className={clsx(ButtonClassName, className)}
         data-loading={isLoading}
+        isIconButton={isIconButton}
         kind={kind}
         ref={buttonRef}
         size={size}
@@ -63,25 +65,23 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             iconProps={{
               className: ButtonLoadingIconClassName,
             }}
-            size={size}
+            size="md"
           />
         )}
 
         {/* Button content */}
-        <ButtonContent className={ButtonContentClassName} size={size}>
+        <ButtonContent
+          className={ButtonContentClassName}
+          isIconButton={isIconButton}
+          size={size}
+        >
           {/* Start Icon Section */}
           {startIcon ? (
-            typeof startIcon === "string" ? (
-              <Icon
-                className={ButtonContentIconStartClassName}
-                name={startIcon}
-                size={size}
-              />
-            ) : (
-              <Icon className={ButtonContentIconStartClassName} size={size}>
-                {startIcon}
-              </Icon>
-            )
+            <Icon
+              className={ButtonContentIconStartClassName}
+              name={startIcon}
+              size="md"
+            />
           ) : null}
 
           {/* Children section */}
@@ -91,17 +91,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
           {/* End Icon Section */}
           {endIcon ? (
-            typeof endIcon === "string" ? (
-              <Icon
-                className={ButtonContentIconEndClassName}
-                name={endIcon}
-                size={size}
-              />
-            ) : (
-              <Icon className={ButtonContentIconEndClassName} size={size}>
-                {endIcon}
-              </Icon>
-            )
+            <Icon
+              className={ButtonContentIconEndClassName}
+              name={endIcon}
+              size="md"
+            />
           ) : null}
         </ButtonContent>
       </StyledButton>

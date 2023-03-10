@@ -6,10 +6,10 @@ const Variables = css``;
 
 const TagSize = {
   sm: css`
-    padding: 0 var(--ads-v2-spaces-2);
+    padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
   `,
   md: css`
-    padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
+    padding: var(--ads-v2-spaces-2);
   `,
 };
 
@@ -21,7 +21,7 @@ export const StyledTag = styled.span<{
 
   ${({ size }) => size && TagSize[size]}
 
-  background-color: var(--ads-v2-color-bg-muted);
+  background-color: var(--ads-v2-color-bg-subtle);
   color: var(--ads-v2-color-fg);
   border-radius: var(--ads-v2-border-radius);
 

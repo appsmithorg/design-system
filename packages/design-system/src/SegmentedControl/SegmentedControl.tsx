@@ -52,11 +52,11 @@ function SegmentedControl(props: SegmentedControlProps) {
             >
               {/* if icon name is passed */}
               {startIcon && typeof startIcon === "string" && (
-                <Icon name={startIcon} size="lg" />
+                <Icon name={startIcon} size="md" />
               )}
               {/* if icon component is passed */}
               {startIcon && typeof startIcon !== "string" && (
-                <Icon size="lg">startIcon</Icon>
+                <Icon size="md">startIcon</Icon>
               )}
 
               {/* Label */}
@@ -64,11 +64,11 @@ function SegmentedControl(props: SegmentedControlProps) {
 
               {/* if icon name is passed */}
               {endIcon && typeof endIcon === "string" && (
-                <Icon name={endIcon} size="lg" />
+                <Icon name={endIcon} size="md" />
               )}
               {/* if icon component is passed */}
               {endIcon && typeof endIcon !== "string" && (
-                <Icon size="lg">endIcon</Icon>
+                <Icon size="md">endIcon</Icon>
               )}
             </StyledSegment>
           </StyledControlContainer>
