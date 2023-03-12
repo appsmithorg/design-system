@@ -23,6 +23,9 @@ export * from "./CalloutV2";
 export { default as Checkbox } from "./Checkbox";
 export * from "./Checkbox";
 
+export { default as Collapsible } from "./Collapsible";
+export * from "./Collapsible";
+
 export { default as ColorPicker } from "./ColorPicker";
 export * from "./ColorPicker";
 
