@@ -1,6 +1,4 @@
 import React, { forwardRef } from "react";
-import { useButton } from "@react-aria/button";
-import { AriaButtonProps } from "@react-types/button";
 import clsx from "classnames";
 
 import { StyledButton, ButtonContent } from "./Button.styles";
@@ -35,22 +33,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       ...rest
     } = props;
     // disable button when loading
-    rest.onPress = props.isLoading ? undefined : props.onPress;
-    console.log(rest.onPress);
-    console.log("click", rest.onPointerDown);
+    rest.onClick = props.isLoading ? undefined : props.onClick;
     const buttonRef = useDOMRef(ref);
-    const { buttonProps } = useButton(
-      {
-        ...rest,
-        elementType: renderAs,
-      } as AriaButtonProps,
-      buttonRef,
-    );
 
     return (
       <StyledButton
         as={renderAs || "button"}
-        {...buttonProps}
+        {...rest}
         UNSAFE_height={UNSAFE_height}
         UNSAFE_width={UNSAFE_width}
         className={clsx(ButtonClassName, className)}

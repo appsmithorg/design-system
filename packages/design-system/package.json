@@ -99,7 +99,6 @@
     "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-dropdown-menu": "^2.0.2",
     "@radix-ui/react-tabs": "^1.0.2",
-    "@react-aria/button": "^3.6.4",
     "@react-aria/checkbox": "^3.7.1",
     "@react-aria/focus": "^3.10.1",
     "@react-aria/link": "^3.3.6",
