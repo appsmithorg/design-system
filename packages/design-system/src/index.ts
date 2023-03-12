@@ -3,6 +3,7 @@ import "./__theme__/default/index.css";
 export * from "./Button";
 export * from "./Callout";
 export * from "./Checkbox";
+export * from "./DatePicker";
 export * from "./Divider";
 export * from "./Icon";
 export * from "./Input";

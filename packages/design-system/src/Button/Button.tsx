@@ -36,6 +36,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     } = props;
     // disable button when loading
     rest.onPress = props.isLoading ? undefined : props.onPress;
+    console.log(rest.onPress);
+    console.log("click", rest.onPointerDown);
     const buttonRef = useDOMRef(ref);
     const { buttonProps } = useButton(
       {
