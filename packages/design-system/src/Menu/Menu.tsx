@@ -5,6 +5,7 @@ import clsx from "classnames";
 import {
   StyledMenuContent,
   StyledMenuItem,
+  StyledMenuGroupname,
   StyledMenuSubContent,
   StyledMenuSubTrigger,
   StyledMenuSeparator,
@@ -162,10 +163,14 @@ function MenuSeparator({
 
 const Menu = RadixMenu.Root;
 const MenuSub = RadixMenu.Sub;
+const MenuGroup = RadixMenu.Group;
+const MenuGroupName = StyledMenuGroupname;
 
 export {
   Menu,
   MenuContent,
+  MenuGroup,
+  MenuGroupName,
   MenuSubContent,
   MenuTrigger,
   MenuItem,
