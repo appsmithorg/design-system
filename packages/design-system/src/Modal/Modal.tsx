@@ -33,7 +33,7 @@ function ModalContent(props: ModalContentProps) {
 function ModalHeader({ children, onClose }: ModalHeaderProps) {
   return (
     <StyledHeader className={ModalContentHeaderClassName}>
-      <Text as="h3" kind="heading-m">
+      <Text kind="heading-m" renderAs="h3">
         {children}
       </Text>
       <StyledClose

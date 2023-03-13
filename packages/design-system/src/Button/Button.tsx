@@ -21,13 +21,13 @@ import { Spinner } from "Spinner";
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref): JSX.Element => {
     const {
-      as,
       children,
       className,
       endIcon,
       isIconButton,
       isLoading,
       kind,
+      renderAs,
       size,
       startIcon,
       UNSAFE_height,
@@ -40,14 +40,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const { buttonProps } = useButton(
       {
         ...rest,
-        elementType: as,
+        elementType: renderAs,
       } as AriaButtonProps,
       buttonRef,
     );
 
     return (
       <StyledButton
-        as={as || "button"}
+        as={renderAs || "button"}
         {...buttonProps}
         UNSAFE_height={UNSAFE_height}
         UNSAFE_width={UNSAFE_width}

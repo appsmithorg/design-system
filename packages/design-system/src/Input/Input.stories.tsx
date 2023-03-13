@@ -7,7 +7,7 @@ export default {
   title: "Design System/Input",
   component: Input,
   argTypes: {
-    as: {
+    renderAs: {
       control: {
         type: "radio",
         options: ["input", "textarea"],
@@ -144,6 +144,26 @@ export default {
           summary: "false",
         },
       },
+    },
+    isReadOnly: {
+      control: {
+        type: "boolean",
+      },
+      description: "Whether the input is read only or not.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    onChange: {
+      control: {
+        type: "text",
+      },
+      description: "onChange trigger of the input.",
     },
   },
   parameters: { controls: { sort: "requiredFirst" } },
