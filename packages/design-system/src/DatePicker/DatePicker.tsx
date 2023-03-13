@@ -47,7 +47,6 @@ function DatePickerHeader(props: ReactDatePickerCustomHeaderProps) {
     nextMonthButtonDisabled,
     prevMonthButtonDisabled,
   } = props;
-  const [isYearMenuOpen, setIsYearMenuOpen] = useState(false);
 
   const years = range(1990, getYear(new Date()) + 1, 1);
   const months = [
@@ -72,18 +71,15 @@ function DatePickerHeader(props: ReactDatePickerCustomHeaderProps) {
           disabled={prevMonthButtonDisabled}
           isIconButton
           kind="tertiary"
-          onPress={decreaseMonth}
+          onClick={decreaseMonth}
           startIcon="arrow-left-s-line"
         />
-        <Menu onOpenChange={setIsYearMenuOpen} open={isYearMenuOpen}>
+        <Menu>
           <MenuTrigger>
             <Button
               disabled={prevMonthButtonDisabled}
               endIcon="arrow-down-s-line"
               kind="tertiary"
-              // onPress={() => {
-              //   setIsYearMenuOpen(!isYearMenuOpen);
-              // }}
               size="md"
             >
               {months[getMonth(date)]}
