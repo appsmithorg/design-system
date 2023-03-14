@@ -76,7 +76,7 @@ const MenuItemStyle = css`
   background-color: var(--menu-item-color-bg);
   position: relative;
   color: var(--ads-v2-color-fg);
-  height: var(--menu-item-height);
+  min-height: var(--menu-item-height);
   box-sizing: border-box;
 
   & > .${MenuItemEndIconClassName} {
@@ -90,8 +90,7 @@ const MenuItemStyle = css`
     font-size: var(--menu-item-font-size);
     line-height: unset;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    overflow-wrap: break-word;
   }
 
   &:hover:not([data-disabled]),
