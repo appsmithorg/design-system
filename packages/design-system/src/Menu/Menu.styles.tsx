@@ -32,9 +32,6 @@ const MenuItemSizeStyles = {
 const MenuStyle = css`
   ${Variables}
 
-  display: flex;
-  flex-direction: column;
-  gap: var(--ads-v2-spaces-1);
   width: fit-content;
   max-width: 280px;
   max-height: calc(var(--radix-dropdown-menu-content-available-height) - 20px);
@@ -72,13 +69,14 @@ const MenuItemStyle = css`
   display: flex;
   align-items: center;
   padding: var(--menu-item-padding);
+  margin-bottom: var(--ads-v2-spaces-1);
   gap: var(--menu-item-gap);
   border-radius: var(--ads-v2-border-radius);
   cursor: pointer;
   background-color: var(--menu-item-color-bg);
   position: relative;
   color: var(--ads-v2-color-fg);
-  height: var(--menu-item-height);
+  min-height: var(--menu-item-height);
   box-sizing: border-box;
 
   & > .${MenuItemEndIconClassName} {
@@ -92,8 +90,7 @@ const MenuItemStyle = css`
     font-size: var(--menu-item-font-size);
     line-height: unset;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    overflow-wrap: break-word;
   }
 
   &:hover:not([data-disabled]),
@@ -142,4 +139,16 @@ export const StyledMenuSeparator = styled(RadixMenu.Separator)`
   height: 1px;
   background-color: var(--ads-v2-color-border-muted);
   width: 100%;
+  display: list-item;
+
+  &::marker {
+    content: "";
+  }
+`;
+
+export const StyledMenuGroupname = styled(RadixMenu.Label)`
+  font-size: var(--ads-v2-font-size-2);
+  color: var(--ads-v2-color-fg-muted);
+  font-weight: var(--ads-v2-font-weight-bold);
+  padding: 0 var(--menu-item-padding);
 `;

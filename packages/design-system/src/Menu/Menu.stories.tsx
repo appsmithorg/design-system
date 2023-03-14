@@ -10,6 +10,8 @@ import {
   MenuSubTrigger,
   MenuTrigger,
   MenuSeparator,
+  MenuGroup,
+  MenuGroupName,
 } from "./Menu";
 import { Button } from "../Button";
 import { Text } from "../Text";
@@ -52,10 +54,17 @@ const Template: ComponentStory<typeof Menu> = () => {
         <MenuItem disabled startIcon="hospital-line">
           Item 6
         </MenuItem>
-        <MenuItem startIcon="hospital-line">Item 7</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 8</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 9</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuSeparator />
+        <MenuGroupName asChild>
+          <Text kind="body-s">Menu Group</Text>
+        </MenuGroupName>
+        <MenuGroup>
+          <MenuItem startIcon="hospital-line">Item 7</MenuItem>
+          <MenuItem startIcon="hospital-line">Item 8</MenuItem>
+          <MenuItem startIcon="hospital-line">Item 9</MenuItem>
+          <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        </MenuGroup>
+        <MenuSeparator />
         <MenuItem startIcon="hospital-line">Item 10</MenuItem>
         <MenuItem startIcon="hospital-line">Item 10</MenuItem>
         <MenuItem startIcon="hospital-line">Item 10</MenuItem>
