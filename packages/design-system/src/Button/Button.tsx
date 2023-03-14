@@ -35,7 +35,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     // disable button when loading
     rest.onClick = props.isLoading ? undefined : props.onClick;
     const buttonRef = useDOMRef(ref);
-
     return (
       <StyledButton
         as={renderAs || "button"}
@@ -44,6 +43,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         UNSAFE_width={UNSAFE_width}
         className={clsx(ButtonClassName, className)}
         data-loading={isLoading}
+        disabled={props.isDisabled}
         isIconButton={isIconButton}
         kind={kind}
         ref={buttonRef}
