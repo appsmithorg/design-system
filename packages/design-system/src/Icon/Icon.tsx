@@ -1,27 +1,34 @@
 import React from "react";
 
 import { IconContainer } from "./Icon.styles";
-import { IconProps } from "./Icon.types";
+import { IconProps, IconSizes } from "./Icon.types";
 import { IconProvider } from "./Icon.provider";
 
+export const iconSizes: Record<IconSizes, string> = {
+  sm: "12px",
+  md: "16px",
+  lg: "24px",
+};
+
 function Icon(props: IconProps) {
-  const { children, className, color, name, size } = props;
+  const { children, className, color, name, size = "sm", ...rest } = props;
 
   if (!name && !children) return null;
 
   return (
-    <IconContainer className={className} color={color} size={size}>
+    <IconContainer
+      className={className}
+      color={color}
+      size={iconSizes[size]}
+      {...rest}
+    >
       {name ? (
-        <IconProvider color={color} iconName={name} size={size} />
-      ) : (
-        children
-      )}
+        <IconProvider color={color} iconName={name} size={iconSizes[size]} />
+      ) : null}
     </IconContainer>
   );
 }
 
-Icon.defaultProps = {
-  size: "0.8rem",
-};
+Icon.displayName = "Icon";
 
 export { Icon };

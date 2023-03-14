@@ -121,10 +121,10 @@ const TabsWrapper = styled.div<{
 `;
 
 export const TabTitle = styled.span<{ responseViewer?: boolean }>`
-  font-size: ${typography.h4.fontSize}px;
+  font-size: ${typography.h5.fontSize}px;
   font-weight: var(--ads-font-weight-bold);
-  line-height: var(--ads-spaces-7);
-  letter-spacing: ${typography.h4.letterSpacing}px;
+  line-height: var(--ads-spaces-6);
+  letter-spacing: ${typography.h5.letterSpacing}px;
   margin: 0;
   display: flex;
   align-items: center;

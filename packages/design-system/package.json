@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "description": "This is the package for the design system that powers the Appsmith platform",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -21,7 +21,6 @@
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
     "@react-aria/focus": "^3.10.1",
-    "@react-aria/radio": "^3.4.2",
     "@react-types/button": "^3.7.0",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-image": "^3.0.1",
@@ -37,12 +36,14 @@
     "@storybook/react": "^6.5.15",
     "@svgr/rollup": "^6.5.1",
     "@types/react": "^17.0.2",
+    "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "babel-loader": "^8.2.5",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-preset-react-app": "^10.0.1",
+    "classnames": "^2.3.2",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-react": "^1.1.7",
@@ -54,12 +55,14 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-sort-destructure-keys": "^1.4.0",
     "eslint-plugin-storybook": "^0.6.8",
+    "lodash.capitalize": "^4.2.1",
     "plop": "^3.1.1",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "prettier": "^2.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.0.0",
     "remixicon-react": "^1.0.0",
     "rollup": "^3.9.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -73,6 +76,7 @@
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.0.0",
     "styled-components": "^5.3.6"
   },
   "eslintConfig": {
@@ -90,6 +94,18 @@
     ]
   },
   "dependencies": {
-    "@react-aria/button": "^3.6.4"
+    "@radix-ui/react-tabs": "^1.0.2",
+    "@radix-ui/react-dialog": "^1.0.2",
+    "@react-aria/button": "^3.6.4",
+    "@react-aria/checkbox": "^3.7.1",
+    "@react-aria/focus": "^3.10.1",
+    "@react-aria/link": "^3.3.6",
+    "@react-aria/radio": "^3.4.2",
+    "@react-aria/switch": "^3.3.1",
+    "@react-aria/textfield": "^3.8.1",
+    "@react-stately/radio": "^3.6.2",
+    "@react-stately/toggle": "^3.4.4",
+    "react-toastify": "9.0.3",
+    "rc-tooltip": "^5.3.1"
   }
 }

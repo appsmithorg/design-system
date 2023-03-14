@@ -30,7 +30,7 @@ export default {
       minimize: true,
       sourceMap: true,
       plugins: [postcssImport()],
-      extract: path.resolve("build/css/design-system-v2.css"),
+      extract: path.resolve("build/css/design-system.css"),
     }),
     url(),
     svgr({

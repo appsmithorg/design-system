@@ -147,6 +147,8 @@ import RightArrowIcon from "remixicon-react/ArrowRightLineIcon";
 import RightArrowIcon2 from "remixicon-react/ArrowRightSLineIcon";
 import RocketIcon from "remixicon-react/RocketLineIcon";
 import SearchIcon from "remixicon-react/SearchLineIcon";
+import SortAscIcon from "remixicon-react/SortAscIcon"; 
+import SortDescIcon from "remixicon-react/SortDescIcon"; 
 import ShareBoxLineIcon from "remixicon-react/ShareBoxLineIcon";
 import ShareBoxFillIcon from "remixicon-react/ShareBoxFillIcon";
 import ShareForwardIcon from "remixicon-react/ShareForwardFillIcon";
@@ -204,6 +206,8 @@ import UserReceived2LineIcon from "remixicon-react/UserReceived2LineIcon";
 import UserAddLineIcon from "remixicon-react/UserAddLineIcon";
 import UserUnfollowLineIcon from "remixicon-react/UserUnfollowLineIcon";
 import DeleteRowIcon from "remixicon-react/DeleteRowIcon";
+import ArrowUpLineIcon from "remixicon-react/ArrowUpLineIcon";
+import MoneyDollarCircleLineIcon from "remixicon-react/MoneyDollarCircleLineIcon";
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -298,6 +302,7 @@ const ICON_LOOKUP = {
   "arrow-left": <ArrowLeft />,
   "arrow-right-s-fill": <ArrowRightSFillIcon />,
   "arrow-right-up-line": <ArrowRightUpLineIcon />,
+  "arrow-up-line": <ArrowUpLineIcon />,
   "book-line": <BookLineIcon />,
   "bug-line": <BugLineIcon />,
   "cap-dot": <CapDotIcon />,
@@ -376,6 +381,8 @@ const ICON_LOOKUP = {
   "share-box": <ShareBoxFillIcon />,
   "share-box-line": <ShareBoxLineIcon />,
   "share-line": <ShareLineIcon />,
+  "sort-asc": <SortAscIcon />,
+  "sort-desc": <SortDescIcon />,
   "star-fill": <StarFillIcon />,
   "star-line": <StarLineIcon />,
   "swap-horizontal": <ArrowLeftRightIcon />,
@@ -398,6 +405,7 @@ const ICON_LOOKUP = {
   "view-less": <LeftArrowIcon />,
   "warning-line": <WarningLineIcon />,
   "warning-triangle": <WarningTriangleIcon />,
+  "money-dollar-circle-line": <MoneyDollarCircleLineIcon />,
   billing: <BillingIcon />,
   book: <BookIcon />,
   bug: <BugIcon />,
