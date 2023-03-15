@@ -29,7 +29,7 @@ const MenuItemSizeStyles = {
   `,
 };
 
-const MenuStyle = css`
+const MenuContentStyle = css`
   ${Variables}
 
   width: fit-content;
@@ -51,7 +51,7 @@ export const StyledMenuContent = styled(RadixMenu.Content)<{
   height?: string;
   width?: string;
 }>`
-  ${MenuStyle}
+  ${MenuContentStyle}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
 `;
@@ -60,7 +60,7 @@ export const StyledMenuSubContent = styled(RadixMenu.SubContent)<{
   height?: string;
   width?: string;
 }>`
-  ${MenuStyle}
+  ${MenuContentStyle}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
 `;

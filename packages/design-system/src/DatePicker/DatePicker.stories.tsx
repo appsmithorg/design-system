@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { DatePicker } from "./DatePicker";
+import { DatePicker, DateRangePicker } from "./DatePicker";
 
 export default {
   title: "Design System/DatePicker",
@@ -24,4 +24,15 @@ export const DatePickerStory = Template.bind({});
 DatePickerStory.storyName = "DatePicker";
 DatePickerStory.args = {
   //add arguments here
+  excludeDates: [new Date()],
 };
+
+export function DateRangePickerStory() {
+  return (
+    <DateRangePicker
+      excludeDates={[new Date()]}
+      onChange={(date) => console.log(date)}
+    />
+  );
+}
+DateRangePickerStory.storyName = "DateRangePicker";

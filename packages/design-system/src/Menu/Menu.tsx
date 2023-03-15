@@ -1,6 +1,7 @@
 import React from "react";
 import * as RadixMenu from "@radix-ui/react-dropdown-menu";
 import clsx from "classnames";
+import "./styles.css";
 
 import {
   StyledMenuContent,
@@ -34,11 +35,12 @@ function MenuContent({
   children,
   className,
   height,
+  portalProps,
   width,
   ...props
 }: MenuContentProps) {
   return (
-    <RadixMenu.Portal>
+    <RadixMenu.Portal {...portalProps}>
       <StyledMenuContent
         className={clsx(MenuClassName, className)}
         height={height}

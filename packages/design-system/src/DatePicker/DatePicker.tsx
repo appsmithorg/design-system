@@ -5,6 +5,7 @@ import BaseDatePicker, {
 import range from "lodash/range";
 import getYear from "date-fns/getYear";
 import getMonth from "date-fns/getMonth";
+import clsx from "classnames";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./styles.css";
@@ -12,27 +13,58 @@ import {
   DatePickerCalenderClassName,
   DatePickerClassName,
 } from "./DatePicker.constants";
-import { DatePickerProps } from "./DatePicker.types";
+import { DatePickerProps, DateRangePickerProps } from "./DatePicker.types";
 import { StyledDatePickerHeader } from "./DatePicker.styles";
 import { Input } from "Input";
 import { Button } from "Button";
 import { Menu, MenuContent, MenuItem, MenuTrigger } from "Menu";
 
 function DatePicker(props: DatePickerProps) {
-  const { inputSize = "md" } = props;
-  const [startDate, setStartDate] = useState<Date | null>(new Date());
+  const {
+    calendarClassName,
+    className,
+    inputSize = "md",
+    isClearable,
+    onChange,
+    selected,
+    ...rest
+  } = props;
+  const [selectedDate, setSelectedDate] = useState<Date | null>(
+    selected || null,
+  );
+
+  const onChangeHandler = (
+    date: Date | null,
+    e: React.SyntheticEvent<any, Event> | undefined,
+  ) => {
+    setSelectedDate(date);
+    onChange && onChange(date, e);
+  };
 
   return (
     <BaseDatePicker
-      calendarClassName={DatePickerCalenderClassName}
-      className={DatePickerClassName}
-      customInput={<Input renderAs="input" size={inputSize} />}
-      excludeDates={[new Date()]}
-      isClearable={false}
-      onChange={(date) => setStartDate(date)}
+      {...rest}
+      calendarClassName={clsx(DatePickerCalenderClassName, calendarClassName)}
+      className={clsx(className, DatePickerClassName)}
+      customInput={
+        <Input
+          endIcon={
+            isClearable && selectedDate ? "close-circle-line" : undefined
+          }
+          endIconProps={{
+            onClick: () => onChangeHandler(null, undefined),
+          }}
+          renderAs="input"
+          size={inputSize}
+        />
+      }
+      monthsShown={1}
+      onChange={onChangeHandler}
       renderCustomHeader={DatePickerHeader}
-      selected={startDate}
+      selected={selectedDate}
+      selectsRange={false}
       showPopperArrow={false}
+      showTimeInput
     />
   );
 }
@@ -41,9 +73,10 @@ function DatePickerHeader(props: ReactDatePickerCustomHeaderProps) {
   const {
     changeMonth,
     changeYear,
-    date,
+    customHeaderCount,
     decreaseMonth,
     increaseMonth,
+    monthDate,
     nextMonthButtonDisabled,
     prevMonthButtonDisabled,
   } = props;
@@ -67,13 +100,15 @@ function DatePickerHeader(props: ReactDatePickerCustomHeaderProps) {
   return (
     <StyledDatePickerHeader>
       <div>
-        <Button
-          disabled={prevMonthButtonDisabled}
-          isIconButton
-          kind="tertiary"
-          onClick={decreaseMonth}
-          startIcon="arrow-left-s-line"
-        />
+        {customHeaderCount === 0 && (
+          <Button
+            disabled={prevMonthButtonDisabled}
+            isIconButton
+            kind="tertiary"
+            onClick={decreaseMonth}
+            startIcon="arrow-left-s-line"
+          />
+        )}
         <Menu>
           <MenuTrigger>
             <Button
@@ -82,10 +117,19 @@ function DatePickerHeader(props: ReactDatePickerCustomHeaderProps) {
               kind="tertiary"
               size="md"
             >
-              {months[getMonth(date)]}
+              {months[getMonth(monthDate)]}
             </Button>
           </MenuTrigger>
-          <MenuContent loop>
+          <MenuContent
+            loop
+            portalProps={{
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              container: document.getElementsByClassName(
+                DatePickerCalenderClassName,
+              )[0],
+            }}
+          >
             {months.map((month) => (
               <MenuItem
                 key={month}
@@ -98,23 +142,103 @@ function DatePickerHeader(props: ReactDatePickerCustomHeaderProps) {
         </Menu>
       </div>
       <div>
-        <Button
-          disabled={prevMonthButtonDisabled}
-          endIcon="arrow-down-s-line"
-          kind="tertiary"
-          size="md"
-        >
-          2023
-        </Button>
-        <Button
-          disabled={prevMonthButtonDisabled}
-          isIconButton
-          kind="tertiary"
-          onClick={decreaseMonth}
-          startIcon="arrow-right-s-line"
-        />
+        <Menu>
+          <MenuTrigger>
+            <Button
+              disabled={prevMonthButtonDisabled}
+              endIcon="arrow-down-s-line"
+              kind="tertiary"
+              size="md"
+            >
+              {getYear(monthDate)}
+            </Button>
+          </MenuTrigger>
+          <MenuContent
+            loop
+            portalProps={{
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              container: document.getElementsByClassName(
+                DatePickerCalenderClassName,
+              )[0],
+            }}
+          >
+            {years.map((year) => (
+              <MenuItem key={year} onSelect={() => changeYear(year)}>
+                {year}
+              </MenuItem>
+            ))}
+          </MenuContent>
+        </Menu>
+        {customHeaderCount === 1 && (
+          <Button
+            disabled={nextMonthButtonDisabled}
+            isIconButton
+            kind="tertiary"
+            onClick={increaseMonth}
+            startIcon="arrow-right-s-line"
+          />
+        )}
       </div>
     </StyledDatePickerHeader>
+  );
+}
+
+function DateRangePicker(props: DateRangePickerProps) {
+  const {
+    calendarClassName,
+    className,
+    endDate: propEndDate,
+    inputSize = "md",
+    isClearable,
+    onChange,
+    startDate: propStartDate,
+    ...rest
+  } = props;
+  const [startDate, setStartDate] = useState<Date | null>(
+    propStartDate || null,
+  );
+  const [endDate, setEndDate] = useState<Date | null>(propEndDate || null);
+
+  const onChangeHandler = (
+    date: [Date | null, Date | null],
+    e: React.SyntheticEvent<any, Event> | undefined,
+  ) => {
+    const [startDate, endDate] = date;
+    setStartDate(startDate);
+    setEndDate(endDate);
+    onChange && onChange(date, e);
+  };
+
+  return (
+    <BaseDatePicker
+      {...rest}
+      calendarClassName={clsx(DatePickerCalenderClassName, calendarClassName)}
+      className={clsx(className, DatePickerClassName)}
+      customInput={
+        <Input
+          endIcon={
+            isClearable && (startDate || endDate)
+              ? "close-circle-line"
+              : undefined
+          }
+          endIconProps={{
+            onClick: () => setStartDate(null),
+          }}
+          renderAs="input"
+          size={inputSize}
+        />
+      }
+      endDate={endDate}
+      monthsShown={2}
+      onChange={onChangeHandler}
+      renderCustomHeader={DatePickerHeader}
+      selected={startDate}
+      selectsRange
+      showPopperArrow={false}
+      showTimeInput
+      startDate={startDate}
+    />
   );
 }
 
@@ -122,4 +246,8 @@ DatePicker.displayName = "DatePicker";
 
 DatePicker.defaultProps = {};
 
-export { DatePicker };
+DateRangePicker.displayName = "DateRangePicker";
+
+DateRangePicker.defaultProps = {};
+
+export { DatePicker, DateRangePicker };

@@ -8,6 +8,8 @@ type _MenuContentProps = {
   height?: string;
   /** width of the menu */
   width?: string;
+  /** portal props */
+  portalProps?: RadixMenu.DropdownMenuPortalProps;
 };
 export type MenuContentProps = _MenuContentProps &
   RadixMenu.DropdownMenuContentProps;
