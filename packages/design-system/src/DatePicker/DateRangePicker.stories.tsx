@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { DatePicker } from "./DatePicker";
+import { DateRangePicker } from "./DatePicker";
 
 export default {
   title: "Design System/DatePicker",
-  component: DatePicker,
+  component: DateRangePicker,
   decorators: [
     (Story) => (
       <div style={{ width: "100%", maxWidth: "250px", margin: "0 auto" }}>
@@ -492,33 +492,18 @@ export default {
         },
       },
     },
-    showTimeInput: {
-      control: {
-        type: "boolean",
-      },
-      description: "Whether to show the time input or not.",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "false",
-        },
-      },
-    },
   },
-} as ComponentMeta<typeof DatePicker>;
+} as ComponentMeta<typeof DateRangePicker>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof DatePicker> = (args) => {
-  return <DatePicker {...args} />;
+const Template: ComponentStory<typeof DateRangePicker> = (args) => {
+  return <DateRangePicker {...args} />;
 };
 
-export const DatePickerStory = Template.bind({});
-DatePickerStory.storyName = "DatePicker";
-DatePickerStory.args = {
+export const DateRangePickerStory = Template.bind({});
+DateRangePickerStory.storyName = "DateRangePicker";
+DateRangePickerStory.args = {
   //add arguments here
   excludeDates: [new Date()],
-  showTimeInput: true,
   yearStartRange: 2010,
 };
