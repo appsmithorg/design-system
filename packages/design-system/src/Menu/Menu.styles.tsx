@@ -137,7 +137,7 @@ export const StyledMenuSubTrigger = styled(RadixMenu.SubTrigger)<{
 
 export const StyledMenuSeparator = styled(RadixMenu.Separator)`
   height: 1px;
-  background-color: var(--ads-v2-color-border-muted);
+  background-color: var(--ads-v2-color-border);
   width: 100%;
   display: list-item;
 
