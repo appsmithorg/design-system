@@ -41,7 +41,7 @@ const toast = {
         {actionText && (
           <StyledButton
             kind="tertiary"
-            onPress={() => {
+            onClick={() => {
               options?.action?.effect && options?.action?.effect();
               toastifyToast.dismiss();
             }}

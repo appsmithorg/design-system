@@ -7,6 +7,7 @@ export * from "./Divider";
 export * from "./Icon";
 export * from "./Input";
 export * from "./Link";
+export * from "./Menu";
 export * from "./Modal";
 export * from "./NumberInput";
 export * from "./Radio";
