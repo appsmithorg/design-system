@@ -7,6 +7,7 @@ export * from "./Divider";
 export * from "./Icon";
 export * from "./Link";
 export * from "./Radio";
+export * from "./Spinner";
 export * from "./Switch";
 export * from "./Tab";
 export * from "./Tag";
