@@ -109,7 +109,7 @@ export default {
           summary: "string",
         },
         defaultValue: {
-          summary: "MM/dd/yyyy",
+          summary: "dd/MM/yyyy",
         },
       },
     },
