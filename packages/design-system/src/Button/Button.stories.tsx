@@ -25,9 +25,19 @@ export const ButtonStory = Template.bind({});
 ButtonStory.storyName = "Button";
 ButtonStory.args = {
   children: "button",
-  onPress: () => alert("Button clicked!"),
+  onClick: () => alert("Button clicked!"),
   startIcon: "arrow-left-line",
   endIcon: "arrow-right-line",
   size: "md",
   kind: "primary",
+};
+
+export const IconButtonStory = Template.bind({});
+IconButtonStory.storyName = "Icon Button";
+IconButtonStory.args = {
+  onClick: () => alert("Button clicked!"),
+  startIcon: "arrow-left-line",
+  size: "md",
+  kind: "primary",
+  isIconButton: true,
 };

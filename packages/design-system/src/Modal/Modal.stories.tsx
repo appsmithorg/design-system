@@ -69,7 +69,7 @@ const ModalHeaderTemplate: ComponentStory<typeof ModalHeader> = (args) => {
   const changeOpenState = (state: boolean) => updateArgs({ open: state });
   return (
     <>
-      <Button onPress={() => changeOpenState(true)}>Open Modal</Button>
+      <Button onClick={() => changeOpenState(true)}>Open Modal</Button>
       <Modal onOpenChange={changeOpenState} open={open}>
         <ModalContent>
           <ModalHeader onClose={() => changeOpenState(false)}>
@@ -93,7 +93,7 @@ const ModalBodyTemplate: ComponentStory<typeof ModalBody> = (args) => {
   const changeOpenState = (state: boolean) => updateArgs({ open: state });
   return (
     <>
-      <Button onPress={() => changeOpenState(true)}>Open Modal</Button>
+      <Button onClick={() => changeOpenState(true)}>Open Modal</Button>
       <Modal onOpenChange={changeOpenState} open={open}>
         <ModalContent>
           <ModalBody>
@@ -119,7 +119,7 @@ const ModalFooterTemplate: ComponentStory<typeof ModalFooter> = () => {
 
   return (
     <>
-      <Button onPress={() => changeOpenState(true)}>Open Modal</Button>
+      <Button onClick={() => changeOpenState(true)}>Open Modal</Button>
       <Modal onOpenChange={changeOpenState} open={open}>
         <ModalContent>
           <ModalFooter>
@@ -148,7 +148,7 @@ const ModalWithFooterTemplate: ComponentStory<typeof Modal> = (args) => {
 
   return (
     <>
-      <Button onPress={handleClose}>Open Modal</Button>
+      <Button onClick={handleClose}>Open Modal</Button>
       <Modal {...args} onOpenChange={changeOpenState}>
         <ModalContent>
           <ModalHeader onClose={handleClose}>Modal Header</ModalHeader>
@@ -193,7 +193,7 @@ const ModalWithoutFooter: ComponentStory<typeof Modal> = (args) => {
 
   return (
     <>
-      <Button onPress={handleClose}>Open Modal</Button>
+      <Button onClick={handleClose}>Open Modal</Button>
       <Modal {...args} onOpenChange={changeOpenState}>
         <ModalContent>
           <ModalHeader onClose={handleClose}>Modal Header</ModalHeader>

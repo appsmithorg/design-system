@@ -11,7 +11,7 @@ export type TagProps = {
   className?: string;
 
   /** the words you want to display */
-  children: string;
+  children: string | number;
 
   /** whether or not the tag can be dismissed*/
   isClosable?: boolean;
