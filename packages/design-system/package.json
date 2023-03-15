@@ -94,9 +94,10 @@
     ]
   },
   "dependencies": {
-    "@radix-ui/react-tabs": "^1.0.2",
     "@radix-ui/react-dialog": "^1.0.2",
-    "@react-aria/button": "^3.6.4",
+    "@radix-ui/react-dropdown-menu": "^2.0.4",
+    "@radix-ui/react-tabs": "^1.0.2",
+    "@react-aria/button": "^3.7.0",
     "@react-aria/checkbox": "^3.7.1",
     "@react-aria/focus": "^3.10.1",
     "@react-aria/link": "^3.3.6",
@@ -105,7 +106,7 @@
     "@react-aria/textfield": "^3.8.1",
     "@react-stately/radio": "^3.6.2",
     "@react-stately/toggle": "^3.4.4",
-    "react-toastify": "9.0.3",
-    "rc-tooltip": "^5.3.1"
+    "rc-tooltip": "^5.3.1",
+    "react-toastify": "9.0.3"
   }
 }

@@ -57,7 +57,7 @@ function Callout({
           aria-label="Close"
           isIconButton
           kind="tertiary"
-          onPress={() => setClosed(true)}
+          onClick={() => setClosed(true)}
           size="sm"
           startIcon="close-line"
         />

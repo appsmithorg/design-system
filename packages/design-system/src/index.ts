@@ -1,18 +1,23 @@
 import "./__theme__/default/index.css";
 
 export * from "./Button";
-export * from "./Checkbox";
 export * from "./Callout";
+export * from "./Checkbox";
 export * from "./Divider";
 export * from "./Icon";
+export * from "./Input";
 export * from "./Link";
+export * from "./Menu";
+export * from "./Modal";
+export * from "./NumberInput";
 export * from "./Radio";
+export * from "./SearchInput";
+export * from "./SegmentedControl";
+export * from "./Spinner";
 export * from "./Switch";
 export * from "./Tab";
 export * from "./Tag";
 export * from "./Text";
 export * from "./Toast";
-export * from "./Tooltip";
-export * from "./Input";
-export * from "./Modal";
 export * from "./ToggleButton";
+export * from "./Tooltip";
