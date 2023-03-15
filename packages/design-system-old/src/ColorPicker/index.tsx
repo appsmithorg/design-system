@@ -9,12 +9,12 @@ import {
 } from "@blueprintjs/core";
 import debounce from "lodash/debounce";
 import { replayHighlightClass } from "Constants/classes";
-import { loadableForSvg } from "Utils/icon-loadables";
+import { importSvg } from "Utils/icon-loadables";
 
-const CheckedIcon = loadableForSvg(() =>
+const CheckedIcon = importSvg(() =>
   import("../assets/icons/control/checkmark.svg"),
 );
-const ColorPickerIcon = loadableForSvg(() =>
+const ColorPickerIcon = importSvg(() =>
   import("../assets/icons/control/color-picker.svg"),
 );
 

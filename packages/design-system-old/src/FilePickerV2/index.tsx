@@ -14,9 +14,9 @@ import {
   REMOVE_FILE_TOOL_TIP,
 } from "Constants/messages";
 import { Classes } from "Constants/classes";
-import { loadableForSvg } from "Utils/icon-loadables";
+import { importSvg } from "Utils/icon-loadables";
 
-const UploadSuccessIcon = loadableForSvg(() =>
+const UploadSuccessIcon = importSvg(() =>
   import("../assets/icons/ads/upload_success.svg"),
 );
 

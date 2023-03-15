@@ -7,7 +7,7 @@ import {
   RemixiconReactIconComponentType,
 } from "remixicon-react";
 
-function loadableForIconImpl(
+function importIconImpl(
   importFn: () => Promise<any>,
   options?: {
     resolveComponent: (m: any) => React.ComponentType;
@@ -28,16 +28,16 @@ function loadableForIconImpl(
   };
 }
 
-export function loadableForSvg(
+export function importSvg(
   importFn: () => Promise<typeof import("*.svg")>,
 ): React.ComponentType<React.SVGProps<SVGSVGElement>> {
-  return loadableForIconImpl(importFn, {
+  return importIconImpl(importFn, {
     resolveComponent: (m: typeof import("*.svg")) => m.ReactComponent,
   });
 }
 
-export function loadableForRemixIcons(
+export function importRemixIcon(
   importFn: () => Promise<{ default: RemixiconReactIconComponentType }>,
 ): React.ComponentType<RemixiconReactIconProps> {
-  return loadableForIconImpl(importFn);
+  return importIconImpl(importFn);
 }

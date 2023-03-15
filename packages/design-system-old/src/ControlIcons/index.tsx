@@ -1,199 +1,181 @@
 import React, { JSXElementConstructor } from "react";
 import { IconProps, IconWrapper } from "Constants/Icon";
-import { loadableForRemixIcons, loadableForSvg } from "Utils/icon-loadables";
+import { importRemixIcon, importSvg } from "Utils/icon-loadables";
 import PlayIcon from "../assets/icons/control/play-icon.png";
 
-const DeleteIcon = loadableForSvg(() =>
+const DeleteIcon = importSvg(() =>
   import("../assets/icons/control/delete.svg"),
 );
-const MoveIcon = loadableForSvg(() =>
-  import("../assets/icons/control/move.svg"),
-);
-const EditIcon = loadableForSvg(() =>
-  import("../assets/icons/control/edit.svg"),
-);
-const ViewIcon = loadableForSvg(() =>
-  import("../assets/icons/control/view.svg"),
-);
-const MoreVerticalIcon = loadableForSvg(() =>
+const MoveIcon = importSvg(() => import("../assets/icons/control/move.svg"));
+const EditIcon = importSvg(() => import("../assets/icons/control/edit.svg"));
+const ViewIcon = importSvg(() => import("../assets/icons/control/view.svg"));
+const MoreVerticalIcon = importSvg(() =>
   import("../assets/icons/control/more-vertical.svg"),
 );
-const OverflowMenuIcon = loadableForSvg(() =>
+const OverflowMenuIcon = importSvg(() =>
   import("../assets/icons/menu/overflow-menu.svg"),
 );
-const JsToggleIcon = loadableForSvg(() =>
+const JsToggleIcon = importSvg(() =>
   import("../assets/icons/control/js-toggle.svg"),
 );
-const IncreaseIcon = loadableForSvg(() =>
+const IncreaseIcon = importSvg(() =>
   import("../assets/icons/control/increase.svg"),
 );
-const DecreaseIcon = loadableForSvg(() =>
+const DecreaseIcon = importSvg(() =>
   import("../assets/icons/control/decrease.svg"),
 );
-const DraggableIcon = loadableForSvg(() =>
+const DraggableIcon = importSvg(() =>
   import("../assets/icons/control/draggable.svg"),
 );
-const CloseCircleIcon = loadableForSvg(() =>
+const CloseCircleIcon = importSvg(() =>
   import("../assets/icons/control/close-circle.svg"),
 );
-const AddCircleIcon = loadableForSvg(() =>
+const AddCircleIcon = importSvg(() =>
   import("../assets/icons/control/add-circle.svg"),
 );
-const HelpIcon = loadableForSvg(() =>
-  import("../assets/icons/control/help.svg"),
-);
-const CollapseIcon = loadableForSvg(() =>
+const HelpIcon = importSvg(() => import("../assets/icons/control/help.svg"));
+const CollapseIcon = importSvg(() =>
   import("../assets/icons/control/collapse.svg"),
 );
-const PickMyLocationSelectedIcon = loadableForSvg(() =>
+const PickMyLocationSelectedIcon = importSvg(() =>
   import("../assets/icons/control/pick-location-selected.svg"),
 );
-const RemoveIcon = loadableForSvg(() =>
+const RemoveIcon = importSvg(() =>
   import("../assets/icons/control/remove.svg"),
 );
-const DragIcon = loadableForSvg(() =>
-  import("../assets/icons/control/drag.svg"),
-);
-const SortIcon = loadableForSvg(() =>
+const DragIcon = importSvg(() => import("../assets/icons/control/drag.svg"));
+const SortIcon = importSvg(() =>
   import("../assets/icons/control/sort-icon.svg"),
 );
-const EditWhiteIcon = loadableForSvg(() =>
+const EditWhiteIcon = importSvg(() =>
   import("../assets/icons/control/edit-white.svg"),
 );
-const LaunchIcon = loadableForSvg(() =>
+const LaunchIcon = importSvg(() =>
   import("../assets/icons/control/launch.svg"),
 );
-const BackIcon = loadableForSvg(() =>
-  import("../assets/icons/control/back.svg"),
-);
-const DeleteColumnIcon = loadableForSvg(() =>
+const BackIcon = importSvg(() => import("../assets/icons/control/back.svg"));
+const DeleteColumnIcon = importSvg(() =>
   import("../assets/icons/control/delete-column.svg"),
 );
-const BoldFontIcon = loadableForSvg(() =>
+const BoldFontIcon = importSvg(() =>
   import("../assets/icons/control/bold.svg"),
 );
-const UnderlineIcon = loadableForSvg(() =>
+const UnderlineIcon = importSvg(() =>
   import("../assets/icons/control/underline.svg"),
 );
-const ItalicsFontIcon = loadableForSvg(() =>
+const ItalicsFontIcon = importSvg(() =>
   import("../assets/icons/control/italics.svg"),
 );
-const LeftAlignIcon = loadableForSvg(() =>
+const LeftAlignIcon = importSvg(() =>
   import("../assets/icons/control/left-align.svg"),
 );
-const CenterAlignIcon = loadableForSvg(() =>
+const CenterAlignIcon = importSvg(() =>
   import("../assets/icons/control/center-align.svg"),
 );
-const RightAlignIcon = loadableForSvg(() =>
+const RightAlignIcon = importSvg(() =>
   import("../assets/icons/control/right-align.svg"),
 );
-const VerticalAlignRight = loadableForSvg(() =>
+const VerticalAlignRight = importSvg(() =>
   import("../assets/icons/control/align_right.svg"),
 );
-const VerticalAlignLeft = loadableForSvg(() =>
+const VerticalAlignLeft = importSvg(() =>
   import("../assets/icons/control/align_left.svg"),
 );
-const VerticalAlignBottom = loadableForSvg(() =>
+const VerticalAlignBottom = importSvg(() =>
   import("../assets/icons/control/vertical_align_bottom.svg"),
 );
-const VerticalAlignCenter = loadableForSvg(() =>
+const VerticalAlignCenter = importSvg(() =>
   import("../assets/icons/control/vertical_align_center.svg"),
 );
-const VerticalAlignTop = loadableForSvg(() =>
+const VerticalAlignTop = importSvg(() =>
   import("../assets/icons/control/vertical_align_top.svg"),
 );
-const Copy2Icon = loadableForSvg(() =>
-  import("../assets/icons/control/copy2.svg"),
-);
-const CutIcon = loadableForSvg(() => import("../assets/icons/control/cut.svg"));
-const GroupIcon = loadableForSvg(() =>
-  import("../assets/icons/control/group.svg"),
-);
-const HeadingOneIcon = loadableForSvg(() =>
+const Copy2Icon = importSvg(() => import("../assets/icons/control/copy2.svg"));
+const CutIcon = importSvg(() => import("../assets/icons/control/cut.svg"));
+const GroupIcon = importSvg(() => import("../assets/icons/control/group.svg"));
+const HeadingOneIcon = importSvg(() =>
   import("../assets/icons/control/heading_1.svg"),
 );
-const HeadingTwoIcon = loadableForSvg(() =>
+const HeadingTwoIcon = importSvg(() =>
   import("../assets/icons/control/heading_2.svg"),
 );
-const HeadingThreeIcon = loadableForSvg(() =>
+const HeadingThreeIcon = importSvg(() =>
   import("../assets/icons/control/heading_3.svg"),
 );
-const ParagraphIcon = loadableForSvg(() =>
+const ParagraphIcon = importSvg(() =>
   import("../assets/icons/control/paragraph.svg"),
 );
-const ParagraphTwoIcon = loadableForSvg(() =>
+const ParagraphTwoIcon = importSvg(() =>
   import("../assets/icons/control/paragraph_2.svg"),
 );
-const BulletsIcon = loadableForSvg(() =>
+const BulletsIcon = importSvg(() =>
   import("../assets/icons/control/bullets.svg"),
 );
-const DividerCapRightIcon = loadableForSvg(() =>
+const DividerCapRightIcon = importSvg(() =>
   import("../assets/icons/control/divider_cap_right.svg"),
 );
-const DividerCapLeftIcon = loadableForSvg(() =>
+const DividerCapLeftIcon = importSvg(() =>
   import("../assets/icons/control/divider_cap_left.svg"),
 );
-const DividerCapAllIcon = loadableForSvg(() =>
+const DividerCapAllIcon = importSvg(() =>
   import("../assets/icons/control/divider_cap_all.svg"),
 );
-const TrendingFlat = loadableForSvg(() =>
+const TrendingFlat = importSvg(() =>
   import("../assets/icons/ads/trending-flat.svg"),
 );
-const AlignLeftIcon = loadableForSvg(() =>
+const AlignLeftIcon = importSvg(() =>
   import("../assets/icons/control/align_left.svg"),
 );
-const AlignRightIcon = loadableForSvg(() =>
+const AlignRightIcon = importSvg(() =>
   import("../assets/icons/control/align_right.svg"),
 );
-const BorderRadiusSharpIcon = loadableForSvg(() =>
+const BorderRadiusSharpIcon = importSvg(() =>
   import("../assets/icons/control/border-radius-sharp.svg"),
 );
-const BorderRadiusRoundedIcon = loadableForSvg(() =>
+const BorderRadiusRoundedIcon = importSvg(() =>
   import("../assets/icons/control/border-radius-rounded.svg"),
 );
-const BorderRadiusCircleIcon = loadableForSvg(() =>
+const BorderRadiusCircleIcon = importSvg(() =>
   import("../assets/icons/control/border-radius-circle.svg"),
 );
-const BoxShadowNoneIcon = loadableForSvg(() =>
+const BoxShadowNoneIcon = importSvg(() =>
   import("../assets/icons/control/box-shadow-none.svg"),
 );
-const BoxShadowVariant1Icon = loadableForSvg(() =>
+const BoxShadowVariant1Icon = importSvg(() =>
   import("../assets/icons/control/box-shadow-variant1.svg"),
 );
-const BoxShadowVariant2Icon = loadableForSvg(() =>
+const BoxShadowVariant2Icon = importSvg(() =>
   import("../assets/icons/control/box-shadow-variant2.svg"),
 );
-const BoxShadowVariant3Icon = loadableForSvg(() =>
+const BoxShadowVariant3Icon = importSvg(() =>
   import("../assets/icons/control/box-shadow-variant3.svg"),
 );
-const BoxShadowVariant4Icon = loadableForSvg(() =>
+const BoxShadowVariant4Icon = importSvg(() =>
   import("../assets/icons/control/box-shadow-variant4.svg"),
 );
-const BoxShadowVariant5Icon = loadableForSvg(() =>
+const BoxShadowVariant5Icon = importSvg(() =>
   import("../assets/icons/control/box-shadow-variant5.svg"),
 );
-const IncreaseV2Icon = loadableForRemixIcons(() =>
+const IncreaseV2Icon = importRemixIcon(() =>
   import("remixicon-react/AddLineIcon"),
 );
-const CopyIcon = loadableForRemixIcons(() =>
+const CopyIcon = importRemixIcon(() =>
   import("remixicon-react/FileCopyLineIcon"),
 );
-const QuestionIcon = loadableForRemixIcons(() =>
+const QuestionIcon = importRemixIcon(() =>
   import("remixicon-react/QuestionLineIcon"),
 );
-const SettingsIcon = loadableForRemixIcons(() =>
+const SettingsIcon = importRemixIcon(() =>
   import("remixicon-react/Settings5LineIcon"),
 );
-const EyeIcon = loadableForRemixIcons(() =>
-  import("remixicon-react/EyeLineIcon"),
-);
-const EyeOffIcon = loadableForRemixIcons(() =>
+const EyeIcon = importRemixIcon(() => import("remixicon-react/EyeLineIcon"));
+const EyeOffIcon = importRemixIcon(() =>
   import("remixicon-react/EyeOffLineIcon"),
 );
-const CloseIcon = loadableForRemixIcons(() =>
+const CloseIcon = importRemixIcon(() =>
   import("remixicon-react/CloseLineIcon"),
 );
-const SubtractIcon = loadableForRemixIcons(() =>
+const SubtractIcon = importRemixIcon(() =>
   import("remixicon-react/SubtractFillIcon"),
 );
 

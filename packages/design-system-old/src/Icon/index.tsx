@@ -5,515 +5,463 @@ import { Classes } from "Constants/classes";
 import { noop } from "lodash";
 import Spinner from "Spinner";
 import { ControlIcons } from "ControlIcons";
-import { loadableForRemixIcons, loadableForSvg } from "utils/icon-loadables";
+import { importRemixIcon, importSvg } from "utils/icon-loadables";
 
-const BookLineIcon = loadableForSvg(() =>
+const BookLineIcon = importSvg(() =>
   import("../assets/icons/ads/book-open-line.svg"),
 );
-const BugIcon = loadableForSvg(() => import("../assets/icons/ads/bug.svg"));
-const CancelIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/cancel.svg"),
-);
-const CrossIcon = loadableForSvg(() => import("../assets/icons/ads/cross.svg"));
-const Fork2Icon = loadableForSvg(() =>
-  import("../assets/icons/ads/fork-2.svg"),
-);
-const OpenIcon = loadableForSvg(() => import("../assets/icons/ads/open.svg"));
-const UserIcon = loadableForSvg(() => import("../assets/icons/ads/user.svg"));
-const GeneralIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/general.svg"),
-);
-const BillingIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/billing.svg"),
-);
-const ErrorIcon = loadableForSvg(() => import("../assets/icons/ads/error.svg"));
-const ShineIcon = loadableForSvg(() => import("../assets/icons/ads/shine.svg"));
-const SuccessIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/success.svg"),
-);
-const CloseIcon = loadableForSvg(() => import("../assets/icons/ads/close.svg"));
-const WarningTriangleIcon = loadableForSvg(() =>
+const BugIcon = importSvg(() => import("../assets/icons/ads/bug.svg"));
+const CancelIcon = importSvg(() => import("../assets/icons/ads/cancel.svg"));
+const CrossIcon = importSvg(() => import("../assets/icons/ads/cross.svg"));
+const Fork2Icon = importSvg(() => import("../assets/icons/ads/fork-2.svg"));
+const OpenIcon = importSvg(() => import("../assets/icons/ads/open.svg"));
+const UserIcon = importSvg(() => import("../assets/icons/ads/user.svg"));
+const GeneralIcon = importSvg(() => import("../assets/icons/ads/general.svg"));
+const BillingIcon = importSvg(() => import("../assets/icons/ads/billing.svg"));
+const ErrorIcon = importSvg(() => import("../assets/icons/ads/error.svg"));
+const ShineIcon = importSvg(() => import("../assets/icons/ads/shine.svg"));
+const SuccessIcon = importSvg(() => import("../assets/icons/ads/success.svg"));
+const CloseIcon = importSvg(() => import("../assets/icons/ads/close.svg"));
+const WarningTriangleIcon = importSvg(() =>
   import("../assets/icons/ads/warning-triangle.svg"),
 );
-const ShareIcon2 = loadableForSvg(() =>
-  import("../assets/icons/ads/share-2.svg"),
-);
-const InviteUserIcon = loadableForSvg(() =>
+const ShareIcon2 = importSvg(() => import("../assets/icons/ads/share-2.svg"));
+const InviteUserIcon = importSvg(() =>
   import("../assets/icons/ads/invite-users.svg"),
 );
-const ManageIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/manage.svg"),
-);
-const ArrowLeft = loadableForSvg(() =>
-  import("../assets/icons/ads/arrow-left.svg"),
-);
-const ChevronLeft = loadableForSvg(() =>
+const ManageIcon = importSvg(() => import("../assets/icons/ads/manage.svg"));
+const ArrowLeft = importSvg(() => import("../assets/icons/ads/arrow-left.svg"));
+const ChevronLeft = importSvg(() =>
   import("../assets/icons/ads/chevron_left.svg"),
 );
-const LinkIcon = loadableForSvg(() => import("../assets/icons/ads/link.svg"));
-const NoResponseIcon = loadableForSvg(() =>
+const LinkIcon = importSvg(() => import("../assets/icons/ads/link.svg"));
+const NoResponseIcon = importSvg(() =>
   import("../assets/icons/ads/no-response.svg"),
 );
-const LightningIcon = loadableForSvg(() =>
+const LightningIcon = importSvg(() =>
   import("../assets/icons/ads/lightning.svg"),
 );
-const TrendingFlat = loadableForSvg(() =>
+const TrendingFlat = importSvg(() =>
   import("../assets/icons/ads/trending-flat.svg"),
 );
-const PlayIcon = loadableForSvg(() => import("../assets/icons/ads/play.svg"));
-const DesktopIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/desktop.svg"),
-);
-const WandIcon = loadableForSvg(() => import("../assets/icons/ads/wand.svg"));
-const MobileIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/mobile.svg"),
-);
-const TabletIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/tablet.svg"),
-);
-const TabletLandscapeIcon = loadableForSvg(() =>
+const PlayIcon = importSvg(() => import("../assets/icons/ads/play.svg"));
+const DesktopIcon = importSvg(() => import("../assets/icons/ads/desktop.svg"));
+const WandIcon = importSvg(() => import("../assets/icons/ads/wand.svg"));
+const MobileIcon = importSvg(() => import("../assets/icons/ads/mobile.svg"));
+const TabletIcon = importSvg(() => import("../assets/icons/ads/tablet.svg"));
+const TabletLandscapeIcon = importSvg(() =>
   import("../assets/icons/ads/tablet-landscape.svg"),
 );
-const FluidIcon = loadableForSvg(() => import("../assets/icons/ads/fluid.svg"));
-const CardContextMenu = loadableForSvg(() =>
+const FluidIcon = importSvg(() => import("../assets/icons/ads/fluid.svg"));
+const CardContextMenu = importSvg(() =>
   import("../assets/icons/ads/card-context-menu.svg"),
 );
-const SendButton = loadableForSvg(() =>
+const SendButton = importSvg(() =>
   import("../assets/icons/comments/send-button.svg"),
 );
-const Pin = loadableForSvg(() => import("../assets/icons/comments/pin.svg"));
-const TrashOutline = loadableForSvg(() =>
-  import("../assets/icons/form/trash.svg"),
-);
-const ReadPin = loadableForSvg(() =>
+const Pin = importSvg(() => import("../assets/icons/comments/pin.svg"));
+const TrashOutline = importSvg(() => import("../assets/icons/form/trash.svg"));
+const ReadPin = importSvg(() =>
   import("../assets/icons/comments/read-pin.svg"),
 );
-const UnreadPin = loadableForSvg(() =>
+const UnreadPin = importSvg(() =>
   import("../assets/icons/comments/unread-pin.svg"),
 );
-const Chat = loadableForSvg(() => import("../assets/icons/comments/chat.svg"));
-const Unpin = loadableForSvg(() =>
-  import("../assets/icons/comments/unpinIcon.svg"),
-);
-const Reaction = loadableForSvg(() =>
+const Chat = importSvg(() => import("../assets/icons/comments/chat.svg"));
+const Unpin = importSvg(() => import("../assets/icons/comments/unpinIcon.svg"));
+const Reaction = importSvg(() =>
   import("../assets/icons/comments/reaction.svg"),
 );
-const Reaction2 = loadableForSvg(() =>
+const Reaction2 = importSvg(() =>
   import("../assets/icons/comments/reaction-2.svg"),
 );
-const Upload = loadableForSvg(() => import("../assets/icons/ads/upload.svg"));
-const ArrowForwardIcon = loadableForSvg(() =>
+const Upload = importSvg(() => import("../assets/icons/ads/upload.svg"));
+const ArrowForwardIcon = importSvg(() =>
   import("../assets/icons/control/arrow_forward.svg"),
 );
-const DoubleArrowRightIcon = loadableForSvg(() =>
+const DoubleArrowRightIcon = importSvg(() =>
   import("../assets/icons/ads/double-arrow-right.svg"),
 );
-const CapSolidIcon = loadableForSvg(() =>
+const CapSolidIcon = importSvg(() =>
   import("../assets/icons/control/cap_solid.svg"),
 );
-const CapDotIcon = loadableForSvg(() =>
+const CapDotIcon = importSvg(() =>
   import("../assets/icons/control/cap_dot.svg"),
 );
-const LineDottedIcon = loadableForSvg(() =>
+const LineDottedIcon = importSvg(() =>
   import("../assets/icons/control/line_dotted.svg"),
 );
-const LineDashedIcon = loadableForSvg(() =>
+const LineDashedIcon = importSvg(() =>
   import("../assets/icons/control/line_dashed.svg"),
 );
-const TableIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/tables.svg"),
-);
-const ColumnIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/column.svg"),
-);
-const GearIcon = loadableForSvg(() => import("../assets/icons/ads/gear.svg"));
-const UserV2Icon = loadableForSvg(() =>
-  import("../assets/icons/ads/user-v2.svg"),
-);
-const SupportIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/support.svg"),
-);
-const Snippet = loadableForSvg(() => import("../assets/icons/ads/snippet.svg"));
-const WorkspaceIcon = loadableForSvg(() =>
+const TableIcon = importSvg(() => import("../assets/icons/ads/tables.svg"));
+const ColumnIcon = importSvg(() => import("../assets/icons/ads/column.svg"));
+const GearIcon = importSvg(() => import("../assets/icons/ads/gear.svg"));
+const UserV2Icon = importSvg(() => import("../assets/icons/ads/user-v2.svg"));
+const SupportIcon = importSvg(() => import("../assets/icons/ads/support.svg"));
+const Snippet = importSvg(() => import("../assets/icons/ads/snippet.svg"));
+const WorkspaceIcon = importSvg(() =>
   import("../assets/icons/ads/workspaceIcon.svg"),
 );
-const SettingIcon = loadableForSvg(() =>
+const SettingIcon = importSvg(() =>
   import("../assets/icons/control/settings.svg"),
 );
-const DropdownIcon = loadableForSvg(() =>
+const DropdownIcon = importSvg(() =>
   import("../assets/icons/ads/dropdown.svg"),
 );
-const ChatIcon = loadableForSvg(() =>
+const ChatIcon = importSvg(() =>
   import("../assets/icons/ads/app-icons/chat.svg"),
 );
-const JsIcon = loadableForSvg(() => import("../assets/icons/ads/js.svg"));
-const ExecuteIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/execute.svg"),
-);
-const PackageIcon = loadableForSvg(() =>
-  import("../assets/icons/ads/package.svg"),
-);
+const JsIcon = importSvg(() => import("../assets/icons/ads/js.svg"));
+const ExecuteIcon = importSvg(() => import("../assets/icons/ads/execute.svg"));
+const PackageIcon = importSvg(() => import("../assets/icons/ads/package.svg"));
 
 // remix icons
-const AddMoreIcon = loadableForRemixIcons(() =>
+const AddMoreIcon = importRemixIcon(() =>
   import("remixicon-react/AddCircleLineIcon"),
 );
-const AddMoreFillIcon = loadableForRemixIcons(() =>
+const AddMoreFillIcon = importRemixIcon(() =>
   import("remixicon-react/AddCircleFillIcon"),
 );
-const ArrowLeftRightIcon = loadableForRemixIcons(() =>
+const ArrowLeftRightIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowLeftRightLineIcon"),
 );
-const ArrowDownLineIcon = loadableForRemixIcons(() =>
+const ArrowDownLineIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowDownLineIcon"),
 );
-const BookIcon = loadableForRemixIcons(() =>
+const BookIcon = importRemixIcon(() =>
   import("remixicon-react/BookOpenLineIcon"),
 );
-const BugLineIcon = loadableForRemixIcons(() =>
+const BugLineIcon = importRemixIcon(() =>
   import("remixicon-react/BugLineIcon"),
 );
-const ChevronRight = loadableForRemixIcons(() =>
+const ChevronRight = importRemixIcon(() =>
   import("remixicon-react/ArrowRightSFillIcon"),
 );
-const CheckLineIcon = loadableForRemixIcons(() =>
+const CheckLineIcon = importRemixIcon(() =>
   import("remixicon-react/CheckLineIcon"),
 );
-const CloseLineIcon = loadableForRemixIcons(() =>
+const CloseLineIcon = importRemixIcon(() =>
   import("remixicon-react/CloseLineIcon"),
 );
-const CloseCircleIcon = loadableForRemixIcons(() =>
+const CloseCircleIcon = importRemixIcon(() =>
   import("remixicon-react/CloseCircleFillIcon"),
 );
-const CloudOfflineIcon = loadableForRemixIcons(() =>
+const CloudOfflineIcon = importRemixIcon(() =>
   import("remixicon-react/CloudOffLineIcon"),
 );
-const CommentContextMenu = loadableForRemixIcons(() =>
+const CommentContextMenu = importRemixIcon(() =>
   import("remixicon-react/More2FillIcon"),
 );
-const More2FillIcon = loadableForRemixIcons(() =>
+const More2FillIcon = importRemixIcon(() =>
   import("remixicon-react/More2FillIcon"),
 );
-const CompassesLine = loadableForRemixIcons(() =>
+const CompassesLine = importRemixIcon(() =>
   import("remixicon-react/CompassesLineIcon"),
 );
-const ContextMenuIcon = loadableForRemixIcons(() =>
+const ContextMenuIcon = importRemixIcon(() =>
   import("remixicon-react/MoreFillIcon"),
 );
-const CreateNewIcon = loadableForRemixIcons(() =>
+const CreateNewIcon = importRemixIcon(() =>
   import("remixicon-react/AddLineIcon"),
 );
-const Database2Line = loadableForRemixIcons(() =>
+const Database2Line = importRemixIcon(() =>
   import("remixicon-react/Database2LineIcon"),
 );
-const DatasourceIcon = loadableForRemixIcons(() =>
+const DatasourceIcon = importRemixIcon(() =>
   import("remixicon-react/CloudFillIcon"),
 );
-const DeleteBin7 = loadableForRemixIcons(() =>
+const DeleteBin7 = importRemixIcon(() =>
   import("remixicon-react/DeleteBin7LineIcon"),
 );
-const DiscordIcon = loadableForRemixIcons(() =>
+const DiscordIcon = importRemixIcon(() =>
   import("remixicon-react/DiscordLineIcon"),
 );
-const DownArrow = loadableForRemixIcons(() =>
+const DownArrow = importRemixIcon(() =>
   import("remixicon-react/ArrowDownSFillIcon"),
 );
-const Download = loadableForRemixIcons(() =>
+const Download = importRemixIcon(() =>
   import("remixicon-react/DownloadCloud2LineIcon"),
 );
-const DuplicateIcon = loadableForRemixIcons(() =>
+const DuplicateIcon = importRemixIcon(() =>
   import("remixicon-react/FileCopyLineIcon"),
 );
-const EditIcon = loadableForRemixIcons(() =>
+const EditIcon = importRemixIcon(() =>
   import("remixicon-react/PencilFillIcon"),
 );
-const EditLineIcon = loadableForRemixIcons(() =>
+const EditLineIcon = importRemixIcon(() =>
   import("remixicon-react/EditLineIcon"),
 );
-const EditUnderlineIcon = loadableForRemixIcons(() =>
+const EditUnderlineIcon = importRemixIcon(() =>
   import("remixicon-react/EditLineIcon"),
 );
-const Emoji = loadableForRemixIcons(() =>
-  import("remixicon-react/EmotionLineIcon"),
-);
-const ExpandMore = loadableForRemixIcons(() =>
+const Emoji = importRemixIcon(() => import("remixicon-react/EmotionLineIcon"));
+const ExpandMore = importRemixIcon(() =>
   import("remixicon-react/ArrowDownSLineIcon"),
 );
-const DownArrowIcon = loadableForRemixIcons(() =>
+const DownArrowIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowDownSLineIcon"),
 );
-const ExpandLess = loadableForRemixIcons(() =>
+const ExpandLess = importRemixIcon(() =>
   import("remixicon-react/ArrowUpSLineIcon"),
 );
-const EyeOn = loadableForRemixIcons(() =>
-  import("remixicon-react/EyeLineIcon"),
-);
-const EyeOff = loadableForRemixIcons(() =>
-  import("remixicon-react/EyeOffLineIcon"),
-);
-const FileTransfer = loadableForRemixIcons(() =>
+const EyeOn = importRemixIcon(() => import("remixicon-react/EyeLineIcon"));
+const EyeOff = importRemixIcon(() => import("remixicon-react/EyeOffLineIcon"));
+const FileTransfer = importRemixIcon(() =>
   import("remixicon-react/FileTransferLineIcon"),
 );
-const FileLine = loadableForRemixIcons(() =>
-  import("remixicon-react/FileLineIcon"),
-);
-const Filter = loadableForRemixIcons(() =>
-  import("remixicon-react/Filter2FillIcon"),
-);
-const ForbidLineIcon = loadableForRemixIcons(() =>
+const FileLine = importRemixIcon(() => import("remixicon-react/FileLineIcon"));
+const Filter = importRemixIcon(() => import("remixicon-react/Filter2FillIcon"));
+const ForbidLineIcon = importRemixIcon(() =>
   import("remixicon-react/ForbidLineIcon"),
 );
-const GitMerge = loadableForRemixIcons(() =>
+const GitMerge = importRemixIcon(() =>
   import("remixicon-react/GitMergeLineIcon"),
 );
-const GitCommit = loadableForRemixIcons(() =>
+const GitCommit = importRemixIcon(() =>
   import("remixicon-react/GitCommitLineIcon"),
 );
-const GitPullRequst = loadableForRemixIcons(() =>
+const GitPullRequst = importRemixIcon(() =>
   import("remixicon-react/GitPullRequestLineIcon"),
 );
-const GlobalLineIcon = loadableForRemixIcons(() =>
+const GlobalLineIcon = importRemixIcon(() =>
   import("remixicon-react/GlobalLineIcon"),
 );
-const GuideIcon = loadableForRemixIcons(() =>
+const GuideIcon = importRemixIcon(() =>
   import("remixicon-react/GuideFillIcon"),
 );
-const HelpIcon = loadableForRemixIcons(() =>
+const HelpIcon = importRemixIcon(() =>
   import("remixicon-react/QuestionMarkIcon"),
 );
-const LightbulbFlashLine = loadableForRemixIcons(() =>
+const LightbulbFlashLine = importRemixIcon(() =>
   import("remixicon-react/LightbulbFlashLineIcon"),
 );
-const LinksLineIcon = loadableForRemixIcons(() =>
+const LinksLineIcon = importRemixIcon(() =>
   import("remixicon-react/LinksLineIcon"),
 );
-const InfoIcon = loadableForRemixIcons(() =>
+const InfoIcon = importRemixIcon(() =>
   import("remixicon-react/InformationLineIcon"),
 );
-const KeyIcon = loadableForRemixIcons(() =>
-  import("remixicon-react/Key2LineIcon"),
-);
-const LeftArrowIcon2 = loadableForRemixIcons(() =>
+const KeyIcon = importRemixIcon(() => import("remixicon-react/Key2LineIcon"));
+const LeftArrowIcon2 = importRemixIcon(() =>
   import("remixicon-react/ArrowLeftSLineIcon"),
 );
-const Link2 = loadableForRemixIcons(() => import("remixicon-react/LinkIcon"));
-const LeftArrowIcon = loadableForRemixIcons(() =>
+const Link2 = importRemixIcon(() => import("remixicon-react/LinkIcon"));
+const LeftArrowIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowLeftLineIcon"),
 );
-const NewsPaperLine = loadableForRemixIcons(() =>
+const NewsPaperLine = importRemixIcon(() =>
   import("remixicon-react/NewspaperLineIcon"),
 );
-const OvalCheck = loadableForRemixIcons(() =>
+const OvalCheck = importRemixIcon(() =>
   import("remixicon-react/CheckboxCircleLineIcon"),
 );
-const OvalCheckFill = loadableForRemixIcons(() =>
+const OvalCheckFill = importRemixIcon(() =>
   import("remixicon-react/CheckboxCircleFillIcon"),
 );
-const Pin3 = loadableForRemixIcons(() =>
-  import("remixicon-react/Pushpin2FillIcon"),
-);
-const PlayCircleLineIcon = loadableForRemixIcons(() =>
+const Pin3 = importRemixIcon(() => import("remixicon-react/Pushpin2FillIcon"));
+const PlayCircleLineIcon = importRemixIcon(() =>
   import("remixicon-react/PlayCircleLineIcon"),
 );
-const QueryIcon = loadableForRemixIcons(() =>
+const QueryIcon = importRemixIcon(() =>
   import("remixicon-react/CodeSSlashLineIcon"),
 );
-const RemoveIcon = loadableForRemixIcons(() =>
+const RemoveIcon = importRemixIcon(() =>
   import("remixicon-react/SubtractLineIcon"),
 );
-const RightArrowIcon = loadableForRemixIcons(() =>
+const RightArrowIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowRightLineIcon"),
 );
-const RightArrowIcon2 = loadableForRemixIcons(() =>
+const RightArrowIcon2 = importRemixIcon(() =>
   import("remixicon-react/ArrowRightSLineIcon"),
 );
-const RocketIcon = loadableForRemixIcons(() =>
+const RocketIcon = importRemixIcon(() =>
   import("remixicon-react/RocketLineIcon"),
 );
-const SearchIcon = loadableForRemixIcons(() =>
+const SearchIcon = importRemixIcon(() =>
   import("remixicon-react/SearchLineIcon"),
 );
-const SortAscIcon = loadableForRemixIcons(() =>
+const SortAscIcon = importRemixIcon(() =>
   import("remixicon-react/SortAscIcon"),
 );
-const SortDescIcon = loadableForRemixIcons(() =>
+const SortDescIcon = importRemixIcon(() =>
   import("remixicon-react/SortDescIcon"),
 );
-const ShareBoxLineIcon = loadableForRemixIcons(() =>
+const ShareBoxLineIcon = importRemixIcon(() =>
   import("remixicon-react/ShareBoxLineIcon"),
 );
-const ShareBoxFillIcon = loadableForRemixIcons(() =>
+const ShareBoxFillIcon = importRemixIcon(() =>
   import("remixicon-react/ShareBoxFillIcon"),
 );
-const ShareForwardIcon = loadableForRemixIcons(() =>
+const ShareForwardIcon = importRemixIcon(() =>
   import("remixicon-react/ShareForwardFillIcon"),
 );
-const Trash = loadableForRemixIcons(() =>
+const Trash = importRemixIcon(() =>
   import("remixicon-react/DeleteBinLineIcon"),
 );
-const UpArrow = loadableForRemixIcons(() =>
+const UpArrow = importRemixIcon(() =>
   import("remixicon-react/ArrowUpSFillIcon"),
 );
-const WarningIcon = loadableForRemixIcons(() =>
+const WarningIcon = importRemixIcon(() =>
   import("remixicon-react/ErrorWarningFillIcon"),
 );
-const WarningLineIcon = loadableForRemixIcons(() =>
+const WarningLineIcon = importRemixIcon(() =>
   import("remixicon-react/ErrorWarningLineIcon"),
 );
-const LoginIcon = loadableForRemixIcons(() =>
+const LoginIcon = importRemixIcon(() =>
   import("remixicon-react/LoginBoxLineIcon"),
 );
-const LogoutIcon = loadableForRemixIcons(() =>
+const LogoutIcon = importRemixIcon(() =>
   import("remixicon-react/LogoutBoxRLineIcon"),
 );
-const ShareLineIcon = loadableForRemixIcons(() =>
+const ShareLineIcon = importRemixIcon(() =>
   import("remixicon-react/ShareLineIcon"),
 );
-const LoaderLineIcon = loadableForRemixIcons(() =>
+const LoaderLineIcon = importRemixIcon(() =>
   import("remixicon-react/LoaderLineIcon"),
 );
-const WidgetIcon = loadableForRemixIcons(() =>
+const WidgetIcon = importRemixIcon(() =>
   import("remixicon-react/FunctionLineIcon"),
 );
-const RefreshLineIcon = loadableForRemixIcons(() =>
+const RefreshLineIcon = importRemixIcon(() =>
   import("remixicon-react/RefreshLineIcon"),
 );
-const GitBranchLineIcon = loadableForRemixIcons(() =>
+const GitBranchLineIcon = importRemixIcon(() =>
   import("remixicon-react/GitBranchLineIcon"),
 );
-const EditBoxLineIcon = loadableForRemixIcons(() =>
+const EditBoxLineIcon = importRemixIcon(() =>
   import("remixicon-react/EditBoxLineIcon"),
 );
-const StarLineIcon = loadableForRemixIcons(() =>
+const StarLineIcon = importRemixIcon(() =>
   import("remixicon-react/StarLineIcon"),
 );
-const StarFillIcon = loadableForRemixIcons(() =>
+const StarFillIcon = importRemixIcon(() =>
   import("remixicon-react/StarFillIcon"),
 );
-const Settings2LineIcon = loadableForRemixIcons(() =>
+const Settings2LineIcon = importRemixIcon(() =>
   import("remixicon-react/Settings2LineIcon"),
 );
-const DownloadIcon = loadableForRemixIcons(() =>
+const DownloadIcon = importRemixIcon(() =>
   import("remixicon-react/DownloadLineIcon"),
 );
-const UploadCloud2LineIcon = loadableForRemixIcons(() =>
+const UploadCloud2LineIcon = importRemixIcon(() =>
   import("remixicon-react/UploadCloud2LineIcon"),
 );
-const DownloadLineIcon = loadableForRemixIcons(() =>
+const DownloadLineIcon = importRemixIcon(() =>
   import("remixicon-react/DownloadLineIcon"),
 );
-const UploadLineIcon = loadableForRemixIcons(() =>
+const UploadLineIcon = importRemixIcon(() =>
   import("remixicon-react/UploadLineIcon"),
 );
-const FileListLineIcon = loadableForRemixIcons(() =>
+const FileListLineIcon = importRemixIcon(() =>
   import("remixicon-react/FileListLineIcon"),
 );
-const HamburgerIcon = loadableForRemixIcons(() =>
+const HamburgerIcon = importRemixIcon(() =>
   import("remixicon-react/MenuLineIcon"),
 );
-const MagicLineIcon = loadableForRemixIcons(() =>
+const MagicLineIcon = importRemixIcon(() =>
   import("remixicon-react/MagicLineIcon"),
 );
-const UserHeartLineIcon = loadableForRemixIcons(() =>
+const UserHeartLineIcon = importRemixIcon(() =>
   import("remixicon-react/UserHeartLineIcon"),
 );
-const DvdLineIcon = loadableForRemixIcons(() =>
+const DvdLineIcon = importRemixIcon(() =>
   import("remixicon-react/DvdLineIcon"),
 );
-const Group2LineIcon = loadableForRemixIcons(() =>
+const Group2LineIcon = importRemixIcon(() =>
   import("remixicon-react/Group2LineIcon"),
 );
-const CodeViewIcon = loadableForRemixIcons(() =>
+const CodeViewIcon = importRemixIcon(() =>
   import("remixicon-react/CodeViewIcon"),
 );
-const GroupLineIcon = loadableForRemixIcons(() =>
+const GroupLineIcon = importRemixIcon(() =>
   import("remixicon-react/GroupLineIcon"),
 );
-const ArrowRightUpLineIcon = loadableForRemixIcons(() =>
+const ArrowRightUpLineIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowRightUpLineIcon"),
 );
-const MailCheckLineIcon = loadableForRemixIcons(() =>
+const MailCheckLineIcon = importRemixIcon(() =>
   import("remixicon-react/MailCheckLineIcon"),
 );
-const UserFollowLineIcon = loadableForRemixIcons(() =>
+const UserFollowLineIcon = importRemixIcon(() =>
   import("remixicon-react/UserFollowLineIcon"),
 );
-const AddBoxLineIcon = loadableForRemixIcons(() =>
+const AddBoxLineIcon = importRemixIcon(() =>
   import("remixicon-react/AddBoxLineIcon"),
 );
-const ArrowRightSFillIcon = loadableForRemixIcons(() =>
+const ArrowRightSFillIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowRightSFillIcon"),
 );
-const ArrowDownSFillIcon = loadableForRemixIcons(() =>
+const ArrowDownSFillIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowDownSFillIcon"),
 );
-const MailLineIcon = loadableForRemixIcons(() =>
+const MailLineIcon = importRemixIcon(() =>
   import("remixicon-react/MailLineIcon"),
 );
-const LockPasswordLineIcon = loadableForRemixIcons(() =>
+const LockPasswordLineIcon = importRemixIcon(() =>
   import("remixicon-react/LockPasswordLineIcon"),
 );
-const Timer2LineIcon = loadableForRemixIcons(() =>
+const Timer2LineIcon = importRemixIcon(() =>
   import("remixicon-react/Timer2LineIcon"),
 );
-const MapPin2LineIcon = loadableForRemixIcons(() =>
+const MapPin2LineIcon = importRemixIcon(() =>
   import("remixicon-react/MapPin2LineIcon"),
 );
-const User3LineIcon = loadableForRemixIcons(() =>
+const User3LineIcon = importRemixIcon(() =>
   import("remixicon-react/User3LineIcon"),
 );
-const User2LineIcon = loadableForRemixIcons(() =>
+const User2LineIcon = importRemixIcon(() =>
   import("remixicon-react/User2LineIcon"),
 );
-const Key2LineIcon = loadableForRemixIcons(() =>
+const Key2LineIcon = importRemixIcon(() =>
   import("remixicon-react/Key2LineIcon"),
 );
-const FileList2LineIcon = loadableForRemixIcons(() =>
+const FileList2LineIcon = importRemixIcon(() =>
   import("remixicon-react/FileList2LineIcon"),
 );
-const Lock2LineIcon = loadableForRemixIcons(() =>
+const Lock2LineIcon = importRemixIcon(() =>
   import("remixicon-react/Lock2LineIcon"),
 );
-const SearchEyeLineIcon = loadableForRemixIcons(() =>
+const SearchEyeLineIcon = importRemixIcon(() =>
   import("remixicon-react/SearchEyeLineIcon"),
 );
-const AlertLineIcon = loadableForRemixIcons(() =>
+const AlertLineIcon = importRemixIcon(() =>
   import("remixicon-react/AlertLineIcon"),
 );
-const SettingsLineIcon = loadableForRemixIcons(() =>
+const SettingsLineIcon = importRemixIcon(() =>
   import("remixicon-react/SettingsLineIcon"),
 );
-const LockUnlockLineIcon = loadableForRemixIcons(() =>
+const LockUnlockLineIcon = importRemixIcon(() =>
   import("remixicon-react/LockUnlockLineIcon"),
 );
-const PantoneLineIcon = loadableForRemixIcons(() =>
+const PantoneLineIcon = importRemixIcon(() =>
   import("remixicon-react/PantoneLineIcon"),
 );
-const QuestionFillIcon = loadableForRemixIcons(() =>
+const QuestionFillIcon = importRemixIcon(() =>
   import("remixicon-react/QuestionFillIcon"),
 );
-const QuestionLineIcon = loadableForRemixIcons(() =>
+const QuestionLineIcon = importRemixIcon(() =>
   import("remixicon-react/QuestionLineIcon"),
 );
-const UserSharedLineIcon = loadableForRemixIcons(() =>
+const UserSharedLineIcon = importRemixIcon(() =>
   import("remixicon-react/UserSharedLineIcon"),
 );
-const UserReceived2LineIcon = loadableForRemixIcons(() =>
+const UserReceived2LineIcon = importRemixIcon(() =>
   import("remixicon-react/UserReceived2LineIcon"),
 );
-const UserAddLineIcon = loadableForRemixIcons(() =>
+const UserAddLineIcon = importRemixIcon(() =>
   import("remixicon-react/UserAddLineIcon"),
 );
-const UserUnfollowLineIcon = loadableForRemixIcons(() =>
+const UserUnfollowLineIcon = importRemixIcon(() =>
   import("remixicon-react/UserUnfollowLineIcon"),
 );
-const DeleteRowIcon = loadableForRemixIcons(() =>
+const DeleteRowIcon = importRemixIcon(() =>
   import("remixicon-react/DeleteRowIcon"),
 );
-const ArrowUpLineIcon = loadableForRemixIcons(() =>
+const ArrowUpLineIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowUpLineIcon"),
 );
-const MoneyDollarCircleLineIcon = loadableForRemixIcons(() =>
+const MoneyDollarCircleLineIcon = importRemixIcon(() =>
   import("remixicon-react/MoneyDollarCircleLineIcon"),
 );
 

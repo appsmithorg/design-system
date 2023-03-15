@@ -5,12 +5,10 @@ import { Classes } from "Constants/classes";
 import { typography } from "Constants/typography";
 import Spinner from "Spinner";
 import { IconSize } from "Icon";
-import { loadableForSvg } from "Utils/icon-loadables";
+import { importSvg } from "Utils/icon-loadables";
 
-const DownArrow = loadableForSvg(() =>
-  import("../assets/icons/ads/down_arrow.svg"),
-);
-const UpperArrow = loadableForSvg(() =>
+const DownArrow = importSvg(() => import("../assets/icons/ads/down_arrow.svg"));
+const UpperArrow = importSvg(() =>
   import("../assets/icons/ads/upper_arrow.svg"),
 );
 

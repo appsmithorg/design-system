@@ -17,9 +17,9 @@ import "@uppy/dashboard/dist/style.css";
 import "@uppy/image-editor/dist/style.css";
 import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
 import { getTypographyByKey } from "Constants/typography";
-import { loadableForSvg } from "Utils/icon-loadables";
+import { importSvg } from "Utils/icon-loadables";
 
-const ProfileImagePlaceholder = loadableForSvg(() =>
+const ProfileImagePlaceholder = importSvg(() =>
   import("../assets/icons/others/profile-placeholder.svg"),
 );
 
