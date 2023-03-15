@@ -23,11 +23,9 @@ import Tooltip from "Tooltip";
 import SegmentHeader from "ListSegmentHeader";
 import { debounce, isArray } from "lodash";
 import "./styles.css";
-import { loadableForSvg } from "Utils/icon-loadables";
+import { importSvg } from "utils/icon-loadables";
 
-const Check = loadableForSvg(() =>
-  import("../assets/icons/control/checkmark.svg"),
-);
+const Check = importSvg(() => import("../assets/icons/control/checkmark.svg"));
 
 export type DropdownOnSelect = (
   value?: string,
