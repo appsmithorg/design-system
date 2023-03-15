@@ -8,9 +8,6 @@ export * from "./BannerMessage";
 export { default as Breadcrumbs } from "./Breadcrumbs";
 export * from "./Breadcrumbs";
 
-export { default as Button } from "./Button";
-export * from "./Button";
-
 export { default as ButtonGroup } from "./ButtonGroup";
 export * from "./ButtonGroup";
 
@@ -28,8 +25,6 @@ export * from "./ColorPicker";
 
 export { default as ColorSelector } from "./ColorSelector";
 export * from "./ColorSelector";
-
-export * from "./ControlIcons";
 
 export { default as CopyToClipboard } from "./CopyToClipboard";
 export * from "./CopyToClipboard";
@@ -80,9 +75,6 @@ export { default as GifPlayer } from "./GifPlayer";
 export * from "./GifPlayer";
 
 export * from "./HighlightText";
-
-export { default as Icon } from "./Icon";
-export * from "./Icon";
 
 export { default as IconSelector } from "./IconSelector";
 export * from "./IconSelector";
@@ -137,9 +129,6 @@ export * from "./ListSegmentHeader";
 
 export { default as ShowcaseCarousel } from "./ShowcaseCarousel";
 export * from "./ShowcaseCarousel";
-
-export { default as Spinner } from "./Spinner";
-export * from "./Spinner";
 
 export { default as Statusbar } from "./Statusbar";
 export * from "./Statusbar";
