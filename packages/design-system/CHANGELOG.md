@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.0.7
+
+### Patch Changes
+
+- [#405](https://github.com/appsmithorg/design-system/pull/405) [`e9d4a33`](https://github.com/appsmithorg/design-system/commit/e9d4a338379e8bf7870ba285f2d21a1c2777c28b) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Refactored Menu component
+
 ## 2.0.6
 
 ### Patch Changes
