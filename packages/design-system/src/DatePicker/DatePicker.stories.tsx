@@ -496,5 +496,4 @@ DatePickerStory.args = {
   showTimeInput: true,
   yearStartRange: 2010,
   yearEndRange: 2023,
-  dateFormat: "dd-MM-yyyy",
 };
