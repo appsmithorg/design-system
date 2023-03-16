@@ -119,9 +119,10 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
     startYear,
   } = props;
 
+  const [selectedYear, setSelectedYear] = useState<number>(getYear(monthDate));
   const startRange = startYear || 1990;
-  const endRange = endYear || getYear(new Date()) + 1;
-  const years = range(startRange, endRange, 1);
+  const endRange = endYear || getYear(new Date());
+  const years = range(startRange, endRange + 1, 1);
   const months = [
     "January",
     "February",
@@ -136,6 +137,19 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
     "November",
     "December",
   ];
+
+  // TODO: Fix this, causing unexpected behavior
+  // const handleScroll = React.useCallback((menuItem) => {
+  //   setTimeout(() => {
+  //     if (!menuItem) return;
+  //     menuItem?.scrollIntoView({ behavior: "smooth"});
+  //   }, 0);
+  // }, []);
+
+  const handleYearChange = (year: number) => {
+    changeYear(year);
+    setSelectedYear(year);
+  };
 
   return (
     <StyledDatePickerHeader
@@ -192,7 +206,7 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
               kind="tertiary"
               size="md"
             >
-              {getYear(monthDate)}
+              {selectedYear}
             </Button>
           </MenuTrigger>
           <MenuContent
@@ -206,7 +220,12 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
             }}
           >
             {years.map((year) => (
-              <MenuItem key={year} onSelect={() => changeYear(year)}>
+              <MenuItem
+                data-value={year}
+                key={year}
+                onSelect={() => handleYearChange(year)}
+                // ref={year === selectedYear ? handleScroll : undefined}
+              >
                 {year}
               </MenuItem>
             ))}
@@ -274,6 +293,7 @@ function DateRangePicker(props: DateRangePickerProps) {
               ? "close-circle-line"
               : undefined
           }
+          // TODO: Replace this with tertiary button
           endIconProps={{
             onClick: () => setStartDate(null),
           }}

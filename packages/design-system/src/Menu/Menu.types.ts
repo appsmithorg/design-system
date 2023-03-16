@@ -24,7 +24,7 @@ type _MenuItemProps = {
   /** size of the menu item. */
   size?: MenuSizes;
 };
-export type MenuItemProps = _MenuItemProps & RadixMenu.DropdownMenuItemProps;
+export type MenuItemProps = RadixMenu.DropdownMenuItemProps & _MenuItemProps;
 export type MenuSubTriggerProps = Omit<_MenuItemProps, "endIcon"> &
   RadixMenu.DropdownMenuSubTriggerProps;
 

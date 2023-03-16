@@ -106,26 +106,33 @@ function MenuItemContent(props: MenuItemContentProps) {
   );
 }
 
-function MenuItem({
-  children,
-  className,
-  endIcon,
-  size = "md",
-  startIcon,
-  ...props
-}: MenuItemProps) {
-  return (
-    <StyledMenuItem
-      className={clsx(MenuItemClassName, className)}
-      size={size}
-      {...props}
-    >
-      <MenuItemContent endIcon={endIcon} size={size} startIcon={startIcon}>
-        {children}
-      </MenuItemContent>
-    </StyledMenuItem>
-  );
-}
+const MenuItem = React.forwardRef(
+  (
+    {
+      children,
+      className,
+      endIcon,
+      size = "md",
+      startIcon,
+      ...props
+    }: MenuItemProps,
+    ref: React.ForwardedRef<HTMLDivElement>,
+  ) => {
+    return (
+      <StyledMenuItem
+        className={clsx(MenuItemClassName, className)}
+        ref={ref}
+        size={size}
+        {...props}
+      >
+        <MenuItemContent endIcon={endIcon} size={size} startIcon={startIcon}>
+          {children}
+        </MenuItemContent>
+      </StyledMenuItem>
+    );
+  },
+);
+MenuItem.displayName = "MenuItem";
 
 function MenuSubTrigger({
   children,

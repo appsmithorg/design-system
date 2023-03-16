@@ -67,29 +67,21 @@ export default {
           summary: "number",
         },
         defaultValue: {
-          summary: "current year + 1",
+          summary: "current year",
         },
       },
     },
     allowSameDay: {
-      control: {
-        type: "boolean",
-      },
-      description: "Allow the same day to be selected as start and end date.",
       table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "false",
-        },
+        disable: true,
       },
     },
     closeOnScroll: {
       control: {
         type: "boolean",
       },
-      description: "Close the datepicker when the user scrolls.",
+      description:
+        "Close the datepicker when the user scrolls anywhere in the screen.",
       table: {
         type: {
           summary: "boolean",
@@ -109,7 +101,7 @@ export default {
           summary: "string",
         },
         defaultValue: {
-          summary: "dd/MM/yyyy",
+          summary: "MM/dd/yyyy",
         },
       },
     },
@@ -156,31 +148,13 @@ export default {
       },
     },
     startDate: {
-      control: {
-        type: "date",
-      },
-      description: "Start date of the date range picker.",
       table: {
-        type: {
-          summary: "Date",
-        },
-        defaultValue: {
-          summary: "null",
-        },
+        disable: true,
       },
     },
     endDate: {
-      control: {
-        type: "date",
-      },
-      description: "End date of the date range picker.",
       table: {
-        type: {
-          summary: "Date",
-        },
-        defaultValue: {
-          summary: "null",
-        },
+        disable: true,
       },
     },
     excludeDates: {
@@ -309,20 +283,6 @@ export default {
         },
       },
     },
-    maxDate: {
-      control: {
-        type: "date",
-      },
-      description: "Maximum date for the datepicker.",
-      table: {
-        type: {
-          summary: "Date",
-        },
-        defaultValue: {
-          summary: "null",
-        },
-      },
-    },
     minDate: {
       control: {
         type: "date",
@@ -337,11 +297,11 @@ export default {
         },
       },
     },
-    maxTime: {
+    maxDate: {
       control: {
         type: "date",
       },
-      description: "Maximum time for the datepicker.",
+      description: "Maximum date for the datepicker.",
       table: {
         type: {
           summary: "Date",
@@ -356,6 +316,20 @@ export default {
         type: "date",
       },
       description: "Minimum time for the datepicker.",
+      table: {
+        type: {
+          summary: "Date",
+        },
+        defaultValue: {
+          summary: "null",
+        },
+      },
+    },
+    maxTime: {
+      control: {
+        type: "date",
+      },
+      description: "Maximum time for the datepicker.",
       table: {
         type: {
           summary: "Date",
@@ -521,4 +495,6 @@ DatePickerStory.args = {
   excludeDates: [new Date()],
   showTimeInput: true,
   yearStartRange: 2010,
+  yearEndRange: 2023,
+  dateFormat: "dd-M-yyyy",
 };

@@ -117,7 +117,7 @@
   line-height: normal;
   font-family: var(--ads-v2-font-family);
   font-size: var(--ads-v2-font-size-4);
-  color: var(--ads-v2-color-fg-emphasis-plus);
+  color: var(--ads-v2-color-fg);
   width: 30px;
   height: 34px; /* 30px + 2px padding left and right */
   margin: 0;
