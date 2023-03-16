@@ -29,7 +29,7 @@ const MenuItemSizeStyles = {
   `,
 };
 
-const MenuStyle = css`
+const MenuContentStyle = css`
   ${Variables}
 
   width: fit-content;
@@ -38,8 +38,7 @@ const MenuStyle = css`
   background-color: var(--ads-v2-color-bg);
   border-radius: var(--ads-v2-border-radius);
   border: 1px solid var(--ads-v2-color-border-muted);
-  box-shadow: 0px 15px 56px rgba(42, 42, 42, 0.07),
-    0px 1.87823px 7.01207px rgba(42, 42, 42, 0.0109741);
+  box-shadow: var(--ads-v2-shadow-popovers);
   padding: var(--ads-v2-spaces-2);
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -51,7 +50,7 @@ export const StyledMenuContent = styled(RadixMenu.Content)<{
   height?: string;
   width?: string;
 }>`
-  ${MenuStyle}
+  ${MenuContentStyle}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
 `;
@@ -60,7 +59,7 @@ export const StyledMenuSubContent = styled(RadixMenu.SubContent)<{
   height?: string;
   width?: string;
 }>`
-  ${MenuStyle}
+  ${MenuContentStyle}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
 `;

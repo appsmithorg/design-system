@@ -104,6 +104,10 @@ export const InputContainer = styled.div<{
     right: 0;
   }
 
+  & .${InputIconClassName}[data-has-onclick="true"] {
+    cursor: pointer;
+  }
+
   ${({ isDisabled }) =>
     isDisabled && `opacity: var(--ads-v2-opacity-disabled);`};
 

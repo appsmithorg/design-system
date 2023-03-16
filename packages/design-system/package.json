@@ -36,6 +36,7 @@
     "@storybook/react": "^6.5.15",
     "@svgr/rollup": "^6.5.1",
     "@types/react": "^17.0.2",
+    "@types/react-datepicker": "^4.10.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
@@ -56,6 +57,7 @@
     "eslint-plugin-sort-destructure-keys": "^1.4.0",
     "eslint-plugin-storybook": "^0.6.8",
     "lodash.capitalize": "^4.2.1",
+    "lodash.range": "^3.2.0",
     "plop": "^3.1.1",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
@@ -107,7 +109,9 @@
     "@react-stately/radio": "^3.6.2",
     "@react-stately/toggle": "^3.4.4",
     "rc-select": "^14.3.0",
+    "date-fns": "^2.29.3",
     "rc-tooltip": "^5.3.1",
+    "react-datepicker": "^4.10.0",
     "react-toastify": "9.0.3"
   }
 }
