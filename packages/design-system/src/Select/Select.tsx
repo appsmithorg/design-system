@@ -1,5 +1,6 @@
 import React from "react";
 import SelectComponent, { Option } from "rc-select";
+import "./rc-styles.css";
 
 import { SelectProps } from "./Select.types";
 import { StyledSelect } from "./Select.styles";
@@ -7,7 +8,7 @@ import { Icon } from "Icon";
 
 function Select() {
   return (
-    <SelectComponent>
+    <SelectComponent open showSearch>
       <Option value="1">
         <Icon name="account-box-line" />
         Option 1
