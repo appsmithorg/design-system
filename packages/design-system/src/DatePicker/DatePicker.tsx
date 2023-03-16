@@ -27,7 +27,7 @@ function DatePicker(props: DatePickerProps) {
   const {
     calendarClassName,
     className,
-    dateFormat = "dd/MM/yyyy",
+    dateFormat = "MM/dd/yyyy",
     inputProps,
     inputSize = "md",
     isClearable,
@@ -249,7 +249,7 @@ function DateRangePicker(props: DateRangePickerProps) {
   const {
     calendarClassName,
     className,
-    dateFormat = "dd/MM/yyyy",
+    dateFormat = "MM/dd/yyyy",
     endDate: propEndDate,
     inputProps,
     inputSize = "md",
