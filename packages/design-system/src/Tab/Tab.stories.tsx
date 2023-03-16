@@ -4,6 +4,8 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Tabs, TabsList, Tab, TabPanel } from "./Tab";
 import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
 import { Text } from "../Text";
+import { Input } from "../Input";
+import { Button } from "../Button";
 
 export default {
   title: "Design System/Tab",
@@ -43,6 +45,12 @@ TabExample.argTypes = {
     description:
       "A unique id given to the tab that must match with the corresponding Tab Panel.",
     required: true,
+  },
+  notificationCount: {
+    description: "the number of notifications the tab contains",
+    control: {
+      type: "number",
+    },
   },
 };
 
@@ -113,54 +121,98 @@ const TabsTemplate: ComponentStory<typeof Tabs> = (args: TabsProps) => {
   return (
     <Tabs defaultValue="tab1" {...args}>
       <TabsList>
-        <Tab value="tab1">Account</Tab>
-        <Tab value="tab2">Password</Tab>
+        <Tab notificationCount={3} value="tab1">
+          Account
+        </Tab>
+        <Tab notificationCount={15} value="tab2">
+          Password
+        </Tab>
+        <Tab value="tab3">Account</Tab>
+        <Tab value="tab4">Test</Tab>
+        <Tab value="tab5">Another Account</Tab>
+        <Tab value="tab6">Testing this</Tab>
+        <Tab value="tab7">Tabs main</Tab>
+        <Tab value="tab8">General</Tab>
+        <Tab value="tab9">Test 3</Tab>
+        <Tab value="tab10">Test 4</Tab>
+        <Tab value="tab11">Test 5</Tab>
+        <Tab value="tab12">Test 6</Tab>
+        <Tab value="tab13">Test 7</Tab>
+        <Tab value="tab14">Test 8</Tab>
+        <Tab value="tab15">Test 9</Tab>
       </TabsList>
       <TabPanel className="TabsContent" value="tab1">
-        <p className="Text">
-          Make changes to your account here. Click save when you're done.
-        </p>
-        <fieldset className="Fieldset">
-          <label className="Label" htmlFor="name">
-            Name
-          </label>
-          <input className="Input" defaultValue="Pedro Duarte" id="name" />
-        </fieldset>
-        <fieldset className="Fieldset">
-          <label className="Label" htmlFor="username">
-            Username
-          </label>
-          <input className="Input" defaultValue="@peduarte" id="username" />
-        </fieldset>
-        <div>
-          <button className="Button green">Save changes</button>
+        <div
+          style={{
+            marginTop: "24px",
+            width: "40%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
+          }}
+        >
+          <Input as="input" label="First name" size="md" />
+          <Input as="input" label="Last name" size="md" />
+          <Button UNSAFE_width="150px" kind="primary" size="md">
+            Submit
+          </Button>
         </div>
       </TabPanel>
       <TabPanel className="TabsContent" value="tab2">
-        <p className="Text">
-          Change your password here. After saving, you'll be logged out.
-        </p>
-        <fieldset className="Fieldset">
-          <label className="Label" htmlFor="currentPassword">
-            Current password
-          </label>
-          <input className="Input" id="currentPassword" type="password" />
-        </fieldset>
-        <fieldset className="Fieldset">
-          <label className="Label" htmlFor="newPassword">
-            New password
-          </label>
-          <input className="Input" id="newPassword" type="password" />
-        </fieldset>
-        <fieldset className="Fieldset">
-          <label className="Label" htmlFor="confirmPassword">
-            Confirm password
-          </label>
-          <input className="Input" id="confirmPassword" type="password" />
-        </fieldset>
-        <div>
-          <button className="Button green">Change password</button>
+        <div
+          style={{
+            marginTop: "24px",
+            width: "40%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
+          }}
+        >
+          <Input as="input" label="Old password" size="md" />
+          <Input as="input" label="New Password" size="md" />
+          <Button UNSAFE_width="150px" kind="primary" size="md">
+            Change
+          </Button>
         </div>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab3">
+        <Text>Tab3 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab4">
+        <Text>Tab4 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab5">
+        <Text>Tab5 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab6">
+        <Text>Tab6 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab7">
+        <Text>Tab7 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab8">
+        <Text>Tab8 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab9">
+        <Text>Tab9 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab10">
+        <Text>Tab10 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab11">
+        <Text>Tab11 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab12">
+        <Text>Tab12 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab13">
+        <Text>Tab13 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab14">
+        <Text>Tab14 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab15">
+        <Text>Tab15 Content</Text>
       </TabPanel>
     </Tabs>
   );

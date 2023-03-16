@@ -1,8 +1,10 @@
 import React from "react";
+import clsx from "classnames";
 
 import { IconContainer } from "./Icon.styles";
 import { IconProps, IconSizes } from "./Icon.types";
 import { IconProvider } from "./Icon.provider";
+import { IconClassName } from "./Icon.constants";
 
 export const iconSizes: Record<IconSizes, string> = {
   sm: "12px",
@@ -17,16 +19,14 @@ function Icon(props: IconProps) {
 
   return (
     <IconContainer
-      className={className}
+      className={clsx(IconClassName, className)}
       color={color}
       size={iconSizes[size]}
       {...rest}
     >
       {name ? (
         <IconProvider color={color} iconName={name} size={iconSizes[size]} />
-      ) : (
-        children
-      )}
+      ) : null}
     </IconContainer>
   );
 }

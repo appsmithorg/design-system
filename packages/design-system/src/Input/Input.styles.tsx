@@ -13,8 +13,8 @@ const Variables = css`
   --input-padding-x: var(--ads-v2-spaces-2); // padding left and right
   --input-padding-y: var(--ads-v2-spaces-2); // padding top and bottom
   --input-color: var(--ads-v2-color-fg);
-  --input-font-size: 12px;
-  --input-height: 24px;
+  --input-font-size: var(--ads-v2-font-size-2);
+  --input-height: 22px;
 `;
 
 const getSizes = (size: InputSizes, component: "input" | "textarea") => {
@@ -22,13 +22,13 @@ const getSizes = (size: InputSizes, component: "input" | "textarea") => {
     sm: css`
       --input-padding-x: var(--ads-v2-spaces-2);
       --input-padding-y: var(--ads-v2-spaces-2);
-      --input-font-size: 12px;
-      --input-height: ${component === "input" ? "24px" : "60px"};
+      --input-font-size: var(--ads-v2-font-size-2);
+      --input-height: ${component === "input" ? "22px" : "60px"};
     `,
     md: css`
       --input-padding-x: var(--ads-v2-spaces-3);
       --input-padding-y: var(--ads-v2-spaces-3);
-      --input-font-size: 14px;
+      --input-font-size: var(--ads-v2-font-size-4);
       --input-height: ${component === "input" ? "36px" : "72px"};
     `,
   };
@@ -46,6 +46,7 @@ export const MainContainer = styled.div<{
   display: flex;
   flex-direction: ${({ labelPosition }) =>
     labelPosition === "left" ? "row" : "column"};
+  align-items: baseline;
   gap: ${({ labelPosition }) =>
     labelPosition === "left"
       ? "var(--ads-v2-spaces-4)"
@@ -60,6 +61,7 @@ export const MainContainer = styled.div<{
 
 export const Label = styled.label`
   color: var(--ads-v2-color-fg);
+  width: 100%;
   word-wrap: break-word;
 
   & > span {
@@ -76,7 +78,7 @@ export const InputSection = styled.div`
 `;
 
 export const InputContainer = styled.div<{
-  disabled?: boolean;
+  isDisabled?: boolean;
 }>`
   position: relative;
   display: flex;
@@ -102,10 +104,16 @@ export const InputContainer = styled.div<{
     right: 0;
   }
 
-  ${({ disabled }) =>
-    disabled &&
-    `opacity: var(--ads-v2-opacity-disabled);
-    cursor: not-allowed;`};
+  ${({ isDisabled }) =>
+    isDisabled && `opacity: var(--ads-v2-opacity-disabled);`};
+
+  ${({ isDisabled }) =>
+    isDisabled &&
+    `
+    & * {
+      cursor: not-allowed !important;
+    }
+  `};
 `;
 
 export const StyledInput = styled.input<{
@@ -120,7 +128,7 @@ export const StyledInput = styled.input<{
 }>`
   --icon-size: ${({ inputSize }) => inputSize && iconSizes[inputSize]};
 
-  background-color: var(--ads-v2-color-background);
+  background-color: var(--ads-v2-color-bg);
   border: 1px solid var(--input-color-border);
   border-radius: var(--ads-v2-border-radius);
   font-family: var(--ads-v2-font-family);
@@ -154,23 +162,24 @@ export const StyledInput = styled.input<{
       );
     `};
 
-  &:focus:enabled {
+  &:focus:enabled:not(:read-only) {
     outline: var(--ads-v2-border-width-outline) solid
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
   }
 
-  &:hover:enabled {
+  &:hover:enabled:not(:read-only) {
     --input-color-border: var(--ads-v2-color-border-emphasis);
   }
 
-  &:active:enabled,
-  &:focus:enabled {
+  &:active:enabled:not(:read-only),
+  &:focus:enabled:not(:read-only) {
     --input-color-border: var(--ads-v2-color-border-emphasis-plus);
   }
 
   &:disabled {
     cursor: not-allowed;
+    user-select: none;
   }
 
   ${({ hasError }) =>

@@ -36,12 +36,6 @@ const getSizes = (size: ButtonSizes, isIconButton?: boolean) => {
         : "var(--ads-v2-spaces-3) var(--ads-v2-spaces-4)"};
       --button-gap: var(--ads-v2-spaces-3);
     `,
-    // lg: css`
-    //   --button-font-weight: 600;
-    //   --button-font-size: 16px;
-    //   --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-5);
-    //   --button-gap: var(--ads-v2-spaces-3);
-    // `,
   };
   return Sizes[size];
 };
@@ -205,7 +199,7 @@ export const StyledButton = styled.button<{
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
-  min-width: ${({ isIconButton }) => (isIconButton ? "unset" : "isIconButton")};
+  min-width: ${({ isIconButton }) => (isIconButton ? "unset" : "min-content")};
 
   /* button disabled style */
   &:disabled {
