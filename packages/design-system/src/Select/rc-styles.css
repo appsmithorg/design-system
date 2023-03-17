@@ -1,6 +1,3 @@
-* {
-  box-sizing: border-box;
-}
 .rc-select {
   display: inline-block;
   font-size: 12px;
@@ -61,8 +58,8 @@
 .rc-select-single:not(.rc-select-customize-input) .rc-select-selector .rc-select-selection-search-input {
   border: none;
   outline: none;
-  background: rgba(255,0,0,0.2);
   width: 100%;
+  padding: 0;
 }
 .rc-select-multiple .rc-select-selector {
   display: flex;
@@ -140,11 +137,8 @@
   border-top-color: #999;
   transform: translateY(5px);
 }
-.rc-select-focused .rc-select-selector {
-  border-color: blue !important;
-}
+
 .rc-select-dropdown {
-  border: 1px solid green;
   min-height: 100px;
   position: absolute;
   background: #fff;

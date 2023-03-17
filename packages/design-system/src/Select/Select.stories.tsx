@@ -6,6 +6,13 @@ import { Select } from "./Select";
 export default {
   title: "Design System/Select",
   component: Select,
+  decorators: [
+    (Story) => (
+      <div style={{ width: "100%", maxWidth: "250px", margin: "0 auto" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Select>;
 
 // eslint-disable-next-line react/function-component-definition

@@ -1,17 +1,13 @@
-import React from "react";
+import { SelectProps as RCSelectProps } from "rc-select";
+import { OptionProps } from "rc-select/lib/Option";
+import { Sizes } from "__config__/types";
 
-// Select prop types
-export type YOUR_PROP_TYPE_1 = {
-  /** YOUR_PROP_TYPE_1 description */
+export type SelectSizes = Extract<Sizes, "sm" | "md">;
+
+export type SelectProps = RCSelectProps & {
+  size?: SelectSizes;
 };
 
-// Select props
-export type SelectProps = {
-  /** this prop is used when... */
-  prop1: undefined;
-
-  /** (try not to) pass addition classes here */
-  className?: string;
-  /** the words you want to display */
-  children: string;
-} & React.SelectHTMLAttribute<HTMLSelectElement>;
+export type SelectOptionProps = OptionProps & {
+  size?: SelectSizes;
+};
