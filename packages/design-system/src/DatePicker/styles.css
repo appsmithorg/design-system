@@ -186,7 +186,7 @@
 }
 
 /* Date range selected range days bg color on selecting */
-.react-datepicker.ads-v2-datepicker__calender .react-datepicker__month .react-datepicker__week .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range,.react-datepicker_quarter-text--in-range,.react-datepicker_year-text--in-range, .react-datepicker__day--selecting-range-start,  .react-datepicker__day--selecting-range-end){
+.react-datepicker.ads-v2-datepicker__calender .react-datepicker__month .react-datepicker__week .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range,.react-datepicker_quarter-text--in-range,.react-datepicker_year-text--in-range, .react-datepicker__day--selecting-range-start,  .react-datepicker__day--selecting-range-end, .react-datepicker__day--outside-month){
   background-color: var(--ads-v2-color-bg-subtle);
   border-radius: 0;
 }
