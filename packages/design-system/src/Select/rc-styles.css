@@ -51,10 +51,6 @@
   left: 3px;
   pointer-events: none;
 }
-.rc-select-single:not(.rc-select-customize-input) .rc-select-selector {
-  padding: 1px;
-  border: 1px solid #000;
-}
 .rc-select-single:not(.rc-select-customize-input) .rc-select-selector .rc-select-selection-search-input {
   border: none;
   outline: none;

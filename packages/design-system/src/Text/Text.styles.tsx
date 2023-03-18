@@ -135,7 +135,7 @@ export const StyledText = styled.span<{
 
   font-size: var(--font-size);
   font-weight: var(--font-weight);
-  line-height: var(--line-height);
+  /* line-height: var(--line-height); */
   letter-spacing: var(--letter-spacing);
   margin: 0;
 `;
