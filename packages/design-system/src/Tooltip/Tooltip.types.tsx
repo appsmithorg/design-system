@@ -1,6 +1,6 @@
 import type { TooltipProps as RcTooltipProps } from "rc-tooltip/lib/Tooltip";
 
-type Placement =
+export type TooltipPlacement =
   | "left"
   | "right"
   | "top"
@@ -19,7 +19,7 @@ export type TooltipProps = {
   /** Tooltip content to be shown */
   content: string;
   /** Tooltip placement */
-  placement?: Placement;
+  placement?: TooltipPlacement;
 } & Omit<
   RcTooltipProps,
   | "overlayStyle"
