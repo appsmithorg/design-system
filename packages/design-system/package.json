@@ -95,7 +95,6 @@
     ]
   },
   "dependencies": {
-    "@loadable/component": "^5.15.3",
     "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-dropdown-menu": "^2.0.4",
     "@radix-ui/react-tabs": "^1.0.2",

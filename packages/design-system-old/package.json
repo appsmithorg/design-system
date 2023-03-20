@@ -167,7 +167,6 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "@loadable/component": "^5.15.3",
     "emoji-mart": "3.0.1"
   }
 }
