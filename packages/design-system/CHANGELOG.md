@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.0.8
+
+### Patch Changes
+
+- [#418](https://github.com/appsmithorg/design-system/pull/418) [`0bec8ae`](https://github.com/appsmithorg/design-system/commit/0bec8ae8611c2a58ce8e18185ea24f3bd81cde4a) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Date and Date Range picker
+
 ## 2.0.7
 
 ### Patch Changes
