@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { DividerProps } from "./Divider.types";
 
 const Variables = css`
   --divider-thickness: 1px;
