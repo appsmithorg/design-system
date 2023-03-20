@@ -8,9 +8,6 @@
 .rc-select-disabled input {
   cursor: not-allowed;
 }
-.rc-select-disabled .rc-select-selector {
-  opacity: 0.3;
-}
 .rc-select-show-arrow.rc-select-loading .rc-select-arrow-icon::after {
   box-sizing: border-box;
   width: 12px;

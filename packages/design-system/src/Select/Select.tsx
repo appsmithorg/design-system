@@ -17,7 +17,7 @@ function Select(props: SelectProps) {
     maxTagCount = 2,
     maxTagPlaceholder,
     maxTagTextLength = 5,
-    multiple,
+    multiSelect,
     placeholder = "Please select",
     showSearch = false,
     size = "md",
@@ -44,7 +44,7 @@ function Select(props: SelectProps) {
       maxTagPlaceholder={maxTagPlaceholder || getMaxTagPlaceholder}
       maxTagTextLength={maxTagTextLength}
       menuItemSelectedIcon=""
-      mode={multiple ? "multiple" : undefined}
+      mode={multiSelect ? "multiple" : undefined}
       placeholder={placeholder}
       showArrow
       showSearch={showSearch}

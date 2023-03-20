@@ -30,13 +30,13 @@
 }
 
 /* Disabled */
-.ads-v2-select.rc-select-disabled * {
+.ads-v2-select.rc-select-disabled > * {
   opacity: var(--ads-v2-opacity-disabled);
   cursor: not-allowed;
 }
 
 /* Hover */
-.ads-v2-select:hover {
+.ads-v2-select:hover:not(.rc-select-disabled) {
   --select-color-border: var(--ads-v2-color-border-emphasis);
 }
 

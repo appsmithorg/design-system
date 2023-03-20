@@ -32,7 +32,7 @@ export default {
 const Template: ComponentStory<typeof Select> = (args) => {
   return (
     <Select {...args}>
-      <Option value="Test">
+      <Option value="option 1">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Icon name="home-5-line" size="md" />
           Option 1
@@ -126,13 +126,7 @@ const Template: ComponentStory<typeof Select> = (args) => {
   );
 };
 
-export const SelectStory = Template.bind({});
-SelectStory.storyName = "Select";
-SelectStory.args = {
-  size: "md",
-  open: true,
-};
-SelectStory.argTypes = {
+const ArgTypes = {
   id: {
     control: {
       type: "text",
@@ -278,7 +272,7 @@ SelectStory.argTypes = {
     control: {
       type: "boolean",
     },
-    description: "Whether show search input in single mode.",
+    description: "Whether to show search input.",
     table: {
       type: {
         summary: "boolean",
@@ -345,11 +339,11 @@ SelectStory.argTypes = {
       },
     },
   },
-  multiple: {
+  multiSelect: {
     control: {
       type: "boolean",
     },
-    description: "Support multiple or not",
+    description: "Support multiple selections.",
     table: {
       type: {
         summary: "boolean",
@@ -378,7 +372,7 @@ SelectStory.argTypes = {
       type: "boolean",
     },
     description:
-      "whether filter options by input value. default filter by option's optionFilterProp prop's value",
+      "whether filter options by input value. default filter is by option's optionFilterProp value",
     table: {
       type: {
         summary: "boolean",
@@ -468,7 +462,7 @@ SelectStory.argTypes = {
     description: "Called when input changed.",
     table: {
       type: {
-        summary: "function",
+        summary: "(value: string) => void",
       },
       defaultValue: {
         summary: "undefined",
@@ -482,7 +476,7 @@ SelectStory.argTypes = {
     description: "Called when blur",
     table: {
       type: {
-        summary: "function",
+        summary: "(event) => void",
       },
       defaultValue: {
         summary: "undefined",
@@ -496,7 +490,7 @@ SelectStory.argTypes = {
     description: "Called when focus",
     table: {
       type: {
-        summary: "function",
+        summary: "(event) => void",
       },
       defaultValue: {
         summary: "undefined",
@@ -510,7 +504,7 @@ SelectStory.argTypes = {
     description: "Called when popup scroll",
     table: {
       type: {
-        summary: "function",
+        summary: "(event) => void",
       },
       defaultValue: {
         summary: "undefined",
@@ -525,7 +519,7 @@ SelectStory.argTypes = {
       "Called when a option is selected. Param is option's value and option instance",
     table: {
       type: {
-        summary: "Function(value, option:Option)",
+        summary: "(value, option:Option) => void",
       },
       defaultValue: {
         summary: "undefined",
@@ -540,7 +534,7 @@ SelectStory.argTypes = {
       "Called when a option is deselected. Param is option's value. Only called for multiple or tags",
     table: {
       type: {
-        summary: "Function(value, option:Option)",
+        summary: "(value, option:Option) => void",
       },
       defaultValue: {
         summary: "undefined",
@@ -554,7 +548,36 @@ SelectStory.argTypes = {
     description: "Called when input key down",
     table: {
       type: {
-        summary: "Function(e)",
+        summary: "(e) => void",
+      },
+      defaultValue: {
+        summary: "undefined",
+      },
+    },
+  },
+  onClear: {
+    control: {
+      type: "text",
+    },
+    description: "Called when clear selected",
+    table: {
+      type: {
+        summary: "() => void",
+      },
+      defaultValue: {
+        summary: "undefined",
+      },
+    },
+  },
+  onChange: {
+    control: {
+      type: "text",
+    },
+    description:
+      "Called when a option is selected/deselected. Param is selected option's value or value array for multiple or tags",
+    table: {
+      type: {
+        summary: "(value, option:Option) => void",
       },
       defaultValue: {
         summary: "undefined",
@@ -565,7 +588,7 @@ SelectStory.argTypes = {
     control: {
       type: "boolean",
     },
-    description: "whether active first option by default",
+    description: "Whether to show first option as active",
     table: {
       type: {
         summary: "boolean",
@@ -608,7 +631,8 @@ SelectStory.argTypes = {
     control: {
       type: "boolean",
     },
-    description: "Use virtual scroll to render options",
+    description:
+      "Use virtual scroll to render options. This enables better performance if the list is too long.",
     table: {
       type: {
         summary: "boolean",
@@ -620,18 +644,20 @@ SelectStory.argTypes = {
   },
 };
 
+export const SelectStory = Template.bind({});
+SelectStory.storyName = "Select";
+SelectStory.args = {
+  size: "md",
+};
+SelectStory.argTypes = ArgTypes;
+
 // eslint-disable-next-line react/function-component-definition
 const OptionTemplate: ComponentStory<typeof Option> = ({
   children,
   ...args
 }) => {
   return (
-    <Select
-      defaultValue="option 2"
-      onChange={(value) => console.log(value)}
-      open
-      size="md"
-    >
+    <Select defaultValue="option 2" open size="md">
       <Option {...args} value="Test">
         {children || (
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -722,9 +748,82 @@ OptionStory.argTypes = {
       },
     },
   },
-  multiple: {
+  multiSelect: {
     table: {
       disable: true,
     },
+  },
+};
+
+// eslint-disable-next-line react/function-component-definition
+const SelectSimpleTemplate: ComponentStory<typeof Select> = ({ ...args }) => {
+  return (
+    <Select {...args}>
+      <Option value="option 1">Option 1</Option>
+      <Option value="option 2">Option 2</Option>
+      <Option value="option 3">Option 3</Option>
+      <Option value="option 4">Option 4</Option>
+      <Option value="option 5">Option 5</Option>
+      <Option value="option 6">Option 6</Option>
+      <Option value="option 7">Option 7</Option>
+      <Option value="option 8">Option 8</Option>
+      <Option value="option 9">Option 9</Option>
+      <Option value="option 10">Option 10</Option>
+      <Option value="option 11">Option 11</Option>
+      <Option value="option 12">Option 12</Option>
+      <Option value="option 13">Option 13</Option>
+      <Option value="option 14">Option 14</Option>
+      <Option value="option 15">Option 15</Option>
+    </Select>
+  );
+};
+
+const consoleStyle = "color: #ff7818; font-weight: bold;";
+
+export const SelectSimpleStory = SelectSimpleTemplate.bind({});
+SelectSimpleStory.storyName = "Simple select";
+SelectSimpleStory.argTypes = ArgTypes;
+SelectSimpleStory.args = {
+  autoClearSearchValue: false,
+  onSearch: (v) => {
+    console.info("%conSearch", consoleStyle);
+    console.log("value -", v);
+  },
+  onBlur: (e) => {
+    console.info("%conBlur", consoleStyle);
+    console.log("event -", e);
+  },
+  onFocus: (e) => {
+    console.info("%conFocus", consoleStyle);
+    console.log("event -", e);
+  },
+  onDropdownVisibleChange: (v) => {
+    console.info("%conDropdownVisibleChange", consoleStyle);
+    console.log("value -", v);
+  },
+  onInputKeyDown: (e) => {
+    console.info("%conInputKeyDown", consoleStyle);
+    console.log("event -", e);
+  },
+  onChange: (v) => {
+    console.info("%conChange", consoleStyle);
+    console.log("value -", v);
+  },
+  onSelect: (v, option) => {
+    console.info("%conSelect", consoleStyle);
+    console.log("value = ", v);
+    console.log("option = ", option);
+  },
+  onDeselect: (v, option) => {
+    console.info("%conDeselect", consoleStyle);
+    console.log("value = ", v);
+    console.log("option = ", option);
+  },
+  onClear: () => {
+    console.info("%conClear", consoleStyle);
+  },
+  onPopupScroll: (e) => {
+    console.info("%conPopupScroll", consoleStyle);
+    console.log("event -", e);
   },
 };
