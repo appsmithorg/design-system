@@ -60,7 +60,7 @@ function SegmentedControl(props: SegmentedControlProps) {
               )}
 
               {/* Label */}
-              <Text kind="body-m">{label}</Text>
+              {label && <Text kind="body-m">{label}</Text>}
 
               {/* if icon name is passed */}
               {endIcon && typeof endIcon === "string" && (
