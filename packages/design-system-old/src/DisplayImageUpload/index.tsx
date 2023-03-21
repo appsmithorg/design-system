@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { ReactComponent as ProfileImagePlaceholder } from "../assets/icons/others/profile-placeholder.svg";
 import Uppy from "@uppy/core";
 import Dialog from "DialogComponent";
 
@@ -18,6 +17,11 @@ import "@uppy/dashboard/dist/style.css";
 import "@uppy/image-editor/dist/style.css";
 import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
 import { getTypographyByKey } from "Constants/typography";
+import { importSvg } from "Utils/icon-loadables";
+
+const ProfileImagePlaceholder = importSvg(() =>
+  import("../assets/icons/others/profile-placeholder.svg"),
+);
 
 type Props = {
   onChange: (file: File) => void;
