@@ -13,6 +13,14 @@
   width: 100%;
 }
 
+.ads-v2-select * {
+  cursor: pointer;
+}
+
+.ads-v2-select.rc-select-show-search * {
+  cursor: text;
+}
+
 /* size sm */
 .ads-v2-select[data-size="sm"] {
   --select-padding-x: var(--ads-v2-spaces-2);

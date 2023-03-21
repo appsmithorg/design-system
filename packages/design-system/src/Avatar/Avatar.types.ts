@@ -7,7 +7,7 @@ export type AvatarSize = Extract<Sizes, "sm" | "md">;
 export type AvatarProps = {
   /** The size of the avatar. */
   size?: AvatarSize;
-  /** The name of the icon too be used as avatar. */
+  /** The name of the icon to be used as avatar. */
   svgIconName?: string;
   /** The image of the avatar. */
   image?: string;

@@ -32,7 +32,7 @@ export default {
 const Template: ComponentStory<typeof Select> = (args) => {
   return (
     <Select {...args}>
-      <Option value="option 1">
+      <Option value="value 1">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Icon name="home-5-line" size="md" />
           Option 1
@@ -216,7 +216,7 @@ const ArgTypes = {
     control: {
       type: "text",
     },
-    description: "Content to show when no result matches.",
+    description: "Content to display when search fetches no matching results.",
     table: {
       type: {
         summary: "ReactNode",
@@ -300,7 +300,8 @@ const ArgTypes = {
     control: {
       type: "number",
     },
-    description: "Max tag text length to show. Only works if content is text.",
+    description:
+      "Max tag text length to show. Only works if content is text and multiSelect is true.",
     table: {
       type: {
         summary: "number",
@@ -314,7 +315,7 @@ const ArgTypes = {
     control: {
       type: "number",
     },
-    description: "Max tag count to show",
+    description: "Max tag count to show. Only works in multiSelect mode.",
     table: {
       type: {
         summary: "number",
@@ -328,7 +329,7 @@ const ArgTypes = {
     control: {
       type: "text",
     },
-    description: "Max tag placeholder",
+    description: "Max tag placeholder. Only works in multiSelect mode.",
     table: {
       type: {
         summary: "ReactNode/function(omittedValues)",
@@ -372,7 +373,7 @@ const ArgTypes = {
       type: "boolean",
     },
     description:
-      "whether filter options by input value. default filter is by option's optionFilterProp value",
+      "Whether to filter options by input value. By default the filter is the optionFilterProp value.",
     table: {
       type: {
         summary: "boolean",
@@ -759,21 +760,21 @@ OptionStory.argTypes = {
 const SelectSimpleTemplate: ComponentStory<typeof Select> = ({ ...args }) => {
   return (
     <Select {...args}>
-      <Option value="option 1">Option 1</Option>
-      <Option value="option 2">Option 2</Option>
-      <Option value="option 3">Option 3</Option>
-      <Option value="option 4">Option 4</Option>
-      <Option value="option 5">Option 5</Option>
-      <Option value="option 6">Option 6</Option>
-      <Option value="option 7">Option 7</Option>
-      <Option value="option 8">Option 8</Option>
-      <Option value="option 9">Option 9</Option>
-      <Option value="option 10">Option 10</Option>
-      <Option value="option 11">Option 11</Option>
-      <Option value="option 12">Option 12</Option>
-      <Option value="option 13">Option 13</Option>
-      <Option value="option 14">Option 14</Option>
-      <Option value="option 15">Option 15</Option>
+      <Option value="value 1">Option 1</Option>
+      <Option value="value 2">Option 2</Option>
+      <Option value="value 3">Option 3</Option>
+      <Option value="value 4">Option 4</Option>
+      <Option value="value 5">Option 5</Option>
+      <Option value="value 6">Option 6</Option>
+      <Option value="value 7">Option 7</Option>
+      <Option value="value 8">Option 8</Option>
+      <Option value="value 9">Option 9</Option>
+      <Option value="value 10">Option 10</Option>
+      <Option value="value 11">Option 11</Option>
+      <Option value="value 12">Option 12</Option>
+      <Option value="value 13">Option 13</Option>
+      <Option value="value 14">Option 14</Option>
+      <Option value="value 15">Option 15</Option>
     </Select>
   );
 };
@@ -784,6 +785,7 @@ export const SelectSimpleStory = SelectSimpleTemplate.bind({});
 SelectSimpleStory.storyName = "Simple select";
 SelectSimpleStory.argTypes = ArgTypes;
 SelectSimpleStory.args = {
+  optionLabelProp: "value",
   autoClearSearchValue: false,
   onSearch: (v) => {
     console.info("%conSearch", consoleStyle);

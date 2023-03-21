@@ -1,5 +1,8 @@
 import styled, { css } from "styled-components";
-import { AvatarClassName } from "./Avatar.constants";
+import {
+  AvatarClassName,
+  AvatarGroupShowMoreClassName,
+} from "./Avatar.constants";
 import { AvatarSize } from "./Avatar.types";
 
 const Sizes = {
@@ -23,7 +26,6 @@ export const StyledAvatar = styled.span<{
   justify-content: center;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
   user-select: none;
 
   ${({ size }) => Sizes[size]}
@@ -42,7 +44,11 @@ export const StyledAvatar = styled.span<{
     position: relative;
   }
 
-  &:hover {
+  &.${AvatarGroupShowMoreClassName} {
+    cursor: pointer;
+  }
+
+  &.${AvatarGroupShowMoreClassName}:hover {
     background-color: var(--ads-v2-color-bg-muted);
 
     img:after {

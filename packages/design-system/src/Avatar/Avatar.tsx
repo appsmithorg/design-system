@@ -18,6 +18,7 @@ import {
   AvatarSvgClassName,
   AvatarLetterClassName,
   AvatarGroupClassName,
+  AvatarGroupShowMoreClassName,
 } from "./Avatar.constants";
 import { Tooltip } from "Tooltip";
 import { Menu, MenuItem, MenuTrigger } from "Menu";
@@ -97,7 +98,7 @@ function AvatarGroup(props: AvatarGroupProps) {
         <Menu>
           <MenuTrigger>
             <Avatar
-              className={clsx(AvatarClassName)}
+              className={clsx(AvatarClassName, AvatarGroupShowMoreClassName)}
               firstLetter={`${
                 restAvatars.length > 9 ? 9 : restAvatars.length
               }+`}
