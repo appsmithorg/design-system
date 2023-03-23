@@ -19,11 +19,13 @@ import { typography } from "Constants/typography";
 import styled from "styled-components";
 import SearchComponent from "SearchComponent";
 import Spinner from "Spinner";
-import { ReactComponent as Check } from "../assets/icons/control/checkmark.svg";
 import Tooltip from "Tooltip";
 import SegmentHeader from "ListSegmentHeader";
 import { debounce, isArray } from "lodash";
 import "./styles.css";
+import { importSvg } from "utils/icon-loadables";
+
+const Check = importSvg(() => import("../assets/icons/control/checkmark.svg"));
 
 export type DropdownOnSelect = (
   value?: string,
@@ -948,7 +950,9 @@ export function RenderDropdownOptions(props: DropdownOptionsProps) {
                 subTextPosition={option.subTextPosition ?? SubTextPosition.LEFT}
               >
                 {option.leftElement && (
-                  <LeftIconWrapper className="left-icon-wrapper">{option.leftElement}</LeftIconWrapper>
+                  <LeftIconWrapper className="left-icon-wrapper">
+                    {option.leftElement}
+                  </LeftIconWrapper>
                 )}
                 {option.icon ? (
                   <SelectedIcon

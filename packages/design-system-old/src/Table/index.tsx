@@ -1,12 +1,16 @@
 import { useTable, useSortBy, useExpanded } from "react-table";
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as DownArrow } from "../assets/icons/ads/down_arrow.svg";
-import { ReactComponent as UpperArrow } from "../assets/icons/ads/upper_arrow.svg";
 import { Classes } from "Constants/classes";
 import { typography } from "Constants/typography";
 import Spinner from "Spinner";
 import { IconSize } from "Icon";
+import { importSvg } from "Utils/icon-loadables";
+
+const DownArrow = importSvg(() => import("../assets/icons/ads/down_arrow.svg"));
+const UpperArrow = importSvg(() =>
+  import("../assets/icons/ads/upper_arrow.svg"),
+);
 
 const Styles = styled.div`
   table {

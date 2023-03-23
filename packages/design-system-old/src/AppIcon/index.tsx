@@ -1,95 +1,270 @@
 import React, { useMemo } from "react";
-import { ReactComponent as BagIcon } from "../assets/icons/ads/app-icons/bag.svg";
-import { ReactComponent as ProductIcon } from "../assets/icons/ads/app-icons/product.svg";
-import { ReactComponent as BookIcon } from "../assets/icons/ads/app-icons/book.svg";
-import { ReactComponent as CameraIcon } from "../assets/icons/ads/app-icons/camera.svg";
-import { ReactComponent as FileIcon } from "../assets/icons/ads/app-icons/file.svg";
-import { ReactComponent as ChatIcon } from "../assets/icons/ads/app-icons/chat.svg";
-import { ReactComponent as CalenderIcon } from "../assets/icons/ads/app-icons/calender.svg";
-import { ReactComponent as FrameIcon } from "../assets/icons/ads/app-icons/frame.svg";
-import { ReactComponent as GlobeIcon } from "../assets/icons/ads/app-icons/globe.svg";
-import { ReactComponent as ShopperIcon } from "../assets/icons/ads/app-icons/shopper.svg";
-import { ReactComponent as HeartIcon } from "../assets/icons/ads/app-icons/heart.svg";
-import { ReactComponent as FlightIcon } from "../assets/icons/ads/app-icons/flight.svg";
-import { ReactComponent as AlienIcon } from "../assets/icons/ads/app-icons/alien.svg";
-import { ReactComponent as BarGraphIcon } from "../assets/icons/ads/app-icons/bar-graph.svg";
-import { ReactComponent as BasketballIcon } from "../assets/icons/ads/app-icons/basketball.svg";
-import { ReactComponent as BicycleIcon } from "../assets/icons/ads/app-icons/bicycle.svg";
-import { ReactComponent as BirdIcon } from "../assets/icons/ads/app-icons/bird.svg";
-import { ReactComponent as BitcoinIcon } from "../assets/icons/ads/app-icons/bitcoin.svg";
-import { ReactComponent as BurgerIcon } from "../assets/icons/ads/app-icons/burger.svg";
-import { ReactComponent as BusIcon } from "../assets/icons/ads/app-icons/bus.svg";
-import { ReactComponent as AirplaneIcon } from "../assets/icons/ads/app-icons/airplane.svg";
-import { ReactComponent as CallIcon } from "../assets/icons/ads/app-icons/call.svg";
-import { ReactComponent as CarIcon } from "../assets/icons/ads/app-icons/car.svg";
-import { ReactComponent as CardIcon } from "../assets/icons/ads/app-icons/card.svg";
-import { ReactComponent as CatIcon } from "../assets/icons/ads/app-icons/cat.svg";
-import { ReactComponent as ChineseRemnibiIcon } from "../assets/icons/ads/app-icons/chinese-remnibi.svg";
-import { ReactComponent as CloudIcon } from "../assets/icons/ads/app-icons/cloud.svg";
-import { ReactComponent as CodingIcon } from "../assets/icons/ads/app-icons/coding.svg";
-import { ReactComponent as CouplesIcon } from "../assets/icons/ads/app-icons/couples.svg";
-import { ReactComponent as CricketIcon } from "../assets/icons/ads/app-icons/cricket.svg";
-import { ReactComponent as DiamondIcon } from "../assets/icons/ads/app-icons/diamond.svg";
-import { ReactComponent as DogIcon } from "../assets/icons/ads/app-icons/dog.svg";
-import { ReactComponent as DollarIcon } from "../assets/icons/ads/app-icons/dollar.svg";
-import { ReactComponent as EarthIcon } from "../assets/icons/ads/app-icons/earth.svg";
-import { ReactComponent as EmailIcon } from "../assets/icons/ads/app-icons/email.svg";
-import { ReactComponent as EurosIcon } from "../assets/icons/ads/app-icons/euros.svg";
-import { ReactComponent as FamilyIcon } from "../assets/icons/ads/app-icons/family.svg";
-import { ReactComponent as FlagIcon } from "../assets/icons/ads/app-icons/flag.svg";
-import { ReactComponent as FootballIcon } from "../assets/icons/ads/app-icons/football.svg";
-import { ReactComponent as HatIcon } from "../assets/icons/ads/app-icons/hat.svg";
-import { ReactComponent as HeadphonesIcon } from "../assets/icons/ads/app-icons/headphones.svg";
-import { ReactComponent as HospitalIcon } from "../assets/icons/ads/app-icons/hospital.svg";
-import { ReactComponent as JoystickIcon } from "../assets/icons/ads/app-icons/joystick.svg";
-import { ReactComponent as LaptopIcon } from "../assets/icons/ads/app-icons/laptop.svg";
-import { ReactComponent as LineChartIcon } from "../assets/icons/ads/app-icons/line-chart.svg";
-import { ReactComponent as LocationIcon } from "../assets/icons/ads/app-icons/location.svg";
-import { ReactComponent as LotusIcon } from "../assets/icons/ads/app-icons/lotus.svg";
-import { ReactComponent as LoveIcon } from "../assets/icons/ads/app-icons/love.svg";
-import { ReactComponent as MedalIcon } from "../assets/icons/ads/app-icons/medal.svg";
-import { ReactComponent as MedicalIcon } from "../assets/icons/ads/app-icons/medical.svg";
-import { ReactComponent as MoneyIcon } from "../assets/icons/ads/app-icons/money.svg";
-import { ReactComponent as MoonIcon } from "../assets/icons/ads/app-icons/moon.svg";
-import { ReactComponent as MugIcon } from "../assets/icons/ads/app-icons/mug.svg";
-import { ReactComponent as MusicIcon } from "../assets/icons/ads/app-icons/music.svg";
-import { ReactComponent as PantsIcon } from "../assets/icons/ads/app-icons/pants.svg";
-import { ReactComponent as PieChartIcon } from "../assets/icons/ads/app-icons/pie-chart.svg";
-import { ReactComponent as PizzaIcon } from "../assets/icons/ads/app-icons/pizza.svg";
-import { ReactComponent as PlantIcon } from "../assets/icons/ads/app-icons/plant.svg";
-import { ReactComponent as RainyWeatherIcon } from "../assets/icons/ads/app-icons/rainy-weather.svg";
-import { ReactComponent as RestaurantIcon } from "../assets/icons/ads/app-icons/restaurant.svg";
-import { ReactComponent as RocketIcon } from "../assets/icons/ads/app-icons/rocket.svg";
-import { ReactComponent as RoseIcon } from "../assets/icons/ads/app-icons/rose.svg";
-import { ReactComponent as RupeeIcon } from "../assets/icons/ads/app-icons/rupee.svg";
-import { ReactComponent as SaturnIcon } from "../assets/icons/ads/app-icons/saturn.svg";
-import { ReactComponent as ServerIcon } from "../assets/icons/ads/app-icons/server.svg";
-import { ReactComponent as ShakeHandsIcon } from "../assets/icons/ads/app-icons/shake-hands.svg";
-import { ReactComponent as ShirtIcon } from "../assets/icons/ads/app-icons/shirt.svg";
-import { ReactComponent as ShopIcon } from "../assets/icons/ads/app-icons/shop.svg";
-import { ReactComponent as SinglePersonIcon } from "../assets/icons/ads/app-icons/single-person.svg";
-import { ReactComponent as SmartphoneIcon } from "../assets/icons/ads/app-icons/smartphone.svg";
-import { ReactComponent as SnowyWeatherIcon } from "../assets/icons/ads/app-icons/snowy-weather.svg";
-import { ReactComponent as StarsIcon } from "../assets/icons/ads/app-icons/stars.svg";
-import { ReactComponent as SunflowerIcon } from "../assets/icons/ads/app-icons/sunflower.svg";
-import { ReactComponent as SystemIcon } from "../assets/icons/ads/app-icons/system.svg";
-import { ReactComponent as TeamIcon } from "../assets/icons/ads/app-icons/team.svg";
-import { ReactComponent as TreeIcon } from "../assets/icons/ads/app-icons/tree.svg";
-import { ReactComponent as UkPoundsIcon } from "../assets/icons/ads/app-icons/uk-pounds.svg";
-import { ReactComponent as WebsiteIcon } from "../assets/icons/ads/app-icons/website.svg";
-import { ReactComponent as YenIcon } from "../assets/icons/ads/app-icons/yen.svg";
-import { ReactComponent as SteamBowlIcon } from "../assets/icons/ads/app-icons/steam-bowl.svg";
-import ArrowDownIcon from "remixicon-react/ArrowDownSLineIcon";
-import ArrowUpIcon from "remixicon-react/ArrowUpSLineIcon";
-import ArrowLeftIcon from "remixicon-react/ArrowLeftSLineIcon";
-import ArrowRightIcon from "remixicon-react/ArrowRightSLineIcon";
-import HelpIcon from "remixicon-react/QuestionLineIcon";
-import OpenNewTabIcon from "remixicon-react/ShareBoxLineIcon";
-import ServerLineIcon from "remixicon-react/ServerLineIcon";
-
 import styled from "styled-components";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
+import { importRemixIcon, importSvg } from "Utils/icon-loadables";
+
+const BagIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/bag.svg"),
+);
+const ProductIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/product.svg"),
+);
+const BookIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/book.svg"),
+);
+const CameraIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/camera.svg"),
+);
+const FileIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/file.svg"),
+);
+const ChatIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/chat.svg"),
+);
+const CalenderIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/calender.svg"),
+);
+const FrameIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/frame.svg"),
+);
+const GlobeIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/globe.svg"),
+);
+const ShopperIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/shopper.svg"),
+);
+const HeartIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/heart.svg"),
+);
+const FlightIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/flight.svg"),
+);
+const AlienIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/alien.svg"),
+);
+const BarGraphIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/bar-graph.svg"),
+);
+const BasketballIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/basketball.svg"),
+);
+const BicycleIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/bicycle.svg"),
+);
+const BirdIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/bird.svg"),
+);
+const BitcoinIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/bitcoin.svg"),
+);
+const BurgerIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/burger.svg"),
+);
+const BusIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/bus.svg"),
+);
+const AirplaneIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/airplane.svg"),
+);
+const CallIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/call.svg"),
+);
+const CarIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/car.svg"),
+);
+const CardIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/card.svg"),
+);
+const CatIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/cat.svg"),
+);
+const ChineseRemnibiIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/chinese-remnibi.svg"),
+);
+const CloudIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/cloud.svg"),
+);
+const CodingIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/coding.svg"),
+);
+const CouplesIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/couples.svg"),
+);
+const CricketIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/cricket.svg"),
+);
+const DiamondIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/diamond.svg"),
+);
+const DogIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/dog.svg"),
+);
+const DollarIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/dollar.svg"),
+);
+const EarthIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/earth.svg"),
+);
+const EmailIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/email.svg"),
+);
+const EurosIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/euros.svg"),
+);
+const FamilyIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/family.svg"),
+);
+const FlagIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/flag.svg"),
+);
+const FootballIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/football.svg"),
+);
+const HatIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/hat.svg"),
+);
+const HeadphonesIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/headphones.svg"),
+);
+const HospitalIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/hospital.svg"),
+);
+const JoystickIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/joystick.svg"),
+);
+const LaptopIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/laptop.svg"),
+);
+const LineChartIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/line-chart.svg"),
+);
+const LocationIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/location.svg"),
+);
+const LotusIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/lotus.svg"),
+);
+const LoveIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/love.svg"),
+);
+const MedalIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/medal.svg"),
+);
+const MedicalIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/medical.svg"),
+);
+const MoneyIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/money.svg"),
+);
+const MoonIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/moon.svg"),
+);
+const MugIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/mug.svg"),
+);
+const MusicIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/music.svg"),
+);
+const PantsIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/pants.svg"),
+);
+const PieChartIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/pie-chart.svg"),
+);
+const PizzaIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/pizza.svg"),
+);
+const PlantIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/plant.svg"),
+);
+const RainyWeatherIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/rainy-weather.svg"),
+);
+const RestaurantIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/restaurant.svg"),
+);
+const RocketIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/rocket.svg"),
+);
+const RoseIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/rose.svg"),
+);
+const RupeeIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/rupee.svg"),
+);
+const SaturnIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/saturn.svg"),
+);
+const ServerIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/server.svg"),
+);
+const ShakeHandsIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/shake-hands.svg"),
+);
+const ShirtIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/shirt.svg"),
+);
+const ShopIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/shop.svg"),
+);
+const SinglePersonIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/single-person.svg"),
+);
+const SmartphoneIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/smartphone.svg"),
+);
+const SnowyWeatherIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/snowy-weather.svg"),
+);
+const StarsIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/stars.svg"),
+);
+const SunflowerIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/sunflower.svg"),
+);
+const SystemIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/system.svg"),
+);
+const TeamIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/team.svg"),
+);
+const TreeIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/tree.svg"),
+);
+const UkPoundsIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/uk-pounds.svg"),
+);
+const WebsiteIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/website.svg"),
+);
+const YenIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/yen.svg"),
+);
+const SteamBowlIcon = importSvg(() =>
+  import("../assets/icons/ads/app-icons/steam-bowl.svg"),
+);
+const ArrowDownIcon = importRemixIcon(() =>
+  import("remixicon-react/ArrowDownSLineIcon"),
+);
+const ArrowUpIcon = importRemixIcon(() =>
+  import("remixicon-react/ArrowUpSLineIcon"),
+);
+const ArrowLeftIcon = importRemixIcon(() =>
+  import("remixicon-react/ArrowLeftSLineIcon"),
+);
+const ArrowRightIcon = importRemixIcon(() =>
+  import("remixicon-react/ArrowRightSLineIcon"),
+);
+const HelpIcon = importRemixIcon(() =>
+  import("remixicon-react/QuestionLineIcon"),
+);
+const OpenNewTabIcon = importRemixIcon(() =>
+  import("remixicon-react/ShareBoxLineIcon"),
+);
+const ServerLineIcon = importRemixIcon(() =>
+  import("remixicon-react/ServerLineIcon"),
+);
 
 enum Size {
   xxs = "xxs",
