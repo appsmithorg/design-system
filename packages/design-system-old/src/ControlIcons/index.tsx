@@ -30,6 +30,9 @@ const DraggableIcon = importSvg(() =>
 const CloseCircleIcon = importSvg(() =>
   import("../assets/icons/control/close-circle.svg"),
 );
+const CloseCircleLineIcon = importSvg(() =>
+  import("../assets/icons/control/close-circle-line.svg"),
+);
 const AddCircleIcon = importSvg(() =>
   import("../assets/icons/control/add-circle.svg"),
 );
@@ -242,6 +245,11 @@ export const ControlIcons: {
   CLOSE_CIRCLE_CONTROL: (props: IconProps) => (
     <IconWrapper {...props}>
       <CloseCircleIcon />
+    </IconWrapper>
+  ),
+  CLOSE_CIRCLE_LINE_CONTROL: (props: IconProps) => (
+    <IconWrapper {...props}>
+      <CloseCircleLineIcon />
     </IconWrapper>
   ),
   ADD_CIRCLE_CONTROL: (props: IconProps) => (
