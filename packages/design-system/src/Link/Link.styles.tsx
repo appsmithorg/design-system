@@ -27,9 +27,9 @@ export const Styles = css<{ kind?: Kind }>`
   ${({ kind }) => kind && Kinds[kind]}
 
   font-family: var(--ads-v2-font-family);
-  color: var(--color);
+  color: var(--color) !important;
 
-  text-decoration: none;
+  text-decoration: none !important;
 
   display: flex;
   align-content: center;

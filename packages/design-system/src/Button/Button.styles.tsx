@@ -152,6 +152,12 @@ export const ButtonContent = styled.div<{
   border-radius: inherit;
   text-transform: capitalize;
 
+  & > .${ButtonContentChildrenClassName} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &
     > .${ButtonContentChildrenClassName},
     &
