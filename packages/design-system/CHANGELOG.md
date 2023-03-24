@@ -1,5 +1,15 @@
 # @appsmithorg/design-system
 
+## 2.1.0
+
+### Minor Changes
+
+- [#415](https://github.com/appsmithorg/design-system/pull/415) [`b559bf6`](https://github.com/appsmithorg/design-system/commit/b559bf64d1a8e76839bee4d24a81cf13b8e06ea7) Thanks [@iamakulov](https://github.com/iamakulov)! - feat: new importSvg and importRemixIcon wrappers for code-splitting icons
+
+### Patch Changes
+
+- [#389](https://github.com/appsmithorg/design-system/pull/389) [`6c7441f`](https://github.com/appsmithorg/design-system/commit/6c7441fc69255c1f63dcc1708d30d4ebd3b5d3dc) Thanks [@iamakulov](https://github.com/iamakulov)! - perf: add "sideEffects": false for better tree-shaking
+
 ## 2.0.8
 
 ### Patch Changes
