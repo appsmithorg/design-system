@@ -1,10 +1,17 @@
 import React from "react";
+import clsx from "classnames";
 
 import { LinkProps } from "./Link.types";
 import { StyledAnchor, StyledIcon, StyledRouterLink } from "./Link.styles";
 
 import { useLink } from "@react-aria/link";
 import { Text } from "../Text";
+import {
+  LinkClassName,
+  LinkEndIconClassName,
+  LinkStartIconClassName,
+  LinkTextClassName,
+} from "./Link.constants";
 
 /**
  *
@@ -18,7 +25,8 @@ import { Text } from "../Text";
 
 function Link(props: LinkProps) {
   const ref = React.useRef(null);
-  const { linkProps } = useLink(props, ref);
+  const { className, ...rest } = props;
+  const { linkProps } = useLink(rest, ref);
 
   const checkDomain = function (url: string) {
     if (url.indexOf("//") === 0) {
@@ -39,29 +47,45 @@ function Link(props: LinkProps) {
 
   const children = (
     <>
-      {props.startIcon && (
-        <StyledIcon $position="start" name={props.startIcon} size="md" />
+      {rest.startIcon && (
+        <StyledIcon
+          $position="start"
+          className={LinkStartIconClassName}
+          name={rest.startIcon}
+          size="md"
+        />
       )}
-      <Text color="inherit" kind="action-m">
-        {props.children}
+      <Text className={LinkTextClassName} color="inherit" kind="action-m">
+        {rest.children}
       </Text>
-      {props.endIcon && (
-        <StyledIcon $position="end" name={props.endIcon} size="md" />
+      {rest.endIcon && (
+        <StyledIcon
+          $position="end"
+          className={LinkEndIconClassName}
+          name={rest.endIcon}
+          size="md"
+        />
       )}
     </>
   );
 
-  return isExternal(props.to) ? (
-    <StyledAnchor href={props.to} kind={props.kind} target={props.target}>
+  return isExternal(rest.to) ? (
+    <StyledAnchor
+      className={clsx(LinkClassName, className)}
+      href={rest.to}
+      kind={rest.kind}
+      target={rest.target}
+    >
       {children}
     </StyledAnchor>
   ) : (
     <StyledRouterLink
       {...(linkProps as LinkProps)}
+      className={clsx(LinkClassName, className)}
       innerRef={ref}
-      kind={props.kind}
-      target={props.target}
-      to={props.to}
+      kind={rest.kind}
+      target={rest.target}
+      to={rest.to}
     >
       {children}
     </StyledRouterLink>
