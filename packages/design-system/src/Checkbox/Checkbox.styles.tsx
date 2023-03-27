@@ -26,16 +26,13 @@ const Checkbox = css`
     padding-left: var(--ads-v2-spaces-7);
     font-family: var(--ads-v2-font-family);
     color: var(--checkbox-color-label);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
   }
 
   &::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
+    top: 2px;
     width: 16px;
     height: 16px;
     border: 1px solid var(--ads-v2-color-border);
@@ -48,7 +45,7 @@ const Checkbox = css`
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
+    top: 2px;
     width: 16px;
     height: 16px;
     border-radius: var(--ads-v2-border-radius);
@@ -70,7 +67,7 @@ const Checkbox = css`
     opacity: 0;
     position: absolute;
     left: 3px;
-    top: 9px;
+    top: 11px;
     width: 5px;
     height: var(--ads-v2-spaces-1);
     border-radius: 4px;
@@ -88,7 +85,7 @@ const Checkbox = css`
     opacity: 0;
     position: absolute;
     left: 4px;
-    top: 7px;
+    top: 9px;
     width: 10px;
     height: var(--ads-v2-spaces-1);
     border-radius: 4px;
