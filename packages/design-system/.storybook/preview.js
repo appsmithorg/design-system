@@ -1,4 +1,5 @@
 import React from "react";
+import "normalize.css";
 import "./styles.css";
 import { addDecorator } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
