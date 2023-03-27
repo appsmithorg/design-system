@@ -31,6 +31,7 @@ export const StyledOverlay = styled(Overlay)`
   position: fixed;
   inset: 0;
   animation: ${overlayShow} 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
 `;
 
 export const StyledContent = styled(Content)`
@@ -47,6 +48,7 @@ export const StyledContent = styled(Content)`
   animation: ${contentShow} 250ms cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
+  z-index: 1001;
 `;
 
 export const StyledHeader = styled.div`
