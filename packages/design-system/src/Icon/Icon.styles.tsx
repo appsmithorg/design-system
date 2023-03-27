@@ -9,8 +9,6 @@ export const IconContainer = styled.span<{
   justify-content: center;
   font-size: ${({ size }) => (size ? size : "inherit")};
   color: ${({ color }) => (color ? color : "inherit")};
-  ${({ size }) => size && `width: ${size};`}
-  ${({ size }) => size && `height: ${size};`}
 
   & svg {
     width: ${({ size }) => (size ? size : "inherit")};
