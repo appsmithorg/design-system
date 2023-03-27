@@ -28,7 +28,7 @@ const Checkbox = css`
     color: var(--checkbox-color-label);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   &::before {
