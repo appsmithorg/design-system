@@ -5,5 +5,5 @@ export type SelectSizes = Extract<Sizes, "sm" | "md">;
 
 export type SelectProps = RCSelectProps & {
   size?: SelectSizes;
-  multiSelect?: boolean;
+  isMultiSelect?: boolean;
 };

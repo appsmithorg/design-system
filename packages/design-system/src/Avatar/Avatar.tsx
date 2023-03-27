@@ -46,7 +46,11 @@ const Avatar = React.forwardRef(
           ref={ref}
         >
           {image && (
-            <img alt="avatar" className={AvatarImageClassName} src={image} />
+            <img
+              alt={`avatar-${label}`}
+              className={AvatarImageClassName}
+              src={image}
+            />
           )}
           {!image && firstLetter && (
             <span className={AvatarSvgClassName}>{firstLetter}</span>

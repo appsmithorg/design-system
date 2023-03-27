@@ -301,7 +301,7 @@ const ArgTypes = {
       type: "number",
     },
     description:
-      "Max tag text length to show. Only works if content is text and multiSelect is true.",
+      "Max tag text length to show. Only works if content is text and isMultiSelect is true.",
     table: {
       type: {
         summary: "number",
@@ -315,7 +315,7 @@ const ArgTypes = {
     control: {
       type: "number",
     },
-    description: "Max tag count to show. Only works in multiSelect mode.",
+    description: "Max tag count to show. Only works in isMultiSelect mode.",
     table: {
       type: {
         summary: "number",
@@ -329,7 +329,7 @@ const ArgTypes = {
     control: {
       type: "text",
     },
-    description: "Max tag placeholder. Only works in multiSelect mode.",
+    description: "Max tag placeholder. Only works in isMultiSelect mode.",
     table: {
       type: {
         summary: "ReactNode/function(omittedValues)",
@@ -340,7 +340,7 @@ const ArgTypes = {
       },
     },
   },
-  multiSelect: {
+  isMultiSelect: {
     control: {
       type: "boolean",
     },
@@ -749,7 +749,7 @@ OptionStory.argTypes = {
       },
     },
   },
-  multiSelect: {
+  isMultiSelect: {
     table: {
       disable: true,
     },

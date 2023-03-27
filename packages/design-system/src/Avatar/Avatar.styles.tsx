@@ -5,22 +5,30 @@ import {
 } from "./Avatar.constants";
 import { AvatarSize } from "./Avatar.types";
 
+const Variables = css`
+  --avatar-width: 24px;
+  --avatar-height: 24px;
+  --avatar-font-size: var(--ads-v2-font-size-2);
+`;
+
 const Sizes = {
   sm: css`
-    width: 24px;
-    height: 24px;
-    font-size: var(--ads-v2-font-size-2);
+    --avatar-width: 24px;
+    --avatar-height: 24px;
+    --avatar-font-size: var(--ads-v2-font-size-2);
   `,
   md: css`
-    width: 32px;
-    height: 32px;
-    font-size: var(--ads-v2-font-size-4);
+    --avatar-width: 32px;
+    --avatar-height: 32px;
+    --avatar-font-size: var(--ads-v2-font-size-4);
   `,
 };
 
 export const StyledAvatar = styled.span<{
   size: AvatarSize;
 }>`
+  ${Variables}
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +43,10 @@ export const StyledAvatar = styled.span<{
   color: var(--ads-v2-color-fg);
   font-family: var(--ads-v2-font-family);
   border: 1px solid var(--ads-v2-color-white);
+
+  width: var(--avatar-width);
+  height: var(--avatar-height);
+  font-size: var(--avatar-font-size);
 
   img {
     width: 100%;
