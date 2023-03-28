@@ -12,7 +12,7 @@ export const TAB_MIN_HEIGHT = `36px`;
 
 export type TabProp = {
   key: string;
-  title: string;
+  title: string | JSX.Element;
   count?: number;
   panelComponent?: JSX.Element;
   icon?: IconName;
