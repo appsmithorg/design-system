@@ -132,6 +132,7 @@
     * ================== Shadow =================*
     * ===========================================*
   */
+  /* This is the shadow that applies only on popovers like select and menu and not in modal or anything that sort.*/
   --ads-v2-shadow-popovers: 0 1px 20px 0 rgba(76, 86, 100, 0.11);
 
 

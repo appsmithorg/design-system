@@ -11,8 +11,11 @@ export type TagProps = {
   className?: string;
 
   /** the words you want to display */
-  children: string | number;
+  children: string | number | React.ReactNode;
 
   /** whether or not the tag can be dismissed*/
   isClosable?: boolean;
+
+  /** the function to call when the tag is dismissed */
+  onClose?: () => void;
 } & React.HTMLAttributes<HTMLSpanElement>;

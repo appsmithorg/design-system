@@ -147,6 +147,9 @@ const CloseLineIcon = importRemixIcon(() =>
 const CloseCircleIcon = importRemixIcon(() =>
   import("remixicon-react/CloseCircleFillIcon"),
 );
+const CloseCircleLineIcon = importRemixIcon(() =>
+  import("remixicon-react/CloseCircleLineIcon"),
+);
 const CloudOfflineIcon = importRemixIcon(() =>
   import("remixicon-react/CloudOffLineIcon"),
 );
@@ -569,6 +572,7 @@ const ICON_LOOKUP = {
   "chevron-left": <ChevronLeft />,
   "chevron-right": <ChevronRight />,
   "close-circle": <CloseCircleIcon />,
+  "close-circle-line": <CloseCircleLineIcon />,
   "close-modal": <CloseLineIcon />,
   "close-x": <CloseLineIcon />,
   "cloud-off-line": <CloudOfflineIcon />,

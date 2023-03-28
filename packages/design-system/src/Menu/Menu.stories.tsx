@@ -15,6 +15,7 @@ import {
 } from "./Menu";
 import { Button } from "../Button";
 import { Text } from "../Text";
+import { Icon } from "../Icon";
 
 export default {
   title: "Design System/Menu",
@@ -26,7 +27,13 @@ const Template: ComponentStory<typeof Menu> = () => {
   return (
     <Menu defaultOpen>
       <MenuTrigger>
-        <Button>Menu</Button>
+        <Button
+          isIconButton
+          kind="tertiary"
+          size="sm"
+          startIcon="comment-context-menu"
+        />
+        {/*<Button>Menu</Button>*/}
       </MenuTrigger>
       <MenuContent loop width="200px">
         <MenuItem startIcon="hospital-line">
