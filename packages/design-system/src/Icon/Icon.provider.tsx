@@ -390,6 +390,7 @@ const BillingIcon = importSvg(
 );
 const ErrorIcon = importSvg(() => import("../__assets__/icons/ads/error.svg"));
 const ShineIcon = importSvg(() => import("../__assets__/icons/ads/shine.svg"));
+const SlashIcon = importSvg(() => import("../__assets__/icons/form/slash.svg"));
 const SuccessIcon = importSvg(
   () => import("../__assets__/icons/ads/success.svg"),
 );
@@ -474,6 +475,21 @@ const CapSolidIcon = importSvg(
 );
 const CapDotIcon = importSvg(
   () => import("../__assets__/icons/control/cap_dot.svg"),
+);
+const Datasources2 = importSvg(
+  () => import("../__assets__/icons/menu/datasources-2.svg"),
+);
+const JSIconV2 = importSvg(
+  () => import("../__assets__/icons/menu/js-group.svg"),
+);
+const JSFile = importSvg(
+  () => import("../__assets__/icons/menu/js-file-icon.svg"),
+);
+const JSFunction = importSvg(
+  () => import("../__assets__/icons/menu/js-function.svg"),
+);
+const QueryMain = importSvg(
+  () => import("../__assets__/icons/menu/query-main.svg"),
 );
 const LineDottedIcon = importSvg(
   () => import("../__assets__/icons/control/line_dotted.svg"),
@@ -783,6 +799,7 @@ const ICON_LOOKUP = {
   "compasses-line": CompassesLine,
   "context-menu": ContextMenuIcon,
   "database-2-line": Database2Line,
+  "datasources-2": Datasources2,
   "delete-blank": DeleteBin7,
   "delete-row": DeleteRowIcon,
   "double-arrow-right": DoubleArrowRightIcon,
@@ -809,6 +826,9 @@ const ICON_LOOKUP = {
   "group-2-line": Group2LineIcon,
   "group-line": GroupLineIcon,
   "invite-user": InviteUserIcon,
+  "js-icon-v2": JSIconV2,
+  "js-file": JSFile,
+  "js-function": JSFunction,
   "key-2-line": Key2LineIcon,
   "left-arrow-2": LeftArrowIcon2,
   "lightbulb-flash-line": LightbulbFlashLine,
@@ -831,6 +851,7 @@ const ICON_LOOKUP = {
   "pencil-fill-icon": PencilFillIcon,
   "pin-3": Pin3,
   "play-circle-line": PlayCircleLineIcon,
+  "query-main": QueryMain,
   "question-fill": QuestionFillIcon,
   "question-line": QuestionLineIcon,
   "question-mark": QuestionMarkIcon,
@@ -930,6 +951,7 @@ const ICON_LOOKUP = {
   setting: SettingIcon,
   share: ShareForwardIcon,
   shine: ShineIcon,
+  slash: SlashIcon,
   snippet: Snippet,
   success: SuccessIcon,
   support: SupportIcon,
