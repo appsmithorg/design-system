@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.1
+
+### Patch Changes
+
+- [#427](https://github.com/appsmithorg/design-system/pull/427) [`d7c5538`](https://github.com/appsmithorg/design-system/commit/d7c5538aa07bd481ce463b06376c93b1f026686c) Thanks [@ChandanBalajiBP](https://github.com/ChandanBalajiBP)! - feat: Add close-circle-line icon
+
 ## 1.1.0
 
 ### Minor Changes

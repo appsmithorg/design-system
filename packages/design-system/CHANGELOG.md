@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.1
+
+### Patch Changes
+
+- [#416](https://github.com/appsmithorg/design-system/pull/416) [`e928d89`](https://github.com/appsmithorg/design-system/commit/e928d8942f7f5a2c8445dd256d920b8908f8e9a7) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Refactored Select and Avatar component
+
 ## 2.1.0
 
 ### Minor Changes
