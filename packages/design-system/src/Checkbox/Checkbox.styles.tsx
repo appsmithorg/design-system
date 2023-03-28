@@ -27,8 +27,8 @@ const Checkbox = css`
     font-family: var(--ads-v2-font-family);
     color: var(--checkbox-color-label);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
   }
 
   &::before {
@@ -63,6 +63,7 @@ const Checkbox = css`
   label {
     user-select: none;
     cursor: pointer;
+    line-height: initial;
   }
 
   label::after {

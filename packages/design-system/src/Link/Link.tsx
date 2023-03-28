@@ -84,7 +84,7 @@ function Link(props: LinkProps) {
       className={clsx(LinkClassName, className)}
       innerRef={ref}
       kind={rest.kind}
-      target={rest.target}
+      target={"_self" || rest.target}
       to={rest.to}
     >
       {children}

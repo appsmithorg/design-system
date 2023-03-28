@@ -52,7 +52,7 @@ InternalLink.args = {
 
 export const ExternalLink = Template.bind({});
 ExternalLink.args = {
-  to: "/signup/test",
+  to: "https://appsmith.com",
   children: "Appsmith",
   endIcon: "arrow-right-line",
   kind: "primary",

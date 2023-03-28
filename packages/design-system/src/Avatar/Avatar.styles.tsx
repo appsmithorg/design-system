@@ -42,7 +42,6 @@ export const StyledAvatar = styled.span<{
   background-color: var(--ads-v2-color-bg-subtle);
   color: var(--ads-v2-color-fg);
   font-family: var(--ads-v2-font-family);
-  border: 1px solid var(--ads-v2-color-white);
 
   width: var(--avatar-width);
   height: var(--avatar-height);
@@ -83,6 +82,10 @@ export const StyledAvatarGroup = styled.div`
   .${AvatarClassName}:not(:first-child) {
     margin-left: -8px;
   }
+
+  ${StyledAvatar} {
+    border: 1px solid var(--ads-v2-color-white);
+  }
 `;
 
 export const AvatarMenuItem = styled.div`
@@ -90,4 +93,8 @@ export const AvatarMenuItem = styled.div`
   align-items: center;
   gap: var(--ads-v2-spaces-3);
   min-width: 160px;
+
+  ${StyledAvatar} {
+    border: none;
+  }
 `;

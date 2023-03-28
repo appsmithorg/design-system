@@ -1,4 +1,4 @@
-import React, { ForwardedRef } from "react";
+import React, { ForwardedRef, useState } from "react";
 import clsx from "classnames";
 
 import {
@@ -36,6 +36,9 @@ const Avatar = React.forwardRef(
       tooltipPlacement = "bottom",
       ...rest
     } = props;
+    const [hasErrorLoadingImage, setHasErrorLoadingImage] = useState(false);
+    const shouldRenderImage = image && !hasErrorLoadingImage;
+
     return (
       <Tooltip content={label} placement={tooltipPlacement}>
         <StyledAvatar
@@ -45,17 +48,19 @@ const Avatar = React.forwardRef(
           {...rest}
           ref={ref}
         >
-          {image && (
+          {image && !hasErrorLoadingImage && (
             <img
               alt={`avatar-${label}`}
               className={AvatarImageClassName}
+              onError={() => setHasErrorLoadingImage(true)}
+              onLoad={() => setHasErrorLoadingImage(false)}
               src={image}
             />
           )}
-          {!image && firstLetter && (
+          {!shouldRenderImage && firstLetter && (
             <span className={AvatarSvgClassName}>{firstLetter}</span>
           )}
-          {!image && !firstLetter && (
+          {!shouldRenderImage && !firstLetter && (
             <Icon
               className={AvatarLetterClassName}
               name={svgIconName}

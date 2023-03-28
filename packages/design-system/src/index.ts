@@ -1,5 +1,6 @@
 import "./__theme__/default/index.css";
 
+export * from "./Avatar";
 export * from "./Button";
 export * from "./Callout";
 export * from "./Checkbox";
