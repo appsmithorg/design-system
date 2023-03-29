@@ -28,6 +28,7 @@ function Tag({ children, isClosable, onClose, ...rest }: TagProps) {
           isIconButton
           kind="tertiary"
           onClick={closeHandler}
+          size="sm"
           startIcon="close-line"
         />
       )}
