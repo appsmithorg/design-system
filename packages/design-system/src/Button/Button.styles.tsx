@@ -98,6 +98,7 @@ const Kinds = {
     --button-color-border: transparent;
 
     &:hover:not([data-disabled="true"]):not([data-loading="true"]) {
+      mix-blend-mode: multiply;
       --button-color-bg: var(--ads-v2-color-bg-subtle);
       --button-color-fg: var(--ads-v2-color-fg);
     }
