@@ -27,9 +27,10 @@ export const Styles = css<{ kind?: Kind }>`
   ${({ kind }) => kind && Kinds[kind]}
 
   font-family: var(--ads-v2-font-family);
-  color: var(--color);
-
-  text-decoration: none;
+  /* This override is needed since blueprint is applying styles on a tag. */
+  /* TODO: Remove this once blueprint is removed from the main repo. */
+  color: var(--color) !important;
+  text-decoration: none !important;
 
   display: flex;
   align-content: center;

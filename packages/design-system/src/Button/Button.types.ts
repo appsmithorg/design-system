@@ -1,6 +1,4 @@
 import React from "react";
-import { AriaButtonProps } from "@react-types/button";
-import { PressEvent } from "@react-types/shared";
 import { Sizes } from "__config__/types";
 
 // Button types
@@ -36,11 +34,5 @@ export type ButtonProps = {
   UNSAFE_width?: string;
   /** The href attribute to apply to the button if it renders as an anchor. */
   href?: string;
-  onPress?: (e: PressEvent) => void;
-  onPressStart?: (e: PressEvent) => void;
-  onPressEnd?: (e: PressEvent) => void;
-  onPressChange?: (isPressed: boolean) => void;
-  onPressUp?: (e: PressEvent) => void;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> &
-  AriaButtonProps;
+  React.AnchorHTMLAttributes<HTMLAnchorElement>;

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { ReactComponent as UploadSuccessIcon } from "../assets/icons/ads/upload_success.svg";
 import { DndProvider, useDrop, DropTargetMonitor } from "react-dnd";
 import HTML5Backend, { NativeTypes } from "react-dnd-html5-backend";
 import { Variant } from "Constants/variants";
@@ -15,6 +14,11 @@ import {
   REMOVE_FILE_TOOL_TIP,
 } from "Constants/messages";
 import { Classes } from "Constants/classes";
+import { importSvg } from "Utils/icon-loadables";
+
+const UploadSuccessIcon = importSvg(() =>
+  import("../assets/icons/ads/upload_success.svg"),
+);
 
 export const FileEndings = {
   IMAGE: ".jpeg,.png,.svg",
@@ -194,7 +198,13 @@ const UploadIconWrapper = styled.div`
 `;
 
 function FilePickerComponent(props: FilePickerProps) {
-  const { fileType, logoUploadError, onFileRemoved, onFileUploaded, fileUploader } = props;
+  const {
+    fileType,
+    logoUploadError,
+    onFileRemoved,
+    onFileUploaded,
+    fileUploader,
+  } = props;
   const [fileInfo, setFileInfo] = useState<{ name: string; size: number }>({
     name: "",
     size: 0,

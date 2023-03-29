@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.0.52
+
+### Patch Changes
+
+- [#393](https://github.com/appsmithorg/design-system/pull/393) [`a81f44b`](https://github.com/appsmithorg/design-system/commit/a81f44bcfbd9c259fbe03f1c754179250f14b16c) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding the support for row expansion on the Table component
+
 ## 1.0.51
 
 ### Patch Changes

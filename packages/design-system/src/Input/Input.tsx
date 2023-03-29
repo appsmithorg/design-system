@@ -52,10 +52,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const { descriptionProps, errorMessageProps, inputProps, labelProps } =
       useTextField(props, inputRef);
     const { focusProps, isFocusVisible } = useFocusRing();
-    const { className: startIconClassName, ...restOfStartIconProps } =
-      startIconProps || {};
-    const { className: endIconClassName, ...restOfEndIconProps } =
-      endIconProps || {};
+    const {
+      className: startIconClassName,
+      onClick: startIconOnClick,
+      ...restOfStartIconProps
+    } = startIconProps || {};
+    const {
+      className: endIconClassName,
+      onClick: endIconOnClick,
+      ...restOfEndIconProps
+    } = endIconProps || {};
 
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(event.target.value);
@@ -87,7 +93,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                   InputStartIconClassName,
                   startIconClassName,
                 )}
+                data-has-onclick={!!startIconOnClick}
                 name={startIcon}
+                onClick={startIconOnClick}
                 size={size}
                 {...restOfStartIconProps}
               />
@@ -120,7 +128,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                   InputEndIconClassName,
                   endIconClassName,
                 )}
+                data-has-onclick={!!endIconOnClick}
                 name={endIcon}
+                onClick={endIconOnClick}
                 size={size}
                 {...restOfEndIconProps}
               />

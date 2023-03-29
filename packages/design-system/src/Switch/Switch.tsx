@@ -22,6 +22,7 @@ function Switch(props: SwitchProps) {
       <StyledSwitchLabel
         className={SwitchClassNameLabel}
         isDisabled={props.isDisabled}
+        renderAs="label"
       >
         {props.children}
         <StyledSwitchInput

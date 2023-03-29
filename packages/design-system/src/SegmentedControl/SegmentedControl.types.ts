@@ -1,8 +1,10 @@
+import React from "react";
+
 export type SegmentedControlOption = {
   /** The value of the option */
   value: string;
   /** The label of the option */
-  label?: string;
+  label?: string | React.ReactNode;
   /** The icon of the option */
   startIcon?: React.ReactNode | string;
   /** The icon of the option */

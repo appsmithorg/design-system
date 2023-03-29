@@ -27,15 +27,15 @@ const Checkbox = css`
     font-family: var(--ads-v2-font-family);
     color: var(--checkbox-color-label);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
   }
 
   &::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 2px;
+    top: 0;
     width: 16px;
     height: 16px;
     border: 1px solid var(--ads-v2-color-border);
@@ -48,7 +48,7 @@ const Checkbox = css`
     content: "";
     position: absolute;
     left: 0;
-    top: 2px;
+    top: 0;
     width: 16px;
     height: 16px;
     border-radius: var(--ads-v2-border-radius);
@@ -63,6 +63,7 @@ const Checkbox = css`
   label {
     user-select: none;
     cursor: pointer;
+    line-height: initial;
   }
 
   label::after {
@@ -70,7 +71,7 @@ const Checkbox = css`
     opacity: 0;
     position: absolute;
     left: 3px;
-    top: 11px;
+    top: 9px;
     width: 5px;
     height: var(--ads-v2-spaces-1);
     border-radius: 4px;
@@ -88,7 +89,7 @@ const Checkbox = css`
     opacity: 0;
     position: absolute;
     left: 4px;
-    top: 9px;
+    top: 7px;
     width: 10px;
     height: var(--ads-v2-spaces-1);
     border-radius: 4px;
@@ -131,7 +132,7 @@ export const StyledCheckbox = styled.label<{
         label::after {
           opacity: 1;
           left: 3px;
-          top: 9px;
+          top: 7px;
           width: 10px;
           transform: rotateZ(0deg);
         }
