@@ -38,17 +38,21 @@ function Callout({
         <StyledChildren kind="body-m">{children}</StyledChildren>
         {links && (
           <StyledLinks>
-            {links.map((link) => (
-              <Link
-                endIcon={link.endIcon}
-                key={link.to}
-                kind="secondary"
-                startIcon={link.startIcon}
-                to={link.to}
-              >
-                {link.children}
-              </Link>
-            ))}
+            {links.map((link) => {
+              const { endIcon, onClick, startIcon, to, ...restOfLink } = link;
+              return (
+                <Link
+                  endIcon={endIcon}
+                  key={to || "onClickKey"}
+                  kind="secondary"
+                  startIcon={startIcon}
+                  to={onClick ? "" : to}
+                  {...restOfLink}
+                >
+                  {link.children}
+                </Link>
+              );
+            })}
           </StyledLinks>
         )}
       </StyledChildrenContainer>

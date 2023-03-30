@@ -40,8 +40,10 @@ CalloutWithLink.args = {
       children: "Home",
     },
     {
-      to: "https://docs.appsmith.com",
       children: "Docs",
+      onClick: () => {
+        console.log("I'm clicking things!");
+      },
     },
   ],
 };
