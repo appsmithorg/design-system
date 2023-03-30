@@ -25,7 +25,7 @@ export default {
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Menu> = () => {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
         <Button
           isIconButton
@@ -97,11 +97,7 @@ MenuFullStory.storyName = "Complete Menu";
 MenuFullStory.args = {};
 
 export function MenuStory({ children, ...args }) {
-  return (
-    <Menu defaultOpen {...args}>
-      {children}
-    </Menu>
-  );
+  return <Menu {...args}>{children}</Menu>;
 }
 MenuStory.storyName = "Menu";
 MenuStory.argTypes = {
@@ -197,7 +193,7 @@ MenuStory.args = {
 
 export function MenuTriggerStory({ children, ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger {...args}>{children}</MenuTrigger>
     </Menu>
   );
@@ -225,7 +221,7 @@ MenuTriggerStory.args = {
 
 export function MenuContentStory({ children, ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
         <Button>Open Menu</Button>
       </MenuTrigger>
@@ -285,7 +281,7 @@ MenuContentStory.args = {
 
 export function MenuItemStory({ children, ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
         <Button>Open Menu</Button>
       </MenuTrigger>
@@ -375,7 +371,7 @@ MenuItemStory.args = {
 
 export function MenuSeparatorStory({ ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
         <Button>Open Menu</Button>
       </MenuTrigger>
@@ -392,7 +388,7 @@ MenuSeparatorStory.storyName = "Menu Separator";
 
 export function MenuSubmenuStory({ ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
         <Button>Open Menu</Button>
       </MenuTrigger>
