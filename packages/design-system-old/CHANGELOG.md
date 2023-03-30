@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.2
+
+### Patch Changes
+
+- [#378](https://github.com/appsmithorg/design-system/pull/378) [`a6223d0`](https://github.com/appsmithorg/design-system/commit/a6223d07b39f587c2fa287953c7928bccdfae4c1) Thanks [@rahulramesha](https://github.com/rahulramesha)! - feat: Auto layout conversion design components changes
+
 ## 1.1.1
 
 ### Patch Changes
