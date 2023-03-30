@@ -6,7 +6,7 @@ import { StyledSearchInput } from "./SearchInput.styles";
 import { SearchInputClassName } from "./SearchInput.constants";
 
 function SearchInput(props: SearchInputProps) {
-  const { className, onChange, placeholder } = props;
+  const { className, onChange, placeholder, ...rest } = props;
   const [value, setValue] = useState<string>(props.value || "");
 
   const handleChange = (val: string) => {
@@ -25,6 +25,7 @@ function SearchInput(props: SearchInputProps) {
       size="md"
       startIcon="search-line"
       value={value}
+      {...rest}
     />
   );
 }
