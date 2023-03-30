@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { Size } from "./Tag.types";
 import { Icon } from "../Icon";
+import { Button } from "../Button";
 
 const Variables = css``;
 
@@ -34,7 +35,7 @@ export const StyledTag = styled.span<{
   ${({ isClosed }) => isClosed && `display: none;`}
 `;
 
-export const StyledIcon = styled(Icon)`
+export const StyledButton = styled(Button)`
   margin-left: var(--ads-v2-spaces-1);
   position: relative;
   top: 1px; // align with text

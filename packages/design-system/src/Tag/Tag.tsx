@@ -1,7 +1,7 @@
 import React from "react";
 
 import { TagProps } from "./Tag.types";
-import { StyledIcon, StyledTag } from "./Tag.styles";
+import { StyledButton, StyledTag } from "./Tag.styles";
 import { Text } from "../Text";
 
 /*TODO:
@@ -21,7 +21,16 @@ function Tag({ children, isClosable, onClose, ...rest }: TagProps) {
     <StyledTag isClosed={isClosed} {...rest}>
       <Text kind="body-s">{children}</Text>
       {isClosable && (
-        <StyledIcon name="close-line" onClick={closeHandler} size="sm" />
+        // We are setting unsafe height here because this is a rare case where a smaller icon button is needed.
+        <StyledButton
+          UNSAFE_height="12px !important"
+          UNSAFE_width="12px !important"
+          isIconButton
+          kind="tertiary"
+          onClick={closeHandler}
+          size="sm"
+          startIcon="close-line"
+        />
       )}
     </StyledTag>
   );

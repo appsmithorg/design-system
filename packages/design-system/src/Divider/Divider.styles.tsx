@@ -10,14 +10,10 @@ export const StyledDivider = styled.span<{
 }>`
   ${Variables};
 
-  background-color: var(--ads-v2-color-border);
-  width: ${(props) =>
+  ${(props) =>
     props.orientation === "horizontal"
-      ? "var(--divider-length)"
-      : "var(--divider-thickness)"};
-  height: ${(props) =>
-    props.orientation === "horizontal"
-      ? "var(--divider-thickness)"
-      : "var(--divider-length)"};
+      ? "border-top: var(--divider-thickness) solid var(--ads-v2-color-border); width: var(--divider-length);"
+      : "border-left: var(--divider-thickness) solid var(--ads-v2-color-border); height: var(--divider-length);"}
+
   display: inline-block;
 `;
