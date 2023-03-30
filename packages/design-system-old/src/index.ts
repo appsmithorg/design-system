@@ -197,3 +197,4 @@ export * from "./constants/typography";
 export * from "./constants/variants";
 export * from "./types/common";
 export * from "./utils/colors";
+export * from "./utils/icon-loadables";

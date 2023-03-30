@@ -18,8 +18,8 @@ export const StyledSwitchLabel = styled(Text)<{
   flex-grow: 1;
   align-items: center;
   justify-content: space-between;
-
   min-width: 9rem;
+  cursor: pointer;
 
   ${({ isDisabled }) =>
     isDisabled &&

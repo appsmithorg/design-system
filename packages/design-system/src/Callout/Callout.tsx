@@ -4,7 +4,7 @@ import { CalloutProps } from "./Callout.types";
 import {
   StyledCallout,
   StyledChildrenContainer,
-  StyledCloseIcon,
+  StyledCloseButton,
   StyledIconContainer,
   StyledLinks,
   StyledChildren,
@@ -53,11 +53,11 @@ function Callout({
         )}
       </StyledChildrenContainer>
       {isClosable && (
-        <StyledCloseIcon
+        <StyledCloseButton
           aria-label="Close"
           isIconButton
           kind="tertiary"
-          onPress={() => setClosed(true)}
+          onClick={() => setClosed(true)}
           size="sm"
           startIcon="close-line"
         />

@@ -549,7 +549,7 @@ function LinkButtonComponent(props: ButtonProps) {
       data-cy={cypressSelector}
       href={href}
       {...filteredProps}
-      onClick={(e: React.MouseEvent<HTMLElement>) => onClick && onClick(e)}
+      onClick={(e: React.MouseEvent<HTMLElement>) => !props.disabled && onClick && onClick(e)}
     >
       {getButtonContent(props)}
     </StyledLinkButton>

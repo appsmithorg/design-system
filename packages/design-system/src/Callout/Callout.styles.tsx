@@ -31,7 +31,6 @@ export const StyledCallout = styled.div<{
   ${({ kind }) => kind && Kinds[kind]}
 
   // TODO: get minh, minw from vasanth (with all optionals switched off)
-  width: 450px;
   min-height: 40px;
   box-sizing: border-box;
   display: flex;
@@ -46,7 +45,7 @@ export const StyledCallout = styled.div<{
   ${({ isClosed }) => isClosed && `display: none;`}
 `;
 
-export const StyledCloseIcon = styled(Button)`
+export const StyledCloseButton = styled(Button)`
   margin-left: auto;
   cursor: pointer;
   min-width: fit-content;

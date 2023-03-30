@@ -7,10 +7,10 @@ export const StyledSegmentedControl = styled.div<{
   align-items: center;
   justify-content: space-between;
   gap: var(--ads-v2-spaces-2);
-  background-color: var(--ads-v2-color-bg-muted);
+  background-color: var(--ads-v2-color-bg-subtle);
   padding: var(--ads-v2-spaces-1);
-  border-radius: var(--ads-v2-border-radius);
-  height: 32px;
+  /* outer radius = inner radius + padding */
+  border-radius: calc(var(--ads-v2-border-radius) + var(--ads-v2-spaces-1));
   box-sizing: border-box;
 `;
 
@@ -50,7 +50,6 @@ export const StyledControlContainer = styled.div`
   &[data-selected="true"] {
     background-color: var(--ads-v2-color-bg);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
-    border: 1px solid var(--ads-v2-color-border);
 
     & > ${StyledSegment} > * {
       color: var(--ads-v2-color-fg);
@@ -64,7 +63,7 @@ export const StyledControlContainer = styled.div`
     right: 0;
     width: 1px;
     height: 16px;
-    background-color: var(--ads-v2-color-bg-emphasis-plus);
+    background-color: var(--ads-v2-color-bg-emphasis);
   }
 
   /* This before is to mask the separator in left side of selected control */
@@ -72,8 +71,8 @@ export const StyledControlContainer = styled.div`
     content: "";
     position: absolute;
     left: -7px;
-    width: 1px;
+    width: 2px;
     height: 16px;
-    background-color: var(--ads-v2-color-bg-muted);
+    background-color: var(--ads-v2-color-bg-subtle);
   }
 `;

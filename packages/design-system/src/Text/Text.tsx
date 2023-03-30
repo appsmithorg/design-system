@@ -1,6 +1,8 @@
 import React from "react";
-import { Kind, TextProps } from "./Text.types";
+import clsx from "classnames";
+import { TextProps } from "./Text.types";
 import { StyledText } from "./Text.styles";
+import { TextClassName } from "./Text.constants";
 
 /*
 TODO:
@@ -11,9 +13,22 @@ TODO:
  - create uneditable field with prop `uneditable`
  */
 
-function Text({ as, children, color, kind, ...rest }: TextProps) {
+function Text({
+  children,
+  className,
+  color,
+  kind,
+  renderAs,
+  ...rest
+}: TextProps) {
   return (
-    <StyledText as={as} color={color} kind={kind} {...rest}>
+    <StyledText
+      as={renderAs}
+      className={clsx(TextClassName, className)}
+      color={color}
+      kind={kind}
+      {...rest}
+    >
       {children}
     </StyledText>
   );
@@ -22,7 +37,7 @@ function Text({ as, children, color, kind, ...rest }: TextProps) {
 Text.displayName = "Text";
 
 Text.defaultProps = {
-  as: "span",
+  renderAs: "span",
   kind: "span",
 };
 

@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: refactor tab
+feat: Refactored Select and Avatar component

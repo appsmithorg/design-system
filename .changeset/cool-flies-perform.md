@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: add callout
+fix: divider width and color
