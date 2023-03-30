@@ -116,6 +116,18 @@ const JsIcon = importSvg(() => import("../assets/icons/ads/js.svg"));
 const ExecuteIcon = importSvg(() => import("../assets/icons/ads/execute.svg"));
 const PackageIcon = importSvg(() => import("../assets/icons/ads/package.svg"));
 
+const DevicesIcon = importSvg(() => import("../assets/icons/ads/devices.svg"));
+const GridIcon = importSvg(() => import("../assets/icons/ads/grid.svg"));
+const HistoryLineIcon = importSvg(() =>
+  import("../assets/icons/ads/history-line.svg"),
+);
+const SuccessLineIcon = importSvg(() =>
+  import("../assets/icons/ads/success-line.svg"),
+);
+const ErrorLineIcon = importSvg(() =>
+  import("../assets/icons/ads/error-line.svg"),
+);
+
 // remix icons
 const AddMoreIcon = importRemixIcon(() =>
   import("remixicon-react/AddCircleLineIcon"),
@@ -509,6 +521,15 @@ export const IconWrapper = styled.span<IconProps>`
   align-items: center;
   cursor: ${(props) =>
     props.disabled ? "not-allowed" : props.clickable ? "pointer" : "default"};
+  ${(props) =>
+    props.withWrapper &&
+    `
+    min-width: ${sizeHandler(props.size) * 2}px;
+    height: ${sizeHandler(props.size) * 2}px;
+    border-radius: 9999px;
+    justify-content: center;
+    background-color: ${props.wrapperColor || "rgba(0, 0, 0, 0.1)"};
+  `}
   svg {
     width: ${(props) => sizeHandler(props.size)}px;
     height: ${(props) => sizeHandler(props.size)}px;
@@ -666,6 +687,9 @@ const ICON_LOOKUP = {
   "warning-line": <WarningLineIcon />,
   "warning-triangle": <WarningTriangleIcon />,
   "money-dollar-circle-line": <MoneyDollarCircleLineIcon />,
+  "success-line": <SuccessLineIcon />,
+  "error-line": <ErrorLineIcon />,
+  "history-line": <HistoryLineIcon />,
   billing: <BillingIcon />,
   book: <BookIcon />,
   bug: <BugIcon />,
@@ -740,6 +764,8 @@ const ICON_LOOKUP = {
   widget: <WidgetIcon />,
   workspace: <WorkspaceIcon />,
   package: <PackageIcon />,
+  devices: <DevicesIcon />,
+  grid: <GridIcon />,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);
@@ -758,6 +784,8 @@ export type IconProps = {
   loaderWithIconWrapper?: boolean;
   clickable?: boolean;
   disabled?: boolean;
+  withWrapper?: boolean;
+  wrapperColor?: string;
 };
 
 const Icon = forwardRef(

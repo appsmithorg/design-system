@@ -7,7 +7,7 @@ const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: max-content;
-  gap: 14px;
+  gap: 8px;
 `;
 
 const MenuHeader = styled.div`
@@ -25,12 +25,12 @@ const MenuBody = styled.div<{ isOpen: boolean }>`
   overflow: hidden;
   margin-left: 30px;
   flex-direction: column;
-  gap: 14px;
 `;
 
 export interface CollapsibleMenuProps {
   title: string;
   children: React.ReactNode;
+  className?: string;
   leftIcon?: string;
   showIcon?: boolean;
   rightIcon?: string;
@@ -40,6 +40,7 @@ export interface CollapsibleMenuProps {
 export function Collapsible(props: CollapsibleMenuProps) {
   const {
     children,
+    className,
     headerProps,
     leftIcon,
     rightIcon,
@@ -49,11 +50,11 @@ export function Collapsible(props: CollapsibleMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <MenuContainer>
+    <MenuContainer className={className}>
       <MenuHeader onClick={() => setIsOpen(!isOpen)}>
         {showIcon && (
           <Icon
-            name={leftIcon ? leftIcon : isOpen ? "expand-more" : "expand-less"}
+            name={leftIcon ? leftIcon : isOpen ? "expand-less" : "expand-more"}
             size={IconSize.XXL}
           />
         )}
