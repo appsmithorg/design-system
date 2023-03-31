@@ -69,7 +69,21 @@ function Link(props: LinkProps) {
     </>
   );
 
-  return isExternal(rest.to) ? (
+  return rest.onClick ? (
+    // if an onClick prop exists
+    <StyledRouterLink
+      {...(linkProps as LinkProps)}
+      className={clsx(LinkClassName, className)}
+      innerRef={ref}
+      kind={rest.kind}
+      onClick={rest.onClick}
+      target={"_self"}
+      to=""
+    >
+      {children}
+    </StyledRouterLink>
+  ) : isExternal(rest.to) ? (
+    // if the url passed is external
     <StyledAnchor
       className={clsx(LinkClassName, className)}
       href={rest.to}
@@ -79,6 +93,7 @@ function Link(props: LinkProps) {
       {children}
     </StyledAnchor>
   ) : (
+    // if the url passed is internal
     <StyledRouterLink
       {...(linkProps as LinkProps)}
       className={clsx(LinkClassName, className)}
