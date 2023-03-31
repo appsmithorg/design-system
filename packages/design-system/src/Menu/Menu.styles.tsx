@@ -30,7 +30,7 @@ const MenuItemSizeStyles = {
 };
 
 const MenuContentStyle = css`
-  ${Variables}
+  ${Variables};
 
   width: fit-content;
   max-width: 280px;
@@ -53,6 +53,7 @@ export const StyledMenuContent = styled(RadixMenu.Content)<{
   ${MenuContentStyle}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
+  z-index: 10 !important;
 `;
 
 export const StyledMenuSubContent = styled(RadixMenu.SubContent)<{
