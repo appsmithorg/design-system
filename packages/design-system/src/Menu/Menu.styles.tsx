@@ -53,9 +53,7 @@ export const StyledMenuContent = styled(RadixMenu.Content)<{
   ${MenuContentStyle}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
-  &&&&& {
-    z-index: 100;
-  }
+  z-index: 100;
 `;
 
 export const StyledMenuSubContent = styled(RadixMenu.SubContent)<{
