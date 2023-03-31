@@ -1,7 +1,6 @@
 import React from "react";
 import * as RadixMenu from "@radix-ui/react-dropdown-menu";
 import clsx from "classnames";
-import "./styles.css";
 
 import {
   StyledMenuContent,

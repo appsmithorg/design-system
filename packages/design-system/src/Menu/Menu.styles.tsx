@@ -44,6 +44,7 @@ const MenuContentStyle = css`
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
   overflow: scroll;
+  z-index: 10;
 `;
 
 export const StyledMenuContent = styled(RadixMenu.Content)<{
@@ -53,7 +54,6 @@ export const StyledMenuContent = styled(RadixMenu.Content)<{
   ${MenuContentStyle}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
-  z-index: 100;
 `;
 
 export const StyledMenuSubContent = styled(RadixMenu.SubContent)<{
