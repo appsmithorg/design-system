@@ -22,6 +22,7 @@ function Callout({
   isClosable,
   kind = "info",
   links,
+  onClose,
   ...rest
 }: CalloutProps) {
   const [isClosed, setClosed] = React.useState(false);
@@ -61,7 +62,10 @@ function Callout({
           aria-label="Close"
           isIconButton
           kind="tertiary"
-          onClick={() => setClosed(true)}
+          onClick={() => {
+            setClosed(true);
+            onClose && onClose();
+          }}
           size="sm"
           startIcon="close-line"
         />
