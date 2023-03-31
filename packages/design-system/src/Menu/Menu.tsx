@@ -41,7 +41,7 @@ function MenuContent({
   ...props
 }: MenuContentProps) {
   return (
-    <RadixMenu.Portal style={{ zIndex: "10 !important" }} {...portalProps}>
+    <RadixMenu.Portal {...portalProps}>
       <StyledMenuContent
         className={clsx(MenuClassName, className)}
         height={height}
