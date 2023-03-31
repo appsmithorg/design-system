@@ -40,14 +40,14 @@ function Callout({
         {links && (
           <StyledLinks>
             {links.map((link) => {
-              const { endIcon, onClick, startIcon, to, ...restOfLink } = link;
+              const { endIcon, startIcon, to, ...restOfLink } = link;
               return (
                 <Link
                   endIcon={endIcon}
                   key={to || "onClickKey"}
                   kind="secondary"
                   startIcon={startIcon}
-                  to={onClick ? "" : to}
+                  to={restOfLink.onClick ? "" : to}
                   {...restOfLink}
                 >
                   {link.children}
