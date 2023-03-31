@@ -21,6 +21,7 @@ function NumberInput(props: NumberInputProps) {
     prefix = "",
     scale = 1,
     suffix = "",
+    ...rest
   } = props;
   const initialValue =
     props.value !== undefined ? prefix + (props.value || "") + suffix : "";
@@ -90,6 +91,7 @@ function NumberInput(props: NumberInputProps) {
       startIconProps={{
         onClick: () => !isDisabled && !isReadOnly && handleChange("subtract"),
       }}
+      {...rest}
       value={value}
     />
   );
