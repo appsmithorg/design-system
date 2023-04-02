@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const StyledSegmentedControl = styled.div<{
   isDisabled?: boolean;
+  isFullWidth?: boolean;
 }>`
-  display: flex;
+  display: ${({ isFullWidth }) => (isFullWidth ? "flex" : "inline-flex")};
   align-items: center;
   justify-content: space-between;
   gap: var(--ads-v2-spaces-2);

@@ -22,4 +22,6 @@ export type SegmentedControlProps = {
   defaultValue?: string;
   /** The onChange of the SegmentedControl */
   onChange?: (value: string) => void;
+  /** Whether the control should consume full width of container or not */
+  isFullWidth?: boolean;
 } & React.HTMLAttributes<HTMLDivElement>;

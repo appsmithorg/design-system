@@ -34,91 +34,91 @@ const Template: ComponentStory<typeof Select> = (args) => {
     <Select {...args}>
       <Option value="value 1">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="home-5-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 1
         </div>
       </Option>
       <Option disabled value="option 2">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 2
         </div>
       </Option>
       <Option value="option 3">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-2-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 3
         </div>
       </Option>
       <Option value="option 4">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-3-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 4
         </div>
       </Option>
       <Option value="option 5">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-4-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 5
         </div>
       </Option>
       <Option value="option 6">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="bank-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 6
         </div>
       </Option>
       <Option value="option 7">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="store-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 7
         </div>
       </Option>
       <Option value="option 8">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="store-2-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 8
         </div>
       </Option>
       <Option value="option 9">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="store-3-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 9
         </div>
       </Option>
       <Option value="option 10">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="hospital-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 10
         </div>
       </Option>
       <Option value="option 11">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="ancient-gate-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 11
         </div>
       </Option>
       <Option value="option 12">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="ancient-pavilion-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 12
         </div>
       </Option>
       <Option value="option 13">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-2-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 13
         </div>
       </Option>
       <Option value="option 14">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-3-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 14
         </div>
       </Option>
       <Option value="option 15">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-4-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 15
         </div>
       </Option>
@@ -662,7 +662,7 @@ const OptionTemplate: ComponentStory<typeof Option> = ({
       <Option {...args} value="Test">
         {children || (
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <Icon name="home-5-line" size="md" />
+            <Icon name="arrow-left-line" size="md" />
             Option 1
           </div>
         )}

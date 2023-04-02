@@ -53,8 +53,6 @@ export const StyledAnchor = styled.a<{ kind?: Kind }>`
 export const StyledIcon = styled(Icon)<{
   $position: "start" | "end";
 }>`
-  margin-top: var(--ads-v2-spaces-1);
-  margin-bottom: var(--ads-v2-spaces-1);
   margin-right: ${(props) =>
     props.$position == "start" && "var(--ads-v2-spaces-2)"};
   margin-left: ${(props) =>
