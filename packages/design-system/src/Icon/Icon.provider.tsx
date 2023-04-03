@@ -139,6 +139,8 @@ import AccountBoxLineIcon from "remixicon-react/AccountBoxLineIcon";
 import AddLineIcon from "remixicon-react/AddLineIcon";
 import SearchLineIcon from "remixicon-react/SearchLineIcon";
 import DeleteBinLineIcon from "remixicon-react/DeleteBinLineIcon";
+import SkipRightLineIcon from "remixicon-react/SkipForwardLineIcon";
+import SkipLeftLineIcon from "remixicon-react/SkipBackLineIcon";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
 import { ReactComponent as CancelIcon } from "../__assets__/icons/ads/cancel.svg";
@@ -260,6 +262,16 @@ import { ReactComponent as JSIconV2 } from "../__assets__/icons/menu/js-group.sv
 import { ReactComponent as JSFile } from "../__assets__/icons/menu/js-file-icon.svg";
 import { ReactComponent as JSFunction } from "../__assets__/icons/menu/js-function.svg";
 import { ReactComponent as QueryMain } from "../__assets__/icons/menu/query-main.svg";
+
+import { ReactComponent as AlignCenter } from "../__assets__/icons/ads/align-center.svg";
+import { ReactComponent as AlignLeft } from "../__assets__/icons/ads/align-left.svg";
+import { ReactComponent as AlignRight } from "../__assets__/icons/ads/align-right.svg";
+import { ReactComponent as ColumnFreeze } from "../__assets__/icons/ads/column-freeze.svg";
+import { ReactComponent as VerticalBottom } from "../__assets__/icons/ads/vertical-bottom.svg";
+import { ReactComponent as VerticalMiddle } from "../__assets__/icons/ads/vertical-middle.svg";
+import { ReactComponent as VerticalTop } from "../__assets__/icons/ads/vertical-top.svg";
+import { ReactComponent as ContractLeft } from "../__assets__/icons/ads/contract-left-line.svg";
+import { ReactComponent as ContractRight } from "../__assets__/icons/ads/contract-right-line.svg";
 
 function PlayIconPNGWrapper() {
   return (
@@ -473,6 +485,17 @@ const ICON_LOOKUP = {
   "search-line": SearchLineIcon,
   "loader-line": LoaderLineIcon,
   "delete-bin-line": DeleteBinLineIcon,
+  "align-center": AlignCenter,
+  "align-left": AlignLeft,
+  "align-right": AlignRight,
+  "column-freeze": ColumnFreeze,
+  "vertical-align-bottom": VerticalBottom,
+  "vertical-align-middle": VerticalMiddle,
+  "vertical-align-top": VerticalTop,
+  "skip-right-line": SkipRightLineIcon,
+  "skip-left-line": SkipLeftLineIcon,
+  "contract-left-line": ContractLeft,
+  "contract-right-line": ContractRight,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,
