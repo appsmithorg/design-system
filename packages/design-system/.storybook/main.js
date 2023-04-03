@@ -69,5 +69,6 @@ module.exports = {
       }
     ]);
     return options;
-  }
+  },
+  features: { buildStoriesJson: true },
 }
