@@ -139,8 +139,6 @@ import AccountBoxLineIcon from "remixicon-react/AccountBoxLineIcon";
 import AddLineIcon from "remixicon-react/AddLineIcon";
 import SearchLineIcon from "remixicon-react/SearchLineIcon";
 import DeleteBinLineIcon from "remixicon-react/DeleteBinLineIcon";
-import SkipRightLineIcon from "remixicon-react/SkipForwardLineIcon";
-import SkipLeftLineIcon from "remixicon-react/SkipBackLineIcon";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
 import { ReactComponent as CancelIcon } from "../__assets__/icons/ads/cancel.svg";
@@ -272,6 +270,8 @@ import { ReactComponent as VerticalMiddle } from "../__assets__/icons/ads/vertic
 import { ReactComponent as VerticalTop } from "../__assets__/icons/ads/vertical-top.svg";
 import { ReactComponent as ContractLeft } from "../__assets__/icons/ads/contract-left-line.svg";
 import { ReactComponent as ContractRight } from "../__assets__/icons/ads/contract-right-line.svg";
+import { ReactComponent as SkipRightLineIcon } from "../__assets__/icons/ads/skip-right-line.svg";
+import { ReactComponent as SkipLeftLineIcon } from "../__assets__/icons/ads/skip-left-line.svg";
 
 function PlayIconPNGWrapper() {
   return (
