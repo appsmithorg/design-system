@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.3
+
+### Patch Changes
+
+- [#306](https://github.com/appsmithorg/design-system/pull/306) [`7a332a9`](https://github.com/appsmithorg/design-system/commit/7a332a94521444ec6310118e1ea7563f8897aa18) Thanks [@ravikp7](https://github.com/ravikp7)! - Fix: Support dynamic option passing to TreeDropdown
+
 ## 2.1.2
 
 ### Patch Changes
