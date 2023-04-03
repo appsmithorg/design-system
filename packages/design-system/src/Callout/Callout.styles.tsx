@@ -45,7 +45,7 @@ export const StyledCallout = styled.div<{
   ${({ isClosed }) => isClosed && `display: none;`}
 `;
 
-export const StyledCloseIcon = styled(Button)`
+export const StyledCloseButton = styled(Button)`
   margin-left: auto;
   cursor: pointer;
   min-width: fit-content;

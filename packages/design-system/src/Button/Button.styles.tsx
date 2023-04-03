@@ -96,6 +96,9 @@ const Kinds = {
     --button-color-bg: transparent;
     --button-color-fg: var(--ads-v2-color-fg);
     --button-color-border: transparent;
+    // We only apply mix-blend-mode-to tertiary button because other buttons are
+    // not supposed to be on a background other than white.
+    mix-blend-mode: multiply;
 
     &:hover:not([data-disabled="true"]):not([data-loading="true"]) {
       --button-color-bg: var(--ads-v2-color-bg-subtle);

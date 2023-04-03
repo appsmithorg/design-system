@@ -39,6 +39,7 @@ Icon.args = {
   name: "filter",
   size: IconSize.XXXXL,
   fillColor: "gray",
+  withWrapper: false,
 };
 
 const IconWrapper = styled.div`
