@@ -38,15 +38,16 @@ function Callout({
         <StyledChildren kind="body-m">{children}</StyledChildren>
         {links && (
           <StyledLinks>
-            {links.map((link) => (
+            {links.map(({ children, endIcon, startIcon, to, ...linkRest }) => (
               <Link
-                endIcon={link.endIcon}
-                key={link.to}
+                endIcon={endIcon}
+                key={to}
                 kind="secondary"
-                startIcon={link.startIcon}
-                to={link.to}
+                startIcon={startIcon}
+                to={to}
+                {...linkRest}
               >
-                {link.children}
+                {children}
               </Link>
             ))}
           </StyledLinks>
