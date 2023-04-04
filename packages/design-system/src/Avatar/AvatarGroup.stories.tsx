@@ -98,7 +98,6 @@ AvatarGroupStory.storyName = "Avatar Group";
 AvatarGroupStory.args = {
   avatars: [
     {
-      image: "https://picsum.photos/200/300?random=1",
       label: "klaus@appsmith.com",
     },
     {

@@ -17,7 +17,14 @@ import {
 
 const SegmentedControl = React.forwardRef(
   (props: SegmentedControlProps, ref: React.Ref<HTMLDivElement>) => {
-    const { className, defaultValue, onChange, options, ...rest } = props;
+    const {
+      className,
+      defaultValue,
+      isFullWidth = true,
+      onChange,
+      options,
+      ...rest
+    } = props;
     const [selectedValue, setSelectedValue] = useState(defaultValue);
 
     const handleOnChange = (value: string) => {
@@ -28,6 +35,7 @@ const SegmentedControl = React.forwardRef(
     return (
       <StyledSegmentedControl
         className={clsx(SegmentedControlClassName, className)}
+        isFullWidth={isFullWidth}
         ref={ref}
         {...rest}
       >
