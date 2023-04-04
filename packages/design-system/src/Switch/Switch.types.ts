@@ -8,4 +8,5 @@ export type SwitchProps = {
   isSelected?: boolean;
   isDisabled?: boolean;
   children?: ReactNode;
+  onChange?: () => void;
 } & AriaSwitchProps;
