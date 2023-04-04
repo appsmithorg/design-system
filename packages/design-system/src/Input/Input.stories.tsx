@@ -187,7 +187,7 @@ InputExample.args = {
   label: "Label",
   placeholder: "Placeholder",
   description: "Description",
-  startIcon: "home-5-fill",
-  endIcon: "building-line",
+  startIcon: "arrow-left-s-line",
+  endIcon: "arrow-right-s-line",
   size: "md",
 };

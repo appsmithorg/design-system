@@ -183,6 +183,7 @@
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
   overflow: scroll;
+  z-index: 100;
 }
 
 /* Option */
