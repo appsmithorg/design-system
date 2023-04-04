@@ -5,33 +5,44 @@ import Icon, { IconSize } from "Icon";
 
 type Props = {
   backgroundColor: string;
-  className: string;
+  className?: string;
   icon: string;
   iconColor: string;
   iconSize: IconSize;
+  ctaChildren?: React.ReactNode;
   messageHeader?: string;
-  ctaText?: string;
-  ctaURL?: string;
   message: string;
   textColor: string;
+  fontWeight?: string;
+  intentLine?: boolean;
+  iconFlexPosition?: "start" | "center" | "end";
 };
 
 const MessageContainer = styled.div<{
-  backgroundColor: string;
-  textColor: string;
+  $backgroundColor: string;
+  $iconColor: string;
+  $intentLine: boolean;
+  $textColor: string;
 }>`
   display: flex;
-  padding: 8px;
+  padding: 2px 8px;
   margin-bottom: 8px;
   flex-direction: row;
-  color: ${(props) => props.textColor};
-  background: ${(props) => props.backgroundColor};
+  color: ${(props) => props.$textColor};
+  background: ${(props) => props.$backgroundColor};
+  ${(props) =>
+    props.$intentLine && `border-left: solid ${props.$iconColor} 2px;`}
   }
 `;
-const StyledIcon = styled(Icon)`
+
+const StyledIcon = styled(Icon)<{
+  $iconFlexPosition?: "start" | "center" | "end";
+}>`
   padding: 8px 4px;
   cursor: default;
 
+  ${({ $iconFlexPosition }) =>
+    $iconFlexPosition ? `align-items: ${$iconFlexPosition};` : ""}
   svg {
     cursor: default;
   }
@@ -47,9 +58,11 @@ const MessageWrapper = styled.div`
   line-height: 16px;
 `;
 
-const MessageText = styled.p`
+const MessageText = styled.p<{
+  $fontWeight?: string;
+}>`
   font-size: 13px;
-  font-weight: 400;
+  font-weight: ${(props) => props.$fontWeight || `400`};
   margin-bottom: 0;
 `;
 
@@ -57,34 +70,25 @@ const MessageHeader = styled.h2`
   font-size: 14px;
   font-weight: 600;
   padding-bottom: 5px;
+  margin: 0;
 `;
 
-const CTALink = styled.a<{
-  textColor: string;
-}>`
+const CTAChild = styled.div`
   padding-top: 8px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  :hover {
-    color: ${(props) => props.textColor};
-  }
+  display: flex;
 `;
 
 export function BannerMessage(props: Props) {
-  const handleCTAOnClick = (e: any) => {
-    if (props.ctaURL) {
-      window.open(props.ctaURL, "_blank");
-    }
-    e.preventDefault();
-  };
   return (
     <MessageContainer
-      backgroundColor={props.backgroundColor}
+      $backgroundColor={props.backgroundColor}
       className={props.className}
-      textColor={props.textColor}
+      $iconColor={props.iconColor}
+      $intentLine={!!props.intentLine}
+      $textColor={props.textColor}
     >
       <StyledIcon
+        $iconFlexPosition={props.iconFlexPosition}
         fillColor={props.iconColor}
         name={props.icon}
         size={props.iconSize}
@@ -93,16 +97,10 @@ export function BannerMessage(props: Props) {
         {props.messageHeader && (
           <MessageHeader>{props.messageHeader}</MessageHeader>
         )}
-        <MessageText>{props.message}</MessageText>
-        {props.ctaText && props.ctaURL && (
-          <CTALink
-            href={props.ctaURL}
-            onClick={handleCTAOnClick}
-            textColor={props.textColor}
-          >
-            {props.ctaText}
-          </CTALink>
-        )}
+        <MessageText $fontWeight={props.fontWeight}>
+          {props.message}
+        </MessageText>
+        {props.ctaChildren && <CTAChild>{props.ctaChildren}</CTAChild>}
       </MessageWrapper>
     </MessageContainer>
   );

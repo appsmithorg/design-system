@@ -30,7 +30,7 @@ const MenuItemSizeStyles = {
 };
 
 const MenuContentStyle = css`
-  ${Variables}
+  ${Variables};
 
   width: fit-content;
   max-width: 280px;
@@ -44,6 +44,7 @@ const MenuContentStyle = css`
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
   overflow: scroll;
+  z-index: 10;
 `;
 
 export const StyledMenuContent = styled(RadixMenu.Content)<{

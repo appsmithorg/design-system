@@ -47,6 +47,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       UNSAFE_height,
       UNSAFE_width,
       value,
+      ...rest
     } = props;
     const inputRef = useDOMRef(ref);
     const { descriptionProps, errorMessageProps, inputProps, labelProps } =
@@ -76,7 +77,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       >
         {/* TODO: replace this with text component */}
         {/* Issue: adding kind while implementing
-        text is throwing typescript error. 
+        text is throwing typescript error.
         https://stackoverflow.com/questions/68073958/cant-use-href-with-iconbuttonprops*/}
         <Label {...labelProps} className={InputLabelClassName}>
           {label}
@@ -119,6 +120,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               ref={inputRef}
               renderer={renderAs}
               value={value}
+              {...rest}
             />
             {/* End Icon Section */}
             {endIcon && renderAs === "input" ? (
