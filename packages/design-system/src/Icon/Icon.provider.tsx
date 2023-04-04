@@ -253,6 +253,7 @@ import { ReactComponent as BoxShadowVariant2Icon } from "../__assets__/icons/con
 import { ReactComponent as BoxShadowVariant3Icon } from "../__assets__/icons/control/box-shadow-variant3.svg";
 import { ReactComponent as BoxShadowVariant4Icon } from "../__assets__/icons/control/box-shadow-variant4.svg";
 import { ReactComponent as BoxShadowVariant5Icon } from "../__assets__/icons/control/box-shadow-variant5.svg";
+import { ReactComponent as SlashIcon } from "../__assets__/icons/form/slash-line.svg";
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 import { ReactComponent as JsToggleV2 } from "../__assets__/icons/ads/js-toggle-v2.svg";
 import { ReactComponent as Datasources2 } from "../__assets__/icons/menu/datasources-2.svg";
@@ -570,6 +571,7 @@ const ICON_LOOKUP = {
   widget: WidgetIcon,
   workspace: WorkspaceIcon,
   package: PackageIcon,
+  slash: SlashIcon,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);
