@@ -1,5 +1,19 @@
 # @appsmithorg/design-system
 
+## 2.1.3
+
+### Patch Changes
+
+- [#306](https://github.com/appsmithorg/design-system/pull/306) [`7a332a9`](https://github.com/appsmithorg/design-system/commit/7a332a94521444ec6310118e1ea7563f8897aa18) Thanks [@ravikp7](https://github.com/ravikp7)! - Fix: Support dynamic option passing to TreeDropdown
+
+## 2.1.2
+
+### Patch Changes
+
+- [#433](https://github.com/appsmithorg/design-system/pull/433) [`a0602ac`](https://github.com/appsmithorg/design-system/commit/a0602ac74bc4a17fbaabaad20b150008a21d1a00) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: divider width and color
+
+* [#432](https://github.com/appsmithorg/design-system/pull/432) [`5b0eaba`](https://github.com/appsmithorg/design-system/commit/5b0eabacac0ef47b0f5403b27ac8b1e1b98bf10f) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: button blend mode
+
 ## 2.1.1
 
 ### Patch Changes
