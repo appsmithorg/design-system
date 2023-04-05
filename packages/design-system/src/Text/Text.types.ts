@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-export type TextKinds =
+export type TextKind =
   | "heading-xl"
   | "heading-l"
   | "heading-m"
@@ -22,7 +22,7 @@ export type TextProps = {
   /** the words you want to display */
   children: ReactNode;
   /** style the text based on it's function */
-  kind?: TextKinds;
+  kind?: TextKind;
   /** the color of the text. Accepts any valid css value. */
   color?: string;
 } & React.HTMLAttributes<HTMLLabelElement> &
