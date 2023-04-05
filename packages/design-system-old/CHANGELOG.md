@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.3
+
+### Patch Changes
+
+- [#440](https://github.com/appsmithorg/design-system/pull/440) [`7523dd3`](https://github.com/appsmithorg/design-system/commit/7523dd3a1f7c99cf3cdb2f13ed8042ee8b7312d2) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: icon fixes and added new icons
+
 ## 1.1.2
 
 ### Patch Changes

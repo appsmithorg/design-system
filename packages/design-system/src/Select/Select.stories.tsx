@@ -643,6 +643,21 @@ const ArgTypes = {
       },
     },
   },
+  isValid: {
+    control: {
+      type: "boolean",
+    },
+    description:
+      "Whether the input should display its valid or invalid visual styling.",
+    table: {
+      type: {
+        summary: "valid | invalid",
+      },
+      defaultValue: {
+        summary: "undefined",
+      },
+    },
+  },
 };
 
 export const SelectStory = Template.bind({});

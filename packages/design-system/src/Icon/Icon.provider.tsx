@@ -576,6 +576,8 @@ const ICON_LOOKUP = {
 
 export const IconCollection = Object.keys(ICON_LOOKUP);
 
+export type IconNames = typeof IconCollection[number];
+
 /*
   TODO:
   - fix path and colors for inverse icons

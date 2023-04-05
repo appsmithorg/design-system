@@ -16,6 +16,7 @@ function SearchInput(props: SearchInputProps) {
 
   return (
     <StyledSearchInput
+      {...rest}
       className={clsx(SearchInputClassName, className)}
       endIcon={value ? "close-circle-line" : undefined}
       endIconProps={{ onClick: () => handleChange("") }}
@@ -25,7 +26,6 @@ function SearchInput(props: SearchInputProps) {
       size="md"
       startIcon="search-line"
       value={value}
-      {...rest}
     />
   );
 }

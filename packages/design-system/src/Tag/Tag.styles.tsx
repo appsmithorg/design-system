@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { Size } from "./Tag.types";
-import { Icon } from "../Icon";
 import { Button } from "../Button";
 
 const Variables = css``;
