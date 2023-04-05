@@ -1,5 +1,14 @@
 # @appsmithorg/design-system
 
+## 2.1.5
+
+### Patch Changes
+
+- [#450](https://github.com/appsmithorg/design-system/pull/450) [`c7eeb4d`](https://github.com/appsmithorg/design-system/commit/c7eeb4d9106b50898fae381c7b69b66661305d96) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Type name duplication fixed
+
+* [#447](https://github.com/appsmithorg/design-system/pull/447) [`726780d`](https://github.com/appsmithorg/design-system/commit/726780d7b0cee7352904cf14b83c94ff06716fbb) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: component fixes - select, input
+  fix: exported type
+
 ## 2.1.4
 
 ### Patch Changes
