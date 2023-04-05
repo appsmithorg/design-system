@@ -8,7 +8,7 @@ export function getIconByKind(kind: Kinds) {
       return (
         <Icon
           color="var(--ads-v2-color-fg-success)"
-          name="checkbox-circle-fill"
+          name="oval-check-fill"
           size="lg"
         />
       );
@@ -17,7 +17,7 @@ export function getIconByKind(kind: Kinds) {
       return (
         <Icon
           color="var(--ads-v2-color-fg-error)"
-          name="close-circle-fill"
+          name="close-circle"
           size="lg"
         />
       );
@@ -35,7 +35,7 @@ export function getIconByKind(kind: Kinds) {
       return (
         <Icon
           color="var(--ads-v2-color-fg-information)"
-          name="information-fill"
+          name="info-fill"
           size="lg"
         />
       );

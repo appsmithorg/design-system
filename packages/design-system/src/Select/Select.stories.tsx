@@ -38,7 +38,7 @@ const Template: ComponentStory<typeof Select> = (args) => {
           Option 1
         </div>
       </Option>
-      <Option disabled value="option 2">
+      <Option isDisabled value="option 2">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Icon name="arrow-left-line" size="md" />
           Option 2
@@ -354,7 +354,7 @@ const ArgTypes = {
       },
     },
   },
-  disabled: {
+  isDisabled: {
     control: {
       type: "boolean",
     },
@@ -703,7 +703,7 @@ OptionStory.argTypes = {
       },
     },
   },
-  disabled: {
+  isDisabled: {
     control: {
       type: "boolean",
     },
