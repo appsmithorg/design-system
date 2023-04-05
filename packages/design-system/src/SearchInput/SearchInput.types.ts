@@ -1,4 +1,7 @@
-export interface SearchInputProps {
+import { InputProps } from "Input/Input.types";
+
+export interface SearchInputProps
+  extends Omit<InputProps, "renderAs" | "type"> {
   /** (try not to) pass additional classes here */
   className?: string;
   /** Value */
