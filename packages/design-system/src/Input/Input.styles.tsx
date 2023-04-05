@@ -185,7 +185,7 @@ export const StyledInput = styled.input<{
     user-select: none;
   }
 
-  &[data-validation-state="invalid"] {
+  &[data-is-valid="false"] {
     --input-color-border: var(--ads-v2-color-border-error);
   }
 `;

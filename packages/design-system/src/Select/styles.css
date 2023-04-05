@@ -57,7 +57,7 @@
 }
 
 /* Error */
-.ads-v2-select[data-validation-state="invalid"] {
+.ads-v2-select[data-is-valid="false"] {
   --select-color-border: var(--ads-v2-color-border-error);
 }
 

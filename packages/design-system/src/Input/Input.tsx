@@ -27,6 +27,7 @@ import {
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (props, ref): JSX.Element => {
+    let { isValid } = props;
     const {
       className,
       description,
@@ -36,7 +37,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       isDisabled = false,
       isReadOnly = false,
       isRequired = false,
-      isValid,
       label,
       labelPosition = "top",
       onChange,
@@ -68,6 +68,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(event.target.value);
     };
+
+    isValid = isValid === undefined ? !errorMessage : isValid;
 
     return (
       <MainContainer
@@ -111,7 +113,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               UNSAFE_height={UNSAFE_height}
               UNSAFE_width={UNSAFE_width}
               className={InputSectionInputClassName}
-              data-validation-state={isValid || (errorMessage && "invalid")}
+              data-is-valid={isValid}
               hasEndIcon={!!endIcon}
               hasStartIcon={!!startIcon}
               inputSize={size}
