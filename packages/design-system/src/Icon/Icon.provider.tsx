@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
 import AddMoreFillIcon from "remixicon-react/AddCircleFillIcon";
@@ -603,13 +604,13 @@ export function IconProvider(props: {
 }) {
   const { color, iconName, size } = props;
 
-  // const pascalCaseIconName = iconName
-  //   .split("-")
-  //   .map((word) => word[0].toUpperCase() + word.slice(1))
-  //   .join("");
-
   const Icon = ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP]
     ? ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP]
-    : null;
+    : console.error(
+        iconName,
+        " not found. If you haven't made a typo, the icon probably does not exit " +
+          "in our database - check the lookup here: " +
+          "https://github.com/appsmithorg/design-system/blob/c6c2d821c45e459fcb0522fccb273fccbce41664/packages/design-system/src/Icon/Icon.provider.tsx#L292",
+      );
   return Icon && <Icon color={color} size={size} />;
 }
