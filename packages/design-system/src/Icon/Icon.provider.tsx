@@ -150,6 +150,7 @@ import { ReactComponent as GeneralIcon } from "../__assets__/icons/ads/general.s
 import { ReactComponent as BillingIcon } from "../__assets__/icons/ads/billing.svg";
 import { ReactComponent as ErrorIcon } from "../__assets__/icons/ads/error.svg";
 import { ReactComponent as ShineIcon } from "../__assets__/icons/ads/shine.svg";
+import { ReactComponent as Shield } from "../__assets__/icons/ads/shield.svg";
 import { ReactComponent as SuccessIcon } from "../__assets__/icons/ads/success.svg";
 import { ReactComponent as WarningTriangleIcon } from "../__assets__/icons/ads/warning-triangle.svg";
 import { ReactComponent as ShareIcon2 } from "../__assets__/icons/ads/share-2.svg";
@@ -554,6 +555,7 @@ const ICON_LOOKUP = {
   setting: SettingIcon,
   share: ShareForwardIcon,
   shine: ShineIcon,
+  shield: Shield,
   snippet: Snippet,
   success: SuccessIcon,
   support: SupportIcon,
