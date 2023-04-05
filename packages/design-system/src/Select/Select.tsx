@@ -34,8 +34,8 @@ function Select(props: SelectProps) {
       {...rest}
       className={clsx(SelectClassName, className)}
       clearIcon={<Icon name="close-circle-line" size="md" />}
-      data-size={size}
       data-is-valid={isValid}
+      data-size={size}
       dropdownClassName={clsx(
         SelectDropdownClassName,
         SelectDropdownClassName + `--${size}`,
