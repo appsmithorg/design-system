@@ -10,11 +10,9 @@ import { StyledDivider } from "./Divider.styles";
  * @param orientation
  * @constructor
  */
-const Divider = ({ orientation, ...rest }: DividerProps) => {
-  return (
-    <StyledDivider orientation={orientation} {...rest} />
-  );
-};
+function Divider({ orientation, ...rest }: DividerProps) {
+  return <StyledDivider orientation={orientation} {...rest} />;
+}
 
 Divider.displayName = "Divider";
 
