@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Kind } from "./Text.types";
+import { TextKind } from "./Text.types";
 
 const TypographyScales = css`
   --ads-v2-h1-font-size: var(--ads-v2-font-size-10);
@@ -48,7 +48,7 @@ const Variables = css`
   --letter-spacing: var(--ads-v2-p-letter-spacing);
 `;
 
-const Kinds = {
+const Kind = {
   error: css`
     --font-size: var(--ads-v2-p-font-size);
     --font-weight: var(--ads-v2-p-font-weight);
@@ -121,13 +121,13 @@ const Kinds = {
 
 export const StyledText = styled.span<{
   color?: string;
-  kind?: Kind;
+  kind?: TextKind;
 }>`
   ${TypographyScales}
   ${Variables}
 
   /* Variant style */
-  ${({ kind }) => kind && Kinds[kind]}
+  ${({ kind }) => kind && Kind[kind]}
 
   /* Base style */
   font-family: var(--font-family);

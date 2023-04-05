@@ -2,7 +2,7 @@ import React from "react";
 import { LinkProps as RouterLinkProps } from "react-router-dom";
 import { AriaLinkOptions } from "@react-aria/link";
 
-export type Kind = "primary" | "secondary";
+export type LinkKind = "primary" | "secondary";
 
 // TODO: startIcon, endIcon type should be a list containing names of allowed icons
 export type LinkProps = {
@@ -21,6 +21,6 @@ export type LinkProps = {
   /** the icon at the end of the link */
   endIcon?: string;
   /** the kind of link */
-  kind?: Kind;
+  kind?: LinkKind;
 } & RouterLinkProps &
   AriaLinkOptions;

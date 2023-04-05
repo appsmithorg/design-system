@@ -1,8 +1,8 @@
 import React from "react";
-import { Kinds } from "../__config__/types";
+import { Kind } from "../__config__/types";
 import { LinkProps } from "../Link/Link.types";
 
-export type Kind = Kinds;
+export type CalloutKind = Kind;
 
 export type CalloutLinkProps = Omit<LinkProps, "className, kind">;
 
@@ -12,7 +12,7 @@ export type CalloutProps = {
   /** the words you want to display */
   children: string;
   /** visual style to be used indicating type of callout */
-  kind?: Kind;
+  kind?: CalloutKind;
   /** whether or not the callout should be closable */
   isClosable?: boolean;
   /** any additional links that might be present in the callout */
