@@ -643,10 +643,9 @@ const ArgTypes = {
       },
     },
   },
-  validationState: {
+  isValid: {
     control: {
-      type: "select",
-      options: ["valid", "invalid"],
+      type: "boolean",
     },
     description:
       "Whether the input should display its valid or invalid visual styling.",

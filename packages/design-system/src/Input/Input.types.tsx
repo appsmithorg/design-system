@@ -1,6 +1,6 @@
 import { TextFieldProps } from "@react-types/textfield";
 import { IconProps } from "Icon/Icon.types";
-import { Sizes, ValidationState } from "__config__/types";
+import { Sizes } from "__config__/types";
 
 export type InputSizes = Extract<Sizes, "sm" | "md">;
 
@@ -34,5 +34,5 @@ export interface InputProps extends TextFieldProps {
   /** onValue change trigger */
   onChange?: (value: string) => void;
   /** Whether the input should display its "valid" or "invalid" visual styling. */
-  validationState?: ValidationState;
+  isValid?: boolean;
 }

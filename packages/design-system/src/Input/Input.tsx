@@ -36,6 +36,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       isDisabled = false,
       isReadOnly = false,
       isRequired = false,
+      isValid,
       label,
       labelPosition = "top",
       onChange,
@@ -46,7 +47,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       type = "text",
       UNSAFE_height,
       UNSAFE_width,
-      validationState,
       value,
       ...rest
     } = props;
@@ -111,9 +111,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               UNSAFE_height={UNSAFE_height}
               UNSAFE_width={UNSAFE_width}
               className={InputSectionInputClassName}
-              data-validation-state={
-                validationState || (errorMessage && "invalid")
-              }
+              data-validation-state={isValid || (errorMessage && "invalid")}
               hasEndIcon={!!endIcon}
               hasStartIcon={!!startIcon}
               inputSize={size}
