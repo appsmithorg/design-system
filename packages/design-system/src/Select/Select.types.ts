@@ -8,6 +8,7 @@ export type SelectProps = RCSelectProps & {
   size?: SelectSizes;
   isMultiSelect?: boolean;
   isDisabled?: boolean;
+  isValid?: boolean;
 };
 
 export type SelectOptionProps = RCOptionProps & {

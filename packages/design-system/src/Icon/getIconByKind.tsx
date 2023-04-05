@@ -1,8 +1,8 @@
 import React from "react";
 import { Icon } from "./index";
-import { Kinds } from "../__config__/types";
+import { Kind } from "../__config__/types";
 
-export function getIconByKind(kind: Kinds) {
+export function getIconByKind(kind: Kind) {
   switch (kind) {
     case "success":
       return (

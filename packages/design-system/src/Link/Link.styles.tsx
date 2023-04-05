@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 import { Link as RouterLink } from "react-router-dom";
 import { Icon } from "../Icon";
-import { Kind } from "./Link.types";
+import { LinkKind } from "./Link.types";
 
 const Variables = css`
   --color: var(--ads-v2-color-fg-brand);
   --text-decoration: none;
 `;
 
-const Kinds = {
+const Kind = {
   primary: css`
     --color: var(--ads-v2-color-fg-brand);
     :hover {
@@ -24,10 +24,10 @@ const Kinds = {
     }
   `,
 };
-export const Styles = css<{ kind?: Kind }>`
+export const Styles = css<{ kind?: LinkKind }>`
   ${Variables}
 
-  ${({ kind }) => kind && Kinds[kind]}
+  ${({ kind }) => kind && Kind[kind]}
 
   font-family: var(--ads-v2-font-family);
   /* This override is needed since blueprint is applying styles on a tag. */
@@ -46,11 +46,11 @@ export const Styles = css<{ kind?: Kind }>`
   }
 `;
 
-export const StyledRouterLink = styled(RouterLink)<{ kind?: Kind }>`
+export const StyledRouterLink = styled(RouterLink)<{ kind?: LinkKind }>`
   ${Styles}
 `;
 
-export const StyledAnchor = styled.a<{ kind?: Kind }>`
+export const StyledAnchor = styled.a<{ kind?: LinkKind }>`
   ${Styles}
 `;
 
