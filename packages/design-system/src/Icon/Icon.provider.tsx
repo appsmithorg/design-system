@@ -114,6 +114,7 @@ import AlertFillIcon from "remixicon-react/AlertFillIcon";
 import InfoFillIcon from "remixicon-react/InformationFillIcon";
 import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
 import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
+import LockFillIcon from "remixicon-react/LockFillIcon";
 import PantoneLineIcon from "remixicon-react/PantoneLineIcon";
 import QuestionFillIcon from "remixicon-react/QuestionFillIcon";
 import QuestionLineIcon from "remixicon-react/QuestionLineIcon";
@@ -422,6 +423,7 @@ const ICON_LOOKUP = {
   "lock-2-line": Lock2LineIcon,
   "lock-password-line": LockPasswordLineIcon,
   "lock-unlock-line": LockUnlockLineIcon,
+  "lock-fill": LockFillIcon,
   "magic-line": MagicLineIcon,
   "mail-check-line": MailCheckLineIcon,
   "mail-line": MailLineIcon,
