@@ -33,6 +33,6 @@ export interface InputProps extends TextFieldProps {
   value?: string;
   /** onValue change trigger */
   onChange?: (value: string) => void;
-  /** Whether the input should display its "valid" or "invalid" visual styling. */
+  /** Whether the input given passes the validation parameters. */
   isValid?: boolean;
 }
