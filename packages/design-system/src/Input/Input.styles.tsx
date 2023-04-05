@@ -127,7 +127,6 @@ export const StyledInput = styled.input<{
   hasStartIcon?: boolean;
   hasEndIcon?: boolean;
   renderer?: "input" | "textarea";
-  hasError?: boolean;
   inputSize?: InputSizes;
 }>`
   --icon-size: ${({ inputSize }) => inputSize && iconSizes[inputSize]};
@@ -186,11 +185,9 @@ export const StyledInput = styled.input<{
     user-select: none;
   }
 
-  ${({ hasError }) =>
-    hasError &&
-    css`
-      --input-color-border: var(--ads-v2-color-border-error);
-    `}
+  &[data-is-valid="false"] {
+    --input-color-border: var(--ads-v2-color-border-error);
+  }
 `;
 
 export const Description = styled(Text)`

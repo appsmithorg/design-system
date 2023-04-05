@@ -28,4 +28,6 @@ export type NumberInputProps = {
   placeholder?: string;
   /** onValue change trigger */
   onChange?: (value: number) => void;
+  /** Whether the input given passes the validation parameters. */
+  isValid?: boolean;
 };

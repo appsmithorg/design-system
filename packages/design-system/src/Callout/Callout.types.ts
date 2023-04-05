@@ -4,7 +4,7 @@ import { LinkProps } from "../Link/Link.types";
 
 export type Kind = Kinds;
 
-type CalloutLinkProps = Omit<LinkProps, "className, kind">;
+export type CalloutLinkProps = Omit<LinkProps, "className, kind">;
 
 export type CalloutProps = {
   /** (try not to) pass addition classes here */

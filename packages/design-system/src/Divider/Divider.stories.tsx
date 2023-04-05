@@ -2,9 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Divider } from "./Divider";
-import { DividerProps } from "./Divider.types";
 import styled from "styled-components";
-import { Text } from "../Text";
 
 export default {
   title: "Design System/Divider",
@@ -31,7 +29,8 @@ const Box = styled.div`
   height: 40vh;
   border: 1px solid var(--ads-v2-color-border);
   border-radius: var(--ads-v2-border-radius);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 0px, rgba(0, 0, 0, 0.1) 0px 2px 10px 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 10px 0px;
 
   display: flex;
   align-items: center;
