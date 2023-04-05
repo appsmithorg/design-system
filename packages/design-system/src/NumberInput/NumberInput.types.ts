@@ -1,3 +1,5 @@
+import { ValidationState } from "__config__/types";
+
 // NumberInput props
 export type NumberInputProps = {
   /** (try not to) pass addition classes here */
@@ -28,4 +30,6 @@ export type NumberInputProps = {
   placeholder?: string;
   /** onValue change trigger */
   onChange?: (value: number) => void;
+  /** Whether the input should display its "valid" or "invalid" visual styling. */
+  validationState?: ValidationState;
 };

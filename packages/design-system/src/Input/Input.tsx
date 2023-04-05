@@ -46,6 +46,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       type = "text",
       UNSAFE_height,
       UNSAFE_width,
+      validationState,
       value,
       ...rest
     } = props;
@@ -110,8 +111,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               UNSAFE_height={UNSAFE_height}
               UNSAFE_width={UNSAFE_width}
               className={InputSectionInputClassName}
+              data-validation-state={
+                validationState || (errorMessage && "invalid")
+              }
               hasEndIcon={!!endIcon}
-              hasError={!!errorMessage}
               hasStartIcon={!!startIcon}
               inputSize={size}
               isFocusVisible={isFocusVisible}
