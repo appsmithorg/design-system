@@ -38,6 +38,7 @@ import FileTransfer from "remixicon-react/FileTransferLineIcon";
 import FileLine from "remixicon-react/FileLineIcon";
 import Filter from "remixicon-react/Filter2FillIcon";
 import ForbidLineIcon from "remixicon-react/ForbidLineIcon";
+import GiftLineIcon from "remixicon-react/GiftLineIcon";
 import GitMerge from "remixicon-react/GitMergeLineIcon";
 import GitCommit from "remixicon-react/GitCommitLineIcon";
 import GitPullRequest from "remixicon-react/GitPullRequestLineIcon";
@@ -356,6 +357,7 @@ const ICON_LOOKUP = {
   "heading-one": HeadingOneIcon,
   "heading-two": HeadingTwoIcon,
   "heading-three": HeadingThreeIcon,
+  "gift-line": GiftLineIcon,
   paragraph: ParagraphIcon,
   "paragraph-two": ParagraphTwoIcon,
   "add-box-line": AddBoxLineIcon,
