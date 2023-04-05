@@ -10,6 +10,7 @@ import CheckLineIcon from "remixicon-react/CheckLineIcon";
 import CloseLineIcon from "remixicon-react/CloseLineIcon";
 import CloseCircleIcon from "remixicon-react/CloseCircleFillIcon";
 import CloudOfflineIcon from "remixicon-react/CloudOffLineIcon";
+import CloudLineIcon from "remixicon-react/CloudLineIcon";
 import CommentContextMenu from "remixicon-react/More2FillIcon";
 import More2FillIcon from "remixicon-react/More2FillIcon";
 import CompassesLine from "remixicon-react/CompassesLineIcon";
@@ -24,6 +25,7 @@ import Download from "remixicon-react/DownloadCloud2LineIcon";
 import DuplicateIcon from "remixicon-react/FileCopyLineIcon";
 import PencilFillIcon from "remixicon-react/PencilFillIcon";
 import EditLineIcon from "remixicon-react/EditLineIcon";
+import Edit2LineIcon from "remixicon-react/Edit2LineIcon";
 import EditUnderlineIcon from "remixicon-react/EditLineIcon";
 import Emoji from "remixicon-react/EmotionLineIcon";
 import ExpandMore from "remixicon-react/ArrowDownSLineIcon";
@@ -108,6 +110,8 @@ import FileList2LineIcon from "remixicon-react/FileList2LineIcon";
 import Lock2LineIcon from "remixicon-react/Lock2LineIcon";
 import SearchEyeLineIcon from "remixicon-react/SearchEyeLineIcon";
 import AlertLineIcon from "remixicon-react/AlertLineIcon";
+import AlertFillIcon from "remixicon-react/AlertFillIcon";
+import InfoFillIcon from "remixicon-react/InformationFillIcon";
 import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
 import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
 import PantoneLineIcon from "remixicon-react/PantoneLineIcon";
@@ -150,6 +154,7 @@ import { ReactComponent as GeneralIcon } from "../__assets__/icons/ads/general.s
 import { ReactComponent as BillingIcon } from "../__assets__/icons/ads/billing.svg";
 import { ReactComponent as ErrorIcon } from "../__assets__/icons/ads/error.svg";
 import { ReactComponent as ShineIcon } from "../__assets__/icons/ads/shine.svg";
+import { ReactComponent as Shield } from "../__assets__/icons/ads/shield.svg";
 import { ReactComponent as SuccessIcon } from "../__assets__/icons/ads/success.svg";
 import { ReactComponent as WarningTriangleIcon } from "../__assets__/icons/ads/warning-triangle.svg";
 import { ReactComponent as ShareIcon2 } from "../__assets__/icons/ads/share-2.svg";
@@ -355,6 +360,8 @@ const ICON_LOOKUP = {
   "add-more": AddMoreIcon,
   "add-more-fill": AddMoreFillIcon,
   "alert-line": AlertLineIcon,
+  "alert-fill": AlertFillIcon,
+  "info-fill": InfoFillIcon,
   "arrow-down-s-fill": ArrowDownSFillIcon,
   "arrow-forward": ArrowForwardIcon,
   "arrow-left": ArrowLeft,
@@ -386,6 +393,7 @@ const ICON_LOOKUP = {
   "download-line": DownloadLineIcon,
   "edit-box-line": EditBoxLineIcon,
   "edit-line": EditLineIcon,
+  "edit-2-line": Edit2LineIcon,
   "edit-underline": EditUnderlineIcon,
   "expand-less": ExpandLess,
   "expand-more": ExpandMore,
@@ -503,6 +511,7 @@ const ICON_LOOKUP = {
   cancel: CancelIcon,
   chat: Chat,
   close: CloseIcon,
+  cloud: CloudLineIcon,
   code: CodeViewIcon,
   column: ColumnIcon,
   cross: CrossIcon,
@@ -554,6 +563,7 @@ const ICON_LOOKUP = {
   setting: SettingIcon,
   share: ShareForwardIcon,
   shine: ShineIcon,
+  shield: Shield,
   snippet: Snippet,
   success: SuccessIcon,
   support: SupportIcon,
@@ -575,6 +585,8 @@ const ICON_LOOKUP = {
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);
+
+export type IconNames = typeof IconCollection[number];
 
 /*
   TODO:

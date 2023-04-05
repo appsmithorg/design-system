@@ -16,6 +16,7 @@ export const StyledSwitchLabel = styled(Text)<{
 }>`
   display: flex;
   flex-grow: 1;
+  gap: var(--ads-v2-spaces-3);
   align-items: center;
   justify-content: space-between;
   min-width: 9rem;

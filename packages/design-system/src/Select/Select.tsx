@@ -7,14 +7,16 @@ import "./styles.css";
 import { Icon } from "Icon";
 import { SelectClassName, SelectDropdownClassName } from "./Select.constants";
 import { Tag } from "Tag";
-import { SelectProps } from "./Select.types";
+import { SelectOptionProps, SelectProps } from "./Select.types";
 
 function Select(props: SelectProps) {
   const {
     children,
     className,
     dropdownClassName,
+    isDisabled = false,
     isMultiSelect,
+    isValid,
     maxTagCount = 2,
     maxTagPlaceholder,
     maxTagTextLength = 5,
@@ -33,7 +35,9 @@ function Select(props: SelectProps) {
       {...rest}
       className={clsx(SelectClassName, className)}
       clearIcon={<Icon name="close-circle-line" size="md" />}
+      data-is-valid={isValid}
       data-size={size}
+      disabled={isDisabled}
       dropdownClassName={clsx(
         SelectDropdownClassName,
         SelectDropdownClassName + `--${size}`,
@@ -66,6 +70,8 @@ Select.displayName = "Select";
 
 Select.defaultProps = {};
 
-const Option = RCOption;
+function Option(props: SelectOptionProps) {
+  return <RCOption disabled={props.isDisabled} {...props} />;
+}
 
 export { Select, Option };

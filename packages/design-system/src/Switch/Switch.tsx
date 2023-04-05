@@ -19,19 +19,28 @@ function Switch(props: SwitchProps) {
 
   return (
     <StyledSwitch className={SwitchClassName}>
-      <StyledSwitchLabel
-        className={SwitchClassNameLabel}
-        isDisabled={props.isDisabled}
-        renderAs="label"
-      >
-        {props.children}
+      {props.children ? (
+        <StyledSwitchLabel
+          className={SwitchClassNameLabel}
+          isDisabled={props.isDisabled}
+          renderAs="label"
+        >
+          {props.children}
+          <StyledSwitchInput
+            {...inputProps}
+            {...focusProps}
+            isFocusVisible={isFocusVisible}
+            ref={ref}
+          />
+        </StyledSwitchLabel>
+      ) : (
         <StyledSwitchInput
           {...inputProps}
           {...focusProps}
           isFocusVisible={isFocusVisible}
           ref={ref}
         />
-      </StyledSwitchLabel>
+      )}
     </StyledSwitch>
   );
 }

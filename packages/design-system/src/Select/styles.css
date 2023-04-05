@@ -56,6 +56,11 @@
   --select-color-border: var(--ads-v2-color-border-emphasis-plus);
 }
 
+/* Error */
+.ads-v2-select[data-is-valid="false"] {
+  --select-color-border: var(--ads-v2-color-border-error);
+}
+
 /* Arrow & clear icon */
 .ads-v2-select > .rc-select-arrow,
 .ads-v2-select > .rc-select-clear {
