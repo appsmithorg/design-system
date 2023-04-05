@@ -110,6 +110,8 @@ import FileList2LineIcon from "remixicon-react/FileList2LineIcon";
 import Lock2LineIcon from "remixicon-react/Lock2LineIcon";
 import SearchEyeLineIcon from "remixicon-react/SearchEyeLineIcon";
 import AlertLineIcon from "remixicon-react/AlertLineIcon";
+import AlertFillIcon from "remixicon-react/AlertFillIcon";
+import InfoFillIcon from "remixicon-react/InformationFillIcon";
 import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
 import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
 import PantoneLineIcon from "remixicon-react/PantoneLineIcon";
@@ -358,6 +360,8 @@ const ICON_LOOKUP = {
   "add-more": AddMoreIcon,
   "add-more-fill": AddMoreFillIcon,
   "alert-line": AlertLineIcon,
+  "alert-fill": AlertFillIcon,
+  "info-fill": InfoFillIcon,
   "arrow-down-s-fill": ArrowDownSFillIcon,
   "arrow-forward": ArrowForwardIcon,
   "arrow-left": ArrowLeft,
