@@ -354,7 +354,7 @@ const ArgTypes = {
       },
     },
   },
-  disabled: {
+  isDisabled: {
     control: {
       type: "boolean",
     },

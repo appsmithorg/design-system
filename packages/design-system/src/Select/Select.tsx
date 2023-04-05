@@ -14,6 +14,7 @@ function Select(props: SelectProps) {
     children,
     className,
     dropdownClassName,
+    isDisabled = false,
     isMultiSelect,
     maxTagCount = 2,
     maxTagPlaceholder,
@@ -34,6 +35,7 @@ function Select(props: SelectProps) {
       className={clsx(SelectClassName, className)}
       clearIcon={<Icon name="close-circle-line" size="md" />}
       data-size={size}
+      disabled={isDisabled}
       dropdownClassName={clsx(
         SelectDropdownClassName,
         SelectDropdownClassName + `--${size}`,
