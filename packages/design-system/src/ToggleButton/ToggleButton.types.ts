@@ -15,4 +15,6 @@ export type ToggleButtonProps = {
   isDisabled: boolean;
   /** Whether the toggle button is selected or not. */
   isSelected: boolean;
+  /** tabIndex for the button */
+  tabIndex?: number;
 } & AriaToggleButtonProps;
