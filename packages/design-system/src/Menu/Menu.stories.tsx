@@ -15,7 +15,6 @@ import {
 } from "./Menu";
 import { Button } from "../Button";
 import { Text } from "../Text";
-import { Icon } from "../Icon";
 
 export default {
   title: "Design System/Menu",
@@ -361,6 +360,20 @@ MenuItemStory.argTypes = {
       },
       defaultValue: {
         summary: "md",
+      },
+    },
+  },
+  onSelect: {
+    control: {
+      type: "function",
+    },
+    description: "Callback when the menu item is selected.",
+    table: {
+      type: {
+        summary: "() => void",
+      },
+      defaultValue: {
+        summary: "() => {}",
       },
     },
   },
