@@ -12,6 +12,7 @@ import { Icon } from "Icon";
 const mergeRefs = (...refs: any) => {
   return (node: any) => {
     for (const ref of refs) {
+      if (!ref) return;
       if (typeof ref === "function") {
         return ref(node);
       }
