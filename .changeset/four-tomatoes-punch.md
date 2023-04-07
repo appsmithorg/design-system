@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: Date and Date Range picker
+fix: Type name duplication fixed

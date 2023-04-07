@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { ToggleIconClassName } from "./ToggleButton.constants";
-import { Size } from "./ToggleButton.types";
+import { ToggleSizes } from "./ToggleButton.types";
 
 const Variables = css`
   --toggle-padding: var(--ads-v2-spaces-2);
@@ -28,7 +28,7 @@ export const StyledToggleButton = styled.button<{
   isDisabled?: boolean;
   isFocusVisible?: boolean;
   isSelected?: boolean;
-  size?: Size;
+  size?: ToggleSizes;
 }>`
   ${Variables};
 

@@ -15,6 +15,7 @@ import {
 } from "./Menu";
 import { Button } from "../Button";
 import { Text } from "../Text";
+import { Icon } from "../Icon";
 
 export default {
   title: "Design System/Menu",
@@ -24,19 +25,25 @@ export default {
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Menu> = () => {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
-        <Button>Menu</Button>
+        <Button
+          isIconButton
+          kind="tertiary"
+          size="sm"
+          startIcon="comment-context-menu"
+        />
+        {/*<Button>Menu</Button>*/}
       </MenuTrigger>
       <MenuContent loop width="200px">
-        <MenuItem startIcon="hospital-line">
+        <MenuItem startIcon="settings-line">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
         </MenuItem>
-        <MenuItem startIcon="hospital-line">Item 2</MenuItem>
+        <MenuItem startIcon="settings-line">Item 2</MenuItem>
         <MenuSeparator />
-        <MenuItem startIcon="hospital-line">Item 3</MenuItem>
+        <MenuItem startIcon="settings-line">Item 3</MenuItem>
         <MenuSub>
-          <MenuSubTrigger startIcon="hospital-line">Sub Menu</MenuSubTrigger>
+          <MenuSubTrigger startIcon="settings-line">Sub Menu</MenuSubTrigger>
           <MenuSubContent width="200px">
             <MenuItem>Sub Item 1</MenuItem>
             <MenuSub>
@@ -49,9 +56,9 @@ const Template: ComponentStory<typeof Menu> = () => {
             </MenuSub>
           </MenuSubContent>
         </MenuSub>
-        <MenuItem startIcon="hospital-line">Item 4</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 5</MenuItem>
-        <MenuItem disabled startIcon="hospital-line">
+        <MenuItem startIcon="settings-line">Item 4</MenuItem>
+        <MenuItem startIcon="settings-line">Item 5</MenuItem>
+        <MenuItem disabled startIcon="settings-line">
           Item 6
         </MenuItem>
         <MenuSeparator />
@@ -59,27 +66,27 @@ const Template: ComponentStory<typeof Menu> = () => {
           <Text kind="body-s">Menu Group</Text>
         </MenuGroupName>
         <MenuGroup>
-          <MenuItem startIcon="hospital-line">Item 7</MenuItem>
-          <MenuItem startIcon="hospital-line">Item 8</MenuItem>
-          <MenuItem startIcon="hospital-line">Item 9</MenuItem>
-          <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+          <MenuItem startIcon="settings-line">Item 7</MenuItem>
+          <MenuItem startIcon="settings-line">Item 8</MenuItem>
+          <MenuItem startIcon="settings-line">Item 9</MenuItem>
+          <MenuItem startIcon="settings-line">Item 10</MenuItem>
         </MenuGroup>
         <MenuSeparator />
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
-        <MenuItem startIcon="hospital-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
+        <MenuItem startIcon="settings-line">Item 10</MenuItem>
       </MenuContent>
     </Menu>
   );
@@ -90,11 +97,7 @@ MenuFullStory.storyName = "Complete Menu";
 MenuFullStory.args = {};
 
 export function MenuStory({ children, ...args }) {
-  return (
-    <Menu defaultOpen {...args}>
-      {children}
-    </Menu>
-  );
+  return <Menu {...args}>{children}</Menu>;
 }
 MenuStory.storyName = "Menu";
 MenuStory.argTypes = {
@@ -190,7 +193,7 @@ MenuStory.args = {
 
 export function MenuTriggerStory({ children, ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger {...args}>{children}</MenuTrigger>
     </Menu>
   );
@@ -218,7 +221,7 @@ MenuTriggerStory.args = {
 
 export function MenuContentStory({ children, ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
         <Button>Open Menu</Button>
       </MenuTrigger>
@@ -278,7 +281,7 @@ MenuContentStory.args = {
 
 export function MenuItemStory({ children, ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
         <Button>Open Menu</Button>
       </MenuTrigger>
@@ -368,7 +371,7 @@ MenuItemStory.args = {
 
 export function MenuSeparatorStory({ ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
         <Button>Open Menu</Button>
       </MenuTrigger>
@@ -385,7 +388,7 @@ MenuSeparatorStory.storyName = "Menu Separator";
 
 export function MenuSubmenuStory({ ...args }) {
   return (
-    <Menu defaultOpen>
+    <Menu>
       <MenuTrigger>
         <Button>Open Menu</Button>
       </MenuTrigger>

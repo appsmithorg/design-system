@@ -1,5 +1,47 @@
 # @appsmithorg/design-system
 
+## 2.1.4
+
+### Patch Changes
+
+- [#440](https://github.com/appsmithorg/design-system/pull/440) [`7523dd3`](https://github.com/appsmithorg/design-system/commit/7523dd3a1f7c99cf3cdb2f13ed8042ee8b7312d2) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: icon fixes and added new icons
+
+## 2.1.3
+
+### Patch Changes
+
+- [#306](https://github.com/appsmithorg/design-system/pull/306) [`7a332a9`](https://github.com/appsmithorg/design-system/commit/7a332a94521444ec6310118e1ea7563f8897aa18) Thanks [@ravikp7](https://github.com/ravikp7)! - Fix: Support dynamic option passing to TreeDropdown
+
+## 2.1.2
+
+### Patch Changes
+
+- [#433](https://github.com/appsmithorg/design-system/pull/433) [`a0602ac`](https://github.com/appsmithorg/design-system/commit/a0602ac74bc4a17fbaabaad20b150008a21d1a00) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: divider width and color
+
+* [#432](https://github.com/appsmithorg/design-system/pull/432) [`5b0eaba`](https://github.com/appsmithorg/design-system/commit/5b0eabacac0ef47b0f5403b27ac8b1e1b98bf10f) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: button blend mode
+
+## 2.1.1
+
+### Patch Changes
+
+- [#416](https://github.com/appsmithorg/design-system/pull/416) [`e928d89`](https://github.com/appsmithorg/design-system/commit/e928d8942f7f5a2c8445dd256d920b8908f8e9a7) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Refactored Select and Avatar component
+
+## 2.1.0
+
+### Minor Changes
+
+- [#415](https://github.com/appsmithorg/design-system/pull/415) [`b559bf6`](https://github.com/appsmithorg/design-system/commit/b559bf64d1a8e76839bee4d24a81cf13b8e06ea7) Thanks [@iamakulov](https://github.com/iamakulov)! - feat: new importSvg and importRemixIcon wrappers for code-splitting icons
+
+### Patch Changes
+
+- [#389](https://github.com/appsmithorg/design-system/pull/389) [`6c7441f`](https://github.com/appsmithorg/design-system/commit/6c7441fc69255c1f63dcc1708d30d4ebd3b5d3dc) Thanks [@iamakulov](https://github.com/iamakulov)! - perf: add "sideEffects": false for better tree-shaking
+
+## 2.0.8
+
+### Patch Changes
+
+- [#418](https://github.com/appsmithorg/design-system/pull/418) [`0bec8ae`](https://github.com/appsmithorg/design-system/commit/0bec8ae8611c2a58ce8e18185ea24f3bd81cde4a) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Date and Date Range picker
+
 ## 2.0.7
 
 ### Patch Changes

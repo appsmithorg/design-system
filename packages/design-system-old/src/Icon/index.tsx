@@ -6,7 +6,25 @@ import { noop } from "lodash";
 import Spinner from "Spinner";
 import { ControlIcons } from "ControlIcons";
 import { importRemixIcon, importSvg } from "utils/icon-loadables";
-
+const ClearInterval = importSvg(() => import("../assets/icons/action/clearInterval.svg"));
+const ClearStore = importSvg(() => import("../assets/icons/action/clearStore.svg"));
+const CopyToClipboard = importSvg(() => import("../assets/icons/action/copyToClipboard.svg"));
+const DownloadAction = importSvg(() => import("../assets/icons/action/download.svg"));
+const ExecuteJs = importSvg(() => import("../assets/icons/action/executeJs.svg"));
+const ExecuteQuery = importSvg(() => import("../assets/icons/action/executeQuery.svg"));
+const GetGeolocation = importSvg(() => import("../assets/icons/action/getGeolocation.svg"));
+const Modal = importSvg(() => import("../assets/icons/action/modal.svg"));
+const NavigateTo = importSvg(() => import("../assets/icons/action/navigateTo.svg"));
+const RemoveStore = importSvg(() => import("../assets/icons/action/removeStore.svg"));
+const ResetWidget = importSvg(() => import("../assets/icons/action/resetWidget.svg"));
+const SetInterval = importSvg(() => import("../assets/icons/action/setInterval.svg"));
+const ShowAlert = importSvg(() => import("../assets/icons/action/showAlert.svg"));
+const StopWatchGeolocation = importSvg(() => import("../assets/icons/action/stopWatchGeolocation.svg"));
+const StoreValue = importSvg(() => import("../assets/icons/action/storeValue.svg"));
+const WatchGeolocation = importSvg(() => import("../assets/icons/action/watchGeolocation.svg"));
+const RunAPI = importSvg(() => import("../assets/icons/action/runApi.svg"));
+const PostMessage = importSvg(() => import("../assets/icons/action/postMessage.svg"));
+const NoAction = importSvg(() => import("../assets/icons/action/noAction.svg"));
 const BookLineIcon = importSvg(() =>
   import("../assets/icons/ads/book-open-line.svg"),
 );
@@ -115,6 +133,18 @@ const ChatIcon = importSvg(() =>
 const JsIcon = importSvg(() => import("../assets/icons/ads/js.svg"));
 const ExecuteIcon = importSvg(() => import("../assets/icons/ads/execute.svg"));
 const PackageIcon = importSvg(() => import("../assets/icons/ads/package.svg"));
+
+const DevicesIcon = importSvg(() => import("../assets/icons/ads/devices.svg"));
+const GridIcon = importSvg(() => import("../assets/icons/ads/grid.svg"));
+const HistoryLineIcon = importSvg(() =>
+  import("../assets/icons/ads/history-line.svg"),
+);
+const SuccessLineIcon = importSvg(() =>
+  import("../assets/icons/ads/success-line.svg"),
+);
+const ErrorLineIcon = importSvg(() =>
+  import("../assets/icons/ads/error-line.svg"),
+);
 
 // remix icons
 const AddMoreIcon = importRemixIcon(() =>
@@ -509,6 +539,15 @@ export const IconWrapper = styled.span<IconProps>`
   align-items: center;
   cursor: ${(props) =>
     props.disabled ? "not-allowed" : props.clickable ? "pointer" : "default"};
+  ${(props) =>
+    props.withWrapper &&
+    `
+    min-width: ${sizeHandler(props.size) * 2}px;
+    height: ${sizeHandler(props.size) * 2}px;
+    border-radius: 9999px;
+    justify-content: center;
+    background-color: ${props.wrapperColor || "rgba(0, 0, 0, 0.1)"};
+  `}
   svg {
     width: ${(props) => sizeHandler(props.size)}px;
     height: ${(props) => sizeHandler(props.size)}px;
@@ -666,6 +705,9 @@ const ICON_LOOKUP = {
   "warning-line": <WarningLineIcon />,
   "warning-triangle": <WarningTriangleIcon />,
   "money-dollar-circle-line": <MoneyDollarCircleLineIcon />,
+  "success-line": <SuccessLineIcon />,
+  "error-line": <ErrorLineIcon />,
+  "history-line": <HistoryLineIcon />,
   billing: <BillingIcon />,
   book: <BookIcon />,
   bug: <BugIcon />,
@@ -739,7 +781,28 @@ const ICON_LOOKUP = {
   warning: <WarningIcon />,
   widget: <WidgetIcon />,
   workspace: <WorkspaceIcon />,
+  "clear-interval": <ClearInterval />,
+  "clear-store": <ClearStore />,
+  "copy-to-clipboard": <CopyToClipboard />,
+  "download-action": <DownloadAction />,
+  "execute-js": <ExecuteJs />,
+  "execute-query": <ExecuteQuery />,
+  "get-geolocation": <GetGeolocation />,
+  modal: <Modal />,
+  "navigate-to": <NavigateTo />,
+  "remove-store": <RemoveStore />,
+  "reset-widget": <ResetWidget />,
+  "set-interval": <SetInterval />,
+  "show-alert": <ShowAlert />,
+  "stop-watch-geolocation": <StopWatchGeolocation />,
+  "store-value": <StoreValue />,
+  "watch-geolocation": <WatchGeolocation />,
+  "run-api": <RunAPI />,
+  "post-message": <PostMessage />,
+  "no-action": <NoAction />,
   package: <PackageIcon />,
+  devices: <DevicesIcon />,
+  grid: <GridIcon />,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);
@@ -758,6 +821,8 @@ export type IconProps = {
   loaderWithIconWrapper?: boolean;
   clickable?: boolean;
   disabled?: boolean;
+  withWrapper?: boolean;
+  wrapperColor?: string;
 };
 
 const Icon = forwardRef(

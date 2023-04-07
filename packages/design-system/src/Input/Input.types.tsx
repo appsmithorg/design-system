@@ -8,7 +8,7 @@ export type InputSizes = Extract<Sizes, "sm" | "md">;
 export interface InputProps extends TextFieldProps {
   /** TODO: renderAs needs to changed to as */
   /** Attribute to change the rendering component */
-  renderAs: "input" | "textarea";
+  renderAs?: "input" | "textarea";
   /** (try not to) pass addition classes here */
   className?: string;
   /** label position  */
@@ -22,7 +22,7 @@ export interface InputProps extends TextFieldProps {
   /** end icon props */
   endIconProps?: IconProps;
   /** size */
-  size: InputSizes;
+  size?: InputSizes;
   /** type */
   type?: "text" | "password" | "email" | "number" | "tel" | "url";
   /** width */
@@ -33,4 +33,6 @@ export interface InputProps extends TextFieldProps {
   value?: string;
   /** onValue change trigger */
   onChange?: (value: string) => void;
+  /** Whether the input given passes the validation parameters. */
+  isValid?: boolean;
 }

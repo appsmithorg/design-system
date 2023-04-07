@@ -1,5 +1,33 @@
 # @appsmithorg/design-system
 
+## 1.1.3
+
+### Patch Changes
+
+- [#440](https://github.com/appsmithorg/design-system/pull/440) [`7523dd3`](https://github.com/appsmithorg/design-system/commit/7523dd3a1f7c99cf3cdb2f13ed8042ee8b7312d2) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: icon fixes and added new icons
+
+## 1.1.2
+
+### Patch Changes
+
+- [#378](https://github.com/appsmithorg/design-system/pull/378) [`a6223d0`](https://github.com/appsmithorg/design-system/commit/a6223d07b39f587c2fa287953c7928bccdfae4c1) Thanks [@rahulramesha](https://github.com/rahulramesha)! - feat: Auto layout conversion design components changes
+
+## 1.1.1
+
+### Patch Changes
+
+- [#427](https://github.com/appsmithorg/design-system/pull/427) [`d7c5538`](https://github.com/appsmithorg/design-system/commit/d7c5538aa07bd481ce463b06376c93b1f026686c) Thanks [@ChandanBalajiBP](https://github.com/ChandanBalajiBP)! - feat: Add close-circle-line icon
+
+## 1.1.0
+
+### Minor Changes
+
+- [#415](https://github.com/appsmithorg/design-system/pull/415) [`b559bf6`](https://github.com/appsmithorg/design-system/commit/b559bf64d1a8e76839bee4d24a81cf13b8e06ea7) Thanks [@iamakulov](https://github.com/iamakulov)! - feat: new importSvg and importRemixIcon wrappers for code-splitting icons
+
+### Patch Changes
+
+- [#389](https://github.com/appsmithorg/design-system/pull/389) [`6c7441f`](https://github.com/appsmithorg/design-system/commit/6c7441fc69255c1f63dcc1708d30d4ebd3b5d3dc) Thanks [@iamakulov](https://github.com/iamakulov)! - perf: add "sideEffects": false for better tree-shaking
+
 ## 1.0.52
 
 ### Patch Changes

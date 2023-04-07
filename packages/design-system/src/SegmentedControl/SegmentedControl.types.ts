@@ -1,8 +1,10 @@
+import React from "react";
+
 export type SegmentedControlOption = {
   /** The value of the option */
   value: string;
   /** The label of the option */
-  label?: string;
+  label?: string | React.ReactNode;
   /** The icon of the option */
   startIcon?: React.ReactNode | string;
   /** The icon of the option */
@@ -20,4 +22,7 @@ export type SegmentedControlProps = {
   defaultValue?: string;
   /** The onChange of the SegmentedControl */
   onChange?: (value: string) => void;
+  // TODO: We might need to rethink about this prop. For now this is required for property pane and hence added.
+  /** Whether the control should consume full width of container or not */
+  isFullWidth?: boolean;
 } & React.HTMLAttributes<HTMLDivElement>;

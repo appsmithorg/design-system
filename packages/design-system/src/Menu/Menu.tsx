@@ -1,7 +1,6 @@
 import React from "react";
 import * as RadixMenu from "@radix-ui/react-dropdown-menu";
 import clsx from "classnames";
-import "./styles.css";
 
 import {
   StyledMenuContent,
@@ -15,6 +14,7 @@ import {
   MenuContentProps,
   MenuItemContentProps,
   MenuItemProps,
+  MenuProps,
   MenuSubContentProps,
   MenuSubTriggerProps,
 } from "./Menu.types";
@@ -170,7 +170,9 @@ function MenuSeparator({
   );
 }
 
-const Menu = RadixMenu.Root;
+function Menu(props: MenuProps) {
+  return <RadixMenu.Root {...props} />;
+}
 const MenuSub = RadixMenu.Sub;
 const MenuGroup = RadixMenu.Group;
 const MenuGroupName = StyledMenuGroupname;

@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "2.0.7",
+  "version": "2.1.4",
   "description": "This is the package for the design system that powers the Appsmith platform",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -60,6 +60,7 @@
     "eslint-plugin-storybook": "^0.6.8",
     "lodash.capitalize": "^4.2.1",
     "lodash.range": "^3.2.0",
+    "normalize.css": "^8.0.1",
     "plop": "^3.1.1",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
@@ -111,6 +112,7 @@
     "@react-stately/radio": "^3.6.2",
     "@react-stately/toggle": "^3.4.4",
     "date-fns": "^2.29.3",
+    "rc-select": "^14.3.0",
     "rc-tooltip": "^5.3.1",
     "react-datepicker": "^4.10.0",
     "react-toastify": "9.0.3"

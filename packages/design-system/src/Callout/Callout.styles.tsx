@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Kind } from "./Callout.types";
+import { CalloutKind } from "./Callout.types";
 import { Button } from "Button";
 import { Text } from "Text";
 
@@ -7,7 +7,7 @@ const Variables = css`
   --callout-color-background: var(--ads-v2-color-bg);
 `;
 
-const Kinds = {
+const KindMap = {
   success: css`
     --callout-color-background: var(--ads-v2-color-bg-success);
   `,
@@ -24,14 +24,13 @@ const Kinds = {
 
 export const StyledCallout = styled.div<{
   isClosed?: boolean;
-  kind: Kind;
+  kind: CalloutKind;
 }>`
   ${Variables}
 
-  ${({ kind }) => kind && Kinds[kind]}
+  ${({ kind }) => kind && KindMap[kind]}
 
   // TODO: get minh, minw from vasanth (with all optionals switched off)
-  width: 450px;
   min-height: 40px;
   box-sizing: border-box;
   display: flex;
@@ -46,7 +45,7 @@ export const StyledCallout = styled.div<{
   ${({ isClosed }) => isClosed && `display: none;`}
 `;
 
-export const StyledCloseIcon = styled(Button)`
+export const StyledCloseButton = styled(Button)`
   margin-left: auto;
   cursor: pointer;
   min-width: fit-content;
