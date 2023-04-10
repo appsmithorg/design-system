@@ -16,6 +16,8 @@ export type TooltipPlacement =
 
 // Tooltip props
 export type TooltipProps = {
+  /** (try not to) pass addition classes here */
+  className?: string;
   /** Tooltip content to be shown */
   content: string;
   /** Tooltip placement */
