@@ -13,9 +13,7 @@ export const iconSizes: Record<IconSizes, string> = {
 };
 
 function Icon(props: IconProps) {
-  const { children, className, color, name, size = "sm", ...rest } = props;
-
-  if (!name && !children) return null;
+  const { className, color, name, size = "sm", ...rest } = props;
 
   return (
     <IconContainer
