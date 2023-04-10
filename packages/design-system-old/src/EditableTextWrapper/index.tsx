@@ -29,6 +29,7 @@ const Container = styled.div<{
   &&& .${Classes.EDITABLE_TEXT}, .icon-wrapper {
     padding: 5px 0px;
     height: 31px;
+    border-radius: var(--ads-v2-border-radius); 
     background-color: ${(props) =>
       (props.isInvalid && props.isEditing) ||
       props.savingState === SavingState.ERROR

@@ -44,7 +44,7 @@
   --ads-api-pane-settings-text-color: var(--ads-old-color-gray-10);
 
   /** AppIcon  */
-  --ads-app-icon-normal-color: var(--ads-color-black-550);
+  --ads-app-icon-normal-color: var(--ads-v2-color-fg);
   --ads-app-icon-background-color: var(--ads-color-black-25);
 
   /* Breadcrumbs */
@@ -113,7 +113,7 @@
 
   /** EditableTextSubComponent */
   --ads-editable-text-subcomponent-error-background-color: var(--ads-old-color-pomegranate);
-  --ads-editable-text-subcomponent-default-background-color: var(--ads-color-black-75);
+  --ads-editable-text-subcomponent-default-background-color: var(--ads-v2-color-bg-subtle);
   --ads-editable-text-subcomponent-error-text-color: var(--ads-old-color-pomegranate);
   --ads-editable-text-subcomponent-default-text-color: var(--ads-color-black-750);
 
@@ -167,7 +167,7 @@
 
   /** Icon Selector */
   --ads-icon-selector-scrollbar-thumb-background-color: var(--ads-color-black-450);
-  --ads-icon-selector-app-icon-background-color: var(--ads-color-black-25);
+  --ads-icon-selector-app-icon-background-color: var(--ads-v2-color-bg-subtle);
   --ads-icon-selector-selected-icon-fill-color: var(--ads-color-black-0);
 
   /** Info */
