@@ -8,6 +8,7 @@
   display: flex;
   /* left 8px + right 8px + width of the separator(1px) */
   gap: 17px;
+  z-index: 100;
 }
 
 /* Calender container */
