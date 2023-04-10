@@ -1,5 +1,6 @@
 import type { TooltipProps as RcTooltipProps } from "rc-tooltip/lib/Tooltip";
 
+// TODO: these constants should be kebab-case + write a function to convert that into camelCase and pass into rc
 export type TooltipPlacement =
   | "left"
   | "right"
