@@ -5,14 +5,14 @@ export type TooltipPlacement =
   | "right"
   | "top"
   | "bottom"
-  | "top-left"
-  | "top-right"
-  | "bottom-left"
-  | "bottom-right"
-  | "right-top"
-  | "right-bottom"
-  | "left-top"
-  | "left-bottom";
+  | "topLeft"
+  | "topRight"
+  | "bottomLeft"
+  | "bottomRight"
+  | "rightTop"
+  | "rightBottom"
+  | "leftTop"
+  | "leftBottom";
 
 // Tooltip props
 export type TooltipProps = {
