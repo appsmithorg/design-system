@@ -41,7 +41,7 @@ export const MainContainer = styled.div<{
   size?: InputSizes;
   component: "input" | "textarea";
 }>`
-  ${Variables}
+  ${Variables};
 
   display: flex;
   flex-direction: ${({ labelPosition }) =>
@@ -144,7 +144,7 @@ export const StyledInput = styled.input<{
   resize: none;
 
   /* adjust padding start according to icon present or not */
-  /* 
+  /*
    * add left right padding to icon width = padding left right
    * minus 1px border width
   */
