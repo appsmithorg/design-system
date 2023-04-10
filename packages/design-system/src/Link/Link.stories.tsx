@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Link } from "./Link";
+import { makeLogger } from "tsconfig-paths-webpack-plugin/lib/logger";
 
 export default {
   title: "Design System/Link",
@@ -46,6 +47,14 @@ export const InternalLink = Template.bind({});
 InternalLink.args = {
   to: "old",
   children: "deprecated appsmith design system",
+  endIcon: "arrow-right-line",
+  kind: "primary",
+};
+
+export const LinkWithOnClick = Template.bind({});
+LinkWithOnClick.args = {
+  children: "click me",
+  onClick: () => console.log("this link was clicked"),
   endIcon: "arrow-right-line",
   kind: "primary",
 };
