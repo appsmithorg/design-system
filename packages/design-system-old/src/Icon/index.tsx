@@ -497,6 +497,9 @@ const ArrowUpLineIcon = importRemixIcon(() =>
 const MoneyDollarCircleLineIcon = importRemixIcon(() =>
   import("remixicon-react/MoneyDollarCircleLineIcon"),
 );
+const ExternalLinkLineIcon = importRemixIcon(() =>
+  import("remixicon-react/ExternalLinkLineIcon"),
+);
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -630,6 +633,7 @@ const ICON_LOOKUP = {
   "edit-underline": <EditUnderlineIcon />,
   "expand-less": <ExpandLess />,
   "expand-more": <ExpandMore />,
+  "external-link-line": <ExternalLinkLineIcon />,
   "eye-off": <EyeOff />,
   "eye-on": <EyeOn />,
   "file-line": <FileLine />,
