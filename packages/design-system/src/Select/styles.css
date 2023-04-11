@@ -189,6 +189,7 @@
   will-change: transform, opacity;
   overflow: auto;
   z-index: 1001;
+  pointer-events: auto;
 }
 
 /* Option */
