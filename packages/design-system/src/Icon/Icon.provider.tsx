@@ -143,6 +143,8 @@ import AccountBoxLineIcon from "remixicon-react/AccountBoxLineIcon";
 import AddLineIcon from "remixicon-react/AddLineIcon";
 import SearchLineIcon from "remixicon-react/SearchLineIcon";
 import DeleteBinLineIcon from "remixicon-react/DeleteBinLineIcon";
+import FileAddLineIcon from "remixicon-react/FileAddLineIcon";
+import Layout2LineIcon from "remixicon-react/Layout2LineIcon";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
 import { ReactComponent as CancelIcon } from "../__assets__/icons/ads/cancel.svg";
@@ -509,6 +511,8 @@ const ICON_LOOKUP = {
   "contract-right-line": ContractRight,
   "w-line": WLineIcon,
   "h-line": HLineIcon,
+  "file-add-line": FileAddLineIcon,
+  "layout-2-line": Layout2LineIcon,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,
