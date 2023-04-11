@@ -44,7 +44,7 @@ const MenuContentStyle = css`
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
   overflow: auto;
-  z-index: 10;
+  z-index: 1001;
 `;
 
 export const StyledMenuContent = styled(RadixMenu.Content)<{

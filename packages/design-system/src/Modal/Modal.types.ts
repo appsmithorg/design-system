@@ -1,5 +1,7 @@
+import { DialogContentProps } from "@radix-ui/react-dialog";
+
 // Modal content props
-export type ModalContentProps = {
+export type ModalContentProps = DialogContentProps & {
   /** Modal content */
   children: React.ReactNode;
 };

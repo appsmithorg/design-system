@@ -1,5 +1,6 @@
 import React from "react";
 import { Portal, Root } from "@radix-ui/react-dialog";
+import clsx from "classnames";
 
 import { ModalHeaderProps, ModalContentProps } from "./Modal.types";
 import {
@@ -19,11 +20,14 @@ import { Text } from "Text";
 import { Button } from "Button";
 
 function ModalContent(props: ModalContentProps) {
-  const { children, ...rest } = props;
+  const { children, className, ...rest } = props;
   return (
     <Portal>
       <StyledOverlay />
-      <StyledContent {...rest} className={ModalContentClassName}>
+      <StyledContent
+        className={clsx(ModalContentClassName, className)}
+        {...rest}
+      >
         {children}
       </StyledContent>
     </Portal>
