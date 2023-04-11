@@ -41,6 +41,12 @@ export const ToggleGroup = React.forwardRef<HTMLDivElement, ToggleGroupProps>(
           setFocusedIndex(leftIndex);
           break;
 
+        case "Enter":
+        case " ":
+          // emit keyborad event
+          e.preventDefault();
+          break;
+
         case "Tab":
           break;
       }
