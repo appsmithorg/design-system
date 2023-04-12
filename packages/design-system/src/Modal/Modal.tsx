@@ -34,7 +34,7 @@ function ModalContent(props: ModalContentProps) {
   );
 }
 
-function ModalHeader({ children, onClose }: ModalHeaderProps) {
+function ModalHeader({ children }: ModalHeaderProps) {
   return (
     <StyledHeader className={ModalContentHeaderClassName}>
       <Text kind="heading-m" renderAs="h3">
@@ -44,10 +44,7 @@ function ModalHeader({ children, onClose }: ModalHeaderProps) {
         aria-label="Close"
         asChild
         className={ModalContentHeaderCloseButtonClassName}
-        onClick={onClose}
       >
-        {/* Using unsafe here, asChild of radix have some issues while passing down props */}
-        {/* TODO: figure a way to avoid this */}
         <Button
           UNSAFE_height="36px !important"
           UNSAFE_width="36px !important"
