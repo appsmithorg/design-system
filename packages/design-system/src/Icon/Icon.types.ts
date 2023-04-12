@@ -13,6 +13,10 @@ export type IconProps = {
   color?: string;
   /** class name to be applied to the icon */
   className?: string;
+  /** enable a wrapper around the icon */
+  withWrapper?: boolean;
+  /** color of the wrapper */
+  wrapperColor?: string;
 } & React.HTMLAttributes<HTMLSpanElement>;
 
 export { IconNames };
