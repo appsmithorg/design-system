@@ -19,6 +19,7 @@ import CreateNewIcon from "remixicon-react/AddLineIcon";
 import Database2Line from "remixicon-react/Database2LineIcon";
 import DatasourceIcon from "remixicon-react/CloudFillIcon";
 import DeleteBin7 from "remixicon-react/DeleteBin7LineIcon";
+import DeviceLineIcon from "remixicon-react/DeviceLineIcon";
 import DiscordIcon from "remixicon-react/DiscordLineIcon";
 import DownArrow from "remixicon-react/ArrowDownSFillIcon";
 import Download from "remixicon-react/DownloadCloud2LineIcon";
@@ -525,6 +526,7 @@ const ICON_LOOKUP = {
   datasource: DatasourceIcon,
   delete: Trash,
   desktop: DesktopIcon,
+  device: DeviceLineIcon,
   discord: DiscordIcon,
   downArrow: DownArrow,
   download2: DownloadIcon,
