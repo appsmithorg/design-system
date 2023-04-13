@@ -42,6 +42,7 @@ import GitCommit from "remixicon-react/GitCommitLineIcon";
 import GitPullRequest from "remixicon-react/GitPullRequestLineIcon";
 import GlobalLineIcon from "remixicon-react/GlobalLineIcon";
 import GuideIcon from "remixicon-react/GuideFillIcon";
+import HistoryLineIcon from "remixicon-react/HistoryLineIcon";
 import QuestionMarkIcon from "remixicon-react/QuestionMarkIcon";
 import LightbulbFlashLine from "remixicon-react/LightbulbFlashLineIcon";
 import LinksLineIcon from "remixicon-react/LinksLineIcon";
@@ -90,6 +91,7 @@ import HamburgerIcon from "remixicon-react/MenuLineIcon";
 import MagicLineIcon from "remixicon-react/MagicLineIcon";
 import UserHeartLineIcon from "remixicon-react/UserHeartLineIcon";
 import DvdLineIcon from "remixicon-react/DvdLineIcon";
+import GridLineIcon from "remixicon-react/GridLineIcon";
 import Group2LineIcon from "remixicon-react/Group2LineIcon";
 import CodeViewIcon from "remixicon-react/CodeViewIcon";
 import GroupLineIcon from "remixicon-react/GroupLineIcon";
@@ -539,7 +541,9 @@ const ICON_LOOKUP = {
   fork: GitMerge,
   gear: GearIcon,
   general: GeneralIcon,
+  grid: GridLineIcon,
   guide: GuideIcon,
+  history: HistoryLineIcon,
   hamburger: HamburgerIcon,
   help: HelpIcon,
   info: InfoIcon,
