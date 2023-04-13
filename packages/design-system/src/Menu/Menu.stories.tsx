@@ -16,7 +16,6 @@ import {
 import { Button } from "../Button";
 import { Text } from "../Text";
 import { Icon } from "../Icon";
-import { Tooltip } from "../Tooltip";
 
 export default {
   title: "Design System/Menu",
@@ -28,9 +27,13 @@ const Template: ComponentStory<typeof Menu> = () => {
   return (
     <Menu>
       <MenuTrigger>
-        <Tooltip content="This is a test tooltip">
-          <Button>Menu</Button>
-        </Tooltip>
+        <Button
+          isIconButton
+          kind="tertiary"
+          size="sm"
+          startIcon="comment-context-menu"
+        />
+        {/*<Button>Menu</Button>*/}
       </MenuTrigger>
       <MenuContent loop width="200px">
         <MenuItem startIcon="settings-line">
