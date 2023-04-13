@@ -34,7 +34,6 @@ const MenuContentStyle = css`
 
   width: fit-content;
   max-width: 280px;
-  max-height: calc(var(--radix-dropdown-menu-content-available-height) - 20px);
   background-color: var(--ads-v2-color-bg);
   border-radius: var(--ads-v2-border-radius);
   border: 1px solid var(--ads-v2-color-border-muted);
