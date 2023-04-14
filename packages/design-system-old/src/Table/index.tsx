@@ -160,7 +160,11 @@ function Table(props: TableProps) {
     headerGroups,
     prepareRow,
     rows,
-  } = useTable({ columns, data }, useSortBy, useExpanded);
+  } = useTable(
+    { autoResetExpanded: false, columns, data },
+    useSortBy,
+    useExpanded,
+  );
 
   return (
     <Styles>

@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ToggleButton } from "./ToggleButton";
 
 export default {
-  title: "Design System/Toggle Button",
+  title: "Design System/Toggle/Toggle Button",
   component: ToggleButton,
 } as ComponentMeta<typeof ToggleButton>;
 
