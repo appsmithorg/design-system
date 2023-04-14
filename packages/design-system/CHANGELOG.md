@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.6
+
+### Patch Changes
+
+- [#455](https://github.com/appsmithorg/design-system/pull/455) [`7c735ab`](https://github.com/appsmithorg/design-system/commit/7c735ab248ddd944be7e8b1760153db48f6a84af) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Importing and adding the external link line icon from remixicon
+
+* [#454](https://github.com/appsmithorg/design-system/pull/454) [`ffa75c8`](https://github.com/appsmithorg/design-system/commit/ffa75c84fea83c7ffd8e775baac4b2c208b7faf6) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - chore: add page menu icons
+
 ## 2.1.5
 
 ### Patch Changes
