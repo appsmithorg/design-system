@@ -19,6 +19,7 @@ import CreateNewIcon from "remixicon-react/AddLineIcon";
 import Database2Line from "remixicon-react/Database2LineIcon";
 import DatasourceIcon from "remixicon-react/CloudFillIcon";
 import DeleteBin7 from "remixicon-react/DeleteBin7LineIcon";
+import DeviceLineIcon from "remixicon-react/DeviceLineIcon";
 import DiscordIcon from "remixicon-react/DiscordLineIcon";
 import DownArrow from "remixicon-react/ArrowDownSFillIcon";
 import Download from "remixicon-react/DownloadCloud2LineIcon";
@@ -42,6 +43,7 @@ import GitCommit from "remixicon-react/GitCommitLineIcon";
 import GitPullRequest from "remixicon-react/GitPullRequestLineIcon";
 import GlobalLineIcon from "remixicon-react/GlobalLineIcon";
 import GuideIcon from "remixicon-react/GuideFillIcon";
+import HistoryLineIcon from "remixicon-react/HistoryLineIcon";
 import QuestionMarkIcon from "remixicon-react/QuestionMarkIcon";
 import LightbulbFlashLine from "remixicon-react/LightbulbFlashLineIcon";
 import LinksLineIcon from "remixicon-react/LinksLineIcon";
@@ -90,6 +92,7 @@ import HamburgerIcon from "remixicon-react/MenuLineIcon";
 import MagicLineIcon from "remixicon-react/MagicLineIcon";
 import UserHeartLineIcon from "remixicon-react/UserHeartLineIcon";
 import DvdLineIcon from "remixicon-react/DvdLineIcon";
+import GridLineIcon from "remixicon-react/GridLineIcon";
 import Group2LineIcon from "remixicon-react/Group2LineIcon";
 import CodeViewIcon from "remixicon-react/CodeViewIcon";
 import GroupLineIcon from "remixicon-react/GroupLineIcon";
@@ -523,6 +526,7 @@ const ICON_LOOKUP = {
   datasource: DatasourceIcon,
   delete: Trash,
   desktop: DesktopIcon,
+  device: DeviceLineIcon,
   discord: DiscordIcon,
   downArrow: DownArrow,
   download2: DownloadIcon,
@@ -539,7 +543,9 @@ const ICON_LOOKUP = {
   fork: GitMerge,
   gear: GearIcon,
   general: GeneralIcon,
+  grid: GridLineIcon,
   guide: GuideIcon,
+  history: HistoryLineIcon,
   hamburger: HamburgerIcon,
   help: HelpIcon,
   info: InfoIcon,
