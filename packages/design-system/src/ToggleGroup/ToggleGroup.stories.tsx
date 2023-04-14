@@ -1,10 +1,10 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ToggleGroup } from "./Toggle Group";
+import { ToggleGroup } from "./ToggleGroup";
 
 export default {
-  title: "Design System/Toggle/ToggleGroup",
+  title: "Design System/Toggle/Toggle Group",
   component: ToggleGroup,
   parameters: {
     docs: {
