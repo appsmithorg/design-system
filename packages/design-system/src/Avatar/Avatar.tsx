@@ -20,7 +20,7 @@ import {
   AvatarGroupClassName,
   AvatarGroupShowMoreClassName,
 } from "./Avatar.constants";
-import { Tooltip } from "Tooltip";
+import { Tooltip, TooltipPlacement } from "Tooltip";
 import { Menu, MenuItem, MenuTrigger } from "Menu";
 import { MenuContent } from "Menu";
 
@@ -30,6 +30,7 @@ const Avatar = React.forwardRef(
       className,
       firstLetter,
       image,
+      isTooltipEnabled = true,
       label,
       size = "md",
       svgIconName = "user-3-line",
@@ -39,8 +40,24 @@ const Avatar = React.forwardRef(
     const [hasErrorLoadingImage, setHasErrorLoadingImage] = useState(false);
     const shouldRenderImage = image && !hasErrorLoadingImage;
 
+    let tooltipProps: {
+      content: string | React.ReactNode;
+      placement: TooltipPlacement;
+      visible?: boolean;
+    } = {
+      content: label,
+      placement: tooltipPlacement,
+    };
+
+    if (!isTooltipEnabled) {
+      tooltipProps = {
+        ...tooltipProps,
+        visible: false,
+      };
+    }
+
     return (
-      <Tooltip content={label} placement={tooltipPlacement}>
+      <Tooltip {...tooltipProps}>
         <StyledAvatar
           aria-label={label}
           className={clsx(AvatarClassName, className)}
