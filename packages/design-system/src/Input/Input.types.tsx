@@ -35,4 +35,6 @@ export interface InputProps extends TextFieldProps {
   onChange?: (value: string) => void;
   /** Whether the input given passes the validation parameters. */
   isValid?: boolean;
+  /** id for the input element. */
+  id?: string;
 }
