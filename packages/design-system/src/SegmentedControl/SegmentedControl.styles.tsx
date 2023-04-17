@@ -35,6 +35,7 @@ export const StyledSegment = styled.span`
 export const StyledControlContainer = styled.div`
   display: flex;
   align-items: center;
+  flex: 1 1 0%;
   position: relative;
   border: 1px solid transparent;
   border-radius: var(--ads-v2-border-radius);
