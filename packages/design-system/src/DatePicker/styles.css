@@ -210,3 +210,7 @@
   opacity: var(--ads-v2-opacity-disabled);
   cursor: not-allowed;
 }
+
+.react-datepicker__aria-live {
+  display: none;
+}
