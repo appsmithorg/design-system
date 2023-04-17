@@ -20,7 +20,7 @@ export type TooltipProps = {
   /** (try not to) pass addition classes here */
   className?: string;
   /** Tooltip content to be shown */
-  content: string;
+  content: string | React.ReactNode;
   /** Tooltip placement */
   placement?: TooltipPlacement;
 } & Omit<

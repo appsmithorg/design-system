@@ -16,6 +16,8 @@ function NumberInput(props: NumberInputProps) {
     isRequired = false,
     label,
     labelPosition = "top",
+    max,
+    min,
     onChange,
     placeholder = "0",
     prefix = "",
@@ -62,6 +64,8 @@ function NumberInput(props: NumberInputProps) {
     } else {
       newVal = num;
     }
+    if (min && newVal < min) return;
+    if (max && newVal > max) return;
     setValue(prefix + newVal.toString() + suffix);
     onChange?.(newVal);
   };

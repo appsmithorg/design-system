@@ -30,4 +30,8 @@ export type NumberInputProps = {
   onChange?: (value: number) => void;
   /** Whether the input given passes the validation parameters. */
   isValid?: boolean;
+  /** Maximum value of the input. */
+  max?: number;
+  /** Minimum value of the input. */
+  min?: number;
 };

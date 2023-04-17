@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ToggleGroup } from "./ToggleGroup";
+import { ToggleButtonGroup } from "./ToggleButtonGroup";
 
 export default {
-  title: "Design System/Toggle/Toggle Group",
-  component: ToggleGroup,
+  title: "Design System/Toggle/Toggle Button Group",
+  component: ToggleButtonGroup,
   parameters: {
     docs: {
       description: {
@@ -14,16 +14,16 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof ToggleGroup>;
+} as ComponentMeta<typeof ToggleButtonGroup>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof ToggleGroup> = (args) => {
-  return <ToggleGroup {...args} />;
+const Template: ComponentStory<typeof ToggleButtonGroup> = (args) => {
+  return <ToggleButtonGroup {...args} />;
 };
 
-export const ToggleGroupStory = Template.bind({});
-ToggleGroupStory.storyName = "ToggleGroup";
-ToggleGroupStory.args = {
+export const ToggleButtonGroupStory = Template.bind({});
+ToggleButtonGroupStory.storyName = "ToggleButtonGroup";
+ToggleButtonGroupStory.args = {
   options: [
     {
       icon: "bold-font",
