@@ -25,7 +25,34 @@ const SegmentedControl = React.forwardRef(
       options,
       ...rest
     } = props;
+    const segmentRefs: Array<HTMLSpanElement | null> = [];
     const [selectedValue, setSelectedValue] = useState(defaultValue);
+    const [focusedIndex, setFocusedIndex] = useState<number>(0);
+
+    const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
+      if (!segmentRefs.length) return;
+
+      switch (e.key) {
+        case "ArrowRight":
+        case "Right":
+          const rightIndex = index === options.length - 1 ? 0 : index + 1;
+          segmentRefs[rightIndex]?.focus();
+          setFocusedIndex(rightIndex);
+          break;
+
+        case "ArrowLeft":
+        case "Left":
+          const leftIndex = index === 0 ? options.length - 1 : index - 1;
+          segmentRefs[leftIndex]?.focus();
+          setFocusedIndex(leftIndex);
+          break;
+
+        case "Enter":
+        case " ":
+          handleOnChange(options[index].value);
+          break;
+      }
+    };
 
     const handleOnChange = (value: string) => {
       setSelectedValue(value);
@@ -36,10 +63,11 @@ const SegmentedControl = React.forwardRef(
       <StyledSegmentedControl
         className={clsx(SegmentedControlClassName, className)}
         isFullWidth={isFullWidth}
+        onBlur={() => setFocusedIndex(0)}
         ref={ref}
         {...rest}
       >
-        {options.map((option) => {
+        {options.map((option, index) => {
           const {
             endIcon,
             isDisabled: isSegmentDisabled,
@@ -55,6 +83,9 @@ const SegmentedControl = React.forwardRef(
               data-selected={selectedValue === value}
               key={value}
               onClick={() => !isSegmentDisabled && handleOnChange(value)}
+              onKeyDown={(event) => handleKeyDown(event, index)}
+              ref={(input) => segmentRefs.push(input)}
+              tabIndex={index === focusedIndex ? 0 : -1}
             >
               <StyledSegment
                 className={SegmentedControlSegmentClassName}

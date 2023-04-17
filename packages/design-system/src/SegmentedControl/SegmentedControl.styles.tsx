@@ -13,6 +13,7 @@ export const StyledSegmentedControl = styled.div<{
   /* outer radius = inner radius + padding */
   border-radius: calc(var(--ads-v2-border-radius) + var(--ads-v2-spaces-1));
   box-sizing: border-box;
+  height: 32px;
 `;
 
 export const StyledSegment = styled.span`
@@ -43,6 +44,12 @@ export const StyledControlContainer = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   transition: box-shadow 600ms ease;
+
+  &:focus-visible {
+    outline: var(--ads-v2-border-width-outline) solid
+      var(--ads-v2-color-outline);
+    outline-offset: var(--ads-v2-offset-outline);
+  }
 
   &[data-disabled="true"] {
     opacity: var(--ads-v2-opacity-disabled);
