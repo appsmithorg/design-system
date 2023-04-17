@@ -17,7 +17,7 @@ export type TooltipPlacement =
 // Tooltip props
 export type TooltipProps = {
   /** Tooltip content to be shown */
-  content: string;
+  content: string | React.ReactNode;
   /** Tooltip placement */
   placement?: TooltipPlacement;
 } & Omit<
