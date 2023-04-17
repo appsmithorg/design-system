@@ -18,7 +18,6 @@ const IconPalette = styled.div<{ fill?: boolean }>`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--ads-v2-spaces-2);
   padding: var(--ads-spaces-4) 0px var(--ads-spaces-4) var(--ads-spaces-5);
   width: ${(props) => (props.fill ? "100%" : "234px")};
   max-height: 90px;
@@ -37,12 +36,15 @@ const IconBox = styled.div<{ selectedColor?: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: var(--ads-v2-border-radius);
   background-color: ${(props) =>
     props.selectedColor ||
     "var(--ads-icon-selector-app-icon-background-color)"};
-  margin: 0;
+  margin: 0 var(--ads-spaces-2) var(--ads-spaces-2) 0;
   position: relative;
+
+  &:nth-child(6n) {
+    margin-right: var(--ads-spaces-0);
+  }
 
   ${(props) =>
     props.selectedColor

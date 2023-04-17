@@ -107,7 +107,6 @@ const TextContainer = styled.div<{
     overflow: hidden;
     background-color: ${(props) => props.bgColor};
     width: calc(100% - 40px);
-    border-radius: var(--ads-v2-border-radius);
   }
 
   .icon-wrapper {

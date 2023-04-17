@@ -13,7 +13,6 @@ const Palette = styled.div<{ fill?: boolean }>`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--ads-v2-spaces-3);
   padding: var(--ads-spaces-4) var(--ads-spaces-5);
   width: ${(props) => (props.fill ? "100%" : "234px")};
 `;
@@ -21,7 +20,7 @@ const Palette = styled.div<{ fill?: boolean }>`
 const ColorBox = styled.div<{ selected: string; color: string }>`
   width: var(--ads-spaces-8);
   height: var(--ads-spaces-8);
-  margin: 0;
+  margin: 0 var(--ads-spaces-2) var(--ads-spaces-2) 0;
   background-color: ${(props) => props.color};
   cursor: pointer;
   position: relative;

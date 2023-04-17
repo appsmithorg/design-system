@@ -145,9 +145,6 @@ const SuccessLineIcon = importSvg(() =>
 const ErrorLineIcon = importSvg(() =>
   import("../assets/icons/ads/error-line.svg"),
 );
-const UpdatesIcon = importSvg(() =>
-  import("../assets/icons/help/updates.svg"),
-);
 
 // remix icons
 const AddMoreIcon = importRemixIcon(() =>
@@ -810,7 +807,6 @@ const ICON_LOOKUP = {
   package: <PackageIcon />,
   devices: <DevicesIcon />,
   grid: <GridIcon />,
-  "updates": <UpdatesIcon />,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);
