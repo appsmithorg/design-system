@@ -16,11 +16,11 @@ export interface InputProps extends TextFieldProps {
   /** start icon  */
   startIcon?: string;
   /** start icon props */
-  startIconProps?: IconProps;
+  startIconProps?: Omit<IconProps, "name">;
   /** end icon  */
   endIcon?: string;
   /** end icon props */
-  endIconProps?: IconProps;
+  endIconProps?: Omit<IconProps, "name">;
   /** size */
   size?: InputSizes;
   /** type */

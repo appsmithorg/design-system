@@ -153,7 +153,6 @@ export const ButtonContent = styled.div<{
   box-sizing: border-box;
   padding: var(--button-padding);
   border-radius: inherit;
-  text-transform: capitalize;
 
   & > .${ButtonContentChildrenClassName} {
     display: flex;
