@@ -1,5 +1,10 @@
 import React from "react";
-import { Portal, Root } from "@radix-ui/react-dialog";
+import {
+  DialogTriggerProps,
+  Portal,
+  Root,
+  Trigger,
+} from "@radix-ui/react-dialog";
 import clsx from "classnames";
 
 import { ModalHeaderProps, ModalContentProps } from "./Modal.types";
@@ -58,6 +63,14 @@ function ModalHeader({ children }: ModalHeaderProps) {
   );
 }
 
+function ModalTrigger(props: DialogTriggerProps) {
+  return (
+    <Trigger {...props} asChild>
+      {props.children}
+    </Trigger>
+  );
+}
+
 const Modal = Root;
 const ModalBody = StyledBody;
 const ModalFooter = StyledFooter;
@@ -65,4 +78,11 @@ Modal.displayName = "Modal";
 ModalContent.displayName = "ModalContent";
 ModalHeader.displayName = "ModalHeader";
 
-export { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter };
+export {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalTrigger,
+};
