@@ -95,10 +95,6 @@ const SegmentedControl = React.forwardRef(
                 {startIcon && typeof startIcon === "string" && (
                   <Icon name={startIcon} size="md" />
                 )}
-                {/* if icon component is passed */}
-                {startIcon && typeof startIcon !== "string" && (
-                  <Icon size="md">{startIcon}</Icon>
-                )}
 
                 {/* Label */}
                 {label && <Text kind="body-m">{label}</Text>}
@@ -106,10 +102,6 @@ const SegmentedControl = React.forwardRef(
                 {/* if icon name is passed */}
                 {endIcon && typeof endIcon === "string" && (
                   <Icon name={endIcon} size="md" />
-                )}
-                {/* if icon component is passed */}
-                {endIcon && typeof endIcon !== "string" && (
-                  <Icon size="md">{endIcon}</Icon>
                 )}
               </StyledSegment>
             </StyledControlContainer>

@@ -38,11 +38,11 @@ function Link(props: LinkProps) {
       .split("/")[0];
   };
 
-  const isExternal = function (url: string) {
-    return (
-      (url.indexOf(":") > -1 || url.indexOf("//") > -1) &&
-      checkDomain(location.href) !== checkDomain(url)
-    );
+  const isExternal = function (url: string | undefined) {
+    return url
+      ? (url.indexOf(":") > -1 || url.indexOf("//") > -1) &&
+          checkDomain(location.href) !== checkDomain(url)
+      : false;
   };
 
   const children = (
@@ -100,7 +100,7 @@ function Link(props: LinkProps) {
       innerRef={ref}
       kind={rest.kind}
       target={rest.target || "_self"}
-      to={rest.to}
+      to={rest.to || ""}
     >
       {children}
     </StyledRouterLink>
