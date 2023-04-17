@@ -20,7 +20,7 @@ const Palette = styled.div<{ fill?: boolean }>`
 const ColorBox = styled.div<{ selected: string; color: string }>`
   width: var(--ads-spaces-8);
   height: var(--ads-spaces-8);
-  margin: 0 var(--ads-spaces-2) var(--ads-spaces-2) 0;
+  margin: 0;
   background-color: ${(props) => props.color};
   cursor: pointer;
   position: relative;
