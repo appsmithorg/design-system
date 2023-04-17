@@ -1,5 +1,6 @@
 import React from "react";
 import { Portal, Root } from "@radix-ui/react-dialog";
+import clsx from "classnames";
 
 import { ModalHeaderProps, ModalContentProps } from "./Modal.types";
 import {
@@ -19,18 +20,21 @@ import { Text } from "Text";
 import { Button } from "Button";
 
 function ModalContent(props: ModalContentProps) {
-  const { children, ...rest } = props;
+  const { children, className, ...rest } = props;
   return (
     <Portal>
       <StyledOverlay />
-      <StyledContent {...rest} className={ModalContentClassName}>
+      <StyledContent
+        className={clsx(ModalContentClassName, className)}
+        {...rest}
+      >
         {children}
       </StyledContent>
     </Portal>
   );
 }
 
-function ModalHeader({ children, onClose }: ModalHeaderProps) {
+function ModalHeader({ children }: ModalHeaderProps) {
   return (
     <StyledHeader className={ModalContentHeaderClassName}>
       <Text kind="heading-m" renderAs="h3">
@@ -40,10 +44,7 @@ function ModalHeader({ children, onClose }: ModalHeaderProps) {
         aria-label="Close"
         asChild
         className={ModalContentHeaderCloseButtonClassName}
-        onClick={onClose}
       >
-        {/* Using unsafe here, asChild of radix have some issues while passing down props */}
-        {/* TODO: figure a way to avoid this */}
         <Button
           UNSAFE_height="36px !important"
           UNSAFE_width="36px !important"

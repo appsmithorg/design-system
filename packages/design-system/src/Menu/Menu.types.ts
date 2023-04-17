@@ -31,6 +31,8 @@ type _MenuItemProps = {
   endIcon?: string;
   /** size of the menu item. */
   size?: MenuSizes;
+  /** onSelect handler */
+  onSelect?: () => void;
 };
 export type MenuItemProps = RadixMenu.DropdownMenuItemProps & _MenuItemProps;
 export type MenuSubTriggerProps = Omit<_MenuItemProps, "endIcon"> &
