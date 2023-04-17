@@ -280,6 +280,11 @@ function DateRangePicker(props: DateRangePickerProps) {
     onChange && onChange(date, e);
   };
 
+  const onClearhandler = () => {
+    setStartDate(null);
+    setEndDate(null);
+  };
+
   return (
     <BaseDatePicker
       {...rest}
@@ -295,7 +300,7 @@ function DateRangePicker(props: DateRangePickerProps) {
           }
           // TODO: Replace this with tertiary button
           endIconProps={{
-            onClick: () => setStartDate(null),
+            onClick: onClearhandler,
           }}
           isDisabled={isDisabled}
           isReadOnly={isReadOnly}
