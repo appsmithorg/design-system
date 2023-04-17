@@ -8,7 +8,7 @@ import { TooltipClassName } from "./Tooltip.constants";
 import { Text } from "Text";
 
 function Tooltip(props: TooltipProps) {
-  const { children, content, ...rest } = props;
+  const { children, className, content, ...rest } = props;
   return (
     <RCTooltip
       mouseEnterDelay={0.5}
@@ -17,7 +17,7 @@ function Tooltip(props: TooltipProps) {
           {content}
         </Text>
       }
-      overlayClassName={TooltipClassName}
+      overlayClassName={`${TooltipClassName} ${className}`}
       {...rest}
     >
       {children}

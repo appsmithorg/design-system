@@ -70,6 +70,7 @@ Select.displayName = "Select";
 
 Select.defaultProps = {};
 
+// TODO: Remove warnings from here
 function Option(props: SelectOptionProps) {
   return <RCOption disabled={props.isDisabled} {...props} />;
 }

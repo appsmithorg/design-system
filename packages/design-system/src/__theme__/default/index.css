@@ -126,6 +126,8 @@
   --ads-v2-color-border-success: var(--ads-v2-color-green-600);
   /** Used for indicating warning borders */
   --ads-v2-color-border-warning: var(--ads-v2-color-yellow-600);
+  /** Used for indicating information borders */
+  --ads-v2-color-border-info: var(--ads-v2-color-blue-600);
 
   /**
     * ===========================================*

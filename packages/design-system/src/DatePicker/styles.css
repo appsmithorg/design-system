@@ -8,6 +8,7 @@
   display: flex;
   /* left 8px + right 8px + width of the separator(1px) */
   gap: 17px;
+  z-index: 1001;
 }
 
 /* Calender container */
@@ -208,4 +209,8 @@
   color: var(--ads-v2-color-fg-muted);
   opacity: var(--ads-v2-opacity-disabled);
   cursor: not-allowed;
+}
+
+.react-datepicker__aria-live {
+  display: none;
 }

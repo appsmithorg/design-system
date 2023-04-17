@@ -43,6 +43,7 @@ export const Styles = css<{ kind?: LinkKind }>`
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
     text-decoration: var(--text-decoration);
+    border-radius: var(--ads-v2-border-radius);
   }
 `;
 

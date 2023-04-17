@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
 import AddMoreFillIcon from "remixicon-react/AddCircleFillIcon";
@@ -38,6 +39,7 @@ import FileTransfer from "remixicon-react/FileTransferLineIcon";
 import FileLine from "remixicon-react/FileLineIcon";
 import Filter from "remixicon-react/Filter2FillIcon";
 import ForbidLineIcon from "remixicon-react/ForbidLineIcon";
+import GiftLineIcon from "remixicon-react/GiftLineIcon";
 import GitMerge from "remixicon-react/GitMergeLineIcon";
 import GitCommit from "remixicon-react/GitCommitLineIcon";
 import GitPullRequest from "remixicon-react/GitPullRequestLineIcon";
@@ -117,6 +119,7 @@ import AlertFillIcon from "remixicon-react/AlertFillIcon";
 import InfoFillIcon from "remixicon-react/InformationFillIcon";
 import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
 import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
+import LockFillIcon from "remixicon-react/LockFillIcon";
 import PantoneLineIcon from "remixicon-react/PantoneLineIcon";
 import QuestionFillIcon from "remixicon-react/QuestionFillIcon";
 import QuestionLineIcon from "remixicon-react/QuestionLineIcon";
@@ -283,6 +286,8 @@ import { ReactComponent as ContractLeft } from "../__assets__/icons/ads/contract
 import { ReactComponent as ContractRight } from "../__assets__/icons/ads/contract-right-line.svg";
 import { ReactComponent as SkipRightLineIcon } from "../__assets__/icons/ads/skip-right-line.svg";
 import { ReactComponent as SkipLeftLineIcon } from "../__assets__/icons/ads/skip-left-line.svg";
+import { ReactComponent as WLineIcon } from "../__assets__/icons/ads/w-line.svg";
+import { ReactComponent as HLineIcon } from "../__assets__/icons/ads/h-line.svg";
 
 function PlayIconPNGWrapper() {
   return (
@@ -359,6 +364,7 @@ const ICON_LOOKUP = {
   "heading-one": HeadingOneIcon,
   "heading-two": HeadingTwoIcon,
   "heading-three": HeadingThreeIcon,
+  "gift-line": GiftLineIcon,
   paragraph: ParagraphIcon,
   "paragraph-two": ParagraphTwoIcon,
   "add-box-line": AddBoxLineIcon,
@@ -427,6 +433,7 @@ const ICON_LOOKUP = {
   "lock-2-line": Lock2LineIcon,
   "lock-password-line": LockPasswordLineIcon,
   "lock-unlock-line": LockUnlockLineIcon,
+  "lock-fill": LockFillIcon,
   "magic-line": MagicLineIcon,
   "mail-check-line": MailCheckLineIcon,
   "mail-line": MailLineIcon,
@@ -510,6 +517,8 @@ const ICON_LOOKUP = {
   "skip-left-line": SkipLeftLineIcon,
   "contract-left-line": ContractLeft,
   "contract-right-line": ContractRight,
+  "w-line": WLineIcon,
+  "h-line": HLineIcon,
   "file-add-line": FileAddLineIcon,
   "layout-2-line": Layout2LineIcon,
   billing: BillingIcon,
@@ -601,8 +610,6 @@ export type IconNames = typeof IconCollection[number];
 /*
   TODO:
   - fix path and colors for inverse icons
-  - some icons with colors show up correctly on the individual story but not on the all stories one. fix. (ex: wand, pin, headings)
-  - icon lookup should not be case sensitive
  */
 export function IconProvider(props: {
   iconName: string;
@@ -611,13 +618,13 @@ export function IconProvider(props: {
 }) {
   const { color, iconName, size } = props;
 
-  // const pascalCaseIconName = iconName
-  //   .split("-")
-  //   .map((word) => word[0].toUpperCase() + word.slice(1))
-  //   .join("");
-
   const Icon = ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP]
     ? ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP]
-    : null;
+    : console.error(
+        iconName,
+        " not found. If you haven't made a typo, the icon probably does not exit " +
+          "in our database - check the lookup here: " +
+          "https://github.com/appsmithorg/design-system/blob/c6c2d821c45e459fcb0522fccb273fccbce41664/packages/design-system/src/Icon/Icon.provider.tsx#L292",
+      );
   return Icon && <Icon color={color} size={size} />;
 }

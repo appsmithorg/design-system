@@ -16,7 +16,7 @@ export const StyledTabsList = styled(RadixTabs.List)`
   display: flex;
   gap: var(--ads-v2-spaces-4);
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
   padding: var(--ads-v2-spaces-1);
 `;
 

@@ -45,6 +45,6 @@ function Tab(props: TabProps) {
 }
 
 function TabPanel(props: TabPanelProps) {
-  return <StyledTabPanel value={props.value}>{props.children}</StyledTabPanel>;
+  return <StyledTabPanel {...props} />;
 }
 export { Tabs, TabsList, Tab, TabPanel };

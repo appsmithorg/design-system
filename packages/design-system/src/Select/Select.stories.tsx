@@ -441,6 +441,7 @@ const ArgTypes = {
       },
     },
   },
+  // TODO: It seems like there is no difference between `label` and `value`; document it or change it accordingly
   value: {
     control: {
       type: "text",

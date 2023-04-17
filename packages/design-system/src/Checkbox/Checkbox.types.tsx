@@ -10,4 +10,5 @@ export type CheckboxProps = {
   isIndeterminate?: boolean;
   isDisabled?: boolean;
   onChange?: (isSelected: boolean) => void;
-} & AriaCheckboxProps;
+} & AriaCheckboxProps &
+  React.LabelHTMLAttributes<HTMLLabelElement>;
