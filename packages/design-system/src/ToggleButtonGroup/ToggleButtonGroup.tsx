@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { ToggleButton } from "ToggleButton";
 
-import { Group } from "./ToggleGroup.styles";
-import { ToggleGroupOption, ToggleGroupProps } from "./ToggleGroup.types";
+import { Group } from "./ToggleButtonGroup.styles";
+import { ToggleGroupOption, ToggleGroupProps } from "./ToggleButtonGroup.types";
 
 // eslint-disable-next-line react/display-name
 export const ToggleGroup = React.forwardRef<HTMLDivElement, ToggleGroupProps>(
