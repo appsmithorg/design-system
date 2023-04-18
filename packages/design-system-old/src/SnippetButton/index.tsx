@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { createMessage, SNIPPET_TOOLTIP } from "Constants/messages";
-import Button, { Category, Size } from "../Button";
-import AdsIcon, { IconSize } from "../Icon";
-import TooltipComponent from "../Tooltip";
+import { Button, Tooltip } from "@appsmithorg/design-system";
 
 export enum ENTITY_TYPE {
   ACTION = "ACTION",
@@ -23,10 +21,19 @@ type Props = {
 
 const StyledButton = styled(Button)`
   padding: 0 10px;
-  svg {
-    width: 18px;
-    height: 18px;
-  }
+  // border-radius: var(--ads-v2-border-radius);
+  // border: 1px solid var(--ads-v2-color-border);
+  // color: var(--ads-v2-color-fg);
+  // background-color: var(--ads-v2-color-bg);
+  // height: 36px;
+  // svg {
+  //  width: 16px;
+  //  height: 16px;
+  //  //color: var(--ads-v2-color-fg);
+  //}
+  //:hover {
+  //  background-color: var(--ads-v2-color-bg-muted);
+  //}
 `;
 
 export default function SearchSnippets(props: Props) {
@@ -34,23 +41,24 @@ export default function SearchSnippets(props: Props) {
   const handleClick = props.onClick;
 
   return props.showIconOnly ? (
-    <AdsIcon name="snippet" onClick={handleClick} size={IconSize.XL} />
+    <Button
+      kind="tertiary"
+      isIconButton
+      startIcon="snippet"
+      onClick={handleClick}
+      size="sm"
+    />
   ) : (
-    <TooltipComponent
-      content={createMessage(SNIPPET_TOOLTIP)}
-      hoverOpenDelay={50}
-      position="bottom-right"
-    >
+    <Tooltip content={createMessage(SNIPPET_TOOLTIP)} placement="bottomRight">
       <StyledButton
-        category={Category.secondary}
+        kind="secondary"
         className={`t--search-snippets ${className}`}
-        icon="snippet"
+        startIcon="snippet"
         onClick={handleClick}
-        size={Size.medium}
-        tag="button"
-        text="Snippets"
-        type="button"
-      />
-    </TooltipComponent>
+        size="md"
+      >
+        Snippets
+      </StyledButton>
+    </Tooltip>
   );
 }
