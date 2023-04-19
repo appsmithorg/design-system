@@ -9,6 +9,8 @@ export type ModalContentProps = DialogContentProps & {
 export type ModalHeaderProps = {
   /** Modal header */
   children: React.ReactNode;
+  /** whether to show close button or not */
+  isCloseButtonVisible?: boolean;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export type ModalBodyProps = {
