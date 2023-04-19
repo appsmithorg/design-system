@@ -15,9 +15,7 @@ const Template: ComponentStory<typeof RadioGroup> = (args) => {
     <RadioGroup {...args}>
       <Radio value={"Value1"}>Radio1</Radio>
       <Radio value={"Value2"}>Radio2</Radio>
-      <Radio isDisabled value={"Value3"}>
-        Radio3
-      </Radio>
+      <Radio value={"Value3"}>Radio3</Radio>
       <Radio value={"Value4"}>Radio4</Radio>
     </RadioGroup>
   );
@@ -27,4 +25,5 @@ export const RadioGroupStory = Template.bind({});
 RadioGroupStory.storyName = "Radio Group";
 RadioGroupStory.args = {
   defaultValue: "Value1",
+  isDisabled: false,
 };
