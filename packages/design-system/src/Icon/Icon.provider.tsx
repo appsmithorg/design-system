@@ -194,6 +194,7 @@ import { ReactComponent as Reaction2 } from "../__assets__/icons/comments/reacti
 import { ReactComponent as Upload } from "../__assets__/icons/ads/upload.svg";
 import { ReactComponent as ArrowForwardIcon } from "../__assets__/icons/control/arrow_forward.svg";
 import { ReactComponent as DoubleArrowRightIcon } from "../__assets__/icons/ads/double-arrow-right.svg";
+import { ReactComponent as DoubleArrowLeftIcon } from "../__assets__/icons/ads/double-arrow-left.svg";
 import { ReactComponent as CapSolidIcon } from "../__assets__/icons/control/cap_solid.svg";
 import { ReactComponent as CapDotIcon } from "../__assets__/icons/control/cap_dot.svg";
 import { ReactComponent as LineDottedIcon } from "../__assets__/icons/control/line_dotted.svg";
@@ -399,6 +400,7 @@ const ICON_LOOKUP = {
   "delete-blank": DeleteBin7,
   "delete-row": DeleteRowIcon,
   "double-arrow-right": DoubleArrowRightIcon,
+  "double-arrow-left": DoubleArrowLeftIcon,
   "down-arrow": DownArrowIcon,
   "down-arrow-2": ArrowDownLineIcon,
   "download-line": DownloadLineIcon,
