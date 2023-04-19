@@ -118,6 +118,13 @@ export const StyledRadioGroup = styled.div<{
   &[aria-orientation="horizontal"] {
     flex-direction: row;
   }
+
+  &[aria-disabled="true"] {
+    opacity: 0.6;
+    & * {
+      cursor: not-allowed !important;
+    }
+  }
 `;
 
 export const RadioDescription = styled.div`
