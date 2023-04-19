@@ -26,7 +26,6 @@ const Sizes = {
 
 export const StyledToggleButton = styled.button<{
   isDisabled?: boolean;
-  isFocusVisible?: boolean;
   isSelected?: boolean;
   size?: ToggleSizes;
 }>`
@@ -62,13 +61,9 @@ export const StyledToggleButton = styled.button<{
      }
   `}
 
-  ${({ isFocusVisible }) =>
-    isFocusVisible &&
-    ` outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
-      outline-offset: var(--ads-v2-offset-outline);
-    `}}
   &:focus-visible {
-    outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
+    outline: var(--ads-v2-border-width-outline) solid
+      var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
   }
   &:disabled {

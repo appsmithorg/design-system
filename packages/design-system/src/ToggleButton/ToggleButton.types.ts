@@ -1,5 +1,5 @@
+import React from "react";
 import { Sizes } from "../__config__/types";
-import { AriaToggleButtonProps } from "@react-types/button";
 
 export type ToggleSizes = Extract<Sizes, "sm" | "md">;
 
@@ -12,9 +12,13 @@ export type ToggleButtonProps = {
   /** the size of the toggle button */
   size: ToggleSizes;
   /** Whether the toggle button is disabled or not. */
-  isDisabled: boolean;
+  isDisabled?: boolean;
   /** Whether the toggle button is selected or not. */
-  isSelected: boolean;
+  isSelected?: boolean;
+  /** Whether the element should be selected (uncontrolled). */
+  defaultSelected?: boolean;
+  /** Handler that is called when the element's selection state changes. */
+  onChange?: (isSelected: boolean) => void;
   /** tabIndex for the button */
   tabIndex?: number;
-} & AriaToggleButtonProps;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
