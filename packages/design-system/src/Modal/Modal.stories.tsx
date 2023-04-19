@@ -74,7 +74,7 @@ const ModalHeaderTemplate: ComponentStory<typeof ModalHeader> = (args) => {
         <Button>Open Modal</Button>
       </ModalTrigger>
       <ModalContent>
-        <ModalHeader>{args.children}</ModalHeader>
+        <ModalHeader isCloseButtonVisible={false}>{args.children}</ModalHeader>
       </ModalContent>
     </Modal>
   );

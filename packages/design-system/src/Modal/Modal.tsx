@@ -39,26 +39,31 @@ function ModalContent(props: ModalContentProps) {
   );
 }
 
-function ModalHeader({ children }: ModalHeaderProps) {
+function ModalHeader({
+  children,
+  isCloseButtonVisible = true,
+}: ModalHeaderProps) {
   return (
     <StyledHeader className={ModalContentHeaderClassName}>
       <Text kind="heading-m" renderAs="h3">
         {children}
       </Text>
-      <StyledClose
-        aria-label="Close"
-        asChild
-        className={ModalContentHeaderCloseButtonClassName}
-      >
-        <Button
-          UNSAFE_height="36px !important"
-          UNSAFE_width="36px !important"
-          isIconButton
-          kind="tertiary"
-          size="md"
-          startIcon="close-line"
-        />
-      </StyledClose>
+      {isCloseButtonVisible && (
+        <StyledClose
+          aria-label="Close"
+          asChild
+          className={ModalContentHeaderCloseButtonClassName}
+        >
+          <Button
+            UNSAFE_height="36px !important"
+            UNSAFE_width="36px !important"
+            isIconButton
+            kind="tertiary"
+            size="md"
+            startIcon="close-line"
+          />
+        </StyledClose>
+      )}
     </StyledHeader>
   );
 }
