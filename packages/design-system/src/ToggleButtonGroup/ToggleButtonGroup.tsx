@@ -25,7 +25,11 @@ export const ToggleButtonGroup = React.forwardRef<
 
   const [focusedIndex, setFocusedIndex] = useState<number>(firstValueIndex);
 
-  const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
+  const handleKeyDown = (
+    e: React.KeyboardEvent,
+    index: number,
+    value: string,
+  ) => {
     if (!toggleRefs.length) return;
 
     switch (e.key) {
@@ -45,7 +49,7 @@ export const ToggleButtonGroup = React.forwardRef<
 
       case "Enter":
       case " ":
-        // emit keyborad event
+        onClick(value, true);
         e.preventDefault();
         break;
 
@@ -77,7 +81,7 @@ export const ToggleButtonGroup = React.forwardRef<
                 onClick(value, false);
                 setFocusedIndex(index);
               }}
-              onKeyDown={(event) => handleKeyDown(event, index)}
+              onKeyDown={(event) => handleKeyDown(event, index, value)}
               ref={(input) => toggleRefs.push(input)}
               size="md"
               tabIndex={index === focusedIndex ? 0 : -1}
