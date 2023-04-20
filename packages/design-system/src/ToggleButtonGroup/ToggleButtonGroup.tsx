@@ -11,7 +11,7 @@ export const ToggleButtonGroup = React.forwardRef<
 >((props) => {
   const toggleRefs: Array<HTMLButtonElement | null> = [];
 
-  const { onSelect, options, values } = props;
+  const { onClick, options, values } = props;
 
   const valueSet = new Set(values);
   let firstValueIndex = 0;
@@ -73,11 +73,11 @@ export const ToggleButtonGroup = React.forwardRef<
               icon={icon}
               isDisabled={false}
               isSelected={isSelected}
-              onKeyDown={(event) => handleKeyDown(event, index)}
-              onPress={() => {
-                onSelect(value, false);
+              onClick={() => {
+                onClick(value, false);
                 setFocusedIndex(index);
               }}
+              onKeyDown={(event) => handleKeyDown(event, index)}
               ref={(input) => toggleRefs.push(input)}
               size="md"
               tabIndex={index === focusedIndex ? 0 : -1}

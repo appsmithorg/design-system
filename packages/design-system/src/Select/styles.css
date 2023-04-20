@@ -234,9 +234,8 @@
   gap: var(--select-option-gap);
   font-family: var(--ads-v2-font-family);
   font-size: var(--select-option-font-size);
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 /* Option hover */

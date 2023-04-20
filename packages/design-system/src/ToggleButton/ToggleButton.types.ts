@@ -18,7 +18,7 @@ export type ToggleButtonProps = {
   /** Whether the element should be selected (uncontrolled). */
   defaultSelected?: boolean;
   /** Handler that is called when the element's selection state changes. */
-  onChange?: (isSelected: boolean) => void;
+  onClick?: (isSelected: boolean) => void;
   /** tabIndex for the button */
   tabIndex?: number;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;

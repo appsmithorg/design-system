@@ -13,7 +13,7 @@ const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
       icon,
       isDisabled = false,
       isSelected,
-      onChange,
+      onClick,
       size,
       ...rest
     } = props;
@@ -22,7 +22,7 @@ const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
 
     const handleOnChange = () => {
       setSelected(!selected);
-      onChange?.(!selected);
+      onClick?.(!selected);
     };
 
     return (
