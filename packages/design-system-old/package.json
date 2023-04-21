@@ -168,7 +168,6 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "@appsmithorg/design-system": "^2.1.6",
     "emoji-mart": "3.0.1"
   }
 }
