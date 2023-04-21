@@ -24,8 +24,13 @@ const TagInputWrapper = styled.div`
       border-radius: var(--ads-v2-border-radius);
       font-family: var(--ads-v2-font-family);
       font-size: var(--ads-v2-font-size-2);
+      box-shadow: none;
 
       min-height: 38px;
+
+      &:hover {
+        border-color: var(--ads-v2-color-border-emphasis);
+      }
 
       /* background-color: var(--ads-tag-input-background-color);
       min-height: 38px;
