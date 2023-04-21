@@ -23,6 +23,8 @@ export type TooltipProps = {
   content: string | React.ReactNode;
   /** Tooltip placement */
   placement?: TooltipPlacement;
+  /** Whether tooltip is disabled */
+  isDisabled?: boolean;
 } & Omit<
   RcTooltipProps,
   | "overlayStyle"
