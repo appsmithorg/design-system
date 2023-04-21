@@ -19,28 +19,52 @@ const TagInputWrapper = styled.div`
 
   &&& {
     .${Classes.TAG_INPUT} {
-      background-color: var(--ads-tag-input-background-color);
+      background-color: var(--ads-v2-color-bg);
+      border: 1px solid var(--ads-v2-color-border);
+      border-radius: var(--ads-v2-border-radius);
+      font-family: var(--ads-v2-font-family);
+      font-size: var(--ads-v2-font-size-2);
+
+      min-height: 38px;
+
+      /* background-color: var(--ads-tag-input-background-color);
       min-height: 38px;
       border: 1.2px solid var(--ads-tag-input-border-color);
-      border-radius: 0px;
+      border-radius: 0px; */
     }
     .${Classes.TAG_INPUT}.${Classes.ACTIVE} {
-      border: 1px solid var(--ads-tag-input-active-border-color);
-      box-shadow: var(--ads-tag-input-active-box-shadow);
+      border: 1px solid var(--ads-v2-color-border-emphasis-plus);
+      outline: var(--ads-v2-border-width-outline) solid
+        var(--ads-v2-color-outline);
+      outline-offset: var(--ads-v2-offset-outline);
+      /* border: 1px solid var(--ads-tag-input-active-border-color);
+      box-shadow: var(--ads-tag-input-active-box-shadow); */
     }
     .${Classes.INPUT_GHOST} {
-      color: var(--ads-tag-input-text-color);
-      &::placeholder {
+      /* color: var(--ads-tag-input-text-color); */
+      color: var(--ads-v2-color-fg);
+      /* &::placeholder {
         color: var(--ads-tag-input-placeholder-color);
-      }
+      } */
     }
     .${Classes.TAG} {
-      padding: 3px 10px;
-      color: var(--ads-tag-input-tag-text-color);
-      background-color: var(--ads-tag-input-tag-background-color);
-      border-radius: 0px;
-      font-size: 11px;
-      letter-spacing: 0.4px;
+      padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
+      height: 18px;
+      background-color: var(--ads-v2-color-bg-subtle);
+      color: var(--ads-v2-color-fg);
+      border-radius: var(--ads-v2-border-radius);
+
+      /* padding: 3px 10px; */
+      /* color: var(--ads-tag-input-tag-text-color);
+      background-color: var(--ads-tag-input-tag-background-color); */
+      /* border-radius: var(--ads-v2-border-radius); */
+      /* font-size: 11px;
+      letter-spacing: 0.4px; */
+
+      color: var(--ads-v2-color-gray-600);
+      font-size: var(--ads-v2-font-size-2);
+      font-weight: var(--ads-v2-font-weight-normal);
+      letter-spacing: var(--ads-v2-letter-spacing-3);
 
       .${Classes.TAG_REMOVE} {
         margin-top: 0;
