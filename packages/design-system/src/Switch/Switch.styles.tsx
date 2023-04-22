@@ -103,7 +103,7 @@ export const StyledSwitchInput = styled.input<{
     width: 1rem;
     height: 1rem;
     grid-area: off;
-    border-radius: var(--ads-border-radius-circle);
+    border-radius: var(--ads-v2-border-radius-circle);
     background-color: var(--thumb-color-bg);
 
     box-shadow: 0 1px 4px 0 rgba(76, 86, 100, 0.2);
