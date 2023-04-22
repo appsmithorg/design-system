@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Link } from "./Link";
-import { makeLogger } from "tsconfig-paths-webpack-plugin/lib/logger";
 
 export default {
   title: "Design System/Link",
