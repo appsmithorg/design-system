@@ -69,7 +69,10 @@ function Link(props: LinkProps) {
     </>
   );
 
-  return rest.onClick ? (
+  // useList will always return a mock function as a constructor in the onClick on rest.
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return !rest.onClick._isMockFunction ? (
     // if an onClick prop exists
     <StyledRouterLink
       {...(linkProps as LinkProps)}
