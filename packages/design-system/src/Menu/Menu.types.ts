@@ -32,9 +32,10 @@ type _MenuItemProps = {
   /** size of the menu item. */
   size?: MenuSizes;
   /** onSelect handler */
-  onSelect?: () => void;
+  onSelect?: (event?: Event) => void;
 };
-export type MenuItemProps = RadixMenu.DropdownMenuItemProps & _MenuItemProps;
+export type MenuItemProps = Omit<RadixMenu.DropdownMenuItemProps, "onSelect"> &
+  _MenuItemProps;
 export type MenuSubTriggerProps = Omit<_MenuItemProps, "endIcon"> &
   RadixMenu.DropdownMenuSubTriggerProps;
 
