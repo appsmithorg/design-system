@@ -9,6 +9,11 @@ import { SelectClassName, SelectDropdownClassName } from "./Select.constants";
 import { Tag } from "Tag";
 import { SelectOptionProps, SelectProps } from "./Select.types";
 
+/*
+  TODO:
+  - Lots of warnings are generated from this component. Fix them.
+  - Handle the case when the option selected is longer than the width of the select trigger.
+ */
 function Select(props: SelectProps) {
   const {
     children,
@@ -70,7 +75,6 @@ Select.displayName = "Select";
 
 Select.defaultProps = {};
 
-// TODO: Remove warnings from here
 function Option(props: SelectOptionProps) {
   return <RCOption disabled={props.isDisabled} {...props} />;
 }

@@ -48,6 +48,13 @@
   left: 3px;
   pointer-events: none;
 }
+/* Selects the currently selected item when in the input box*/
+.rc-select-single .rc-select-selector .rc-select-selection-item,
+.rc-select-single .rc-select-selector .rc-select-selection-placeholder,
+.rc-select-single .rc-select-selector .rc-select-selection-item * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .rc-select-single:not(.rc-select-customize-input) .rc-select-selector .rc-select-selection-search-input {
   border: none;
   outline: none;
