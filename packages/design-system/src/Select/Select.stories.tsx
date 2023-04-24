@@ -31,7 +31,7 @@ export default {
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Select> = (args) => {
   return (
-    <Select {...args}>
+    <Select {...args} isLoading>
       <Option value="value 1">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Icon name="arrow-left-line" size="md" />
@@ -359,6 +359,20 @@ const ArgTypes = {
       type: "boolean",
     },
     description: "Whether select is disabled",
+    table: {
+      type: {
+        summary: "boolean",
+      },
+      defaultValue: {
+        summary: "false",
+      },
+    },
+  },
+  isLoading: {
+    control: {
+      type: "boolean",
+    },
+    description: "Whether select is loading",
     table: {
       type: {
         summary: "boolean",

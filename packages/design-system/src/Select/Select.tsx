@@ -8,6 +8,7 @@ import { Icon } from "Icon";
 import { SelectClassName, SelectDropdownClassName } from "./Select.constants";
 import { Tag } from "Tag";
 import { SelectOptionProps, SelectProps } from "./Select.types";
+import { Spinner } from "Spinner";
 
 function Select(props: SelectProps) {
   const {
@@ -15,6 +16,7 @@ function Select(props: SelectProps) {
     className,
     dropdownClassName,
     isDisabled = false,
+    isLoading = false,
     isMultiSelect,
     isValid,
     maxTagCount = 2,
@@ -30,6 +32,13 @@ function Select(props: SelectProps) {
     return `+${omittedValues.length}`;
   };
 
+  function InpuIcon() {
+    if (isLoading) {
+      return <Spinner size="md" />;
+    }
+    return <Icon name="arrow-down-s-line" size="md" />;
+  }
+
   return (
     <RCSelect
       {...rest}
@@ -37,13 +46,13 @@ function Select(props: SelectProps) {
       clearIcon={<Icon name="close-circle-line" size="md" />}
       data-is-valid={isValid}
       data-size={size}
-      disabled={isDisabled}
+      disabled={isDisabled || isLoading}
       dropdownClassName={clsx(
         SelectDropdownClassName,
         SelectDropdownClassName + `--${size}`,
         dropdownClassName,
       )}
-      inputIcon={<Icon name="arrow-down-s-line" size="md" />}
+      inputIcon={<InpuIcon />}
       maxTagCount={maxTagCount}
       maxTagPlaceholder={maxTagPlaceholder || getMaxTagPlaceholder}
       maxTagTextLength={maxTagTextLength}
