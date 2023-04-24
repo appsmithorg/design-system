@@ -5,7 +5,7 @@ const Wrapper = styled.div<{ active: boolean }>`
   position: relative;
   width: 100%;
   background-color: ${(props) =>
-    props.active ? "var(--ads-statusbar-active-background-color)" : ""};
+    props.active ? "var(--ads-v2-color-bg-brand-emphasis)" : ""};
   cursor: ${(props) => (props.active ? "default" : "pointer")};
   height: var(--ads-statusbar-height);
   transition: background-color 0.3s ease;
@@ -27,7 +27,7 @@ const Wrapper = styled.div<{ active: boolean }>`
 `;
 
 const StatusText = styled.p`
-  color: var(--ads-statusbar-status-text-color);
+  color: var(--ads-v2-color-fg);
   font-size: 12px;
   line-height: 12px;
   margin-top: var(--ads-spaces-3);
@@ -37,19 +37,22 @@ const StatusText = styled.p`
   }
 `;
 
-const ProgressContainer = styled.div`
-  background-color: rgb(0, 0, 0, 0.2);
+const ProgressContainer = styled.div<ProgressContainer>`
+  background-color: ${(props) =>
+    props.active ? "rgb(0, 0, 0, 0.2)" : "var(--ads-v2-color-bg-subtle)"};
   overflow: hidden;
   margin-top: 12px;
+  border-radius: var(--ads-v2-border-radius);
 `;
 
 const Progressbar = styled.div<StatusProgressbarType>`
   width: ${(props) => props.percentage}%;
   height: 8px;
+  border-radius: var(--ads-v2-border-radius);
   background: ${(props) =>
     props.active
       ? "var(--ads-statusbar-progress-bar-background-color)"
-      : "var(--ads-statusbar-progress-bar-active-background-color)"};
+      : "var(--ads-v2-color-bg-brand)"};
   transition: width 0.3s ease, background 0.3s ease;
 `;
 
@@ -58,9 +61,12 @@ type StatusProgressbarType = {
   active: boolean;
 };
 
+type ProgressContainer = {
+  active: boolean;
+};
 export function StatusProgressbar(props: StatusProgressbarType) {
   return (
-    <ProgressContainer>
+    <ProgressContainer {...props}>
       <Progressbar {...props} />
     </ProgressContainer>
   );

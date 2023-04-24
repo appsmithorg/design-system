@@ -15,6 +15,7 @@ const Palette = styled.div<{ fill?: boolean }>`
   flex-wrap: wrap;
   padding: var(--ads-spaces-4) var(--ads-spaces-5);
   width: ${(props) => (props.fill ? "100%" : "234px")};
+  gap: 4px;
 `;
 
 const ColorBox = styled.div<{ selected: string; color: string }>`
@@ -24,10 +25,11 @@ const ColorBox = styled.div<{ selected: string; color: string }>`
   background-color: ${(props) => props.color};
   cursor: pointer;
   position: relative;
-
+  border-radius: var(--ads-v2-border-radius);
+  border: 1px solid transparent;
   &:hover {
     box-shadow: 0px 0px 0px calc(var(--ads-spaces-1) - 1px)
-      var(--ads-color-selector-shadow-color);
+      var(--ads-v2-color-border);
   }
 
   // TODO: Either this component should be responsible for the entire layout, or
@@ -46,7 +48,7 @@ const ColorBox = styled.div<{ selected: string; color: string }>`
     top: calc(var(--ads-spaces-1) - 1px);
     width: calc(var(--ads-spaces-2) - 1px);
     height: calc(var(--ads-spaces-4) - 1px);
-    border: 2px solid var(--ads-color-selector-checkmark-color);
+    border: 2px solid var(--ads-v2-color-border-emphasis);
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
   }`
