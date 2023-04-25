@@ -1,4 +1,6 @@
 import React, { forwardRef } from "react";
+import { useFocusRing } from "@react-aria/focus";
+import { useTextField } from "@react-aria/textfield";
 import clsx from "classnames";
 
 import { InputProps } from "./Input.types";
@@ -11,6 +13,7 @@ import {
   InputSection,
   InputContainer,
 } from "./Input.styles";
+import { useDOMRef } from "Hooks/useDomRef";
 import { Icon } from "Icon";
 import {
   InputClassName,
@@ -47,6 +50,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       value,
       ...rest
     } = props;
+    const inputRef = useDOMRef(ref);
+    const { descriptionProps, errorMessageProps, inputProps, labelProps } =
+      useTextField(props, inputRef);
+    const { focusProps, isFocusVisible } = useFocusRing();
     const {
       className: startIconClassName,
       onClick: startIconOnClick,
@@ -76,7 +83,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         text is throwing typescript error.
         https://stackoverflow.com/questions/68073958/cant-use-href-with-iconbuttonprops*/}
         {label && (
-          <Label className={InputLabelClassName}>
+          <Label {...labelProps} className={InputLabelClassName}>
             {label}
             {/* Show required star only if label is present */}
             {label && isRequired && <span>*</span>}
@@ -101,19 +108,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ) : null}
             {/* Input Section */}
             <StyledInput
+              as={renderAs}
+              type={type}
+              {...focusProps}
+              {...inputProps}
               UNSAFE_height={UNSAFE_height}
               UNSAFE_width={UNSAFE_width}
-              as={renderAs}
               className={InputSectionInputClassName}
               data-is-valid={isValid}
               hasEndIcon={!!endIcon}
               hasStartIcon={!!startIcon}
               inputSize={size}
+              isFocusVisible={isFocusVisible}
               onChange={handleOnChange}
               readOnly={isReadOnly}
-              ref={ref}
+              ref={inputRef}
               renderer={renderAs}
-              type={type}
               value={value}
               {...rest}
             />
@@ -135,6 +145,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           </InputContainer>
           {description && (
             <Description
+              {...descriptionProps}
               color="var(--ads-v2-color-fg-muted)"
               kind="body-s"
               style={
@@ -145,7 +156,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             </Description>
           )}
           {errorMessage && (
-            <Error color="var(--ads-v2-color-fg-error)" kind="body-s">
+            <Error
+              {...errorMessageProps}
+              color="var(--ads-v2-color-fg-error)"
+              kind="body-s"
+            >
               {errorMessage}
             </Error>
           )}
