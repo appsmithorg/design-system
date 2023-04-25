@@ -19,9 +19,7 @@ import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
 import { getTypographyByKey } from "Constants/typography";
 import { importSvg } from "Utils/icon-loadables";
 
-const ProfileImagePlaceholder = importSvg(() =>
-  import("../assets/icons/others/profile-placeholder.svg"),
-);
+import { ReactComponent as ProfileImagePlaceholder } from "../assets/icons/others/profile-placeholder.svg";
 
 type Props = {
   onChange: (file: File) => void;
@@ -68,6 +66,15 @@ const Container = styled.div`
     .label {
       ${() => getTypographyByKey("h6")}
       color: var(--ads-display-image-upload-label-text-color);
+      border-radius: var(--ads-v2-border-radius);
+      padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
+      height: 36px;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: var(--ads-v2-color-bg-subtle);
+      }
     }
   }
 `;

@@ -18,7 +18,7 @@ const StyledFormGroup = styled(FormGroup)<FormGroupProps>`
     }
     &.${Classes.FORM_GROUP} .${Classes.LABEL} {
       ${getTypographyByKey("h5")}
-      color: var(--ads-form-group-label-text-color);
+      color: var(--ads-v2-color-fg);
     }
   }
 `;
