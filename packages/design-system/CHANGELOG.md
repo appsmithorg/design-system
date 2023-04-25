@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.7
+
+### Patch Changes
+
+- [#462](https://github.com/appsmithorg/design-system/pull/462) [`37d65c5`](https://github.com/appsmithorg/design-system/commit/37d65c5eae3f01aad126a5cd7664cf8fedb10896) Thanks [@berzerkeer](https://github.com/berzerkeer)! - chore: give control to user to enable/disable uppy informer
+
 ## 2.1.6
 
 ### Patch Changes
