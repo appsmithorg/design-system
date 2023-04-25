@@ -29,6 +29,7 @@ type Props = {
   submit: (uppy: Uppy.Uppy) => void;
   value: string;
   label?: string;
+  disableUppyInformer?: boolean;
 };
 
 const Container = styled.div`
@@ -77,6 +78,7 @@ export default function DisplayImageUpload({
   onRemove,
   submit,
   value,
+  disableUppyInformer,
 }: Props) {
   const [loadError, setLoadError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -200,6 +202,7 @@ export default function DisplayImageUpload({
           note="File size must not exceed 3 MB"
           plugins={["ImageEditor"]}
           uppy={uppy}
+          disableInformer={disableUppyInformer}
         />
       </Dialog>
     </Container>

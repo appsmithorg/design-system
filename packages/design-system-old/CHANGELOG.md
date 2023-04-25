@@ -1,5 +1,17 @@
 # @appsmithorg/design-system
 
+## 1.1.5
+
+### Patch Changes
+
+- [#462](https://github.com/appsmithorg/design-system/pull/462) [`37d65c5`](https://github.com/appsmithorg/design-system/commit/37d65c5eae3f01aad126a5cd7664cf8fedb10896) Thanks [@berzerkeer](https://github.com/berzerkeer)! - chore: give control to user to enable/disable uppy informer
+
+## 1.1.4
+
+### Patch Changes
+
+- [#445](https://github.com/appsmithorg/design-system/pull/445) [`8d3ef64`](https://github.com/appsmithorg/design-system/commit/8d3ef64c4b266569d8b837bc69da255987716e1f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Adding autoResetExpanded to the table component for avoiding the tree getting closed on every change
+
 ## 1.1.3
 
 ### Patch Changes

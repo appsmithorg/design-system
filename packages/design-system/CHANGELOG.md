@@ -1,5 +1,28 @@
 # @appsmithorg/design-system
 
+## 2.1.7
+
+### Patch Changes
+
+- [#462](https://github.com/appsmithorg/design-system/pull/462) [`37d65c5`](https://github.com/appsmithorg/design-system/commit/37d65c5eae3f01aad126a5cd7664cf8fedb10896) Thanks [@berzerkeer](https://github.com/berzerkeer)! - chore: give control to user to enable/disable uppy informer
+
+## 2.1.6
+
+### Patch Changes
+
+- [#455](https://github.com/appsmithorg/design-system/pull/455) [`7c735ab`](https://github.com/appsmithorg/design-system/commit/7c735ab248ddd944be7e8b1760153db48f6a84af) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Importing and adding the external link line icon from remixicon
+
+* [#454](https://github.com/appsmithorg/design-system/pull/454) [`ffa75c8`](https://github.com/appsmithorg/design-system/commit/ffa75c84fea83c7ffd8e775baac4b2c208b7faf6) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - chore: add page menu icons
+
+## 2.1.5
+
+### Patch Changes
+
+- [#450](https://github.com/appsmithorg/design-system/pull/450) [`c7eeb4d`](https://github.com/appsmithorg/design-system/commit/c7eeb4d9106b50898fae381c7b69b66661305d96) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Type name duplication fixed
+
+* [#447](https://github.com/appsmithorg/design-system/pull/447) [`726780d`](https://github.com/appsmithorg/design-system/commit/726780d7b0cee7352904cf14b83c94ff06716fbb) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: component fixes - select, input
+  fix: exported type
+
 ## 2.1.4
 
 ### Patch Changes
