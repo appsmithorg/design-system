@@ -44,6 +44,7 @@ export const StyledControlContainer = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   transition: box-shadow 600ms ease;
+  height: 100%;
 
   &:focus-visible {
     outline: var(--ads-v2-border-width-outline) solid
