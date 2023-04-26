@@ -12,7 +12,6 @@ export const isEmail = (value: string) => {
 };
 
 const TagInputWrapper = styled.div`
-  margin-right: 8px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -40,11 +39,6 @@ const TagInputWrapper = styled.div`
         outline-offset: var(--ads-v2-offset-outline);
       }
 
-      &::placeholder {
-        color: var(--ads-v2-color-gray-400);
-        font-size: var(--ads-v2-font-size-4);
-      }
-
       /* background-color: var(--ads-tag-input-background-color);
       min-height: 38px;
       border: 1.2px solid var(--ads-tag-input-border-color);
@@ -64,6 +58,10 @@ const TagInputWrapper = styled.div`
       /* &::placeholder {
         color: var(--ads-tag-input-placeholder-color);
       } */
+      &::placeholder {
+        color: var(--ads-v2-color-fg-subtle);
+        font-size: var(--ads-v2-font-size-4);
+      }
     }
     .${Classes.TAG} {
       background-color: var(--ads-v2-color-bg-subtle);
