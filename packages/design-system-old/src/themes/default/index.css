@@ -88,8 +88,8 @@
   --ads-dialog-component-icon-background-color: #FFDEDE;
 
   /** Display Image Upload */
-  --ads-display-image-upload-background-color: var(--ads-old-color-pigeon-post);
-  --ads-display-image-upload-label-text-color: var(--ads-old-color-royal-blue);
+  --ads-display-image-upload-background-color: var(--ads-v2-color-bg-emphasis);
+  --ads-display-image-upload-label-text-color: var(--ads-v2-color-fg);
 
   /** Dropdown */
   --ads-dropdown-hover-background-color : var(--ads-old-color-gallery-2);
