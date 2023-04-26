@@ -5,7 +5,7 @@ export type CheckboxProps = {
   name?: string;
   value?: string;
   children?: ReactNode;
-  defaultSelected?: boolean;
+  isDefaultSelected?: boolean;
   isSelected?: boolean;
   isIndeterminate?: boolean;
   isDisabled?: boolean;
