@@ -36,6 +36,7 @@
     "@storybook/manager-webpack4": "^6.5.15",
     "@storybook/react": "^6.5.15",
     "@svgr/rollup": "^6.5.1",
+    "@svgr/webpack": "5.5.0",
     "@types/loadable__component": "^5.13.4",
     "@types/react": "^17.0.2",
     "@types/react-datepicker": "^4.10.0",
