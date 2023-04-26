@@ -109,6 +109,7 @@ export const StyledRadioGroup = styled.div<{
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: ${({ UNSAFE_gap }) => UNSAFE_gap || "var(--ads-v2-spaces-6)"};
+  padding-left: var(--ads-v2-spaces-1);
 
   /* This Aria field is added by react-aria library */
   &[aria-orientation="vertical"] {
