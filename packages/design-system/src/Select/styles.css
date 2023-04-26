@@ -121,6 +121,7 @@
   padding-right: calc(var(--select-padding-x) + 20px);
   color: var(--ads-v2-color-fg-subtle);
   left: 0;
+  opacity: 1;
   /* top: ${({ size }) => (size === "sm" ? "" : "0")}; */
   height: 100%;
   width: 100%;

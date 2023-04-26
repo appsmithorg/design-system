@@ -31,7 +31,7 @@ export default {
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Select> = (args) => {
   return (
-    <Select {...args} isLoading>
+    <Select {...args}>
       <Option value="value 1">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Icon name="arrow-left-line" size="md" />
