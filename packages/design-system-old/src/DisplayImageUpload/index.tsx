@@ -90,7 +90,7 @@ export default function DisplayImageUpload({
       restrictions: {
         maxNumberOfFiles: 1,
         maxFileSize: 3145728, // 3 MB
-        allowedFileTypes: [".jpg", ".jpeg", ".png"],
+        allowedFileTypes: [".jpg", ".jpeg", ".png", "image/jpg", "image/jpeg", "image/png"],
       },
       infoTimeout: 5000,
       locale: {
