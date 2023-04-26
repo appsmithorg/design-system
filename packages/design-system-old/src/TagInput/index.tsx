@@ -26,10 +26,23 @@ const TagInputWrapper = styled.div`
       font-size: var(--ads-v2-font-size-2);
       box-shadow: none;
 
-      min-height: 38px;
+      min-height: 36px;
 
       &:hover {
         border-color: var(--ads-v2-color-border-emphasis);
+      }
+
+      &:focus,
+      &:active {
+        border-color: var(--ads-v2-color-border-emphasis);
+        outline: var(--ads-v2-border-width-outline) solid
+          var(--ads-v2-color-outline);
+        outline-offset: var(--ads-v2-offset-outline);
+      }
+
+      &::placeholder {
+        color: var(--ads-v2-color-gray-400);
+        font-size: var(--ads-v2-font-size-4);
       }
 
       /* background-color: var(--ads-tag-input-background-color);
@@ -53,8 +66,6 @@ const TagInputWrapper = styled.div`
       } */
     }
     .${Classes.TAG} {
-      padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
-      height: 18px;
       background-color: var(--ads-v2-color-bg-subtle);
       color: var(--ads-v2-color-fg);
       border-radius: var(--ads-v2-border-radius);
