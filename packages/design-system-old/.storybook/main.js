@@ -30,6 +30,28 @@ async function webpackConfig(config) {
 
   config.resolve.plugins.push(new TsconfigPathsPlugin());
 
+  // Use SVGR for SVGs (based on https://github.com/storybookjs/storybook/issues/18557)
+  // 1. Disable whatever is already set to load SVGs
+  config.module.rules
+    .filter((rule) => rule.test?.test(".svg"))
+    .forEach((rule) => (rule.exclude = /\.svg$/i));
+
+  // 2. Add SVGR instead
+  config.module.rules.push({
+    test: /\.svg$/,
+    use: [{
+      loader: '@svgr/webpack',
+      options: {
+        svgoConfig: {
+          plugins: {
+            removeViewBox: false
+          }
+        }
+      }
+    }, "file-loader"],
+    issuer: /\.(ts|tsx|js|jsx|md|mdx)$/,
+  });
+
   return config
 }
 
@@ -54,20 +76,4 @@ module.exports = {
   ],
   "framework": "@storybook/react",
   "webpackFinal": webpackConfig,
-  "babel": async (options) => {
-    options.plugins.push([
-      "babel-plugin-inline-react-svg",
-      {
-        "svgo": {
-          "plugins": [
-            {
-              "name": "removeViewBox",
-              "active": false
-            }
-          ]
-        }
-      }
-    ]);
-    return options;
-  }
 }
