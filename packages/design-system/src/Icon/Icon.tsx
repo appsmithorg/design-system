@@ -13,6 +13,7 @@ export const iconSizes: Record<IconSizes, string> = {
 };
 
 function Icon(props: IconProps) {
+  // TODO: Add a warning when an onClick is passed: "consider using a button with the isIconButton flag instead"
   const { className, color, name, size = "sm", ...rest } = props;
 
   return (
