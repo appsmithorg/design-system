@@ -10,18 +10,18 @@ const TextHighlighter = styled.mark`
 export type HighlightTextProps = {
   highlight: string;
   text: string;
-};
+} & React.HTMLAttributes<HTMLSpanElement>;
 
 export function HighlightText(props: HighlightTextProps) {
-  const { highlight = "", text = "" } = props;
+  const { highlight = "", text = "", ...rest } = props;
   if (!highlight.trim()) {
-    return <span data-testid="t--no-highlight">{text}</span>;
+    return <span data-testid="t--no-highlight" {...rest}>{text}</span>;
   }
   const regex = new RegExp(`(${escapeRegExp(highlight)})`, "gi");
   const parts: string[] = text.split(regex);
 
   return (
-    <span className="search-highlight">
+    <span className="search-highlight" {...rest}>
       {parts.filter(String).map((part, i) => {
         return regex.test(part) ? (
           <TextHighlighter data-testid="t--highlighted-text" key={i}>
