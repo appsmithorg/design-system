@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BaseDatePicker from "react-datepicker";
 import range from "lodash/range";
 import getYear from "date-fns/getYear";
@@ -42,9 +42,13 @@ function DatePicker(props: DatePickerProps) {
     yearStartRange,
     ...rest
   } = props;
-  const [selectedDate, setSelectedDate] = useState<Date | null>(
-    selected || null,
-  );
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    if (selected !== selectedDate) {
+      setSelectedDate(selected || null);
+    }
+  }, [selected]);
 
   const onChangeHandler = (
     date: Date | null,
@@ -265,10 +269,17 @@ function DateRangePicker(props: DateRangePickerProps) {
     yearStartRange,
     ...rest
   } = props;
-  const [startDate, setStartDate] = useState<Date | null>(
-    propStartDate || null,
-  );
-  const [endDate, setEndDate] = useState<Date | null>(propEndDate || null);
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    if (propStartDate !== startDate) {
+      setStartDate(propStartDate || null);
+    }
+    if (propEndDate !== endDate) {
+      setEndDate(propEndDate || null);
+    }
+  }, [propStartDate, propEndDate]);
 
   const onChangeHandler = (
     date: [Date | null, Date | null],
