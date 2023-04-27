@@ -11,6 +11,8 @@ export interface InputProps extends TextFieldProps {
   renderAs?: "input" | "textarea";
   /** (try not to) pass addition classes here */
   className?: string;
+  /** Name of the form control. Submitted with the form as part of a name/value pair */
+  name?: string;
   /** label position  */
   labelPosition?: "top" | "left";
   /** start icon  */
