@@ -153,6 +153,8 @@ import FileAddLineIcon from "remixicon-react/FileAddLineIcon";
 import Layout2LineIcon from "remixicon-react/Layout2LineIcon";
 import PencilLineIcon from "remixicon-react/PencilLineIcon";
 import ServerLineIcon from "remixicon-react/ServerLineIcon";
+import LayoutColumnLineIcon from "remixicon-react/LayoutColumnLineIcon";
+import LayoutLeft2LineIcon from "remixicon-react/LayoutLeft2LineIcon";
 import { ReactComponent as DragHandleIcon } from "../__assets__/icons/ads/app-icons/draghandler.svg";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
@@ -529,6 +531,8 @@ const ICON_LOOKUP = {
   "layout-2-line": Layout2LineIcon,
   "pencil-line": PencilLineIcon,
   "server-line": ServerLineIcon,
+  "layout-column-line": LayoutColumnLineIcon,
+  "layout-left-2-line": LayoutLeft2LineIcon,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,
