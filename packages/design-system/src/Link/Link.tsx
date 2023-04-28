@@ -79,7 +79,10 @@ function Link(props: LinkProps) {
       className={clsx(LinkClassName, className)}
       innerRef={ref}
       kind={rest.kind}
-      onClick={rest.onClick}
+      onClick={(e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+        e.preventDefault();
+        rest.onClick?.(e);
+      }}
       target={"_self"}
       to=""
     >
