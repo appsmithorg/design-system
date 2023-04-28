@@ -8,6 +8,7 @@ import Icon from "Icon";
 
 const Container = styled.div`
   box-shadow: 1px 0px 10px 5px rgba(0, 0, 0, 0.15);
+  border-radius: var(--ads-v2-border-radius);
 `;
 
 const Footer = styled.div`
@@ -35,6 +36,9 @@ const Row = styled.div`
 
 const Buttons = styled.div`
   display: flex;
+  & button {
+    border-radius: var(--ads-v2-border-radius);
+  }
   & button:last-child {
     margin-left: var(--ads-spaces-1);
 `;

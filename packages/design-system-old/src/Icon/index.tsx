@@ -503,6 +503,9 @@ const MoneyDollarCircleLineIcon = importRemixIcon(() =>
 const ExternalLinkLineIcon = importRemixIcon(() =>
   import("remixicon-react/ExternalLinkLineIcon"),
 );
+const PencilLineIcon = importRemixIcon(() =>
+  import("remixicon-react/PencilLineIcon"),
+);
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -811,6 +814,7 @@ const ICON_LOOKUP = {
   devices: <DevicesIcon />,
   grid: <GridIcon />,
   "updates": <UpdatesIcon />,
+  "pencil-line": <PencilLineIcon />,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);

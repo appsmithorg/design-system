@@ -4,7 +4,6 @@ import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "./styles.css";
 import "../src/themes/default/index.css";
-import "../../design-system/src/__theme__/default/index.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

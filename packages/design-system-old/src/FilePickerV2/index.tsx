@@ -128,13 +128,14 @@ export const ContainerDiv = styled.div<{
     width: 100%;
     background: var(--ads-file-picker-v2-upload-progress-background-color);
     transition: height 0.2s;
+    border-radius: var(--ads-v2-border-radius);
   }
 
   .progress-inner {
     background-color: var(--ads-file-picker-v2-upload-success-background-color);
     transition: width 0.4s ease;
     height: var(--ads-spaces-1);
-    border-radius: calc(var(--ads-spaces-1) - 1px);
+    border-radius: var(--ads-v2-border-radius);
     width: 0%;
   }
 
@@ -149,11 +150,7 @@ export const ContainerDiv = styled.div<{
     position: absolute;
     bottom: 0;
     right: 0;
-    background: linear-gradient(
-      180deg,
-      var(--ads-file-picker-v2-remove-button-background-color-gradient-start),
-      var(--ads-file-picker-v2-remove-button-background-color-gradient-end)
-    );
+    background: var(--ads-v2-color-fg);
     opacity: 0.6;
     width: 100%;
 
@@ -181,8 +178,9 @@ const ContainerDivWithBorder = styled(ContainerDiv)<{
 }>`
   width: 100%;
   height: 188px;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23F86A2B' stroke-width='1.2' stroke-dasharray='6.4%2c 6.4' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-  background-color: var(--ads-color-black-0);
+  border-radius: var(--ads-v2-border-radius);
+  border: 1px dashed var(--ads-v2-color-bg-brand);
+  background-color: var(--ads-v2-color-bg);
 `;
 
 const IconWrapper = styled.div`

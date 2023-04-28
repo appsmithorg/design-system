@@ -43,7 +43,7 @@ const Styles = styled.div`
           }
 
           &:hover {
-            color: var(--ads-v2-color-bg-muted);
+            color: var(--ads-v2-color-fg-emphasis);
             cursor: pointer;
             svg {
               path {

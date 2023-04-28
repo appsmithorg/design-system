@@ -23,8 +23,8 @@ EditableTextExample.args = {
   editInteractionKind: EditInteractionKind.SINGLE,
   fill: true,
   hideEditIcon: false,
-  isError: false,
-  isInvalid: false,
+  isError: true,
+  isInvalid: true,
   placeholder: "Edit text input",
   underline: false,
 };

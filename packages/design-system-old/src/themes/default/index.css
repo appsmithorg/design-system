@@ -1,5 +1,6 @@
 @import "colors.css";
 @import "variables.css";
+@import "../../../../design-system/src/__theme__/default/index.css";
 
 :root {
 
@@ -112,13 +113,13 @@
   --ads-dropdown-default-close-hover-background-color : var(--ads-old-color-gallery-2);
 
   /** EditableTextSubComponent */
-  --ads-editable-text-subcomponent-error-background-color: var(--ads-old-color-pomegranate);
+  --ads-editable-text-subcomponent-error-background-color: var(--ads-v2-color-bg-subtle);
   --ads-editable-text-subcomponent-default-background-color: var(--ads-v2-color-bg-subtle);
-  --ads-editable-text-subcomponent-error-text-color: var(--ads-old-color-pomegranate);
-  --ads-editable-text-subcomponent-default-text-color: var(--ads-color-black-750);
+  --ads-editable-text-subcomponent-error-text-color: var(--ads-v2-color-fg-error);
+  --ads-editable-text-subcomponent-default-text-color: var(--ads-v2-color-fg);
 
   /** EditableTextWrapper */
-  --ads-editable-text-wrapper-default-text-color: var(--ads-old-color-alto);
+  --ads-editable-text-wrapper-default-text-color: var(--ads-v2-color-fg);
 
   /** Emoji Reactions */
   --ads-emoji-reactions-bubble-background-color: var(--ads-color-black-75);
@@ -130,12 +131,12 @@
   --ads-emoji-reactions-count-hover-text-color: var(--ads-color-black-750);
 
   /** FilePickerV2 */
-  --ads-file-picker-v2-default-background-color: var(--ads-color-black-75);
-  --ads-file-picker-v2-default-text-color : var(--ads-old-color-dove-gray-2);
-  --ads-file-picker-v2-success-text-color : var(--ads-old-color-jade);
-  --ads-file-picker-v2-upload-progress-background-color: var(--ads-color-black-470);
-  --ads-file-picker-v2-upload-success-background-color: var(--ads-old-color-fun-green);
-  --ads-file-picker-v2-upload-icon-fill-color: var(--ads-color-black-800);
+  --ads-file-picker-v2-default-background-color: var(--ads-v2-color-bg);
+  --ads-file-picker-v2-default-text-color : var(--ads-v2-color-fg);
+  --ads-file-picker-v2-success-text-color : var(--ads-v2-color-fg-success);
+  --ads-file-picker-v2-upload-progress-background-color: var(--ads-v2-color-bg-muted);
+  --ads-file-picker-v2-upload-success-background-color: var(--ads-v2-color-bg-success);
+  --ads-file-picker-v2-upload-icon-fill-color: var(--ads-v2-color-fg);
   --ads-file-picker-v2-remove-button-background-color-gradient-start: rgba(253, 253, 253, 0.0001);
   --ads-file-picker-v2-remove-button-background-color-gradient-end: rgba(250, 250, 250, 0.898847);
 
@@ -156,10 +157,10 @@
   --ads-form-message-light-success-background-color: #EFFFF4;
 
   /** Gif Player */
-  --ads-gif-player-icon-path-fill-color: var(--ads-old-color-silver);
+  --ads-gif-player-icon-path-fill-color: var(--ads-v2-color-bg-subtle);
   --ads-gif-player-icon-circle-fill-color: var(--ads-old-color-gray-10);
-  --ads-gif-player-text-color: var(--ads-old-color-dove-gray-3);
-  --ads-gif-player-overlay-background-color: var(--ads-color-black-0);
+  --ads-gif-player-text-color: var(--ads-v2-color-fg);
+  --ads-gif-player-overlay-background-color: var(--ads-v2-color-bg);
 
   /** HighlightText */
   --ads-highlight-text-default-text-color: var(--ads-color-orange-800);
@@ -256,7 +257,7 @@
   --ads-search-input-active-border-color: var(--ads-color-black-900);
 
   /** Showcase Carousel */
-  --ads-showcase-carousel-dot-background-color: var(--ads-old-color-bridesmaid);
+  --ads-showcase-carousel-dot-background-color: var(--ads-v2-color-bg-subtle);
   --ads-showcase-carousel-dot-active-background-color: var(--ads-color-brand);
 
   /** Statusbar */
