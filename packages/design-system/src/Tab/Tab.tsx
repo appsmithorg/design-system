@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "classnames";
 
 import {
   StyledTabs,
@@ -10,6 +11,13 @@ import {
 import { Text } from "../Text";
 import { TabPanelProps, TabProps, TabsListProps, TabsProps } from "./Tab.types";
 import { Tag } from "../Tag";
+import {
+  TabsClassName,
+  TabsListClassName,
+  TabsListTabClassName,
+  TabsListTabCountClassName,
+  TabsPanelClassName,
+} from "./Tab.constants";
 
 /* TODO
 - border styles using ::before
@@ -18,26 +26,45 @@ import { Tag } from "../Tag";
  */
 
 function Tabs(props: TabsProps) {
+  const { className, defaultValue, ...rest } = props;
   return (
-    <StyledTabs defaultValue={props.defaultValue} {...props}>
+    <StyledTabs
+      className={clsx(TabsClassName, className)}
+      defaultValue={defaultValue}
+      {...rest}
+    >
       {props.children}
     </StyledTabs>
   );
 }
 
 function TabsList(props: TabsListProps) {
-  return <StyledTabsList loop>{props.children}</StyledTabsList>;
+  const { children, className, ...rest } = props;
+  return (
+    <StyledTabsList
+      className={clsx(TabsListClassName, className)}
+      {...rest}
+      loop
+    >
+      {children}
+    </StyledTabsList>
+  );
 }
 
 function Tab(props: TabProps) {
+  const { children, className, notificationCount, value, ...rest } = props;
   return (
-    <StyledTab value={props.value}>
+    <StyledTab
+      className={clsx(TabsListTabClassName, className)}
+      value={value}
+      {...rest}
+    >
       <Text color="inherit" kind="action-m">
-        {props.children}
+        {children}
       </Text>
-      {!!props.notificationCount && props.notificationCount > 0 && (
-        <Tag isClosable={false}>
-          {props.notificationCount > 9 ? "9+" : props.notificationCount}
+      {!!notificationCount && notificationCount > 0 && (
+        <Tag className={TabsListTabCountClassName} isClosable={false}>
+          {notificationCount > 9 ? "9+" : notificationCount}
         </Tag>
       )}
     </StyledTab>
@@ -45,6 +72,9 @@ function Tab(props: TabProps) {
 }
 
 function TabPanel(props: TabPanelProps) {
-  return <StyledTabPanel {...props} />;
+  const { className, ...rest } = props;
+  return (
+    <StyledTabPanel className={clsx(TabsPanelClassName, className)} {...rest} />
+  );
 }
 export { Tabs, TabsList, Tab, TabPanel };
