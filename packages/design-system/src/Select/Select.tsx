@@ -27,7 +27,7 @@ function Select(props: SelectProps) {
     maxTagCount = 2,
     maxTagPlaceholder,
     maxTagTextLength = 5,
-    placeholder = "Please select",
+    placeholder = "Please select an option",
     showSearch = false,
     size = "md",
     ...rest
