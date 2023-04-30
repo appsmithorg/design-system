@@ -390,7 +390,7 @@ function FilePickerComponent(props: FilePickerProps) {
         />
       </UploadIconWrapper>
       <Text className="drag-drop-text" type={TextType.P2}>
-        {props.title || "Drag & Drop files to upload or"}
+        {props.title || "Drag & drop files to upload or"}
       </Text>
       {props.description && (
         <Text className="drag-drop-description" type={TextType.P2}>
@@ -461,7 +461,7 @@ function FilePickerComponent(props: FilePickerProps) {
         <div className="success-container">
           <UploadSuccessIcon className="success-icon" />
           <Text className="success-text" type={TextType.H4}>
-            Successfully Uploaded!
+            Successfully uploaded!
           </Text>
           <TooltipComponent content={REMOVE_FILE_TOOL_TIP()} position="top">
             <IconWrapper className="icon-wrapper" onClick={() => removeFile()}>
