@@ -1,5 +1,7 @@
 import { DialogContentProps } from "@radix-ui/react-dialog";
 
+//  TODO:  Need to change `open` prop on Modal to `isOpen`
+
 // Modal content props
 export type ModalContentProps = DialogContentProps & {
   /** Modal content */
