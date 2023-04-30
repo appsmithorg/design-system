@@ -55,6 +55,7 @@ export const ToastBody = styled(Text)`
   justify-content: space-between;
   color: var(--ads-v2-color-fg-emphasis);
   gap: var(--ads-v2-spaces-3);
+  word-break: break-all;
 `;
 
 export const StyledButton = styled(Button)`
