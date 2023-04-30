@@ -187,6 +187,15 @@ export const StyledInput = styled.input<{
 
   &[data-is-valid="false"] {
     --input-color-border: var(--ads-v2-color-border-error);
+
+    &:hover:enabled:not(:read-only) {
+      --input-color-border: var(--ads-v2-color-border-error);
+    }
+
+    &:active:enabled:not(:read-only),
+    &:focus:enabled:not(:read-only) {
+      --input-color-border: var(--ads-v2-color-border-error);
+    }
   }
 `;
 
