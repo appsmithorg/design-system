@@ -2,6 +2,7 @@
 import React from "react";
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
 import AddMoreFillIcon from "remixicon-react/AddCircleFillIcon";
+import ArrowGoBackLineIcon from "remixicon-react/ArrowGoBackLineIcon";
 import ArrowLeftRightIcon from "remixicon-react/ArrowLeftRightLineIcon";
 import ArrowDownLineIcon from "remixicon-react/ArrowDownLineIcon";
 import BookIcon from "remixicon-react/BookOpenLineIcon";
@@ -64,6 +65,7 @@ import SubtractLine from "remixicon-react/SubtractLineIcon";
 import RightArrowIcon from "remixicon-react/ArrowRightLineIcon";
 import RightArrowIcon2 from "remixicon-react/ArrowRightSLineIcon";
 import RocketIcon from "remixicon-react/RocketLineIcon";
+import Save2LineIcon from "remixicon-react/Save2LineIcon";
 import SearchIcon from "remixicon-react/SearchLineIcon";
 import SortAscIcon from "remixicon-react/SortAscIcon";
 import SortDescIcon from "remixicon-react/SortDescIcon";
@@ -383,6 +385,7 @@ const ICON_LOOKUP = {
   "info-fill": InfoFillIcon,
   "arrow-down-s-fill": ArrowDownSFillIcon,
   "arrow-forward": ArrowForwardIcon,
+  "arrow-go-back": ArrowGoBackLineIcon,
   "arrow-left": ArrowLeft,
   "arrow-right-s-fill": ArrowRightSFillIcon,
   "arrow-right-up-line": ArrowRightUpLineIcon,
@@ -592,6 +595,7 @@ const ICON_LOOKUP = {
   reaction: Reaction,
   refresh: RefreshLineIcon,
   rocket: RocketIcon,
+  save: Save2LineIcon,
   search: SearchIcon,
   setting: SettingIcon,
   share: ShareForwardIcon,
