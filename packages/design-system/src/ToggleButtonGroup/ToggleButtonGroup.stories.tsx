@@ -26,11 +26,11 @@ ToggleButtonGroupStory.storyName = "ToggleButtonGroup";
 ToggleButtonGroupStory.args = {
   options: [
     {
-      icon: "bold-font",
+      icon: "text-bold",
       value: "BOLD",
     },
     {
-      icon: "italics-font",
+      icon: "text-italic",
       value: "ITALIC",
     },
   ],

@@ -18,7 +18,7 @@ const Sizes = {
     --toggle-width: var(--ads-v2-spaces-5);
   `,
   md: css`
-    --toggle-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-2);
+    --toggle-padding: var(--ads-v2-spaces-2);
     --toggle-height: var(--ads-v2-spaces-7);
     --toggle-width: var(--ads-v2-spaces-7);
   `,
