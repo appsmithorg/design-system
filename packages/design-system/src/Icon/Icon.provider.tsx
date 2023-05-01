@@ -158,6 +158,10 @@ import ServerLineIcon from "remixicon-react/ServerLineIcon";
 import LayoutColumnLineIcon from "remixicon-react/LayoutColumnLineIcon";
 import LayoutLeft2LineIcon from "remixicon-react/LayoutLeft2LineIcon";
 import PagesLineIcon from "remixicon-react/PagesLineIcon";
+import BoldIcon from "remixicon-react/BoldIcon";
+import ItalicIcon from "remixicon-react/ItalicIcon";
+import UnderLineIcon from "remixicon-react/UnderlineIcon";
+import SipLineIcon from "remixicon-react/SipLineIcon";
 import { ReactComponent as DragHandleIcon } from "../__assets__/icons/ads/app-icons/draghandler.svg";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
@@ -538,6 +542,10 @@ const ICON_LOOKUP = {
   "server-line": ServerLineIcon,
   "layout-column-line": LayoutColumnLineIcon,
   "layout-left-2-line": LayoutLeft2LineIcon,
+  "text-bold": BoldIcon,
+  "text-italic": ItalicIcon,
+  "text-underline": UnderLineIcon,
+  "sip-line": SipLineIcon,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,
