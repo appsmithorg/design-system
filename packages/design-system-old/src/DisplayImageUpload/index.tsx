@@ -134,42 +134,6 @@ export default function DisplayImageUpload({
       },
     });
 
-    const isFileContentAnImageType = (file: File) => {
-      // ref: https://stackoverflow.com/questions/18299806/how-to-check-file-mime-type-with-javascript-before-upload
-      return new Promise((resolve, reject) => {
-        // get first 4 bytes of the file
-        const blob = (file as any).data.slice(0, 4);
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          if (reader.result) {
-            // convert content to a unsigned int array to read it's value
-            // then toString(16) converts to hexadecimal
-            const initialBytesOfFile = new Uint8Array(reader.result as ArrayBufferLike)
-                                    .reduce((prev, curr ) => prev + curr.toString(16), "");
-            /*
-              compare initialBytesOfFile with magic numbers to identify file signature
-              file signatures reference: https://en.wikipedia.org/wiki/List_of_file_signatures
-            */
-            switch (initialBytesOfFile) {
-              // image/png
-              case "89504e47":
-                resolve(true);
-                break;
-              // image/jpeg or image/jpg
-              case "ffd8ffe0":
-              case "ffd8ffe1":
-              case "ffd8ffdb":
-              case "ffd8ffee":
-                resolve(true);
-                break;
-            }
-            reject();
-          }
-        };
-        reader.readAsArrayBuffer(blob);
-      });
-    };
-
     uppy.on("file-added", (file: File) => {
       isFileContentAnImageType(file)
         .then(() => {
@@ -255,3 +219,39 @@ export default function DisplayImageUpload({
     </Container>
   );
 }
+
+const isFileContentAnImageType = (file: File) => {
+  // ref: https://stackoverflow.com/questions/18299806/how-to-check-file-mime-type-with-javascript-before-upload
+  return new Promise((resolve, reject) => {
+    // get first 4 bytes of the file
+    const blob = (file as any).data.slice(0, 4);
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      if (reader.result) {
+        // convert content to a unsigned int array to read it's value
+        // then toString(16) converts to hexadecimal
+        const initialBytesOfFile = new Uint8Array(reader.result as ArrayBufferLike)
+                                .reduce((prev, curr ) => prev + curr.toString(16), "");
+        /*
+          compare initialBytesOfFile with magic numbers to identify file signature
+          file signatures reference: https://en.wikipedia.org/wiki/List_of_file_signatures
+        */
+        switch (initialBytesOfFile) {
+          // image/png
+          case "89504e47":
+            resolve(true);
+            break;
+          // image/jpeg or image/jpg
+          case "ffd8ffe0":
+          case "ffd8ffe1":
+          case "ffd8ffdb":
+          case "ffd8ffee":
+            resolve(true);
+            break;
+        }
+        reject();
+      }
+    };
+    reader.readAsArrayBuffer(blob);
+  });
+};
