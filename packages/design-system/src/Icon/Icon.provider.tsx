@@ -165,6 +165,14 @@ import SipLineIcon from "remixicon-react/SipLineIcon";
 import ForbidTwoLineIcon from "remixicon-react/Forbid2LineIcon";
 import Message2LineIcon from "remixicon-react/Message2LineIcon";
 import FolderDownloadLineIcon from "remixicon-react/FolderDownloadLineIcon";
+import RestartLineIcon from "remixicon-react/RestartLineIcon";
+import FolderReduceLineIcon from "remixicon-react/FolderReduceLineIcon";
+import TimerFlashLineIcon from "remixicon-react/TimerFlashLineIcon";
+import TimerLineIcon from "remixicon-react/TimerLineIcon";
+import Map2LineIcon from "remixicon-react/Map2LineIcon";
+import MapPinUserLineIcon from "remixicon-react/MapPinUserLineIcon";
+import MapPin5LineIcon from "remixicon-react/MapPin5LineIcon";
+import ChatUploadLineIcon from "remixicon-react/ChatUploadLineIcon";
 import { ReactComponent as DragHandleIcon } from "../__assets__/icons/ads/app-icons/draghandler.svg";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
@@ -552,6 +560,14 @@ const ICON_LOOKUP = {
   "no-action": ForbidTwoLineIcon,
   "message-2-line": Message2LineIcon,
   "folder-download-line": FolderDownloadLineIcon,
+  "restart-line": RestartLineIcon,
+  "folder-reduce-line": FolderReduceLineIcon,
+  "timer-flash-line": TimerFlashLineIcon,
+  "timer-line": TimerLineIcon,
+  "map-2-line": Map2LineIcon,
+  "map-pin-user-line": MapPinUserLineIcon,
+  "map-pin-5-line": MapPin5LineIcon,
+  "chat-upload-line": ChatUploadLineIcon,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,
