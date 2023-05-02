@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { useArgs } from "@storybook/client-api";
 
@@ -212,3 +212,23 @@ const ModalWithoutFooter: ComponentStory<typeof Modal> = (args) => {
 export const ModalStoryTwo = ModalWithoutFooter.bind({});
 ModalStoryTwo.storyName = "Without Footer";
 ModalStoryTwo.args = {};
+
+export function OpenModalProgrammatically() {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const handleOnChange = () => {
+    setModalOpen(!isModalOpen);
+  };
+
+  return (
+    <>
+      <Button kind="secondary" onClick={handleOnChange} size="md">
+        I am a button that is not in ModalTrigger. Click me
+      </Button>
+      <Modal onOpenChange={setModalOpen} open={isModalOpen}>
+        <ModalContent>
+          <ModalBody>Here is a thing</ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}
