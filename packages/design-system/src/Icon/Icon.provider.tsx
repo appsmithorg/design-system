@@ -173,6 +173,7 @@ import Map2LineIcon from "remixicon-react/Map2LineIcon";
 import MapPinUserLineIcon from "remixicon-react/MapPinUserLineIcon";
 import MapPin5LineIcon from "remixicon-react/MapPin5LineIcon";
 import ChatUploadLineIcon from "remixicon-react/ChatUploadLineIcon";
+import Home3LineIcon from "remixicon-react/Home3LineIcon";
 import { ReactComponent as DragHandleIcon } from "../__assets__/icons/ads/app-icons/draghandler.svg";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
@@ -312,6 +313,7 @@ import { ReactComponent as SkipRightLineIcon } from "../__assets__/icons/ads/ski
 import { ReactComponent as SkipLeftLineIcon } from "../__assets__/icons/ads/skip-left-line.svg";
 import { ReactComponent as WLineIcon } from "../__assets__/icons/ads/w-line.svg";
 import { ReactComponent as HLineIcon } from "../__assets__/icons/ads/h-line.svg";
+import { ReactComponent as ShowModalIcon } from "../__assets__/icons/ads/show-modal.svg";
 
 function PlayIconPNGWrapper() {
   return (
@@ -568,6 +570,8 @@ const ICON_LOOKUP = {
   "map-pin-user-line": MapPinUserLineIcon,
   "map-pin-5-line": MapPin5LineIcon,
   "chat-upload-line": ChatUploadLineIcon,
+  "home-3-line": Home3LineIcon,
+  "show-modal": ShowModalIcon,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,
