@@ -7,17 +7,21 @@ const Variables = css`
 `;
 
 export const StyledTabs = styled(RadixTabs.Root)`
+  max-height: fit-content;
   width: 100%;
 `;
 
 export const StyledTabsList = styled(RadixTabs.List)`
   display: flex;
+  background-color: var(--ads-v2-color-bg);
   border-bottom: 1px solid var(--ads-v2-color-border);
   display: flex;
   gap: var(--ads-v2-spaces-4);
   width: 100%;
   overflow: auto;
   padding: var(--ads-v2-spaces-1);
+  position: sticky;
+  top: 0;
 `;
 
 export const StyledTabPanel = styled(RadixTabs.Content)`
