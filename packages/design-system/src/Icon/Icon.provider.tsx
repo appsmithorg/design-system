@@ -163,6 +163,8 @@ import ItalicIcon from "remixicon-react/ItalicIcon";
 import UnderLineIcon from "remixicon-react/UnderlineIcon";
 import SipLineIcon from "remixicon-react/SipLineIcon";
 import ForbidTwoLineIcon from "remixicon-react/Forbid2LineIcon";
+import Message2LineIcon from "remixicon-react/Message2LineIcon";
+import FolderDownloadLineIcon from "remixicon-react/FolderDownloadLineIcon";
 import { ReactComponent as DragHandleIcon } from "../__assets__/icons/ads/app-icons/draghandler.svg";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
@@ -548,6 +550,8 @@ const ICON_LOOKUP = {
   "text-underline": UnderLineIcon,
   "sip-line": SipLineIcon,
   "no-action": ForbidTwoLineIcon,
+  "message-2-line": Message2LineIcon,
+  "folder-download-line": FolderDownloadLineIcon,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,

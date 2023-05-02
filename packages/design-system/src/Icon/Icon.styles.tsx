@@ -25,11 +25,5 @@ export const IconContainer = styled.span<{
     width: ${({ size }) => (size ? size : "inherit")};
     height: ${({ size }) => (size ? size : "inherit")};
     fill: ${({ color }) => (color ? color : "currentColor")};
-    circle {
-      fill: ${({ color }) => (color ? color : "currentColor")};
-    }
-    path {
-      fill: ${({ color }) => (color ? color : "currentColor")};
-    }
   }
 `;
