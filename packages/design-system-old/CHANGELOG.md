@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 1.1.6
+
+### Patch Changes
+
+- [#466](https://github.com/appsmithorg/design-system/pull/466) [`794f978`](https://github.com/appsmithorg/design-system/commit/794f9783403d105a71c75e3c49f6df7457351331) Thanks [@eco-monk](https://github.com/eco-monk)! - fix: add mime types to file upload
+
+* [#468](https://github.com/appsmithorg/design-system/pull/468) [`74cd9da`](https://github.com/appsmithorg/design-system/commit/74cd9da4c22565ad93292dc371d91cfb85102df3) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: icon not rendering in all icons page
+
 ## 1.1.5
 
 ### Patch Changes
