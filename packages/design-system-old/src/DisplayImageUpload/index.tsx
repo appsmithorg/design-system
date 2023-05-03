@@ -160,6 +160,12 @@ const StyledDialog = styled(Dialog)`
       background-color: var(--ads-v2-color-bg-subtle);
     }
   }
+  .cropper-view-box {
+    box-shadow: 0 0 0 1px var(--ads-v2-color-bg-brand);
+  }
+  .uppy-Dashboard-Item-action--remove {
+    color: var(--ads-v2-color-bg-emphasis-max);
+  }
 `;
 export default function DisplayImageUpload({
   onChange,
