@@ -363,7 +363,7 @@
   --ads-toggle-spinner-stroke-color: var(--ads-color-black-450);
 
   /** Tree Dropdown */
-  --ads-tree-dropdown-menu-default-background-color: var(--ads-color-black-5);
+  --ads-tree-dropdown-menu-default-background-color: var(--ads-v2-color-bg);
   --ads-tree-dropdown-menu-default-text-color: var(--ads-color-black-750);
   --ads-tree-dropdown-menu-selected-text-color: var(--ads-color-black-750);
   --ads-tree-dropdown-target-background-color: var(--ads-color-black-0);
