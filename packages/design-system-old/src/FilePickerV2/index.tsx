@@ -179,7 +179,7 @@ const ContainerDivWithBorder = styled(ContainerDiv)<{
   width: 100%;
   height: 188px;
   border-radius: var(--ads-v2-border-radius);
-  border: 1px dashed var(--ads-v2-color-bg-brand);
+  border: 1px dashed var(--ads-v2-color-border);
   background-color: var(--ads-v2-color-bg);
 `;
 
@@ -476,6 +476,7 @@ function FilePickerComponent(props: FilePickerProps) {
   return (
     <ContainerDivWithBorder
       canDrop={canDrop}
+      className="upload-form-container-box"
       fileType={fileType}
       isActive={isActive}
       isUploaded={isUploaded}
