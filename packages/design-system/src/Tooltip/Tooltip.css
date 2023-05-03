@@ -8,6 +8,8 @@
   opacity: 1 !important;
   z-index: 100000 !important;
   max-width: 300px;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 /* Tooltip inner element styles */
