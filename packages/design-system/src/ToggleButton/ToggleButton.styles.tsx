@@ -73,7 +73,7 @@ export const StyledToggleButton = styled.button<{
 
   border: 1px solid var(--toggle-color-border);
   background-color: var(--toggle-color-background);
-  & path {
+  & .${ToggleIconClassName} {
     color: var(--toggle-color-icon);
   }
 `;
