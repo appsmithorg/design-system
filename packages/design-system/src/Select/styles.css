@@ -126,7 +126,7 @@
   /* top: ${({ size }) => (size === "sm" ? "" : "0")}; */
   height: 100%;
   width: 100%;
-  display: inline-block;
+  display: inline-flex;
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
