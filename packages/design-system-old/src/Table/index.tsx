@@ -80,8 +80,8 @@ const Styles = styled.div`
           }
         }
 
-        &:hover {
-          background-color: var(--ads-v2-color-bg-muted);
+        &:hover:not(.no-hover) {
+          background-color: var(--ads-v2-color-bg-subtle);
           .${Classes.ICON} {
             path {
               fill: var(--ads-v2-color-fg);
@@ -191,7 +191,7 @@ function Table(props: TableProps) {
         </thead>
         <tbody {...getTableBodyProps()}>
           {isLoading ? (
-            <tr>
+            <tr className="no-hover">
               <td className="no-border" colSpan={columns?.length}>
                 <CentralizedWrapper>
                   {loaderComponent ? (
@@ -222,7 +222,7 @@ function Table(props: TableProps) {
               );
             })
           ) : (
-            <tr>
+            <tr className="no-hover">
               <td className="no-border" colSpan={columns?.length}>
                 <CentralizedWrapper>
                   {noDataComponent ? (
