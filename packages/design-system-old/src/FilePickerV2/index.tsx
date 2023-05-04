@@ -143,6 +143,16 @@ export const ContainerDiv = styled.div<{
     display: flex;
     flex-direction: column;
     align-items: center;
+    .browse-button {
+      text-transform: capitalize;
+      border-radius: var(--ads-v2-border-radius);
+      color: var(--ads-v2-color-fg);
+      border-color: var(--ads-v2-color-border);
+      background: var(--ads-v2-color-bg);
+      &:hover {
+        background: var(--ads-v2-color-bg-subtle);
+      }
+    }
   }
 
   .remove-button {
@@ -150,15 +160,30 @@ export const ContainerDiv = styled.div<{
     position: absolute;
     bottom: 0;
     right: 0;
-    background: var(--ads-v2-color-fg);
-    opacity: 0.6;
     width: 100%;
-
+    .overlay {
+      background: var(--ads-v2-color-fg);
+      opacity: 0.6;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 0 0 var(--ads-v2-border-radius) var(--ads-v2-border-radius);
+    }
     a {
       width: 110px;
       margin: var(--ads-spaces-13) var(--ads-spaces-3) var(--ads-spaces-3) auto;
+      color: var(--ads-v2-color-fg);
+      border-radius: var(--ads-v2-border-radius);
+      border-color: var(--ads-v2-color-border);
+      text-transform: capitalize;
+      background: var(--ads-v2-color-bg);
       .${Classes.ICON} {
         margin-right: calc(var(--ads-spaces-2) - 1px);
+      }
+      &:hover {
+        background: var(--ads-v2-color-bg-subtle);
       }
     }
   }
@@ -409,6 +434,7 @@ function FilePickerComponent(props: FilePickerProps) {
         />
         {!props.containerClickable && (
           <Button
+            className="browse-button"
             category={Category.secondary}
             onClick={(el: React.MouseEvent<HTMLElement>) => ButtonClick(el)}
             size={Size.medium}
@@ -438,12 +464,14 @@ function FilePickerComponent(props: FilePickerProps) {
         </div>
       </div>
       <div className="remove-button">
+        <div className="overlay" />
         <Button
           category={Category.secondary}
           icon="delete"
+          iconPosition="left"
           onClick={() => removeFile()}
           size={Size.medium}
-          text="remove"
+          text="Remove"
         />
       </div>
     </>
