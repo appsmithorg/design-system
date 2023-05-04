@@ -20,8 +20,6 @@ export const StyledTabsList = styled(RadixTabs.List)`
   width: 100%;
   overflow: auto;
   padding: var(--ads-v2-spaces-1);
-  position: sticky;
-  top: 0;
 `;
 
 export const StyledTabPanel = styled(RadixTabs.Content)`
