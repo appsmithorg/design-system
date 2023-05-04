@@ -37,7 +37,7 @@ function Select(props: SelectProps) {
     return `+${omittedValues.length}`;
   };
 
-  function InpuIcon() {
+  function InputIcon() {
     if (isLoading) {
       return <Spinner size="md" />;
     }
@@ -57,7 +57,7 @@ function Select(props: SelectProps) {
         SelectDropdownClassName + `--${size}`,
         dropdownClassName,
       )}
-      inputIcon={<InpuIcon />}
+      inputIcon={<InputIcon />}
       maxTagCount={maxTagCount}
       maxTagPlaceholder={maxTagPlaceholder || getMaxTagPlaceholder}
       maxTagTextLength={maxTagTextLength}
