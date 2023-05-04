@@ -38,9 +38,7 @@ const IconBox = styled.div<{ selectedColor?: string }>`
   justify-content: center;
   align-items: center;
   border-radius: var(--ads-v2-border-radius);
-  background-color: ${(props) =>
-    props.selectedColor ||
-    "var(--ads-icon-selector-app-icon-background-color)"};
+  background-color: ${(props) => props.selectedColor};
   margin: 0;
   position: relative;
 
