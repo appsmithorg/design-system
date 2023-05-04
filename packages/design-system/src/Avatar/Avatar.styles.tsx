@@ -46,6 +46,7 @@ export const StyledAvatar = styled.span<{
   width: var(--avatar-width);
   height: var(--avatar-height);
   font-size: var(--avatar-font-size);
+  text-transform: uppercase;
 
   img {
     width: 100%;
