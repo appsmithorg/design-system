@@ -25,7 +25,7 @@ import { DSEventTypes } from "Types/common";
 import { typography } from "Constants/typography";
 import { Intent as BlueprintIntent } from "@blueprintjs/core";
 import { IconName } from "@blueprintjs/icons";
-import "./styles.css"
+import "./styles.css";
 
 export type TreeDropdownOption = {
   label: string;
@@ -135,6 +135,10 @@ export const StyledMenu = styled(Menu)<StyledMenuProps>`
       color: var(--ads-v2-color-fg);
       .${Classes.ICON} > svg:not([fill]) {
         fill: var(--ads-v2-color-fg);
+      }
+
+      &.${Classes.ACTIVE} {
+        background-color: var(--ads-v2-color-bg-muted);
       }
     }
 
