@@ -19,6 +19,8 @@ export type SegmentedControlProps = {
   className?: string;
   /** The options of the SegmentedControl */
   options: SegmentedControlOption[];
+  /** The value of the SegmentedControl  */
+  value?: string;
   /** The defaultValue of the SegmentedControl */
   defaultValue?: string;
   /** The onChange of the SegmentedControl */

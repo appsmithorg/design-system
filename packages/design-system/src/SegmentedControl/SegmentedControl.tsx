@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "classnames";
 
 import { SegmentedControlProps } from "./SegmentedControl.types";
@@ -23,11 +23,20 @@ const SegmentedControl = React.forwardRef(
       isFullWidth = true,
       onChange,
       options,
+      value: controlledValue,
       ...rest
     } = props;
     const segmentRefs: Array<HTMLSpanElement | null> = [];
-    const [selectedValue, setSelectedValue] = useState(defaultValue);
+    const [selectedValue, setSelectedValue] = useState(
+      controlledValue ?? defaultValue,
+    );
     const [focusedIndex, setFocusedIndex] = useState<number>(0);
+
+    useEffect(() => {
+      if (controlledValue !== undefined) {
+        setSelectedValue(controlledValue);
+      }
+    }, [controlledValue]);
 
     const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
       if (!segmentRefs.length) return;
@@ -55,7 +64,9 @@ const SegmentedControl = React.forwardRef(
     };
 
     const handleOnChange = (value: string) => {
-      setSelectedValue(value);
+      if (controlledValue === undefined) {
+        setSelectedValue(value);
+      }
       onChange && onChange(value);
     };
 
