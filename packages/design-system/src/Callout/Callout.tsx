@@ -11,7 +11,11 @@ import {
 } from "./Callout.styles";
 import { getIconByKind } from "../Icon/getIconByKind";
 import { Link } from "../Link";
-import { CalloutClassName } from "./Callout.constants";
+import {
+  CalloutChildrenClassName,
+  CalloutClassName,
+  CalloutIconContainerClassName,
+} from "./Callout.constants";
 
 /*
  * TODO:
@@ -34,8 +38,10 @@ function Callout({
       kind={kind}
       {...rest}
     >
-      <StyledIconContainer>{kind && getIconByKind(kind)}</StyledIconContainer>
-      <StyledChildrenContainer>
+      <StyledIconContainer className={CalloutIconContainerClassName}>
+        {kind && getIconByKind(kind)}
+      </StyledIconContainer>
+      <StyledChildrenContainer className={CalloutChildrenClassName}>
         <StyledChildren kind="body-m">{children}</StyledChildren>
         {links && (
           <StyledLinks>

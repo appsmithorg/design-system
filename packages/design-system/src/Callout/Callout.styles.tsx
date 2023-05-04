@@ -46,9 +46,11 @@ export const StyledCallout = styled.div<{
 `;
 
 export const StyledCloseButton = styled(Button)`
-  margin-left: auto;
-  cursor: pointer;
-  min-width: fit-content;
+  && {
+    margin-left: auto;
+    cursor: pointer;
+    min-width: fit-content;
+  }
 `;
 
 export const StyledLinks = styled.div`

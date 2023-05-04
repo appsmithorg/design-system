@@ -162,6 +162,18 @@ import BoldIcon from "remixicon-react/BoldIcon";
 import ItalicIcon from "remixicon-react/ItalicIcon";
 import UnderLineIcon from "remixicon-react/UnderlineIcon";
 import SipLineIcon from "remixicon-react/SipLineIcon";
+import ForbidTwoLineIcon from "remixicon-react/Forbid2LineIcon";
+import Message2LineIcon from "remixicon-react/Message2LineIcon";
+import FolderDownloadLineIcon from "remixicon-react/FolderDownloadLineIcon";
+import RestartLineIcon from "remixicon-react/RestartLineIcon";
+import FolderReduceLineIcon from "remixicon-react/FolderReduceLineIcon";
+import TimerFlashLineIcon from "remixicon-react/TimerFlashLineIcon";
+import TimerLineIcon from "remixicon-react/TimerLineIcon";
+import Map2LineIcon from "remixicon-react/Map2LineIcon";
+import MapPinUserLineIcon from "remixicon-react/MapPinUserLineIcon";
+import MapPin5LineIcon from "remixicon-react/MapPin5LineIcon";
+import ChatUploadLineIcon from "remixicon-react/ChatUploadLineIcon";
+import Home3LineIcon from "remixicon-react/Home3LineIcon";
 import { ReactComponent as DragHandleIcon } from "../__assets__/icons/ads/app-icons/draghandler.svg";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
@@ -301,6 +313,7 @@ import { ReactComponent as SkipRightLineIcon } from "../__assets__/icons/ads/ski
 import { ReactComponent as SkipLeftLineIcon } from "../__assets__/icons/ads/skip-left-line.svg";
 import { ReactComponent as WLineIcon } from "../__assets__/icons/ads/w-line.svg";
 import { ReactComponent as HLineIcon } from "../__assets__/icons/ads/h-line.svg";
+import { ReactComponent as ShowModalIcon } from "../__assets__/icons/ads/show-modal.svg";
 
 function PlayIconPNGWrapper() {
   return (
@@ -546,6 +559,19 @@ const ICON_LOOKUP = {
   "text-italic": ItalicIcon,
   "text-underline": UnderLineIcon,
   "sip-line": SipLineIcon,
+  "no-action": ForbidTwoLineIcon,
+  "message-2-line": Message2LineIcon,
+  "folder-download-line": FolderDownloadLineIcon,
+  "restart-line": RestartLineIcon,
+  "folder-reduce-line": FolderReduceLineIcon,
+  "timer-flash-line": TimerFlashLineIcon,
+  "timer-line": TimerLineIcon,
+  "map-2-line": Map2LineIcon,
+  "map-pin-user-line": MapPinUserLineIcon,
+  "map-pin-5-line": MapPin5LineIcon,
+  "chat-upload-line": ChatUploadLineIcon,
+  "home-3-line": Home3LineIcon,
+  "show-modal": ShowModalIcon,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,
