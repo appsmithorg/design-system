@@ -7,7 +7,7 @@ import "./styles.css";
 import { Icon } from "Icon";
 import { SelectClassName, SelectDropdownClassName } from "./Select.constants";
 import { Tag } from "Tag";
-import { SelectOptionProps, SelectProps } from "./Select.types";
+import { SelectProps } from "./Select.types";
 import { Spinner } from "Spinner";
 
 /*
@@ -84,8 +84,6 @@ Select.displayName = "Select";
 
 Select.defaultProps = {};
 
-function Option(props: SelectOptionProps) {
-  return <RCOption disabled={props.isDisabled} {...props} />;
-}
+const Option = RCOption;
 
 export { Select, Option };
