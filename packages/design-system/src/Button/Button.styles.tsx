@@ -208,7 +208,7 @@ export const StyledButton = styled.button<{
     box-sizing: border-box;
     overflow: hidden;
     min-width: ${({ isIconButton }) =>
-      isIconButton ? "unset" : "min-content"};
+      isIconButton ? "unset" : "fit-content"};
 
     /* button disabled style */
     &[data-disabled="true"] {

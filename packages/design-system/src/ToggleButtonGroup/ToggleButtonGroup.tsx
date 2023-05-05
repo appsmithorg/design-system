@@ -8,7 +8,7 @@ import { ToggleGroupOption, ToggleGroupProps } from "./ToggleButtonGroup.types";
 export const ToggleButtonGroup = React.forwardRef<
   HTMLDivElement,
   ToggleGroupProps
->((props) => {
+>((props, ref) => {
   const toggleRefs: Array<HTMLButtonElement | null> = [];
 
   const { onClick, options, values } = props;
@@ -59,7 +59,11 @@ export const ToggleButtonGroup = React.forwardRef<
   };
 
   return (
-    <Group onBlur={() => setFocusedIndex(firstValueIndex)} role="tablist">
+    <Group
+      onBlur={() => setFocusedIndex(firstValueIndex)}
+      ref={ref}
+      role="tablist"
+    >
       {options.map(({ icon, value }: ToggleGroupOption, index: number) => {
         const isSelected = valueSet.has(value);
         return (
