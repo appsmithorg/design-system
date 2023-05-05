@@ -22,7 +22,7 @@ const TagInputWrapper = styled.div`
       border: 1px solid var(--ads-v2-color-border);
       border-radius: var(--ads-v2-border-radius);
       font-family: var(--ads-v2-font-family);
-      font-size: var(--ads-v2-font-size-2);
+      font-size: var(--ads-v2-font-size-4);
       box-shadow: none;
 
       min-height: 36px;
@@ -76,7 +76,7 @@ const TagInputWrapper = styled.div`
       letter-spacing: 0.4px; */
 
       color: var(--ads-v2-color-gray-600);
-      font-size: var(--ads-v2-font-size-2);
+      font-size: var(--ads-v2-font-size-4);
       font-weight: var(--ads-v2-font-weight-normal);
       letter-spacing: var(--ads-v2-letter-spacing-3);
 
