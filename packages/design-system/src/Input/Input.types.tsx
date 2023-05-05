@@ -4,6 +4,16 @@ import { Sizes } from "__config__/types";
 
 export type InputSizes = Extract<Sizes, "sm" | "md">;
 
+export type InputTypes =
+  | "text"
+  | "password"
+  | "email"
+  | "number"
+  | "tel"
+  | "url"
+  | "search"
+  | "currency";
+
 // Input props
 interface Props extends TextFieldProps {
   /** TODO: renderAs needs to changed to as */
@@ -24,7 +34,7 @@ interface Props extends TextFieldProps {
   /** size */
   size?: InputSizes;
   /** type */
-  type?: "text" | "password" | "email" | "number" | "tel" | "url";
+  type?: InputTypes;
   /** width */
   UNSAFE_width?: string;
   /** height */
