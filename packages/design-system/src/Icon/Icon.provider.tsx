@@ -175,6 +175,8 @@ import MapPin5LineIcon from "remixicon-react/MapPin5LineIcon";
 import ChatUploadLineIcon from "remixicon-react/ChatUploadLineIcon";
 import Home3LineIcon from "remixicon-react/Home3LineIcon";
 import FolderLineIcon from "remixicon-react/FolderLineIcon";
+import GoogleFillIcon from "remixicon-react/GoogleFillIcon";
+import GithubFillIcon from "remixicon-react/GithubFillIcon";
 import { ReactComponent as DragHandleIcon } from "../__assets__/icons/ads/app-icons/draghandler.svg";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
@@ -574,6 +576,8 @@ const ICON_LOOKUP = {
   "home-3-line": Home3LineIcon,
   "show-modal": ShowModalIcon,
   "folder-line": FolderLineIcon,
+  "google-fill": GoogleFillIcon,
+  "github-fill": GithubFillIcon,
   billing: BillingIcon,
   book: BookIcon,
   bug: BugIcon,
