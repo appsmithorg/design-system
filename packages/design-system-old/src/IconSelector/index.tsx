@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import AppIcon, { AppIconName, AppIconCollection } from "AppIcon";
 import { Size } from "Button";
-import ScrollIndicator from "ScrollIndicator";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 
@@ -23,12 +22,6 @@ const IconPalette = styled.div<{ fill?: boolean }>`
   width: ${(props) => (props.fill ? "100%" : "234px")};
   max-height: 90px;
   overflow-y: auto;
-  &&::-webkit-scrollbar-thumb {
-    background-color: var(--ads-icon-selector-scrollbar-thumb-background-color);
-  }
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
 `;
 
 const IconBox = styled.div<{ selectedColor?: string }>`
@@ -118,7 +111,6 @@ function IconSelector(props: IconSelectorProps) {
             </IconBox>
           );
         })}
-      <ScrollIndicator containerRef={iconPaletteRef} mode="DARK" />
     </IconPalette>
   );
 }

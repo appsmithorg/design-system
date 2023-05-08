@@ -44,7 +44,7 @@ const ColorBox = styled.div<{ selected: string; color: string }>`
       ? `&::before {
     content: "";
     position: absolute;
-    left: calc(var(--ads-spaces-3) - 1px);
+    left: calc(var(--ads-spaces-2) - 1px);
     top: calc(var(--ads-spaces-1) - 1px);
     width: calc(var(--ads-spaces-2) - 1px);
     height: calc(var(--ads-spaces-4) - 1px);
