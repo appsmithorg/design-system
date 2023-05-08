@@ -4,6 +4,8 @@
   --select-padding-y: var(--ads-v2-spaces-2); /* padding top and bottom */
   --select-color: var(--ads-v2-color-fg);
   --select-font-size: var(--ads-v2-font-size-2);
+  /* TODO: use tokens when we have them */
+  --select-line-height: 1.43;
   --select-height: 24px;
   --select-search-input-padding-right: 0;
 
@@ -26,6 +28,7 @@
   --select-padding-x: var(--ads-v2-spaces-2);
   --select-padding-y: var(--ads-v2-spaces-2);
   --select-font-size: var(--ads-v2-font-size-2);
+  --select-line-height: 1.33;
   --select-height: 24px;
 }
 
@@ -34,6 +37,7 @@
   --select-padding-x: var(--ads-v2-spaces-3);
   --select-padding-y: var(--ads-v2-spaces-3);
   --select-font-size: var(--ads-v2-font-size-4);
+  --select-line-height: 1.43;
   --select-height: 36px;
 }
 
@@ -126,7 +130,6 @@
   /* top: ${({ size }) => (size === "sm" ? "" : "0")}; */
   height: 100%;
   width: 100%;
-  display: inline-flex;
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
