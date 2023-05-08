@@ -4,7 +4,7 @@ export const StyledSegmentedControl = styled.div<{
   isDisabled?: boolean;
   isFullWidth?: boolean;
 }>`
-  display: ${({ isFullWidth }) => (isFullWidth ? "flex" : "inline-flex")};
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--ads-v2-spaces-2);
@@ -14,6 +14,7 @@ export const StyledSegmentedControl = styled.div<{
   border-radius: calc(var(--ads-v2-border-radius) + var(--ads-v2-spaces-1));
   box-sizing: border-box;
   height: 32px;
+  width: ${({ isFullWidth }) => (isFullWidth ? "auto" : "max-content")};
 `;
 
 export const StyledSegment = styled.span`
