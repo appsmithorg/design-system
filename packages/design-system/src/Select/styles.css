@@ -11,7 +11,6 @@
 
   font-family: var(--ads-v2-font-family);
   font-size: var(--select-font-size);
-  line-height: var(--select-line-height);
   border-radius: var(--ads-v2-border-radius);
   width: 100%;
 }
