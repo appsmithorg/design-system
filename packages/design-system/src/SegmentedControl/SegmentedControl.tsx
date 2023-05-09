@@ -58,16 +58,16 @@ const SegmentedControl = React.forwardRef(
 
         case "Enter":
         case " ":
-          handleOnChange(options[index].value);
+          handleOnChange(options[index].value, true);
           break;
       }
     };
 
-    const handleOnChange = (value: string) => {
+    const handleOnChange = (value: string, isUpdatedViaKeyboard = false) => {
       if (controlledValue === undefined) {
         setSelectedValue(value);
       }
-      onChange && onChange(value);
+      onChange && onChange(value, isUpdatedViaKeyboard);
     };
 
     return (
