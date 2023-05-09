@@ -38,7 +38,6 @@ export function Radio(props: RadioProps) {
   const ref = React.useRef(null);
   const { inputProps } = useRadio(props, state, ref);
   const { focusProps, isFocusVisible } = useFocusRing();
-  const id = `ads-radio-${props.value}`;
 
   return (
     <StyledRadio
@@ -46,8 +45,8 @@ export function Radio(props: RadioProps) {
       disabled={isDisabled}
       isFocusVisible={isFocusVisible}
     >
-      <input {...inputProps} {...focusProps} id={id} ref={ref} />
-      <Text className={RadioLabelClassName} htmlFor={id} renderAs="label">
+      <Text className={RadioLabelClassName} renderAs="label">
+        <input {...inputProps} {...focusProps} ref={ref} />
         {children}
       </Text>
     </StyledRadio>

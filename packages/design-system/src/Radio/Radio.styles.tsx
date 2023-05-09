@@ -49,25 +49,25 @@ const BasicStyles = css`
     transition: transform 200ms ease;
   }
 
-  input[type="radio"]:checked + label::before {
+  label:has(input[type="radio"]:checked)::before {
     --radio-color-border: var(--ads-v2-color-border-brand-secondary);
   }
 
-  input[type="radio"]:checked + label::after {
+  label:has(input[type="radio"]:checked)::after {
     transform: translateY(-50%) scale(0.55);
   }
 
   /* unchecked hover - outer circle */
-  input[type="radio"]:hover:not(:disabled) + label::before {
+  label:has(input[type="radio"]:hover:not(:disabled))::before {
     --radio-color-border: var(--ads-v2-color-border-emphasis);
   }
   /* checked hover - outer circle */
-  input[type="radio"]:checked:hover:not(:disabled) + label::before {
+  label:has(input[type="radio"]:checked:hover:not(:disabled))::before {
     --radio-color-border: var(--ads-v2-color-border-brand-secondary-emphasis);
   }
 
   /* checked hover - inner circle */
-  input[type="radio"]:checked:hover:not(:disabled) + label::after {
+  label:has(input[type="radio"]:checked:hover:not(:disabled))::after {
     --radio-color-check-mark: var(
       --ads-v2-color-border-brand-secondary-emphasis
     );
@@ -94,7 +94,7 @@ export const StyledRadio = styled.label<{
   ${({ isFocusVisible }) =>
     isFocusVisible &&
     `
-    input[type="radio"]:checked + label::before {
+    label:has(input[type="radio"]:checked)::before {
       outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
       outline-offset: var(--ads-v2-offset-outline);
     }
