@@ -18,7 +18,6 @@ function Checkbox(props: CheckboxProps) {
   const ref = React.useRef(null);
   const { inputProps } = useCheckbox(props, state, ref);
   const { focusProps, isFocusVisible } = useFocusRing();
-  const id = `ads-checkbox-${props.value}`;
 
   return (
     <StyledCheckbox
@@ -28,8 +27,8 @@ function Checkbox(props: CheckboxProps) {
       isFocusVisible={isFocusVisible}
       isIndeterminate={isIndeterminate}
     >
-      <input {...inputProps} {...focusProps} id={id} ref={ref} />
-      <Text className={CheckboxClassNameLabel} htmlFor={id} renderAs="label">
+      <Text className={CheckboxClassNameLabel} renderAs="label">
+        <input {...inputProps} {...focusProps} ref={ref} />
         {children}
       </Text>
     </StyledCheckbox>

@@ -80,7 +80,7 @@ const Checkbox = css`
     z-index: 2;
   }
 
-  input[type="checkbox"]:checked + label::after {
+  label:has(input[type="checkbox"]:checked)::after {
     opacity: 1;
   }
 
@@ -98,7 +98,7 @@ const Checkbox = css`
     z-index: 2;
   }
 
-  input[type="checkbox"]:checked + label::before {
+  label:has(input[type="checkbox"]:checked)::before {
     opacity: 1;
   }
 `;
