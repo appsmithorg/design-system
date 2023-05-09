@@ -130,6 +130,7 @@
   /* top: ${({ size }) => (size === "sm" ? "" : "0")}; */
   height: 100%;
   width: 100%;
+  align-items: center;
   box-sizing: border-box;
   overflow: hidden;
   text-overflow: ellipsis;
