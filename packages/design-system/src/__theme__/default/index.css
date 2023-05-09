@@ -180,7 +180,8 @@
 
 /* Placeholder color */
 ::placeholder {
-  color: var(--ads-v2-color-fg-subtle);
+  /* This needs to be important to override the placeholder color on main repo */
+  color: var(--ads-v2-color-fg-subtle) !important;
   opacity: 1; /* Firefox */
 }
 
