@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { DndProvider, useDrop, DropTargetMonitor } from "react-dnd";
 import HTML5Backend, { NativeTypes } from "react-dnd-html5-backend";
 import { Variant } from "Constants/variants";
-import Button, { Category, Size } from "../Button";
+import Button, { Category, IconPositions, Size } from "../Button";
 import Icon, { IconSize, IconName } from "../Icon";
 import Text, { TextType } from "../Text";
 import { Toaster } from "../Toast";
@@ -468,7 +468,7 @@ function FilePickerComponent(props: FilePickerProps) {
         <Button
           category={Category.secondary}
           icon="delete"
-          iconPosition="left"
+          iconPosition={IconPositions.left}
           onClick={() => removeFile()}
           size={Size.medium}
           text="Remove"
