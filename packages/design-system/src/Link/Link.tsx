@@ -83,6 +83,7 @@ function Link(props: LinkProps) {
         e.preventDefault();
         rest.onClick?.(e);
       }}
+      style={rest.style}
       target={"_self"}
       to=""
     >
@@ -94,6 +95,7 @@ function Link(props: LinkProps) {
       className={clsx(LinkClassName, className)}
       href={rest.to}
       kind={rest.kind}
+      style={rest.style}
       target={rest.target}
     >
       {children}
@@ -105,6 +107,7 @@ function Link(props: LinkProps) {
       className={clsx(LinkClassName, className)}
       innerRef={ref}
       kind={rest.kind}
+      style={rest.style}
       target={rest.target || "_self"}
       to={rest.to || ""}
     >
