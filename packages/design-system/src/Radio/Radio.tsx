@@ -6,12 +6,7 @@ import clsx from "classnames";
 
 import { StyledRadio, StyledRadioGroup } from "./Radio.styles";
 import { RadioProps, RadioGroupProps } from "./Radio.types";
-import {
-  RadioClassName,
-  RadioGroupClassName,
-  RadioLabelClassName,
-} from "./Radio.constants";
-import { Text } from "Text";
+import { RadioClassName, RadioGroupClassName } from "./Radio.constants";
 
 const RadioContext = React.createContext({} as RadioGroupState);
 
@@ -45,10 +40,9 @@ export function Radio(props: RadioProps) {
       disabled={isDisabled}
       isFocusVisible={isFocusVisible}
     >
-      <Text className={RadioLabelClassName} renderAs="label">
-        <input {...inputProps} {...focusProps} ref={ref} />
-        {children}
-      </Text>
+      {children}
+      <input {...inputProps} {...focusProps} ref={ref} />
+      <span />
     </StyledRadio>
   );
 }

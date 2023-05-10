@@ -6,11 +6,7 @@ import clsx from "classnames";
 
 import { CheckboxProps } from "./Checkbox.types";
 import { StyledCheckbox } from "./Checkbox.styles";
-import {
-  CheckboxClassName,
-  CheckboxClassNameLabel,
-} from "./Checkbox.constants";
-import { Text } from "Text";
+import { CheckboxClassName } from "./Checkbox.constants";
 
 function Checkbox(props: CheckboxProps) {
   const { children, className, isDisabled, isIndeterminate } = props;
@@ -27,10 +23,9 @@ function Checkbox(props: CheckboxProps) {
       isFocusVisible={isFocusVisible}
       isIndeterminate={isIndeterminate}
     >
-      <Text className={CheckboxClassNameLabel} renderAs="label">
-        <input {...inputProps} {...focusProps} ref={ref} />
-        {children}
-      </Text>
+      {children}
+      <input {...inputProps} {...focusProps} ref={ref} />
+      <span />
     </StyledCheckbox>
   );
 }
