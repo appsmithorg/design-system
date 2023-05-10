@@ -1,7 +1,7 @@
 import { InputProps } from "Input/Input.types";
 
 // NumberInput props
-export type NumberInputProps = {
+export type NumberInputProps = InputProps & {
   /** (try not to) pass addition classes here */
   className?: string;
   /** Whether the input is disabled. */
@@ -36,4 +36,4 @@ export type NumberInputProps = {
   max?: number;
   /** Minimum value of the input. */
   min?: number;
-} & InputProps;
+};
