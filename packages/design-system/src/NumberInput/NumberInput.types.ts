@@ -1,3 +1,5 @@
+import { InputProps } from "Input/Input.types";
+
 // NumberInput props
 export type NumberInputProps = {
   /** (try not to) pass addition classes here */
@@ -34,4 +36,4 @@ export type NumberInputProps = {
   max?: number;
   /** Minimum value of the input. */
   min?: number;
-};
+} & InputProps;
