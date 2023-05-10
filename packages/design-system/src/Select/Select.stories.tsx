@@ -673,6 +673,20 @@ const ArgTypes = {
       },
     },
   },
+  listHeight: {
+    control: {
+      type: "number",
+    },
+    description: "Height of the list",
+    table: {
+      type: {
+        summary: "number",
+      },
+      defaultValue: {
+        summary: "250",
+      },
+    },
+  },
 };
 
 export const SelectStory = Template.bind({});
