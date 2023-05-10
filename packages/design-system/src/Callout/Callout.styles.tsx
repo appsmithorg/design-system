@@ -40,6 +40,9 @@ export const StyledCallout = styled.div<{
   border-radius: var(--ads-v2-border-radius);
   padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
 
+  // to ensure that small window sizes don't reduce the background size of callout
+  flex-shrink: 0;
+
   background-color: var(--callout-color-background);
 
   ${({ isClosed }) => isClosed && `display: none;`}
