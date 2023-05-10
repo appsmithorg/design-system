@@ -24,7 +24,7 @@ export type SegmentedControlProps = {
   /** The defaultValue of the SegmentedControl */
   defaultValue?: string;
   /** The onChange of the SegmentedControl */
-  onChange?: (value: string) => void;
+  onChange?: (value: string, isUpdatedViaKeyboard?: boolean) => void;
   // TODO: We might need to rethink about this prop. For now this is required for property pane and hence added.
   /** Whether the control should consume full width of container or not */
   isFullWidth?: boolean;
