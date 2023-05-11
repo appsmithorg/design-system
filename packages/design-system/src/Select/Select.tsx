@@ -14,6 +14,8 @@ import { Spinner } from "Spinner";
   TODO:
   - Lots of warnings are generated from this component. Fix them.
   - Handle the case when the option selected is longer than the width of the select trigger.
+  - when you click on an action on the page the select is on when the select is open, it should automatically trigger that action.
+  ref https://www.notion.so/appsmith/cursor-pointer-isn-t-seen-when-a-dropdown-is-open-68f358f03dda4c708f84d7d7476217dc?d=f7682f4cb09f46e39487140437b220d9
  */
 function Select(props: SelectProps) {
   const {
