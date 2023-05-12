@@ -12,6 +12,10 @@ import { Text } from "Text";
 import {
   SegmentedControlClassName,
   SegmentedControlSegmentClassName,
+  SegmentedControlSegmentEndIconClassName,
+  SegmentedControlSegmentStartIconClassName,
+  SegmentedControlSegmentTextClassName,
+  SegmentedControlSegmentValueClassName,
   SegmentedControlSegmentsContainerClassName,
 } from "./SegmentedControl.constants";
 
@@ -99,20 +103,39 @@ const SegmentedControl = React.forwardRef(
               tabIndex={index === focusedIndex ? 0 : -1}
             >
               <StyledSegment
-                className={SegmentedControlSegmentClassName}
+                className={clsx(SegmentedControlSegmentClassName)}
                 data-selected={selectedValue === value}
+                data-value={value}
               >
                 {/* if icon name is passed */}
                 {startIcon && typeof startIcon === "string" && (
-                  <Icon name={startIcon} size="md" />
+                  <Icon
+                    className={SegmentedControlSegmentStartIconClassName}
+                    name={startIcon}
+                    size="md"
+                  />
                 )}
 
                 {/* Label */}
-                {label && <Text kind="body-m">{label}</Text>}
+                {label && (
+                  <Text
+                    className={clsx(
+                      SegmentedControlSegmentTextClassName,
+                      SegmentedControlSegmentValueClassName + value,
+                    )}
+                    kind="body-m"
+                  >
+                    {label}
+                  </Text>
+                )}
 
                 {/* if icon name is passed */}
                 {endIcon && typeof endIcon === "string" && (
-                  <Icon name={endIcon} size="md" />
+                  <Icon
+                    className={SegmentedControlSegmentEndIconClassName}
+                    name={endIcon}
+                    size="md"
+                  />
                 )}
               </StyledSegment>
             </StyledControlContainer>
