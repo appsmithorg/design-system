@@ -44,7 +44,6 @@ export const StyledControlContainer = styled.div`
   background-color: transparent;
   box-sizing: border-box;
   cursor: pointer;
-  transition: box-shadow 600ms ease;
   height: 100%;
 
   &:focus-visible {
