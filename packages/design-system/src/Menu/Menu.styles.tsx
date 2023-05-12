@@ -33,6 +33,7 @@ const MenuContentStyle = css`
   ${Variables};
 
   width: fit-content;
+  min-width: 100px;
   max-width: 280px;
   max-height: calc(var(--radix-dropdown-menu-content-available-height) - 20px);
   background-color: var(--ads-v2-color-bg);
@@ -51,7 +52,7 @@ export const StyledMenuContent = styled(RadixMenu.Content)<{
   height?: string;
   width?: string;
 }>`
-  ${MenuContentStyle}
+  ${MenuContentStyle};
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
 `;
@@ -60,7 +61,7 @@ export const StyledMenuSubContent = styled(RadixMenu.SubContent)<{
   height?: string;
   width?: string;
 }>`
-  ${MenuContentStyle}
+  ${MenuContentStyle};
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
 `;
