@@ -1,6 +1,5 @@
 import React from "react";
 
-// TODO: This component needs an option to be controlled.
 export type SegmentedControlOption = {
   /** The value of the option */
   value: string;

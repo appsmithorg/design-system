@@ -7,6 +7,7 @@ import {
   AvatarProps,
 } from "./Avatar.types";
 import {
+  AvatarEmail,
   AvatarMenuItem,
   StyledAvatar,
   StyledAvatarGroup,
@@ -148,7 +149,7 @@ function AvatarGroup(props: AvatarGroupProps) {
                         svgIconName={avatar.svgIconName}
                         tooltipPlacement={tooltipPlacement}
                       />
-                      {avatar.label}
+                      <AvatarEmail>{avatar.label}</AvatarEmail>
                     </AvatarMenuItem>
                   </MenuItem>
                 );
