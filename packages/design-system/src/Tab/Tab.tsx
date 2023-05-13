@@ -74,7 +74,11 @@ function Tab(props: TabProps) {
 function TabPanel(props: TabPanelProps) {
   const { className, ...rest } = props;
   return (
-    <StyledTabPanel className={clsx(TabsPanelClassName, className)} {...rest} />
+    <StyledTabPanel
+      className={clsx(TabsPanelClassName, className)}
+      {...rest}
+      tabIndex={-1}
+    />
   );
 }
 export { Tabs, TabsList, Tab, TabPanel };
