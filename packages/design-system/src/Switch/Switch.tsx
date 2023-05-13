@@ -23,6 +23,7 @@ function Switch(props: SwitchProps) {
   const { focusProps, isFocusVisible } = useFocusRing();
 
   return (
+    // TODO: Needs refactor
     <StyledSwitch className={SwitchClassName}>
       {props.children ? (
         <StyledSwitchLabel
