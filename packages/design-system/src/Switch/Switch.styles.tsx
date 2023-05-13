@@ -6,7 +6,7 @@ const Variables = css`
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
-export const StyledSwitch = styled.span`
+export const StyledSwitch = styled.label`
   display: block;
   width: 100%;
 `;
