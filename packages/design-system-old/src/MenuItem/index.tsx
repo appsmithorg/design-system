@@ -47,6 +47,7 @@ const ItemRow = styled.a<{ disabled?: boolean; selected?: boolean }>`
       text-decoration: none;
       cursor: pointer;
       background-color: var(--ads-v2-color-bg-subtle);
+      border-radius: var(--ads-v2-border-radius);
     }`
       : `
     &:hover {
