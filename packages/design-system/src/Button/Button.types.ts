@@ -34,5 +34,7 @@ export type ButtonProps = {
   UNSAFE_width?: string;
   /** The href attribute to apply to the button if it renders as an anchor. */
   href?: string;
+  /** The type of the button. This defaults to button type. */
+  type?: "button" | "submit" | "reset";
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
