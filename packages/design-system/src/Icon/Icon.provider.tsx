@@ -297,6 +297,7 @@ import { ReactComponent as BoxShadowVariant5Icon } from "../__assets__/icons/con
 import { ReactComponent as SlashIcon } from "../__assets__/icons/form/slash-line.svg";
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 import { ReactComponent as JsToggleV2 } from "../__assets__/icons/ads/js-toggle-v2.svg";
+import { ReactComponent as JsToggleV2Bold } from "../__assets__/icons/ads/js-toggle-v2-bold.svg";
 import { ReactComponent as Datasources2 } from "../__assets__/icons/menu/datasources-2.svg";
 import { ReactComponent as JSIconV2 } from "../__assets__/icons/menu/js-group.svg";
 import { ReactComponent as JSFile } from "../__assets__/icons/menu/js-file-icon.svg";
@@ -520,6 +521,7 @@ const ICON_LOOKUP = {
   "warning-triangle": WarningTriangleIcon,
   "money-dollar-circle-line": MoneyDollarCircleLineIcon,
   "js-toggle-v2": JsToggleV2,
+  "js-toggle-v2-bold": JsToggleV2Bold,
   "query-main": QueryMain,
   "js-icon-v2": JSIconV2,
   "js-file": JSFile,
