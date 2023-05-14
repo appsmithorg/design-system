@@ -83,7 +83,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         text is throwing typescript error.
         https://stackoverflow.com/questions/68073958/cant-use-href-with-iconbuttonprops*/}
         {label && (
-          <Label {...labelProps} className={InputLabelClassName}>
+          <Label
+            {...labelProps}
+            className={InputLabelClassName}
+            onClick={(e) => e.preventDefault()}
+          >
             {label}
             {/* Show required star only if label is present */}
             {label && isRequired && <span>*</span>}

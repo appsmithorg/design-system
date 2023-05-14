@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import { Text } from "../Text";
 import { ToastProps } from "./Toast.types";
 import { Button } from "../Button";
+import { ToastClassName, ToastbodyClassName } from "./Toast.constants";
 
 const Variables = css`
   // All the --toastify prefixed variables are changing tokens defined in react-toastify
@@ -19,15 +20,15 @@ const Variables = css`
 `;
 
 export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
-  toastClassName: "toast",
-  bodyClassName: "body",
+  toastClassName: ToastClassName,
+  bodyClassName: ToastbodyClassName,
 })`
-  .toast {
+  .${ToastClassName} {
     border: solid 1px var(--ads-v2-color-border);
     padding: var(--ads-v2-spaces-3);
   }
 
-  .body {
+  .${ToastbodyClassName} {
     padding: 0;
     gap: var(--ads-v2-spaces-3);
     align-items: center;
