@@ -238,6 +238,14 @@
   animation-name: rcSelectDropdownSlideDownOut;
   animation-play-state: running;
 }
+.rc-virtual-list-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+.rc-virtual-list-scrollbar .rc-virtual-list-scrollbar-thumb {
+  background-color: var(--ads-v2-color-bg-emphasis) !important;
+  border-radius: 36px;
+}
 @keyframes rcSelectDropdownSlideUpIn {
   0% {
     opacity: 0;
