@@ -1,15 +1,14 @@
 import { EditableText, EditableTextProps } from "../EditableText";
 import { SavingState } from "../EditableTextSubComponent";
-import { Toaster } from "../Toast";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Classes } from "@blueprintjs/core";
-import { Variant } from "Constants/variants";
 import { typography } from "Constants/typography";
 import {
   createMessage,
   ERROR_EMPTY_APPLICATION_NAME,
 } from "Constants/messages";
+import { toast } from "@appsmithorg/design-system";
 
 type EditableTextWrapperProps = EditableTextProps & {
   variant: "UNDERLINE" | "ICON";
@@ -106,9 +105,8 @@ export default function EditableTextWrapper(props: EditableTextWrapperProps) {
             setIsValid(Boolean(props.isInvalid(value)));
             return props.isInvalid(value);
           } else if (value.trim() === "") {
-            Toaster.show({
-              text: createMessage(ERROR_EMPTY_APPLICATION_NAME),
-              variant: Variant.danger,
+            toast.show(createMessage(ERROR_EMPTY_APPLICATION_NAME), {
+              kind: "error",
             });
             return false;
           } else {
