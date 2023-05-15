@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
 import { Input } from "../Input/Input";
-import { InputEndIconClassName } from "../Input/Input.constants";
+import {
+  InputEndIconClassName,
+  InputSectionInputClassName,
+} from "../Input/Input.constants";
 
 const Sizes = {
   sm: css`
@@ -21,6 +24,10 @@ export const StyledSearchInput = styled(Input)<{
   size: "sm" | "md";
 }>`
   ${(props) => Sizes[props.size]}
+
+  & .${InputSectionInputClassName} {
+    padding-bottom: calc(var(--input-padding-y) + 2px);
+  }
 
   & .${InputEndIconClassName} {
     cursor: pointer;
