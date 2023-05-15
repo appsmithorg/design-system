@@ -31,9 +31,9 @@ function NumberInput(props: NumberInputProps) {
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "ArrowUp") {
-      handleChange("add");
+      handleChange(value === "" ? "0" : value, "add");
     } else if (e.key === "ArrowDown") {
-      handleChange("subtract");
+      handleChange(value === "" ? "0" : value, "subtract");
     }
   };
 
@@ -51,28 +51,40 @@ function NumberInput(props: NumberInputProps) {
       setValue(prefix + (props.value || "") + suffix);
   }, [props.value]);
 
-  const handleChange = (operation?: "add" | "subtract", _value?: string) => {
-    const _valueToUse = _value || value;
-    const val = _valueToUse.replace(prefix, "").replace(suffix, "");
-    if (val === "") {
+  const handleChange = (_value: string, operation?: "add" | "subtract") => {
+    const inputValue = parseFloat(_value.replace(/[^0-9.-]+/g, ""));
+
+    // Check if the input value is a valid number
+    if (!isNaN(inputValue)) {
+      let newValue = inputValue;
+      // Apply operation on the value
+      if (operation === "add") {
+        newValue += scale;
+      } else if (operation === "subtract") {
+        newValue -= scale;
+      }
+      // Check min and max values
+      if (typeof min === "number" && newValue < min) {
+        newValue = min;
+      }
+      if (typeof max === "number" && newValue > max) {
+        newValue = max;
+      }
+      // Convert the value back to a string and append prefix and postfix if present
+      let newValueString = String(newValue);
+      if (prefix && !newValueString.startsWith(prefix)) {
+        newValueString = prefix + newValueString;
+      }
+      if (suffix && !newValueString.endsWith(suffix)) {
+        newValueString = newValueString + suffix;
+      }
+      setValue(newValueString);
+      onChange?.(newValueString);
+    } else {
       setValue("");
       onChange?.("");
       return;
     }
-    const num = Number(val);
-    if (isNaN(num)) {
-      return;
-    }
-    let newVal = 0;
-    if (operation) {
-      newVal = operation === "add" ? num + scale : num - scale;
-    } else {
-      newVal = num;
-    }
-    if (min && newVal < min) return;
-    if (max && newVal > max) return;
-    setValue(prefix + newVal.toString() + suffix);
-    onChange?.(newVal);
   };
 
   return (
@@ -81,7 +93,10 @@ function NumberInput(props: NumberInputProps) {
       description={description}
       endIcon="add-line"
       endIconProps={{
-        onClick: () => !isDisabled && !isReadOnly && handleChange("add"),
+        onClick: () =>
+          !isDisabled &&
+          !isReadOnly &&
+          handleChange(value === "" ? "0" : value, "add"),
       }}
       errorMessage={errorMessage}
       isDisabled={isDisabled}
@@ -89,16 +104,17 @@ function NumberInput(props: NumberInputProps) {
       isRequired={isRequired}
       label={label}
       labelPosition={labelPosition}
-      onChange={(val) =>
-        !isDisabled && !isReadOnly && handleChange(undefined, val)
-      }
+      onChange={(val) => !isDisabled && !isReadOnly && handleChange(val)}
       placeholder={placeholder}
       ref={inputRef}
       renderAs="input"
       size="md"
       startIcon="subtract-line"
       startIconProps={{
-        onClick: () => !isDisabled && !isReadOnly && handleChange("subtract"),
+        onClick: () =>
+          !isDisabled &&
+          !isReadOnly &&
+          handleChange(value === "" ? "0" : value, "subtract"),
       }}
       {...rest}
       value={value}
