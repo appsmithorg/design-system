@@ -89,6 +89,7 @@ const TagInputWrapper = styled.div`
 
 type TagInputProps = {
   autofocus?: boolean;
+  className?: string;
   /** TagInput Placeholder */
   placeholder: string;
   /** TagInput value and onChange handler */
@@ -195,7 +196,7 @@ function TagInputComponent(props: TagInputProps) {
   };
 
   return (
-    <TagInputWrapper>
+    <TagInputWrapper className={props.className}>
       <TagInput
         addOnPaste
         inputProps={{
