@@ -49,6 +49,7 @@ export const StyledContent = styled(Content)`
   display: flex;
   flex-direction: column;
   z-index: 1001;
+  max-width: 640px;
 `;
 
 export const StyledHeader = styled.div`
