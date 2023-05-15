@@ -303,6 +303,7 @@ import { ReactComponent as JSIconV2 } from "../__assets__/icons/menu/js-group.sv
 import { ReactComponent as JSFile } from "../__assets__/icons/menu/js-file-icon.svg";
 import { ReactComponent as JSFunction } from "../__assets__/icons/menu/js-function.svg";
 import { ReactComponent as QueryMain } from "../__assets__/icons/menu/query-main.svg";
+import { ReactComponent as Binding } from "../__assets__/icons/menu/binding.svg";
 
 import { ReactComponent as AlignCenter } from "../__assets__/icons/ads/align-center.svg";
 import { ReactComponent as AlignLeft } from "../__assets__/icons/ads/align-left.svg";
@@ -581,6 +582,7 @@ const ICON_LOOKUP = {
   "google-fill": GoogleFillIcon,
   "github-fill": GithubFillIcon,
   billing: BillingIcon,
+  binding: Binding,
   book: BookIcon,
   bug: BugIcon,
   cancel: CancelIcon,
