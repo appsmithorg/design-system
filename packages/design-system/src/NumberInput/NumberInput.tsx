@@ -54,6 +54,11 @@ function NumberInput(props: NumberInputProps) {
   const handleChange = (operation?: "add" | "subtract", _value?: string) => {
     const _valueToUse = _value || value;
     const val = _valueToUse.replace(prefix, "").replace(suffix, "");
+    if (val === "") {
+      setValue("");
+      onChange?.("");
+      return;
+    }
     const num = Number(val);
     if (isNaN(num)) {
       return;
