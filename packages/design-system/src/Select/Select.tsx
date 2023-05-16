@@ -32,6 +32,7 @@ function Select(props: SelectProps) {
     placeholder = "Please select an option",
     showSearch = false,
     size = "md",
+    virtual = false,
     ...rest
   } = props;
 
@@ -76,6 +77,7 @@ function Select(props: SelectProps) {
           </Tag>
         );
       }}
+      virtual={virtual}
     >
       {children}
     </RCSelect>

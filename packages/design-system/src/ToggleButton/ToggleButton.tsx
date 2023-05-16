@@ -32,6 +32,7 @@ const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
         isSelected={isSelected ?? selected}
         size={size}
         {...rest}
+        data-selected={isSelected ?? selected}
         onClick={handleOnChange}
         ref={ref}
       >

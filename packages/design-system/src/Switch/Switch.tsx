@@ -24,7 +24,7 @@ function Switch(props: SwitchProps) {
 
   return (
     // TODO: Needs refactor
-    <StyledSwitch className={SwitchClassName}>
+    <StyledSwitch className={SwitchClassName} data-checked={state.isSelected}>
       {props.children ? (
         <StyledSwitchLabel
           className={clsx(

@@ -18,6 +18,7 @@ function Checkbox(props: CheckboxProps) {
   return (
     <StyledCheckbox
       className={clsx(CheckboxClassName, className)}
+      data-checked={state.isSelected}
       isChecked={state.isSelected}
       isDisabled={isDisabled}
       isFocusVisible={isFocusVisible}

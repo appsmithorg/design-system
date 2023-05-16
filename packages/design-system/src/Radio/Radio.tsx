@@ -21,6 +21,7 @@ export function RadioGroup(props: RadioGroupProps) {
       UNSAFE_gap={UNSAFE_gap}
       {...radioGroupProps}
       className={classnames}
+      data-selected-value={state.selectedValue}
     >
       <RadioContext.Provider value={state}>{children}</RadioContext.Provider>
     </StyledRadioGroup>
