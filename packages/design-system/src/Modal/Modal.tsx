@@ -25,10 +25,10 @@ import { Text } from "Text";
 import { Button } from "Button";
 
 function ModalContent(props: ModalContentProps) {
-  const { children, className, ...rest } = props;
+  const { children, className, overlayClassName, ...rest } = props;
   return (
     <Portal>
-      <StyledOverlay />
+      <StyledOverlay className={overlayClassName}/>
       <StyledContent
         className={clsx(ModalContentClassName, className)}
         {...rest}

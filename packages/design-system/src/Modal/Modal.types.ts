@@ -6,6 +6,7 @@ import { DialogContentProps } from "@radix-ui/react-dialog";
 export type ModalContentProps = DialogContentProps & {
   /** Modal content */
   children: React.ReactNode;
+  overlayClassName?: string;
 };
 
 export type ModalHeaderProps = {
