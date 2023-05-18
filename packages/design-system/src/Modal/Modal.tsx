@@ -19,10 +19,10 @@ import { Text } from "Text";
 import { Button } from "Button";
 
 function ModalContent(props: ModalContentProps) {
-  const { children, ...rest } = props;
+  const { children, overlayClassName, ...rest } = props;
   return (
     <Portal>
-      <StyledOverlay />
+      <StyledOverlay className={overlayClassName} />
       <StyledContent {...rest} className={ModalContentClassName}>
         {children}
       </StyledContent>
