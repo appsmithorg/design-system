@@ -2,7 +2,7 @@
 export type ModalContentProps = {
   /** Modal content */
   children: React.ReactNode;
-  overlayClassName: string;
+  overlayClassName?: string;
 };
 
 export type ModalHeaderProps = {
