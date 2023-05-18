@@ -216,5 +216,5 @@
 }
 
 .react-datepicker__children-container {
-  margin-top: -10px;
+  margin-top: -10px !important;
 }
