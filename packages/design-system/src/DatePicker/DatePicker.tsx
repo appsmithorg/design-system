@@ -127,7 +127,7 @@ function DatePicker(props: DatePickerProps) {
             >
               Clear
             </Button>
-          </DatePickerFooter>{" "}
+          </DatePickerFooter>
         </>
       ) : null}
     </BaseDatePicker>
