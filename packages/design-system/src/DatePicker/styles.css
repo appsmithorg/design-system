@@ -214,3 +214,7 @@
 .react-datepicker__aria-live {
   display: none;
 }
+
+.react-datepicker__children-container {
+  margin-top: -10px;
+}

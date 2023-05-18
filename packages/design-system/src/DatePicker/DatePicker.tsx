@@ -11,6 +11,9 @@ import {
   DatePickerCalenderClassName,
   DatePickerCalenderHeaderClassName,
   DatePickerClassName,
+  DatePickerFooterClassName,
+  DatePickerFooterClearClassName,
+  DatePickerFooterTodayClassName,
   DateTimePickerClassName,
 } from "./DatePicker.constants";
 import {
@@ -18,10 +21,11 @@ import {
   DatePickerProps,
   DateRangePickerProps,
 } from "./DatePicker.types";
-import { StyledDatePickerHeader } from "./DatePicker.styles";
+import { DatePickerFooter, StyledDatePickerHeader } from "./DatePicker.styles";
 import { Input } from "Input";
 import { Button } from "Button";
 import { Menu, MenuContent, MenuItem, MenuTrigger } from "Menu";
+import { Divider } from "Divider";
 
 function DatePicker(props: DatePickerProps) {
   const {
@@ -80,6 +84,7 @@ function DatePicker(props: DatePickerProps) {
           label={label}
           renderAs="input"
           size={inputSize}
+          style={{ caretColor: "transparent" }}
         />
       }
       dateFormat={dateFormat}
@@ -103,7 +108,29 @@ function DatePicker(props: DatePickerProps) {
       selectsRange={false}
       showPopperArrow={false}
       timeInputLabel=""
-    />
+    >
+      {props.showTimeInput ? (
+        <>
+          <Divider />
+          <DatePickerFooter className={DatePickerFooterClassName}>
+            <Button
+              className={DatePickerFooterTodayClassName}
+              kind="tertiary"
+              onClick={() => setSelectedDate(new Date())}
+            >
+              Today
+            </Button>
+            <Button
+              className={DatePickerFooterClearClassName}
+              kind="tertiary"
+              onClick={() => setSelectedDate(null)}
+            >
+              Clear
+            </Button>
+          </DatePickerFooter>{" "}
+        </>
+      ) : null}
+    </BaseDatePicker>
   );
 }
 
