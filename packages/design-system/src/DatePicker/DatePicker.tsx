@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BaseDatePicker from "react-datepicker";
 import range from "lodash/range";
 import getYear from "date-fns/getYear";
@@ -11,6 +11,9 @@ import {
   DatePickerCalenderClassName,
   DatePickerCalenderHeaderClassName,
   DatePickerClassName,
+  DatePickerFooterClassName,
+  DatePickerFooterClearClassName,
+  DatePickerFooterTodayClassName,
   DateTimePickerClassName,
 } from "./DatePicker.constants";
 import {
@@ -18,10 +21,11 @@ import {
   DatePickerProps,
   DateRangePickerProps,
 } from "./DatePicker.types";
-import { StyledDatePickerHeader } from "./DatePicker.styles";
+import { DatePickerFooter, StyledDatePickerHeader } from "./DatePicker.styles";
 import { Input } from "Input";
 import { Button } from "Button";
 import { Menu, MenuContent, MenuItem, MenuTrigger } from "Menu";
+import { Divider } from "Divider";
 
 function DatePicker(props: DatePickerProps) {
   const {
@@ -42,9 +46,13 @@ function DatePicker(props: DatePickerProps) {
     yearStartRange,
     ...rest
   } = props;
-  const [selectedDate, setSelectedDate] = useState<Date | null>(
-    selected || null,
-  );
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    if (selected !== selectedDate) {
+      setSelectedDate(selected || null);
+    }
+  }, [selected]);
 
   const onChangeHandler = (
     date: Date | null,
@@ -76,6 +84,7 @@ function DatePicker(props: DatePickerProps) {
           label={label}
           renderAs="input"
           size={inputSize}
+          style={{ caretColor: "transparent" }}
         />
       }
       dateFormat={dateFormat}
@@ -99,7 +108,29 @@ function DatePicker(props: DatePickerProps) {
       selectsRange={false}
       showPopperArrow={false}
       timeInputLabel=""
-    />
+    >
+      {props.showTimeInput ? (
+        <>
+          <Divider />
+          <DatePickerFooter className={DatePickerFooterClassName}>
+            <Button
+              className={DatePickerFooterTodayClassName}
+              kind="tertiary"
+              onClick={() => setSelectedDate(new Date())}
+            >
+              Today
+            </Button>
+            <Button
+              className={DatePickerFooterClearClassName}
+              kind="tertiary"
+              onClick={() => setSelectedDate(null)}
+            >
+              Clear
+            </Button>
+          </DatePickerFooter>
+        </>
+      ) : null}
+    </BaseDatePicker>
   );
 }
 
@@ -265,10 +296,17 @@ function DateRangePicker(props: DateRangePickerProps) {
     yearStartRange,
     ...rest
   } = props;
-  const [startDate, setStartDate] = useState<Date | null>(
-    propStartDate || null,
-  );
-  const [endDate, setEndDate] = useState<Date | null>(propEndDate || null);
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    if (propStartDate !== startDate) {
+      setStartDate(propStartDate || null);
+    }
+    if (propEndDate !== endDate) {
+      setEndDate(propEndDate || null);
+    }
+  }, [propStartDate, propEndDate]);
 
   const onChangeHandler = (
     date: [Date | null, Date | null],
@@ -278,6 +316,11 @@ function DateRangePicker(props: DateRangePickerProps) {
     setStartDate(startDate);
     setEndDate(endDate);
     onChange && onChange(date, e);
+  };
+
+  const onClearhandler = () => {
+    setStartDate(null);
+    setEndDate(null);
   };
 
   return (
@@ -295,7 +338,7 @@ function DateRangePicker(props: DateRangePickerProps) {
           }
           // TODO: Replace this with tertiary button
           endIconProps={{
-            onClick: () => setStartDate(null),
+            onClick: onClearhandler,
           }}
           isDisabled={isDisabled}
           isReadOnly={isReadOnly}

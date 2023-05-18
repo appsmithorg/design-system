@@ -103,6 +103,7 @@ Button.defaultProps = {
   kind: "primary",
   isLoading: false,
   isDisabled: false,
+  type: "button",
 };
 
 export { Button };
