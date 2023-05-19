@@ -11,3 +11,9 @@ export const StyledDatePickerHeader = styled.div`
     gap: var(--ads-v2-spaces-2);
   }
 `;
+
+export const DatePickerFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--ads-v2-spaces-2);
+`;

@@ -39,7 +39,16 @@ async function webpackConfig(config) {
   // 2. Add SVGR instead
   config.module.rules.push({
     test: /\.svg$/,
-    use: ["@svgr/webpack", "file-loader"],
+    use: [{
+      loader: '@svgr/webpack',
+      options: {
+        svgoConfig: {
+          plugins: {
+            removeViewBox: false
+          }
+        }
+      }
+    }, "file-loader"],
     issuer: /\.(ts|tsx|js|jsx|md|mdx)$/,
   });
 

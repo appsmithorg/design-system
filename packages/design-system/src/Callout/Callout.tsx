@@ -11,7 +11,11 @@ import {
 } from "./Callout.styles";
 import { getIconByKind } from "../Icon/getIconByKind";
 import { Link } from "../Link";
-import { CalloutClassName } from "./Callout.constants";
+import {
+  CalloutChildrenClassName,
+  CalloutClassName,
+  CalloutIconContainerClassName,
+} from "./Callout.constants";
 
 /*
  * TODO:
@@ -34,20 +38,23 @@ function Callout({
       kind={kind}
       {...rest}
     >
-      <StyledIconContainer>{kind && getIconByKind(kind)}</StyledIconContainer>
-      <StyledChildrenContainer>
+      <StyledIconContainer className={CalloutIconContainerClassName}>
+        {kind && getIconByKind(kind)}
+      </StyledIconContainer>
+      <StyledChildrenContainer className={CalloutChildrenClassName}>
         <StyledChildren kind="body-m">{children}</StyledChildren>
         {links && (
           <StyledLinks>
             {links.map((link) => {
-              const { endIcon, startIcon, to, ...restOfLink } = link;
+              const { endIcon, onClick, startIcon, to, ...restOfLink } = link;
               return (
                 <Link
                   endIcon={endIcon}
                   key={to || "onClickKey"}
                   kind="secondary"
+                  onClick={onClick}
                   startIcon={startIcon}
-                  to={restOfLink.onClick ? "" : to}
+                  to={to}
                   {...restOfLink}
                 >
                   {link.children}

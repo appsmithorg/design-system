@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "2.1.7",
+  "version": "2.1.9-alpha.0",
   "description": "This is the package for the design system that powers the Appsmith platform",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -114,7 +114,7 @@
     "@react-stately/toggle": "^3.4.4",
     "date-fns": "^2.29.3",
     "loglevel": "^1.8.1",
-    "rc-select": "^14.3.0",
+    "rc-select": "^14.4.3",
     "rc-tooltip": "^5.3.1",
     "react-datepicker": "^4.10.0",
     "react-toastify": "9.0.3"

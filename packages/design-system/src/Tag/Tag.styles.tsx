@@ -22,6 +22,7 @@ export const StyledTag = styled.span<{
   ${Variables}
 
   ${({ size }) => size && TagSizeMap[size]}
+  min-width: fit-content;
 
   background-color: var(--ads-v2-color-bg-subtle);
   color: var(--ads-v2-color-fg);

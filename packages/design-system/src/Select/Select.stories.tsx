@@ -38,7 +38,7 @@ const Template: ComponentStory<typeof Select> = (args) => {
           Option 1
         </div>
       </Option>
-      <Option isDisabled value="option 2">
+      <Option disabled value="option 2">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Icon name="arrow-left-line" size="md" />
           Option 2
@@ -368,6 +368,20 @@ const ArgTypes = {
       },
     },
   },
+  isLoading: {
+    control: {
+      type: "boolean",
+    },
+    description: "Whether select is loading",
+    table: {
+      type: {
+        summary: "boolean",
+      },
+      defaultValue: {
+        summary: "false",
+      },
+    },
+  },
   filterOption: {
     control: {
       type: "boolean",
@@ -441,6 +455,7 @@ const ArgTypes = {
       },
     },
   },
+  // TODO: It seems like there is no difference between `label` and `value`; document it or change it accordingly
   value: {
     control: {
       type: "text",
@@ -658,6 +673,20 @@ const ArgTypes = {
       },
     },
   },
+  listHeight: {
+    control: {
+      type: "number",
+    },
+    description: "Height of the list",
+    table: {
+      type: {
+        summary: "number",
+      },
+      defaultValue: {
+        summary: "250",
+      },
+    },
+  },
 };
 
 export const SelectStory = Template.bind({});
@@ -703,7 +732,7 @@ OptionStory.argTypes = {
       },
     },
   },
-  isDisabled: {
+  disabled: {
     control: {
       type: "boolean",
     },

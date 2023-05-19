@@ -24,4 +24,4 @@ export * from "./Text";
 export * from "./Toast";
 export * from "./ToggleButton";
 export * from "./Tooltip";
-export * from "./ToggleGroup";
+export * from "./ToggleButtonGroup";

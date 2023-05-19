@@ -10,7 +10,7 @@ export type CalloutProps = {
   /** (try not to) pass addition classes here */
   className?: string;
   /** the words you want to display */
-  children: string;
+  children: React.ReactNode;
   /** visual style to be used indicating type of callout */
   kind?: CalloutKind;
   /** whether or not the callout should be closable */

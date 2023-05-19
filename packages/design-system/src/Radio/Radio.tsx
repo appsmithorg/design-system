@@ -6,12 +6,7 @@ import clsx from "classnames";
 
 import { StyledRadio, StyledRadioGroup } from "./Radio.styles";
 import { RadioProps, RadioGroupProps } from "./Radio.types";
-import {
-  RadioClassName,
-  RadioGroupClassName,
-  RadioLabelClassName,
-} from "./Radio.constants";
-import { Text } from "Text";
+import { RadioClassName, RadioGroupClassName } from "./Radio.constants";
 
 const RadioContext = React.createContext({} as RadioGroupState);
 
@@ -26,6 +21,7 @@ export function RadioGroup(props: RadioGroupProps) {
       UNSAFE_gap={UNSAFE_gap}
       {...radioGroupProps}
       className={classnames}
+      data-selected-value={state.selectedValue}
     >
       <RadioContext.Provider value={state}>{children}</RadioContext.Provider>
     </StyledRadioGroup>
@@ -38,7 +34,6 @@ export function Radio(props: RadioProps) {
   const ref = React.useRef(null);
   const { inputProps } = useRadio(props, state, ref);
   const { focusProps, isFocusVisible } = useFocusRing();
-  const id = `ads-radio-${props.value}`;
 
   return (
     <StyledRadio
@@ -46,10 +41,9 @@ export function Radio(props: RadioProps) {
       disabled={isDisabled}
       isFocusVisible={isFocusVisible}
     >
-      <input {...inputProps} {...focusProps} id={id} ref={ref} />
-      <Text className={RadioLabelClassName} htmlFor={id} renderAs="label">
-        {children}
-      </Text>
+      {children}
+      <input {...inputProps} {...focusProps} ref={ref} />
+      <span />
     </StyledRadio>
   );
 }
