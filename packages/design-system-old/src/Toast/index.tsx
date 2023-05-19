@@ -37,12 +37,12 @@ const WrappedToastContainer = styled.div`
     padding: 0px;
   }
   .Toastify__toast--default {
-    background: transparent;
+    background-color: white;
   }
   .Toastify__toast {
     cursor: auto;
     min-height: auto;
-    border-radius: 0px !important;
+    border-radius: 4px !important;
     font-family: ${TextFonts};
     margin-bottom: var(--ads-spaces-4);
   }
@@ -72,7 +72,7 @@ const ToastBody = styled.div<{
   width: ${(props) => props.width || "fit-content"};
   max-width: ${(props) => props.maxWidth || "264px"};
   margin-left: auto;
-  background: var(--ads-toast-background-color);
+  background: white;
   padding: var(--ads-spaces-4) var(--ads-spaces-5);
   display: flex;
   align-items: center;
@@ -81,6 +81,8 @@ const ToastBody = styled.div<{
   // has no effect in safari
   word-break: break-word;
   overflow-wrap: anywhere;
+  border: 1px solid #CDD5DF;
+  border-radius: 4px !important;
 
   div > .${Classes.ICON} {
     cursor: auto;
@@ -105,7 +107,7 @@ const ToastBody = styled.div<{
   }
 
   .${Classes.TEXT} {
-    color: var(--ads-toast-text-color);
+    color: #4C5664;
   }
 
   ${(props) =>
@@ -172,7 +174,7 @@ export function ToastComponent(
             size={IconSize.XXL}
           />
         ) : props.variant === Variant.warning ? (
-          <Icon name="warning" size={IconSize.XXL} />
+          <Icon name="warning-triangle" size={IconSize.XXL} />
         ) : null}
         {props.variant === Variant.danger ? (
           <Icon name="error" size={IconSize.XXL} />
