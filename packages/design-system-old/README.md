@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Appsmith Design System - Old</h1>
+<h1 align="center">Appsmith Design System - old (deprecated)</h1>
 
 <div align="center">
 
