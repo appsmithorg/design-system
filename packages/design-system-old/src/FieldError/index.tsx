@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const StyledError = styled.span<{ show: boolean }>`
   text-align: left;
-  color: var(--ads-intent-color-danger);
+  color: var(--ads-v2-color-fg-error);
   font-size: var(--ads-font-size-3);
   opacity: ${(props) => (props.show ? 1 : 0)};
   display: block;

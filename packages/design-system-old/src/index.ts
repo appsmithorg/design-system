@@ -132,9 +132,6 @@ export * from "./SearchComponent";
 export { default as SearchInput } from "./SearchInput";
 export * from "./SearchInput";
 
-export { default as SearchSnippet } from "./SnippetButton";
-export * from "./SnippetButton";
-
 export { default as SegmentHeader } from "./ListSegmentHeader";
 export * from "./ListSegmentHeader";
 

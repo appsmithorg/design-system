@@ -45,11 +45,7 @@ export const EditableTextWrapper = styled.div<{
   `}
   .error-message {
     margin-left: var(--ads-spaces-5);
-    color: var(--ads-old-color-pomegranate);
-  }
-
-  :focus-visible {
-    outline: 1px solid var(--appsmith-input-focus-border-color) !important;
+    color: var(--ads-v2-color-fg-error);
   }
 `;
 

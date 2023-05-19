@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { DndProvider, useDrop, DropTargetMonitor } from "react-dnd";
 import HTML5Backend, { NativeTypes } from "react-dnd-html5-backend";
-import { Variant } from "Constants/variants";
-import Button, { Category, Size } from "../Button";
+import Button, { Category, IconPositions, Size } from "../Button";
 import Icon, { IconSize, IconName } from "../Icon";
 import Text, { TextType } from "../Text";
 import { Toaster } from "../Toast";
@@ -15,6 +14,7 @@ import {
 } from "Constants/messages";
 import { Classes } from "Constants/classes";
 import { importSvg } from "Utils/icon-loadables";
+import { Variant } from "Constants/variants";
 
 const UploadSuccessIcon = importSvg(() =>
   import("../assets/icons/ads/upload_success.svg"),
@@ -128,13 +128,14 @@ export const ContainerDiv = styled.div<{
     width: 100%;
     background: var(--ads-file-picker-v2-upload-progress-background-color);
     transition: height 0.2s;
+    border-radius: var(--ads-v2-border-radius);
   }
 
   .progress-inner {
     background-color: var(--ads-file-picker-v2-upload-success-background-color);
     transition: width 0.4s ease;
     height: var(--ads-spaces-1);
-    border-radius: calc(var(--ads-spaces-1) - 1px);
+    border-radius: var(--ads-v2-border-radius);
     width: 0%;
   }
 
@@ -142,6 +143,16 @@ export const ContainerDiv = styled.div<{
     display: flex;
     flex-direction: column;
     align-items: center;
+    .browse-button {
+      text-transform: capitalize;
+      border-radius: var(--ads-v2-border-radius);
+      color: var(--ads-v2-color-fg);
+      border-color: var(--ads-v2-color-border);
+      background: var(--ads-v2-color-bg);
+      &:hover {
+        background: var(--ads-v2-color-bg-subtle);
+      }
+    }
   }
 
   .remove-button {
@@ -149,19 +160,30 @@ export const ContainerDiv = styled.div<{
     position: absolute;
     bottom: 0;
     right: 0;
-    background: linear-gradient(
-      180deg,
-      var(--ads-file-picker-v2-remove-button-background-color-gradient-start),
-      var(--ads-file-picker-v2-remove-button-background-color-gradient-end)
-    );
-    opacity: 0.6;
     width: 100%;
-
+    .overlay {
+      background: var(--ads-v2-color-fg);
+      opacity: 0.6;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 0 0 var(--ads-v2-border-radius) var(--ads-v2-border-radius);
+    }
     a {
       width: 110px;
       margin: var(--ads-spaces-13) var(--ads-spaces-3) var(--ads-spaces-3) auto;
+      color: var(--ads-v2-color-fg);
+      border-radius: var(--ads-v2-border-radius);
+      border-color: var(--ads-v2-color-border);
+      text-transform: capitalize;
+      background: var(--ads-v2-color-bg);
       .${Classes.ICON} {
         margin-right: calc(var(--ads-spaces-2) - 1px);
+      }
+      &:hover {
+        background: var(--ads-v2-color-bg-subtle);
       }
     }
   }
@@ -181,8 +203,9 @@ const ContainerDivWithBorder = styled(ContainerDiv)<{
 }>`
   width: 100%;
   height: 188px;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23F86A2B' stroke-width='1.2' stroke-dasharray='6.4%2c 6.4' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-  background-color: var(--ads-color-black-0);
+  border-radius: var(--ads-v2-border-radius);
+  border: 1px dashed var(--ads-v2-color-border);
+  background-color: var(--ads-v2-color-bg);
 `;
 
 const IconWrapper = styled.div`
@@ -392,7 +415,7 @@ function FilePickerComponent(props: FilePickerProps) {
         />
       </UploadIconWrapper>
       <Text className="drag-drop-text" type={TextType.P2}>
-        {props.title || "Drag & Drop files to upload or"}
+        {props.title || "Drag & drop files to upload or"}
       </Text>
       {props.description && (
         <Text className="drag-drop-description" type={TextType.P2}>
@@ -411,6 +434,7 @@ function FilePickerComponent(props: FilePickerProps) {
         />
         {!props.containerClickable && (
           <Button
+            className="browse-button"
             category={Category.secondary}
             onClick={(el: React.MouseEvent<HTMLElement>) => ButtonClick(el)}
             size={Size.medium}
@@ -440,12 +464,14 @@ function FilePickerComponent(props: FilePickerProps) {
         </div>
       </div>
       <div className="remove-button">
+        <div className="overlay" />
         <Button
           category={Category.secondary}
           icon="delete"
+          iconPosition={IconPositions.left}
           onClick={() => removeFile()}
           size={Size.medium}
-          text="remove"
+          text="Remove"
         />
       </div>
     </>
@@ -463,7 +489,7 @@ function FilePickerComponent(props: FilePickerProps) {
         <div className="success-container">
           <UploadSuccessIcon className="success-icon" />
           <Text className="success-text" type={TextType.H4}>
-            Successfully Uploaded!
+            Successfully uploaded!
           </Text>
           <TooltipComponent content={REMOVE_FILE_TOOL_TIP()} position="top">
             <IconWrapper className="icon-wrapper" onClick={() => removeFile()}>
@@ -478,6 +504,7 @@ function FilePickerComponent(props: FilePickerProps) {
   return (
     <ContainerDivWithBorder
       canDrop={canDrop}
+      className="upload-form-container-box"
       fileType={fileType}
       isActive={isActive}
       isUploaded={isUploaded}
