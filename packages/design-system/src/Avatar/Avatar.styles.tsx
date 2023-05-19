@@ -27,7 +27,7 @@ const Sizes = {
 export const StyledAvatar = styled.span<{
   size: AvatarSize;
 }>`
-  ${Variables}
+  ${Variables};
 
   display: flex;
   align-items: center;
@@ -43,9 +43,11 @@ export const StyledAvatar = styled.span<{
   color: var(--ads-v2-color-fg);
   font-family: var(--ads-v2-font-family);
 
+  min-width: var(--avatar-width);
   width: var(--avatar-width);
   height: var(--avatar-height);
   font-size: var(--avatar-font-size);
+  text-transform: uppercase;
 
   img {
     width: 100%;
@@ -93,8 +95,16 @@ export const AvatarMenuItem = styled.div`
   align-items: center;
   gap: var(--ads-v2-spaces-3);
   min-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   ${StyledAvatar} {
     border: none;
   }
+`;
+
+export const AvatarEmail = styled.span`
+  overflow: hidden;
+  overflow-wrap: initial;
+  text-overflow: ellipsis;
 `;

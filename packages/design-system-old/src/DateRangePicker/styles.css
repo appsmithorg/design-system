@@ -81,11 +81,11 @@
 
 .ds--date-range-picker-popover .bp3-datepicker .bp3-menu-item:hover, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-menu-item {
   background-color: var(--ads-color-black-100);
-  border-radius: var(--ads-border-radius);
+  border-radius: var(--ads-v2-border-radius);
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .bp3-menu-item.bp3-intent-primary:hover, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-primary.bp3-menu-item, .bp3-menu-item.bp3-intent-primary.bp3-active {
   background-color: var(--ads-color-brand);
   color: var(--ads-color-black-0);
-  border-radius: var(--ads-border-radius);
+  border-radius: var(--ads-v2-border-radius);
 }

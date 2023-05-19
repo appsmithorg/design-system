@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 import React from "react";
 import AddMoreIcon from "remixicon-react/AddCircleLineIcon";
 import AddMoreFillIcon from "remixicon-react/AddCircleFillIcon";
+import ArrowGoBackLineIcon from "remixicon-react/ArrowGoBackLineIcon";
 import ArrowLeftRightIcon from "remixicon-react/ArrowLeftRightLineIcon";
 import ArrowDownLineIcon from "remixicon-react/ArrowDownLineIcon";
 import BookIcon from "remixicon-react/BookOpenLineIcon";
@@ -19,6 +21,7 @@ import CreateNewIcon from "remixicon-react/AddLineIcon";
 import Database2Line from "remixicon-react/Database2LineIcon";
 import DatasourceIcon from "remixicon-react/CloudFillIcon";
 import DeleteBin7 from "remixicon-react/DeleteBin7LineIcon";
+import DeviceLineIcon from "remixicon-react/DeviceLineIcon";
 import DiscordIcon from "remixicon-react/DiscordLineIcon";
 import DownArrow from "remixicon-react/ArrowDownSFillIcon";
 import Download from "remixicon-react/DownloadCloud2LineIcon";
@@ -37,11 +40,13 @@ import FileTransfer from "remixicon-react/FileTransferLineIcon";
 import FileLine from "remixicon-react/FileLineIcon";
 import Filter from "remixicon-react/Filter2FillIcon";
 import ForbidLineIcon from "remixicon-react/ForbidLineIcon";
+import GiftLineIcon from "remixicon-react/GiftLineIcon";
 import GitMerge from "remixicon-react/GitMergeLineIcon";
 import GitCommit from "remixicon-react/GitCommitLineIcon";
 import GitPullRequest from "remixicon-react/GitPullRequestLineIcon";
 import GlobalLineIcon from "remixicon-react/GlobalLineIcon";
 import GuideIcon from "remixicon-react/GuideFillIcon";
+import HistoryLineIcon from "remixicon-react/HistoryLineIcon";
 import QuestionMarkIcon from "remixicon-react/QuestionMarkIcon";
 import LightbulbFlashLine from "remixicon-react/LightbulbFlashLineIcon";
 import LinksLineIcon from "remixicon-react/LinksLineIcon";
@@ -60,6 +65,7 @@ import SubtractLine from "remixicon-react/SubtractLineIcon";
 import RightArrowIcon from "remixicon-react/ArrowRightLineIcon";
 import RightArrowIcon2 from "remixicon-react/ArrowRightSLineIcon";
 import RocketIcon from "remixicon-react/RocketLineIcon";
+import Save2LineIcon from "remixicon-react/Save2LineIcon";
 import SearchIcon from "remixicon-react/SearchLineIcon";
 import SortAscIcon from "remixicon-react/SortAscIcon";
 import SortDescIcon from "remixicon-react/SortDescIcon";
@@ -90,6 +96,7 @@ import HamburgerIcon from "remixicon-react/MenuLineIcon";
 import MagicLineIcon from "remixicon-react/MagicLineIcon";
 import UserHeartLineIcon from "remixicon-react/UserHeartLineIcon";
 import DvdLineIcon from "remixicon-react/DvdLineIcon";
+import GridLineIcon from "remixicon-react/GridLineIcon";
 import Group2LineIcon from "remixicon-react/Group2LineIcon";
 import CodeViewIcon from "remixicon-react/CodeViewIcon";
 import GroupLineIcon from "remixicon-react/GroupLineIcon";
@@ -114,6 +121,7 @@ import AlertFillIcon from "remixicon-react/AlertFillIcon";
 import InfoFillIcon from "remixicon-react/InformationFillIcon";
 import SettingsLineIcon from "remixicon-react/SettingsLineIcon";
 import LockUnlockLineIcon from "remixicon-react/LockUnlockLineIcon";
+import LockFillIcon from "remixicon-react/LockFillIcon";
 import PantoneLineIcon from "remixicon-react/PantoneLineIcon";
 import QuestionFillIcon from "remixicon-react/QuestionFillIcon";
 import QuestionLineIcon from "remixicon-react/QuestionLineIcon";
@@ -145,6 +153,35 @@ import SearchLineIcon from "remixicon-react/SearchLineIcon";
 import DeleteBinLineIcon from "remixicon-react/DeleteBinLineIcon";
 import FileAddLineIcon from "remixicon-react/FileAddLineIcon";
 import Layout2LineIcon from "remixicon-react/Layout2LineIcon";
+import PencilLineIcon from "remixicon-react/PencilLineIcon";
+import ServerLineIcon from "remixicon-react/ServerLineIcon";
+import LayoutColumnLineIcon from "remixicon-react/LayoutColumnLineIcon";
+import LayoutLeft2LineIcon from "remixicon-react/LayoutLeft2LineIcon";
+import PagesLineIcon from "remixicon-react/PagesLineIcon";
+import BoldIcon from "remixicon-react/BoldIcon";
+import ItalicIcon from "remixicon-react/ItalicIcon";
+import UnderLineIcon from "remixicon-react/UnderlineIcon";
+import SipLineIcon from "remixicon-react/SipLineIcon";
+import ForbidTwoLineIcon from "remixicon-react/Forbid2LineIcon";
+import Message2LineIcon from "remixicon-react/Message2LineIcon";
+import FolderDownloadLineIcon from "remixicon-react/FolderDownloadLineIcon";
+import RestartLineIcon from "remixicon-react/RestartLineIcon";
+import FolderReduceLineIcon from "remixicon-react/FolderReduceLineIcon";
+import TimerFlashLineIcon from "remixicon-react/TimerFlashLineIcon";
+import TimerLineIcon from "remixicon-react/TimerLineIcon";
+import Map2LineIcon from "remixicon-react/Map2LineIcon";
+import MapPinUserLineIcon from "remixicon-react/MapPinUserLineIcon";
+import MapPin5LineIcon from "remixicon-react/MapPin5LineIcon";
+import ChatUploadLineIcon from "remixicon-react/ChatUploadLineIcon";
+import Home3LineIcon from "remixicon-react/Home3LineIcon";
+import FolderLineIcon from "remixicon-react/FolderLineIcon";
+import GoogleFillIcon from "remixicon-react/GoogleFillIcon";
+import GithubFillIcon from "remixicon-react/GithubFillIcon";
+import PlayLineIcon from "remixicon-react/PlayLineIcon";
+import ThumbUpLineIcon from "remixicon-react/ThumbUpLineIcon";
+import ThumbDownLineIcon from "remixicon-react/ThumbDownLineIcon";
+import { ReactComponent as CornerDownLeftLineIcon } from "../__assets__/icons/ads/corner-down-left-line.svg";
+import { ReactComponent as DragHandleIcon } from "../__assets__/icons/ads/app-icons/draghandler.svg";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
 import { ReactComponent as BugIcon } from "../__assets__/icons/ads/bug.svg";
 import { ReactComponent as CancelIcon } from "../__assets__/icons/ads/cancel.svg";
@@ -188,6 +225,7 @@ import { ReactComponent as Reaction2 } from "../__assets__/icons/comments/reacti
 import { ReactComponent as Upload } from "../__assets__/icons/ads/upload.svg";
 import { ReactComponent as ArrowForwardIcon } from "../__assets__/icons/control/arrow_forward.svg";
 import { ReactComponent as DoubleArrowRightIcon } from "../__assets__/icons/ads/double-arrow-right.svg";
+import { ReactComponent as DoubleArrowLeftIcon } from "../__assets__/icons/ads/double-arrow-left.svg";
 import { ReactComponent as CapSolidIcon } from "../__assets__/icons/control/cap_solid.svg";
 import { ReactComponent as CapDotIcon } from "../__assets__/icons/control/cap_dot.svg";
 import { ReactComponent as LineDottedIcon } from "../__assets__/icons/control/line_dotted.svg";
@@ -263,11 +301,13 @@ import { ReactComponent as BoxShadowVariant5Icon } from "../__assets__/icons/con
 import { ReactComponent as SlashIcon } from "../__assets__/icons/form/slash-line.svg";
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 import { ReactComponent as JsToggleV2 } from "../__assets__/icons/ads/js-toggle-v2.svg";
+import { ReactComponent as JsToggleV2Bold } from "../__assets__/icons/ads/js-toggle-v2-bold.svg";
 import { ReactComponent as Datasources2 } from "../__assets__/icons/menu/datasources-2.svg";
 import { ReactComponent as JSIconV2 } from "../__assets__/icons/menu/js-group.svg";
 import { ReactComponent as JSFile } from "../__assets__/icons/menu/js-file-icon.svg";
 import { ReactComponent as JSFunction } from "../__assets__/icons/menu/js-function.svg";
 import { ReactComponent as QueryMain } from "../__assets__/icons/menu/query-main.svg";
+import { ReactComponent as Binding } from "../__assets__/icons/menu/binding.svg";
 
 import { ReactComponent as AlignCenter } from "../__assets__/icons/ads/align-center.svg";
 import { ReactComponent as AlignLeft } from "../__assets__/icons/ads/align-left.svg";
@@ -280,6 +320,9 @@ import { ReactComponent as ContractLeft } from "../__assets__/icons/ads/contract
 import { ReactComponent as ContractRight } from "../__assets__/icons/ads/contract-right-line.svg";
 import { ReactComponent as SkipRightLineIcon } from "../__assets__/icons/ads/skip-right-line.svg";
 import { ReactComponent as SkipLeftLineIcon } from "../__assets__/icons/ads/skip-left-line.svg";
+import { ReactComponent as WLineIcon } from "../__assets__/icons/ads/w-line.svg";
+import { ReactComponent as HLineIcon } from "../__assets__/icons/ads/h-line.svg";
+import { ReactComponent as ShowModalIcon } from "../__assets__/icons/ads/show-modal.svg";
 
 function PlayIconPNGWrapper() {
   return (
@@ -302,6 +345,7 @@ const ICON_LOOKUP = {
   "increase-control": IncreaseIcon,
   "decrease-control": DecreaseIcon,
   "draggable-control": DraggableIcon,
+  "drag-handle": DragHandleIcon,
   "close-control": CloseIcon,
   "close-circle-control": CloseCircleIcon,
   "add-circle-control": AddCircleIcon,
@@ -356,6 +400,7 @@ const ICON_LOOKUP = {
   "heading-one": HeadingOneIcon,
   "heading-two": HeadingTwoIcon,
   "heading-three": HeadingThreeIcon,
+  "gift-line": GiftLineIcon,
   paragraph: ParagraphIcon,
   "paragraph-two": ParagraphTwoIcon,
   "add-box-line": AddBoxLineIcon,
@@ -366,6 +411,7 @@ const ICON_LOOKUP = {
   "info-fill": InfoFillIcon,
   "arrow-down-s-fill": ArrowDownSFillIcon,
   "arrow-forward": ArrowForwardIcon,
+  "arrow-go-back": ArrowGoBackLineIcon,
   "arrow-left": ArrowLeft,
   "arrow-right-s-fill": ArrowRightSFillIcon,
   "arrow-right-up-line": ArrowRightUpLineIcon,
@@ -390,6 +436,7 @@ const ICON_LOOKUP = {
   "delete-blank": DeleteBin7,
   "delete-row": DeleteRowIcon,
   "double-arrow-right": DoubleArrowRightIcon,
+  "double-arrow-left": DoubleArrowLeftIcon,
   "down-arrow": DownArrowIcon,
   "down-arrow-2": ArrowDownLineIcon,
   "download-line": DownloadLineIcon,
@@ -424,6 +471,7 @@ const ICON_LOOKUP = {
   "lock-2-line": Lock2LineIcon,
   "lock-password-line": LockPasswordLineIcon,
   "lock-unlock-line": LockUnlockLineIcon,
+  "lock-fill": LockFillIcon,
   "magic-line": MagicLineIcon,
   "mail-check-line": MailCheckLineIcon,
   "mail-line": MailLineIcon,
@@ -478,6 +526,7 @@ const ICON_LOOKUP = {
   "warning-triangle": WarningTriangleIcon,
   "money-dollar-circle-line": MoneyDollarCircleLineIcon,
   "js-toggle-v2": JsToggleV2,
+  "js-toggle-v2-bold": JsToggleV2Bold,
   "query-main": QueryMain,
   "js-icon-v2": JSIconV2,
   "js-file": JSFile,
@@ -507,9 +556,41 @@ const ICON_LOOKUP = {
   "skip-left-line": SkipLeftLineIcon,
   "contract-left-line": ContractLeft,
   "contract-right-line": ContractRight,
+  "w-line": WLineIcon,
+  "h-line": HLineIcon,
   "file-add-line": FileAddLineIcon,
   "layout-2-line": Layout2LineIcon,
+  "page-line": PagesLineIcon,
+  "pencil-line": PencilLineIcon,
+  "server-line": ServerLineIcon,
+  "layout-column-line": LayoutColumnLineIcon,
+  "layout-left-2-line": LayoutLeft2LineIcon,
+  "text-bold": BoldIcon,
+  "text-italic": ItalicIcon,
+  "text-underline": UnderLineIcon,
+  "sip-line": SipLineIcon,
+  "no-action": ForbidTwoLineIcon,
+  "message-2-line": Message2LineIcon,
+  "folder-download-line": FolderDownloadLineIcon,
+  "restart-line": RestartLineIcon,
+  "folder-reduce-line": FolderReduceLineIcon,
+  "timer-flash-line": TimerFlashLineIcon,
+  "timer-line": TimerLineIcon,
+  "map-2-line": Map2LineIcon,
+  "map-pin-user-line": MapPinUserLineIcon,
+  "map-pin-5-line": MapPin5LineIcon,
+  "chat-upload-line": ChatUploadLineIcon,
+  "home-3-line": Home3LineIcon,
+  "show-modal": ShowModalIcon,
+  "folder-line": FolderLineIcon,
+  "google-fill": GoogleFillIcon,
+  "github-fill": GithubFillIcon,
+  "enter-line": CornerDownLeftLineIcon,
+  "play-line": PlayLineIcon,
+  "thumb-up-line": ThumbUpLineIcon,
+  "thumb-down-line": ThumbDownLineIcon,
   billing: BillingIcon,
+  binding: Binding,
   book: BookIcon,
   bug: BugIcon,
   cancel: CancelIcon,
@@ -523,6 +604,7 @@ const ICON_LOOKUP = {
   datasource: DatasourceIcon,
   delete: Trash,
   desktop: DesktopIcon,
+  device: DeviceLineIcon,
   discord: DiscordIcon,
   downArrow: DownArrow,
   download2: DownloadIcon,
@@ -539,7 +621,9 @@ const ICON_LOOKUP = {
   fork: GitMerge,
   gear: GearIcon,
   general: GeneralIcon,
+  grid: GridLineIcon,
   guide: GuideIcon,
+  history: HistoryLineIcon,
   hamburger: HamburgerIcon,
   help: HelpIcon,
   info: InfoIcon,
@@ -563,6 +647,7 @@ const ICON_LOOKUP = {
   reaction: Reaction,
   refresh: RefreshLineIcon,
   rocket: RocketIcon,
+  save: Save2LineIcon,
   search: SearchIcon,
   setting: SettingIcon,
   share: ShareForwardIcon,
@@ -595,8 +680,6 @@ export type IconNames = typeof IconCollection[number];
 /*
   TODO:
   - fix path and colors for inverse icons
-  - some icons with colors show up correctly on the individual story but not on the all stories one. fix. (ex: wand, pin, headings)
-  - icon lookup should not be case sensitive
  */
 export function IconProvider(props: {
   iconName: string;
@@ -605,13 +688,16 @@ export function IconProvider(props: {
 }) {
   const { color, iconName, size } = props;
 
-  // const pascalCaseIconName = iconName
-  //   .split("-")
-  //   .map((word) => word[0].toUpperCase() + word.slice(1))
-  //   .join("");
-
   const Icon = ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP]
     ? ICON_LOOKUP[iconName as keyof typeof ICON_LOOKUP]
     : null;
+  if (!Icon) {
+    console.error(
+      iconName,
+      " not found. If you haven't made a typo, the icon probably does not exit " +
+        "in our database - check the lookup here: " +
+        "https://github.com/appsmithorg/design-system/blob/c6c2d821c45e459fcb0522fccb273fccbce41664/packages/design-system/src/Icon/Icon.provider.tsx#L292",
+    );
+  }
   return Icon && <Icon color={color} size={size} />;
 }

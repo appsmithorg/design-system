@@ -24,6 +24,11 @@ CalloutStory.argTypes = {
     control: {
       type: "text",
     },
+    table: {
+      type: {
+        summary: "string",
+      },
+    },
   },
   kind: {
     defaultValue: "info",
@@ -51,6 +56,11 @@ CalloutWithLink.argTypes = {
   children: {
     control: {
       type: "text",
+    },
+    table: {
+      type: {
+        summary: "string",
+      },
     },
   },
   kind: {

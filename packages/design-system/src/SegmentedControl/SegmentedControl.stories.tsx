@@ -12,6 +12,7 @@ export default {
 const Template: ComponentStory<typeof SegmentedControl> = (args) => {
   return <SegmentedControl {...args} />;
 };
+// TODO (albin): isFullWidth is not working as expected
 
 export const SegmentedControlStory = Template.bind({});
 SegmentedControlStory.storyName = "Default";

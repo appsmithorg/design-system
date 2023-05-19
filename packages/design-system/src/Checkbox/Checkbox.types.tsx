@@ -5,9 +5,10 @@ export type CheckboxProps = {
   name?: string;
   value?: string;
   children?: ReactNode;
-  defaultSelected?: boolean;
+  isDefaultSelected?: boolean;
   isSelected?: boolean;
   isIndeterminate?: boolean;
   isDisabled?: boolean;
   onChange?: (isSelected: boolean) => void;
-} & AriaCheckboxProps;
+} & Omit<AriaCheckboxProps, "onChange"> &
+  Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "onChange">;

@@ -30,6 +30,7 @@ ButtonStory.args = {
   endIcon: "arrow-right-line",
   size: "md",
   kind: "primary",
+  type: "button",
 };
 
 export const IconButtonStory = Template.bind({});
@@ -40,4 +41,5 @@ IconButtonStory.args = {
   size: "md",
   kind: "primary",
   isIconButton: true,
+  type: "button",
 };

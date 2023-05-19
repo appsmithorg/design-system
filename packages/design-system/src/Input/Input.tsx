@@ -82,11 +82,17 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {/* Issue: adding kind while implementing
         text is throwing typescript error.
         https://stackoverflow.com/questions/68073958/cant-use-href-with-iconbuttonprops*/}
-        <Label {...labelProps} className={InputLabelClassName}>
-          {label}
-          {/* Show required star only if label is present */}
-          {label && isRequired && <span>*</span>}
-        </Label>
+        {label && (
+          <Label
+            {...labelProps}
+            className={InputLabelClassName}
+            onClick={(e) => e.preventDefault()}
+          >
+            {label}
+            {/* Show required star only if label is present */}
+            {label && isRequired && <span>*</span>}
+          </Label>
+        )}
         <InputSection className={InputSectionClassName}>
           <InputContainer isDisabled={isDisabled || isReadOnly}>
             {/* Start Icon Section */}

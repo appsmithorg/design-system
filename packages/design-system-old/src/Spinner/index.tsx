@@ -31,7 +31,7 @@ const SvgContainer = styled.svg<SpinnerProp>`
 `;
 
 const SvgCircle = styled.circle`
-  stroke: var(--ads-color-black-470);
+  stroke: var(--ads-v2-color-fg-subtle);
   stroke-linecap: round;
   animation: ${dash} 1.5s ease-in-out infinite;
   stroke-width: var(--ads-spaces-1);

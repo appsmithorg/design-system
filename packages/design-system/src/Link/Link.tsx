@@ -38,11 +38,11 @@ function Link(props: LinkProps) {
       .split("/")[0];
   };
 
-  const isExternal = function (url: string) {
-    return (
-      (url.indexOf(":") > -1 || url.indexOf("//") > -1) &&
-      checkDomain(location.href) !== checkDomain(url)
-    );
+  const isExternal = function (url: string | undefined) {
+    return url
+      ? (url.indexOf(":") > -1 || url.indexOf("//") > -1) &&
+          checkDomain(location.href) !== checkDomain(url)
+      : false;
   };
 
   const children = (
@@ -69,14 +69,21 @@ function Link(props: LinkProps) {
     </>
   );
 
-  return rest.onClick ? (
+  // useList will always return a mock function as a constructor in the onClick on rest (in storybook at least).
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return rest.onClick && !rest.onClick._isMockFunction ? (
     // if an onClick prop exists
     <StyledRouterLink
       {...(linkProps as LinkProps)}
       className={clsx(LinkClassName, className)}
       innerRef={ref}
       kind={rest.kind}
-      onClick={rest.onClick}
+      onClick={(e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+        e.preventDefault();
+        rest.onClick?.(e);
+      }}
+      style={rest.style}
       target={"_self"}
       to=""
     >
@@ -88,6 +95,7 @@ function Link(props: LinkProps) {
       className={clsx(LinkClassName, className)}
       href={rest.to}
       kind={rest.kind}
+      style={rest.style}
       target={rest.target}
     >
       {children}
@@ -99,8 +107,9 @@ function Link(props: LinkProps) {
       className={clsx(LinkClassName, className)}
       innerRef={ref}
       kind={rest.kind}
+      style={rest.style}
       target={rest.target || "_self"}
-      to={rest.to}
+      to={rest.to || ""}
     >
       {children}
     </StyledRouterLink>

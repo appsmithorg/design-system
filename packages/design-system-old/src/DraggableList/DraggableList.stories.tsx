@@ -20,8 +20,9 @@ const ItemRenderer = styled.div`
   height: 100%;
   padding: 10px;
   cursor: grab;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
-  background-color: var(--ads-color-black-5);
+  box-shadow: 0px 0px 2px 0px var(--ads-v2-color-border);
+  background-color: var(--ads-v2-color-bg);
+  color: var(--ads-v2-color-fg);
 `;
 
 export default {
