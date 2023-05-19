@@ -14,6 +14,7 @@ import {
 } from "Constants/messages";
 import { Classes } from "Constants/classes";
 import { importSvg } from "Utils/icon-loadables";
+import { Variant } from "Constants/variants";
 
 const UploadSuccessIcon = importSvg(() =>
   import("../assets/icons/ads/upload_success.svg"),
