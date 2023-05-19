@@ -5,7 +5,7 @@ import HTML5Backend, { NativeTypes } from "react-dnd-html5-backend";
 import Button, { Category, IconPositions, Size } from "../Button";
 import Icon, { IconSize, IconName } from "../Icon";
 import Text, { TextType } from "../Text";
-import { toast } from "@appsmithorg/design-system";
+import { Toaster } from "../Toast";
 import TooltipComponent from "../Tooltip";
 import {
   createMessage,
@@ -15,8 +15,8 @@ import {
 import { Classes } from "Constants/classes";
 import { importSvg } from "Utils/icon-loadables";
 
-const UploadSuccessIcon = importSvg(
-  () => import("../assets/icons/ads/upload_success.svg"),
+const UploadSuccessIcon = importSvg(() =>
+  import("../assets/icons/ads/upload_success.svg"),
 );
 
 export const FileEndings = {
@@ -348,8 +348,9 @@ function FilePickerComponent(props: FilePickerProps) {
       /* set form data and send api request */
       fileUploader && fileUploader(file, setProgress, onUpload);
     } else {
-      toast.show(createMessage(ERROR_FILE_TOO_LARGE, "250 KB"), {
-        kind: "warning",
+      Toaster.show({
+        text: createMessage(ERROR_FILE_TOO_LARGE, "250 KB"),
+        variant: Variant.warning,
       });
     }
   }
