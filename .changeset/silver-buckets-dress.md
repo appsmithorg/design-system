@@ -3,4 +3,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-chore: give control to user to enable/disable uppy informer
+fix: issues with components 

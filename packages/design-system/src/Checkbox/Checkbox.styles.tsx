@@ -16,62 +16,46 @@ const Checkbox = css`
     left: 0;
   }
 
+  cursor: pointer;
+  position: relative;
+  padding-left: var(--ads-v2-spaces-7);
+  font-family: var(--ads-v2-font-family);
+  font-size: 14px;
+  color: var(--checkbox-color-label);
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  user-select: none;
+  line-height: initial;
+
   & > * {
     cursor: pointer;
   }
 
-  & {
-    cursor: pointer;
-    position: relative;
-    padding-left: var(--ads-v2-spaces-7);
-    font-family: var(--ads-v2-font-family);
-    color: var(--checkbox-color-label);
-    display: flex;
-    align-items: start;
-    justify-content: start;
-  }
-
-  &::before {
-    content: "";
+  span {
     position: absolute;
     left: 0;
     top: 0;
     width: 16px;
     height: 16px;
-    border: 1px solid var(--ads-v2-color-border);
+    border: 1px solid var(--checkbox-color-border);
     border-radius: var(--ads-v2-border-radius);
     box-sizing: border-box;
     background-color: var(--checkbox-color-background);
+    transition: background-color 200ms ease, border 200ms ease;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    border-radius: var(--ads-v2-border-radius);
-    background-color: var(--ads-v2-color-bg-brand-secondary);
-    border: 1px solid var(--ads-v2-color-bg-brand-secondary);
-    box-sizing: border-box;
-    transform: scale(0);
-    transition: transform 0.2s ease;
-    z-index: 1;
+  input[type="checkbox"]:checked + span {
+    --checkbox-color-border: var(--ads-v2-color-border-brand-secondary);
+    --checkbox-color-background: var(--ads-v2-color-bg-brand-secondary);
   }
 
-  label {
-    user-select: none;
-    cursor: pointer;
-    line-height: initial;
-  }
-
-  label::after {
+  span::after {
     content: "";
     opacity: 0;
     position: absolute;
-    left: 3px;
-    top: 9px;
+    left: 2px;
+    top: 8px;
     width: 5px;
     height: var(--ads-v2-spaces-1);
     border-radius: 4px;
@@ -80,16 +64,16 @@ const Checkbox = css`
     z-index: 2;
   }
 
-  input[type="checkbox"]:checked + label::after {
+  input[type="checkbox"]:checked + span::after {
     opacity: 1;
   }
 
-  label::before {
+  span::before {
     content: "";
     opacity: 0;
     position: absolute;
-    left: 4px;
-    top: 7px;
+    left: 3px;
+    top: 6px;
     width: 10px;
     height: var(--ads-v2-spaces-1);
     border-radius: 4px;
@@ -98,7 +82,7 @@ const Checkbox = css`
     z-index: 2;
   }
 
-  input[type="checkbox"]:checked + label::before {
+  input[type="checkbox"]:checked + span::before {
     opacity: 1;
   }
 `;
@@ -113,31 +97,23 @@ export const StyledCheckbox = styled.label<{
 
   ${Checkbox}
 
-  ${({ isChecked }) => {
-    if (isChecked) {
-      return css`
-        &::after {
-          transform: scale(1);
-        }
-      `;
-    }
-  }}
-
   ${({ isIndeterminate }) => {
     if (isIndeterminate) {
       return css`
-        &::after {
-          transform: scale(1);
+        span {
+          --checkbox-color-border: var(--ads-v2-color-border-brand-secondary);
+          --checkbox-color-background: var(--ads-v2-color-bg-brand-secondary);
         }
-        label::after {
+
+        span::after {
           opacity: 1;
-          left: 3px;
-          top: 7px;
+          left: 2px;
+          top: 6px;
           width: 10px;
           transform: rotateZ(0deg);
         }
 
-        label::before {
+        span::before {
           display: none;
         }
       `;
@@ -147,7 +123,7 @@ export const StyledCheckbox = styled.label<{
   ${({ isFocusVisible }) => {
     if (isFocusVisible === true) {
       return css`
-        &::before {
+        span {
           outline: var(--ads-v2-border-width-outline) solid
             var(--ads-v2-color-outline);
           outline-offset: var(--ads-v2-offset-outline);
@@ -156,7 +132,7 @@ export const StyledCheckbox = styled.label<{
     }
   }}
 
-  ${({ isDisabled }) => {
+  ${({ isChecked, isDisabled }) => {
     if (isDisabled) {
       return css`
         opacity: var(--ads-v2-opacity-disabled);
@@ -166,16 +142,22 @@ export const StyledCheckbox = styled.label<{
         }
       `;
     } else {
-      return css`
-        &:hover::before {
-          border-color: var(--ads-v2-color-border-emphasis);
-        }
-
-        &:hover::after {
-          background-color: var(--ads-v2-color-bg-brand-secondary-emphasis);
-          border: 1px solid var(--ads-v2-color-border-brand-secondary-emphasis);
-        }
-      `;
+      return isChecked
+        ? css`
+            &:hover > span {
+              --checkbox-color-background: var(
+                --ads-v2-color-bg-brand-secondary-emphasis
+              ) !important;
+              --checkbox-color-border: var(
+                --ads-v2-color-border-brand-secondary-emphasis
+              ) !important;
+            }
+          `
+        : css`
+            &:hover > span {
+              --checkbox-color-border: var(--ads-v2-color-border-emphasis);
+            }
+          `;
     }
   }}
 `;

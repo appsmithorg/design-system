@@ -126,6 +126,8 @@
   --ads-v2-color-border-success: var(--ads-v2-color-green-600);
   /** Used for indicating warning borders */
   --ads-v2-color-border-warning: var(--ads-v2-color-yellow-600);
+  /** Used for indicating information borders */
+  --ads-v2-color-border-info: var(--ads-v2-color-blue-600);
 
   /**
     * ===========================================*
@@ -142,7 +144,7 @@
     * ===========================================*
   */
   --ads-v2-border-radius: 4px;
-  --ads-border-radius-circle: 50%;
+  --ads-v2-border-radius-circle: 50%;
 
   /**
     * ===========================================*
@@ -178,7 +180,8 @@
 
 /* Placeholder color */
 ::placeholder {
-  color: var(--ads-v2-color-fg-subtle);
+  /* This needs to be important to override the placeholder color on main repo */
+  color: var(--ads-v2-color-fg-subtle) !important;
   opacity: 1; /* Firefox */
 }
 
@@ -188,4 +191,28 @@
 
 ::-ms-input-placeholder { /* Microsoft Edge */
  color: var(--ads-v2-color-fg-subtle);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ads-v2-color-bg-emphasis) transparent;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background-color: var(--ads-v2-color-bg-emphasis);
+  border-radius: 36px;
+  opacity: 0.5;
 }

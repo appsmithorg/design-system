@@ -22,5 +22,5 @@ export type LinkProps = {
   endIcon?: string;
   /** the kind of link */
   kind?: LinkKind;
-} & RouterLinkProps &
+} & Omit<RouterLinkProps, "to"> &
   AriaLinkOptions;

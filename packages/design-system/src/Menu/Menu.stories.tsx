@@ -15,7 +15,7 @@ import {
 } from "./Menu";
 import { Button } from "../Button";
 import { Text } from "../Text";
-import { Icon } from "../Icon";
+import { Tooltip } from "../Tooltip";
 
 export default {
   title: "Design System/Menu",
@@ -27,13 +27,7 @@ const Template: ComponentStory<typeof Menu> = () => {
   return (
     <Menu>
       <MenuTrigger>
-        <Button
-          isIconButton
-          kind="tertiary"
-          size="sm"
-          startIcon="comment-context-menu"
-        />
-        {/*<Button>Menu</Button>*/}
+        <Button>Menu</Button>
       </MenuTrigger>
       <MenuContent loop width="200px">
         <MenuItem startIcon="settings-line">
@@ -364,6 +358,20 @@ MenuItemStory.argTypes = {
       },
     },
   },
+  onSelect: {
+    control: {
+      type: "function",
+    },
+    description: "Callback when the menu item is selected.",
+    table: {
+      type: {
+        summary: "() => void",
+      },
+      defaultValue: {
+        summary: "() => {}",
+      },
+    },
+  },
 };
 MenuItemStory.args = {
   children: "Item",
@@ -450,3 +458,25 @@ MenuSubmenuStory.argTypes = {
     },
   },
 };
+
+export function MenuWithTooltipOnTrigger() {
+  return (
+    <Menu>
+      <Tooltip
+        content={
+          "this tooltip appears when you hover over the menu trigger. " +
+          "clicking the menu trigger will open the menu only if the tooltip is " +
+          "wrapped around the MenuTrigger and not the other way around."
+        }
+      >
+        <MenuTrigger>
+          <Button>Click me</Button>
+        </MenuTrigger>
+      </Tooltip>
+      <MenuContent width="150px">
+        <MenuItem>Item</MenuItem>
+        <MenuItem>Item</MenuItem>
+      </MenuContent>
+    </Menu>
+  );
+}

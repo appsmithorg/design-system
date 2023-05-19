@@ -50,6 +50,14 @@ InternalLink.args = {
   kind: "primary",
 };
 
+export const LinkWithOnClick = Template.bind({});
+LinkWithOnClick.args = {
+  children: "click me",
+  onClick: () => console.log("this link was clicked"),
+  endIcon: "arrow-right-line",
+  kind: "primary",
+};
+
 export const ExternalLink = Template.bind({});
 ExternalLink.args = {
   to: "https://appsmith.com",

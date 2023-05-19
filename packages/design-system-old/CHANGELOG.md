@@ -1,5 +1,25 @@
 # @appsmithorg/design-system
 
+## 1.1.6
+
+### Patch Changes
+
+- [#466](https://github.com/appsmithorg/design-system/pull/466) [`794f978`](https://github.com/appsmithorg/design-system/commit/794f9783403d105a71c75e3c49f6df7457351331) Thanks [@eco-monk](https://github.com/eco-monk)! - fix: add mime types to file upload
+
+* [#468](https://github.com/appsmithorg/design-system/pull/468) [`74cd9da`](https://github.com/appsmithorg/design-system/commit/74cd9da4c22565ad93292dc371d91cfb85102df3) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: icon not rendering in all icons page
+
+## 1.1.5
+
+### Patch Changes
+
+- [#462](https://github.com/appsmithorg/design-system/pull/462) [`37d65c5`](https://github.com/appsmithorg/design-system/commit/37d65c5eae3f01aad126a5cd7664cf8fedb10896) Thanks [@berzerkeer](https://github.com/berzerkeer)! - chore: give control to user to enable/disable uppy informer
+
+## 1.1.4
+
+### Patch Changes
+
+- [#445](https://github.com/appsmithorg/design-system/pull/445) [`8d3ef64`](https://github.com/appsmithorg/design-system/commit/8d3ef64c4b266569d8b837bc69da255987716e1f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Adding autoResetExpanded to the table component for avoiding the tree getting closed on every change
+
 ## 1.1.3
 
 ### Patch Changes

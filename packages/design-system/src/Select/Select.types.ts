@@ -1,6 +1,6 @@
 import { SelectProps as RCSelectProps } from "rc-select";
 import { Sizes } from "__config__/types";
-import { OptionProps as RCOptionProps } from "rc-select/es/Option";
+import { OptionProps } from "rc-select/lib/Option";
 
 export type SelectSizes = Extract<Sizes, "sm" | "md">;
 
@@ -9,8 +9,7 @@ export type SelectProps = RCSelectProps & {
   isMultiSelect?: boolean;
   isDisabled?: boolean;
   isValid?: boolean;
+  isLoading?: boolean;
 };
 
-export type SelectOptionProps = RCOptionProps & {
-  isDisabled?: boolean;
-};
+export type SelectOptionProps = OptionProps;
