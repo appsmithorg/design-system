@@ -2,11 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { DndProvider, useDrop, DropTargetMonitor } from "react-dnd";
 import HTML5Backend, { NativeTypes } from "react-dnd-html5-backend";
-import { Variant } from "Constants/variants";
 import Button, { Category, IconPositions, Size } from "../Button";
 import Icon, { IconSize, IconName } from "../Icon";
 import Text, { TextType } from "../Text";
-import { toast, Toast } from "@appsmithorg/design-system";
+import { toast } from "@appsmithorg/design-system";
 import TooltipComponent from "../Tooltip";
 import {
   createMessage,
