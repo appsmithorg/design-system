@@ -88,6 +88,10 @@ const ToastBody = styled.div<{
     cursor: auto;
     margin-right: var(--ads-spaces-3);
     margin-top: calc(var(--ads-spaces-1) / 2);
+
+    .warning-triangle_svg__symbol {
+      fill: #fff;
+    }
     svg {
       path {
         fill: ${(props) =>
