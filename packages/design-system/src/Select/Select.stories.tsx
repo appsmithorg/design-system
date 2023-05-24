@@ -804,7 +804,9 @@ OptionStory.argTypes = {
 const SelectSimpleTemplate: ComponentStory<typeof Select> = ({ ...args }) => {
   return (
     <Select {...args}>
-      <Option value="value 1">Option 1</Option>
+      <Option value="value 1">
+        Option one is a long option that should get ellipsis
+      </Option>
       <Option value="value 2">Option 2</Option>
       <Option value="value 3">Option 3</Option>
       <Option value="value 4">Option 4</Option>
