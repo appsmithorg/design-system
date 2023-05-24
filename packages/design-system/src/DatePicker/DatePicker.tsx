@@ -155,18 +155,18 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
   const endRange = endYear || getYear(new Date());
   const years = range(startRange, endRange + 1, 1);
   const months = [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
 
   // TODO: Fix this, causing unexpected behavior
@@ -216,6 +216,7 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
                 DatePickerCalenderClassName,
               )[0],
             }}
+            style={{ minWidth: "60px" }}
           >
             {months.map((month) => (
               <MenuItem
@@ -249,6 +250,7 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
                 DatePickerCalenderClassName,
               )[0],
             }}
+            style={{ minWidth: "unset" }}
           >
             {years.map((year) => (
               <MenuItem
