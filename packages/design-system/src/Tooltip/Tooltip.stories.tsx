@@ -120,6 +120,14 @@ const Template: ComponentStory<typeof Tooltip> = (args) => {
   );
 };
 
+/**
+ * TODO: Add this to documentation
+ * A disabled button will not trigger a tooltip because it doesn't recognise any actions, including a hover.
+ * To bypass this, simply wrap the disabled button with a span.
+ * @param args
+ * @constructor
+ */
+
 // eslint-disable-next-line react/function-component-definition
 const TemplateButton: ComponentStory<typeof Tooltip> = (args) => {
   return (
