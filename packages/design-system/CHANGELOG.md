@@ -1,5 +1,12 @@
 # @appsmithorg/design-system
 
+## 2.1.10
+
+### Patch Changes
+
+- [#479](https://github.com/appsmithorg/design-system/pull/479) [`c2c09b6c`](https://github.com/appsmithorg/design-system/commit/c2c09b6c7e6bb674c97b4613d87e359054dd98a8) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fixes for - old toast, datepicker
+  Added new icons for layout and js file
+
 ## 2.1.9
 
 ### Patch Changes
