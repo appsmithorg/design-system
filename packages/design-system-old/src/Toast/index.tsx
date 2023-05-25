@@ -81,8 +81,6 @@ const ToastBody = styled.div<{
   // has no effect in safari
   word-break: break-word;
   overflow-wrap: anywhere;
-  border: 1px solid #CDD5DF;
-  border-radius: 4px !important;
 
   div > .${Classes.ICON} {
     cursor: auto;
