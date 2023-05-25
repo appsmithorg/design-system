@@ -71,9 +71,7 @@ const ToastBody = styled.div<{
 }>`
   width: ${(props) => props.width || "fit-content"};
   max-width: ${(props) => props.maxWidth || "264px"};
-  margin-left: auto;
   background: white;
-  padding: var(--ads-spaces-4) var(--ads-spaces-5);
   display: flex;
   align-items: center;
   justify-content: space-between;
