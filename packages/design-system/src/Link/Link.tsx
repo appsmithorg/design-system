@@ -92,6 +92,7 @@ function Link(props: LinkProps) {
   ) : isExternal(rest.to) ? (
     // if the url passed is external
     <StyledAnchor
+      {...(linkProps as LinkProps)}
       className={clsx(LinkClassName, className)}
       href={rest.to}
       kind={rest.kind}

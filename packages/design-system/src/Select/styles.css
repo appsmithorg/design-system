@@ -126,12 +126,12 @@
   /* top: ${({ size }) => (size === "sm" ? "" : "0")}; */
   height: 100%;
   width: 100%;
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   box-sizing: border-box;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 18px;
 }
 
 .ads-v2-select[data-size="sm"] > .rc-select-selector > .rc-select-selection-placeholder,

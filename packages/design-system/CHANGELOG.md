@@ -1,5 +1,19 @@
 # @appsmithorg/design-system
 
+## 2.1.9
+
+### Patch Changes
+
+- [#473](https://github.com/appsmithorg/design-system/pull/473) [`6bc83fd4`](https://github.com/appsmithorg/design-system/commit/6bc83fd4b9f813a23ce062459b9761fc27f9be80) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Adding default type for button
+
+* [#471](https://github.com/appsmithorg/design-system/pull/471) [`41be8cec`](https://github.com/appsmithorg/design-system/commit/41be8cec952199bf116c33f896efd6aec22b1f80) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Updating the click action on input label to remove focus from input box
+
+- [#452](https://github.com/appsmithorg/design-system/pull/452) [`0db333d2`](https://github.com/appsmithorg/design-system/commit/0db333d2bd1b0aca1f07120f61d77b2ee6b656bd) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issues with components
+
+* [#476](https://github.com/appsmithorg/design-system/pull/476) [`db5bed71`](https://github.com/appsmithorg/design-system/commit/db5bed711fb2a7e944720bbc965f3a991705cf35) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - feat: add `overlayClassName` prop to the `Modal` component
+
+- [#474](https://github.com/appsmithorg/design-system/pull/474) [`292c0168`](https://github.com/appsmithorg/design-system/commit/292c01685aac90a16ab7d95674e1247d3647b59f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Updating CSS for tooltip to fix position shift issue
+
 ## 2.1.7
 
 ### Patch Changes

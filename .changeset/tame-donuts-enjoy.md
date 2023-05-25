@@ -3,4 +3,5 @@
 "@appsmithorg/design-system": patch
 ---
 
-fix: issues with components 
+fixes for - old toast, datepicker
+Added new icons for layout and js file

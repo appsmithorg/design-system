@@ -180,6 +180,9 @@ import GithubFillIcon from "remixicon-react/GithubFillIcon";
 import PlayLineIcon from "remixicon-react/PlayLineIcon";
 import ThumbUpLineIcon from "remixicon-react/ThumbUpLineIcon";
 import ThumbDownLineIcon from "remixicon-react/ThumbDownLineIcon";
+import MenuFoldLineIcon from "remixicon-react/MenuFoldLineIcon";
+import MenuUnfoldLineIcon from "remixicon-react/MenuUnfoldLineIcon";
+import Layout5LineIcon from "remixicon-react/Layout5LineIcon";
 import { ReactComponent as CornerDownLeftLineIcon } from "../__assets__/icons/ads/corner-down-left-line.svg";
 import { ReactComponent as DragHandleIcon } from "../__assets__/icons/ads/app-icons/draghandler.svg";
 import { ReactComponent as BookLineIcon } from "../__assets__/icons/ads/book-open-line.svg";
@@ -323,6 +326,7 @@ import { ReactComponent as SkipLeftLineIcon } from "../__assets__/icons/ads/skip
 import { ReactComponent as WLineIcon } from "../__assets__/icons/ads/w-line.svg";
 import { ReactComponent as HLineIcon } from "../__assets__/icons/ads/h-line.svg";
 import { ReactComponent as ShowModalIcon } from "../__assets__/icons/ads/show-modal.svg";
+import { ReactComponent as JSYellowIcon } from "../__assets__/icons/ads/js-yellow.svg";
 
 function PlayIconPNGWrapper() {
   return (
@@ -589,6 +593,10 @@ const ICON_LOOKUP = {
   "play-line": PlayLineIcon,
   "thumb-up-line": ThumbUpLineIcon,
   "thumb-down-line": ThumbDownLineIcon,
+  "menu-fold": MenuFoldLineIcon,
+  "menu-unfold": MenuUnfoldLineIcon,
+  "layout-5-line": Layout5LineIcon,
+  "js-yellow": JSYellowIcon,
   billing: BillingIcon,
   binding: Binding,
   book: BookIcon,
