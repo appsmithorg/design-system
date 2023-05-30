@@ -27,7 +27,7 @@ import { Button } from "Button";
 import { Menu, MenuContent, MenuItem, MenuTrigger } from "Menu";
 import { Divider } from "Divider";
 import { createDefaultShortcuts } from "./utils";
-import type { DateRangeShortCutsConfig } from "./utils";
+import type { DateRangeShortcutsConfig } from "./utils";
 
 function DatePicker(props: DatePickerProps) {
   const {
@@ -136,7 +136,7 @@ function DatePicker(props: DatePickerProps) {
   );
 }
 
-interface DateRangeShortcutsProps extends DateRangeShortCutsConfig {
+interface DateRangeShortcutsProps extends DateRangeShortcutsConfig {
   onChangeHandler: (
     date: [Date | null, Date | null],
     e: React.SyntheticEvent<any, Event> | undefined,
@@ -148,15 +148,15 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   const {
     allowSingleDayRange = false,
     onChangeHandler,
-    showRangeShortCuts = false,
+    showRangeShortcuts = false,
     useSingleDateShortcuts = false,
   } = props;
   const shortCuts = createDefaultShortcuts(
     allowSingleDayRange,
-    showRangeShortCuts,
+    showRangeShortcuts,
     useSingleDateShortcuts,
   );
-  return showRangeShortCuts ? (
+  return showRangeShortcuts ? (
     <>
       {shortCuts.map((each) => {
         const onClickHandle = (e: any) => {
@@ -324,7 +324,7 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
 }
 
 function DateRangePicker(
-  props: DateRangePickerProps & DateRangeShortCutsConfig,
+  props: DateRangePickerProps & DateRangeShortcutsConfig,
 ) {
   const {
     calendarClassName,
@@ -401,8 +401,8 @@ function DateRangePicker(
       disabled={isDisabled}
       endDate={endDate}
       monthsShown={2}
-      openToDate={startDate || undefined}
       onChange={onChangeHandler}
+      openToDate={startDate || undefined}
       placeholderText={placeholderText}
       readOnly={isReadOnly}
       renderCustomHeader={(props) => {
@@ -425,7 +425,7 @@ function DateRangePicker(
       <DateRangeShortcuts
         allowSingleDayRange={props.allowSingleDayRange}
         onChangeHandler={onChangeHandler}
-        showRangeShortCuts={props.showRangeShortCuts}
+        showRangeShortcuts={props.showRangeShortcuts}
         useSingleDateShortcuts={props.useSingleDateShortcuts}
       />
     </BaseDatePicker>

@@ -1,6 +1,6 @@
 // Credits to blueprint(https://github.com/palantir/blueprint/blob/develop/packages/datetime/src/shortcuts.tsx#L132)
-export interface DateRangeShortCutsConfig {
-  showRangeShortCuts?: boolean;
+export interface DateRangeShortcutsConfig {
+  showRangeShortcuts?: boolean;
   allowSingleDayRange?: boolean;
   hasTimePrecision?: boolean;
   useSingleDateShortcuts?: boolean;

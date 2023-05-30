@@ -85,7 +85,7 @@ export default {
         },
       },
     },
-    showRangeShortCuts: {
+    showRangeShortcuts: {
       control: {
         type: "boolean",
       },
