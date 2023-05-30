@@ -156,7 +156,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
     showRangeShortCuts,
     useSingleDateShortcuts,
   );
-  return (
+  return showRangeShortCuts ? (
     <>
       {shortCuts.map((each) => {
         const onClickHandle = (e: any) => {
@@ -176,7 +176,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
         );
       })}
     </>
-  );
+  ) : null;
 }
 
 function DatePickerHeader(props: DatePickerHeaderProps) {
