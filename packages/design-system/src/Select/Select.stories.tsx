@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Select, Option } from "./Select";
 import { Icon } from "../Icon";
+import _ from "lodash";
+import { Checkbox } from "../Checkbox";
 
 export default {
   title: "Design System/Select",
@@ -875,3 +877,52 @@ SelectSimpleStory.args = {
     console.log("event -", e);
   },
 };
+
+const options = [
+  {
+    label: "label 1",
+    value: "value 1",
+    key: "001",
+  },
+  {
+    label: "A longer label to force a line break",
+    value: "value 2",
+    key: "002",
+  },
+  {
+    label: "label 3",
+    value: "value 3",
+    key: "003",
+  },
+];
+export function SelectWithCheckbox() {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  return (
+    <Select
+      isMultiSelect
+      onDeselect={(value, unselectedOption) =>
+        setSelectedOptions(
+          selectedOptions.filter((opt) => opt.value !== unselectedOption.value),
+        )
+      }
+      onSelect={(value, newSelectedOption) =>
+        setSelectedOptions([...selectedOptions, newSelectedOption])
+      }
+      optionLabelProp="label"
+      value={selectedOptions}
+    >
+      {options.map((option) => (
+        <Option key={option.key}>
+          <Checkbox
+            isSelected={selectedOptions.find(
+              (selectedOption) => selectedOption.key == option.key,
+            )}
+          >
+            {option.label}
+          </Checkbox>
+        </Option>
+      ))}
+    </Select>
+  );
+}
