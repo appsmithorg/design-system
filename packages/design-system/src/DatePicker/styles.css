@@ -145,7 +145,7 @@
   color: var(--ads-v2-color-fg-brand);
 }
 
-.react-datepicker.ads-v2-datepicker__calender .react-datepicker__month .react-datepicker__week .react-datepicker__day--today:after {
+.react-datepicker.ads-v2-datepicker__calender .react-datepicker__month .react-datepicker__week .react-datepicker__day--today:not(.react-datepicker__day--outside-month):after {
   content: '';
   position: absolute;
   bottom: 2px;
@@ -158,6 +158,7 @@
 /* Day - outside month */
 .react-datepicker.ads-v2-datepicker__calender .react-datepicker__month .react-datepicker__week .react-datepicker__day.react-datepicker__day--outside-month {
   color: var(--ads-v2-color-fg-subtle);
+  pointer-events: none;
 }
 
 /* Day - hide hover and select bg on empty day columns */
@@ -217,4 +218,19 @@
 
 .react-datepicker__children-container {
   margin-top: -10px !important;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ads-v2-daterange-shortcut{
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}
+.ads-v2-daterange-shortcut:hover{
+ background-color: var(--ads-v2-color-bg-subtle);
+}
+.ads-v2-shortcut-selected{
+  border: 1px solid black;
 }

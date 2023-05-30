@@ -26,6 +26,8 @@ import { Input } from "Input";
 import { Button } from "Button";
 import { Menu, MenuContent, MenuItem, MenuTrigger } from "Menu";
 import { Divider } from "Divider";
+import { createDefaultShortcuts } from "./utils";
+import type { DateRangeShortCutsConfig } from "./utils";
 
 function DatePicker(props: DatePickerProps) {
   const {
@@ -131,6 +133,49 @@ function DatePicker(props: DatePickerProps) {
         </>
       ) : null}
     </BaseDatePicker>
+  );
+}
+
+interface DateRangeShortcutsProps extends DateRangeShortCutsConfig {
+  onChangeHandler: (
+    date: [Date | null, Date | null],
+    e: React.SyntheticEvent<any, Event> | undefined,
+  ) => void;
+}
+
+function DateRangeShortcuts(props: DateRangeShortcutsProps) {
+  const [selectedShortCut, setSelectedShortCut] = useState("");
+  const {
+    allowSingleDayRange = false,
+    onChangeHandler,
+    showRangeShortCuts = false,
+    useSingleDateShortcuts = false,
+  } = props;
+  const shortCuts = createDefaultShortcuts(
+    allowSingleDayRange,
+    showRangeShortCuts,
+    useSingleDateShortcuts,
+  );
+  return (
+    <>
+      {shortCuts.map((each) => {
+        const onClickHandle = (e: any) => {
+          onChangeHandler(each.dateRange, e);
+          setSelectedShortCut(each.label);
+        };
+        const isSelected = selectedShortCut === each.label;
+        return (
+          <div
+            className={`ads-v2-daterange-shortcut ads-v2-shortcut-${
+              each.label
+            } ${isSelected && "ads-v2-shortcut-selected"}`}
+            onClick={onClickHandle}
+          >
+            {each.label}
+          </div>
+        );
+      })}
+    </>
   );
 }
 
@@ -278,7 +323,9 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
   );
 }
 
-function DateRangePicker(props: DateRangePickerProps) {
+function DateRangePicker(
+  props: DateRangePickerProps & DateRangeShortCutsConfig,
+) {
   const {
     calendarClassName,
     className,
@@ -354,6 +401,7 @@ function DateRangePicker(props: DateRangePickerProps) {
       disabled={isDisabled}
       endDate={endDate}
       monthsShown={2}
+      openToDate={startDate || undefined}
       onChange={onChangeHandler}
       placeholderText={placeholderText}
       readOnly={isReadOnly}
@@ -373,7 +421,14 @@ function DateRangePicker(props: DateRangePickerProps) {
       showPopperArrow={false}
       showTimeInput={false}
       startDate={startDate}
-    />
+    >
+      <DateRangeShortcuts
+        allowSingleDayRange={props.allowSingleDayRange}
+        onChangeHandler={onChangeHandler}
+        showRangeShortCuts={props.showRangeShortCuts}
+        useSingleDateShortcuts={props.useSingleDateShortcuts}
+      />
+    </BaseDatePicker>
   );
 }
 
