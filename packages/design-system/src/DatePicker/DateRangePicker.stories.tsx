@@ -85,6 +85,21 @@ export default {
         },
       },
     },
+    showRangeShortCuts: {
+      control: {
+        type: "boolean",
+      },
+      description:
+        "Show a panel next to date range that contains quick predefined ranges",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     closeOnScroll: {
       control: {
         type: "boolean",
