@@ -28,7 +28,6 @@ export const DatePickerShortcut = styled.div`
 
 export const DatePickerShortcutItem = styled.div`
   width: 120px;
-  height: 36px;
   box-sizing: border-box;
   cursor: pointer;
   color: var(--ads-v2-color-fg);

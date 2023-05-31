@@ -219,10 +219,10 @@ export function createDefaultShortcuts(
 function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   const {
     allowSingleDayRange = false,
+    currentDates,
     onChangeHandler,
     showRangeShortcuts = false,
     useSingleDateShortcuts = false,
-    currentDates,
   } = props;
   const shortCuts = createDefaultShortcuts(
     allowSingleDayRange,

@@ -55,17 +55,13 @@
 /* Month container */
 .react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container {
   position: relative;
+  padding-right: var(--ads-v2-spaces-3);
+  border-right: 1px solid var(--ads-v2-color-border);
 }
 
-/* Separator between two months - date range mode */
-.react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:last-child:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -9px;
-  width: 1px;
-  height: 100%;
-  background-color: var(--ads-v2-color-border);
+.react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:not(:first-of-type) {
+  margin-left: -8px;
+  margin-right: -12px;
 }
 
 /* Custom header wrapper */
