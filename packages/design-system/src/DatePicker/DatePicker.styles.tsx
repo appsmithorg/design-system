@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Divider } from "../Divider";
 
 export const StyledDatePickerHeader = styled.div`
   display: flex;
@@ -15,9 +16,15 @@ export const StyledDatePickerHeader = styled.div`
 export const DatePickerFooter = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: var(--ads-v2-spaces-2);
 `;
 
+export const DatePickerShortcutContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: var(--ads-v2-spaces-3);
+  padding: var(--ads-v2-spaces-2) 0;
+`;
 export const DatePickerShortcut = styled.div`
   height: 100%;
   display: flex;
@@ -34,10 +41,6 @@ export const DatePickerShortcutItem = styled.div`
   border-radius: var(--ads-v2-border-radius);
   padding: var(--ads-v2-spaces-3);
   font-size: 14px;
-
-  &:nth-child(1) {
-    margin-top: 12px;
-  }
 
   &:hover:not([data-selected="true"]) {
     background-color: var(--ads-v2-color-bg-subtle);

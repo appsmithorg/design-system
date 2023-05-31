@@ -14,6 +14,7 @@ import {
   DatePickerFooterClassName,
   DatePickerFooterClearClassName,
   DatePickerFooterTodayClassName,
+  DateRangePickerClassName,
   DateTimePickerClassName,
 } from "./DatePicker.constants";
 import {
@@ -28,6 +29,7 @@ import {
 import {
   DatePickerFooter,
   DatePickerShortcut,
+  DatePickerShortcutContainer,
   DatePickerShortcutItem,
   StyledDatePickerHeader,
 } from "./DatePicker.styles";
@@ -244,23 +246,26 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
     }
   }, [currentDates]);
   return showRangeShortcuts ? (
-    <DatePickerShortcut>
-      {shortCuts.map((each) => {
-        const onClickHandle = (e: any) => {
-          onChangeHandler(each.dateRange, e, "shortcut");
-        };
-        const isSelected = selectedShortCut?.label === each.label;
-        return (
-          <DatePickerShortcutItem
-            data-selected={isSelected}
-            key={each.label}
-            onClick={onClickHandle}
-          >
-            {each.label}
-          </DatePickerShortcutItem>
-        );
-      })}
-    </DatePickerShortcut>
+    <DatePickerShortcutContainer>
+      <Divider orientation="vertical" />
+      <DatePickerShortcut>
+        {shortCuts.map((each) => {
+          const onClickHandle = (e: any) => {
+            onChangeHandler(each.dateRange, e, "shortcut");
+          };
+          const isSelected = selectedShortCut?.label === each.label;
+          return (
+            <DatePickerShortcutItem
+              data-selected={isSelected}
+              key={each.label}
+              onClick={onClickHandle}
+            >
+              {each.label}
+            </DatePickerShortcutItem>
+          );
+        })}
+      </DatePickerShortcut>
+    </DatePickerShortcutContainer>
   ) : null;
 }
 
@@ -469,7 +474,11 @@ function DateRangePicker(
   return (
     <BaseDatePicker
       {...rest}
-      calendarClassName={clsx(DatePickerCalenderClassName, calendarClassName)}
+      calendarClassName={clsx(
+        DatePickerCalenderClassName,
+        DateRangePickerClassName,
+        calendarClassName,
+      )}
       className={clsx(className, DatePickerClassName)}
       customInput={
         <Input
@@ -491,19 +500,20 @@ function DateRangePicker(
           size={inputSize}
         />
       }
+      data-showRangeShortcuts={props.showRangeShortcuts}
       dateFormat={dateFormat}
       disabled={isDisabled}
       endDate={endDate}
       monthsShown={2}
+      onChange={onChangeHandler}
+      onClickOutside={() => setIsOpen(false)}
+      onInputClick={() => setIsOpen(true)}
       onKeyDown={(e: any) => {
         // handling esc key press
         if (e.keyCode === 27) {
           setIsOpen(false);
         }
       }}
-      onChange={onChangeHandler}
-      onClickOutside={() => setIsOpen(false)}
-      onInputClick={() => setIsOpen(true)}
       open={isOpen}
       placeholderText={placeholderText}
       readOnly={isReadOnly}
