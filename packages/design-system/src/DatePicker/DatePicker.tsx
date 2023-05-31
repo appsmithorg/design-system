@@ -534,7 +534,7 @@ function DateRangePicker(
         );
       }}
       required={isRequired}
-      selected={showPreviousMonths ? endDate : startDate}
+      selected={startDate}
       selectsRange
       showPopperArrow={false}
       showPreviousMonths={showPreviousMonthsState}
