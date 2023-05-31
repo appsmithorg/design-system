@@ -306,7 +306,12 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
   //     menuItem?.scrollIntoView({ behavior: "smooth"});
   //   }, 0);
   // }, []);
-
+  useEffect(() => {
+    const year = monthDate.getFullYear();
+    if (year !== selectedYear) {
+      setSelectedYear(year);
+    }
+  }, [monthDate]);
   const handleYearChange = (year: number) => {
     changeYear(year);
     setSelectedYear(year);
