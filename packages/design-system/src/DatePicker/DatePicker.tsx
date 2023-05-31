@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import BaseDatePicker from "react-datepicker";
 import range from "lodash/range";
 import getYear from "date-fns/getYear";
@@ -432,7 +432,6 @@ function DateRangePicker(
   } = props;
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
-  const dateRef = useRef(new Date());
   useEffect(() => {
     if (propStartDate !== startDate) {
       setStartDate(propStartDate || null);
