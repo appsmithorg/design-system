@@ -247,7 +247,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
     <DatePickerShortcut>
       {shortCuts.map((each) => {
         const onClickHandle = (e: any) => {
-          onChangeHandler(each.dateRange, e);
+          onChangeHandler(each.dateRange, e, "shortcut");
         };
         const isSelected = selectedShortCut?.label === each.label;
         return (
@@ -432,6 +432,7 @@ function DateRangePicker(
   } = props;
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   useEffect(() => {
     if (propStartDate !== startDate) {
       setStartDate(propStartDate || null);
@@ -444,11 +445,15 @@ function DateRangePicker(
   const onChangeHandler = (
     date: [Date | null, Date | null],
     e: React.SyntheticEvent<any, Event> | undefined,
+    type?: string,
   ) => {
     const [startDate, endDate] = date;
     setStartDate(startDate);
     setEndDate(endDate);
     onChange && onChange(date, e);
+    if (type === "shortcut") {
+      setIsOpen(false);
+    }
   };
 
   const onClearhandler = () => {
@@ -485,7 +490,16 @@ function DateRangePicker(
       disabled={isDisabled}
       endDate={endDate}
       monthsShown={2}
+      onKeyDown={(e: any) => {
+        // handling esc key press
+        if (e.keyCode === 27) {
+          setIsOpen(false);
+        }
+      }}
       onChange={onChangeHandler}
+      onClickOutside={() => setIsOpen(false)}
+      onInputClick={() => setIsOpen(true)}
+      open={isOpen}
       placeholderText={placeholderText}
       readOnly={isReadOnly}
       renderCustomHeader={(props) => {
@@ -499,7 +513,7 @@ function DateRangePicker(
         );
       }}
       required={isRequired}
-      selected={startDate}
+      selected={endDate}
       selectsRange
       showPopperArrow={false}
       showTimeInput={false}
