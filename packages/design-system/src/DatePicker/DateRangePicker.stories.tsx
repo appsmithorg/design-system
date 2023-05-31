@@ -100,6 +100,20 @@ export default {
         },
       },
     },
+    showPreviousMonths: {
+      control: {
+        type: "boolean | undefined",
+      },
+      description: "When opened show previous months from the current month",
+      table: {
+        type: {
+          summary: "boolean | undefined",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     closeOnScroll: {
       control: {
         type: "boolean",

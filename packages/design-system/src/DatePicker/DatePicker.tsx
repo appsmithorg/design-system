@@ -435,6 +435,7 @@ function DateRangePicker(
     label,
     onChange,
     placeholderText = "Select date range",
+    showPreviousMonths = false,
     startDate: propStartDate,
     yearEndRange,
     yearStartRange,
@@ -443,6 +444,8 @@ function DateRangePicker(
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [showPreviousMonthsState, setShowPreviousMonths] =
+    useState<boolean>(showPreviousMonths);
   useEffect(() => {
     if (propStartDate !== startDate) {
       setStartDate(propStartDate || null);
@@ -463,6 +466,10 @@ function DateRangePicker(
     onChange && onChange(date, e);
     if (type === "shortcut") {
       setIsOpen(false);
+    }
+    if (showPreviousMonths) {
+      // doing this to avoid janky behaviour when navigating through the datepicker.
+      setShowPreviousMonths(false);
     }
   };
 
@@ -500,7 +507,6 @@ function DateRangePicker(
           size={inputSize}
         />
       }
-      data-showRangeShortcuts={props.showRangeShortcuts}
       dateFormat={dateFormat}
       disabled={isDisabled}
       endDate={endDate}
@@ -528,7 +534,8 @@ function DateRangePicker(
         );
       }}
       required={isRequired}
-      selected={startDate}
+      showPreviousMonths={showPreviousMonthsState}
+      selected={showPreviousMonths ? endDate : startDate}
       selectsRange
       showPopperArrow={false}
       showTimeInput={false}
