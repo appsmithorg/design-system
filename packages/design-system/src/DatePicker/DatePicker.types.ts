@@ -117,5 +117,6 @@ export interface DateRangeShortcutsProps extends DateRangeShortcutsConfig {
   onChangeHandler: (
     date: [Date | null, Date | null],
     e: React.SyntheticEvent<any, Event> | undefined,
+    type?: string,
   ) => void;
 }
