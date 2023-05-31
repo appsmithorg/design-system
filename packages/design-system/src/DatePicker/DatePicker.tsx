@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BaseDatePicker from "react-datepicker";
 import range from "lodash/range";
 import getYear from "date-fns/getYear";
@@ -14,7 +14,6 @@ import {
   DatePickerFooterClassName,
   DatePickerFooterClearClassName,
   DatePickerFooterTodayClassName,
-  DateRangePickerShortcut,
   DateTimePickerClassName,
 } from "./DatePicker.constants";
 import {
@@ -218,26 +217,39 @@ export function createDefaultShortcuts(
 }
 
 function DateRangeShortcuts(props: DateRangeShortcutsProps) {
-  const [selectedShortCut, setSelectedShortCut] = useState("");
   const {
     allowSingleDayRange = false,
     onChangeHandler,
     showRangeShortcuts = false,
     useSingleDateShortcuts = false,
+    currentDates,
   } = props;
   const shortCuts = createDefaultShortcuts(
     allowSingleDayRange,
     showRangeShortcuts,
     useSingleDateShortcuts,
   );
+  const [selectedShortCut, setSelectedShortCut] = useState<
+    DateRangeShortcut | undefined
+  >();
+  useEffect(() => {
+    if (currentDates) {
+      const currentSelectedShortcut = shortCuts.find(
+        (each) =>
+          each.dateRange[0]?.toDateString() ===
+            currentDates[0]?.toDateString() &&
+          each.dateRange[1]?.toDateString() === currentDates[1]?.toDateString(),
+      );
+      setSelectedShortCut(currentSelectedShortcut);
+    }
+  }, [currentDates]);
   return showRangeShortcuts ? (
     <DatePickerShortcut>
       {shortCuts.map((each) => {
         const onClickHandle = (e: any) => {
           onChangeHandler(each.dateRange, e);
-          setSelectedShortCut(each.label);
         };
-        const isSelected = selectedShortCut === each.label;
+        const isSelected = selectedShortCut?.label === each.label;
         return (
           <DatePickerShortcutItem
             data-selected={isSelected}
@@ -420,7 +432,7 @@ function DateRangePicker(
   } = props;
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
-
+  const dateRef = useRef(new Date());
   useEffect(() => {
     if (propStartDate !== startDate) {
       setStartDate(propStartDate || null);
@@ -475,7 +487,6 @@ function DateRangePicker(
       endDate={endDate}
       monthsShown={2}
       onChange={onChangeHandler}
-      openToDate={startDate || undefined}
       placeholderText={placeholderText}
       readOnly={isReadOnly}
       renderCustomHeader={(props) => {
@@ -492,12 +503,12 @@ function DateRangePicker(
       selected={startDate}
       selectsRange
       showPopperArrow={false}
-      showPreviousMonths
       showTimeInput={false}
       startDate={startDate}
     >
       <DateRangeShortcuts
         allowSingleDayRange={props.allowSingleDayRange}
+        currentDates={[startDate, endDate]}
         onChangeHandler={onChangeHandler}
         showRangeShortcuts={props.showRangeShortcuts}
         useSingleDateShortcuts={props.useSingleDateShortcuts}
