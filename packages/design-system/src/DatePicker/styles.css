@@ -217,30 +217,14 @@
 }
 
 .react-datepicker__children-container {
+  margin: 0 !important;
   margin-top: -10px !important;
+  margin-right: -2px !important;
   width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  box-sizing: border-box;
 }
-.ads-v2-daterange-shortcut{
-  width: 100px;
-  height: 20px;
-  cursor: pointer;
-  color: var(--ads-v2-color-fg);
-  padding-top: 5px;
-  padding-left: 5px;
-}
-.ads-v2-daterange-shortcut:nth-child(1){
-  margin-top: 10px;
-}
-.ads-v2-daterange-shortcut:hover:not(.ads-v2-shortcut-selected){
-  color: var(--ads-v2-color-fg-subtle);
- background-color: var(--ads-v2-color-bg-subtle);
-}
-.ads-v2-shortcut-selected{
-  background-color: var(--ads-v2-color-bg-brand-secondary);
-  color: var(--ads-v2-color-fg-on-brand-secondary);
-  font-weight: unset;
-}
+

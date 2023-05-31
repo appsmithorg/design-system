@@ -14,6 +14,7 @@ import {
   DatePickerFooterClassName,
   DatePickerFooterClearClassName,
   DatePickerFooterTodayClassName,
+  DateRangePickerShortcut,
   DateTimePickerClassName,
 } from "./DatePicker.constants";
 import {
@@ -25,7 +26,12 @@ import {
   DateRangeShortcutsConfig,
   DateRangeShortcutsProps,
 } from "./DatePicker.types";
-import { DatePickerFooter, StyledDatePickerHeader } from "./DatePicker.styles";
+import {
+  DatePickerFooter,
+  DatePickerShortcut,
+  DatePickerShortcutItem,
+  StyledDatePickerHeader,
+} from "./DatePicker.styles";
 import { Input } from "Input";
 import { Button } from "Button";
 import { Menu, MenuContent, MenuItem, MenuTrigger } from "Menu";
@@ -225,7 +231,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
     useSingleDateShortcuts,
   );
   return showRangeShortcuts ? (
-    <>
+    <DatePickerShortcut>
       {shortCuts.map((each) => {
         const onClickHandle = (e: any) => {
           onChangeHandler(each.dateRange, e);
@@ -233,17 +239,16 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
         };
         const isSelected = selectedShortCut === each.label;
         return (
-          <div
-            className={`ads-v2-daterange-shortcut ads-v2-shortcut-${
-              each.label
-            } ${isSelected && "ads-v2-shortcut-selected"}`}
+          <DatePickerShortcutItem
+            data-selected={isSelected}
+            key={each.label}
             onClick={onClickHandle}
           >
             {each.label}
-          </div>
+          </DatePickerShortcutItem>
         );
       })}
-    </>
+    </DatePickerShortcut>
   ) : null;
 }
 
@@ -487,6 +492,7 @@ function DateRangePicker(
       selected={startDate}
       selectsRange
       showPopperArrow={false}
+      showPreviousMonths
       showTimeInput={false}
       startDate={startDate}
     >
