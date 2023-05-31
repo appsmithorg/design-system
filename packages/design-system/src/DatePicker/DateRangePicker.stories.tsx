@@ -102,12 +102,12 @@ export default {
     },
     showPreviousMonths: {
       control: {
-        type: "boolean | undefined",
+        type: "boolean",
       },
       description: "When opened show previous months from the current month",
       table: {
         type: {
-          summary: "boolean | undefined",
+          summary: "boolean",
         },
         defaultValue: {
           summary: "false",
