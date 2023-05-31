@@ -513,7 +513,7 @@ function DateRangePicker(
         );
       }}
       required={isRequired}
-      selected={endDate}
+      selected={startDate}
       selectsRange
       showPopperArrow={false}
       showTimeInput={false}
