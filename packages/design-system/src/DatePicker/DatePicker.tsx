@@ -225,6 +225,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
     onChangeHandler,
     showRangeShortcuts = false,
     useSingleDateShortcuts = false,
+    ...rest
   } = props;
   const shortCuts = createDefaultShortcuts(
     allowSingleDayRange,
@@ -246,7 +247,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
     }
   }, [currentDates]);
   return showRangeShortcuts ? (
-    <DatePickerShortcutContainer>
+    <DatePickerShortcutContainer {...rest}>
       <DatePickerShortcut>
         {shortCuts.map((each) => {
           const onClickHandle = (e: any) => {
@@ -485,6 +486,7 @@ function DateRangePicker(
         DatePickerCalenderClassName,
         DateRangePickerClassName,
         calendarClassName,
+        props.showRangeShortcuts && "showRangeShortcuts",
       )}
       className={clsx(className, DatePickerClassName)}
       customInput={
@@ -544,7 +546,6 @@ function DateRangePicker(
       <DateRangeShortcuts
         allowSingleDayRange={props.allowSingleDayRange}
         currentDates={[startDate, endDate]}
-        data-showRangeShortcuts={props.showRangeShortcuts}
         onChangeHandler={onChangeHandler}
         showRangeShortcuts={props.showRangeShortcuts}
         useSingleDateShortcuts={props.useSingleDateShortcuts}
