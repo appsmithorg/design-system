@@ -544,6 +544,7 @@ function DateRangePicker(
       <DateRangeShortcuts
         allowSingleDayRange={props.allowSingleDayRange}
         currentDates={[startDate, endDate]}
+        data-showRangeShortcuts={props.showRangeShortcuts}
         onChangeHandler={onChangeHandler}
         showRangeShortcuts={props.showRangeShortcuts}
         useSingleDateShortcuts={props.useSingleDateShortcuts}
