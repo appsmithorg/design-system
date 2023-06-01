@@ -58,6 +58,7 @@ function DatePicker(props: DatePickerProps) {
     ...rest
   } = props;
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     if (selected !== selectedDate) {
@@ -71,6 +72,9 @@ function DatePicker(props: DatePickerProps) {
   ) => {
     setSelectedDate(date);
     onChange && onChange(date, e);
+    if (e) {
+      setIsOpen(false);
+    }
   };
 
   return (
@@ -102,6 +106,15 @@ function DatePicker(props: DatePickerProps) {
       disabled={isDisabled}
       monthsShown={1}
       onChange={onChangeHandler}
+      onClickOutside={() => setIsOpen(false)}
+      onInputClick={() => setIsOpen(true)}
+      onKeyDown={(e: any) => {
+        // handling esc key press
+        if (e.keyCode === 27) {
+          setIsOpen(false);
+        }
+      }}
+      open={isOpen}
       placeholderText={placeholderText}
       readOnly={isReadOnly}
       renderCustomHeader={(props) => {
