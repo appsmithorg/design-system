@@ -14,14 +14,25 @@ import {
   DatePickerFooterClassName,
   DatePickerFooterClearClassName,
   DatePickerFooterTodayClassName,
+  DateRangePickerClassName,
   DateTimePickerClassName,
 } from "./DatePicker.constants";
 import {
   DatePickerHeaderProps,
   DatePickerProps,
+  DateRange,
   DateRangePickerProps,
+  DateRangeShortcut,
+  DateRangeShortcutsConfig,
+  DateRangeShortcutsProps,
 } from "./DatePicker.types";
-import { DatePickerFooter, StyledDatePickerHeader } from "./DatePicker.styles";
+import {
+  DatePickerFooter,
+  DatePickerShortcut,
+  DatePickerShortcutContainer,
+  DatePickerShortcutItem,
+  StyledDatePickerHeader,
+} from "./DatePicker.styles";
 import { Input } from "Input";
 import { Button } from "Button";
 import { Menu, MenuContent, MenuItem, MenuTrigger } from "Menu";
@@ -134,6 +145,130 @@ function DatePicker(props: DatePickerProps) {
   );
 }
 
+// Credits to blueprint(https://github.com/palantir/blueprint/blob/develop/packages/datetime/src/shortcuts.tsx#L132)
+function clone(d: Date) {
+  return new Date(d.getTime());
+}
+
+function createShortcut(
+  label: string,
+  dateRange: DateRange,
+): DateRangeShortcut {
+  return { dateRange, label };
+}
+
+export function createDefaultShortcuts(
+  allowSingleDayRange: boolean,
+  hasTimePrecision: boolean,
+  useSingleDateShortcuts: boolean,
+) {
+  const today = new Date();
+  const makeDate = (action: (d: Date) => void) => {
+    const returnVal = clone(today);
+    action(returnVal);
+    returnVal.setDate(returnVal.getDate() + 1);
+    return returnVal;
+  };
+
+  const tomorrow = makeDate(() => null);
+  const yesterday = makeDate((d) => d.setDate(d.getDate() - 2));
+  const oneWeekAgo = makeDate((d) => d.setDate(d.getDate() - 7));
+  const oneMonthAgo = makeDate((d) => d.setMonth(d.getMonth() - 1));
+  const threeMonthsAgo = makeDate((d) => d.setMonth(d.getMonth() - 3));
+  const sixMonthsAgo = makeDate((d) => d.setMonth(d.getMonth() - 6));
+  const oneYearAgo = makeDate((d) => d.setFullYear(d.getFullYear() - 1));
+  const twoYearsAgo = makeDate((d) => d.setFullYear(d.getFullYear() - 2));
+
+  const singleDayShortcuts =
+    allowSingleDayRange || useSingleDateShortcuts
+      ? [
+          createShortcut("Today", [today, hasTimePrecision ? tomorrow : today]),
+          createShortcut("Yesterday", [
+            yesterday,
+            hasTimePrecision ? today : yesterday,
+          ]),
+        ]
+      : [];
+
+  return [
+    ...singleDayShortcuts,
+    createShortcut(useSingleDateShortcuts ? "1 week ago" : "Past week", [
+      oneWeekAgo,
+      today,
+    ]),
+    createShortcut(useSingleDateShortcuts ? "1 month ago" : "Past month", [
+      oneMonthAgo,
+      today,
+    ]),
+    createShortcut(useSingleDateShortcuts ? "3 months ago" : "Past 3 months", [
+      threeMonthsAgo,
+      today,
+    ]),
+    // Don't include a couple of these for the single date shortcut
+    ...(useSingleDateShortcuts
+      ? []
+      : [createShortcut("Past 6 months", [sixMonthsAgo, today])]),
+    createShortcut(useSingleDateShortcuts ? "1 year ago" : "Past year", [
+      oneYearAgo,
+      today,
+    ]),
+    ...(useSingleDateShortcuts
+      ? []
+      : [createShortcut("Past 2 years", [twoYearsAgo, today])]),
+  ];
+}
+
+function DateRangeShortcuts(props: DateRangeShortcutsProps) {
+  const {
+    allowSingleDayRange = false,
+    currentDates,
+    onChangeHandler,
+    showRangeShortcuts = false,
+    useSingleDateShortcuts = false,
+  } = props;
+  const shortCuts = createDefaultShortcuts(
+    allowSingleDayRange,
+    showRangeShortcuts,
+    useSingleDateShortcuts,
+  );
+  const [selectedShortCut, setSelectedShortCut] = useState<
+    DateRangeShortcut | undefined
+  >();
+  useEffect(() => {
+    if (currentDates) {
+      const currentSelectedShortcut = shortCuts.find(
+        (each) =>
+          each.dateRange[0]?.toDateString() ===
+            currentDates[0]?.toDateString() &&
+          each.dateRange[1]?.toDateString() === currentDates[1]?.toDateString(),
+      );
+      setSelectedShortCut(currentSelectedShortcut);
+    }
+  }, [currentDates]);
+  return showRangeShortcuts ? (
+    <DatePickerShortcutContainer>
+      <DatePickerShortcut>
+        {shortCuts.map((each) => {
+          const onClickHandle = (e: any) => {
+            onChangeHandler(each.dateRange, e, "shortcut");
+          };
+          const isSelected = selectedShortCut?.label === each.label;
+          return (
+            <DatePickerShortcutItem
+              data-selected={isSelected}
+              key={each.label}
+              onClick={onClickHandle}
+            >
+              {each.label}
+            </DatePickerShortcutItem>
+          );
+        })}
+      </DatePickerShortcut>
+      <Divider orientation="vertical" />
+    </DatePickerShortcutContainer>
+  ) : null;
+}
+
 function DatePickerHeader(props: DatePickerHeaderProps) {
   const {
     changeMonth,
@@ -176,7 +311,12 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
   //     menuItem?.scrollIntoView({ behavior: "smooth"});
   //   }, 0);
   // }, []);
-
+  useEffect(() => {
+    const year = monthDate.getFullYear();
+    if (year !== selectedYear) {
+      setSelectedYear(year);
+    }
+  }, [monthDate]);
   const handleYearChange = (year: number) => {
     changeYear(year);
     setSelectedYear(year);
@@ -278,7 +418,9 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
   );
 }
 
-function DateRangePicker(props: DateRangePickerProps) {
+function DateRangePicker(
+  props: DateRangePickerProps & DateRangeShortcutsConfig,
+) {
   const {
     calendarClassName,
     className,
@@ -293,6 +435,7 @@ function DateRangePicker(props: DateRangePickerProps) {
     label,
     onChange,
     placeholderText = "Select date range",
+    showPreviousMonths = false,
     startDate: propStartDate,
     yearEndRange,
     yearStartRange,
@@ -300,7 +443,9 @@ function DateRangePicker(props: DateRangePickerProps) {
   } = props;
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
-
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [showPreviousMonthsState, setShowPreviousMonths] =
+    useState<boolean>(showPreviousMonths);
   useEffect(() => {
     if (propStartDate !== startDate) {
       setStartDate(propStartDate || null);
@@ -313,11 +458,19 @@ function DateRangePicker(props: DateRangePickerProps) {
   const onChangeHandler = (
     date: [Date | null, Date | null],
     e: React.SyntheticEvent<any, Event> | undefined,
+    type?: string,
   ) => {
     const [startDate, endDate] = date;
     setStartDate(startDate);
     setEndDate(endDate);
     onChange && onChange(date, e);
+    if (type === "shortcut") {
+      setIsOpen(false);
+    }
+    if (showPreviousMonths) {
+      // doing this to avoid janky behaviour when navigating through the datepicker.
+      setShowPreviousMonths(false);
+    }
   };
 
   const onClearhandler = () => {
@@ -328,7 +481,11 @@ function DateRangePicker(props: DateRangePickerProps) {
   return (
     <BaseDatePicker
       {...rest}
-      calendarClassName={clsx(DatePickerCalenderClassName, calendarClassName)}
+      calendarClassName={clsx(
+        DatePickerCalenderClassName,
+        DateRangePickerClassName,
+        calendarClassName,
+      )}
       className={clsx(className, DatePickerClassName)}
       customInput={
         <Input
@@ -355,6 +512,15 @@ function DateRangePicker(props: DateRangePickerProps) {
       endDate={endDate}
       monthsShown={2}
       onChange={onChangeHandler}
+      onClickOutside={() => setIsOpen(false)}
+      onInputClick={() => setIsOpen(true)}
+      onKeyDown={(e: any) => {
+        // handling esc key press
+        if (e.keyCode === 27) {
+          setIsOpen(false);
+        }
+      }}
+      open={isOpen}
       placeholderText={placeholderText}
       readOnly={isReadOnly}
       renderCustomHeader={(props) => {
@@ -371,9 +537,18 @@ function DateRangePicker(props: DateRangePickerProps) {
       selected={startDate}
       selectsRange
       showPopperArrow={false}
+      showPreviousMonths={showPreviousMonthsState}
       showTimeInput={false}
       startDate={startDate}
-    />
+    >
+      <DateRangeShortcuts
+        allowSingleDayRange={props.allowSingleDayRange}
+        currentDates={[startDate, endDate]}
+        onChangeHandler={onChangeHandler}
+        showRangeShortcuts={props.showRangeShortcuts}
+        useSingleDateShortcuts={props.useSingleDateShortcuts}
+      />
+    </BaseDatePicker>
   );
 }
 

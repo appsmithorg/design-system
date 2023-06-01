@@ -85,6 +85,35 @@ export default {
         },
       },
     },
+    showRangeShortcuts: {
+      control: {
+        type: "boolean",
+      },
+      description:
+        "Show a panel next to date range that contains quick predefined ranges",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    showPreviousMonths: {
+      control: {
+        type: "boolean",
+      },
+      description: "When opened show previous months from the current month",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     closeOnScroll: {
       control: {
         type: "boolean",

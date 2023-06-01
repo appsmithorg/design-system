@@ -5,6 +5,7 @@ import {
 } from "react-datepicker";
 
 import { Sizes } from "__config__/types";
+import React from "react";
 
 interface CommonProps {
   /** The class name to apply to the button component. */
@@ -97,3 +98,25 @@ export type DatePickerHeaderProps = {
   /** Whether the component is date picker or date range picker. */
   dateRangePicker: boolean;
 } & ReactDatePickerCustomHeaderProps;
+
+export interface DateRangeShortcutsConfig {
+  showRangeShortcuts?: boolean;
+  allowSingleDayRange?: boolean;
+  hasTimePrecision?: boolean;
+  useSingleDateShortcuts?: boolean;
+}
+
+export type DateRange = [Date | null, Date | null];
+export type DateRangeShortcut = {
+  label: string;
+  dateRange: DateRange;
+};
+
+export interface DateRangeShortcutsProps extends DateRangeShortcutsConfig {
+  currentDates: DateRange;
+  onChangeHandler: (
+    date: [Date | null, Date | null],
+    e: React.SyntheticEvent<any, Event> | undefined,
+    type?: string,
+  ) => void;
+}
