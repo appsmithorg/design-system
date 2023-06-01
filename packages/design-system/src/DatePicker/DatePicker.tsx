@@ -158,7 +158,7 @@ function createShortcut(
 }
 
 export function createDefaultShortcuts(
-  allowSingleDayRange: boolean,
+  allowSameDay: boolean,
   hasTimePrecision: boolean,
   useSingleDateShortcuts: boolean,
 ) {
@@ -180,7 +180,7 @@ export function createDefaultShortcuts(
   const twoYearsAgo = makeDate((d) => d.setFullYear(d.getFullYear() - 2));
 
   const singleDayShortcuts =
-    allowSingleDayRange || useSingleDateShortcuts
+    allowSameDay || useSingleDateShortcuts
       ? [
           createShortcut("Today", [today, hasTimePrecision ? tomorrow : today]),
           createShortcut("Yesterday", [
@@ -220,7 +220,7 @@ export function createDefaultShortcuts(
 
 function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   const {
-    allowSingleDayRange = false,
+    allowSameDay = false,
     currentDates,
     onChangeHandler,
     showRangeShortcuts = false,
@@ -228,7 +228,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
     ...rest
   } = props;
   const shortCuts = createDefaultShortcuts(
-    allowSingleDayRange,
+    allowSameDay,
     showRangeShortcuts,
     useSingleDateShortcuts,
   );
@@ -544,7 +544,7 @@ function DateRangePicker(
       startDate={startDate}
     >
       <DateRangeShortcuts
-        allowSingleDayRange={props.allowSingleDayRange}
+        allowSameDay={props.allowSameDay}
         currentDates={[startDate, endDate]}
         onChangeHandler={onChangeHandler}
         showRangeShortcuts={props.showRangeShortcuts}
