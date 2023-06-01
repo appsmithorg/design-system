@@ -56,15 +56,10 @@
 .react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:not(:first-of-type) {
   position: relative;
   padding-left: var(--ads-v2-spaces-3);
+  padding-right: var(--ads-v2-spaces-3);
   margin-left: -8px;
   border-left: 1px solid var(--ads-v2-color-border);
-  margin-right: -20px;
 }
-
-/*.react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:not(:first-of-type) {*/
-/*  margin-left: -8px;*/
-/*  margin-right: -12px;*/
-/*}*/
 
 /* Custom header wrapper */
 .react-datepicker.ads-v2-datepicker__calender .react-datepicker__header {
@@ -220,11 +215,23 @@
 
 .ads-v2-daterangepicker .react-datepicker__children-container {
   margin: 0 !important;
-  margin-right: -2px !important;
   width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   box-sizing: border-box;
+}
+
+/* Move the shortcut menu to the right of the calender */
+.ads-v2-daterangepicker.ads-v2-datepicker__calender {
+  padding-left: 150px;
+}
+.react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:not(:first-of-type) {
+  margin-right: -160px;
+}
+
+.ads-v2-daterangepicker .react-datepicker__children-container {
+  position: relative;
+  right: 504px;
 }

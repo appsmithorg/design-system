@@ -247,7 +247,6 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   }, [currentDates]);
   return showRangeShortcuts ? (
     <DatePickerShortcutContainer>
-      <Divider orientation="vertical" />
       <DatePickerShortcut>
         {shortCuts.map((each) => {
           const onClickHandle = (e: any) => {
@@ -265,6 +264,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
           );
         })}
       </DatePickerShortcut>
+      <Divider orientation="vertical" />
     </DatePickerShortcutContainer>
   ) : null;
 }
