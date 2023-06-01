@@ -127,14 +127,14 @@ function DatePicker(props: DatePickerProps) {
             <Button
               className={DatePickerFooterTodayClassName}
               kind="tertiary"
-              onClick={() => setSelectedDate(new Date())}
+              onClick={(e) => onChangeHandler(new Date(), e)}
             >
               Today
             </Button>
             <Button
               className={DatePickerFooterClearClassName}
               kind="tertiary"
-              onClick={() => setSelectedDate(null)}
+              onClick={(e) => onChangeHandler(null, e)}
             >
               Clear
             </Button>
