@@ -56,7 +56,9 @@
 .react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:not(:first-of-type) {
   position: relative;
   padding-left: var(--ads-v2-spaces-3);
+  margin-left: -8px;
   border-left: 1px solid var(--ads-v2-color-border);
+  margin-right: -20px;
 }
 
 /*.react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:not(:first-of-type) {*/

@@ -24,6 +24,7 @@ export const DatePickerShortcutContainer = styled.div`
   flex-direction: row;
   gap: var(--ads-v2-spaces-3);
   padding: var(--ads-v2-spaces-2) 0;
+  padding-left: var(--ads-v2-spaces-3);
 `;
 export const DatePickerShortcut = styled.div`
   height: 100%;
