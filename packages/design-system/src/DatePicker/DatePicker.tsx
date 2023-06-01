@@ -172,7 +172,6 @@ function createShortcut(
 
 export function createDefaultShortcuts(
   allowSameDay: boolean,
-  hasTimePrecision: boolean,
   useSingleDateShortcuts: boolean,
 ) {
   const today = new Date();
@@ -183,7 +182,6 @@ export function createDefaultShortcuts(
     return returnVal;
   };
 
-  const tomorrow = makeDate(() => null);
   const yesterday = makeDate((d) => d.setDate(d.getDate() - 2));
   const oneWeekAgo = makeDate((d) => d.setDate(d.getDate() - 7));
   const oneMonthAgo = makeDate((d) => d.setMonth(d.getMonth() - 1));
@@ -195,11 +193,8 @@ export function createDefaultShortcuts(
   const singleDayShortcuts =
     allowSameDay || useSingleDateShortcuts
       ? [
-          createShortcut("Today", [today, hasTimePrecision ? tomorrow : today]),
-          createShortcut("Yesterday", [
-            yesterday,
-            hasTimePrecision ? today : yesterday,
-          ]),
+          createShortcut("Today", [today, today]),
+          createShortcut("Yesterday", [yesterday, yesterday]),
         ]
       : [];
 
@@ -242,7 +237,6 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   } = props;
   const shortCuts = createDefaultShortcuts(
     allowSameDay,
-    showRangeShortcuts,
     useSingleDateShortcuts,
   );
   const [selectedShortCut, setSelectedShortCut] = useState<
