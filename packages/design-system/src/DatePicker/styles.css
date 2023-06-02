@@ -226,7 +226,7 @@
 
 /* Move the shortcut menu to the right of the calender */
 .ads-v2-daterangepicker.ads-v2-datepicker__calender.showRangeShortcuts {
-  padding-left: 150px;
+  padding-left: 146px;
 }
 .react-datepicker.ads-v2-datepicker__calender.showRangeShortcuts > .react-datepicker__month-container:not(:first-of-type) {
   margin-right: -160px;
@@ -235,6 +235,6 @@
 .ads-v2-daterangepicker.showRangeShortcuts .react-datepicker__children-container {
 /*.ads-v2-daterangepicker .react-datepicker__children-container {*/
   position: relative;
-  right: 504px;
+  right: 500px;
 }
 
