@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.11
+
+### Patch Changes
+
+- [#483](https://github.com/appsmithorg/design-system/pull/483) [`77aa9c38`](https://github.com/appsmithorg/design-system/commit/77aa9c389fec8eb83f919bc0660ce31dd2072b39) Thanks [@marks0351](https://github.com/marks0351)! - feat: Add a shortcut menu containing predefined ranges for DateRangePicker
+
 ## 2.1.10
 
 ### Patch Changes
