@@ -85,6 +85,35 @@ export default {
         },
       },
     },
+    showRangeShortcuts: {
+      control: {
+        type: "boolean",
+      },
+      description:
+        "Show a panel next to date range that contains quick predefined ranges",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    showPreviousMonths: {
+      control: {
+        type: "boolean",
+      },
+      description: "When opened show previous months from the current month",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     closeOnScroll: {
       control: {
         type: "boolean",
@@ -461,6 +490,4 @@ DateRangePickerStory.storyName = "Date Range Picker";
 DateRangePickerStory.args = {
   //add arguments here
   excludeDates: [new Date()],
-  yearStartRange: 2010,
-  yearEndRange: 2023,
 };

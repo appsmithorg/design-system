@@ -7,3 +7,4 @@ export const DatePickerCalenderHeaderClassName = `${DatePickerCalenderClassName}
 export const DatePickerFooterClassName = `${DatePickerCalenderClassName}-footer`;
 export const DatePickerFooterTodayClassName = `${DatePickerCalenderClassName}-today`;
 export const DatePickerFooterClearClassName = `${DatePickerCalenderClassName}-clear`;
+export const DateRangePickerClassName = `${CLASS_NAME_PREFIX}-daterangepicker`;
