@@ -101,7 +101,7 @@ export type DatePickerHeaderProps = {
 
 export interface DateRangeShortcutsConfig {
   showRangeShortcuts?: boolean;
-  allowSingleDayRange?: boolean;
+  allowSameDay?: boolean;
   hasTimePrecision?: boolean;
   useSingleDateShortcuts?: boolean;
 }
@@ -111,7 +111,6 @@ export type DateRangeShortcut = {
   label: string;
   dateRange: DateRange;
 };
-
 export interface DateRangeShortcutsProps extends DateRangeShortcutsConfig {
   currentDates: DateRange;
   onChangeHandler: (

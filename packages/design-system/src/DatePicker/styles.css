@@ -58,6 +58,7 @@
   padding-left: var(--ads-v2-spaces-3);
   padding-right: var(--ads-v2-spaces-3);
   margin-left: -8px;
+  margin-right: -32px;
   border-left: 1px solid var(--ads-v2-color-border);
 }
 
@@ -218,20 +219,22 @@
   width: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
 }
 
 /* Move the shortcut menu to the right of the calender */
-.ads-v2-daterangepicker.ads-v2-datepicker__calender {
+.ads-v2-daterangepicker.ads-v2-datepicker__calender.showRangeShortcuts {
   padding-left: 150px;
 }
-.react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:not(:first-of-type) {
+.react-datepicker.ads-v2-datepicker__calender.showRangeShortcuts > .react-datepicker__month-container:not(:first-of-type) {
   margin-right: -160px;
 }
 
-.ads-v2-daterangepicker .react-datepicker__children-container {
+.ads-v2-daterangepicker.showRangeShortcuts .react-datepicker__children-container {
+/*.ads-v2-daterangepicker .react-datepicker__children-container {*/
   position: relative;
   right: 504px;
 }
+

@@ -58,6 +58,7 @@ function DatePicker(props: DatePickerProps) {
     ...rest
   } = props;
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     if (selected !== selectedDate) {
@@ -71,6 +72,9 @@ function DatePicker(props: DatePickerProps) {
   ) => {
     setSelectedDate(date);
     onChange && onChange(date, e);
+    if (e) {
+      setIsOpen(false);
+    }
   };
 
   return (
@@ -102,6 +106,15 @@ function DatePicker(props: DatePickerProps) {
       disabled={isDisabled}
       monthsShown={1}
       onChange={onChangeHandler}
+      onClickOutside={() => setIsOpen(false)}
+      onInputClick={() => setIsOpen(true)}
+      onKeyDown={(e: any) => {
+        // handling esc key press
+        if (e.keyCode === 27) {
+          setIsOpen(false);
+        }
+      }}
+      open={isOpen}
       placeholderText={placeholderText}
       readOnly={isReadOnly}
       renderCustomHeader={(props) => {
@@ -127,14 +140,14 @@ function DatePicker(props: DatePickerProps) {
             <Button
               className={DatePickerFooterTodayClassName}
               kind="tertiary"
-              onClick={() => setSelectedDate(new Date())}
+              onClick={(e) => onChangeHandler(new Date(), e)}
             >
               Today
             </Button>
             <Button
               className={DatePickerFooterClearClassName}
               kind="tertiary"
-              onClick={() => setSelectedDate(null)}
+              onClick={(e) => onChangeHandler(null, e)}
             >
               Clear
             </Button>
@@ -158,8 +171,7 @@ function createShortcut(
 }
 
 export function createDefaultShortcuts(
-  allowSingleDayRange: boolean,
-  hasTimePrecision: boolean,
+  allowSameDay: boolean,
   useSingleDateShortcuts: boolean,
 ) {
   const today = new Date();
@@ -170,7 +182,6 @@ export function createDefaultShortcuts(
     return returnVal;
   };
 
-  const tomorrow = makeDate(() => null);
   const yesterday = makeDate((d) => d.setDate(d.getDate() - 2));
   const oneWeekAgo = makeDate((d) => d.setDate(d.getDate() - 7));
   const oneMonthAgo = makeDate((d) => d.setMonth(d.getMonth() - 1));
@@ -180,13 +191,10 @@ export function createDefaultShortcuts(
   const twoYearsAgo = makeDate((d) => d.setFullYear(d.getFullYear() - 2));
 
   const singleDayShortcuts =
-    allowSingleDayRange || useSingleDateShortcuts
+    allowSameDay || useSingleDateShortcuts
       ? [
-          createShortcut("Today", [today, hasTimePrecision ? tomorrow : today]),
-          createShortcut("Yesterday", [
-            yesterday,
-            hasTimePrecision ? today : yesterday,
-          ]),
+          createShortcut("Today", [today, today]),
+          createShortcut("Yesterday", [yesterday, yesterday]),
         ]
       : [];
 
@@ -220,15 +228,15 @@ export function createDefaultShortcuts(
 
 function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   const {
-    allowSingleDayRange = false,
+    allowSameDay = false,
     currentDates,
     onChangeHandler,
     showRangeShortcuts = false,
     useSingleDateShortcuts = false,
+    ...rest
   } = props;
   const shortCuts = createDefaultShortcuts(
-    allowSingleDayRange,
-    showRangeShortcuts,
+    allowSameDay,
     useSingleDateShortcuts,
   );
   const [selectedShortCut, setSelectedShortCut] = useState<
@@ -246,7 +254,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
     }
   }, [currentDates]);
   return showRangeShortcuts ? (
-    <DatePickerShortcutContainer>
+    <DatePickerShortcutContainer {...rest}>
       <DatePickerShortcut>
         {shortCuts.map((each) => {
           const onClickHandle = (e: any) => {
@@ -485,6 +493,7 @@ function DateRangePicker(
         DatePickerCalenderClassName,
         DateRangePickerClassName,
         calendarClassName,
+        props.showRangeShortcuts && "showRangeShortcuts",
       )}
       className={clsx(className, DatePickerClassName)}
       customInput={
@@ -542,7 +551,7 @@ function DateRangePicker(
       startDate={startDate}
     >
       <DateRangeShortcuts
-        allowSingleDayRange={props.allowSingleDayRange}
+        allowSameDay={props.allowSameDay}
         currentDates={[startDate, endDate]}
         onChangeHandler={onChangeHandler}
         showRangeShortcuts={props.showRangeShortcuts}

@@ -490,6 +490,4 @@ DateRangePickerStory.storyName = "Date Range Picker";
 DateRangePickerStory.args = {
   //add arguments here
   excludeDates: [new Date()],
-  yearStartRange: 2010,
-  yearEndRange: 2023,
 };
