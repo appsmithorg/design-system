@@ -4,7 +4,7 @@ export const StyledSegmentedControl = styled.div<{
   isDisabled?: boolean;
   isFullWidth?: boolean;
 }>`
-  display: ${({ isFullWidth }) => (isFullWidth ? "flex" : "inline-flex")};
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--ads-v2-spaces-2);
@@ -13,6 +13,8 @@ export const StyledSegmentedControl = styled.div<{
   /* outer radius = inner radius + padding */
   border-radius: calc(var(--ads-v2-border-radius) + var(--ads-v2-spaces-1));
   box-sizing: border-box;
+  height: 32px;
+  width: ${({ isFullWidth }) => (isFullWidth ? "auto" : "max-content")};
 `;
 
 export const StyledSegment = styled.span`
@@ -35,13 +37,20 @@ export const StyledSegment = styled.span`
 export const StyledControlContainer = styled.div`
   display: flex;
   align-items: center;
+  flex: 1 1 0%;
   position: relative;
   border: 1px solid transparent;
   border-radius: var(--ads-v2-border-radius);
   background-color: transparent;
   box-sizing: border-box;
   cursor: pointer;
-  transition: box-shadow 600ms ease;
+  height: 100%;
+
+  &:focus-visible {
+    outline: var(--ads-v2-border-width-outline) solid
+      var(--ads-v2-color-outline);
+    outline-offset: var(--ads-v2-offset-outline);
+  }
 
   &[data-disabled="true"] {
     opacity: var(--ads-v2-opacity-disabled);

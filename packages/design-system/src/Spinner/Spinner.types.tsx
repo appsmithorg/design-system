@@ -9,5 +9,5 @@ export type SpinnerProps = {
   /** Spinner size */
   size?: SpinnerSizes;
   /** Spinner icon props */
-  iconProps?: IconProps;
+  iconProps?: Omit<IconProps, "name">;
 } & React.HTMLAttributes<HTMLSpanElement>;

@@ -494,6 +494,4 @@ DatePickerStory.args = {
   //add arguments here
   excludeDates: [new Date()],
   showTimeInput: true,
-  yearStartRange: 2010,
-  yearEndRange: 2023,
 };

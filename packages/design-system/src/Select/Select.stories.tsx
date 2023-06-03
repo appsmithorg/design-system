@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Select, Option } from "./Select";
 import { Icon } from "../Icon";
+import _ from "lodash";
+import { Checkbox } from "../Checkbox";
 
 export default {
   title: "Design System/Select",
@@ -38,7 +40,7 @@ const Template: ComponentStory<typeof Select> = (args) => {
           Option 1
         </div>
       </Option>
-      <Option isDisabled value="option 2">
+      <Option disabled value="option 2">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Icon name="arrow-left-line" size="md" />
           Option 2
@@ -368,6 +370,20 @@ const ArgTypes = {
       },
     },
   },
+  isLoading: {
+    control: {
+      type: "boolean",
+    },
+    description: "Whether select is loading",
+    table: {
+      type: {
+        summary: "boolean",
+      },
+      defaultValue: {
+        summary: "false",
+      },
+    },
+  },
   filterOption: {
     control: {
       type: "boolean",
@@ -441,6 +457,7 @@ const ArgTypes = {
       },
     },
   },
+  // TODO: It seems like there is no difference between `label` and `value`; document it or change it accordingly
   value: {
     control: {
       type: "text",
@@ -658,6 +675,20 @@ const ArgTypes = {
       },
     },
   },
+  listHeight: {
+    control: {
+      type: "number",
+    },
+    description: "Height of the list",
+    table: {
+      type: {
+        summary: "number",
+      },
+      defaultValue: {
+        summary: "250",
+      },
+    },
+  },
 };
 
 export const SelectStory = Template.bind({});
@@ -703,7 +734,7 @@ OptionStory.argTypes = {
       },
     },
   },
-  isDisabled: {
+  disabled: {
     control: {
       type: "boolean",
     },
@@ -775,7 +806,9 @@ OptionStory.argTypes = {
 const SelectSimpleTemplate: ComponentStory<typeof Select> = ({ ...args }) => {
   return (
     <Select {...args}>
-      <Option value="value 1">Option 1</Option>
+      <Option value="value 1">
+        Option one is a long option that should get ellipsis
+      </Option>
       <Option value="value 2">Option 2</Option>
       <Option value="value 3">Option 3</Option>
       <Option value="value 4">Option 4</Option>
@@ -844,3 +877,52 @@ SelectSimpleStory.args = {
     console.log("event -", e);
   },
 };
+
+const options = [
+  {
+    label: "label 1",
+    value: "value 1",
+    key: "001",
+  },
+  {
+    label: "A longer label to force a line break",
+    value: "value 2",
+    key: "002",
+  },
+  {
+    label: "label 3",
+    value: "value 3",
+    key: "003",
+  },
+];
+export function SelectWithCheckbox() {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  return (
+    <Select
+      isMultiSelect
+      onDeselect={(value, unselectedOption) =>
+        setSelectedOptions(
+          selectedOptions.filter((opt) => opt.value !== unselectedOption.value),
+        )
+      }
+      onSelect={(value, newSelectedOption) =>
+        setSelectedOptions([...selectedOptions, newSelectedOption])
+      }
+      optionLabelProp="label"
+      value={selectedOptions}
+    >
+      {options.map((option) => (
+        <Option key={option.key}>
+          <Checkbox
+            isSelected={selectedOptions.find(
+              (selectedOption) => selectedOption.key == option.key,
+            )}
+          >
+            {option.label}
+          </Checkbox>
+        </Option>
+      ))}
+    </Select>
+  );
+}

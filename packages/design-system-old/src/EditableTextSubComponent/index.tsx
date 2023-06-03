@@ -6,7 +6,6 @@ import {
 import styled from "styled-components";
 import { noop } from "lodash";
 import { Icon, IconSize, Spinner, Text, TextType } from "index";
-import { UNFILLED_WIDTH } from "../EditableText";
 import { CommonComponentProps } from "Types/common";
 
 export enum EditInteractionKind {
@@ -100,13 +99,14 @@ const TextContainer = styled.div<{
     height: calc(var(--ads-spaces-14) + 1px);
     color: var(--ads-editable-text-subcomponent-default-text-color);
     min-width: 100%;
-    border-radius: var(--ads-spaces-0);
+    border-radius: var(--ads-v2-border-radius);
   }
 
   &&& .${BlueprintClasses.EDITABLE_TEXT} {
     overflow: hidden;
     background-color: ${(props) => props.bgColor};
     width: calc(100% - 40px);
+    border-radius: var(--ads-v2-border-radius);
   }
 
   .icon-wrapper {
@@ -226,7 +226,7 @@ export const EditableTextSubComponent = React.forwardRef(
       !isEditing &&
       savingState === SavingState.NOT_STARTED &&
       !props.hideEditIcon
-        ? "edit"
+        ? "pencil-line"
         : !isEditing && savingState === SavingState.SUCCESS
         ? "success"
         : savingState === SavingState.ERROR || (isEditing && !!isInvalid)
@@ -262,7 +262,7 @@ export const EditableTextSubComponent = React.forwardRef(
             </IconWrapper>
           ) : value && !props.hideEditIcon ? (
             <IconWrapper className="icon-wrapper">
-              <Icon name={iconName} size={IconSize.XL} />
+              <Icon name={iconName} size={IconSize.XL} fillColor="var(--ads-v2-color-fg)" />
             </IconWrapper>
           ) : null}
         </TextContainer>

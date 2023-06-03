@@ -13,15 +13,13 @@ const BasicStyles = css`
     opacity: 0;
   }
 
-  label {
-    cursor: pointer;
-    position: relative;
-    padding-left: var(--ads-v2-spaces-7);
-    font-family: var(--ads-v2-font-family);
-    color: var(--radio-color-label);
-  }
+  cursor: pointer;
+  position: relative;
+  padding-left: var(--ads-v2-spaces-7);
+  font-family: var(--ads-v2-font-family);
+  color: var(--radio-color-label);
 
-  label::before {
+  span::before {
     content: "";
     position: absolute;
     width: var(--ads-v2-spaces-5);
@@ -35,7 +33,7 @@ const BasicStyles = css`
     transition: border-color 400ms ease;
   }
 
-  label::after {
+  span::after {
     content: "";
     position: absolute;
     width: var(--ads-v2-spaces-5);
@@ -49,25 +47,25 @@ const BasicStyles = css`
     transition: transform 200ms ease;
   }
 
-  input[type="radio"]:checked + label::before {
+  input[type="radio"]:checked + span::before {
     --radio-color-border: var(--ads-v2-color-border-brand-secondary);
   }
 
-  input[type="radio"]:checked + label::after {
+  input[type="radio"]:checked + span::after {
     transform: translateY(-50%) scale(0.55);
   }
 
   /* unchecked hover - outer circle */
-  input[type="radio"]:hover:not(:disabled) + label::before {
+  input[type="radio"]:hover:not(:disabled) + span::before {
     --radio-color-border: var(--ads-v2-color-border-emphasis);
   }
   /* checked hover - outer circle */
-  input[type="radio"]:checked:hover:not(:disabled) + label::before {
+  input[type="radio"]:checked:hover:not(:disabled) + span::before {
     --radio-color-border: var(--ads-v2-color-border-brand-secondary-emphasis);
   }
 
   /* checked hover - inner circle */
-  input[type="radio"]:checked:hover:not(:disabled) + label::after {
+  input[type="radio"]:checked:hover:not(:disabled) + span::after {
     --radio-color-check-mark: var(
       --ads-v2-color-border-brand-secondary-emphasis
     );
@@ -86,6 +84,7 @@ export const StyledRadio = styled.label<{
     disabled &&
     `
     opacity: 0.6;
+    cursor: not-allowed !important;
     & > * {
       cursor: not-allowed !important;
     }
@@ -94,7 +93,7 @@ export const StyledRadio = styled.label<{
   ${({ isFocusVisible }) =>
     isFocusVisible &&
     `
-    input[type="radio"]:checked + label::before {
+    input[type="radio"]:checked + span::before {
       outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
       outline-offset: var(--ads-v2-offset-outline);
     }
@@ -109,6 +108,7 @@ export const StyledRadioGroup = styled.div<{
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: ${({ UNSAFE_gap }) => UNSAFE_gap || "var(--ads-v2-spaces-6)"};
+  padding-left: var(--ads-v2-spaces-1);
 
   /* This Aria field is added by react-aria library */
   &[aria-orientation="vertical"] {
@@ -117,6 +117,13 @@ export const StyledRadioGroup = styled.div<{
 
   &[aria-orientation="horizontal"] {
     flex-direction: row;
+  }
+
+  &[aria-disabled="true"] {
+    opacity: 0.6;
+    & * {
+      cursor: not-allowed !important;
+    }
   }
 `;
 

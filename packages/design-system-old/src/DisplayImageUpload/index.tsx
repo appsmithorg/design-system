@@ -19,9 +19,7 @@ import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
 import { getTypographyByKey } from "Constants/typography";
 import { importSvg } from "Utils/icon-loadables";
 
-const ProfileImagePlaceholder = importSvg(() =>
-  import("../assets/icons/others/profile-placeholder.svg"),
-);
+import { ReactComponent as ProfileImagePlaceholder } from "../assets/icons/others/profile-placeholder.svg";
 
 type Props = {
   onChange: (file: File) => void;
@@ -70,10 +68,106 @@ const Container = styled.div`
     .label {
       ${() => getTypographyByKey("h6")}
       color: var(--ads-display-image-upload-label-text-color);
+      border-radius: var(--ads-v2-border-radius);
+      padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
+      height: 36px;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: var(--ads-v2-color-bg-subtle);
+      }
     }
   }
 `;
 
+const StyledDialog = styled(Dialog)`
+  padding: 0 !important;
+  .uppy-Dashboard-inner {
+    border-color: var(--ads-v2-color-border);
+    background-color: var(--ads-v2-color-bg);
+  }
+  [data-uppy-drag-drop-supported="true"] .uppy-Dashboard-AddFiles {
+    border-color: var(--ads-v2-color-border);
+  }
+  .uppy-Dashboard-AddFiles-title {
+    color: var(--ads-v2-color-fg);
+  }
+  .uppy-size--md .uppy-Dashboard-AddFiles-title {
+    font-size: 20px;
+  }
+  .uppy-Dashboard-browse {
+    color: var(--ads-v2-color-fg-brand);
+    &:hover,
+    &:focus {
+      border-color: var(--ads-v2-color-fg-brand);
+    }
+  }
+  .uppy-Dashboard-note {
+    color: var(--ads-v2-color-fg-muted);
+  }
+  a.uppy-Dashboard-poweredBy {
+    display: none;
+  }
+  .uppy-DashboardContent-title {
+    color: var(--ads-v2-color-fg-emphasis);
+  }
+  .uppy-ImageCropper-controls {
+    button:hover {
+      background-color: var(--ads-v2-color-bg-brand-emphasis);
+    }
+  }
+  .uppy-u-reset,
+  .uppy-c-btn {
+    border-radius: var(--ads-v2-border-radius);
+  }
+  .bp3-dialog-body {
+    margin-top: 0 !important;
+  }
+  .cropper-point,
+  .cropper-line {
+    background-color: var(--ads-v2-color-bg-brand);
+  }
+  .cropper-view-box {
+    outline-color: var(--ads-v2-color-bg-brand);
+  }
+  .uppy-ImageCropper .cropper-view-box {
+    outline-color: var(--ads-v2-color-bg-brand);
+  }
+  .uppy-ImageCropper-controls {
+    border-radius: var(--ads-v2-border-radius);
+    background-color: var(--ads-v2-color-bg-brand);
+  }
+  .uppy-StatusBar.is-waiting .uppy-StatusBar-actions,
+  .uppy-DashboardContent-bar {
+    background-color: var(--ads-v2-color-bg);
+  }
+  .uppy-StatusBar:not([aria-hidden="true"]).is-waiting,
+  .uppy-DashboardContent-bar {
+    border-color: var(--ads-v2-color-border);
+  }
+  .uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload {
+    background-color: var(--ads-v2-color-bg-brand);
+    &:hover,
+    &:focus {
+      background-color: var(--ads-v2-color-bg-brand-emphasis);
+    }
+  }
+  .uppy-DashboardContent-back,
+  .uppy-DashboardContent-save {
+    color: var(--ads-v2-color-fg);
+    &:hover,
+    &:focus {
+      background-color: var(--ads-v2-color-bg-subtle);
+    }
+  }
+  .cropper-view-box {
+    box-shadow: 0 0 0 1px var(--ads-v2-color-bg-brand);
+  }
+  .uppy-Dashboard-Item-action--remove {
+    color: var(--ads-v2-color-bg-emphasis-max);
+  }
+`;
 export default function DisplayImageUpload({
   onChange,
   onRemove,
@@ -168,7 +262,7 @@ export default function DisplayImageUpload({
 
   return (
     <Container onClick={() => setIsModalOpen(true)}>
-      <Dialog
+      <StyledDialog
         canEscapeKeyClose
         canOutsideClickClose
         className="file-picker-dialog"
@@ -215,7 +309,7 @@ export default function DisplayImageUpload({
           uppy={uppy}
           disableInformer={disableUppyInformer}
         />
-      </Dialog>
+      </StyledDialog>
     </Container>
   );
 }

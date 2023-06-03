@@ -145,6 +145,9 @@ const SuccessLineIcon = importSvg(() =>
 const ErrorLineIcon = importSvg(() =>
   import("../assets/icons/ads/error-line.svg"),
 );
+const UpdatesIcon = importSvg(() =>
+  import("../assets/icons/help/updates.svg"),
+);
 
 // remix icons
 const AddMoreIcon = importRemixIcon(() =>
@@ -500,6 +503,9 @@ const MoneyDollarCircleLineIcon = importRemixIcon(() =>
 const ExternalLinkLineIcon = importRemixIcon(() =>
   import("remixicon-react/ExternalLinkLineIcon"),
 );
+const PencilLineIcon = importRemixIcon(() =>
+  import("remixicon-react/PencilLineIcon"),
+);
 
 export enum IconSize {
   XXS = "extraExtraSmall",
@@ -807,6 +813,8 @@ const ICON_LOOKUP = {
   package: <PackageIcon />,
   devices: <DevicesIcon />,
   grid: <GridIcon />,
+  "updates": <UpdatesIcon />,
+  "pencil-line": <PencilLineIcon />,
 };
 
 export const IconCollection = Object.keys(ICON_LOOKUP);

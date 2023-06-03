@@ -8,6 +8,7 @@ const MenuContainer = styled.div`
   flex-direction: column;
   height: max-content;
   gap: 8px;
+  color: var(--ads-v2-color-fg);
 `;
 
 const MenuHeader = styled.div`
@@ -19,8 +20,8 @@ const MenuHeader = styled.div`
 `;
 
 const MenuBody = styled.div<{ isOpen: boolean }>`
-  background-color: var(--ads-color-black-0);
-  color: var(--ads-color-text);
+  background-color: var(--ads-v2-color-bg);
+  color: var(--ads-v2-color-fg);
   display: ${(props) => (props.isOpen ? "flex" : "none")};
   overflow: hidden;
   margin-left: 30px;

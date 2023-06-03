@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import AppIcon, { AppIconName, AppIconCollection } from "AppIcon";
 import { Size } from "Button";
-import ScrollIndicator from "ScrollIndicator";
 import { CommonComponentProps } from "Types/common";
 import { Classes } from "Constants/classes";
 
@@ -18,16 +17,11 @@ const IconPalette = styled.div<{ fill?: boolean }>`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: var(--ads-v2-spaces-2);
   padding: var(--ads-spaces-4) 0px var(--ads-spaces-4) var(--ads-spaces-5);
   width: ${(props) => (props.fill ? "100%" : "234px")};
   max-height: 90px;
   overflow-y: auto;
-  &&::-webkit-scrollbar-thumb {
-    background-color: var(--ads-icon-selector-scrollbar-thumb-background-color);
-  }
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
 `;
 
 const IconBox = styled.div<{ selectedColor?: string }>`
@@ -36,15 +30,10 @@ const IconBox = styled.div<{ selectedColor?: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) =>
-    props.selectedColor ||
-    "var(--ads-icon-selector-app-icon-background-color)"};
-  margin: 0 var(--ads-spaces-2) var(--ads-spaces-2) 0;
+  border-radius: var(--ads-v2-border-radius);
+  background-color: ${(props) => props.selectedColor};
+  margin: 0;
   position: relative;
-
-  &:nth-child(6n) {
-    margin-right: var(--ads-spaces-0);
-  }
 
   ${(props) =>
     props.selectedColor
@@ -122,7 +111,6 @@ function IconSelector(props: IconSelectorProps) {
             </IconBox>
           );
         })}
-      <ScrollIndicator containerRef={iconPaletteRef} mode="DARK" />
     </IconPalette>
   );
 }

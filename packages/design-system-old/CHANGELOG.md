@@ -1,5 +1,15 @@
 # @appsmithorg/design-system
 
+## 1.1.7
+
+### Patch Changes
+
+- [#473](https://github.com/appsmithorg/design-system/pull/473) [`6bc83fd4`](https://github.com/appsmithorg/design-system/commit/6bc83fd4b9f813a23ce062459b9761fc27f9be80) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Adding default type for button
+
+* [#452](https://github.com/appsmithorg/design-system/pull/452) [`0db333d2`](https://github.com/appsmithorg/design-system/commit/0db333d2bd1b0aca1f07120f61d77b2ee6b656bd) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issues with components
+
+- [#474](https://github.com/appsmithorg/design-system/pull/474) [`292c0168`](https://github.com/appsmithorg/design-system/commit/292c01685aac90a16ab7d95674e1247d3647b59f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Updating CSS for tooltip to fix position shift issue
+
 ## 1.1.6
 
 ### Patch Changes
