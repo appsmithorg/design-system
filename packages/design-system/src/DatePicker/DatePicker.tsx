@@ -479,6 +479,10 @@ function DateRangePicker(
       // doing this to avoid janky behaviour when navigating through the datepicker.
       setShowPreviousMonths(false);
     }
+    // this will set previous month correctly even after selecting range via other means
+    if (type === "shortcut" && showPreviousMonths && !showPreviousMonthsState) {
+      setShowPreviousMonths(true);
+    }
   };
 
   const onClearhandler = () => {
