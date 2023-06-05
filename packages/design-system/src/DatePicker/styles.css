@@ -151,7 +151,7 @@
 
 /* Day - outside month */
 .react-datepicker.ads-v2-datepicker__calender .react-datepicker__month .react-datepicker__week .react-datepicker__day.react-datepicker__day--outside-month {
-  color: var(--ads-v2-color-fg-subtle);
+  visibility: hidden; /* As per https://theappsmith.slack.com/archives/C02K2MZERSL/p1685698629724729?thread_ts=1685352479.396599&cid=C02K2MZERSL */
   pointer-events: none;
 }
 
