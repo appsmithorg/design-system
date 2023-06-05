@@ -475,7 +475,7 @@ function DateRangePicker(
     if (type === "shortcut") {
       setIsOpen(false);
     }
-    if (showPreviousMonths) {
+    if (type !== "shortcut" && showPreviousMonths) {
       // doing this to avoid janky behaviour when navigating through the datepicker.
       setShowPreviousMonths(false);
     }
