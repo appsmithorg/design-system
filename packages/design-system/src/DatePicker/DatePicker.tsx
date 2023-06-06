@@ -337,7 +337,7 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
       <div>
         {customHeaderCount === 0 && (
           <Button
-            disabled={prevMonthButtonDisabled}
+            isDisabled={prevMonthButtonDisabled}
             isIconButton
             kind="tertiary"
             onClick={decreaseMonth}
@@ -347,8 +347,8 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
         <Menu>
           <MenuTrigger>
             <Button
-              disabled={prevMonthButtonDisabled}
               endIcon="arrow-down-s-line"
+              isDisabled={prevMonthButtonDisabled}
               kind="tertiary"
               size="md"
             >
@@ -381,8 +381,8 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
         <Menu>
           <MenuTrigger>
             <Button
-              disabled={prevMonthButtonDisabled}
               endIcon="arrow-down-s-line"
+              isDisabled={prevMonthButtonDisabled}
               kind="tertiary"
               size="md"
             >
@@ -414,7 +414,7 @@ function DatePickerHeader(props: DatePickerHeaderProps) {
         </Menu>
         {(customHeaderCount === 1 || !dateRangePicker) && (
           <Button
-            disabled={nextMonthButtonDisabled}
+            isDisabled={nextMonthButtonDisabled}
             isIconButton
             kind="tertiary"
             onClick={increaseMonth}
@@ -443,6 +443,7 @@ function DateRangePicker(
     label,
     onChange,
     placeholderText = "Select date range",
+    showDisabledMonthNavigation = false,
     showPreviousMonths = false,
     startDate: propStartDate,
     yearEndRange,
@@ -472,6 +473,7 @@ function DateRangePicker(
     setStartDate(startDate);
     setEndDate(endDate);
     onChange && onChange(date, e);
+    // TODO: this makes the behaviour inconsistent between closing and opening. Fix.
     if (type === "shortcut") {
       setIsOpen(false);
     }

@@ -85,6 +85,21 @@ export default {
         },
       },
     },
+    showDisabledMonthNavigation: {
+      control: {
+        type: "boolean",
+      },
+      description:
+        "Disallow navigating to months where all the dates are disabled",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     showRangeShortcuts: {
       control: {
         type: "boolean",
@@ -489,5 +504,4 @@ export const DateRangePickerStory = Template.bind({});
 DateRangePickerStory.storyName = "Date Range Picker";
 DateRangePickerStory.args = {
   //add arguments here
-  excludeDates: [new Date()],
 };
