@@ -21,36 +21,37 @@
 
 .ds--date-range-picker-popover .ds--date-range-picker {
   left: -1px;
-  border-color: var(--ads-color-black-200);
+  border-color: var(--ads-v2-color-border);
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Weekday {
-  color: var(--ads-color-black-500);
+  color: var(--ads-v2-color-fg);
   font-weight: 400;
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day:hover, .bp3-datepicker .DayPicker-Day:focus {
-  background-color: var(--ads-color-black-200);
-  color: var(--ads-color-black-800);
+  background-color: var(--ads-v2-color-bg-brand-secondary-emphasis-plus);
+  color: var(--ads-v2-color-bg);
+  border-radius: var(--ads-v2-border-radius);
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--hovered-range:not(.DayPicker-Day--selected-range):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside) {
-  background-color: var(--ads-color-black-200);
-  color: var(--ads-color-black-800);
+  background-color: var(--ads-v2-color-bg-subtle);
+  color: var(--ads-v2-color-fg);
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .bp3-html-select.bp3-minimal select:hover, .bp3-select.bp3-minimal select:hover {
-  background-color: var(--ads-color-black-100);
-  border-radius: var(--ads-border-radius);
+  background-color: var(--ads-v2-color-bg-subtle);
+  border-radius: var(--ads-v2-border-radius);
 }
 
 .ds--date-range-picker-popover .bp3-daterangepicker .DayPicker-Day--selected-range {
-  background-color: var(--ads-color-brand-light);
+  background-color: var(--ads-v2-color-bg-subtle);
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--isToday .bp3-datepicker-day-wrapper {
   border: none;
-  color: var(--ads-color-brand);
+  color: var(--ads-v2-color-fg-brand);
   position: relative;
 }
 
@@ -62,30 +63,47 @@
   height: 4px;
   width: 4px;
   border-radius: 50%;
-  background-color: var(--ads-color-brand);
+  background-color: var(--ads-v2-color-fg-brand);
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day {
-  border-radius: var(--ads-border-radius);
+  /* we don't have a border radius on all days to prevent the selected range from looking like ceramic tiles */
+  /*border-radius: var(--ads-v2-border-radius);*/
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--selected {
-  background-color: var(--ads-color-brand) !important;
-  color: var(--ads-color-black-0) !important;
-  border-radius: var(--ads-border-radius) !important;
+  background-color: var(--ads-v2-color-bg-brand-secondary-emphasis-plus);
+  color: var(--ads-v2-color-bg);
+  border-radius: var(--ads-v2-border-radius) !important;
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .DayPicker-Day.DayPicker-Day--selected > .bp3-datepicker-day-wrapper {
   color: var(--ads-color-black-0);
 }
 
+.ds--date-range-picker-popover .bp3-datepicker .bp3-menu-item {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  color: var(--ads-v2-color-fg);
+}
+
 .ds--date-range-picker-popover .bp3-datepicker .bp3-menu-item:hover, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-menu-item {
-  background-color: var(--ads-color-black-100);
+  background-color: var(--ads-v2-color-bg-subtle);
   border-radius: var(--ads-v2-border-radius);
 }
 
 .ds--date-range-picker-popover .bp3-datepicker .bp3-menu-item.bp3-intent-primary:hover, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-primary.bp3-menu-item, .bp3-menu-item.bp3-intent-primary.bp3-active {
-  background-color: var(--ads-color-brand);
-  color: var(--ads-color-black-0);
+  background-color: var(--ads-v2-color-bg-muted);
+  color: var(--ads-v2-color-fg);
   border-radius: var(--ads-v2-border-radius);
+}
+
+/* The buttons on the header of the date range picker */
+.ds--date-range-picker-popover .bp3-datepicker-navbar .bp3-button:hover {
+  background-color: var(--ads-v2-color-bg-subtle);
+}
+
+.ds--date-range-picker-popover .bp3-datepicker-navbar .bp3-button:active {
+  background-color: var(--ads-v2-color-bg-muted);
 }

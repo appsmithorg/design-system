@@ -10,8 +10,8 @@ const DS_DateRangePicker = styled(DateRangeInput)<{
   height?: string;
   width?: string;
 }>`
-  border: 1px solid var(--ads-border-color);
-  border-radius: var(--ads-border-radius);
+  border: 1px solid var(--ads-v2-color-border);
+  border-radius: var(--ads-v2-border-radius);
   box-sizing: border-box;
   overflow: hidden;
   box-shadow: none;
@@ -22,18 +22,17 @@ const DS_DateRangePicker = styled(DateRangeInput)<{
   }
 
   &:focus-within {
-    border-color: var(--ads-focus-color);
+    border-color: unset;
   }
 
   & .${BP_Classes.CONTROL_GROUP} > .${BP_Classes.INPUT_GROUP} {
-    border-radius: var(--ads-border-radius);
+    border-radius: var(--ads-v2-border-radius);
     height: 100%;
 
     & > input {
-      padding-top: var(--ads-dimensions-2);
-      padding-bottom: var(--ads-dimensions-2);
+      height: 36px;
+      align-items: center;
       box-shadow: none;
-      height: 100%;
     }
   }
 
@@ -45,24 +44,13 @@ const DS_DateRangePicker = styled(DateRangeInput)<{
       position: absolute;
       top: 0;
       right: 0;
-      color: var(--ads-color-text);
+      color: var(--ads-v2-color-fg);
       z-index: 100;
       height: 100%;
       display: flex;
       align-items: center;
       padding: var(--ads-dimensions-2) 0;
     }
-  }
-
-  .${BP_Classes.CONTROL_GROUP}
-    > .${BP_Classes.INPUT_GROUP}:first-child
-    > input {
-    padding-left: var(--ads-dimensions-3);
-    padding-right: var(--ads-dimensions-3);
-  }
-  .${BP_Classes.CONTROL_GROUP} > .${BP_Classes.INPUT_GROUP}:last-child > input {
-    padding-right: var(--ads-dimensions-3);
-    padding-left: var(--ads-dimensions-3);
   }
 `;
 
@@ -86,6 +74,7 @@ function DateRangePicker(props: DateRangePickerProps) {
   ]);
   return (
     <DS_DateRangePicker
+      allowSingleDayRange
       className={"ds--date-range-picker " + className}
       closeOnSelection
       height={height}
