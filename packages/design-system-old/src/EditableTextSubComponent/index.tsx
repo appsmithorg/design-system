@@ -110,7 +110,7 @@ const TextContainer = styled.div<{
   }
 
   .icon-wrapper {
-    background-color: var(--ads-editable-text-subcomponent-default-background-color);
+    background-color: ${(props) => props.bgColor};
   }
 `;
 
