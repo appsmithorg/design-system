@@ -30,10 +30,13 @@ const Container = styled.div<{
     padding: 5px 0px;
     height: 31px;
     border-radius: var(--ads-v2-border-radius);
-    background-color: ${(props) =>
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: ${(props) =>
       (props.isInvalid && props.isEditing) ||
       props.savingState === SavingState.ERROR
-        ? "var(--ads-editable-text-sub-component-danger-text-color)"
+        ? "var(--ads-v2-color-border-error)"
         : "transparent"};
   }
 
