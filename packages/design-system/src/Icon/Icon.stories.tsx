@@ -37,7 +37,6 @@ IconStory.args = {
   children: "",
   size: "md",
   withWrapper: false,
-  wrapperColor: "rgba(0, 0, 0, 0.1)",
 };
 
 export function AllIcons() {
