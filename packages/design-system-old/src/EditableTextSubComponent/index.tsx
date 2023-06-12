@@ -258,7 +258,7 @@ export const EditableTextSubComponent = React.forwardRef(
 
           {savingState === SavingState.STARTED ? (
             <IconWrapper className="icon-wrapper">
-              <Spinner size={IconSize.XL} />
+              <Icon name={"loader"} size={IconSize.XL} />
             </IconWrapper>
           ) : value && !props.hideEditIcon ? (
             <IconWrapper className="icon-wrapper">
