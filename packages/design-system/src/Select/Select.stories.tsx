@@ -30,99 +30,14 @@ export default {
 } as ComponentMeta<typeof Select>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Select> = (args) => {
+const SelectTemplate: ComponentStory<typeof Select> = ({ ...args }) => {
   return (
     <Select {...args}>
-      <Option value="value 1">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 1
-        </div>
-      </Option>
-      <Option disabled value="option 2">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 2
-        </div>
-      </Option>
-      <Option value="option 3">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 3
-        </div>
-      </Option>
-      <Option value="option 4">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 4
-        </div>
-      </Option>
-      <Option value="option 5">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 5
-        </div>
-      </Option>
-      <Option value="option 6">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 6
-        </div>
-      </Option>
-      <Option value="option 7">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 7
-        </div>
-      </Option>
-      <Option value="option 8">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 8
-        </div>
-      </Option>
-      <Option value="option 9">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 9
-        </div>
-      </Option>
-      <Option value="option 10">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 10
-        </div>
-      </Option>
-      <Option value="option 11">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 11
-        </div>
-      </Option>
-      <Option value="option 12">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 12
-        </div>
-      </Option>
-      <Option value="option 13">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 13
-        </div>
-      </Option>
-      <Option value="option 14">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 14
-        </div>
-      </Option>
-      <Option value="option 15">
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="arrow-left-line" size="md" />
-          Option 15
-        </div>
-      </Option>
+      <Option value="value 1">Option 1</Option>
+      <Option value="value 2">Option 2</Option>
+      <Option value="value 3">Option 3</Option>
+      <Option value="value 4">Option 4</Option>
+      <Option value="value 5">Option 5</Option>
     </Select>
   );
 };
@@ -690,12 +605,56 @@ const ArgTypes = {
   },
 };
 
-export const SelectStory = Template.bind({});
+const consoleStyle = "color: #ff7818; font-weight: bold;";
+
+export const SelectStory = SelectTemplate.bind({});
 SelectStory.storyName = "Select";
-SelectStory.args = {
-  size: "md",
-};
 SelectStory.argTypes = ArgTypes;
+SelectStory.args = {
+  optionLabelProp: "value",
+  autoClearSearchValue: false,
+  onSearch: (v) => {
+    console.info("%conSearch", consoleStyle);
+    console.log("value -", v);
+  },
+  onBlur: (e) => {
+    console.info("%conBlur", consoleStyle);
+    console.log("event -", e);
+  },
+  onFocus: (e) => {
+    console.info("%conFocus", consoleStyle);
+    console.log("event -", e);
+  },
+  onDropdownVisibleChange: (v) => {
+    console.info("%conDropdownVisibleChange", consoleStyle);
+    console.log("value -", v);
+  },
+  onInputKeyDown: (e) => {
+    console.info("%conInputKeyDown", consoleStyle);
+    console.log("event -", e);
+  },
+  onChange: (v) => {
+    console.info("%conChange", consoleStyle);
+    console.log("value -", v);
+  },
+  onSelect: (v, option) => {
+    console.info("%conSelect", consoleStyle);
+    console.log("value = ", v);
+    console.log("option = ", option);
+  },
+  onDeselect: (v, option) => {
+    console.info("%conDeselect", consoleStyle);
+    console.log("value = ", v);
+    console.log("option = ", option);
+  },
+  onClear: () => {
+    console.info("%conClear", consoleStyle);
+  },
+  onPopupScroll: (e) => {
+    console.info("%conPopupScroll", consoleStyle);
+    console.log("event -", e);
+  },
+};
 
 // eslint-disable-next-line react/function-component-definition
 const OptionTemplate: ComponentStory<typeof Option> = ({
@@ -802,80 +761,109 @@ OptionStory.argTypes = {
 };
 
 // eslint-disable-next-line react/function-component-definition
-const SelectSimpleTemplate: ComponentStory<typeof Select> = ({ ...args }) => {
+const Template: ComponentStory<typeof Select> = (args) => {
   return (
     <Select {...args}>
       <Option value="value 1">
-        Option one is a long option that should get ellipsis
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 1
+        </div>
       </Option>
-      <Option value="value 2">Option 2</Option>
-      <Option value="value 3">Option 3</Option>
-      <Option value="value 4">Option 4</Option>
-      <Option value="value 5">Option 5</Option>
-      <Option value="value 6">Option 6</Option>
-      <Option value="value 7">Option 7</Option>
-      <Option value="value 8">Option 8</Option>
-      <Option value="value 9">Option 9</Option>
-      <Option value="value 10">Option 10</Option>
-      <Option value="value 11">Option 11</Option>
-      <Option value="value 12">Option 12</Option>
-      <Option value="value 13">Option 13</Option>
-      <Option value="value 14">Option 14</Option>
-      <Option value="value 15">Option 15</Option>
+      <Option disabled value="option 2">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 2
+        </div>
+      </Option>
+      <Option value="option 3">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 3
+        </div>
+      </Option>
+      <Option value="option 4">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 4
+        </div>
+      </Option>
+      <Option value="option 5">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 5
+        </div>
+      </Option>
+      <Option value="option 6">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 6
+        </div>
+      </Option>
+      <Option value="option 7">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 7
+        </div>
+      </Option>
+      <Option value="option 8">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 8
+        </div>
+      </Option>
+      <Option value="option 9">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 9
+        </div>
+      </Option>
+      <Option value="option 10">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 10
+        </div>
+      </Option>
+      <Option value="option 11">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 11
+        </div>
+      </Option>
+      <Option value="option 12">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 12
+        </div>
+      </Option>
+      <Option value="option 13">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 13
+        </div>
+      </Option>
+      <Option value="option 14">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 14
+        </div>
+      </Option>
+      <Option value="option 15">
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Icon name="arrow-left-line" size="md" />
+          Option 15
+        </div>
+      </Option>
     </Select>
   );
 };
 
-const consoleStyle = "color: #ff7818; font-weight: bold;";
-
-export const SelectSimpleStory = SelectSimpleTemplate.bind({});
-SelectSimpleStory.storyName = "Simple select";
-SelectSimpleStory.argTypes = ArgTypes;
-SelectSimpleStory.args = {
-  optionLabelProp: "value",
-  autoClearSearchValue: false,
-  onSearch: (v) => {
-    console.info("%conSearch", consoleStyle);
-    console.log("value -", v);
-  },
-  onBlur: (e) => {
-    console.info("%conBlur", consoleStyle);
-    console.log("event -", e);
-  },
-  onFocus: (e) => {
-    console.info("%conFocus", consoleStyle);
-    console.log("event -", e);
-  },
-  onDropdownVisibleChange: (v) => {
-    console.info("%conDropdownVisibleChange", consoleStyle);
-    console.log("value -", v);
-  },
-  onInputKeyDown: (e) => {
-    console.info("%conInputKeyDown", consoleStyle);
-    console.log("event -", e);
-  },
-  onChange: (v) => {
-    console.info("%conChange", consoleStyle);
-    console.log("value -", v);
-  },
-  onSelect: (v, option) => {
-    console.info("%conSelect", consoleStyle);
-    console.log("value = ", v);
-    console.log("option = ", option);
-  },
-  onDeselect: (v, option) => {
-    console.info("%conDeselect", consoleStyle);
-    console.log("value = ", v);
-    console.log("option = ", option);
-  },
-  onClear: () => {
-    console.info("%conClear", consoleStyle);
-  },
-  onPopupScroll: (e) => {
-    console.info("%conPopupScroll", consoleStyle);
-    console.log("event -", e);
-  },
+export const ComplexSelectStory = Template.bind({});
+ComplexSelectStory.storyName = "Select with complex options";
+ComplexSelectStory.args = {
+  size: "md",
 };
+ComplexSelectStory.argTypes = ArgTypes;
 
 const options = [
   {
