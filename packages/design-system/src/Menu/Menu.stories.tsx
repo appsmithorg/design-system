@@ -65,22 +65,6 @@ const Template: ComponentStory<typeof Menu> = () => {
           <MenuItem startIcon="settings-line">Item 9</MenuItem>
           <MenuItem startIcon="settings-line">Item 10</MenuItem>
         </MenuGroup>
-        <MenuSeparator />
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
-        <MenuItem startIcon="settings-line">Item 10</MenuItem>
       </MenuContent>
     </Menu>
   );
