@@ -13,6 +13,9 @@ export const parameters = {
     },
     expanded: true,
   },
+  docs: {
+    source: { excludeDecorators: true },
+  },
 };
 
 const containerStyle = {
