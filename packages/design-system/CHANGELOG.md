@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.12
+
+### Patch Changes
+
+- [#492](https://github.com/appsmithorg/design-system/pull/492) [`041573d4`](https://github.com/appsmithorg/design-system/commit/041573d41846d2b07acd8677538a090b6ae59e2a) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: add prop to pause on hover
+
 ## 2.1.11
 
 ### Patch Changes
