@@ -20,6 +20,101 @@ export default {
 } as ComponentMeta<typeof Tabs>;
 
 // eslint-disable-next-line react/function-component-definition
+const TabsTemplate: ComponentStory<typeof Tabs> = (args: TabsProps) => {
+  return (
+    <Tabs defaultValue="tab1" {...args}>
+      <TabsList>
+        <Tab notificationCount={3} value="tab1">
+          Account
+        </Tab>
+        <Tab notificationCount={15} value="tab2">
+          Password
+        </Tab>
+        <Tab value="tab3">Account</Tab>
+        <Tab value="tab4">Test</Tab>
+        <Tab value="tab5">General</Tab>
+      </TabsList>
+      <TabPanel className="TabsContent" value="tab1">
+        <div
+          style={{
+            marginTop: "24px",
+            width: "40%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
+          }}
+        >
+          <Input label="First name" renderAs="input" size="md" />
+          <Input label="Last name" renderAs="input" size="md" />
+          <Button UNSAFE_width="150px" kind="primary" size="md">
+            Submit
+          </Button>
+        </div>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab2">
+        <div
+          style={{
+            marginTop: "24px",
+            width: "40%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
+          }}
+        >
+          <Input label="Old password" renderAs="input" size="md" />
+          <Input label="New Password" renderAs="input" size="md" />
+          <Button UNSAFE_width="150px" kind="primary" size="md">
+            Change
+          </Button>
+        </div>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab3">
+        <Text>Tab3 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab4">
+        <Text>Tab4 Content</Text>
+      </TabPanel>
+      <TabPanel className="TabsContent" value="tab5">
+        <Text>Tab5 Content</Text>
+      </TabPanel>
+    </Tabs>
+  );
+};
+
+export const TabsExample = TabsTemplate.bind({});
+TabsExample.storyName = "Tabs";
+TabsExample.args = {
+  defaultValue: "tab1",
+};
+TabsExample.argTypes = {
+  defaultValue: {
+    description: "The value of the tab to select by default, if uncontrolled",
+    control: {
+      type: "radio",
+      options: ["tab1", "tab2"],
+    },
+  },
+  value: {
+    description: "The value for the selected tab, if controlled",
+    control: {
+      type: "radio",
+      options: ["tab1", "tab2"],
+    },
+  },
+  orientation: {
+    description:
+      "The orientation the tabs are layed out. Mainly so arrow navigation is done accordingly (left & right vs. up & down). Indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.",
+    control: {
+      type: "radio",
+      options: ["horizontal", "vertical"],
+    },
+  },
+  onValueChange: {
+    description: "A function called when a new tab is selected",
+  },
+};
+
+// eslint-disable-next-line react/function-component-definition
 const TabTemplate: ComponentStory<typeof Tab> = (args: TabProps) => {
   return (
     <Tabs>
@@ -116,10 +211,9 @@ TabPanelExample.argTypes = {
   },
 };
 
-// eslint-disable-next-line react/function-component-definition
-const TabsTemplate: ComponentStory<typeof Tabs> = (args: TabsProps) => {
+export function TabWithManyTabs() {
   return (
-    <Tabs defaultValue="tab1" {...args}>
+    <Tabs defaultValue="tab1">
       <TabsList>
         <Tab notificationCount={3} value="tab1">
           Account
@@ -151,8 +245,8 @@ const TabsTemplate: ComponentStory<typeof Tabs> = (args: TabsProps) => {
             gap: "12px",
           }}
         >
-          <Input as="input" label="First name" size="md" />
-          <Input as="input" label="Last name" size="md" />
+          <Input label="First name" renderAs="input" size="md" />
+          <Input label="Last name" renderAs="input" size="md" />
           <Button UNSAFE_width="150px" kind="primary" size="md">
             Submit
           </Button>
@@ -168,8 +262,8 @@ const TabsTemplate: ComponentStory<typeof Tabs> = (args: TabsProps) => {
             gap: "12px",
           }}
         >
-          <Input as="input" label="Old password" size="md" />
-          <Input as="input" label="New Password" size="md" />
+          <Input label="Old password" renderAs="input" size="md" />
+          <Input label="New Password" renderAs="input" size="md" />
           <Button UNSAFE_width="150px" kind="primary" size="md">
             Change
           </Button>
@@ -216,37 +310,4 @@ const TabsTemplate: ComponentStory<typeof Tabs> = (args: TabsProps) => {
       </TabPanel>
     </Tabs>
   );
-};
-
-export const TabsExample = TabsTemplate.bind({});
-TabsExample.storyName = "Tabs";
-TabsExample.args = {
-  defaultValue: "tab1",
-};
-TabsExample.argTypes = {
-  defaultValue: {
-    description: "The value of the tab to select by default, if uncontrolled",
-    control: {
-      type: "radio",
-      options: ["tab1", "tab2"],
-    },
-  },
-  value: {
-    description: "The value for the selected tab, if controlled",
-    control: {
-      type: "radio",
-      options: ["tab1", "tab2"],
-    },
-  },
-  orientation: {
-    description:
-      "The orientation the tabs are layed out. Mainly so arrow navigation is done accordingly (left & right vs. up & down). Indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.",
-    control: {
-      type: "radio",
-      options: ["horizontal", "vertical"],
-    },
-  },
-  onValueChange: {
-    description: "A function called when a new tab is selected",
-  },
-};
+}
