@@ -3,7 +3,6 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Select, Option } from "./Select";
 import { Icon } from "../Icon";
-import _ from "lodash";
 import { Checkbox } from "../Checkbox";
 
 export default {
@@ -12,7 +11,7 @@ export default {
   decorators: [
     (Story) => (
       <div style={{ width: "100%", maxWidth: "250px", margin: "0 auto" }}>
-        <Story />
+        {Story()}
       </div>
     ),
   ],

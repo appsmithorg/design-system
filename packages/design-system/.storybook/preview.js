@@ -24,13 +24,9 @@ const containerStyle = {
 };
 
 export const decorators = [
-  (Story) => (
-    <div style={containerStyle}>
-      <Story />
-    </div>
-  ),
+  (Story) => <div style={containerStyle}>{Story()}</div>,
 ];
 
 addDecorator((Story) => (
-  <MemoryRouter initialEntries={["/"]}>{<Story />}</MemoryRouter>
+  <MemoryRouter initialEntries={["/"]}>{Story()}</MemoryRouter>
 ));
