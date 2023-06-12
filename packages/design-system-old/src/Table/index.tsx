@@ -22,17 +22,17 @@ const Styles = styled.div`
       top: 0;
 
       tr {
-        background-color: var(--ads-table-table-row-background-color);
+        background-color: var(--ads-v2-color-bg-subtle);
 
         th {
           padding: var(--ads-spaces-5) var(--ads-spaces-9);
           text-align: left;
-          color: var(--ads-table-table-header-text-color);
+          color: var(--ads-v2-color-fg);
           font-weight: ${typography.h6.fontWeight};
           font-size: ${typography.h6.fontSize}px;
           line-height: ${typography.h6.lineHeight}px;
           letter-spacing: ${typography.h6.letterSpacing}px;
-          border-bottom: 1px solid var(--ads-color-black-200);
+          border-bottom: 1px solid var(--ads-v2-color-border);
 
           svg {
             margin-left: var(--ads-spaces-2);
@@ -43,11 +43,11 @@ const Styles = styled.div`
           }
 
           &:hover {
-            color: var(--ads-table-table-header-hover-text-color);
+            color: var(--ads-v2-color-fg-emphasis);
             cursor: pointer;
             svg {
               path {
-                fill: var(--ads-table-table-header-hover-icon-path-color);
+                fill: var(var(--ads-v2-color-fg));
               }
             }
           }
@@ -59,18 +59,15 @@ const Styles = styled.div`
       tr {
         td {
           padding: var(--ads-spaces-4) var(--ads-spaces-9);
-          color: var(--ads-table-table-row-table-data-default-text-color);
+          color: var(--ads-v2-color-fg);
           font-size: ${typography.p1.fontSize}px;
           line-height: ${typography.p1.lineHeight}px;
           letter-spacing: ${typography.p1.letterSpacing}px;
           font-weight: normal;
-          border-bottom: 1px solid
-            var(--ads-table-table-row-table-data-border-bottom-color);
+          border-bottom: 1px solid var(--ads-v2-color-border);
 
           &:first-child {
-            color: var(
-              --ads-table-table-row-first-table-data-default-text-color
-            );
+            color: var(--ads-v2-color-fg);
             font-weight: var(--ads-font-weight-normal);
           }
 
@@ -78,28 +75,26 @@ const Styles = styled.div`
             border: none;
 
             .no-data-title {
-              color: var(--ads-table-table-row-table-data-default-text-color);
+              color: var(--ads-v2-color-fg);
             }
           }
         }
 
-        &:hover {
-          background-color: var(--ads-table-table-row-hover-background-color);
+        &:hover:not(.no-hover) {
+          background-color: var(--ads-v2-color-bg-subtle);
           .${Classes.ICON} {
             path {
-              fill: var(--ads-table-table-row-hover-icon-path-color);
+              fill: var(--ads-v2-color-fg);
             }
           }
           td {
-            color: var(--ads-table-table-row-table-data-hover-text-color);
+            color: var(--ads-v2-color-fg);
 
             &:first-child {
-              color: var(
-                --ads-table-table-row-first-table-data-hover-text-color
-              );
+              color: var(--ads-v2-color-fg);
             }
             &.no-border {
-              background-color: var(--ads-color-black-0);
+              background-color: var(--ads-v2-color-bg-muted);
             }
           }
         }
@@ -160,7 +155,11 @@ function Table(props: TableProps) {
     headerGroups,
     prepareRow,
     rows,
-  } = useTable({ columns, data }, useSortBy, useExpanded);
+  } = useTable(
+    { autoResetExpanded: false, columns, data },
+    useSortBy,
+    useExpanded,
+  );
 
   return (
     <Styles>
@@ -192,7 +191,7 @@ function Table(props: TableProps) {
         </thead>
         <tbody {...getTableBodyProps()}>
           {isLoading ? (
-            <tr>
+            <tr className="no-hover">
               <td className="no-border" colSpan={columns?.length}>
                 <CentralizedWrapper>
                   {loaderComponent ? (
@@ -223,7 +222,7 @@ function Table(props: TableProps) {
               );
             })
           ) : (
-            <tr>
+            <tr className="no-hover">
               <td className="no-border" colSpan={columns?.length}>
                 <CentralizedWrapper>
                   {noDataComponent ? (

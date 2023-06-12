@@ -24,6 +24,11 @@ CalloutStory.argTypes = {
     control: {
       type: "text",
     },
+    table: {
+      type: {
+        summary: "string",
+      },
+    },
   },
   kind: {
     defaultValue: "info",
@@ -40,8 +45,10 @@ CalloutWithLink.args = {
       children: "Home",
     },
     {
-      to: "https://docs.appsmith.com",
       children: "Docs",
+      onClick: () => {
+        console.log("I'm clicking things!");
+      },
     },
   ],
 };
@@ -49,6 +56,11 @@ CalloutWithLink.argTypes = {
   children: {
     control: {
       type: "text",
+    },
+    table: {
+      type: {
+        summary: "string",
+      },
     },
   },
   kind: {

@@ -41,7 +41,7 @@ export const MainContainer = styled.div<{
   size?: InputSizes;
   component: "input" | "textarea";
 }>`
-  ${Variables}
+  ${Variables};
 
   display: flex;
   flex-direction: ${({ labelPosition }) =>
@@ -127,7 +127,6 @@ export const StyledInput = styled.input<{
   hasStartIcon?: boolean;
   hasEndIcon?: boolean;
   renderer?: "input" | "textarea";
-  hasError?: boolean;
   inputSize?: InputSizes;
 }>`
   --icon-size: ${({ inputSize }) => inputSize && iconSizes[inputSize]};
@@ -145,7 +144,7 @@ export const StyledInput = styled.input<{
   resize: none;
 
   /* adjust padding start according to icon present or not */
-  /* 
+  /*
    * add left right padding to icon width = padding left right
    * minus 1px border width
   */
@@ -186,11 +185,18 @@ export const StyledInput = styled.input<{
     user-select: none;
   }
 
-  ${({ hasError }) =>
-    hasError &&
-    css`
+  &[data-is-valid="false"] {
+    --input-color-border: var(--ads-v2-color-border-error);
+
+    &:hover:enabled:not(:read-only) {
       --input-color-border: var(--ads-v2-color-border-error);
-    `}
+    }
+
+    &:active:enabled:not(:read-only),
+    &:focus:enabled:not(:read-only) {
+      --input-color-border: var(--ads-v2-color-border-error);
+    }
+  }
 `;
 
 export const Description = styled(Text)`

@@ -56,6 +56,11 @@
   --select-color-border: var(--ads-v2-color-border-emphasis-plus);
 }
 
+/* Error */
+.ads-v2-select[data-is-valid="false"] {
+  --select-color-border: var(--ads-v2-color-border-error);
+}
+
 /* Arrow & clear icon */
 .ads-v2-select > .rc-select-arrow,
 .ads-v2-select > .rc-select-clear {
@@ -98,6 +103,7 @@
   display: flex;
   align-items: center;
   min-height: var(--select-height);
+  height: var(--select-height);
   width: 100%;
   min-width: 180px;
   color: var(--select-color);
@@ -116,15 +122,16 @@
   padding-right: calc(var(--select-padding-x) + 20px);
   color: var(--ads-v2-color-fg-subtle);
   left: 0;
+  opacity: 1;
   /* top: ${({ size }) => (size === "sm" ? "" : "0")}; */
   height: 100%;
   width: 100%;
   display: inline-block;
-  align-items: center;
   box-sizing: border-box;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 18px;
 }
 
 .ads-v2-select[data-size="sm"] > .rc-select-selector > .rc-select-selection-placeholder,
@@ -182,7 +189,9 @@
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
-  overflow: scroll;
+  overflow: auto;
+  z-index: 1001;
+  pointer-events: auto;
 }
 
 /* Option */
@@ -227,9 +236,8 @@
   gap: var(--select-option-gap);
   font-family: var(--ads-v2-font-family);
   font-size: var(--select-option-font-size);
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 /* Option hover */

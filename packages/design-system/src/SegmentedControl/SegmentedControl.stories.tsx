@@ -12,6 +12,7 @@ export default {
 const Template: ComponentStory<typeof SegmentedControl> = (args) => {
   return <SegmentedControl {...args} />;
 };
+// TODO (albin): isFullWidth is not working as expected
 
 export const SegmentedControlStory = Template.bind({});
 SegmentedControlStory.storyName = "Default";
@@ -20,36 +21,37 @@ SegmentedControlStory.args = {
     {
       value: "one",
       label: "One",
-      startIcon: "layout-line",
-      endIcon: "layout-line",
+      startIcon: "arrow-left-s-line",
+      endIcon: "arrow-left-s-line",
     },
     {
       value: "two",
       label: "Two",
-      startIcon: "layout-2-line",
-      endIcon: "layout-2-line",
+      startIcon: "arrow-right-s-line",
+      endIcon: "arrow-right-s-line",
     },
     {
       value: "three",
       label: "Three",
-      startIcon: "layout-3-line",
-      endIcon: "layout-3-line",
+      startIcon: "arrow-up-s-line",
+      endIcon: "arrow-up-s-line",
       isDisabled: true,
     },
     {
       value: "four",
       label: "Four",
-      startIcon: "layout-2-line",
-      endIcon: "layout-2-line",
+      startIcon: "arrow-right-s-line",
+      endIcon: "arrow-right-s-line",
     },
     {
       value: "five",
       label: "Five",
-      startIcon: "layout-3-line",
-      endIcon: "layout-3-line",
+      startIcon: "arrow-down-s-line",
+      endIcon: "arrow-down-s-line",
     },
   ],
   defaultValue: "one",
+  isFullWidth: true,
 };
 
 export const SegmentedControlStoryWithIcons = Template.bind({});
@@ -58,18 +60,19 @@ SegmentedControlStoryWithIcons.args = {
   options: [
     {
       value: "one",
-      startIcon: "layout-line",
+      startIcon: "arrow-down-s-line",
     },
     {
       value: "two",
-      startIcon: "layout-2-line",
+      startIcon: "arrow-up-s-line",
     },
     {
       value: "three",
-      startIcon: "layout-3-line",
+      startIcon: "arrow-left-s-line",
     },
   ],
   defaultValue: "one",
+  isFullWidth: true,
 };
 
 export const SegmentedControlStoryWithLabels = Template.bind({});
@@ -90,4 +93,5 @@ SegmentedControlStoryWithLabels.args = {
     },
   ],
   defaultValue: "one",
+  isFullWidth: true,
 };

@@ -27,6 +27,7 @@ import {
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (props, ref): JSX.Element => {
+    let { isValid } = props;
     const {
       className,
       description,
@@ -47,6 +48,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       UNSAFE_height,
       UNSAFE_width,
       value,
+      ...rest
     } = props;
     const inputRef = useDOMRef(ref);
     const { descriptionProps, errorMessageProps, inputProps, labelProps } =
@@ -67,6 +69,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       onChange?.(event.target.value);
     };
 
+    isValid = isValid === undefined ? !errorMessage : isValid;
+
     return (
       <MainContainer
         className={clsx(InputClassName, className)}
@@ -76,13 +80,19 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       >
         {/* TODO: replace this with text component */}
         {/* Issue: adding kind while implementing
-        text is throwing typescript error. 
+        text is throwing typescript error.
         https://stackoverflow.com/questions/68073958/cant-use-href-with-iconbuttonprops*/}
-        <Label {...labelProps} className={InputLabelClassName}>
-          {label}
-          {/* Show required star only if label is present */}
-          {label && isRequired && <span>*</span>}
-        </Label>
+        {label && (
+          <Label
+            {...labelProps}
+            className={InputLabelClassName}
+            onClick={(e) => e.preventDefault()}
+          >
+            {label}
+            {/* Show required star only if label is present */}
+            {label && isRequired && <span>*</span>}
+          </Label>
+        )}
         <InputSection className={InputSectionClassName}>
           <InputContainer isDisabled={isDisabled || isReadOnly}>
             {/* Start Icon Section */}
@@ -109,8 +119,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               UNSAFE_height={UNSAFE_height}
               UNSAFE_width={UNSAFE_width}
               className={InputSectionInputClassName}
+              data-is-valid={isValid}
               hasEndIcon={!!endIcon}
-              hasError={!!errorMessage}
               hasStartIcon={!!startIcon}
               inputSize={size}
               isFocusVisible={isFocusVisible}
@@ -119,6 +129,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               ref={inputRef}
               renderer={renderAs}
               value={value}
+              {...rest}
             />
             {/* End Icon Section */}
             {endIcon && renderAs === "input" ? (

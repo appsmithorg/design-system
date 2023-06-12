@@ -5,6 +5,11 @@ import {
   RemixiconReactIconProps,
   RemixiconReactIconComponentType,
 } from "remixicon-react";
+import * as log from "loglevel";
+
+function IconLoadFailFallback(props: any) {
+  return <svg {...props} />;
+}
 
 function importIconImpl(
   importFn: () => Promise<{ default: React.ComponentType }>,
@@ -28,12 +33,22 @@ export function importSvg(
   importFn: () => Promise<typeof import("*.svg")>,
 ): React.ComponentType<React.SVGProps<SVGSVGElement>> {
   return importIconImpl(() =>
-    importFn().then((m) => ({ default: m.ReactComponent })),
+    importFn()
+      .then((m) => ({ default: m.ReactComponent }))
+      .catch((e) => {
+        log.warn("Failed to load SVG icon:", e);
+        return { default: IconLoadFailFallback };
+      }),
   );
 }
 
 export function importRemixIcon(
   importFn: () => Promise<{ default: RemixiconReactIconComponentType }>,
 ): React.ComponentType<RemixiconReactIconProps> {
-  return importIconImpl(importFn);
+  return importIconImpl(() =>
+    importFn().catch((e) => {
+      log.warn("Failed to load SVG icon:", e);
+      return { default: IconLoadFailFallback };
+    }),
+  );
 }

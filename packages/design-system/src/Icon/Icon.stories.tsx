@@ -36,12 +36,14 @@ IconStory.args = {
   name: "account-box-line",
   children: "",
   size: "md",
+  withWrapper: false,
+  wrapperColor: "rgba(0, 0, 0, 0.1)",
 };
 
 export function AllIcons() {
   return (
     <div style={{ width: "100%;", display: "flex", flexDirection: "column" }}>
-      {IconCollection.map((icon, index) => (
+      {IconCollection.sort().map((icon, index) => (
         <div
           key={index}
           style={{

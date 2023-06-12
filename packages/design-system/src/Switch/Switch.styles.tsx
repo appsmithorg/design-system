@@ -6,7 +6,7 @@ const Variables = css`
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
-export const StyledSwitch = styled.span`
+export const StyledSwitch = styled.label`
   display: block;
   width: 100%;
 `;
@@ -16,6 +16,7 @@ export const StyledSwitchLabel = styled(Text)<{
 }>`
   display: flex;
   flex-grow: 1;
+  gap: var(--ads-v2-spaces-3);
   align-items: center;
   justify-content: space-between;
   min-width: 9rem;
@@ -102,7 +103,7 @@ export const StyledSwitchInput = styled.input<{
     width: 1rem;
     height: 1rem;
     grid-area: off;
-    border-radius: var(--ads-border-radius-circle);
+    border-radius: var(--ads-v2-border-radius-circle);
     background-color: var(--thumb-color-bg);
 
     box-shadow: 0 1px 4px 0 rgba(76, 86, 100, 0.2);

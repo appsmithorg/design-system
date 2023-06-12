@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+import capitalize from "lodash/capitalize";
 import { Slide, toast as toastifyToast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
@@ -20,7 +20,7 @@ function Toast({ ...rest }: ToastProps) {
       closeButton={false}
       draggable={false}
       hideProgressBar
-      pauseOnHover={false}
+      pauseOnHover
       position={toastifyToast.POSITION.TOP_CENTER}
       rtl={false}
       transition={Slide}
@@ -33,8 +33,10 @@ function Toast({ ...rest }: ToastProps) {
 // allow developers to pass in their own components.
 const toast = {
   show: (content: string, options?: ToastProps) => {
-    const actionText = _.capitalize(options?.action?.text);
+    const actionText = capitalize(options?.action?.text);
     const icon = getIconByKind(options?.kind);
+    // generate a unique toastId with the options given to it
+    const toastId = JSON.stringify({ ...options, content });
     return toastifyToast(
       <ToastBody kind="body-m">
         {content}
@@ -53,6 +55,7 @@ const toast = {
       </ToastBody>,
       {
         icon: icon,
+        toastId,
         type: options?.kind,
         closeOnClick: !actionText,
         ...options,

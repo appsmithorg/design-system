@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: Refactored Select and Avatar component
+fix: add prop to pause on hover

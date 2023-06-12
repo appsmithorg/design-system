@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { ToggleIconClassName } from "./ToggleButton.constants";
-import { Size } from "./ToggleButton.types";
+import { ToggleSizes } from "./ToggleButton.types";
 
 const Variables = css`
   --toggle-padding: var(--ads-v2-spaces-2);
@@ -18,7 +18,7 @@ const Sizes = {
     --toggle-width: var(--ads-v2-spaces-5);
   `,
   md: css`
-    --toggle-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-2);
+    --toggle-padding: var(--ads-v2-spaces-2);
     --toggle-height: var(--ads-v2-spaces-7);
     --toggle-width: var(--ads-v2-spaces-7);
   `,
@@ -26,9 +26,8 @@ const Sizes = {
 
 export const StyledToggleButton = styled.button<{
   isDisabled?: boolean;
-  isFocusVisible?: boolean;
   isSelected?: boolean;
-  size?: Size;
+  size?: ToggleSizes;
 }>`
   ${Variables};
 
@@ -62,13 +61,9 @@ export const StyledToggleButton = styled.button<{
      }
   `}
 
-  ${({ isFocusVisible }) =>
-    isFocusVisible &&
-    ` outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
-      outline-offset: var(--ads-v2-offset-outline);
-    `}}
   &:focus-visible {
-    outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
+    outline: var(--ads-v2-border-width-outline) solid
+      var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
   }
   &:disabled {
@@ -78,7 +73,7 @@ export const StyledToggleButton = styled.button<{
 
   border: 1px solid var(--toggle-color-border);
   background-color: var(--toggle-color-background);
-  & path {
+  & .${ToggleIconClassName} {
     color: var(--toggle-color-icon);
   }
 `;

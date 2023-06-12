@@ -8,6 +8,7 @@
   display: flex;
   /* left 8px + right 8px + width of the separator(1px) */
   gap: 17px;
+  z-index: 1001;
 }
 
 /* Calender container */
@@ -52,19 +53,13 @@
 }
 
 /* Month container */
-.react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container {
+.react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:not(:first-of-type) {
   position: relative;
-}
-
-/* Separator between two months - date range mode */
-.react-datepicker.ads-v2-datepicker__calender > .react-datepicker__month-container:last-child:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -9px;
-  width: 1px;
-  height: 100%;
-  background-color: var(--ads-v2-color-border);
+  padding-left: var(--ads-v2-spaces-3);
+  padding-right: var(--ads-v2-spaces-3);
+  margin-left: -8px;
+  margin-right: -32px;
+  border-left: 1px solid var(--ads-v2-color-border);
 }
 
 /* Custom header wrapper */
@@ -144,7 +139,7 @@
   color: var(--ads-v2-color-fg-brand);
 }
 
-.react-datepicker.ads-v2-datepicker__calender .react-datepicker__month .react-datepicker__week .react-datepicker__day--today:after {
+.react-datepicker.ads-v2-datepicker__calender .react-datepicker__month .react-datepicker__week .react-datepicker__day--today:not(.react-datepicker__day--outside-month):after {
   content: '';
   position: absolute;
   bottom: 2px;
@@ -157,6 +152,7 @@
 /* Day - outside month */
 .react-datepicker.ads-v2-datepicker__calender .react-datepicker__month .react-datepicker__week .react-datepicker__day.react-datepicker__day--outside-month {
   color: var(--ads-v2-color-fg-subtle);
+  pointer-events: none;
 }
 
 /* Day - hide hover and select bg on empty day columns */
@@ -209,3 +205,36 @@
   opacity: var(--ads-v2-opacity-disabled);
   cursor: not-allowed;
 }
+
+.react-datepicker__aria-live {
+  display: none;
+}
+
+.react-datepicker__children-container {
+  margin-top: -10px !important;
+}
+
+.ads-v2-daterangepicker .react-datepicker__children-container {
+  margin: 0 !important;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Move the shortcut menu to the right of the calender */
+.ads-v2-daterangepicker.ads-v2-datepicker__calender.showRangeShortcuts {
+  padding-left: 146px;
+}
+.react-datepicker.ads-v2-datepicker__calender.showRangeShortcuts > .react-datepicker__month-container:not(:first-of-type) {
+  margin-right: -160px;
+}
+
+.ads-v2-daterangepicker.showRangeShortcuts .react-datepicker__children-container {
+/*.ads-v2-daterangepicker .react-datepicker__children-container {*/
+  position: relative;
+  right: 500px;
+}
+

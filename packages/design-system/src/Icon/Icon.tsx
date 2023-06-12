@@ -13,9 +13,8 @@ export const iconSizes: Record<IconSizes, string> = {
 };
 
 function Icon(props: IconProps) {
-  const { children, className, color, name, size = "sm", ...rest } = props;
-
-  if (!name && !children) return null;
+  // TODO: Add a warning when an onClick is passed: "consider using a button with the isIconButton flag instead"
+  const { className, color, name, size = "sm", ...rest } = props;
 
   return (
     <IconContainer

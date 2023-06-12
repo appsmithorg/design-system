@@ -1,5 +1,63 @@
 # @appsmithorg/design-system
 
+## 1.1.7
+
+### Patch Changes
+
+- [#473](https://github.com/appsmithorg/design-system/pull/473) [`6bc83fd4`](https://github.com/appsmithorg/design-system/commit/6bc83fd4b9f813a23ce062459b9761fc27f9be80) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Adding default type for button
+
+* [#452](https://github.com/appsmithorg/design-system/pull/452) [`0db333d2`](https://github.com/appsmithorg/design-system/commit/0db333d2bd1b0aca1f07120f61d77b2ee6b656bd) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issues with components
+
+- [#474](https://github.com/appsmithorg/design-system/pull/474) [`292c0168`](https://github.com/appsmithorg/design-system/commit/292c01685aac90a16ab7d95674e1247d3647b59f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Updating CSS for tooltip to fix position shift issue
+
+## 1.1.6
+
+### Patch Changes
+
+- [#466](https://github.com/appsmithorg/design-system/pull/466) [`794f978`](https://github.com/appsmithorg/design-system/commit/794f9783403d105a71c75e3c49f6df7457351331) Thanks [@eco-monk](https://github.com/eco-monk)! - fix: add mime types to file upload
+
+* [#468](https://github.com/appsmithorg/design-system/pull/468) [`74cd9da`](https://github.com/appsmithorg/design-system/commit/74cd9da4c22565ad93292dc371d91cfb85102df3) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: icon not rendering in all icons page
+
+## 1.1.5
+
+### Patch Changes
+
+- [#462](https://github.com/appsmithorg/design-system/pull/462) [`37d65c5`](https://github.com/appsmithorg/design-system/commit/37d65c5eae3f01aad126a5cd7664cf8fedb10896) Thanks [@berzerkeer](https://github.com/berzerkeer)! - chore: give control to user to enable/disable uppy informer
+
+## 1.1.4
+
+### Patch Changes
+
+- [#445](https://github.com/appsmithorg/design-system/pull/445) [`8d3ef64`](https://github.com/appsmithorg/design-system/commit/8d3ef64c4b266569d8b837bc69da255987716e1f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Adding autoResetExpanded to the table component for avoiding the tree getting closed on every change
+
+## 1.1.3
+
+### Patch Changes
+
+- [#440](https://github.com/appsmithorg/design-system/pull/440) [`7523dd3`](https://github.com/appsmithorg/design-system/commit/7523dd3a1f7c99cf3cdb2f13ed8042ee8b7312d2) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: icon fixes and added new icons
+
+## 1.1.2
+
+### Patch Changes
+
+- [#378](https://github.com/appsmithorg/design-system/pull/378) [`a6223d0`](https://github.com/appsmithorg/design-system/commit/a6223d07b39f587c2fa287953c7928bccdfae4c1) Thanks [@rahulramesha](https://github.com/rahulramesha)! - feat: Auto layout conversion design components changes
+
+## 1.1.1
+
+### Patch Changes
+
+- [#427](https://github.com/appsmithorg/design-system/pull/427) [`d7c5538`](https://github.com/appsmithorg/design-system/commit/d7c5538aa07bd481ce463b06376c93b1f026686c) Thanks [@ChandanBalajiBP](https://github.com/ChandanBalajiBP)! - feat: Add close-circle-line icon
+
+## 1.1.0
+
+### Minor Changes
+
+- [#415](https://github.com/appsmithorg/design-system/pull/415) [`b559bf6`](https://github.com/appsmithorg/design-system/commit/b559bf64d1a8e76839bee4d24a81cf13b8e06ea7) Thanks [@iamakulov](https://github.com/iamakulov)! - feat: new importSvg and importRemixIcon wrappers for code-splitting icons
+
+### Patch Changes
+
+- [#389](https://github.com/appsmithorg/design-system/pull/389) [`6c7441f`](https://github.com/appsmithorg/design-system/commit/6c7441fc69255c1f63dcc1708d30d4ebd3b5d3dc) Thanks [@iamakulov](https://github.com/iamakulov)! - perf: add "sideEffects": false for better tree-shaking
+
 ## 1.0.52
 
 ### Patch Changes

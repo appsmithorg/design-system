@@ -5,7 +5,7 @@ import {
   ButtonContentIconStartClassName,
   ButtonLoadingClassName,
 } from "./Button.constants";
-import { ButtonSizes, Kind } from "./Button.types";
+import { ButtonSizes, ButtonKind } from "./Button.types";
 
 const Variables = css`
   --button-color-bg: var(--ads-v2-color-bg);
@@ -57,7 +57,7 @@ const getHeights = (size: ButtonSizes, isIconButton?: boolean) => {
   return Heights[size];
 };
 
-const Kinds = {
+const Kind = {
   primary: css`
     --button-color-bg: var(--ads-v2-color-bg-brand);
     --button-color-fg: var(--ads-v2-color-fg-on-brand);
@@ -153,7 +153,6 @@ export const ButtonContent = styled.div<{
   box-sizing: border-box;
   padding: var(--button-padding);
   border-radius: inherit;
-  text-transform: capitalize;
 
   & > .${ButtonContentChildrenClassName} {
     display: flex;
@@ -179,7 +178,7 @@ export const ButtonContent = styled.div<{
 `;
 
 export const StyledButton = styled.button<{
-  kind?: Kind;
+  kind?: ButtonKind;
   UNSAFE_height?: string;
   size?: ButtonSizes;
   UNSAFE_width?: string;
@@ -188,7 +187,7 @@ export const StyledButton = styled.button<{
 }>`
   ${Variables}
   /* Variant style */
-  ${({ kind }) => kind && Kinds[kind]}
+  ${({ kind }) => kind && Kind[kind]}
   /* Button heights */
   ${({ isIconButton, size }) => size && getHeights(size, isIconButton)}
 
@@ -209,7 +208,7 @@ export const StyledButton = styled.button<{
     box-sizing: border-box;
     overflow: hidden;
     min-width: ${({ isIconButton }) =>
-      isIconButton ? "unset" : "min-content"};
+      isIconButton ? "unset" : "fit-content"};
 
     /* button disabled style */
     &[data-disabled="true"] {

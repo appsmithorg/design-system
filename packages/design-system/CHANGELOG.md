@@ -1,5 +1,84 @@
 # @appsmithorg/design-system
 
+## 2.1.9
+
+### Patch Changes
+
+- [#473](https://github.com/appsmithorg/design-system/pull/473) [`6bc83fd4`](https://github.com/appsmithorg/design-system/commit/6bc83fd4b9f813a23ce062459b9761fc27f9be80) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Adding default type for button
+
+* [#471](https://github.com/appsmithorg/design-system/pull/471) [`41be8cec`](https://github.com/appsmithorg/design-system/commit/41be8cec952199bf116c33f896efd6aec22b1f80) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Updating the click action on input label to remove focus from input box
+
+- [#452](https://github.com/appsmithorg/design-system/pull/452) [`0db333d2`](https://github.com/appsmithorg/design-system/commit/0db333d2bd1b0aca1f07120f61d77b2ee6b656bd) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: issues with components
+
+* [#476](https://github.com/appsmithorg/design-system/pull/476) [`db5bed71`](https://github.com/appsmithorg/design-system/commit/db5bed711fb2a7e944720bbc965f3a991705cf35) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - feat: add `overlayClassName` prop to the `Modal` component
+
+- [#474](https://github.com/appsmithorg/design-system/pull/474) [`292c0168`](https://github.com/appsmithorg/design-system/commit/292c01685aac90a16ab7d95674e1247d3647b59f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Updating CSS for tooltip to fix position shift issue
+
+## 2.1.7
+
+### Patch Changes
+
+- [#462](https://github.com/appsmithorg/design-system/pull/462) [`37d65c5`](https://github.com/appsmithorg/design-system/commit/37d65c5eae3f01aad126a5cd7664cf8fedb10896) Thanks [@berzerkeer](https://github.com/berzerkeer)! - chore: give control to user to enable/disable uppy informer
+
+## 2.1.6
+
+### Patch Changes
+
+- [#455](https://github.com/appsmithorg/design-system/pull/455) [`7c735ab`](https://github.com/appsmithorg/design-system/commit/7c735ab248ddd944be7e8b1760153db48f6a84af) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Importing and adding the external link line icon from remixicon
+
+* [#454](https://github.com/appsmithorg/design-system/pull/454) [`ffa75c8`](https://github.com/appsmithorg/design-system/commit/ffa75c84fea83c7ffd8e775baac4b2c208b7faf6) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - chore: add page menu icons
+
+## 2.1.5
+
+### Patch Changes
+
+- [#450](https://github.com/appsmithorg/design-system/pull/450) [`c7eeb4d`](https://github.com/appsmithorg/design-system/commit/c7eeb4d9106b50898fae381c7b69b66661305d96) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Type name duplication fixed
+
+* [#447](https://github.com/appsmithorg/design-system/pull/447) [`726780d`](https://github.com/appsmithorg/design-system/commit/726780d7b0cee7352904cf14b83c94ff06716fbb) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: component fixes - select, input
+  fix: exported type
+
+## 2.1.4
+
+### Patch Changes
+
+- [#440](https://github.com/appsmithorg/design-system/pull/440) [`7523dd3`](https://github.com/appsmithorg/design-system/commit/7523dd3a1f7c99cf3cdb2f13ed8042ee8b7312d2) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: icon fixes and added new icons
+
+## 2.1.3
+
+### Patch Changes
+
+- [#306](https://github.com/appsmithorg/design-system/pull/306) [`7a332a9`](https://github.com/appsmithorg/design-system/commit/7a332a94521444ec6310118e1ea7563f8897aa18) Thanks [@ravikp7](https://github.com/ravikp7)! - Fix: Support dynamic option passing to TreeDropdown
+
+## 2.1.2
+
+### Patch Changes
+
+- [#433](https://github.com/appsmithorg/design-system/pull/433) [`a0602ac`](https://github.com/appsmithorg/design-system/commit/a0602ac74bc4a17fbaabaad20b150008a21d1a00) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: divider width and color
+
+* [#432](https://github.com/appsmithorg/design-system/pull/432) [`5b0eaba`](https://github.com/appsmithorg/design-system/commit/5b0eabacac0ef47b0f5403b27ac8b1e1b98bf10f) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: button blend mode
+
+## 2.1.1
+
+### Patch Changes
+
+- [#416](https://github.com/appsmithorg/design-system/pull/416) [`e928d89`](https://github.com/appsmithorg/design-system/commit/e928d8942f7f5a2c8445dd256d920b8908f8e9a7) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Refactored Select and Avatar component
+
+## 2.1.0
+
+### Minor Changes
+
+- [#415](https://github.com/appsmithorg/design-system/pull/415) [`b559bf6`](https://github.com/appsmithorg/design-system/commit/b559bf64d1a8e76839bee4d24a81cf13b8e06ea7) Thanks [@iamakulov](https://github.com/iamakulov)! - feat: new importSvg and importRemixIcon wrappers for code-splitting icons
+
+### Patch Changes
+
+- [#389](https://github.com/appsmithorg/design-system/pull/389) [`6c7441f`](https://github.com/appsmithorg/design-system/commit/6c7441fc69255c1f63dcc1708d30d4ebd3b5d3dc) Thanks [@iamakulov](https://github.com/iamakulov)! - perf: add "sideEffects": false for better tree-shaking
+
+## 2.0.8
+
+### Patch Changes
+
+- [#418](https://github.com/appsmithorg/design-system/pull/418) [`0bec8ae`](https://github.com/appsmithorg/design-system/commit/0bec8ae8611c2a58ce8e18185ea24f3bd81cde4a) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Date and Date Range picker
+
 ## 2.0.7
 
 ### Patch Changes

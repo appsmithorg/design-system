@@ -4,27 +4,39 @@ import { Sizes } from "__config__/types";
 
 export type InputSizes = Extract<Sizes, "sm" | "md">;
 
+export type InputTypes =
+  | "text"
+  | "password"
+  | "email"
+  | "number"
+  | "tel"
+  | "url"
+  | "search"
+  | "currency";
+
 // Input props
-export interface InputProps extends TextFieldProps {
+interface Props extends TextFieldProps {
   /** TODO: renderAs needs to changed to as */
   /** Attribute to change the rendering component */
-  renderAs: "input" | "textarea";
+  renderAs?: "input" | "textarea";
   /** (try not to) pass addition classes here */
   className?: string;
   /** label position  */
   labelPosition?: "top" | "left";
+  /** name */
+  name?: string;
   /** start icon  */
   startIcon?: string;
   /** start icon props */
-  startIconProps?: IconProps;
+  startIconProps?: Omit<IconProps, "name">;
   /** end icon  */
   endIcon?: string;
   /** end icon props */
-  endIconProps?: IconProps;
+  endIconProps?: Omit<IconProps, "name">;
   /** size */
-  size: InputSizes;
+  size?: InputSizes;
   /** type */
-  type?: "text" | "password" | "email" | "number" | "tel" | "url";
+  type?: InputTypes;
   /** width */
   UNSAFE_width?: string;
   /** height */
@@ -33,4 +45,10 @@ export interface InputProps extends TextFieldProps {
   value?: string;
   /** onValue change trigger */
   onChange?: (value: string) => void;
+  /** Whether the input given passes the validation parameters. */
+  isValid?: boolean;
 }
+
+export interface InputProps
+  extends Props,
+    Omit<React.HTMLAttributes<HTMLInputElement>, keyof Props> {}

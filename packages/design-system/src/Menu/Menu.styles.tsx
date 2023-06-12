@@ -30,9 +30,10 @@ const MenuItemSizeStyles = {
 };
 
 const MenuContentStyle = css`
-  ${Variables}
+  ${Variables};
 
   width: fit-content;
+  min-width: 100px;
   max-width: 280px;
   max-height: calc(var(--radix-dropdown-menu-content-available-height) - 20px);
   background-color: var(--ads-v2-color-bg);
@@ -43,14 +44,15 @@ const MenuContentStyle = css`
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
-  overflow: scroll;
+  overflow: auto;
+  z-index: 1001;
 `;
 
 export const StyledMenuContent = styled(RadixMenu.Content)<{
   height?: string;
   width?: string;
 }>`
-  ${MenuContentStyle}
+  ${MenuContentStyle};
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
 `;
@@ -59,7 +61,7 @@ export const StyledMenuSubContent = styled(RadixMenu.SubContent)<{
   height?: string;
   width?: string;
 }>`
-  ${MenuContentStyle}
+  ${MenuContentStyle};
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
 `;

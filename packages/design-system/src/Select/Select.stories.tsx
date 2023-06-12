@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Select, Option } from "./Select";
 import { Icon } from "../Icon";
+import _ from "lodash";
+import { Checkbox } from "../Checkbox";
 
 export default {
   title: "Design System/Select",
@@ -34,91 +36,91 @@ const Template: ComponentStory<typeof Select> = (args) => {
     <Select {...args}>
       <Option value="value 1">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="home-5-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 1
         </div>
       </Option>
       <Option disabled value="option 2">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 2
         </div>
       </Option>
       <Option value="option 3">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-2-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 3
         </div>
       </Option>
       <Option value="option 4">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-3-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 4
         </div>
       </Option>
       <Option value="option 5">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-4-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 5
         </div>
       </Option>
       <Option value="option 6">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="bank-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 6
         </div>
       </Option>
       <Option value="option 7">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="store-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 7
         </div>
       </Option>
       <Option value="option 8">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="store-2-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 8
         </div>
       </Option>
       <Option value="option 9">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="store-3-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 9
         </div>
       </Option>
       <Option value="option 10">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="hospital-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 10
         </div>
       </Option>
       <Option value="option 11">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="ancient-gate-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 11
         </div>
       </Option>
       <Option value="option 12">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="ancient-pavilion-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 12
         </div>
       </Option>
       <Option value="option 13">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-2-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 13
         </div>
       </Option>
       <Option value="option 14">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-3-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 14
         </div>
       </Option>
       <Option value="option 15">
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Icon name="building-4-line" size="md" />
+          <Icon name="arrow-left-line" size="md" />
           Option 15
         </div>
       </Option>
@@ -354,11 +356,25 @@ const ArgTypes = {
       },
     },
   },
-  disabled: {
+  isDisabled: {
     control: {
       type: "boolean",
     },
     description: "Whether select is disabled",
+    table: {
+      type: {
+        summary: "boolean",
+      },
+      defaultValue: {
+        summary: "false",
+      },
+    },
+  },
+  isLoading: {
+    control: {
+      type: "boolean",
+    },
+    description: "Whether select is loading",
     table: {
       type: {
         summary: "boolean",
@@ -441,6 +457,7 @@ const ArgTypes = {
       },
     },
   },
+  // TODO: It seems like there is no difference between `label` and `value`; document it or change it accordingly
   value: {
     control: {
       type: "text",
@@ -643,6 +660,35 @@ const ArgTypes = {
       },
     },
   },
+  isValid: {
+    control: {
+      type: "boolean",
+    },
+    description:
+      "Whether the input should display its valid or invalid visual styling.",
+    table: {
+      type: {
+        summary: "valid | invalid",
+      },
+      defaultValue: {
+        summary: "undefined",
+      },
+    },
+  },
+  listHeight: {
+    control: {
+      type: "number",
+    },
+    description: "Height of the list",
+    table: {
+      type: {
+        summary: "number",
+      },
+      defaultValue: {
+        summary: "250",
+      },
+    },
+  },
 };
 
 export const SelectStory = Template.bind({});
@@ -662,7 +708,7 @@ const OptionTemplate: ComponentStory<typeof Option> = ({
       <Option {...args} value="Test">
         {children || (
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <Icon name="home-5-line" size="md" />
+            <Icon name="arrow-left-line" size="md" />
             Option 1
           </div>
         )}
@@ -760,7 +806,9 @@ OptionStory.argTypes = {
 const SelectSimpleTemplate: ComponentStory<typeof Select> = ({ ...args }) => {
   return (
     <Select {...args}>
-      <Option value="value 1">Option 1</Option>
+      <Option value="value 1">
+        Option one is a long option that should get ellipsis
+      </Option>
       <Option value="value 2">Option 2</Option>
       <Option value="value 3">Option 3</Option>
       <Option value="value 4">Option 4</Option>
@@ -829,3 +877,52 @@ SelectSimpleStory.args = {
     console.log("event -", e);
   },
 };
+
+const options = [
+  {
+    label: "label 1",
+    value: "value 1",
+    key: "001",
+  },
+  {
+    label: "A longer label to force a line break",
+    value: "value 2",
+    key: "002",
+  },
+  {
+    label: "label 3",
+    value: "value 3",
+    key: "003",
+  },
+];
+export function SelectWithCheckbox() {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  return (
+    <Select
+      isMultiSelect
+      onDeselect={(value, unselectedOption) =>
+        setSelectedOptions(
+          selectedOptions.filter((opt) => opt.value !== unselectedOption.value),
+        )
+      }
+      onSelect={(value, newSelectedOption) =>
+        setSelectedOptions([...selectedOptions, newSelectedOption])
+      }
+      optionLabelProp="label"
+      value={selectedOptions}
+    >
+      {options.map((option) => (
+        <Option key={option.key}>
+          <Checkbox
+            isSelected={selectedOptions.find(
+              (selectedOption) => selectedOption.key == option.key,
+            )}
+          >
+            {option.label}
+          </Checkbox>
+        </Option>
+      ))}
+    </Select>
+  );
+}

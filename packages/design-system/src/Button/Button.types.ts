@@ -2,7 +2,7 @@ import React from "react";
 import { Sizes } from "__config__/types";
 
 // Button types
-export type Kind = "primary" | "secondary" | "tertiary" | "error";
+export type ButtonKind = "primary" | "secondary" | "tertiary" | "error";
 
 // Button sizes
 export type ButtonSizes = Extract<Sizes, "sm" | "md">;
@@ -21,7 +21,7 @@ export type ButtonProps = {
   /** Whether the button contains only an icon or not. If true, only pass the icon value to startIcon. */
   isIconButton?: boolean;
   /** The visual style to apply to the button. */
-  kind?: Kind;
+  kind?: ButtonKind;
   /** The size of the button. */
   size?: ButtonSizes;
   /** The icon to display before the button text. Pass name of the icon from remix-icon library(eg: home-2-line) or an svg icon. */
@@ -34,5 +34,7 @@ export type ButtonProps = {
   UNSAFE_width?: string;
   /** The href attribute to apply to the button if it renders as an anchor. */
   href?: string;
+  /** The type of the button. This defaults to button type. */
+  type?: "button" | "submit" | "reset";
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;

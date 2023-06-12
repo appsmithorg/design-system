@@ -21,5 +21,5 @@ export type RadioGroupProps = {
   onChange?: (value: string) => void;
   /** The gap between the Radio components. */
   UNSAFE_gap?: string;
-} & StatelyRadioGroupProps &
-  React.HTMLAttributes<HTMLDivElement>;
+} & Omit<StatelyRadioGroupProps, "onChange"> &
+  Omit<React.HTMLAttributes<HTMLDivElement>, "onChange">;

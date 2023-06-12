@@ -1,5 +1,7 @@
+import { InputProps } from "Input/Input.types";
+
 // NumberInput props
-export type NumberInputProps = {
+export type NumberInputProps = InputProps & {
   /** (try not to) pass addition classes here */
   className?: string;
   /** Whether the input is disabled. */
@@ -28,4 +30,10 @@ export type NumberInputProps = {
   placeholder?: string;
   /** onValue change trigger */
   onChange?: (value: number) => void;
+  /** Whether the input given passes the validation parameters. */
+  isValid?: boolean;
+  /** Maximum value of the input. */
+  max?: number;
+  /** Minimum value of the input. */
+  min?: number;
 };

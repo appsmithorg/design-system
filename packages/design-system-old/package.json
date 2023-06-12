@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system-old",
-  "version": "1.0.52",
+  "version": "1.1.7",
   "description": "This is the package for the Appsmith design system components",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -53,7 +53,7 @@
     "@storybook/testing-library": "^0.0.11",
     "@storybook/theming": "^6.5.12",
     "@svgr/rollup": "^6.2.1",
-    "@svgr/webpack": "4.3.3",
+    "@svgr/webpack": "5.5.0",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",

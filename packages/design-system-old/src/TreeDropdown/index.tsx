@@ -1,5 +1,4 @@
 import React, {
-  memo,
   PropsWithChildren,
   useCallback,
   useEffect,
@@ -26,6 +25,7 @@ import { DSEventTypes } from "Types/common";
 import { typography } from "Constants/typography";
 import { Intent as BlueprintIntent } from "@blueprintjs/core";
 import { IconName } from "@blueprintjs/icons";
+import "./styles.css";
 
 export type TreeDropdownOption = {
   label: string;
@@ -66,79 +66,94 @@ export type TreeDropdownProps = {
   onMenuToggle?: (isOpen: boolean) => void;
   position?: PopoverPosition;
   menuWidth?: number;
+  menuHeight?: number;
+  popoverClassName?: string;
+  usePortal?: boolean;
+  defaultOpen?: boolean;
 };
 
 export type StyledMenuProps = PropsWithChildren<{
   width?: number;
+  height?: number;
 }>;
 
 export const StyledMenu = styled(Menu)<StyledMenuProps>`
-  max-height: calc(
+  max-height: ${(props: StyledMenuProps) =>
+    props.height
+      ? `${props.height}px`
+      : `calc(
     100vh - var(--ads-small-header-height) - var(--ads-bottom-bar-height)
-  );
+  )`};
   overflow: auto;
   min-width: 220px;
   width: ${(props) => `${props.width}px`};
-  padding: 0px;
-  border-radius: 0px;
-  background-color: var(--ads-tree-dropdown-menu-default-background-color);
+  padding: var(--ads-v2-spaces-2);
+  border-radius: var(--ads-v2-border-radius);
+  background-color: var(--ads-v2-color-bg);
+  border: 1px solid var(--ads-v2-color-border-muted);
+  box-shadow: var(--ads-v2-shadow-popovers);
   .${Classes.MENU} {
     min-width: 220px;
     width: ${(props) => `${props.width}px`};
     padding: 0px;
-    border-radius: 0px;
-    background-color: var(--ads-tree-dropdown-menu-default-background-color);
+    border-radius: var(--ads-v2-border-radius);
+    background-color: var(--ads-v2-color-bg);
     max-height: 90vh;
     overflow-y: scroll;
   }
   .${Classes.MENU_ITEM} {
-    border-radius: 0px;
+    border-radius: var(--ads-v2-border-radius);
     font-size: 14px;
     line-height: ${typography.p1.lineHeight}px;
     display: flex;
+    padding: var(--ads-v2-spaces-2);
     align-items: center;
-    height: 30px;
-    color: var(--ads-tree-dropdown-menu-default-text-color);
+    height: 36px;
+    color: var(--ads-v2-color-fg);
     .${Classes.ICON} > svg:not([fill]) {
       margin-top: 0px;
-      fill: #9f9f9f;
+      fill: var(--ads-v2-color-fg);
     }
 
     &.t--apiFormDeleteBtn {
-      color: var(--ads-old-color-pomegranate);
+      color: var(--ads-v2-color-fg-error);
       .${Classes.ICON} svg {
-        fill: var(--ads-old-color-pomegranate);
+        fill: var(--ads-v2-color-fg-error);
       }
     }
 
     &.t--apiFormDeleteBtn:hover {
-      background-color: var(--ads-old-color-gallery-2);
-      color: var(--ads-old-color-pomegranate);
+      background-color: var(--ads-v2-color-bg-subtle);
+      color: var(--ads-v2-color-fg-error);
       .${Classes.ICON} svg {
-        fill: var(--ads-old-color-pomegranate);
+        fill: var(--ads-v2-color-fg-error);
       }
     }
 
     &:hover:not(.t--apiFormDeleteBtn) {
-      background-color: var(--ads-old-color-gallery-2);
-      color: var(--ads-old-color-gray-10);
+      background-color: var(--ads-v2-color-bg-subtle);
+      color: var(--ads-v2-color-fg);
       .${Classes.ICON} > svg:not([fill]) {
-        fill: var(--ads-old-color-gray-10);
+        fill: var(--ads-v2-color-fg);
+      }
+
+      &.${Classes.ACTIVE} {
+        background-color: var(--ads-v2-color-bg-muted);
       }
     }
 
     &.${Classes.ACTIVE} {
-      background-color: var(--ads-old-color-gallery-2);
-      color: var(--ads-tree-dropdown-menu-selected-text-color);
+      background-color: var(--ads-v2-color-bg-muted);
+      color: var(--ads-v2-color-fg) !important;
       .${Classes.ICON} > svg:not([fill]) {
-        fill: var(--ads-tree-dropdown-menu-selected-text-color);
+        fill: var(--ads-v2-color-fg);
       }
     }
   }
   .${Classes.MENU_SUBMENU}
     .${Classes.POPOVER_TARGET}.${Classes.POPOVER_OPEN}
     > .${Classes.MENU_ITEM} {
-    background-color: var(--ads-old-color-gallery-2);
+    background-color: var(--ads-v2-color-bg-subtle);
   }
 `;
 
@@ -146,23 +161,27 @@ const DropdownTarget = styled.div`
   &&&& .${Classes.BUTTON} {
     width: 100%;
     box-shadow: none;
-    border-radius: 0px;
-    border: 1px solid var(--ads-color-black-250);
+    border-radius: var(--ads-v2-border-radius);
+    border: 1px solid var(--ads-v2-color-border);
     min-height: 36px;
-    background-color: var(--ads-tree-dropdown-target-background-color);
-    color: var(--ads-tree-dropdown-menu-default-text-color);
+    background-color: var(--ads-v2-color-bg);
+    color: var(--ads-v2-color-fg);
     background-image: none;
     display: flex;
     justify-content: space-between;
     padding: 5px 12px;
 
+    &:hover {
+      border-color: var(--ads-v2-color-border-emphasis);
+    }
+
     &:active,
     &:focus {
-      border-color: var(--appsmith-input-focus-border-color);
+      border-color: var(--ads-v2-color-border-emphasis-plus);
     }
   }
   &&&& .${Classes.ICON} {
-    color: var(--ads-tree-dropdown-menu-default-text-color);
+    color: var(--ads-v2-color-fg);
   }
 `;
 
@@ -268,20 +287,91 @@ function getSelectedOption(
   return selectedOption;
 }
 
+type RenderTreeOptionProps = {
+  option: TreeDropdownOption;
+  optionTree: TreeDropdownOption[];
+  selectedOption: TreeDropdownOption;
+  handleSelect: (
+    option: TreeDropdownOption,
+    isUpdatedViaKeyboard: boolean,
+  ) => any;
+  handleOptionClick: (
+    option: TreeDropdownOption,
+  ) => (e: any, isUpdatedViaKeyboard?: boolean) => void;
+};
+
+function RenderTreeOption({
+  handleOptionClick,
+  handleSelect,
+  option,
+  optionTree,
+  selectedOption,
+}: RenderTreeOptionProps) {
+  const isSelected =
+    selectedOption.value === option.value ||
+    selectedOption.type === option.value;
+
+  const popoverProps = useMemo(
+    () => ({
+      minimal: true,
+      isOpen: option.isChildrenOpen,
+      interactionKind: PopoverInteractionKind.CLICK,
+      position: PopoverPosition.RIGHT_TOP,
+      targetProps: { onClick: (e: any) => e.stopPropagation() },
+    }),
+    [option.isChildrenOpen],
+  );
+
+  const optionClickHandler = useCallback(handleOptionClick(option), [
+    optionTree,
+    handleSelect,
+  ]);
+
+  return (
+    <MenuItem
+      active={isSelected}
+      className={option.className || "single-select"}
+      icon={option.icon}
+      intent={option.intent}
+      key={option.value}
+      onClick={optionClickHandler}
+      popoverProps={popoverProps}
+      text={option.label}
+    >
+      {option.children &&
+        option.children.map((o) => (
+          <RenderTreeOption
+            handleOptionClick={handleOptionClick}
+            handleSelect={handleSelect}
+            key={`${o.value}-${o.label}`}
+            option={o}
+            optionTree={optionTree}
+            selectedOption={selectedOption}
+          />
+        ))}
+    </MenuItem>
+  );
+}
+
 function TreeDropdown(props: TreeDropdownProps) {
   const {
     defaultText,
     displayValue,
     getDefaults,
+    menuHeight,
     menuWidth,
     onSelect,
+    popoverClassName = "",
     selectedLabelModifier,
     selectedValue,
     toggle,
+    usePortal = true,
+    defaultOpen = false,
   } = props;
   const [optionTree, setOptionTree] = useState<TreeDropdownOption[]>(
     setSelfIndex(props.optionTree),
   );
+  const isFirstRender = useRef(true);
   const selectedOptionFromProps = getSelectedOption(
     selectedValue,
     defaultText,
@@ -292,7 +382,7 @@ function TreeDropdown(props: TreeDropdownProps) {
   );
   const selectedOptionIndex = useRef([findIndex(optionTree, selectedOption)]);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(defaultOpen);
   const { emitDSEvent } = useDSEvent<HTMLButtonElement>(false, buttonRef);
 
   const emitKeyPressEvent = useCallback(
@@ -322,7 +412,16 @@ function TreeDropdown(props: TreeDropdownProps) {
         return defaultSelectedOption;
       });
     }
-  }, [isOpen]);
+  }, [isOpen, selectedValue]);
+
+  useEffect(() => {
+    // Skip setting the option tree on first render, minor optimization
+    if (!isFirstRender.current) {
+      setOptionTree(setSelfIndex(props.optionTree));
+    } else {
+      isFirstRender.current = false;
+    }
+  }, [props.optionTree]);
 
   const handleSelect = (
     option: TreeDropdownOption,
@@ -370,43 +469,6 @@ function TreeDropdown(props: TreeDropdownProps) {
       e?.stopPropagation && e.stopPropagation();
     };
   };
-
-  function RenderTreeOption(option: TreeDropdownOption) {
-    const isSelected =
-      selectedOption.value === option.value ||
-      selectedOption.type === option.value;
-
-    const popoverProps = useMemo(
-      () => ({
-        minimal: true,
-        isOpen: option.isChildrenOpen,
-        interactionKind: PopoverInteractionKind.CLICK,
-        position: PopoverPosition.RIGHT_TOP,
-        targetProps: { onClick: (e: any) => e.stopPropagation() },
-      }),
-      [option.isChildrenOpen],
-    );
-
-    const optionClickHandler = useCallback(handleOptionClick(option), [
-      optionTree,
-      handleSelect,
-    ]);
-
-    return (
-      <MenuItem
-        active={isSelected}
-        className={option.className || "single-select"}
-        icon={option.icon}
-        intent={option.intent}
-        key={option.value}
-        onClick={optionClickHandler}
-        popoverProps={popoverProps}
-        text={option.label}
-      >
-        {option.children && option.children.map(RenderTreeOption)}
-      </MenuItem>
-    );
-  }
 
   /**
    * shouldOpen flag is used to differentiate between a Keyboard
@@ -538,8 +600,22 @@ function TreeDropdown(props: TreeDropdownProps) {
     }
   };
 
-  const list = optionTree.map(RenderTreeOption);
-  const menuItems = <StyledMenu width={menuWidth || 220}>{list}</StyledMenu>;
+  const list = optionTree.map((o) => (
+    <RenderTreeOption
+      handleOptionClick={handleOptionClick}
+      handleSelect={handleSelect}
+      key={`${o.value}-${o.label}`}
+      option={o}
+      optionTree={optionTree}
+      selectedOption={selectedOption}
+    />
+  ));
+
+  const menuItems = (
+    <StyledMenu height={menuHeight} width={menuWidth || 220}>
+      {list}
+    </StyledMenu>
+  );
   const defaultToggle = (
     <DropdownTarget>
       <Button
@@ -550,7 +626,7 @@ function TreeDropdown(props: TreeDropdownProps) {
         }`}
         elementRef={buttonRef}
         onKeyDown={handleKeydown}
-        rightIcon={<Icon name="downArrow" size={IconSize.XXL} />}
+        rightIcon={<Icon name="down-arrow" size={IconSize.XXL} />}
         text={
           selectedLabelModifier
             ? selectedLabelModifier(selectedOptionFromProps, displayValue)
@@ -570,6 +646,7 @@ function TreeDropdown(props: TreeDropdownProps) {
         setIsOpen(false);
         props.onMenuToggle && props.onMenuToggle(false);
       }}
+      popoverClassName={popoverClassName + " ads--dropdown-popover"}
       position={props.position || PopoverPosition.LEFT}
       targetProps={{
         onClick: (e: any) => {
@@ -580,10 +657,11 @@ function TreeDropdown(props: TreeDropdownProps) {
           e.stopPropagation();
         },
       }}
+      usePortal={usePortal}
     >
       {toggle ? toggle : defaultToggle}
     </Popover>
   );
 }
 
-export default memo(TreeDropdown);
+export default TreeDropdown;

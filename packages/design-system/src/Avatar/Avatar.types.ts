@@ -19,6 +19,8 @@ export type AvatarProps = {
   label: string;
   /** The tooltip placement. */
   tooltipPlacement?: TooltipPlacement;
+  /** Whether to enable tooltip or not. */
+  isTooltipEnabled?: boolean;
 } & React.HTMLAttributes<HTMLSpanElement>;
 
 export type AvatarGroupAvatarProps = Omit<

@@ -25,4 +25,5 @@ NumberInputStory.storyName = "NumberInput";
 NumberInputStory.args = {
   prefix: "$",
   suffix: "",
+  isValid: true,
 };
