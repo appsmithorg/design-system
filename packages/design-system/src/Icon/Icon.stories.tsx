@@ -37,7 +37,6 @@ IconStory.args = {
   children: "",
   size: "md",
   withWrapper: false,
-  wrapperColor: "rgba(0, 0, 0, 0.1)",
 };
 
 export function AllIcons() {
@@ -62,9 +61,5 @@ export function AllIcons() {
 }
 
 AllIcons.decorators = [
-  (Story) => (
-    <div style={{ height: "75%", width: "25%" }}>
-      <Story />
-    </div>
-  ),
+  (Story) => <div style={{ height: "75%", width: "25%" }}>{Story()}</div>,
 ];
