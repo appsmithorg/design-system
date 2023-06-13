@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.9
+
+### Patch Changes
+
+- [#497](https://github.com/appsmithorg/design-system/pull/497) [`2e722d54`](https://github.com/appsmithorg/design-system/commit/2e722d548376bd97ddbed8dcab5a7ed4291f34b1) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: remove editable text backgroudn color on error, change saving icon
+
 ## 1.1.8
 
 ### Patch Changes
