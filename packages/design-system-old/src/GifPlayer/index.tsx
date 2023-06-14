@@ -23,10 +23,10 @@ const PlayButton = styled.div`
       height: 34px;
       margin-right: 0px;
       path {
-        fill: var(--ads-gif-player-icon-path-fill-color);
+        fill: var(--ads-v2-color-bg);
       }
       circle {
-        fill: var(--ads-gif-player-icon-circle-fill-color);
+        fill: var(--ads-v2-color-fg);
       }
     }
   }
