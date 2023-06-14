@@ -24,9 +24,11 @@ const PlayButton = styled.div`
       margin-right: 0px;
       path {
         fill: var(--ads-v2-color-bg);
+        opacity: 1;
       }
       circle {
         fill: var(--ads-v2-color-fg);
+        opacity: 1;
       }
     }
   }
