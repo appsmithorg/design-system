@@ -195,7 +195,7 @@
 }
 
 /* Option */
-.ads-v2-select__dropdown .rc-select-item {
+.ads-v2-select__dropdown .rc-select-item.rc-select-item-option {
   --select-option-padding: var(--ads-v2-spaces-3);
   --select-option-gap: var(--ads-v2-spaces-3);
   --select-option-color-bg: var(--ads-v2-color-bg);
@@ -230,7 +230,7 @@
 }
 
 /* Item content */
-.ads-v2-select__dropdown .rc-select-item .rc-select-item-option-content {
+.ads-v2-select__dropdown .rc-select-item.rc-select-item-option .rc-select-item-option-content {
   display: flex;
   align-items: center;
   gap: var(--select-option-gap);
@@ -241,32 +241,32 @@
 }
 
 /* Option hover */
-.ads-v2-select__dropdown .rc-select-item:hover,
-.ads-v2-select__dropdown .rc-select-item.rc-select-item-option-active {
+.ads-v2-select__dropdown .rc-select-item.rc-select-item-option:hover,
+.ads-v2-select__dropdown .rc-select-item.rc-select-item-option.rc-select-item-option-active {
   --select-option-color-bg: var(--ads-v2-color-bg-subtle);
   outline: none;
 }
 
 /* Option focus */
-.ads-v2-select__dropdown .rc-select-item:focus {
+.ads-v2-select__dropdown .rc-select-item.rc-select-item-option:focus {
   --select-option-color-bg: var(--ads-v2-color-bg-subtle);
   outline: none;
 }
 
 /* Option focus visible */
-.ads-v2-select__dropdown .rc-select-item:focus-visible {
+.ads-v2-select__dropdown .rc-select-item.rc-select-item-option:focus-visible {
   outline: var(--ads-v2-border-width-outline) solid
       var(--ads-v2-color-outline);
   outline-offset: var(--ads-v2-offset-outline);
 }
 
 /* Option active */
-.ads-v2-select__dropdown .rc-select-item:active {
+.ads-v2-select__dropdown .rc-select-item.rc-select-item-option:active {
   --select-option-color-bg: var(--ads-v2-color-bg-muted);
 }
 
 /* Option disabled */
-.ads-v2-select__dropdown .rc-select-item.rc-select-item-option-disabled {
+.ads-v2-select__dropdown .rc-select-item.rc-select-item-option.rc-select-item-option-disabled {
   --select-option-color-bg: var(--ads-v2-color-bg);
   opacity: var(--ads-v2-opacity-disabled);
   cursor: not-allowed;
@@ -280,6 +280,6 @@
 }
 
 /* Selected option */
-.ads-v2-select__dropdown .rc-select-item.rc-select-item-option-selected {
+.ads-v2-select__dropdown .rc-select-item.rc-select-item-option.rc-select-item-option-selected {
   --select-option-color-bg: var(--ads-v2-color-bg-muted);
 }
