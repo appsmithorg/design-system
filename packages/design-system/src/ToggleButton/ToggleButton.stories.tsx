@@ -13,9 +13,9 @@ const Template: ComponentStory<typeof ToggleButton> = (args) => {
   return <ToggleButton {...args} />;
 };
 
-export const ToggleButtonStroy = Template.bind({});
-ToggleButtonStroy.storyName = "Toggle Button";
-ToggleButtonStroy.args = {
+export const ToggleButtonStory = Template.bind({});
+ToggleButtonStory.storyName = "Toggle Button";
+ToggleButtonStory.args = {
   size: "sm",
   icon: "js-toggle-v2",
 };
