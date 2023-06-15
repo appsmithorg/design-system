@@ -206,7 +206,8 @@
   margin-bottom: var(--ads-v2-spaces-1);
   border-radius: var(--ads-v2-border-radius);
   cursor: pointer;
-  background-color: var(--select-option-color-bg);
+  /* TODO: remove !important after WDS fix their issue in tree select */
+  background-color: var(--select-option-color-bg) !important;
   position: relative;
   color: var(--ads-v2-color-fg);
   min-height: var(--select-option-height);
