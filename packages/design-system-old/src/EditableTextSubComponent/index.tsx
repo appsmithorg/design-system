@@ -104,7 +104,8 @@ const TextContainer = styled.div<{
 
   &&& .${BlueprintClasses.EDITABLE_TEXT} {
     overflow: hidden;
-    background-color: var(--ads-editable-text-subcomponent-default-background-color);
+    background-color: ${(props) => props.bgColor};
+    //background-color: var(--ads-editable-text-subcomponent-default-background-color);
     width: calc(100% - 40px);
     border-radius: var(--ads-v2-border-radius);
   }
