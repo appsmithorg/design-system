@@ -76,4 +76,5 @@ module.exports = {
   ],
   "framework": "@storybook/react",
   "webpackFinal": webpackConfig,
+  features: { buildStoriesJson: true },
 }
