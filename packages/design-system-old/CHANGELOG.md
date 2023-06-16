@@ -1,5 +1,18 @@
 # @appsmithorg/design-system
 
+## 1.1.9
+
+### Patch Changes
+
+- [#497](https://github.com/appsmithorg/design-system/pull/497) [`2e722d54`](https://github.com/appsmithorg/design-system/commit/2e722d548376bd97ddbed8dcab5a7ed4291f34b1) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: remove editable text backgroudn color on error, change saving icon
+
+## 1.1.8
+
+### Patch Changes
+
+- [#479](https://github.com/appsmithorg/design-system/pull/479) [`c2c09b6c`](https://github.com/appsmithorg/design-system/commit/c2c09b6c7e6bb674c97b4613d87e359054dd98a8) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fixes for - old toast, datepicker
+  Added new icons for layout and js file
+
 ## 1.1.7
 
 ### Patch Changes
