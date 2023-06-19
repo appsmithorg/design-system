@@ -12,7 +12,8 @@
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "generate:component": "plop component"
+    "generate:component": "plop component",
+    "test-storybook": "test-storybook"
   },
   "author": "",
   "license": "ISC",
@@ -35,6 +36,7 @@
     "@storybook/builder-webpack4": "^6.5.15",
     "@storybook/manager-webpack4": "^6.5.15",
     "@storybook/react": "^6.5.15",
+    "@storybook/test-runner": "^0.9.4",
     "@svgr/rollup": "^6.5.1",
     "@svgr/webpack": "5.5.0",
     "@types/loadable__component": "^5.13.4",

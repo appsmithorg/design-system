@@ -43,8 +43,9 @@ export const EditableTextWrapper = styled.div<{
     width: 100%;
     flex: 1;
   `}
+
   .error-message {
-    margin-left: var(--ads-spaces-5);
+    margin-left: var(--ads-spaces-2);
     color: var(--ads-v2-color-fg-error);
   }
 `;
