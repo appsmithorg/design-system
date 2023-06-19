@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.13
+
+### Patch Changes
+
+- [#502](https://github.com/appsmithorg/design-system/pull/502) [`7eac4f78`](https://github.com/appsmithorg/design-system/commit/7eac4f78df1f0adba5e062b5ed76e2dd6fb7ec14) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: old gray in gif player, alignment in error message for editable text
+
+* [#437](https://github.com/appsmithorg/design-system/pull/437) [`436926a7`](https://github.com/appsmithorg/design-system/commit/436926a77e123c5696e14922c14d7089784da91e) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add smoke tests
+
 ## 2.1.12
 
 ### Patch Changes
