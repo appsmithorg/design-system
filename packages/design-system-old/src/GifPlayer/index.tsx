@@ -23,15 +23,16 @@ const PlayButton = styled.div`
       height: 34px;
       margin-right: 0px;
       path {
-        fill: var(--ads-gif-player-icon-path-fill-color);
+        fill: var(--ads-v2-color-bg);
+        opacity: 1;
       }
       circle {
-        fill: var(--ads-gif-player-icon-circle-fill-color);
+        fill: var(--ads-v2-color-fg);
+        opacity: 1;
       }
     }
   }
   .${Classes.TEXT} {
-    color: var(--ads-gif-player-text-color);
     margin-top: var(--ads-spaces-3);
   }
 `;
@@ -60,7 +61,7 @@ function GifPlayer(props: GifPlayerProps) {
       <img src={props.thumbnail} />
       <PlayButton>
         <Icon name="play" size={IconSize.XXXL} />
-        <Text type={TextType.P3}>Click to play</Text>
+        <Text color={"var(--ads-v2-color-fg)"} type={TextType.P3}>Click to play</Text>
       </PlayButton>
     </ThumbnailContainer>
   ) : (
