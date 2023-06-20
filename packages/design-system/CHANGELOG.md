@@ -1,5 +1,32 @@
 # @appsmithorg/design-system
 
+## 2.1.13
+
+### Patch Changes
+
+- [#502](https://github.com/appsmithorg/design-system/pull/502) [`7eac4f78`](https://github.com/appsmithorg/design-system/commit/7eac4f78df1f0adba5e062b5ed76e2dd6fb7ec14) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: old gray in gif player, alignment in error message for editable text
+
+* [#437](https://github.com/appsmithorg/design-system/pull/437) [`436926a7`](https://github.com/appsmithorg/design-system/commit/436926a77e123c5696e14922c14d7089784da91e) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add smoke tests
+
+## 2.1.12
+
+### Patch Changes
+
+- [#492](https://github.com/appsmithorg/design-system/pull/492) [`041573d4`](https://github.com/appsmithorg/design-system/commit/041573d41846d2b07acd8677538a090b6ae59e2a) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: add prop to pause on hover
+
+## 2.1.11
+
+### Patch Changes
+
+- [#483](https://github.com/appsmithorg/design-system/pull/483) [`77aa9c38`](https://github.com/appsmithorg/design-system/commit/77aa9c389fec8eb83f919bc0660ce31dd2072b39) Thanks [@marks0351](https://github.com/marks0351)! - feat: Add a shortcut menu containing predefined ranges for DateRangePicker
+
+## 2.1.10
+
+### Patch Changes
+
+- [#479](https://github.com/appsmithorg/design-system/pull/479) [`c2c09b6c`](https://github.com/appsmithorg/design-system/commit/c2c09b6c7e6bb674c97b4613d87e359054dd98a8) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fixes for - old toast, datepicker
+  Added new icons for layout and js file
+
 ## 2.1.9
 
 ### Patch Changes

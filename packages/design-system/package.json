@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "2.1.9",
+  "version": "2.1.13",
   "description": "This is the package for the design system that powers the Appsmith platform",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -14,6 +14,7 @@
     "build-storybook": "build-storybook",
     "generate:component": "plop component",
     "test-storybook": "test-storybook",
+    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\"",
     "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN"
   },
   "author": "",
