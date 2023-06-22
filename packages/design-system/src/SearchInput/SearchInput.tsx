@@ -1,14 +1,20 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState, forwardRef, useEffect } from "react";
 import clsx from "classnames";
 
 import { SearchInputProps } from "./SearchInput.types";
 import { StyledSearchInput } from "./SearchInput.styles";
 import { SearchInputClassName } from "./SearchInput.constants";
+import { useDOMRef } from "Hooks/useDomRef";
 
 const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   (props, ref): JSX.Element => {
     const { className, onChange, placeholder, size = "sm", ...rest } = props;
-    const [value, setValue] = useState<string>(props.value || "");
+    const [value, setValue] = useState<string>("");
+    const inputRef = useDOMRef(ref);
+
+    useEffect(() => {
+      setValue(props.value || "");
+    }, [props.value]);
 
     const handleChange = (val: string) => {
       setValue(val);
@@ -20,10 +26,15 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         {...rest}
         className={clsx(SearchInputClassName, className)}
         endIcon={value ? "close-circle-line" : undefined}
-        endIconProps={{ onClick: () => handleChange("") }}
+        endIconProps={{
+          onClick: () => {
+            handleChange("");
+            inputRef.current?.focus();
+          },
+        }}
         onChange={handleChange}
         placeholder={placeholder || "Search"}
-        ref={ref}
+        ref={inputRef}
         renderAs="input"
         size={size}
         startIcon="search-line"
