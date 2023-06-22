@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.10
+
+### Patch Changes
+
+- [#502](https://github.com/appsmithorg/design-system/pull/502) [`7eac4f78`](https://github.com/appsmithorg/design-system/commit/7eac4f78df1f0adba5e062b5ed76e2dd6fb7ec14) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: old gray in gif player, alignment in error message for editable text
+
 ## 1.1.9
 
 ### Patch Changes

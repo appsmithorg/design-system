@@ -50,9 +50,11 @@ const editModeBgcolor = (
   isEditing: boolean,
   savingState: SavingState,
 ): string => {
-  if ((isInvalid && isEditing) || savingState === SavingState.ERROR) {
-    return "var(--ads-editable-text-subcomponent-error-background-color)";
-  } else if (!isInvalid && isEditing) {
+  if (
+    (isInvalid && isEditing) ||
+    savingState === SavingState.ERROR ||
+    (!isInvalid && isEditing)
+  ) {
     return "var(--ads-editable-text-subcomponent-default-background-color)";
   } else {
     return "transparent";
@@ -104,7 +106,7 @@ const TextContainer = styled.div<{
 
   &&& .${BlueprintClasses.EDITABLE_TEXT} {
     overflow: hidden;
-    background-color: var(--ads-editable-text-subcomponent-default-background-color);
+    background-color: ${(props) => props.bgColor};
     width: calc(100% - 40px);
     border-radius: var(--ads-v2-border-radius);
   }
@@ -262,7 +264,11 @@ export const EditableTextSubComponent = React.forwardRef(
             </IconWrapper>
           ) : value && !props.hideEditIcon ? (
             <IconWrapper className="icon-wrapper">
-              <Icon name={iconName} size={IconSize.XL} fillColor="var(--ads-v2-color-fg)" />
+              <Icon
+                name={iconName}
+                size={IconSize.XL}
+                fillColor="var(--ads-v2-color-fg)"
+              />
             </IconWrapper>
           ) : null}
         </TextContainer>
