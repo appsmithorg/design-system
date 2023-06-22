@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.14
+
+### Patch Changes
+
+- [#491](https://github.com/appsmithorg/design-system/pull/491) [`1e47f919`](https://github.com/appsmithorg/design-system/commit/1e47f9197fb10cd34e0924b06bb2820b9e82ba64) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Added lazy loading icon in icon component
+
+* [#503](https://github.com/appsmithorg/design-system/pull/503) [`ac791394`](https://github.com/appsmithorg/design-system/commit/ac791394225807a255104576c3b637a74aa1a275) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Search input focus issue and select styles specificity
+
 ## 2.1.13
 
 ### Patch Changes
