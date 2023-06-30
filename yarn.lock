@@ -166,7 +166,6 @@ __metadata:
     "@react-stately/toggle": ^3.4.4
     "@react-types/button": ^3.7.0
     "@rollup/plugin-image": ^3.0.1
-    "@rollup/plugin-terser": ^0.3.0
     "@rollup/plugin-url": ^8.0.1
     "@storybook/addon-actions": ^6.5.15
     "@storybook/addon-essentials": ^6.5.15
@@ -208,7 +207,7 @@ __metadata:
     loglevel: ^1.8.1
     normalize.css: ^8.0.1
     plop: ^3.1.1
-    postcss: ^8.4.21
+    postcss: ^8.4.24
     postcss-import: ^15.1.0
     prettier: ^2.8.1
     rc-select: ^14.4.3
@@ -221,7 +220,8 @@ __metadata:
     remixicon-react: ^1.0.0
     rollup: ^3.9.1
     rollup-plugin-peer-deps-external: ^2.2.4
-    rollup-plugin-postcss: ^4.0.2
+    rollup-plugin-postcss-modules: ^2.1.1
+    rollup-plugin-terser: ^7.0.2
     rollup-plugin-typescript2: ^0.34.1
     storybook-zeplin: ^1.7.3
     styled-components: ^5.3.6
@@ -4805,22 +4805,6 @@ __metadata:
     rollup:
       optional: true
   checksum: f9d8f587f10c51398fa8c23f1543e3073f969cf7e4acd7f401e02a3e3752702a9eb289ddb14009733ce37d04474c549aba9e7d13ebf50e26226266ba51546b69
-  languageName: node
-  linkType: hard
-
-"@rollup/plugin-terser@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@rollup/plugin-terser@npm:0.3.0"
-  dependencies:
-    serialize-javascript: ^6.0.0
-    smob: ^0.0.6
-    terser: ^5.15.1
-  peerDependencies:
-    rollup: ^2.x || ^3.x
-  peerDependenciesMeta:
-    rollup:
-      optional: true
-  checksum: 881b4a4d45ce84d891fbec2423ac20eebb881420126903299407e591417c2e04c9059c564cb4047ca7d8a28d5c96f8ef50200d163dc8b0ef3d77fc7e825d438a
   languageName: node
   linkType: hard
 
@@ -10783,6 +10767,13 @@ __metadata:
   version: 5.3.1
   resolution: "camelcase@npm:5.3.1"
   checksum: e6effce26b9404e3c0f301498184f243811c30dfe6d0b9051863bd8e4034d09c8c2923794f280d6827e5aa055f6c434115ff97864a16a963366fb35fd673024b
+  languageName: node
+  linkType: hard
+
+"camelcase@npm:^6.0.0 || ^7.0.0":
+  version: 7.0.1
+  resolution: "camelcase@npm:7.0.1"
+  checksum: 86ab8f3ebf08bcdbe605a211a242f00ed30d8bfb77dab4ebb744dd36efbc84432d1c4adb28975ba87a1b8be40a80fbd1e60e2f06565315918fa7350011a26d3d
   languageName: node
   linkType: hard
 
@@ -20849,6 +20840,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-modules@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "postcss-modules@npm:6.0.0"
+  dependencies:
+    generic-names: ^4.0.0
+    icss-utils: ^5.1.0
+    lodash.camelcase: ^4.3.0
+    postcss-modules-extract-imports: ^3.0.0
+    postcss-modules-local-by-default: ^4.0.0
+    postcss-modules-scope: ^3.0.0
+    postcss-modules-values: ^4.0.0
+    string-hash: ^1.1.1
+  peerDependencies:
+    postcss: ^8.0.0
+  checksum: 3bfcfabc0600f7c8fcb49873d67eb8c23c8d874b061dda840977cbe3de74d40be3be885f854594f51687d714d1aa57e83b46ac14ceb9b1b6e3a4d36f2596e2bb
+  languageName: node
+  linkType: hard
+
 "postcss-normalize-charset@npm:^5.1.0":
   version: 5.1.0
   resolution: "postcss-normalize-charset@npm:5.1.0"
@@ -21033,7 +21042,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.15, postcss@npm:^8.4.14, postcss@npm:^8.4.21":
+"postcss@npm:^8.2.15, postcss@npm:^8.4.14, postcss@npm:^8.4.21, postcss@npm:^8.4.24":
   version: 8.4.24
   resolution: "postcss@npm:8.4.24"
   dependencies:
@@ -22606,6 +22615,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"reserved-words@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "reserved-words@npm:0.1.2"
+  checksum: 72e80f71dcde1e2d697e102473ad6d597e1659118836092c63cc4db68a64857f07f509176d239c8675b24f7f03574336bf202a780cc1adb39574e2884d1fd1fa
+  languageName: node
+  linkType: hard
+
 "resize-observer-polyfill@npm:^1.5.0, resize-observer-polyfill@npm:^1.5.1":
   version: 1.5.1
   resolution: "resize-observer-polyfill@npm:1.5.1"
@@ -22808,6 +22824,20 @@ __metadata:
   peerDependencies:
     rollup: "*"
   checksum: 597bc7631f4e3cfc066a7da4e09e507258aba932008148328c1a4b48e7ffa755592ef4bcf0165320bbd5019afbdd326f569cd0c68406d820da9ab52e971c009b
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-postcss-modules@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "rollup-plugin-postcss-modules@npm:2.1.1"
+  dependencies:
+    camelcase: ^6.0.0 || ^7.0.0
+    postcss-modules: ^6.0.0
+    reserved-words: ^0.1.2
+    rollup-plugin-postcss: ^4.0.2
+  peerDependencies:
+    postcss: ^8.0.0
+  checksum: ce7a98e25f5ffe7e92d036f9bb6961ca5458ec729db8ba73bd88c13f3b2b0d5e6ca070591f0ad4fbcf35d469e1647350ba9d6257e16a1cbec5f757076b71fab9
   languageName: node
   linkType: hard
 
@@ -23214,7 +23244,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serialize-javascript@npm:^6.0.0, serialize-javascript@npm:^6.0.1":
+"serialize-javascript@npm:^6.0.1":
   version: 6.0.1
   resolution: "serialize-javascript@npm:6.0.1"
   dependencies:
@@ -23428,13 +23458,6 @@ __metadata:
   bin:
     smartwrap: src/terminal-adapter.js
   checksum: 1a6833eb1c3d8488b036df66dcab37dcdda5270bb9629c471155785c09ee1b591177a9774c588c43f8fa28833204500019265da2ffed28ac7bbf4589b943d2fa
-  languageName: node
-  linkType: hard
-
-"smob@npm:^0.0.6":
-  version: 0.0.6
-  resolution: "smob@npm:0.0.6"
-  checksum: 360b8b72896974411ec6ca9a352b306bd4233aea44309dbebaeb41fc822cf770b094589e42a8a025ae291f043cbfc4199fc01dd909e45c7bd3c23d287c7e5bac
   languageName: node
   linkType: hard
 

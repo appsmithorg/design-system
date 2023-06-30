@@ -2,11 +2,11 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "rollup-plugin-typescript2";
 import url from "@rollup/plugin-url";
 import svgr from "@svgr/rollup";
-import postcss from "rollup-plugin-postcss";
 import path from "path";
-import postcssImport from "postcss-import";
-import terser from "@rollup/plugin-terser";
+import { terser } from "rollup-plugin-terser";
 import image from "@rollup/plugin-image";
+import postcssModules from "rollup-plugin-postcss-modules";
+import postcssImport from "postcss-import";
 
 export default {
   // TODO: Figure out regex where each directory can be a separate module without having to manually add them
@@ -24,11 +24,13 @@ export default {
     typescript({
       useTsconfigDeclarationDir: true,
     }),
-    postcss({
+    postcssModules({
+      extract: path.resolve("build/css/design-system.css"),
       minimize: true,
+      modules: true,
       sourceMap: true,
       plugins: [postcssImport()],
-      extract: path.resolve("build/css/design-system.css"),
+      writeDefinitions: true,
     }),
     url(),
     svgr({
