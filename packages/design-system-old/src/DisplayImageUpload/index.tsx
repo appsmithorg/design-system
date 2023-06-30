@@ -169,6 +169,7 @@ const SpinnerContainer = styled.div`
   justify-content: center;
 `;
 
+// Dashboard is code-split away to avoid bundling Uppy in the main bundle
 const DashboardLazy = React.lazy(() => import("./Dashboard"));
 
 export default function DisplayImageUpload({
