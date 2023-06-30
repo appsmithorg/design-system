@@ -111,3 +111,14 @@ build
 .fleet
 
 storybook-static
+
+
+# yarn files
+.pnp.*
+.yarn/*
+# don't ignore these directories: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
