@@ -28,10 +28,6 @@ async function webpackConfig(config, options) {
     }
   })
 
-  config.resolve.plugins = config.resolve.plugins || [];
-
-  config.resolve.plugins.push(new TsconfigPathsPlugin());
-
   // Use SVGR for SVGs (based on https://github.com/storybookjs/storybook/issues/18557)
   // 1. Disable whatever is already set to load SVGs
   config.module.rules
@@ -41,20 +37,23 @@ async function webpackConfig(config, options) {
   // 2. Add SVGR instead
   config.module.rules.push({
     test: /\.svg$/,
-    use: [{
-      loader: '@svgr/webpack5',
-      options: {
-        svgoConfig: {
-          plugins: {
-            removeViewBox: false
-          }
+    use: [
+      {
+        loader: '@svgr/webpack'
+      },
+      {
+        loader: 'file-loader',
+        options: {
+          name: 'static/media/[path][name].[ext]'
         }
       }
-    }, "file-loader"],
-    issuer: /\.(ts|tsx|js|jsx|md|mdx)$/,
+    ],
+    type: 'javascript/auto',
+    issuer: {
+      and: [/\.(ts|tsx|js|jsx|md|mdx)$/]
+    }
   });
 
-  // return config
   return {
     ...config,
     resolve: {
@@ -65,9 +64,9 @@ async function webpackConfig(config, options) {
 }
 
 module.exports = {
-  framework: "@storybook/react",
+  framework: '@storybook/react',
   core: {
-    builder: "webpack5",
+    builder: '@storybook/builder-webpack5'
   },
     "stories": [
     "../src/**/*.stories.mdx",
