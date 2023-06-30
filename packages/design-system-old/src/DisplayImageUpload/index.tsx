@@ -163,7 +163,12 @@ const StyledDialog = styled(Dialog)`
 `;
 
 const SpinnerContainer = styled.div`
-  margin: 40px 0;
+  // Setting a concrete width and height to match the dashboard’s width and height
+  // and prevent a big layout jump when the dashboard loads
+  width: 750px;
+  height: 550px;
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
