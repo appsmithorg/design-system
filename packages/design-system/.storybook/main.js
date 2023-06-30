@@ -1,7 +1,7 @@
 const path = require("path");
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
-async function webpackConfig(config) {
+async function webpackConfig(config, options) {
 
   config.module.rules.find(
     (rule) => rule.test.toString() === '/\\.css$/'
@@ -52,11 +52,21 @@ async function webpackConfig(config) {
     issuer: /\.(ts|tsx|js|jsx|md|mdx)$/,
   });
 
-  return config
+  // return config
+  return {
+    ...config,
+    resolve: {
+      ...config.resolve,
+      plugins: [new TsconfigPathsPlugin()]
+    }
+  };
 }
 
 module.exports = {
-  "stories": [
+  core: {
+    builder: "webpack5",
+  },
+    "stories": [
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
@@ -78,3 +88,4 @@ module.exports = {
   "webpackFinal": webpackConfig,
   features: { buildStoriesJson: true },
 }
+
