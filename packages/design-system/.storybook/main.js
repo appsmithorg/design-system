@@ -28,6 +28,8 @@ async function webpackConfig(config, options) {
     }
   })
 
+  config.resolve.plugins = config.resolve.plugins || [];
+
   config.resolve.plugins.push(new TsconfigPathsPlugin());
 
   // Use SVGR for SVGs (based on https://github.com/storybookjs/storybook/issues/18557)
@@ -40,7 +42,7 @@ async function webpackConfig(config, options) {
   config.module.rules.push({
     test: /\.svg$/,
     use: [{
-      loader: '@svgr/webpack',
+      loader: '@svgr/webpack5',
       options: {
         svgoConfig: {
           plugins: {
@@ -63,6 +65,7 @@ async function webpackConfig(config, options) {
 }
 
 module.exports = {
+  framework: "@storybook/react",
   core: {
     builder: "webpack5",
   },
@@ -84,8 +87,7 @@ module.exports = {
     },
     "storybook-zeplin/register",
   ],
-  "framework": "@storybook/react",
-  "webpackFinal": webpackConfig,
+  webpackFinal: webpackConfig,
   features: { buildStoriesJson: true },
 }
 
