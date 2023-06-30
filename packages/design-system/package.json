@@ -26,7 +26,6 @@
     "@babel/preset-typescript": "^7.17.12",
     "@react-aria/focus": "^3.10.1",
     "@react-types/button": "^3.7.0",
-    "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-image": "^3.0.1",
     "@rollup/plugin-terser": "^0.3.0",
     "@rollup/plugin-url": "^8.0.1",
