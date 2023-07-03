@@ -1,7 +1,6 @@
 const path = require("path");
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 async function webpackConfig(config, options) {
-  config.module.rules.find(rule => rule.test.toString() === '/\\.css$/').exclude = /\.module\.css$/;
   config.module.rules.push({
     test: /\.module\.css$/,
     use: ['style-loader', {
