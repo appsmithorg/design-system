@@ -168,7 +168,9 @@ __metadata:
     "@react-stately/radio": ^3.6.2
     "@react-stately/toggle": ^3.4.4
     "@react-types/button": ^3.7.0
+    "@rollup/plugin-commonjs": ^24.0.0
     "@rollup/plugin-image": ^3.0.1
+    "@rollup/plugin-terser": ^0.3.0
     "@rollup/plugin-url": ^8.0.1
     "@storybook/addon-actions": ^7.0.24
     "@storybook/addon-essentials": ^7.0.24
@@ -223,8 +225,7 @@ __metadata:
     remixicon-react: ^1.0.0
     rollup: ^3.9.1
     rollup-plugin-peer-deps-external: ^2.2.4
-    rollup-plugin-postcss-modules: ^2.1.1
-    rollup-plugin-terser: ^7.0.2
+    rollup-plugin-postcss: ^4.0.2
     rollup-plugin-typescript2: ^0.34.1
     storybook: ^7.0.24
     storybook-zeplin: ^2.0.1
@@ -6404,6 +6405,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jridgewell/sourcemap-codec@npm:^1.4.13":
+  version: 1.4.15
+  resolution: "@jridgewell/sourcemap-codec@npm:1.4.15"
+  checksum: b881c7e503db3fc7f3c1f35a1dd2655a188cc51a3612d76efc8a6eb74728bef5606e6758ee77423e564092b4a518aba569bbb21c9bac5ab7a35b0c6ae7e344c8
+  languageName: node
+  linkType: hard
+
 "@jridgewell/trace-mapping@npm:^0.3.12, @jridgewell/trace-mapping@npm:^0.3.7, @jridgewell/trace-mapping@npm:^0.3.9":
   version: 0.3.14
   resolution: "@jridgewell/trace-mapping@npm:0.3.14"
@@ -7831,6 +7839,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rollup/plugin-commonjs@npm:^24.0.0":
+  version: 24.1.0
+  resolution: "@rollup/plugin-commonjs@npm:24.1.0"
+  dependencies:
+    "@rollup/pluginutils": ^5.0.1
+    commondir: ^1.0.1
+    estree-walker: ^2.0.2
+    glob: ^8.0.3
+    is-reference: 1.2.1
+    magic-string: ^0.27.0
+  peerDependencies:
+    rollup: ^2.68.0||^3.0.0
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+  checksum: 42faafc9bc8e04d75c86bb50d693ebb9c5eee19bf9ab3c09780b872547d12ff5ea85cfec7da75f5176d0aa4b5233101f667f44b85b331450a7bb14c95180852e
+  languageName: node
+  linkType: hard
+
 "@rollup/plugin-image@npm:^2.1.1":
   version: 2.1.1
   resolution: "@rollup/plugin-image@npm:2.1.1"
@@ -7855,6 +7882,22 @@ __metadata:
     rollup:
       optional: true
   checksum: a48e35f482189d27c608fb9ccc69128a70210cd3fa3ddcfa249fd99a337c9518bfd8bfce9da97cf4ee8c37833bdbfde76806603628036af79e4ea1d60c2e49f4
+  languageName: node
+  linkType: hard
+
+"@rollup/plugin-terser@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@rollup/plugin-terser@npm:0.3.0"
+  dependencies:
+    serialize-javascript: ^6.0.0
+    smob: ^0.0.6
+    terser: ^5.15.1
+  peerDependencies:
+    rollup: ^2.x || ^3.x
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+  checksum: 881b4a4d45ce84d891fbec2423ac20eebb881420126903299407e591417c2e04c9059c564cb4047ca7d8a28d5c96f8ef50200d163dc8b0ef3d77fc7e825d438a
   languageName: node
   linkType: hard
 
@@ -15286,13 +15329,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"camelcase@npm:^6.0.0 || ^7.0.0":
-  version: 7.0.1
-  resolution: "camelcase@npm:7.0.1"
-  checksum: 86ab8f3ebf08bcdbe605a211a242f00ed30d8bfb77dab4ebb744dd36efbc84432d1c4adb28975ba87a1b8be40a80fbd1e60e2f06565315918fa7350011a26d3d
-  languageName: node
-  linkType: hard
-
 "camelcase@npm:^6.2.0":
   version: 6.3.0
   resolution: "camelcase@npm:6.3.0"
@@ -19803,7 +19839,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^8.1.0":
+"glob@npm:^8.0.3, glob@npm:^8.1.0":
   version: 8.1.0
   resolution: "glob@npm:8.1.0"
   dependencies:
@@ -21351,7 +21387,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-reference@npm:^1.2.1":
+"is-reference@npm:1.2.1, is-reference@npm:^1.2.1":
   version: 1.2.1
   resolution: "is-reference@npm:1.2.1"
   dependencies:
@@ -23624,6 +23660,15 @@ __metadata:
   dependencies:
     sourcemap-codec: ^1.4.8
   checksum: 9a0e55a15c7303fc360f9572a71cffba1f61451bc92c5602b1206c9d17f492403bf96f946dfce7483e66822d6b74607262e24392e87b0ac27b786e69a40e9b1a
+  languageName: node
+  linkType: hard
+
+"magic-string@npm:^0.27.0":
+  version: 0.27.0
+  resolution: "magic-string@npm:0.27.0"
+  dependencies:
+    "@jridgewell/sourcemap-codec": ^1.4.13
+  checksum: 273faaa50baadb7a2df6e442eac34ad611304fc08fe16e24fe2e472fd944bfcb73ffb50d2dc972dc04e92784222002af46868cb9698b1be181c81830fd95a13e
   languageName: node
   linkType: hard
 
@@ -26203,24 +26248,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-modules@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "postcss-modules@npm:6.0.0"
-  dependencies:
-    generic-names: ^4.0.0
-    icss-utils: ^5.1.0
-    lodash.camelcase: ^4.3.0
-    postcss-modules-extract-imports: ^3.0.0
-    postcss-modules-local-by-default: ^4.0.0
-    postcss-modules-scope: ^3.0.0
-    postcss-modules-values: ^4.0.0
-    string-hash: ^1.1.1
-  peerDependencies:
-    postcss: ^8.0.0
-  checksum: 3bfcfabc0600f7c8fcb49873d67eb8c23c8d874b061dda840977cbe3de74d40be3be885f854594f51687d714d1aa57e83b46ac14ceb9b1b6e3a4d36f2596e2bb
-  languageName: node
-  linkType: hard
-
 "postcss-normalize-charset@npm:^5.1.0":
   version: 5.1.0
   resolution: "postcss-normalize-charset@npm:5.1.0"
@@ -28246,13 +28273,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reserved-words@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "reserved-words@npm:0.1.2"
-  checksum: 72e80f71dcde1e2d697e102473ad6d597e1659118836092c63cc4db68a64857f07f509176d239c8675b24f7f03574336bf202a780cc1adb39574e2884d1fd1fa
-  languageName: node
-  linkType: hard
-
 "resize-observer-polyfill@npm:^1.5.0, resize-observer-polyfill@npm:^1.5.1":
   version: 1.5.1
   resolution: "resize-observer-polyfill@npm:1.5.1"
@@ -28505,20 +28525,6 @@ __metadata:
   peerDependencies:
     rollup: "*"
   checksum: 597bc7631f4e3cfc066a7da4e09e507258aba932008148328c1a4b48e7ffa755592ef4bcf0165320bbd5019afbdd326f569cd0c68406d820da9ab52e971c009b
-  languageName: node
-  linkType: hard
-
-"rollup-plugin-postcss-modules@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "rollup-plugin-postcss-modules@npm:2.1.1"
-  dependencies:
-    camelcase: ^6.0.0 || ^7.0.0
-    postcss-modules: ^6.0.0
-    reserved-words: ^0.1.2
-    rollup-plugin-postcss: ^4.0.2
-  peerDependencies:
-    postcss: ^8.0.0
-  checksum: ce7a98e25f5ffe7e92d036f9bb6961ca5458ec729db8ba73bd88c13f3b2b0d5e6ca070591f0ad4fbcf35d469e1647350ba9d6257e16a1cbec5f757076b71fab9
   languageName: node
   linkType: hard
 
@@ -29243,6 +29249,13 @@ __metadata:
   bin:
     smartwrap: src/terminal-adapter.js
   checksum: 1a6833eb1c3d8488b036df66dcab37dcdda5270bb9629c471155785c09ee1b591177a9774c588c43f8fa28833204500019265da2ffed28ac7bbf4589b943d2fa
+  languageName: node
+  linkType: hard
+
+"smob@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "smob@npm:0.0.6"
+  checksum: 360b8b72896974411ec6ca9a352b306bd4233aea44309dbebaeb41fc822cf770b094589e42a8a025ae291f043cbfc4199fc01dd909e45c7bd3c23d287c7e5bac
   languageName: node
   linkType: hard
 
