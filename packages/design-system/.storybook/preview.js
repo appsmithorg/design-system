@@ -1,7 +1,6 @@
 import React from "react";
 import "normalize.css";
 import "./styles.css";
-import { addDecorator } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
 
 export const parameters = {
@@ -26,10 +25,15 @@ const containerStyle = {
   justifyContent: "center",
 };
 
-export const decorators = [
-  (Story) => <div style={containerStyle}>{Story()}</div>,
-];
+const preview = {
+  decorators: [
+    (Story) => (
+      <div className="ads-container" style={containerStyle}>
+        {Story()}
+      </div>
+    ),
+    (Story) => <MemoryRouter initialEntries={["/"]}>{Story()}</MemoryRouter>,
+  ],
+};
 
-addDecorator((Story) => (
-  <MemoryRouter initialEntries={["/"]}>{Story()}</MemoryRouter>
-));
+export default preview;
