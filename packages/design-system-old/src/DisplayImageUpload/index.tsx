@@ -11,8 +11,7 @@ import {
 import { getTypographyByKey } from "Constants/typography";
 
 import { ReactComponent as ProfileImagePlaceholder } from "../assets/icons/others/profile-placeholder.svg";
-import Spinner from "Spinner";
-import { IconSize } from "Icon";
+import Icon, { IconSize } from "Icon";
 
 type Props = {
   onChange: (file: File) => void;
@@ -175,7 +174,10 @@ const SpinnerContainer = styled.div`
 `;
 
 // Dashboard is code-split away to avoid bundling Uppy in the main bundle
-const DashboardLazy = React.lazy(() => import("./Dashboard"));
+const DashboardLazy = React.lazy(async () => {
+  await new Promise((resolve) => setTimeout(resolve, 10000));
+  return import("./Dashboard");
+});
 
 export default function DisplayImageUpload({
   onChange,
@@ -237,7 +239,7 @@ export default function DisplayImageUpload({
         <Suspense
           fallback={
             <SpinnerContainer>
-              <Spinner size={IconSize.XXXXL} />
+              <Icon name={"loader"} size={IconSize.XL} />
             </SpinnerContainer>
           }
         >
