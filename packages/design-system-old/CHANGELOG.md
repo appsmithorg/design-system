@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.11
+
+### Patch Changes
+
+- [#514](https://github.com/appsmithorg/design-system/pull/514) [`185c6272`](https://github.com/appsmithorg/design-system/commit/185c627221478a13a240219c432b1c885c5bc095) Thanks [@iamakulov](https://github.com/iamakulov)! - perf(DisplayImageUpload): code-split Uppy away
+
 ## 1.1.10
 
 ### Patch Changes
