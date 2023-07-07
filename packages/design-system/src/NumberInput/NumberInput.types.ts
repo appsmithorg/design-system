@@ -19,7 +19,7 @@ export type NumberInputProps = InputProps & {
   /** Error message of the input. Based on this, the input will show error state. */
   errorMessage?: string;
   /** Value */
-  value?: number;
+  value?: string | undefined;
   /** prefix */
   prefix?: string;
   /** suffix */
@@ -29,7 +29,7 @@ export type NumberInputProps = InputProps & {
   /** placeholder */
   placeholder?: string;
   /** onValue change trigger */
-  onChange?: (value: number) => void;
+  onChange?: (value: string | undefined) => void;
   /** Whether the input given passes the validation parameters. */
   isValid?: boolean;
   /** Maximum value of the input. */
