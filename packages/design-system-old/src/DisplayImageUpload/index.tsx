@@ -1,31 +1,23 @@
-import React, { useEffect, useState } from "react";
-import Uppy from "@uppy/core";
+import React, { Suspense, useEffect, useState } from "react";
 import Dialog from "DialogComponent";
 
-import { Dashboard, useUppy } from "@uppy/react";
-
 import styled from "styled-components";
-import ImageEditor from "@uppy/image-editor";
 import {
   REMOVE,
   createMessage,
   DISPLAY_IMAGE_UPLOAD_LABEL,
 } from "Constants/messages";
 
-import "@uppy/core/dist/style.css";
-import "@uppy/dashboard/dist/style.css";
-import "@uppy/image-editor/dist/style.css";
-import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
 import { getTypographyByKey } from "Constants/typography";
-import { importSvg } from "Utils/icon-loadables";
 
 import { ReactComponent as ProfileImagePlaceholder } from "../assets/icons/others/profile-placeholder.svg";
+import Icon, { IconSize } from "Icon";
 
 type Props = {
   onChange: (file: File) => void;
   onRemove?: () => void;
   onInvalidFileContent?: () => void;
-  submit: (uppy: Uppy.Uppy) => void;
+  submit: (uppy: import("@uppy/core").Uppy) => void;
   value: string;
   label?: string;
   disableUppyInformer?: boolean;
@@ -168,6 +160,25 @@ const StyledDialog = styled(Dialog)`
     color: var(--ads-v2-color-bg-emphasis-max);
   }
 `;
+
+const SpinnerContainer = styled.div`
+  // Setting a concrete width and height to match the dashboard’s width and height
+  // and prevent a big layout jump when the dashboard loads
+  width: 750px;
+  height: 550px;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+// Dashboard is code-split away to avoid bundling Uppy in the main bundle
+const DashboardLazy = React.lazy(async () => {
+  await new Promise((resolve) => setTimeout(resolve, 10000));
+  return import("./Dashboard");
+});
+
 export default function DisplayImageUpload({
   onChange,
   onRemove,
@@ -178,83 +189,6 @@ export default function DisplayImageUpload({
 }: Props) {
   const [loadError, setLoadError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const uppy = useUppy(() => {
-    const uppy = Uppy({
-      id: "uppy",
-      autoProceed: false,
-      allowMultipleUploads: false,
-      restrictions: {
-        maxNumberOfFiles: 1,
-        maxFileSize: 3145728, // 3 MB
-        /* Even this doesn't verify file content
-        e.g. when you rename a .json to .png and try to upload it */
-        allowedFileTypes: ["image/jpg", "image/jpeg", "image/png"],
-      },
-      infoTimeout: 5000,
-      locale: {
-        strings: {},
-      },
-    });
-
-    uppy.setOptions({
-      locale: {
-        strings: {
-          cancel: "Cancel",
-          done: "Cancel",
-        },
-      },
-    });
-
-    uppy.use(ImageEditor, {
-      id: "ImageEditor",
-      quality: 0.3,
-      cropperOptions: {
-        viewMode: 1,
-        aspectRatio: 1,
-        background: false,
-        responsive: true,
-        autoCropArea: 0.8,
-        autoCrop: true,
-      },
-      actions: {
-        revert: false,
-        rotate: false,
-        flip: false,
-        zoomIn: false,
-        zoomOut: false,
-        cropSquare: false,
-        cropWidescreen: false,
-        cropWidescreenVertical: false,
-      },
-    });
-
-    uppy.on("file-added", (file: File) => {
-      isFileContentAnImageType(file)
-        .then(() => {
-          onChange(file);
-          // TO trigger edit modal
-          const dashboard = uppy.getPlugin("uppy-img-upload-dashboard");
-          setTimeout(() => {
-            (dashboard as any).openFileEditor(file);
-          });
-        })
-        .catch(() => {
-          uppy.removeFile(uppy.getFiles()[0].id);
-          onInvalidFileContent?.();
-        });
-    });
-
-    uppy.on("upload", () => {
-      submit(uppy);
-      setIsModalOpen(false);
-    });
-
-    uppy.on("file-editor:complete", (updatedFile) => {
-      onChange(updatedFile);
-    });
-
-    return uppy;
-  });
 
   useEffect(() => {
     if (value) setLoadError(false);
@@ -302,50 +236,22 @@ export default function DisplayImageUpload({
           </div>
         }
       >
-        <Dashboard
-          id="uppy-img-upload-dashboard"
-          note="File size must not exceed 3 MB"
-          plugins={["ImageEditor"]}
-          uppy={uppy}
-          disableInformer={disableUppyInformer}
-        />
+        <Suspense
+          fallback={
+            <SpinnerContainer>
+              <Icon name={"loader"} size={IconSize.XL} />
+            </SpinnerContainer>
+          }
+        >
+          <DashboardLazy
+            onChange={onChange}
+            onInvalidFileContent={onInvalidFileContent}
+            submit={submit}
+            disableUppyInformer={disableUppyInformer}
+            onModalCloseRequested={() => setIsModalOpen(false)}
+          />
+        </Suspense>
       </StyledDialog>
     </Container>
   );
 }
-
-const isFileContentAnImageType = (file: File) => {
-  // ref: https://stackoverflow.com/questions/18299806/how-to-check-file-mime-type-with-javascript-before-upload
-  return new Promise((resolve, reject) => {
-    // get first 4 bytes of the file
-    const blob = (file as any).data.slice(0, 4);
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      if (reader.result) {
-        // convert content to a unsigned int array to read it's value
-        // then toString(16) converts to hexadecimal
-        const initialBytesOfFile = new Uint8Array(reader.result as ArrayBufferLike)
-                                .reduce((prev, curr ) => prev + curr.toString(16), "");
-        /*
-          compare initialBytesOfFile with magic numbers to identify file signature
-          file signatures reference: https://en.wikipedia.org/wiki/List_of_file_signatures
-        */
-        switch (initialBytesOfFile) {
-          // image/png
-          case "89504e47":
-            resolve(true);
-            break;
-          // image/jpeg or image/jpg
-          case "ffd8ffe0":
-          case "ffd8ffe1":
-          case "ffd8ffdb":
-          case "ffd8ffee":
-            resolve(true);
-            break;
-        }
-        reject();
-      }
-    };
-    reader.readAsArrayBuffer(blob);
-  });
-};
