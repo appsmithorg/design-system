@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.15
+
+### Patch Changes
+
+- [#517](https://github.com/appsmithorg/design-system/pull/517) [`31bfc6d7`](https://github.com/appsmithorg/design-system/commit/31bfc6d7298cf2c91c63ff24d476b6452a8b8cab) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Number input suffix issue
+
+* [#515](https://github.com/appsmithorg/design-system/pull/515) [`d140928c`](https://github.com/appsmithorg/design-system/commit/d140928ce40cf91862e8a5cad6bfff6e08e67fcf) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - chore: upgrade to storybook 7
+
 ## 2.1.14
 
 ### Patch Changes
