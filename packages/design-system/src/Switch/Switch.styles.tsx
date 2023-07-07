@@ -73,7 +73,7 @@ export const StyledSwitchInput = styled.input<{
     justify-content: flex-end;
     --switch-color-bg: var(--ads-v2-color-bg-brand-secondary);
 
-    // set position of thumb when checked
+    // set position of track when checked
     &::before {
       grid-area: on;
       box-shadow: 0 1px 4px 0 var(--ads-v2-color-gray-900);
@@ -97,7 +97,7 @@ export const StyledSwitchInput = styled.input<{
     }
   }
 
-  // the thumb
+  // the knob
   &::before {
     content: "";
     width: 1rem;
