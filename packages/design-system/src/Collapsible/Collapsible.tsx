@@ -24,7 +24,7 @@ export const CollapsibleContext = createContext<CollapsibleContextType>({
 });
 
 function CollapsibleHeader(props: CollapsibleHeaderProps) {
-  const { children, isCollapsibleArrowVisible } = props;
+  const { children } = props;
   const { isExpanded, onOpenChange } = useContext(CollapsibleContext);
 
   return (
@@ -36,12 +36,10 @@ function CollapsibleHeader(props: CollapsibleHeaderProps) {
         }
       }}
     >
-      {isCollapsibleArrowVisible && (
-        <Icon
-          name={isExpanded ? "arrow-down-s-line" : "arrow-up-s-line"}
-          size="md"
-        />
-      )}
+      <Icon
+        name={isExpanded ? "arrow-up-s-line" : "arrow-down-s-line"}
+        size="md"
+      />
 
       {children}
     </StyledCollapsibleHeader>

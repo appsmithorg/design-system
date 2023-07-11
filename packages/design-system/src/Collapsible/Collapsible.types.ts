@@ -22,11 +22,6 @@ export type CollapsibleHeaderProps = {
    * Clicking on this will toggle the collapsible.
    */
   children: React.ReactNode;
-  /**
-   * Whether to show the arrow-down-s-line and arrow-up-s-line icons or not.
-   * Please turn this off if you're using a custom icon.
-   */
-  isCollapsibleArrowVisible?: boolean;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export type CollapsibleContextType = {

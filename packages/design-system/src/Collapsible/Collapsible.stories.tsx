@@ -30,12 +30,12 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const CollapsibleTemplate: ComponentStory<typeof Collapsible> = (args) => {
-  const [{ isCollapsibleArrowVisible, isOpen }, updateArgs] = useArgs();
+  const [{ isOpen }, updateArgs] = useArgs();
   const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
     <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
-      <CollapsibleHeader isCollapsibleArrowVisible={isCollapsibleArrowVisible}>
+      <CollapsibleHeader>
         <Text kind="heading-s">Collapsible Header</Text>
       </CollapsibleHeader>
       <CollapsibleContent>
@@ -57,7 +57,6 @@ const CollapsibleTemplate: ComponentStory<typeof Collapsible> = (args) => {
 export const CollapsibleStory = CollapsibleTemplate.bind({});
 CollapsibleStory.storyName = "Collapsible";
 CollapsibleStory.args = {
-  isCollapsibleArrowVisible: true,
   isOpen: false,
 };
 CollapsibleStory.argTypes = {
@@ -106,32 +105,18 @@ CollapsibleStory.argTypes = {
       },
     },
   },
-  isCollapsibleArrowVisible: {
-    description: `Whether to show the arrow-down-s-line and arrow-up-s-line icons or not.
-    Please turn this off if you're using a custom icon.`,
-    table: {
-      type: {
-        summary: "boolean",
-      },
-      defaultValue: {
-        summary: "undefined",
-      },
-    },
-  },
 };
 
 // eslint-disable-next-line react/function-component-definition
 const CollapsibleHeaderTemplate: ComponentStory<typeof CollapsibleHeader> = (
   args,
 ) => {
-  const [{ isCollapsibleArrowVisible, isOpen }, updateArgs] = useArgs();
+  const [{ isOpen }, updateArgs] = useArgs();
   const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
     <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
-      <CollapsibleHeader isCollapsibleArrowVisible={isCollapsibleArrowVisible}>
-        {args.children}
-      </CollapsibleHeader>
+      <CollapsibleHeader>{args.children}</CollapsibleHeader>
     </Collapsible>
   );
 };
@@ -140,7 +125,6 @@ export const CollapsibleHeaderStory = CollapsibleHeaderTemplate.bind({});
 CollapsibleHeaderStory.storyName = "Header";
 CollapsibleHeaderStory.args = {
   children: <Text kind="heading-s">Collapsible Header</Text>,
-  isCollapsibleArrowVisible: true,
   isOpen: false,
 };
 CollapsibleHeaderStory.argTypes = {
@@ -150,18 +134,6 @@ CollapsibleHeaderStory.argTypes = {
     table: {
       type: {
         summary: "React.ReactNode",
-      },
-      defaultValue: {
-        summary: "undefined",
-      },
-    },
-  },
-  isCollapsibleArrowVisible: {
-    description: `Whether to show the arrow-down-s-line and arrow-up-s-line icons or not.
-    Please turn this off if you're using a custom icon.`,
-    table: {
-      type: {
-        summary: "boolean",
       },
       defaultValue: {
         summary: "undefined",
