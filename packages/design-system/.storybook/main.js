@@ -115,6 +115,7 @@ module.exports = {
     },
     "storybook-zeplin/register",
   ],
+  staticDirs: ["../src/__assets__"],
   webpackFinal: webpackConfig,
   features: {
     buildStoriesJson: true,
