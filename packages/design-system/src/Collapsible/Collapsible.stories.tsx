@@ -7,6 +7,7 @@ import {
 } from "./Collapsible";
 import { Text } from "../Text";
 import { useArgs } from "@storybook/client-api";
+import { ARROW_POSITIONS } from "./Collapsible.types";
 
 export default {
   title: "Design System/Collapsible",
@@ -30,12 +31,12 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const CollapsibleTemplate: ComponentStory<typeof Collapsible> = (args) => {
-  const [{ isOpen }, updateArgs] = useArgs();
+  const [{ arrowPosition, isOpen }, updateArgs] = useArgs();
   const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
     <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
-      <CollapsibleHeader>
+      <CollapsibleHeader arrowPosition={arrowPosition}>
         <Text kind="heading-s">Collapsible Header</Text>
       </CollapsibleHeader>
       <CollapsibleContent>
@@ -58,6 +59,7 @@ export const CollapsibleStory = CollapsibleTemplate.bind({});
 CollapsibleStory.storyName = "Collapsible";
 CollapsibleStory.args = {
   isOpen: false,
+  arrowPosition: ARROW_POSITIONS.START,
 };
 CollapsibleStory.argTypes = {
   children: {
@@ -105,18 +107,34 @@ CollapsibleStory.argTypes = {
       },
     },
   },
+  arrowPosition: {
+    control: "radio",
+    options: ["start", "end"],
+    defaultValue: "start",
+    description: "Position of the arrow icons.",
+    table: {
+      type: {
+        summary: `"start" | "end"`,
+      },
+      defaultValue: {
+        summary: "start",
+      },
+    },
+  },
 };
 
 // eslint-disable-next-line react/function-component-definition
 const CollapsibleHeaderTemplate: ComponentStory<typeof CollapsibleHeader> = (
   args,
 ) => {
-  const [{ isOpen }, updateArgs] = useArgs();
+  const [{ arrowPosition, isOpen }, updateArgs] = useArgs();
   const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
     <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
-      <CollapsibleHeader>{args.children}</CollapsibleHeader>
+      <CollapsibleHeader arrowPosition={arrowPosition}>
+        {args.children}
+      </CollapsibleHeader>
     </Collapsible>
   );
 };
@@ -126,6 +144,7 @@ CollapsibleHeaderStory.storyName = "Header";
 CollapsibleHeaderStory.args = {
   children: <Text kind="heading-s">Collapsible Header</Text>,
   isOpen: false,
+  arrowPosition: ARROW_POSITIONS.START,
 };
 CollapsibleHeaderStory.argTypes = {
   children: {
@@ -145,6 +164,20 @@ CollapsibleHeaderStory.argTypes = {
     table: {
       type: {
         summary: "string",
+      },
+    },
+  },
+  arrowPosition: {
+    control: "radio",
+    options: ["start", "end"],
+    defaultValue: "start",
+    description: "Position of the arrow icons.",
+    table: {
+      type: {
+        summary: `"start" | "end"`,
+      },
+      defaultValue: {
+        summary: "start",
       },
     },
   },

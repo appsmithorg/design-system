@@ -1,3 +1,4 @@
+import { Icon } from "Icon";
 import styled from "styled-components";
 
 export const StyledCollapsibleContainer = styled.div`
@@ -20,4 +21,8 @@ export const StyledCollapsibleContent = styled.div<{ isExpanded: boolean }>`
   display: ${(props) => (props.isExpanded ? "flex" : "none")};
   overflow: hidden;
   flex-direction: column;
+`;
+
+export const StyledEndIcon = styled(Icon)`
+  margin-left: auto;
 `;

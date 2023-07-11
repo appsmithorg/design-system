@@ -4,11 +4,13 @@ import {
   CollapsibleContentProps,
   CollapsibleProps,
   CollapsibleContextType,
+  ARROW_POSITIONS,
 } from "./Collapsible.types";
 import {
   StyledCollapsibleContainer,
   StyledCollapsibleContent,
   StyledCollapsibleHeader,
+  StyledEndIcon,
 } from "./Collapsible.styles";
 import {
   CollapsibleClassName,
@@ -27,7 +29,7 @@ export const CollapsibleContext = createContext<CollapsibleContextType>({
 });
 
 function CollapsibleHeader(props: CollapsibleHeaderProps) {
-  const { children, className } = props;
+  const { arrowPosition = ARROW_POSITIONS.START, children, className } = props;
   const { handleOpenChange, isExpanded } = useContext(CollapsibleContext);
 
   return (
@@ -35,12 +37,21 @@ function CollapsibleHeader(props: CollapsibleHeaderProps) {
       className={clsx(CollapsibleHeaderClassName, className)}
       onClick={handleOpenChange}
     >
-      <Icon
-        name={isExpanded ? "arrow-up-s-line" : "arrow-down-s-line"}
-        size="md"
-      />
+      {arrowPosition === ARROW_POSITIONS.START && (
+        <Icon
+          name={isExpanded ? "arrow-up-s-line" : "arrow-down-s-line"}
+          size="md"
+        />
+      )}
 
       {children}
+
+      {arrowPosition === ARROW_POSITIONS.END && (
+        <StyledEndIcon
+          name={isExpanded ? "arrow-up-s-line" : "arrow-down-s-line"}
+          size="md"
+        />
+      )}
     </StyledCollapsibleHeader>
   );
 }
