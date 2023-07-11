@@ -20,12 +20,12 @@ import { createContext } from "react";
 import clsx from "classnames";
 
 export const CollapsibleContext = createContext<CollapsibleContextType>({
-  isOpen: true,
+  isExpanded: true,
 });
 
 function CollapsibleHeader(props: CollapsibleHeaderProps) {
   const { children, isCollapsibleArrowVisible } = props;
-  const { isOpen, onOpenChange } = useContext(CollapsibleContext);
+  const { isExpanded, onOpenChange } = useContext(CollapsibleContext);
 
   return (
     <StyledCollapsibleHeader
@@ -38,7 +38,7 @@ function CollapsibleHeader(props: CollapsibleHeaderProps) {
     >
       {isCollapsibleArrowVisible && (
         <Icon
-          name={isOpen ? "arrow-down-s-line" : "arrow-up-s-line"}
+          name={isExpanded ? "arrow-down-s-line" : "arrow-up-s-line"}
           size="md"
         />
       )}
@@ -50,12 +50,12 @@ function CollapsibleHeader(props: CollapsibleHeaderProps) {
 
 function CollapsibleContent(props: CollapsibleContentProps) {
   const { children } = props;
-  const { isOpen } = useContext(CollapsibleContext);
+  const { isExpanded } = useContext(CollapsibleContext);
 
   return (
     <StyledCollapsibleContent
       className={CollapsibleContentClassName}
-      isOpen={isOpen}
+      isExpanded={isExpanded}
     >
       {children}
     </StyledCollapsibleContent>
@@ -63,22 +63,22 @@ function CollapsibleContent(props: CollapsibleContentProps) {
 }
 
 function Collapsible(props: CollapsibleProps) {
-  const { children, className, onOpenChange, open } = props;
+  const { children, className, isOpen, onOpenChange } = props;
   const [collapsibleState, setCollapsibleState] = useState<{
-    isOpen: boolean;
+    isExpanded: boolean;
     onOpenChange?: () => void;
   }>({
-    isOpen: !!open,
+    isExpanded: !!isOpen,
   });
 
   const handleOpenChange = () => {
     setCollapsibleState({
       ...collapsibleState,
-      isOpen: !collapsibleState.isOpen,
+      isExpanded: !collapsibleState.isExpanded,
     });
 
     if (onOpenChange) {
-      onOpenChange(!collapsibleState.isOpen);
+      onOpenChange(!collapsibleState.isExpanded);
     }
   };
 

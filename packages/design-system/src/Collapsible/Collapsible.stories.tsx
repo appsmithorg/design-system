@@ -30,11 +30,11 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const CollapsibleTemplate: ComponentStory<typeof Collapsible> = (args) => {
-  const [{ isCollapsibleArrowVisible, open }, updateArgs] = useArgs();
-  const changeOpenState = (state: boolean) => updateArgs({ open: state });
+  const [{ isCollapsibleArrowVisible, isOpen }, updateArgs] = useArgs();
+  const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
-    <Collapsible onOpenChange={changeOpenState} open={open}>
+    <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
       <CollapsibleHeader isCollapsibleArrowVisible={isCollapsibleArrowVisible}>
         <Text kind="heading-s">Collapsible Header</Text>
       </CollapsibleHeader>
@@ -58,7 +58,7 @@ export const CollapsibleStory = CollapsibleTemplate.bind({});
 CollapsibleStory.storyName = "Collapsible";
 CollapsibleStory.args = {
   isCollapsibleArrowVisible: true,
-  open: false,
+  isOpen: false,
 };
 CollapsibleStory.argTypes = {
   children: {
@@ -72,7 +72,7 @@ CollapsibleStory.argTypes = {
       },
     },
   },
-  open: {
+  isOpen: {
     control: {
       type: "boolean",
     },
@@ -91,7 +91,7 @@ CollapsibleStory.argTypes = {
     description: "Callback for when the collapsible is opened or closed.",
     table: {
       type: {
-        summary: "(open: boolean) => void",
+        summary: "(isOpen: boolean) => void",
       },
       defaultValue: {
         summary: "undefined",
@@ -124,11 +124,11 @@ CollapsibleStory.argTypes = {
 const CollapsibleHeaderTemplate: ComponentStory<typeof CollapsibleHeader> = (
   args,
 ) => {
-  const [{ isCollapsibleArrowVisible, open }, updateArgs] = useArgs();
-  const changeOpenState = (state: boolean) => updateArgs({ open: state });
+  const [{ isCollapsibleArrowVisible, isOpen }, updateArgs] = useArgs();
+  const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
-    <Collapsible onOpenChange={changeOpenState} open={open}>
+    <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
       <CollapsibleHeader isCollapsibleArrowVisible={isCollapsibleArrowVisible}>
         {args.children}
       </CollapsibleHeader>
@@ -141,7 +141,7 @@ CollapsibleHeaderStory.storyName = "Header";
 CollapsibleHeaderStory.args = {
   children: <Text kind="heading-s">Collapsible Header</Text>,
   isCollapsibleArrowVisible: true,
-  open: false,
+  isOpen: false,
 };
 CollapsibleHeaderStory.argTypes = {
   children: {
@@ -174,11 +174,11 @@ CollapsibleHeaderStory.argTypes = {
 const CollapsibleContentTemplate: ComponentStory<typeof CollapsibleContent> = (
   args,
 ) => {
-  const [{ open }, updateArgs] = useArgs();
-  const changeOpenState = (state: boolean) => updateArgs({ open: state });
+  const [{ isOpen }, updateArgs] = useArgs();
+  const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
-    <Collapsible onOpenChange={changeOpenState} open={open}>
+    <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
       <CollapsibleContent>{args.children}</CollapsibleContent>
     </Collapsible>
   );
@@ -187,7 +187,7 @@ const CollapsibleContentTemplate: ComponentStory<typeof CollapsibleContent> = (
 export const CollapsibleContentStory = CollapsibleContentTemplate.bind({});
 CollapsibleContentStory.storyName = "Content";
 CollapsibleContentStory.args = {
-  open: true,
+  isOpen: true,
   children: (
     <Text kind="body-m">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt,

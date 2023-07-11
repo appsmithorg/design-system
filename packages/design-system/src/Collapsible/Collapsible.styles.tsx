@@ -16,8 +16,8 @@ export const StyledCollapsibleHeader = styled.div`
   padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-0);
 `;
 
-export const StyledCollapsibleContent = styled.div<{ isOpen: boolean }>`
-  display: ${(props) => (props.isOpen ? "flex" : "none")};
+export const StyledCollapsibleContent = styled.div<{ isExpanded: boolean }>`
+  display: ${(props) => (props.isExpanded ? "flex" : "none")};
   overflow: hidden;
   flex-direction: column;
 `;
