@@ -20,19 +20,13 @@ If you have to style your text using a typographic token in certain specific cas
 
 [//]: # (TODO: insert text tokens image >> insert corresponding color tokens image)
 
-<aside>
-  ⚠️ Do not use a different color than the color intended for a specific type.
-
-</aside>
+> ⚠️ Do not use a different color than the color intended for a specific type.
 
 Important links are styled with the primary color of ADS 2.0 defined by the token, `colors.semantics.primary.text`. Notice that this token does not refer to the actual color but only mentions that this is a semantic token to be used for styling primary text. (This in turn references a primitive token `colors.raw.orange.600`) Using a higher level token makes your design future proof in case the primary color were to change in a new revision of ADS. Your designs would automatically get updated to the new primary color because you are using a token at the right level. This is really important to take note of.
 
 Remember the order of preference:
 
-<aside>
-  🎏 Component >>> UI category token >> semantic token > primitive token.
-
-</aside>
+>  🎏 Component >>> UI category token >> semantic token > primitive token.
 
 Use a component if it exists. If it doesn’t meet your case, style your design using a UI category token. If you cannot find the right token at this level, go down a level and find semantic tokens. In rare cases where you do not find the right token at this level, use a primitive token.
 
@@ -40,10 +34,7 @@ Use a component if it exists. If it doesn’t meet your case, style your design 
 
 Icons can be accessed using the Icon component in ADS 2.0. Icons by default come with the color defined by the token, `colors.ui.content.icon.color` which in turn refers to `Gray-600`. Do not change this color unless necessary.
 
-<aside>
-  👉 Always use the highest level token to style your UI. That way your designs are future-proof if the underlying value were to change in a new version of ADS.
-
-</aside>
+>  👉 Always use the highest level token to style your UI. That way your designs are future-proof if the underlying value were to change in a new version of ADS.
 
 [//]: # (TODO: Insert visual from the snapshot modal from mobile responsive project)
 

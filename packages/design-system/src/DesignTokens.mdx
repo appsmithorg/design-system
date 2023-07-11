@@ -22,9 +22,7 @@ Not using the same tokens lead to un-intended consequences of style inconsistenc
 | Component tokens | button-primary-bg-color, textarea-placeholder | These tokens apply to a specific UI component and hence are more relatable in order for one to reason how to style. | Offers full clarity in terms of which token to use, but is too specific and doesn’t scale when new components have to be introduced. Also, requires a token to be created for every component of the system and every time a new component is added to the system. These variables are not set on the root element,so they are scoped to the component they are defined in. |
 | Category tokens | ui-content-Modal-heading, ui-control-placeholder, ui-supplementary-info | These tokens apply to a category of components rather than individual components. (More info. below) | Requires some interpretation to understand how an atomic component falls under a category. Easier to apply across a range of components. Easier to relate to. Scales well with new components. Engineers building snowflakes should endeavor to use these tokens.   |
 
-<aside>
-  💡 The values of the category tokens are derived from semantic tokens and which are in turn derived from core tokens. Every level derives values from the previous level.
-</aside>
+>  💡 The values of the category tokens are derived from semantic tokens and which are in turn derived from core tokens. Every level derives values from the previous level.
 
 ## Category tokens
 
@@ -55,9 +53,7 @@ Eg: A Modal could have text, input field, an information block and a call-to-act
 
 🎯 **Consistency of style across components**
 
-<aside>
-  👉 All component atoms **belonging to a category** should use the same style tokens to ensure that they are styled consistently, **unless** this leads to a bad visual design choice.
-</aside>
+>  👉 All component atoms **belonging to a category** should use the same style tokens to ensure that they are styled consistently, **unless** this leads to a bad visual design choice.
 
 For example:
 - The border of an input field should match the border of a checkbox, as they both belong to the category of input controls.
@@ -65,11 +61,7 @@ For example:
 
 This generic structure should allow designers and engineers to understand which token to apply, without a lot of interpretation. This method will also scale well in cases when people have to create snowflakes by providing them an easy reference.
 
-<aside>
-  🧵 Category tokens are simpler to use. Learn how to use them in your work.
+>  🧵 Category tokens are simpler to use. Learn how to use them in your work. [How to style using design tokens](https://www.notion.so/How-to-style-using-design-tokens-fcc35bf74ce14083962704be5b3939cd?pvs=21)
 
-  [How to style using design tokens](https://www.notion.so/How-to-style-using-design-tokens-fcc35bf74ce14083962704be5b3939cd?pvs=21)
-
-</aside>
 
 In the cases that this doesn't work - we have semantic tokens that provide more stylistic control for one to achieve in their design projects.
