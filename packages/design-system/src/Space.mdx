@@ -1,0 +1,79 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Space" />
+
+# Space
+Space is a key part of UI design. Mastering the use of space helps one become a better visual designer.
+
+Usage of space is depends on the content on the screen and the emphasis that this content needs. It is cumbersome to create higher order tokens for spacing rules and hence ADS 2.0 defines primitive tokens for space.
+
+[How to use space in UI design](https://www.notion.so/How-to-use-space-in-UI-design-9a4c276bdc254115b1cf846e0198aa4f?pvs=21)
+
+## Fundamentals
+
+A pixel baseline grid is a visual guide that is used to align elements within a digital design. It consists of horizontal lines spaced at regular intervals, typically in increments of 4 or 8 pixels. The purpose of the grid is to provide a consistent structure for aligning and organising design elements, such as text, images, and layout elements.
+
+There are a few key concepts to understand when working with a pixel baseline grid:
+
+1. Baseline: A baseline is the horizontal line on which text is aligned. When using a pixel baseline grid, the baseline will typically be spaced at 4 or 8 pixel intervals.
+2. Leading: Leading refers to the vertical space between baselines in a block of text. When using a pixel baseline grid, the leading should be an even multiple of the baseline grid increment.
+3. Alignment: Alignment refers to the positioning of design elements relative to each other and to the overall layout. The pixel baseline grid can be used to ensure that elements are aligned consistently and accurately within the design.
+
+> To use a pixel baseline grid in your design, you can set up a grid system in your design software of choice. This will allow you to snap elements to the grid as you work, ensuring that they are aligned to the baseline and spaced consistently. You can also use the grid as a reference when adjusting the spacing and alignment of elements manually.
+
+In summary, a pixel baseline grid is a useful tool for creating consistent, well-organized digital designs. By aligning elements to the grid and using it as a reference for spacing and alignment, you can create designs that are visually appealing and easy to read.
+
+### 4-point grid
+
+This simply means to use ‘increments of 4’ to size and space out the elements on a page. any defined height or width should be divisible by 4, including padding, margins and line heights.
+
+## General Guidelines
+
+### Containers
+
+For most containers, we use an external spacing of **24px** between them, and a **padding of 16px** or **12px** if the content is simpler and more compact. Elements within the container usually have **16px** gutters, with **24px** gutters between major sections.
+
+Smaller container like *datepicker, property pane, menu* can have 12px.
+
+![Screenshot 2022-12-27 at 3.34.21 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/466b28d6-5e10-4fc3-b8d7-423a1b101f28/Screenshot_2022-12-27_at_3.34.21_PM.png)
+
+Larger container like Modal ***can*** have 16px.
+
+![Screenshot 2022-12-27 at 3.34.54 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f3db9175-f947-4b38-b96f-d215e3a2ff22/Screenshot_2022-12-27_at_3.34.54_PM.png)
+
+<aside>
+  💡 **Example:** If you are using a 4px baseline grid, your spacing values should be 4, 8, 12, 16, 20, 24, 32 and so on.
+
+</aside>
+
+### Component Level Spacing
+
+4px Examples
+
+![Screenshot 2023-01-03 at 11.29.50 AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dfde134c-d51e-4de1-bfa3-958422e82970/Screenshot_2023-01-03_at_11.29.50_AM.png)
+
+
+Two Related Components will have spacing of 8px.
+
+![Screenshot 2022-12-27 at 3.04.16 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4890e436-55b5-4893-af63-9af8d7faabbf/Screenshot_2022-12-27_at_3.04.16_PM.png)
+
+### Layout Spacing
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4a696224-794e-4eff-9dcd-7b99c8706384/Untitled.png)
+
+
+## Spacing Token Names
+
+Skip spacing multiples that might be too close to one another.
+
+| Token Name | Value |
+| --- | --- |
+| Sp-1 | 4px |
+| Sp-2 | 8px |
+| Sp-3 | 12px |
+| Sp-4 | 16px |
+| Sp-5 | 24px |
+| Sp-6 | 32px |
+| Sp-7 | 40px |
+| Sp-8 | 48px |
+| Sp-9 | 56px |
