@@ -1,28 +1,35 @@
-import { TextProps } from "Text";
-
 export type CollapsibleProps = {
-  /** The title of the collapsible component. */
-  title: string;
-  /** The content to be displayed when the component is expanded. */
+  /**
+   * Both header and content of the collapsible will go here.
+   */
+  children: React.ReactNode;
+  /** The open state of the collapsible. */
+  open: boolean;
+  /** Callback for when the collapsible is opened or closed. */
+  onOpenChange?: (open: boolean) => void;
+  /* (try not to) pass addition classes here */
+  className?: string;
+};
+
+export type CollapsibleContentProps = {
+  /** Content to be displayed when the component is expanded. */
+  children: React.ReactNode;
+};
+
+export type CollapsibleHeaderProps = {
+  /**
+   * Any React Node that will go in the header.
+   * Clicking on this will toggle the collapsible.
+   */
   children: React.ReactNode;
   /**
-   * Whether the component is initially expanded or collapsed.
-   * Defaults to true.
+   * Whether to show the arrow-down-s-line and arrow-up-s-line icons or not.
+   * Please turn this off if you're using a custom icon.
    */
-  isOpen?: boolean;
-  /** Callback function to be called when the component is expanded or collapsed. */
-  onHeaderClick?: (isOpen: boolean) => void;
-  /** Additional CSS classes for the collapsible container. */
-  className?: string;
-  /** Whether to show the icon or not. */
-  showIcon?: boolean;
-  /**
-   * The name of the custom icon to be displayed on the left side of the title.
-   * Defaults to the arrow-down-s-line and arrow-up-s-line icons.
-   */
-  leftIcon?: string;
-  /** The name of the icon to be displayed on the right side of the title. */
-  rightIcon?: string;
-  /** Additional properties for customizing the header text. */
-  headerProps?: TextProps;
+  isCollapsibleArrowVisible?: boolean;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+export type CollapsibleContextType = {
+  isOpen: boolean;
+  onOpenChange?: () => void;
 };

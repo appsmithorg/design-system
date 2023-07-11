@@ -17,10 +17,10 @@ export const StyledCollapsibleHeader = styled.div`
   padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-0);
 `;
 
-export const StyledCollapsibleBody = styled.div<{ isCollapsibleOpen: boolean }>`
+export const StyledCollapsibleContent = styled.div<{ isOpen: boolean }>`
   background-color: var(--ads-v2-color-bg);
   color: var(--ads-v2-color-fg);
-  display: ${(props) => (props.isCollapsibleOpen ? "flex" : "none")};
+  display: ${(props) => (props.isOpen ? "flex" : "none")};
   overflow: hidden;
   flex-direction: column;
 `;

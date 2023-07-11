@@ -1,80 +1,107 @@
-import React, { useState } from "react";
-import { CollapsibleProps } from "./Collapsible.types";
+import React, { useContext, useEffect, useState } from "react";
 import {
-  StyledCollapsibleBody,
+  CollapsibleHeaderProps,
+  CollapsibleContentProps,
+  CollapsibleProps,
+  CollapsibleContextType,
+} from "./Collapsible.types";
+import {
   StyledCollapsibleContainer,
+  StyledCollapsibleContent,
   StyledCollapsibleHeader,
 } from "./Collapsible.styles";
 import {
-  CollapsibleBodyClassName,
   CollapsibleClassName,
+  CollapsibleContentClassName,
   CollapsibleHeaderClassName,
 } from "./Collapsible.constants";
 import { Icon } from "Icon";
-import { Text } from "Text";
+import { createContext } from "react";
+import clsx from "classnames";
 
-function Collapsible(props: CollapsibleProps) {
-  const {
-    children,
-    className,
-    headerProps,
-    isOpen,
-    leftIcon,
-    onHeaderClick,
-    rightIcon,
-    showIcon = true,
-    title,
-  } = props;
-  const [isCollapsibleOpen, setIsCollapsibleOpen] = useState(
-    isOpen ? true : false,
-  );
+export const CollapsibleContext = createContext<CollapsibleContextType>({
+  isOpen: true,
+});
+
+function CollapsibleHeader(props: CollapsibleHeaderProps) {
+  const { children, isCollapsibleArrowVisible } = props;
+  const { isOpen, onOpenChange } = useContext(CollapsibleContext);
 
   return (
-    <StyledCollapsibleContainer
-      className={`${CollapsibleClassName} ${className}`}
+    <StyledCollapsibleHeader
+      className={CollapsibleHeaderClassName}
+      onClick={() => {
+        if (onOpenChange) {
+          onOpenChange();
+        }
+      }}
     >
-      <StyledCollapsibleHeader
-        className={CollapsibleHeaderClassName}
-        onClick={() => {
-          setIsCollapsibleOpen(!isCollapsibleOpen);
+      {isCollapsibleArrowVisible && (
+        <Icon
+          name={isOpen ? "arrow-down-s-line" : "arrow-up-s-line"}
+          size="md"
+        />
+      )}
 
-          if (onHeaderClick) {
-            onHeaderClick(!isCollapsibleOpen);
-          }
-        }}
-      >
-        {showIcon && (
-          <Icon
-            name={
-              leftIcon
-                ? leftIcon
-                : isCollapsibleOpen
-                ? "arrow-down-s-line"
-                : "arrow-up-s-line"
-            }
-            size="md"
-          />
-        )}
+      {children}
+    </StyledCollapsibleHeader>
+  );
+}
 
-        <Text renderAs="p" {...headerProps}>
-          {title}
-        </Text>
+function CollapsibleContent(props: CollapsibleContentProps) {
+  const { children } = props;
+  const { isOpen } = useContext(CollapsibleContext);
 
-        {rightIcon && <Icon name={rightIcon} size="md" />}
-      </StyledCollapsibleHeader>
+  return (
+    <StyledCollapsibleContent
+      className={CollapsibleContentClassName}
+      isOpen={isOpen}
+    >
+      {children}
+    </StyledCollapsibleContent>
+  );
+}
 
-      <StyledCollapsibleBody
-        className={CollapsibleBodyClassName}
-        isCollapsibleOpen={isCollapsibleOpen}
+function Collapsible(props: CollapsibleProps) {
+  const { children, className, onOpenChange, open } = props;
+  const [collapsibleState, setCollapsibleState] = useState<{
+    isOpen: boolean;
+    onOpenChange?: () => void;
+  }>({
+    isOpen: !!open,
+  });
+
+  const handleOpenChange = () => {
+    setCollapsibleState({
+      ...collapsibleState,
+      isOpen: !collapsibleState.isOpen,
+    });
+
+    if (onOpenChange) {
+      onOpenChange(!collapsibleState.isOpen);
+    }
+  };
+
+  useEffect(() => {
+    setCollapsibleState({
+      ...collapsibleState,
+      onOpenChange: handleOpenChange,
+    });
+  }, [onOpenChange]);
+
+  return (
+    <CollapsibleContext.Provider value={collapsibleState}>
+      <StyledCollapsibleContainer
+        className={clsx(CollapsibleClassName, className)}
       >
         {children}
-      </StyledCollapsibleBody>
-    </StyledCollapsibleContainer>
+      </StyledCollapsibleContainer>
+    </CollapsibleContext.Provider>
   );
 }
 
 Collapsible.displayName = "Collapsible";
-Collapsible.Header = StyledCollapsibleHeader;
-Collapsible.Body = StyledCollapsibleBody;
+CollapsibleHeader.displayName = "CollapsibleHeader";
+CollapsibleContent.displayName = "CollapsibleContent";
 
-export { Collapsible };
+export { Collapsible, CollapsibleHeader, CollapsibleContent };
