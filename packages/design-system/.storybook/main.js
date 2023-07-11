@@ -86,6 +86,7 @@ module.exports = {
     "../src/Typography.mdx",
     "../src/Colors.mdx",
     "../src/Space.mdx",
+    "../src/FAQs.mdx",
     "../src/*.mdx",
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)",
