@@ -81,6 +81,11 @@ module.exports = {
     options: {},
   },
   stories: [
+    "../src/Introduction.mdx",
+    "../src/DesignTokens.mdx",
+    "../src/Typography.mdx",
+    "../src/Colors.mdx",
+    "../src/Space.mdx",
     "../src/*.mdx",
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)",
