@@ -21,20 +21,19 @@ import clsx from "classnames";
 
 export const CollapsibleContext = createContext<CollapsibleContextType>({
   isExpanded: true,
+  handleOpenChange: () => {
+    return null;
+  },
 });
 
 function CollapsibleHeader(props: CollapsibleHeaderProps) {
   const { children, className } = props;
-  const { isExpanded, onOpenChange } = useContext(CollapsibleContext);
+  const { handleOpenChange, isExpanded } = useContext(CollapsibleContext);
 
   return (
     <StyledCollapsibleHeader
       className={clsx(CollapsibleHeaderClassName, className)}
-      onClick={() => {
-        if (onOpenChange) {
-          onOpenChange();
-        }
-      }}
+      onClick={handleOpenChange}
     >
       <Icon
         name={isExpanded ? "arrow-up-s-line" : "arrow-down-s-line"}
@@ -62,33 +61,23 @@ function CollapsibleContent(props: CollapsibleContentProps) {
 
 function Collapsible(props: CollapsibleProps) {
   const { children, className, isOpen, onOpenChange } = props;
-  const [collapsibleState, setCollapsibleState] = useState<{
-    isExpanded: boolean;
-    onOpenChange?: () => void;
-  }>({
-    isExpanded: !!isOpen,
-  });
+  const [isExpanded, setIsExpanded] = useState(!!isOpen);
 
   const handleOpenChange = () => {
-    setCollapsibleState({
-      ...collapsibleState,
-      isExpanded: !collapsibleState.isExpanded,
-    });
-
     if (onOpenChange) {
-      onOpenChange(!collapsibleState.isExpanded);
+      onOpenChange(!isExpanded);
     }
+
+    setIsExpanded(!isExpanded);
   };
 
-  useEffect(() => {
-    setCollapsibleState({
-      ...collapsibleState,
-      onOpenChange: handleOpenChange,
-    });
-  }, [onOpenChange]);
-
   return (
-    <CollapsibleContext.Provider value={collapsibleState}>
+    <CollapsibleContext.Provider
+      value={{
+        isExpanded,
+        handleOpenChange,
+      }}
+    >
       <StyledCollapsibleContainer
         className={clsx(CollapsibleClassName, className)}
       >

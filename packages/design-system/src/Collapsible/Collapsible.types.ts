@@ -4,7 +4,7 @@ export type CollapsibleProps = {
    */
   children: React.ReactNode;
   /** The open state of the collapsible. */
-  isOpen: boolean;
+  isOpen?: boolean;
   /** Callback for when the collapsible is opened or closed. */
   onOpenChange?: (isOpen: boolean) => void;
   /* (try not to) pass addition classes here */
@@ -30,5 +30,5 @@ export type CollapsibleHeaderProps = {
 
 export type CollapsibleContextType = {
   isExpanded: boolean;
-  onOpenChange?: () => void;
+  handleOpenChange: () => void;
 };
