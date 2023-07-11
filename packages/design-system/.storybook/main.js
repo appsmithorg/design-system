@@ -43,7 +43,7 @@ async function webpackConfig(config, options) {
           svgoConfig: {
             plugins: [
               {
-                name: 'preset-default',
+                name: "preset-default",
                 params: {
                   overrides: {
                     removeViewBox: false,
@@ -79,7 +79,11 @@ module.exports = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    "../src/*.mdx",
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -100,5 +104,6 @@ module.exports = {
   },
   docs: {
     autodocs: true,
+    defaultName: "Documentation",
   },
 };
