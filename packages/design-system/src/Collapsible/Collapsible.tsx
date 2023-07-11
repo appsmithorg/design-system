@@ -24,12 +24,12 @@ export const CollapsibleContext = createContext<CollapsibleContextType>({
 });
 
 function CollapsibleHeader(props: CollapsibleHeaderProps) {
-  const { children } = props;
+  const { children, className } = props;
   const { isExpanded, onOpenChange } = useContext(CollapsibleContext);
 
   return (
     <StyledCollapsibleHeader
-      className={CollapsibleHeaderClassName}
+      className={clsx(CollapsibleHeaderClassName, className)}
       onClick={() => {
         if (onOpenChange) {
           onOpenChange();
@@ -47,12 +47,12 @@ function CollapsibleHeader(props: CollapsibleHeaderProps) {
 }
 
 function CollapsibleContent(props: CollapsibleContentProps) {
-  const { children } = props;
+  const { children, className } = props;
   const { isExpanded } = useContext(CollapsibleContext);
 
   return (
     <StyledCollapsibleContent
-      className={CollapsibleContentClassName}
+      className={clsx(CollapsibleContentClassName, className)}
       isExpanded={isExpanded}
     >
       {children}

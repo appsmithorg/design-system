@@ -14,6 +14,8 @@ export type CollapsibleProps = {
 export type CollapsibleContentProps = {
   /** Content to be displayed when the component is expanded. */
   children: React.ReactNode;
+  /* (try not to) pass addition classes here */
+  className?: string;
 };
 
 export type CollapsibleHeaderProps = {
@@ -22,6 +24,8 @@ export type CollapsibleHeaderProps = {
    * Clicking on this will toggle the collapsible.
    */
   children: React.ReactNode;
+  /* (try not to) pass addition classes here */
+  className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export type CollapsibleContextType = {

@@ -140,6 +140,14 @@ CollapsibleHeaderStory.argTypes = {
       },
     },
   },
+  className: {
+    description: "(try not to) pass addition classes here.",
+    table: {
+      type: {
+        summary: "string",
+      },
+    },
+  },
 };
 
 // eslint-disable-next-line react/function-component-definition
@@ -182,6 +190,14 @@ CollapsibleContentStory.argTypes = {
       },
       defaultValue: {
         summary: "undefined",
+      },
+    },
+  },
+  className: {
+    description: "(try not to) pass addition classes here.",
+    table: {
+      type: {
+        summary: "string",
       },
     },
   },
