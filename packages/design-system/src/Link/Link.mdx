@@ -1,0 +1,39 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as LinkStories from './Link.stories';
+
+<Meta of={LinkStories} />
+
+# Link
+
+Text links are used to redirect users to another location and are typically embedded within or immediately following a sentence. They are suitable for both inline text links within paragraphs and standalone text links. By default, text links open in the same browser tab.
+
+Text links should be designed to blend seamlessly with the surrounding text, adopting its characteristics such as font style, color, and alignment.
+
+## Anatomy
+
+## Kind
+
+Primary (Orange)
+<Canvas of={LinkStories.PrimaryLink} />
+
+Secondary (Gray)
+<Canvas of={LinkStories.SecondaryLink} />
+
+## Spacing
+
+## Buttons versus links
+
+Links are primarily used for navigation and typically appear within or directly following a sentence.
+
+Buttons, on the other hand, are primarily used for actions, such as "Add", "Close", "Cancel", or "Save". Plain buttons, which resemble links in appearance, are used for less important or less frequently used actions.
+
+### Content
+
+To enhance usability, ensure that link text is meaningful even when viewed out of context, without relying on generic text like "here" or repetitive phrases like "learn more". Instead, use nouns or specific details in the link text to provide clear and relevant information.
+
+### Colour
+
+Text links should be visually consistent with the surrounding text by adopting the default primary color.
+
+However, when placed within or adjacent to text with a different color, the text link can match that color, while being darker *secondary variant* to indicate its actionable nature.
