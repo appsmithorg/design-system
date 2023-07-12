@@ -1,0 +1,56 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ToastStories from './Toast.stories';
+
+<Meta of={ToastStories} />
+
+# Toast
+
+
+### Component Overview
+
+The toast component provides quick feedback to users, without disrupting their workflow.The toast appears at the top of the interface, making it easy to see and understand. It's a non-intrusive way of providing feedback, which is important for users who want to stay focused on their work.
+
+In terms of anatomy, toast notifications typically have a simple design, consisting of a container with text and an icon.The text is typically short and to the point, providing users with quick information on what just happened. The icon is often used to convey the type of message being displayed, such as success, error, warning, or info.
+
+### Anatomy
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5e81e26f-8f41-44c4-945c-2d254c330e66/Untitled.png)
+
+### Kind
+
+There are different kinds of toast notifications, including neutral, success, error, warning, and info.
+
+- Neutral toasts are typically used for messages that don't require a specific action from the user.
+- Success toasts are used to inform users that an action has been completed successfully, and the desired outcome has been achieved.
+- Error toasts are used to inform users that something went wrong, and they need to take action to fix it.
+- Warning toasts are used to inform users about potential issues that may arise in the future. Finally, Info toasts are used to provide users with additional information about a particular action or event.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6d0f0f56-9fa4-4652-a663-240083bffaa7/Untitled.png)
+
+---
+
+Spacing
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7d819209-e325-4cb3-b968-4a2c18f92f31/Untitled.png)
+
+---
+
+### Usage
+
+## Best practices
+
+Toast should:
+
+- Be used for short messages to confirm an action
+- Do not go over 3 words
+- Rarely be used for error messages
+
+When to use:
+
+- For success messages
+- Only for non-critical errors that are relevant at the moment and can be explained in 3 words.
+
+## Content guidelines
+
+Toasts should be used for short messages to confirm an action and should not go over 3 words. They should rarely be used for error messages, and only for non-critical errors that are relevant at the moment and can be explained in 3 words.
