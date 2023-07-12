@@ -1,0 +1,45 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as SegmentedControlStories from './SegmentedControl.stories';
+
+<Meta of={SegmentedControlStories} />
+
+
+### Component Overview
+
+Segmented control is a linear set of buttons, typically with two or more segments, each of which may contain text or icons and may have text labels.
+
+### Anatomy
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/575feb8b-55b3-424d-906a-de7b0eda2010/Untitled.png)
+
+1. **Selected content tab:** Only one content tab can be selected at a time and there should always be one selected.
+2. **Content tab:** Selectable container for each content view.
+3. **Text label:** Describes the content view.
+4. **Icon**: Indicates the content view.
+
+---
+
+Spacing
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb8f0dd7-bb42-45d4-abe0-afa7d41ff8ca/Untitled.png)
+
+---
+
+### Usage
+
+- Segmented controls can be used for single or multiple choices, such as in the Property Pane where only one segment can be selected for position options.
+- Segmented controls are ideal for large groups of content, unlike toggles which are typically used for binary decisions.
+- Limit the number of segments to around five in a wide interface.
+- It's generally best to keep the size of segments consistent, including icon and title widths, to maintain a balanced appearance.
+
+Avoid using more than five control as provided in the component. Instead, consider using a [select component](https://www.notion.so/Select-347c0988903d4addb5224f2a1bb36c8e?pvs=21).
+
+## Content guidelines
+
+### Text label
+
+- Be concise and specific and limit text labels to one to three words.
+- Text labels should clearly communicate the view users will see and the content contained in the view.
+
+### States
