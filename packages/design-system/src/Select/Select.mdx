@@ -1,0 +1,69 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as SelectStories from './Select.stories';
+
+<Meta of={SelectStories} />
+
+
+### Component Overview
+
+Select allows users to make single or multiple selections from a list of options, usually found in forms or inline editing.
+
+### Anatomy
+
+Single select
+
+1. **Field label:** Field labels should indicate what information the field requires.
+2. **Text input field:** The field people click in to receive the options they can choose from. Once selected, the option will be shown in the text input.
+3. **Menu:** Contains the list of all selectable items.
+4. **Placeholder text:** Includes information that supports the field label and other contextual cues, for example, *“Start typing to see names”*.
+
+**Multi select**
+
+1. **Field label:** Field labels should indicate what sort of information the field requires and are usually left-aligned directly above the input area.
+2. **Text input field:** The field people click in to receive the options they can choose from. Once selected, each option is shown in the text input.
+3. **Menu:** Contains the list of all selectable items.
+4. **Selected item:** Displays what options have been selected. Users can remove selections by clicking the **x**.
+5. **Clear all:** The **x** clears everything in the text input field. It only appears when at least one option has been selected
+
+---
+
+### Kind
+
+### Spacing
+
+---
+
+###
+
+## Best practices
+
+The select component should:
+
+- Use a dropdown menu to select from four or more pre-defined options.
+- Whenever possible, have a default option selected.
+- Use "Select" as a placeholder option only if there is no logical default option.
+
+### Usage
+
+****When to use****
+
+- Use the select component within a form when users need to select from a list of options and submit data.
+- Use the select component when the user experience is primarily form-based.
+
+**When not to use**
+
+It is best practice to avoid using a select component if there are fewer than three options for selection. Instead, use a radio button group.
+
+### Select versus Dropdown
+
+Select and dropdown components look similar, they have different functions:
+
+- A select presents a list of options from which users can select only one item. It works best in forms when users choose an option from the select list and submit data.
+- A dropdown presents a list of options from which users can select one or several options. Dropdown options are used for taking an action, filtering, or sorting existing content.
+
+Another important difference between the two components is the underlying code. The select component's appearance is determined by the browser being used, while the dropdown component can be styled as needed.
+
+## Content guidelines
+
+### States
