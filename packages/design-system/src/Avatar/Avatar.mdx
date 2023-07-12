@@ -1,0 +1,46 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as AvatarStories from './Avatar.stories';
+
+<Meta of={AvatarStories} />
+
+
+### Overview
+
+Avatars are used in the interface to display a small thumbnail representation of individuals or names.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1095d0eb-6f67-4774-ad13-0e4ac48236ba/Untitled.png)
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8d6b33c1-e4f3-42ac-9304-eb1a860848dc/Untitled.png)
+
+### **Kind**
+
+Image, Initials,
+
+### Size
+
+Small 24px, Medium 32px
+
+## **Fallbacks**
+
+In case there is an error loading the avatar image, the component will fallback to an alternative option in the following order:
+
+- The first letter of the `alt` text
+- A generic avatar icon
+
+*(To check if possible)*
+
+As the avatar is a visual representation of a user or entity. Make sure there’s an alt text equivalent included.
+
+### **Initials**
+
+If there is no image available, use a person's initials instead.
+
+## Avatar Group
+
+**Avatar group:** 
+An avatar group is a collection of avatars that are displayed stacked on top of each other.
+
+Stacked groups are limited to five avatars and should only be used with medium or small avatars.
+
+![CleanShot 2023-07-06 at 19.08.39@2x.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/79021fa2-ebec-4eb7-8814-598115f58117/CleanShot_2023-07-06_at_19.08.392x.png)
