@@ -1,0 +1,41 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as RadioStories from './Radio.stories';
+
+<Meta of={RadioStories} />
+
+# Radio
+
+A radio input is used to allow users to select only one option from a group of choices. It is typically displayed as a part of a radio group, where only one option can be selected at a time.
+
+
+## Anatomy
+
+1. **Radio**: The selection control.
+2. **Radio label**: Text label associated with the checkbox
+
+### Best Practice
+
+- Use a radio group with a "None" option for an unselected state.
+- Set a default option in the radio group.
+
+### When not to use
+
+• Use checkboxes when users need to select multiple options.
+
+## Content guidelines
+
+**Group labels (optional)**
+
+- Use headings to provide context or clarity for a set of radio buttons.
+- Avoid redundant group labels for radio buttons if they are already part of a larger group of components with a group label.
+- Use sentence case for group labels.
+
+**Radio button labels**
+
+- Ensure clear and concise labels for radio buttons.
+- Position labels to the right of radio button inputs.
+
+### States
+
+Default, Hover, Active, Disabled
