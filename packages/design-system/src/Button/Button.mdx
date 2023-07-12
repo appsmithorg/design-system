@@ -1,0 +1,77 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Overview
+
+Buttons communicate actions that users can take. They are typically placed throughout your UI, in places like: Dialogs, Forms, Pages, etc.
+
+### Anatomy
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0bd55133-8902-4de1-9a30-11ae9aa14fdb/Untitled.png)
+
+### Kind
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4c3b2f7c-ff56-4dc8-a335-d278d820f099/Untitled.png)
+
+**Primary**
+
+Use primary for displaying the most important action of the screen, such as confirming something or submitting a form, as it’s visually more eye-catching than the secondary button.
+
+---
+
+**Secondary**
+
+Use secondary for providing alternatives to the primary action, or when none of your actions are more important than the others.
+
+---
+
+**Tertiary**
+
+Tertiary buttons are usually used for miscellaneous actions: the action is important, but may not be what the user is looking to do right then.
+
+---
+
+**Danger**
+
+Use destructive buttons for actions that remove or limit, such as deleting a page or blocking a user. Don't use it for actions such as cancel buttons.
+
+---
+
+### Spacing
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c382a0d-2057-4208-bf7a-15c4b44032c4/Untitled.png)
+
+---
+
+## Usage
+
+Use buttons when the user's action results in changes to either the back-end or the front-end of the website. Examples of such actions include submitting a form, triggering a pop-up or modal, or revealing a panel on the same page.
+
+| Use a button | Don't use a button |
+| --- | --- |
+| When a user wants to take an action, such as starting a new process or verifying a decision, they may need to perform certain steps, such as triggering a pop-up or modal window. | To make the text inside paragraphs or lists actionable—use a https://www.notion.so/Link-9ca66c9fa80b4adc9159c2a0639afc62?pvs=21. |
+| When a user needs to perform tasks like submitting data, opening or closing UI elements, or interacting with system functionalities, they initiate steps to complete the action, such as submitting data, triggering UI elements, or executing specific operations. | Don’t use button for navigation. |
+
+### **Interaction**
+
+Unless the button is disabled, the user can tap or click on it to perform the action assigned to it.
+
+### Content
+
+Button copy should:
+
+- start with a verb, like ‘Save’, ‘New query’, ‘Generate new page’
+- be just a few words
+- describe the action (if someone only reads the button, they should know what will happen next)
+- connect to the content around it — for example, it might use the same words as the title
+- be in sentence case (only capitalise the first letter of the first word)
+- have no full stop.
+
+Markdown for : Image `![](IMAGEURL "a title")`
+
+*Paste Screenshot of the states*
+
+Refer : https://makeitclear.com/ux-ui-tips-a-guide-to-creating-buttons/
