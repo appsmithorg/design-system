@@ -1,0 +1,57 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ModalStories from './Modal.stories';
+
+<Meta of={ModalStories} />
+
+
+### Overview
+
+Modal design components are commonly used in user interfaces to display additional content or prompt for user interaction while overlaying the main content.
+
+---
+
+### Anatomy
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16d75070-d4c2-4992-91de-c42fcf6cca0c/Untitled.png)
+
+1. **Header:** Text title accompanied by a close button
+2. **Content slot:** Container for the main content of the modal; the content can be text, forms, lists, cards, or other elements.
+3. **"Close" action**: Iconic button for exiting the modal
+4. **Footer:** Container for buttons related to the content of the modal
+
+---
+
+### Confirmation
+
+Use a modal to confirm irreversible actions and prevent mistakes. This is particularly helpful when a user is about to make a decision that has permanent consequences, such as deleting important data or cancelling a subscription.
+
+Use a main button to indicate if the user should proceed or not, and a secondary button to cancel the action.
+
+---
+
+### Usage
+
+A modal can be used in various contexts and to display a variety of information.
+
+### **When to use**
+
+- Use a modal when you need to display content that temporarily blocks interactions with the main view of an application.
+- Use a modal when you need to ask for confirmation from a user before proceeding.
+- Use a modal when the user needs to take critical or non-reversible actions
+
+### **When not to use**
+
+- For non-essential information that is not related to the current user flow.
+- When the modal requires additional information, which is unavailable within the modal itself, for decision making.
+
+---
+
+To ensure users have a way to close a modal, consider implementing one or more of the following options:
+
+- **Cancel button**
+- **Close button**
+- **Escape key**
+- **Clicking outside of the window**
+
+`(Need input)`
