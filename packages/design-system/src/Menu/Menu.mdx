@@ -1,0 +1,44 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as MenuStories from './Menu.stories';
+
+<Meta of={MenuStories} />
+
+
+### Overview
+
+Menu is a collection of composable components designed for navigation purposes.
+
+Menus appear when users interact with a button, action, or other control. They are commonly opened from icon buttons, buttons.
+
+### Anatomy
+
+1. Container
+2. List item (including label text and optional leading icon, trailing icon, and keyboard command)
+3. Divider (optional)
+4. Multi-level
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ba597634-9852-4559-ad0f-b0fed93c1efb/Untitled.png)
+
+- Menus are used to present lists of options, and these options can consist of label text, leading icons, trailing icons.
+- List items within menus have various interaction states, such as hover, focus, and press, indicating their response to user actions.
+- When list items in menus can only be used under specific conditions or at certain times, they should be visually displayed as disabled rather than completely removed from view.
+
+---
+
+Use a menu to display a list of choices on a temporary surface, such as a set of overflow actions in a top app bar.
+
+Menus allow users to make a selection from multiple options.
+
+A menu opens upon interaction with an element (such as an icon, button, or when users perform a specific action.
+
+### Usage
+
+- Menus should be easy to open, close, and interact with
+- Menu content should be suited to user needs
+- Menu items should be easy to scan
+
+- Avoid making the menu unnecessarily long by overusing it.
+- Group the menu list using dividers and headings, and create submenus as necessary.
+
+### Select vs Menu
