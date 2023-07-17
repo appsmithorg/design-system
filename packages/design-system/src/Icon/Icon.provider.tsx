@@ -141,6 +141,9 @@ const LightbulbFlashLine = importRemixIcon(
 const LinksLineIcon = importRemixIcon(
   () => import("remixicon-react/LinksLineIcon"),
 );
+const LinkUnlinkIcon = importRemixIcon(
+  () => import("remixicon-react/LinkUnlinkIcon"),
+);
 const InfoIcon = importRemixIcon(
   () => import("remixicon-react/InformationLineIcon"),
 );
@@ -1055,6 +1058,7 @@ const ICON_LOOKUP = {
   "line-dashed": LineDashedIcon,
   "line-dotted": LineDottedIcon,
   "link-2": Link2,
+  "link-unlink": LinkUnlinkIcon,
   "links-line": LinksLineIcon,
   "lock-2-line": Lock2LineIcon,
   "lock-password-line": LockPasswordLineIcon,
