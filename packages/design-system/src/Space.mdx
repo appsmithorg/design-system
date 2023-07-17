@@ -7,8 +7,6 @@ Space is a key part of UI design. Mastering the use of space helps one become a 
 
 Usage of space is depends on the content on the screen and the emphasis that this content needs. It is cumbersome to create higher order tokens for spacing rules and hence ADS 2.0 defines primitive tokens for space.
 
-[How to use space in UI design](https://www.notion.so/How-to-use-space-in-UI-design-9a4c276bdc254115b1cf846e0198aa4f?pvs=21)
-
 ## Fundamentals
 
 A pixel baseline grid is a visual guide that is used to align elements within a digital design. It consists of horizontal lines spaced at regular intervals, typically in increments of 4 or 8 pixels. The purpose of the grid is to provide a consistent structure for aligning and organising design elements, such as text, images, and layout elements.
@@ -35,28 +33,28 @@ For most containers, we use an external spacing of **24px** between them, and a 
 
 Smaller container like *datepicker, property pane, menu* can have 12px.
 
-![Screenshot 2022-12-27 at 3.34.21 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/466b28d6-5e10-4fc3-b8d7-423a1b101f28/Screenshot_2022-12-27_at_3.34.21_PM.png)
+![External spacing - 12px](./docs/external-spacing-12.png)
 
 Larger container like Modal ***can*** have 16px.
 
-![Screenshot 2022-12-27 at 3.34.54 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f3db9175-f947-4b38-b96f-d215e3a2ff22/Screenshot_2022-12-27_at_3.34.54_PM.png)
+![External spacing - 16px](./docs/external-spacing-16.png)
 
-  > 💡 **Example:** If you are using a 4px baseline grid, your spacing values should be 4, 8, 12, 16, 20, 24, 32 and so on.
+  > 💡 **Example:** If you are using a 4px baseline grid, your spacing values should be 4, 8, 12, 16, 20, 24, 32 and so on.
 
 ### Component Level Spacing
 
 4px Examples
 
-![Screenshot 2023-01-03 at 11.29.50 AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dfde134c-d51e-4de1-bfa3-958422e82970/Screenshot_2023-01-03_at_11.29.50_AM.png)
+![Internal spacing - 4px](./docs/internal-spacing-4.png)
 
 
 Two Related Components will have spacing of 8px.
 
-![Screenshot 2022-12-27 at 3.04.16 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4890e436-55b5-4893-af63-9af8d7faabbf/Screenshot_2022-12-27_at_3.04.16_PM.png)
+![Internal spacing - 8px](./docs/internal-spacing-8.png)
 
 ### Layout Spacing
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4a696224-794e-4eff-9dcd-7b99c8706384/Untitled.png)
+![Layout spacing](./docs/layout-spacing.png)
 
 
 ## Spacing Token Names
@@ -95,11 +93,11 @@ Since space comes into play when laying out elements on the page, we start with 
 
 </aside>
 
-**1️⃣ When you are designing a UI, first, think about the container the information belongs to.**
+**1️⃣ When you are designing a UI, first, think about the container the information belongs to.**
 
 Large container blocks typically need headings. Use the appropriate heading type to indicate hierarchy (Eg: Page container block will use Page Heading, Modal container block will use Modal heading etc.). Each of these container types have their defined padding guidelines (see the spec below)
 
-**2️⃣ Place the information in the body of the container. Group them into sections.**
+**2️⃣ Place the information in the body of the container. Group them into sections.**
 
 Sections are logical units that group information together. A section comprises of controls, content, actions or response blocks. (Refer to the Getting started page for information on these categories).
 
@@ -117,7 +115,7 @@ A section could have sub-sections within it.
 The spacing rules to remember are:
 
 <aside>
-  ☝ The gap between items in a section *depends* on the size of the parent.
+  ☝️ The gap between items in a section *depends* on the size of the parent.
 
   If the parent container is of large type (Page, Modal, Overlay) — the gap is 16px.
   If the parent container is a small one (Property pane, Sidebar, menu) — the gap between items is 12px.
@@ -138,7 +136,7 @@ There could be scenarios where a certain element belongs more “closely” than
 
 Eg: The ‘Add more’ button in the following UI is related to the input field above. Hence, these two items have to be grouped together and the gap between them needs to be adjusted accordingly.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5a930aaf-bcbc-485d-9754-60368f1b8d6f/Untitled.png)
+![Use space to create associations](./docs/space-grouping.png)
 
 ### Specs for layout spacing
 
@@ -162,19 +160,20 @@ Let us illustrate how these spacing guidelines apply using a few examples:
 
 Here is a UI with a few containers.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/de658f72-b9d3-436c-ac08-1ac554c906dd/Untitled.png)
+![Containers in UI](./docs/containers-in-ui.png)
 
 Every container has a defined padding.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/864b462c-ed9a-4bf6-8879-436a1b2a3840/Untitled.png)
+![Padding in container](./docs/padding-in-container.png)
 
 The heading of a container has a padding.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3cefc1fc-a476-4314-b8b7-15a06c05a451/Untitled.png)
+![Padding in container 2](./docs/padding-in-container-2.png)
 
 Sections and gap between sections in a container
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/274e348e-a628-46d2-a377-3681c1f13a33/Untitled.png)
+![Padding in container 3](./docs/padding-in-container-3.png)
+
 
 ## For Designers
 
