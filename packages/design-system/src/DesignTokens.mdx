@@ -28,7 +28,7 @@ Not using the same tokens lead to un-intended consequences of style inconsistenc
 
 This is a top-down lens which seeks to question what constitutes a UI and categorise them.
 
-![One way to categorise the elements in a UI.](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9ad3b133-dccc-4e3f-8f13-d9f43fb0b022/Untitled.png)
+![One way to categorise the elements in a UI.](./docs/categorize-elements-in-ui.png)
 One way to categorise the elements in a UI.
 
 At a broad level, we can reason that a UI consists of the following categories:
@@ -41,7 +41,7 @@ The idea is to define tokens at this level and ensure that the users of the syst
 
 This exercise is needed for atoms and not molecules in a system. Molecules or higher-order components are typically composed of atoms from various categories.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0f358ab8-7d8c-4af2-a95c-f8f4d5b953ea/Untitled.png)
+![Parts of a Modal](./docs/parts-of-a-modal.png)
 
 Eg: A Modal could have text, input field, an information block and a call-to-action button. It contains components from all the categories above.
 
@@ -49,7 +49,7 @@ Eg: A Modal could have text, input field, an information block and a call-to-act
 
 🎯 **Remove ambiguity** By ensuring that we work close to the UI level, it is **easy to identify** the token to use in order to style an element.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/01079165-9693-4000-8a41-fc3dae55944f/Untitled.png)
+![Modal - Remove Ambiguity](./docs/modal-remove-ambiguity)
 
 🎯 **Consistency of style across components**
 
@@ -61,7 +61,130 @@ For example:
 
 This generic structure should allow designers and engineers to understand which token to apply, without a lot of interpretation. This method will also scale well in cases when people have to create snowflakes by providing them an easy reference.
 
->  🧵 Category tokens are simpler to use. Learn how to use them in your work. [How to style using design tokens](https://www.notion.so/How-to-style-using-design-tokens-fcc35bf74ce14083962704be5b3939cd?pvs=21)
+>  🧵 Category tokens are simpler to use. Learn how to use them in your work below.
 
 
 In the cases that this doesn't work - we have semantic tokens that provide more stylistic control for one to achieve in their design projects.
+
+# How to style using design tokens
+
+Every UI element comprises of structural surfaces that are styled using presentational attributes to make it unique.
+
+**eg:** An input field consists of the following structural properties: label, value, placeholder, helper, icon.
+
+[//]: # (TODO: Get labelled screenshot from Vasanth- https://www.notion.so/appsmith/How-to-style-using-design-tokens-fcc35bf74ce14083962704be5b3939cd?pvs=4#3c74a11be196461982175e8ed823fe55)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b2954674-0901-488b-a570-3a83e04ae03a/Untitled.png)
+
+Structural elements do not always comprise of text.
+
+![Parts of a switch](./docs/parts-of-a-switch.png)
+<figcaption>The knob and track are structural elements of a Switch that lend it a distinctive look.</figcaption>
+
+There are various presentation attributes we could use to style these surfaces. A text label can be styled with typographic styles (font style, font weight, font size, font color), while a button could have a shadow and border styles applied to it.
+
+The following are the presentational attributes available to us, in ADS:
+
+- font style
+- text color
+- background color
+- border (border color, stroke width etc)
+- shadow (inset, outset shadows)
+
+You will find tokens defined in the following format in Figma.
+(Note: The exact name in Figma would be **colors/ui-control/regular/label.** This is due to how the tokens were defined in JSON for exporting to Token studio. We will correct this once we figure out how to do this well. In any case, if you search for a token — you will see it show up properly in Figma’s property pane.)
+
+[//]: # (TODO: How to embed this page so the preview shows?)
+https://www.figma.com/file/5QitVVvqgEc6nhR7SbdinY/ADS2.0---Tokens?node-id=2507%3A46415&t=aLuYuSiYCsg7nxad-4
+
+## How to style?
+
+**If you have to style a snowflake / new component**
+
+- Identify the category this component belongs to (input, action, response, or content)
+- Identify it’s structural surfaces
+- For each state of the component (default, hover, active, disabled etc.)
+  - For every structural surface — apply the corresponding presentation token to the surface, ***as needed***.
+
+That’s it. You’ve styled the component!
+
+Let us illustrate the above process with an example of styling a switch.
+
+Category: Input control
+
+**Structural surfaces:** track, knob, label
+
+- Category tokens available for input controls:
+
+
+    | State | Presentation attribute | Token name | token value |
+    | --- | --- | --- | --- |
+    | default | text | ui/control/label/text |  |
+    |  | background-color | ui/control/default/bg-color |  |
+    |  | border-color | ui/control/default/border-color |  |
+    |  | border-style | ui/control/default/border-style |  |
+    |  | shadow | ui/control/default/shadow |  |
+    |  |  |  |  |
+    | hover | text | ui/control/label/text | same as default |
+    |  | background-color | ui/control/hover/bg-color |  |
+    |  | border-color | ui/control/hover/border-color |  |
+    |  | border-style | ui/control/hover/border-style |  |
+    |  | shadow | ui/control/hover/shadow |  |
+    |  |  |  |  |
+    | active | text | ui/control/label/text | same as default |
+    |  | background-color | ui/control/active/bg-color |  |
+    |  | border-color | ui/control/active/border-color |  |
+    |  | border-style | ui/control/active/border-style |  |
+    |  | shadow | ui/control/active/shadow |  |
+    |  |  |  |  |
+    | :active:hover | text | ui/control/label/text | same as default |
+    |  | background-color | ui/control/hover/bg-color |  |
+    |  | border-color | ui/control/hover/border-color |  |
+    |  | border-style | ui/control/hover/border-style |  |
+    |  | shadow | ui/control/hover/shadow |  |
+
+Styling the default state of the switch:
+
+![Styling Switch - Default state](./docs/styling-switch-default-state.png)
+
+| Structural surface | Presentation Token applied |
+| --- | --- |
+| label | text/ui/control/default/label |
+| track | colors/ui/control/default/bg |
+| knob | shadows/ui/control/default/surface |
+
+[//]: # (TODO: Separate active state from checked state and rewrite this bit)
+![Styling Switch - Checked State](./docs/styling-switch-checked-state.png)
+
+| Structural surface | Presentation Token applied |
+| --- | --- |
+| label | no change |
+| track | colors/ui/control/active/bg |
+| knob | shadows/ui/control/active/surface |
+
+How does this logic apply for styling an input field which belongs to the same category as that of a switch?
+![styling-label-active-state](./docs/styling-label-active-state.png)
+
+<figcaption>✨ The same tokens apply for both the switch and the input field, albeit for different surfaces. This ensures consistency and yet makes each of these components feel distinct.</figcaption>
+
+>  👉 It is the discretion of the designer to identify which surfaces have to be styled in a particular state. Blindly applying the tokens to all the surfaces will lead to poor design.
+
+
+### How to style content?
+
+>  ℹ️ WIP
+
+A product’s UI comprises of headings, body, captions in the content category.
+
+The following tokens have been defined for the headings category
+
+https://www.figma.com/file/5QitVVvqgEc6nhR7SbdinY/ADS2.0---Tokens?node-id=2137%3A33642&t=aLuYuSiYCsg7nxad-4
+
+https://www.figma.com/file/5QitVVvqgEc6nhR7SbdinY/ADS2.0---Tokens?node-id=2137%3A33722&t=aLuYuSiYCsg7nxad-4
+
+>  ☝️ For every ui-category **type** token.. there is a color token associated with it. For example, the `Page Heading` type will necessarily use the gray-800 color token. This is the color you should be using. However, in code all of these values will be available as one if the correct type is passed to `Text`.
+
+To make things even simpler for designers, we now have a Text component defined in Figma. Simply drag the component to Figma’s canvas and enter your text.
+
+### What to do if I cannot find the right category token?
+
+Use semantic tokens to style your structural surface. Semantic tokens are more versatile and therefore give you a little more control than category tokens. If you cannot even find a semantic token for your need, you can go down to using core tokens. When you are doing so, please let @design-system-pod know so that we may identify the gap and improve the system.
