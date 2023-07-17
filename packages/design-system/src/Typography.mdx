@@ -16,7 +16,7 @@ To make it simpler to deal with how to style text in your UI, we have the **Text
 
 For majority of the cases of dealing with text, this is the component you need. In cases where you need to style your text differently, ADS2.0 provides robust typographic tokens for your consumption.
 
-### Usage guidelines
+### Guidelines
 
 | Text element | When to use? |
 | --- | --- |
@@ -30,37 +30,39 @@ For majority of the cases of dealing with text, this is the component you need. 
 Text that is part of components belonging to input controls (eg: input fields, checkbox labels etc.), actions (buttons, links), system responses (eg: callouts) are all embedded within the  components of those respective categories. To make it simpler we do not expose this to the users of the system, as of now.
 
 >  👉 In case you have to create a new component or if the text component does not meet your need, you can look at the diverse typographic tokens on offer to style your UI.
-  [Read this page on how to style your design using tokens.](https://www.notion.so/How-to-style-using-design-tokens-fcc35bf74ce14083962704be5b3939cd?pvs=21) A list of all available typography tokens is available in storybook.
+  [Read this page on how to style your design using tokens.](https://www.design-system.appsmith.com/?path=/docs/design-tokens--documentation#how-to-style-using-design-tokens) A list of all available typography tokens is [available in storybook](TODO: Add link to category tokens for typography here).
 
 ### Text casing in ADS 2.0
 
+[//]: # (TODO: Column layout)
+
 All text in the product should be sentence cased. This typically means that only the first letter of the word should be capitalised in a sentence.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/198058a2-cc68-4620-aeaf-e38a605a56dc/Untitled.png)
+![Incorrect title case 1](./docs/incorrect-title-case-1.png)
 
-❌ Title case.
+❌ Title case.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f7f2f71a-2e05-4012-9650-25e9c3cbfea6/Untitled.png)
+![Incorrect title case 2](./docs/incorrect-title-case-2.png)
 
-❌ Title case
+❌ Title case
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/78139895-1ddd-447d-8659-a80524b59146/Untitled.png)
+![Correct title case 1](./docs/correct-title-case-1.png)
 
-✅ Sentence case
+✅ Sentence case
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a90b60d4-8abe-4a5f-ab73-8845717932c0/Untitled.png)
+![Correct title case 2](./docs/correct-title-case-2.png)
 
-✅ Sentence case
+✅ Sentence case
 
 There should not be all capital letters for text as this makes it difficult for readers of poor vision to process.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bcfafe51-eb77-46fb-872f-26f2926c32d9/Untitled.png)
+![Incorrect action name](./docs/incorrect-action-names.png)
 
-❌ Action names are in all caps.
+❌ Action names are in all caps.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/42210502-e64f-423c-8cf7-d451170ba73d/Untitled.png)
+![Correct action name](./docs/correct-action-names.png)
 
-✅ Actions are in sentence case.
+✅ Actions are in sentence case.
 
 **Here are simple heuristics to remember regarding text casing:**
 
@@ -71,8 +73,6 @@ The first letter of a word should be capitalised, if
 - it refers to nouns/terminology specific to Appsmith (Upgrade to Appsmith’s Business edition) or,
 - If it is a proper noun, including especially if the word is “Appsmith” in which case the first letter (’A’) is always capitalised.
 
-## Usage guidelines
-
 ### For designers
 
 Drag the desired variant of the Text component from Figma’s library to your canvas.  The content variant group is far more used than the rest of the categories in a UI. And, the text within the rest of the categories (controls, actions and responses) have specific components within which text is embedded. (eg: A textual label of an input field comes by default with the input field component).
@@ -81,6 +81,7 @@ Converting your existing designs using ADS 2.0 requires you to substitute the ol
 
 >  ☝ Do not merely change the text style token in Figma. Replace the text on the UI with the **Text component**, instead.
 
+[//]: # ( TODO: Column layout )
 ### Why a Text component in Figma?
 
 While this might seem like a roundabout way of using text, this done with an intention of **simplifying decision making** w.r.t selecting typographic tokens for your designs.
@@ -93,7 +94,7 @@ This increases the chance for human error and hence we recommend you to use the 
 
 If you need to a lot more flexibility in terms of styling your design, you can use tokens. Be mindful of using the right color token to go with the text token. Note that there is a similar Text component in the code as well, which by default contains all the style couplings present in our Figma component. If you use a token instead of a component, the engineer implementing this will also have to implement a custom component, so make sure your use case is truly a snowflake.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fd02c34f-e2ec-40be-bbc0-746dc6979db2/Untitled.png)
+![Text component Figma](./docs/text-component-figma.png)
 
 >  ⚠️ **Note:** Every text element has a designated color and should not be overridden. Eg: A page heading has a color represented by the token `colors/ui/heading/PageHeading` and this needs to be the case in all of it’s instances.
 
@@ -115,7 +116,7 @@ Every textual element should be tied to it’s corresponding color token on Zepl
 
 Zeplin **will not highlight** any error with respect to a color mismatch for a Text token or a component. QA should pay attention to the colors being applied to text on the uploaded screens. For eg: A text token of Page heading should use the corresponding color token of ‘Page Heading’.
 
-### FAQs
+## FAQs
 
 **The text component does not fit my use-case. What do I do?**
 
