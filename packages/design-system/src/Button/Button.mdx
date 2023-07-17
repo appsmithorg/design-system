@@ -4,6 +4,7 @@ import * as ButtonStories from './Button.stories';
 
 <Meta of={ButtonStories} />
 
+[//]: # (TODO: when to renderAs button vs a)
 # Overview
 
 Buttons communicate actions that users can take. They are typically placed throughout your UI, in places like: Dialogs, Forms, Pages, etc.
@@ -11,6 +12,8 @@ Buttons communicate actions that users can take. They are typically placed throu
 ### Anatomy
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0bd55133-8902-4de1-9a30-11ae9aa14fdb/Untitled.png)
+
+Both left and right icons are available but don't use them both at the same time.
 
 ### Kind
 
@@ -24,7 +27,7 @@ Use primary for displaying the most important action of the screen, such as conf
 
 **Secondary**
 
-Use secondary for providing alternatives to the primary action, or when none of your actions are more important than the others.
+Use secondary for providing alternatives to the primary action.
 
 ---
 
@@ -70,8 +73,22 @@ Button copy should:
 - be in sentence case (only capitalise the first letter of the first word)
 - have no full stop.
 
-Markdown for : Image `![](IMAGEURL "a title")`
+## Icon Buttons
 
-*Paste Screenshot of the states*
+Icon buttons also exist as a variant of buttons. Use these for commonly understood actions as they do not have labels to convey the meaning of an icon.
 
-Refer : https://makeitclear.com/ux-ui-tips-a-guide-to-creating-buttons/
+![iconbutton-usage-on-appsmith](./docs/iconbutton-usage-on-appsmith.png)
+
+Eg: An icon button represented by a trash-bin will remove an input field that was added to a form.
+
+### Usage
+- Icon buttons are typically not primary buttons.
+- Icon buttons are typically not grouped with regular buttons.
+
+---
+### References
+1. https://makeitclear.com/ux-ui-tips-a-guide-to-creating-buttons/
+2. https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement
+
+
+
