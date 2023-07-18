@@ -375,6 +375,9 @@ const UserAddLineIcon = importRemixIcon(
 const UserUnfollowLineIcon = importRemixIcon(
   () => import("remixicon-react/UserUnfollowLineIcon"),
 );
+const UserSettingsLineIcon = importRemixIcon(
+  () => import("remixicon-react/UserSettingsLineIcon"),
+);
 const DeleteRowIcon = importRemixIcon(
   () => import("remixicon-react/DeleteRowIcon"),
 );
@@ -1110,6 +1113,7 @@ const ICON_LOOKUP = {
   "user-follow-line": UserFollowLineIcon,
   "user-heart-line": UserHeartLineIcon,
   "user-received-2-line": UserReceived2LineIcon,
+  "user-settings-line": UserSettingsLineIcon,
   "user-shared-line": UserSharedLineIcon,
   "user-unfollow-line": UserUnfollowLineIcon,
   "view-all": RightArrowIcon,
