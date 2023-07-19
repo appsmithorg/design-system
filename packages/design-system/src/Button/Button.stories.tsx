@@ -24,13 +24,49 @@ const Template: ComponentStory<typeof Button> = ({ children, ...args }) => {
 export const ButtonStory = Template.bind({});
 ButtonStory.storyName = "Button";
 ButtonStory.args = {
-  children: "button",
+  children: "Click me",
   onClick: () => alert("Button clicked!"),
   startIcon: "arrow-left-line",
   endIcon: "arrow-right-line",
   size: "md",
   kind: "primary",
   type: "button",
+};
+
+export const ButtonPrimaryStory = Template.bind({});
+ButtonPrimaryStory.args = {
+  ...ButtonStory.args,
+  kind: "primary",
+};
+
+export const ButtonSecondaryStory = Template.bind({});
+ButtonSecondaryStory.args = {
+  ...ButtonStory.args,
+  kind: "secondary",
+};
+
+export const ButtonTertiaryStory = Template.bind({});
+ButtonTertiaryStory.args = {
+  ...ButtonStory.args,
+  kind: "tertiary",
+};
+
+export const ButtonErrorStory = Template.bind({});
+ButtonErrorStory.args = {
+  ...ButtonStory.args,
+  kind: "error",
+};
+
+export const ButtonDisabledStory = Template.bind({});
+ButtonDisabledStory.args = {
+  ...ButtonStory.args,
+  isDisabled: true,
+};
+
+export const ButtonLoadingStory = Template.bind({});
+ButtonLoadingStory.args = {
+  ...ButtonStory.args,
+  isLoading: true,
 };
 
 export const IconButtonStory = Template.bind({});

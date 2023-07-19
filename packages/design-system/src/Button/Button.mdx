@@ -5,81 +5,90 @@ import * as ButtonStories from './Button.stories';
 <Meta of={ButtonStories} />
 
 [//]: # (TODO: when to renderAs button vs a)
-# Overview
+
+# Button
 
 Buttons communicate actions that users can take. They are typically placed throughout your UI, in places like: Dialogs, Forms, Pages, etc.
 
-### Anatomy
+<Canvas of={ButtonStories.ButtonStory} />
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0bd55133-8902-4de1-9a30-11ae9aa14fdb/Untitled.png)
+## Anatomy
 
-Both left and right icons are available but don't use them both at the same time.
+### Icons
+All icons that are available in [Icons](http://www.design-system.appsmith.com/?path=/docs/design-system-icon--documentation) can be used here.
+Both left and right icons are available - but don't use them both at the same time.
 
-### Kind
+### Copy
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4c3b2f7c-ff56-4dc8-a335-d278d820f099/Untitled.png)
+Button copy should:
 
-**Primary**
+- start with a verb, like ‘Save’, ‘New query’, ‘Generate new page’
+- be one or two words
+- describe the action (if someone only reads the button, they should know what will happen next)
+- connect to the content around it — for example, it might use the same words as the title, and that is okay
+- be in sentence case (only capitalise the first letter of the first word)
+- have no full stop
+
+![Button anatomy](./docs/button-anatomy.png)
+
+
+## Kind
+
+### Primary
 
 Use primary for displaying the most important action of the screen, such as confirming something or submitting a form, as it’s visually more eye-catching than the secondary button.
+<Canvas of={ButtonStories.ButtonPrimaryStory} />
 
----
 
-**Secondary**
+### Secondary
 
 Use secondary for providing alternatives to the primary action.
+<Canvas of={ButtonStories.ButtonSecondaryStory} />
 
----
-
-**Tertiary**
+### Tertiary
 
 Tertiary buttons are usually used for miscellaneous actions: the action is important, but may not be what the user is looking to do right then.
+<Canvas of={ButtonStories.ButtonTertiaryStory} />
 
----
+### Error
 
-**Danger**
+Use error buttons for actions that remove or limit, such as deleting a page or blocking a user. **Don't** use it for actions such as cancel buttons.
+<Canvas of={ButtonStories.ButtonErrorStory} />
 
-Use destructive buttons for actions that remove or limit, such as deleting a page or blocking a user. Don't use it for actions such as cancel buttons.
+### Disabled
 
----
+Buttons are typically disabled when the form the user is on cannot be submitted, or the state the user wants to achieve otherwise cannot be achieved. When a button is disabled, always ensure that it is clear to the user how to enable the button - via making use of error states on offending input forms, providing persistent system information via a callout, or some other method.
+<Canvas of={ButtonStories.ButtonDisabledStory} />
 
-### Spacing
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c382a0d-2057-4208-bf7a-15c4b44032c4/Untitled.png)
+### Loading
 
----
+Buttons are sent into the loading state when the user is unable to take the action on the button because some system resources are being used that blocks the action of the button from executing successfully. Note that when a button is loading, it is also disabled.
+<Canvas of={ButtonStories.ButtonLoadingStory} />
+
+
+## Spacing
+
+![Button spacing](./docs/button-spacing.png)
 
 ## Usage
 
 Use buttons when the user's action results in changes to either the back-end or the front-end of the website. Examples of such actions include submitting a form, triggering a pop-up or modal, or revealing a panel on the same page.
 
-| Use a button | Don't use a button |
-| --- | --- |
-| When a user wants to take an action, such as starting a new process or verifying a decision, they may need to perform certain steps, such as triggering a pop-up or modal window. | To make the text inside paragraphs or lists actionable—use a https://www.notion.so/Link-9ca66c9fa80b4adc9159c2a0639afc62?pvs=21. |
-| When a user needs to perform tasks like submitting data, opening or closing UI elements, or interacting with system functionalities, they initiate steps to complete the action, such as submitting data, triggering UI elements, or executing specific operations. | Don’t use button for navigation. |
+[//]: # (TODO: Needs improvement)
+| Use a button | Use a link                                                                                                                    |
+| --- |-------------------------------------------------------------------------------------------------------------------------------|
+| When a user wants to take an action, such as starting a new process or verifying a decision, they may need to perform certain steps, such as triggering a pop-up or modal window. | To make the text inside paragraphs or lists actionable.                                                                       |
+| When a user needs to perform tasks like submitting data, opening or closing UI elements, or interacting with system functionalities, they initiate steps to complete the action, such as submitting data, triggering UI elements, or executing specific operations. | For navigation.                                                                                                                  |
 
-### **Interaction**
-
-Unless the button is disabled, the user can tap or click on it to perform the action assigned to it.
-
-### Content
-
-Button copy should:
-
-- start with a verb, like ‘Save’, ‘New query’, ‘Generate new page’
-- be just a few words
-- describe the action (if someone only reads the button, they should know what will happen next)
-- connect to the content around it — for example, it might use the same words as the title
-- be in sentence case (only capitalise the first letter of the first word)
-- have no full stop.
-
-## Icon Buttons
+# Icon Buttons
 
 Icon buttons also exist as a variant of buttons. Use these for commonly understood actions as they do not have labels to convey the meaning of an icon.
 
 ![iconbutton-usage-on-appsmith](./docs/iconbutton-usage-on-appsmith.png)
 
 Eg: An icon button represented by a trash-bin will remove an input field that was added to a form.
+All parameters that are available to buttons are available to Iconbuttons.
 
 ### Usage
 - Icon buttons are typically not primary buttons.
