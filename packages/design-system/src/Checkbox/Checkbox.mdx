@@ -7,40 +7,51 @@ import * as CheckboxStories from './Checkbox.stories';
 
 # Checkbox
 
-Checkboxes are form based elements. They require an explicit confirmation (usually  via a save or a submit button) for their values to be stored. The result of the action should be communicated to the user.
-Checkboxes allow users to select multiple options from a group. When using checkboxes, ensure clear and accurate labeling to convey the meaning of each checkbox. Provide feedback to users when a checkbox is selected or deselected, such as displaying a message. Avoid using an excessive number of checkboxes on a single page to prevent overwhelming the user with excessive options.
+Checkboxes are form based elements. They require an explicit confirmation (usually via a save or a submit button) for their values to be stored. The result of the action should be communicated to the user (how?).
 
-### Anatomy
+Checkboxes can also be used to allow users to select multiple options from a group. When using checkboxes, ensure clear and accurate labeling to convey the meaning of each checkbox. Provide feedback to users when a checkbox is selected or deselected, such as displaying a message. Avoid using an excessive number of checkboxes on a single page to prevent overwhelming the user with excessive options.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e2758c05-3606-4307-8f1d-7c04c14d7dc9/Untitled.png)
+<Canvas of={CheckboxStories.CheckboxStory} />
+
+## Anatomy
 
 1. **Checkbox**: The selection control.
 2. **Checkbox label**: Text label associated with the checkbox
 
-### Spacing
+### Copy
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f6f6279e-c818-47b7-9938-03dd3be74c36/Untitled.png)
+- Provide clear and descriptive labels for each checkbox option.
+- Start all checkbox labels with a capital letter.
+- Don't include punctuation after checkbox labels.
 
-### Usage
+![Checkbox anatomy](./docs/checkbox-anatomy.png)
 
-****When to use****
+## Spacing
+![Checkbox spacing](./docs/checkbox-spacing.png)
+
+## Usage
+
+### When to use
 
 - To present multiple options that can each be selected.
 - For changes that require confirmation after selection.
 
-****When not to use****
+### When not to use
 
-- When only one of multiple options can be selected—use a **radio**.
-- You want to group multiple options together into a single basic choice—use a **radio group.**
-- For single on/off settings with an instant response—use a **switch**.
-- Limited space: When there is limited space available for options or when the list of options is lengthy, checkboxes may not be the best choice. [Select](https://www.notion.so/Select-347c0988903d4addb5224f2a1bb36c8e?pvs=21) may be more space-efficient.
+- When only one of multiple options can be selected — use a [radio group](https://www.design-system.appsmith.com/?path=/docs/design-system-radio--documentation).
+- You want to group multiple options together into a single basic choice — use a [radio group](https://www.design-system.appsmith.com/?path=/docs/design-system-radio--documentation).
+- For single on/off settings with an instant response — use a [switch](https://www.design-system.appsmith.com/?path=/docs/design-system-switch--documentation).
+- Limited space: When there is limited space available for options or when the list of options is lengthy — use a [Select](https://www.design-system.appsmith.com/?path=/docs/design-system-select--documentation). You can even configure the select to allow picking multiple options.
 
-## Content guidelines
+## States
 
-- Clear and Descriptive Labels: Provide clear and descriptive labels for each checkbox option.
-- Start all checkbox labels with a capital letter.
-- Don't include punctuation after checkbox labels.
+### Checked
+The state of the checkbox is handled internally by default. If you need the state of the checkbox, you can control it yourself via the `isSelected` and `onChange` props.
+<Canvas of={CheckboxStories.CheckboxCheckedStory} />
 
-### States
+### Disabled
+<Canvas of={CheckboxStories.CheckboxDisabledStory} />
 
-Default, Hover, Active, Disabled
+### Indeterminate
+Indeterminate state is typically used in a table, or some other group, to convey that some of the children checkboxes have been ticked and others have not. You can find an example of this usage in the audit logs.
+<Canvas of={CheckboxStories.CheckboxIndeterminateStory} />
