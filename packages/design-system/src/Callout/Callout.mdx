@@ -6,56 +6,43 @@ import * as CalloutStories from './Callout.stories';
 
 # Callout
 
-
-### Component Overview
-
 Callouts are messages that communicate the system’s response to the user.
+System response. We currently use toasts to communicate system response across the app. Callouts are typically persistent unless the user discards  them. The information variant of the callout can be used to emphasize certain information on the page, even if it is technically not a system response.. in this case it is a system’s “suggestion” rather than a response.
+<Canvas of={CalloutStories.CalloutStory} />
 
-### Anatomy
+## Anatomy
 
-1. **Icon:** Informs users of the kind of notification at a glance.
-2. **Action (actionable only):** Tertiary button that allows users to address the notification or navigates them to a page with further details.
-3. **Close button (optional):** Closes the notification.
-4. **Message:** Provides additional detail and actionable steps for the user to take.
+1. **Icon:** Informs users of the kind of notification at a glance.
+2. **Action (actionable only):** Tertiary button that allows users to address the notification or navigates them to a page with further details.
+3. **Close button (optional):** Closes the notification.
+4. **Message:** Provides additional detail and actionable steps for the user to take.
 
----
+## Kind
 
-### **Variant:**
+### Info
+The default form of a callout.
+<Canvas of={CalloutStories.CalloutInfoStory} />
 
-**Warning**:
+### Success
+<Canvas of={CalloutStories.CalloutSuccessStory} />
 
-The default form of a banner. Use `warning` banners when you want the user to take a specific action or to warn them that something is about to go wrong.
+### Warning
+Use warning callouts when you want the user to take a specific action or to warn them that something is about to go wrong.
+<Canvas of={CalloutStories.CalloutWarningStory} />
 
-**Error**
+### Error
+Use error banners to inform users something critical has happened and requires immediate attention.
+<Canvas of={CalloutStories.CalloutErrorStory} />
 
-Use `error` banners to inform users something critical has happened and requires immediate attention.
+## Other variations
 
-### **Spacing**
+### Closable
+Include the close button if it is not critical for a user to read or interact with the notification.
 
----
+### With link
+<Canvas of={CalloutStories.CalloutWithLink} />
 
-### Usage
+## Spacing
+Callouts will take the smallest width possible in relation to its content. It has a minimum width, but its maximum width is constrained by its parent.
 
-****When to use****
-
-****
-
-Notifications are an effective way to communicate with users and provide immediate feedback, but they can also be disruptive if used excessively. Therefore, it's important to use notifications only when necessary, such as when there's an update or change to the system status.
-
-To make notifications less disruptive, it's important to keep them short and to the point. Use clear and concise language to communicate the necessary information to the user. Additionally, it's important to consider the timing and frequency of notifications. Avoid sending too many notifications at once or at inconvenient times, such as late at night or early in the morning.
-
-By using notifications responsibly, you can effectively communicate with your users while also minimizing the disruption to their workflow.
-
-**Sizing**
-
-Inline notifications' width varies based on content and layout. They can expand to fill the container or content area and their height is based on the length of the content, which should not exceed two lines.
-
-**Placement**
-
-They appear close to related items, aligning to grid columns and expanding to fill the width of their container or content area.
-
-**Dismissal**
-
-Inline notifications remain on the page until dismissed or resolved by the user.
-
-To dismiss inline notifications, click the small "x" in the top right corner. Only include the close button if it is not critical for a user to read or interact with the notification.
+## Usage
