@@ -25,12 +25,8 @@ const Template: ComponentStory<typeof Divider> = (args) => {
 };
 
 const Box = styled.div`
-  width: 40vh;
-  height: 40vh;
-  border: 1px solid var(--ads-v2-color-border);
-  border-radius: var(--ads-v2-border-radius);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 0px,
-    rgba(0, 0, 0, 0.1) 0px 2px 10px 0px;
+  width: 8vh;
+  height: 8vh;
 
   display: flex;
   align-items: center;
@@ -39,3 +35,8 @@ const Box = styled.div`
 
 export const DividerStory = Template.bind({});
 DividerStory.storyName = "Divider";
+
+export const DividerVerticalStory = Template.bind({});
+DividerVerticalStory.args = {
+  orientation: "vertical",
+};
