@@ -1,7 +1,6 @@
 import React from "react";
 import "normalize.css";
 import "./styles.css";
-import { addDecorator } from "@storybook/react";
 import { MemoryRouter } from "react-router-dom";
 
 export const parameters = {
@@ -15,6 +14,9 @@ export const parameters = {
   },
   docs: {
     source: { excludeDecorators: true },
+    canvas: {
+      sourceState: 'shown'
+    }
   },
 };
 
