@@ -37,7 +37,7 @@ const CollapsibleTemplate: ComponentStory<typeof Collapsible> = (args) => {
   return (
     <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
       <CollapsibleHeader arrowPosition={arrowPosition}>
-        <Text kind="heading-s">Collapsible Header</Text>
+        <Text>Collapsible Header</Text>
       </CollapsibleHeader>
       <CollapsibleContent>
         <Text kind="body-m">
@@ -83,7 +83,7 @@ CollapsibleStory.argTypes = {
         summary: "boolean",
       },
       defaultValue: {
-        summary: "true",
+        summary: "false",
       },
     },
   },
@@ -142,7 +142,7 @@ const CollapsibleHeaderTemplate: ComponentStory<typeof CollapsibleHeader> = (
 export const CollapsibleHeaderStory = CollapsibleHeaderTemplate.bind({});
 CollapsibleHeaderStory.storyName = "Header";
 CollapsibleHeaderStory.args = {
-  children: <Text kind="heading-s">Collapsible Header</Text>,
+  children: <Text>Collapsible Header</Text>,
   isOpen: false,
   arrowPosition: ARROW_POSITIONS.START,
 };

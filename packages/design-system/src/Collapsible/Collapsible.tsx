@@ -22,7 +22,7 @@ import { createContext } from "react";
 import clsx from "classnames";
 
 export const CollapsibleContext = createContext<CollapsibleContextType>({
-  isExpanded: true,
+  isExpanded: false,
   handleOpenChange: () => {
     return null;
   },
@@ -73,6 +73,12 @@ function CollapsibleContent(props: CollapsibleContentProps) {
 function Collapsible(props: CollapsibleProps) {
   const { children, className, isOpen, onOpenChange } = props;
   const [isExpanded, setIsExpanded] = useState(!!isOpen);
+
+  useEffect(() => {
+    if (isOpen === true || isOpen === false) {
+      setIsExpanded(isOpen);
+    }
+  }, [isOpen]);
 
   const handleOpenChange = () => {
     if (onOpenChange) {
