@@ -28,7 +28,7 @@
   */
   /* Component specific tokens will inside the component folder. */
 
-  /* ===== Actions ===== */
+  /* ========================= Actions ========================= */
   /* Primary */
   --ads-v2-colors-action-primary-surface-default-bg: var(--ads-v2-color-bg-brand);
   --ads-v2-colors-action-primary-surface-hover-bg: var(--ads-v2-color-bg-brand-emphasis);
@@ -59,6 +59,22 @@
   --ads-v2-colors-action-error-surface-active-bg: var(--ads-v2-color-bg-error-emphasis-plus);
   --ads-v2-colors-action-error-label-default-fg: var(--ads-v2-color-fg-on-error);
   --ads-v2-colors-action-error-icon-default-fg: var(--ads-v2-color-fg-on-error);
+
+  /* ========================= Control ========================= */
+  --ads-v2-colors-control-field-default-bg: var(--ads-v2-color-bg);
+  --ads-v2-colors-control-field-default-border: var(--ads-v2-color-border);
+  --ads-v2-colors-control-field-hover-border: var(--ads-v2-color-border-emphasis);
+  --ads-v2-colors-control-field-active-border: var(--ads-v2-color-border-emphasis-plus);
+  --ads-v2-colors-control-placeholder-default-fg: var(--ads-v2-color-fg-subtle);
+  --ads-v2-colors-control-label-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-control-helper-default-fg: var(--ads-v2-color-fg-muted);
+  --ads-v2-colors-control-value-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-control-icon-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-control-helper-error-fg: var(--ads-v2-color-fg-error);
+  --ads-v2-colors-control-icon-error-fg: var(--ads-v2-color-fg-error);
+  --ads-v2-colors-control-field-checked-border: var(--ads-v2-color-border-brand-secondary);
+  --ads-v2-colors-control-field-checked-hover-border: var(--ads-v2-color-border-brand-secondary-emphasis);
+
 
   /**
     * ===========================================*

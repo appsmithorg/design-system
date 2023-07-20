@@ -1,6 +1,14 @@
 import styled, { css } from "styled-components";
 
 const Variables = css`
+  --ads-v2-colors-control-radio-tack-default-bg: var(--ads-v2-color-bg);
+  --ads-v2-colors-control-radio-tack-checked-bg: var(
+    --ads-v2-color-bg-brand-secondary
+  );
+  --ads-v2-colors-control-radio-tack-checked-hover-bg: var(
+    --ads-v2-color-bg-brand-secondary-emphasis
+  );
+
   --radio-color-border: var(--ads-v2-color-border);
   --radio-color-background: var(--ads-v2-color-bg);
   --radio-color-check-mark: var(--ads-v2-color-bg-brand-secondary);
