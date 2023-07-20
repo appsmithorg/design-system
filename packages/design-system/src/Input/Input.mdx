@@ -1,6 +1,8 @@
 import { Canvas, Meta } from '@storybook/blocks';
 
 import * as InputStories from './Input.stories';
+import * as NumberInputStories from "../NumberInput/NumberInput.stories";
+import * as SearchInputStories from "../SearchInput/SearchInput.stories";
 
 <Meta of={InputStories} />
 
@@ -37,8 +39,10 @@ When designing a form that requires text input from users, consider the length o
 ### Number Input
 The [number input](https://design-system.appsmith.com/?path=/docs/design-system-input-numberinput--docs) allows users to enter a numeric value, increase or decrease it using a two-segment control (+ / -).
 
-### Search Input
+<Canvas of={NumberInputStories.NumberInputStory} />
 
+### Search Input
+<Canvas of={SearchInputStories.SearchInputStory} />
 
 ## Usage
 - Provide clear and concise labels for input fields to ensure users understand the required information.
