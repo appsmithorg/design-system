@@ -19,3 +19,9 @@ TagStory.args = {
   children: "contact@appsmith.com",
   size: "sm",
 };
+
+export const TagCloseStory = Template.bind({});
+TagCloseStory.args = {
+  ...TagStory.args,
+  isClosable: true,
+};
