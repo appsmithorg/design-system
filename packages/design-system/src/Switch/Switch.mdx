@@ -7,40 +7,27 @@ import * as SwitchStories from './Switch.stories';
 # Switch
 
 Switches are binary. They “turn on” or “turn off” a certain setting. The result of the switch is instant. Use them when the change is apparent to the user.
+<Canvas of={SwitchStories.SwitchStory} />
 
-### Anatomy
+## Anatomy
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7790b957-d59e-4a83-9de6-d76fee5eb906/Untitled.png)
+![Switch anatomy](./docs/switch-anatomy.png)
 
----
+## Spacing
 
-### State
+![Switch spacing](./docs/switch-spacing.png)
 
-Default, Hover, Disabled, Focus
 
-*JS is optional.*
+## Usage
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc0419b7-d926-44c8-9bbd-9a4b9b473c62/Untitled.png)
+- Switches are typically used when users need to turn a single option on or off, such as enabling or disabling a feature.
+- Switches are often used for binary settings, where there are only two options, such as "On/Off," "Yes/No," or "Enable/Disable.
+- Switches provide an immediate visual indication of the current state of the option, as they have a clear "on" or "off" position.
+- Switches usually do not require an additional "Submit" or "Apply" button, as the changes are applied immediately when the user toggles the switch.
 
----
-
-### Spacing
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/406c2e50-45cf-4bc1-8768-accf62dd2b86/Untitled.png)
-
-### Usage
-
-- Toggle switches are typically used when users need to turn a single option on or off, such as enabling or disabling a feature.
-- Toggle switches are often used for binary settings, where there are only two options, such as "On/Off," "Yes/No," or "Enable/Disable.
-- Toggle switches provide an immediate visual indication of the current state of the option, as they have a clear "on" or "off" position.
-- Toggle switches usually do not require an additional "Submit" or "Apply" button, as the changes are applied immediately when the user toggles the switch.
-
-| Checkbox | Toggle Switch |
-| --- | --- |
-| Checked or unchecked | On or off |
-| Typically used for binary choices or multiple selections | Often used for simple on/off or enable/disable options |
-| Can have multiple checkboxes selected simultaneously | Only one toggle switch can be in the "on" state at a time |
-| Can be used in lists, forms, or dialog boxes | Often used for settings, preferences, or control panels |
-| "I agree to the terms and conditions" checkbox | "Turn on/off" switch for a specific feature or functionality in property pane.  |
-
-### Content
+| Checkbox                                                       | Toggle Switch |
+|----------------------------------------------------------------| --- |
+| Checked or unchecked                                           | On or off |
+| Can be used for both binary choices and multiple selections       | Often used for simple on/off or enable/disable options |
+| Can be used in lists, forms, or dialog boxes                   | Often used for settings, preferences, or control panels |
+| "I agree to the terms and conditions" checkbox                 | "Turn on/off" switch for a specific feature or functionality in property pane.  |
