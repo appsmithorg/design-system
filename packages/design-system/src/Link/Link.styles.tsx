@@ -4,6 +4,21 @@ import { Icon } from "../Icon";
 import { LinkKind } from "./Link.types";
 
 const Variables = css`
+  --ads-v2-action-link-primary-label-default-fg: var(--ads-v2-color-fg-brand);
+  --ads-v2-action-link-primary-label-hover-fg: var(
+    --ads-v2-color-fg-brand-emphasis
+  );
+  --ads-v2-action-link-primary-label-active-fg: var(
+    --ads-v2-color-fg-brand-emphasis-plus
+  );
+  --ads-v2-action-link-primary-icon-default-fg: var(--ads-v2-color-fg-brand);
+  --ads-v2-action-link-primary-icon-hover-fg: var(
+    --ads-v2-color-fg-brand-emphasis
+  );
+  --ads-v2-action-link-primary-icon-active-fg: var(
+    --ads-v2-color-fg-brand-emphasis-plus
+  );
+
   --color: var(--ads-v2-color-fg-brand);
   --text-decoration: none;
 `;
