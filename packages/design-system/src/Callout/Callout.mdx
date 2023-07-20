@@ -17,6 +17,12 @@ System response. We currently use toasts to communicate system response across t
 3. **Close button (optional):** Closes the notification.
 4. **Message:** Provides additional detail and actionable steps for the user to take.
 
+![Callout anatomy](./docs/callout-anatomy.png)
+
+## Spacing
+Callouts will take the smallest width possible in relation to its content. It has a minimum width, but its maximum width is constrained by its parent.
+![Callout spacing](./docs/callout-spacing.png)
+
 ## Kind
 
 ### Info
@@ -48,12 +54,8 @@ Include the close button if it is not critical for a user to read or interact wi
 Use callouts with links to direct users to external resources, and official documentation for more in-depth explanations or troubleshooting.
 <Canvas of={CalloutStories.CalloutWithLink} />
 
-## Spacing
-Callouts will take the smallest width possible in relation to its content. It has a minimum width, but its maximum width is constrained by its parent.
-![Callout spacing](./docs/callout-spacing.png)
-
 ## Usage
-1. Callouts are sparingly to maintain their impact and avoid overwhelming the user with excessive visual elements. 
+1. Callouts are sparingly to maintain their impact and avoid overwhelming the user with excessive visual elements.
 2. Use Callouts for crucial information, errors, and warnings, or provide essential guidance.
 3. Keep the content of the callout concise and clear. Avoid unnecessary jargon or technical language that might confuse users.
 4. Use short sentences or bullet points to deliver the message concisely.
