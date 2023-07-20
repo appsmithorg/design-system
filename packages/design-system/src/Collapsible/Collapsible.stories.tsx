@@ -31,11 +31,15 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const CollapsibleTemplate: ComponentStory<typeof Collapsible> = (args) => {
-  const [{ arrowPosition, isOpen }, updateArgs] = useArgs();
+  const [{ arrowPosition, className, isOpen }, updateArgs] = useArgs();
   const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
-    <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
+    <Collapsible
+      className={className}
+      isOpen={isOpen}
+      onOpenChange={changeOpenState}
+    >
       <CollapsibleHeader arrowPosition={arrowPosition}>
         <Text>Collapsible Header</Text>
       </CollapsibleHeader>
@@ -127,12 +131,12 @@ CollapsibleStory.argTypes = {
 const CollapsibleHeaderTemplate: ComponentStory<typeof CollapsibleHeader> = (
   args,
 ) => {
-  const [{ arrowPosition, isOpen }, updateArgs] = useArgs();
+  const [{ arrowPosition, className, isOpen }, updateArgs] = useArgs();
   const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
     <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
-      <CollapsibleHeader arrowPosition={arrowPosition}>
+      <CollapsibleHeader arrowPosition={arrowPosition} className={className}>
         {args.children}
       </CollapsibleHeader>
     </Collapsible>
@@ -187,12 +191,14 @@ CollapsibleHeaderStory.argTypes = {
 const CollapsibleContentTemplate: ComponentStory<typeof CollapsibleContent> = (
   args,
 ) => {
-  const [{ isOpen }, updateArgs] = useArgs();
+  const [{ className, isOpen }, updateArgs] = useArgs();
   const changeOpenState = (state: boolean) => updateArgs({ isOpen: state });
 
   return (
     <Collapsible isOpen={isOpen} onOpenChange={changeOpenState}>
-      <CollapsibleContent>{args.children}</CollapsibleContent>
+      <CollapsibleContent className={className}>
+        {args.children}
+      </CollapsibleContent>
     </Collapsible>
   );
 };
