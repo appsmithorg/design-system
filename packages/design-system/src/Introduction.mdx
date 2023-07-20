@@ -55,3 +55,18 @@ Every component and its comprising parts in ADS2.0 has been styled using design 
 
   > ☝️ **Remember this operating principle**
   Use components from ADS2.0. If they do not meet your need and you have a unique use-case to design for, use tokens. Anything else is not accepted as it would break the consistency of the designs within the product.
+
+### Adding a new component or variation to ADS
+
+1. A case needs to be made for the new component, and consensus needs to be achieved on its requirement. Stakeholders: pod proposing the component and design-system pod.
+2. The design is prepared by the pod that is requesting the component or variation.
+3. The design will pass a review by the design-system pod, from both design and engineering pov.
+4. Handoff will happen on [the zeplin board](https://app.zeplin.io/project/63f7601064ab77243cf1eca1)
+5. Component guidelines will start to be worked on by the designers.
+6. Development will be taken up. This can be done by either engineering from requesting pod or from design-system pod, based on bandwidth and urgency.
+7. Once a PR is ready and approved, an alpha release will be generated for that branch. This alpha version needs to be used in a PR in the appsmith repository. All ci tests need to pass on this branch. This branch should be added to the description of the component branch using the `Depends on` keywords.
+8. The component is now ready to be picked up by the design-system QA.
+9. Once QA has confirmed all is okay, the pod may optionally conduct a round of QA where the component is used in the feature branch.
+10. We can now merge the component PR into release. A minor update to the design-system package will be released. Make sure that any feature branches in other repositories do not contain the alpha version in a non-feature branch, because this may cause unexpected failures.
+
+Phew! That's a lot of steps. Fortunately, as our platform becomes more stable, this is a process we will need lesser of.
