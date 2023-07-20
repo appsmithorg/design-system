@@ -10,12 +10,12 @@ import * as InputStories from './Input.stories';
 An input element primarily contains a text field that enables users to input or edit text in a user interface.
 Text fields are typically used within forms but can also be incorporated into modals, search bars, or cards. Examples of common text input types include usernames, descriptions, URLs, emails, addresses, and plain text searches.
 
-<Canvas of={InputStories.InputExample} />
+<Canvas of={InputStories.InputStory} />
 
 ## Anatomy
 
 1. **Label:** Descriptive text that identifies the input field and indicates what type of information is expected or what action should be performed.
-2. **Placeholder text:** Optional text that can be displayed within the input field as a hint or example of the expected input format. Do not rely on this method as the only hint because placeholder text disappears once users start typing in the field. Well thought out placeholder text is a good flavour and adds to the polish of the product, but for formatting and other nudges always use the description as well.
+2. **Placeholder text:** Optional text that can be displayed within the input field as a hint or example of the expected input format.
 3. **Input area:** This is where people enter text.
 4. **Description:** Use the helper text to communicate more information about how to fill the input field or to communicate additional information about input fields state.
 
@@ -29,37 +29,23 @@ Text fields are typically used within forms but can also be incorporated into mo
 
 ## Kind
 
-### Number Input
-The number input allows users to enter a numeric value, increase or decrease it using a two-segment control (+ / -). 
-[more details](https://design-system.appsmith.com/?path=/docs/design-system-input-numberinput--docs)
-### Search Input
-[more details](https://design-system.appsmith.com/?path=/docs/design-system-input-searchinput--docs)
+### Textarea
+When designing a form that requires text input from users, consider the length of the expected content and adjust the size of the input box accordingly. For shorter inputs, such as a single word or short phrase, a smaller input box size is appropriate also for debugger. For longer inputs, such as a paragraph or multiple sentences, a larger input box size is recommended. This helps to ensure that the user has enough space to comfortably input their content without feeling cramped or confined. If users are anticipated to input longer form content, consider using a textarea instead of a standard text input box. A textarea allows for multiple lines of text input, making it more suitable for longer form content.
 
+<Canvas of={InputStories.InputTextareaStory} />
+
+### Number Input
+The [number input](https://design-system.appsmith.com/?path=/docs/design-system-input-numberinput--docs) allows users to enter a numeric value, increase or decrease it using a two-segment control (+ / -).
+
+### Search Input
 
 
 ## Usage
 - Provide clear and concise labels for input fields to ensure users understand the required information.
-- Use appropriate input types (e.g. search, number, date) to help users enter data correctly and efficiently.
-- Use placeholder text to give users a hint about the expected input format. However, avoid using it for essential instructions as it disappears when users start typing.
-- Provide feedback to users when their input is invalid or incomplete.
-- Use error messages to explain what went wrong and how to fix it.
-- Consider using auto-complete or suggestions to make data entry faster and more accurate.
-
-#### Consistency:
-Maintain consistency in input field design throughout the application or website. This includes alignment, size, and spacing.
-Use consistent terminology and format for similar input types across different sections of the interface.
-
-#### Autofocus and Tab Order:
-Set autofocus on the most relevant input field to streamline the user flow.
-Define a logical tab order for keyboard users to navigate through input fields efficiently.
-
+- Do not rely on using placeholder text as the only hint because it disappears once users start typing in the field. Well thought out placeholder text is a good flavour and adds to the polish of the product, but for formatting and other nudges always use the description as well.
+- Provide feedback to users when their input is invalid or incomplete, via `errorMessage` prop to explain what went wrong and how to fix it.
 
 ### Sizing
-When designing a form that requires text input from users, consider the length of the expected content and adjust the size of the input box accordingly. For shorter inputs, such as a single word or short phrase, a smaller input box size is appropriate also for debugger. 
-
-For longer inputs, such as a paragraph or multiple sentences, a larger input box size is recommended. This helps to ensure that the user has enough space to comfortably input their content without feeling cramped or confined.
-
-If users are anticipated to input longer form content, consider using a textarea instead of a standard text input box. A textarea allows for multiple lines of text input, making it more suitable for longer form content. When using a textarea, consider using a resizable option to allow users to adjust the size of the input box to their needs.
 
 ## Reference
 
