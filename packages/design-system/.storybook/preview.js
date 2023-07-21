@@ -2,6 +2,7 @@ import React from "react";
 import "normalize.css";
 import "./styles.css";
 import { MemoryRouter } from "react-router-dom";
+import appsmithTheme from "./AppsmithTheme";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -15,8 +16,9 @@ export const parameters = {
   docs: {
     source: { excludeDecorators: true },
     canvas: {
-      sourceState: 'shown'
-    }
+      sourceState: "shown",
+    },
+    theme: appsmithTheme,
   },
 };
 
