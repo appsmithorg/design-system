@@ -1,5 +1,29 @@
 # @appsmithorg/design-system
 
+## 2.1.16
+
+### Patch Changes
+
+- [#525](https://github.com/appsmithorg/design-system/pull/525) [`8c73e9e6`](https://github.com/appsmithorg/design-system/commit/8c73e9e6620efbad2778237187e7abe792928735) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding link-unlink icon from remixicon-react
+
+* [#526](https://github.com/appsmithorg/design-system/pull/526) [`070286b8`](https://github.com/appsmithorg/design-system/commit/070286b8c999b593d7f2a061480bae47dc0d551e) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding user settings line icon from remixicon react
+
+## 2.1.15
+
+### Patch Changes
+
+- [#517](https://github.com/appsmithorg/design-system/pull/517) [`31bfc6d7`](https://github.com/appsmithorg/design-system/commit/31bfc6d7298cf2c91c63ff24d476b6452a8b8cab) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Number input suffix issue
+
+* [#515](https://github.com/appsmithorg/design-system/pull/515) [`d140928c`](https://github.com/appsmithorg/design-system/commit/d140928ce40cf91862e8a5cad6bfff6e08e67fcf) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - chore: upgrade to storybook 7
+
+## 2.1.14
+
+### Patch Changes
+
+- [#491](https://github.com/appsmithorg/design-system/pull/491) [`1e47f919`](https://github.com/appsmithorg/design-system/commit/1e47f9197fb10cd34e0924b06bb2820b9e82ba64) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Added lazy loading icon in icon component
+
+* [#503](https://github.com/appsmithorg/design-system/pull/503) [`ac791394`](https://github.com/appsmithorg/design-system/commit/ac791394225807a255104576c3b637a74aa1a275) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Search input focus issue and select styles specificity
+
 ## 2.1.13
 
 ### Patch Changes

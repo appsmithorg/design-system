@@ -141,6 +141,9 @@ const LightbulbFlashLine = importRemixIcon(
 const LinksLineIcon = importRemixIcon(
   () => import("remixicon-react/LinksLineIcon"),
 );
+const LinkUnlinkIcon = importRemixIcon(
+  () => import("remixicon-react/LinkUnlinkIcon"),
+);
 const InfoIcon = importRemixIcon(
   () => import("remixicon-react/InformationLineIcon"),
 );
@@ -371,6 +374,9 @@ const UserAddLineIcon = importRemixIcon(
 );
 const UserUnfollowLineIcon = importRemixIcon(
   () => import("remixicon-react/UserUnfollowLineIcon"),
+);
+const UserSettingsLineIcon = importRemixIcon(
+  () => import("remixicon-react/UserSettingsLineIcon"),
 );
 const DeleteRowIcon = importRemixIcon(
   () => import("remixicon-react/DeleteRowIcon"),
@@ -1055,6 +1061,7 @@ const ICON_LOOKUP = {
   "line-dashed": LineDashedIcon,
   "line-dotted": LineDottedIcon,
   "link-2": Link2,
+  "link-unlink": LinkUnlinkIcon,
   "links-line": LinksLineIcon,
   "lock-2-line": Lock2LineIcon,
   "lock-password-line": LockPasswordLineIcon,
@@ -1106,6 +1113,7 @@ const ICON_LOOKUP = {
   "user-follow-line": UserFollowLineIcon,
   "user-heart-line": UserHeartLineIcon,
   "user-received-2-line": UserReceived2LineIcon,
+  "user-settings-line": UserSettingsLineIcon,
   "user-shared-line": UserSharedLineIcon,
   "user-unfollow-line": UserUnfollowLineIcon,
   "view-all": RightArrowIcon,
