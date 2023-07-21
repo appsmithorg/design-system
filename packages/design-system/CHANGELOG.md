@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.16
+
+### Patch Changes
+
+- [#525](https://github.com/appsmithorg/design-system/pull/525) [`8c73e9e6`](https://github.com/appsmithorg/design-system/commit/8c73e9e6620efbad2778237187e7abe792928735) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding link-unlink icon from remixicon-react
+
+* [#526](https://github.com/appsmithorg/design-system/pull/526) [`070286b8`](https://github.com/appsmithorg/design-system/commit/070286b8c999b593d7f2a061480bae47dc0d551e) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding user settings line icon from remixicon react
+
 ## 2.1.15
 
 ### Patch Changes

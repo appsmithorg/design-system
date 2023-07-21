@@ -4,6 +4,7 @@ export * from "./Avatar";
 export * from "./Button";
 export * from "./Callout";
 export * from "./Checkbox";
+export * from "./Collapsible";
 export * from "./DatePicker";
 export * from "./Divider";
 export * from "./Icon";
