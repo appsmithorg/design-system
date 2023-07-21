@@ -181,13 +181,19 @@ const Template: ComponentStory<typeof Input> = (args) => {
   return <Input {...args} />;
 };
 
-export const InputExample = Template.bind({});
-InputExample.storyName = "Input";
-InputExample.args = {
+export const InputStory = Template.bind({});
+InputStory.storyName = "Input";
+InputStory.args = {
   label: "Label",
   placeholder: "Placeholder",
   description: "Description",
   startIcon: "arrow-left-s-line",
   endIcon: "arrow-right-s-line",
   size: "md",
+};
+
+export const InputTextareaStory = Template.bind({});
+InputTextareaStory.args = {
+  ...InputStory.args,
+  renderAs: "textarea",
 };

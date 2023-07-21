@@ -20,6 +20,6 @@ const Template: ComponentStory<typeof SearchInput> = (args) => {
   return <SearchInput {...args} />;
 };
 
-export const InputExample = Template.bind({});
-InputExample.storyName = "SearchInput";
-InputExample.args = {};
+export const SearchInputStory = Template.bind({});
+SearchInputStory.storyName = "SearchInput";
+SearchInputStory.args = {};

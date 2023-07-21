@@ -20,3 +20,21 @@ CheckboxStory.args = {
   value: "soccer",
   children: "Soccer",
 };
+
+export const CheckboxCheckedStory = Template.bind({});
+CheckboxCheckedStory.args = {
+  ...CheckboxStory.args,
+  isSelected: true,
+};
+
+export const CheckboxDisabledStory = Template.bind({});
+CheckboxDisabledStory.args = {
+  ...CheckboxStory.args,
+  isDisabled: true,
+};
+
+export const CheckboxIndeterminateStory = Template.bind({});
+CheckboxIndeterminateStory.args = {
+  ...CheckboxStory.args,
+  isIndeterminate: true,
+};
