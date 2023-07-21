@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.17
+
+### Patch Changes
+
+- [#523](https://github.com/appsmithorg/design-system/pull/523) [`6c5ec6b8`](https://github.com/appsmithorg/design-system/commit/6c5ec6b86b5f2ee058289847a8987afc11381acb) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - chore: add documentation
+
+* [#516](https://github.com/appsmithorg/design-system/pull/516) [`02f2d243`](https://github.com/appsmithorg/design-system/commit/02f2d2439a29605b84c4a43c8219db32288f1267) Thanks [@dhruvikn](https://github.com/dhruvikn)! - feat: add collapsible component
+
 ## 2.1.16
 
 ### Patch Changes
