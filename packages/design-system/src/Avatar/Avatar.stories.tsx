@@ -20,3 +20,23 @@ AvatarStory.args = {
   label: "Avatar",
   isTooltipEnabled: true,
 };
+
+export const AvatarInitialStory = Template.bind({});
+AvatarInitialStory.args = {
+  firstLetter: "A",
+};
+
+export const AvatarFallbackInitial = Template.bind({});
+AvatarFallbackInitial.args = {
+  label: "appsmith",
+};
+
+export const AvatarSmallStory = Template.bind({});
+AvatarSmallStory.args = {
+  size: "sm",
+};
+
+export const AvatarMediumStory = Template.bind({});
+AvatarMediumStory.args = {
+  size: "md",
+};

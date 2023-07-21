@@ -43,6 +43,30 @@ Default.args = {
   content: "Am I a toast?",
 };
 
+export const SuccessToast = Template.bind({});
+SuccessToast.args = {
+  ...Default.args,
+  kind: "success",
+};
+
+export const WarningToast = Template.bind({});
+WarningToast.args = {
+  ...Default.args,
+  kind: "warning",
+};
+
+export const ErrorToast = Template.bind({});
+ErrorToast.args = {
+  ...Default.args,
+  kind: "error",
+};
+
+export const InformationToast = Template.bind({});
+InformationToast.args = {
+  ...Default.args,
+  kind: "info",
+};
+
 export const ToastWithAction = Template.bind({});
 ToastWithAction.args = {
   content: "Widget was removed.",

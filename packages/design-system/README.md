@@ -113,4 +113,4 @@ import { Button } from "@appsmithorg/design-system";
 
 ## Links
 
-- [Storybook](https://www.design-system.appsmith.com)
+- [Storybook](https://design-system.appsmith.com)

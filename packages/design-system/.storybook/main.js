@@ -1,5 +1,6 @@
 const path = require("path");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+import remarkGfm from 'remark-gfm';
 async function webpackConfig(config, options) {
   config.module.rules.push({
     test: /\.module\.css$/,
@@ -43,7 +44,7 @@ async function webpackConfig(config, options) {
           svgoConfig: {
             plugins: [
               {
-                name: 'preset-default',
+                name: "preset-default",
                 params: {
                   overrides: {
                     removeViewBox: false,
@@ -79,8 +80,28 @@ module.exports = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    "../src/Introduction.mdx",
+    "../src/DesignTokens.mdx",
+    "../src/Typography.mdx",
+    "../src/Colors.mdx",
+    "../src/Space.mdx",
+    "../src/FAQs.mdx",
+    "../src/*.mdx",
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
   addons: [
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -94,11 +115,13 @@ module.exports = {
     },
     "storybook-zeplin/register",
   ],
+  staticDirs: ["../src/__assets__"],
   webpackFinal: webpackConfig,
   features: {
     buildStoriesJson: true,
   },
   docs: {
     autodocs: true,
+    defaultName: "Documentation",
   },
 };

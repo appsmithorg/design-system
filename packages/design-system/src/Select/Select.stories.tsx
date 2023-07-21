@@ -656,6 +656,36 @@ SelectStory.args = {
   },
 };
 
+export const SelectSearchStory = SelectTemplate.bind({});
+SelectSearchStory.args = {
+  ...SelectStory.args,
+  showSearch: true,
+};
+
+export const SelectDisabledStory = SelectTemplate.bind({});
+SelectDisabledStory.args = {
+  ...SelectStory.args,
+  isDisabled: true,
+};
+
+export const SelectLoadingStory = SelectTemplate.bind({});
+SelectLoadingStory.args = {
+  ...SelectStory.args,
+  isLoading: true,
+};
+
+export const SelectInvalidStory = SelectTemplate.bind({});
+SelectInvalidStory.args = {
+  ...SelectStory.args,
+  isValid: false,
+};
+
+export const SelectMultiselectStory = SelectTemplate.bind({});
+SelectMultiselectStory.args = {
+  ...SelectStory.args,
+  isMultiSelect: true,
+};
+
 // eslint-disable-next-line react/function-component-definition
 const OptionTemplate: ComponentStory<typeof Option> = ({
   children,

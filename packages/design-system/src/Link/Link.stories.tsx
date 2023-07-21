@@ -42,6 +42,20 @@ const Template: ComponentStory<typeof Link> = (args) => {
   return <Link {...args} />;
 };
 
+export const PrimaryLink = Template.bind({});
+PrimaryLink.args = {
+  to: "https://appsmith.com",
+  children: "appsmith_",
+  kind: "primary",
+};
+
+export const SecondaryLink = Template.bind({});
+SecondaryLink.args = {
+  to: "https://appsmith.com",
+  children: "appsmith_",
+  kind: "secondary",
+};
+
 export const InternalLink = Template.bind({});
 InternalLink.args = {
   to: "old",

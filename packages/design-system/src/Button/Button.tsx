@@ -16,6 +16,10 @@ import {
 } from "./Button.constants";
 import { Spinner } from "Spinner";
 
+/**
+ * TODO:
+ * - if both left and right icon is used, disregard left icon and print a warning in the console.
+ */
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref): JSX.Element => {
     const {
