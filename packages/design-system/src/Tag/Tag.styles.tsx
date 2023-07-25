@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
-import { TagSizes } from "./Tag.types";
+import { TagSize } from "./Tag.types";
 import { Button } from "../Button";
 
 const Variables = css``;
 
-const TagSizeMap = {
+const SizeMap = {
   sm: css`
     padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
     height: 18px;
@@ -21,7 +21,7 @@ export const StyledTag = styled.span<{
 }>`
   ${Variables}
 
-  ${({ size }) => size && TagSizeMap[size]}
+  ${({ size }) => size && SizeMap[size]}
   min-width: fit-content;
 
   background-color: var(--ads-v2-color-bg-subtle);
