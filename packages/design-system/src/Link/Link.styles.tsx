@@ -5,7 +5,7 @@ import { LinkKind } from "./Link.types";
 
 const Variables = css`
   --color: var(--ads-v2-color-fg-brand);
-  --text-decoration: none;
+  --text-decoration: underline;
 `;
 
 const Kind = {
@@ -34,6 +34,7 @@ export const Styles = css<{ kind?: LinkKind }>`
   /* TODO: Remove this once blueprint is removed from the main repo. */
   color: var(--color) !important;
   text-decoration: var(--text-decoration) !important;
+  text-decoration-skip-ink: all;
 
   display: flex;
   align-content: center;
