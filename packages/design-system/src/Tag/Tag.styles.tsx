@@ -35,7 +35,7 @@ const KindMap = {
   `,
   info: css`
     --tag-color-background: var(--ads-v2-color-bg-information);
-    --tag-color-border: var(--ads-v2-color-border-information);
+    --tag-color-border: var(--ads-v2-color-border-info);
     --tag-color-fg: var(--ads-v2-color-fg-information);
     --tag-close-icon-color-background: inherit;
   `,
