@@ -50,6 +50,10 @@
   /** Used for information background */
   --ads-v2-color-bg-information: var(--ads-v2-color-blue-100);
 
+  --ads-v2-color-bg-special: var(--ads-v2-color-orange-100);
+
+  --ads-v2-color-bg-premium: var(--ads-v2-color-purple-100);
+
   /**
     * ===========================================*
     * ========== Foreground Colors ==============*
@@ -95,6 +99,10 @@
   /** Foreground color for information*/
   --ads-v2-color-fg-information: var(--ads-v2-color-blue-600);
 
+  --ads-v2-color-fg-special: var(--ads-v2-color-orange-600);
+
+  --ads-v2-color-fg-premium: var(--ads-v2-color-purple-600);
+
   /**
     * ===========================================*
     * ============ Border Colors ================*
@@ -128,6 +136,10 @@
   --ads-v2-color-border-warning: var(--ads-v2-color-yellow-600);
   /** Used for indicating information borders */
   --ads-v2-color-border-info: var(--ads-v2-color-blue-600);
+
+  --ads-v2-color-border-special: var(--ads-v2-color-orange-600);
+
+  --ads-v2-color-border-premium: var(--ads-v2-color-purple-600);
 
   /**
     * ===========================================*
