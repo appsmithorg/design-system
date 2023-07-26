@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { TagSize } from "./Tag.types";
+import { TagKind, TagSize } from "./Tag.types";
 import { Button } from "../Button";
 
 const Variables = css``;
@@ -15,9 +15,25 @@ const SizeMap = {
   `,
 };
 
+const KindMap = {
+  success: css`
+    --tag-color-background: var(--ads-v2-color-bg-success);
+  `,
+  warning: css`
+    --tag-color-background: var(--ads-v2-color-bg-warning);
+  `,
+  info: css`
+    --tag-color-background: var(--ads-v2-color-bg-information);
+  `,
+  error: css`
+    --tag-color-background: var(--ads-v2-color-bg-error);
+  `,
+};
+
 export const StyledTag = styled.span<{
   isClosed: boolean;
-  size?: TagSizes;
+  kind?: TagKind;
+  size?: TagSize;
 }>`
   ${Variables}
 
