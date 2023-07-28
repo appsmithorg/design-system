@@ -20,6 +20,42 @@ TagStory.args = {
   size: "sm",
 };
 
+export const SuccessTag = Template.bind({});
+SuccessTag.args = {
+  ...TagStory.args,
+  kind: "success",
+};
+
+export const ErrorTag = Template.bind({});
+ErrorTag.args = {
+  ...TagStory.args,
+  kind: "error",
+};
+
+export const WarningTag = Template.bind({});
+WarningTag.args = {
+  ...TagStory.args,
+  kind: "warning",
+};
+
+export const InfoTag = Template.bind({});
+InfoTag.args = {
+  ...TagStory.args,
+  kind: "info",
+};
+
+export const SpecialTag = Template.bind({});
+SpecialTag.args = {
+  ...TagStory.args,
+  kind: "special",
+};
+
+export const PremiumTag = Template.bind({});
+PremiumTag.args = {
+  ...TagStory.args,
+  kind: "premium",
+};
+
 export const TagCloseStory = Template.bind({});
 TagCloseStory.args = {
   ...TagStory.args,
