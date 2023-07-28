@@ -33,6 +33,9 @@
   --ads-v2-colors-action-primary-surface-default-bg: var(--ads-v2-color-bg-brand);
   --ads-v2-colors-action-primary-surface-hover-bg: var(--ads-v2-color-bg-brand-emphasis);
   --ads-v2-colors-action-primary-surface-active-bg: var(--ads-v2-color-bg-brand-emphasis-plus);
+  --ads-v2-colors-action-primary-surface-default-border: var(--ads-v2-color-border-brand);
+  --ads-v2-colors-action-primary-surface-hover-border: var(--ads-v2-color-border-brand-emphasis);
+  --ads-v2-colors-action-primary-surface-active-border: var(--ads-v2-color-border-brand-emphasis-plus);
   --ads-v2-colors-action-primary-label-default-fg: var(--ads-v2-color-fg-on-brand);
   --ads-v2-colors-action-primary-icon-default-fg: var(--ads-v2-color-fg-on-brand);
 
@@ -50,6 +53,7 @@
   --ads-v2-colors-action-tertiary-surface-default-bg: transparent;
   --ads-v2-colors-action-tertiary-surface-hover-bg: var(--ads-v2-color-bg-subtle);
   --ads-v2-colors-action-tertiary-surface-active-bg: var(--ads-v2-color-bg-muted);
+  --ads-v2-colors-action-tertiary-surface-default-border: transparent;
   --ads-v2-colors-action-tertiary-label-default-fg: var(--ads-v2-color-fg);
   --ads-v2-colors-action-tertiary-icon-default-fg: var(--ads-v2-color-fg);
 
@@ -57,6 +61,7 @@
   --ads-v2-colors-action-error-surface-default-bg: var(--ads-v2-color-bg-error);
   --ads-v2-colors-action-error-surface-hover-bg: var(--ads-v2-color-bg-error-emphasis);
   --ads-v2-colors-action-error-surface-active-bg: var(--ads-v2-color-bg-error-emphasis-plus);
+  --ads-v2-colors-action-error-surface-default-border: transparent;
   --ads-v2-colors-action-error-label-default-fg: var(--ads-v2-color-fg-on-error);
   --ads-v2-colors-action-error-icon-default-fg: var(--ads-v2-color-fg-on-error);
 
