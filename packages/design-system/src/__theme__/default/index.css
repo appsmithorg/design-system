@@ -62,18 +62,49 @@
 
   /* ========================= Control ========================= */
   --ads-v2-colors-control-field-default-bg: var(--ads-v2-color-bg);
+  --ads-v2-colors-control-field-checked-bg: var(--ads-v2-color-bg-brand-secondary);
+  --ads-v2-colors-control-field-hover-bg: var(--ads-v2-color-bg-subtle);
+  --ads-v2-colors-control-field-checked-hover-bg: var(--ads-v2-color-bg-brand-secondary-emphasis);
+  --ads-v2-colors-control-knob-default-bg: var(--ads-v2-color-bg);
+  --ads-v2-colors-control-track-default-bg: var(--ads-v2-color-bg-subtle);
   --ads-v2-colors-control-field-default-border: var(--ads-v2-color-border);
   --ads-v2-colors-control-field-hover-border: var(--ads-v2-color-border-emphasis);
-  --ads-v2-colors-control-field-active-border: var(--ads-v2-color-border-emphasis-plus);
-  --ads-v2-colors-control-placeholder-default-fg: var(--ads-v2-color-fg-subtle);
-  --ads-v2-colors-control-label-default-fg: var(--ads-v2-color-fg);
-  --ads-v2-colors-control-helper-default-fg: var(--ads-v2-color-fg-muted);
-  --ads-v2-colors-control-value-default-fg: var(--ads-v2-color-fg);
-  --ads-v2-colors-control-icon-default-fg: var(--ads-v2-color-fg);
-  --ads-v2-colors-control-helper-error-fg: var(--ads-v2-color-fg-error);
-  --ads-v2-colors-control-icon-error-fg: var(--ads-v2-color-fg-error);
+  --ads-v2-colors-control-field-active-border: var(--ads-v2-color-border-brand-secondary);
   --ads-v2-colors-control-field-checked-border: var(--ads-v2-color-border-brand-secondary);
   --ads-v2-colors-control-field-checked-hover-border: var(--ads-v2-color-border-brand-secondary-emphasis);
+  --ads-v2-colors-control-helper-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-control-helper-error-fg: var(--ads-v2-color-fg-error);
+  --ads-v2-colors-control-icon-checked-fg: var(--ads-v2-color-fg-on-brand-secondary);
+  --ads-v2-colors-control-icon-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-control-icon-error-fg: var(--ads-v2-color-fg-error);
+  --ads-v2-colors-control-label-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-control-placeholder-default-fg: var(--ads-v2-color-fg-subtle);
+  --ads-v2-colors-control-value-checked-fg: var(--ads-v2-color-fg-on-brand-secondary);
+  --ads-v2-colors-control-value-default-fg: var(--ads-v2-color-fg);
+
+  /* ========================= Response ========================= */
+  --ads-v2-colors-response-surface-default-bg: var(--ads-v2-color-bg);
+  --ads-v2-colors-response-error-surface-default-bg: var(--ads-v2-color-bg-error);
+  --ads-v2-colors-response-info-surface-default-bg: var(--ads-v2-color-bg-information);
+  --ads-v2-colors-response-success-surface-default-bg: var(--ads-v2-color-bg-success);
+  --ads-v2-colors-response-warning-surface-default-bg: var(--ads-v2-color-bg-warning);
+  --ads-v2-colors-response-text-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-response-label-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-response-error-icon-default-fg: var(--ads-v2-color-fg-error);
+  --ads-v2-colors-response-info-icon-default-fg: var(--ads-v2-color-fg-information);
+  --ads-v2-colors-response-success-icon-default-fg: var(--ads-v2-color-fg-success);
+  --ads-v2-colors-response-warning-icon-default-fg: var(--ads-v2-color-fg-warning);
+  --ads-v2-colors-response-surface-default-border: var(--ads-v2-color-border);
+
+  /* ========================= Content ========================= */
+  --ads-v2-colors-content-helper-default-fg: var(--ads-v2-color-fg-muted);
+  --ads-v2-colors-content-icon-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-content-label-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-content-surface-default-bg: var(--ads-v2-color-bg);
+  --ads-v2-colors-content-surface-hover-bg: var(--ads-v2-color-bg-subtle);
+  --ads-v2-colors-content-surface-active-bg: var(--ads-v2-color-bg-muted);
+  --ads-v2-colors-content-surface-default-border: var(--ads-v2-color-border);
+
 
 
   /**

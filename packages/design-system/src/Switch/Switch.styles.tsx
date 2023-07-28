@@ -2,7 +2,19 @@ import styled, { css } from "styled-components";
 import { Text } from "../Text";
 
 const Variables = css`
-  --switch-color-bg: var(--ads-v2-color-bg-emphasis);
+  --ads-v2-colors-control-switch-track-default-bg: var(
+    --ads-v2-color-bg-emphasis
+  );
+  --ads-v2-colors-control-switch-track-hover-bg: var(
+    --ads-v2-color-bg-emphasis-plus
+  );
+  --ads-v2-colors-control-switch-track-checked-bg: var(
+    --ads-v2-color-bg-brand-secondary
+  );
+  --ads-v2-colors-control-switch-track-checked-hover-bg: var(
+    --ads-v2-color-bg-brand-secondary-emphasis
+  );
+
   --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
@@ -54,7 +66,7 @@ export const StyledSwitchInput = styled.input<{
   margin: 0;
   cursor: pointer;
   border-radius: 10px;
-  background-color: var(--switch-color-bg);
+  background-color: var(--ads-v2-colors-control-switch-track-default-bg);
 
   outline: none;
 
@@ -66,12 +78,12 @@ export const StyledSwitchInput = styled.input<{
     `}}
 
   &:hover {
-    --switch-color-bg: var(--ads-v2-color-bg-emphasis-plus);
+    background-color: var(--ads-v2-colors-control-switch-track-hover-bg);
   }
 
   &:checked {
     justify-content: flex-end;
-    --switch-color-bg: var(--ads-v2-color-bg-brand-secondary);
+    background-color: var(--ads-v2-colors-control-switch-track-checked-bg);
 
     // set position of track when checked
     &::before {
@@ -81,7 +93,7 @@ export const StyledSwitchInput = styled.input<{
   }
 
   &:checked:hover {
-    --switch-color-bg: var(--ads-v2-color-bg-brand-secondary-emphasis)
+    background-color: var(--ads-v2-colors-control-switch-track-checked-hover-bg);
   }
 
   &:disabled {
@@ -89,11 +101,11 @@ export const StyledSwitchInput = styled.input<{
     opacity: var(--ads-v2-opacity-disabled);
 
     &:hover {
-      --switch-color-bg: var(--ads-v2-color-bg-emphasis);
+      background-color: var(--ads-v2-colors-control-switch-track-hover-bg);
     }
 
     &:checked:hover {
-      --switch-color-bg: var(--ads-v2-color-bg-brand-secondary);
+      background-color: var(--ads-v2-colors-control-switch-track-checked-hover-bg);
     }
   }
 

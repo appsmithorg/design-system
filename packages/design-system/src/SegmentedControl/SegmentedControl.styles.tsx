@@ -1,9 +1,18 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const Variables = css`
+  --ads-v2-colors-control-segment-value-active-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-control-segment-value-default-fg: var(
+    --ads-v2-color-fg-muted
+  );
+`;
 
 export const StyledSegmentedControl = styled.div<{
   isDisabled?: boolean;
   isFullWidth?: boolean;
 }>`
+  ${Variables}
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,7 +39,7 @@ export const StyledSegment = styled.span`
   padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-3);
 
   & > * {
-    color: var(--ads-v2-color-fg-muted);
+    color: var(--ads-v2-colors-control-segment-value-default-fg);
   }
 `;
 
@@ -62,7 +71,7 @@ export const StyledControlContainer = styled.div`
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
 
     & > ${StyledSegment} > * {
-      color: var(--ads-v2-color-fg);
+      color: var(--ads-v2-colors-control-segment-value-active-fg);
     }
   }
 

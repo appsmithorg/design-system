@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components";
 
 const Variables = css`
+  --ads-v2-colors-control-checkbox-icon-checked-fg: var(
+    --ads-v2-color-fg-on-brand-secondary
+  );
+
   --checkbox-color-label: var(--ads-v2-color-fg);
   --checkbox-color-border: var(--ads-v2-color-border);
   --checkbox-color-background: var(--ads-v2-color-bg);
-  --checkbox-color-background-checkmark: var(
-    --ads-v2-color-fg-on-brand-secondary
-  );
 `;
 
 const Checkbox = css`
@@ -59,7 +60,7 @@ const Checkbox = css`
     width: 5px;
     height: var(--ads-v2-spaces-1);
     border-radius: 4px;
-    background-color: var(--checkbox-color-background-checkmark);
+    background-color: var(--ads-v2-colors-control-checkbox-icon-checked-fg);
     transform: rotateZ(48deg);
     z-index: 2;
   }
@@ -77,7 +78,7 @@ const Checkbox = css`
     width: 10px;
     height: var(--ads-v2-spaces-1);
     border-radius: 4px;
-    background-color: var(--checkbox-color-background-checkmark);
+    background-color: var(--ads-v2-colors-control-checkbox-icon-checked-fg);
     transform: rotateZ(304deg);
     z-index: 2;
   }
