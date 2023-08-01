@@ -1,13 +1,14 @@
 import styled, { css } from "styled-components";
 
 const Variables = css`
+  /* This is a category level token.Since this is specific to checkbox, it is added here. */
   --ads-v2-colors-control-checkbox-icon-checked-fg: var(
     --ads-v2-color-fg-on-brand-secondary
   );
 
-  --checkbox-color-label: var(--ads-v2-color-fg);
-  --checkbox-color-border: var(--ads-v2-color-border);
-  --checkbox-color-background: var(--ads-v2-color-bg);
+  --checkbox-color-label: var(--ads-v2-colors-control-label-default-fg);
+  --checkbox-color-border: var(--ads-v2-colors-control-field-default-border);
+  --checkbox-color-background: var(--ads-v2-colors-control-field-default-bg);
 `;
 
 const Checkbox = css`
@@ -47,8 +48,8 @@ const Checkbox = css`
   }
 
   input[type="checkbox"]:checked + span {
-    --checkbox-color-border: var(--ads-v2-color-border-brand-secondary);
-    --checkbox-color-background: var(--ads-v2-color-bg-brand-secondary);
+    --checkbox-color-border: var(--ads-v2-colors-control-field-checked-border);
+    --checkbox-color-background: var(--ads-v2-colors-control-field-checked-bg);
   }
 
   span::after {
@@ -102,8 +103,12 @@ export const StyledCheckbox = styled.label<{
     if (isIndeterminate) {
       return css`
         span {
-          --checkbox-color-border: var(--ads-v2-color-border-brand-secondary);
-          --checkbox-color-background: var(--ads-v2-color-bg-brand-secondary);
+          --checkbox-color-border: var(
+            --ads-v2-colors-control-field-checked-border
+          );
+          --checkbox-color-background: var(
+            --ads-v2-colors-control-field-checked-hover-bg
+          );
         }
 
         span::after {
@@ -147,16 +152,18 @@ export const StyledCheckbox = styled.label<{
         ? css`
             &:hover > span {
               --checkbox-color-background: var(
-                --ads-v2-color-bg-brand-secondary-emphasis
+                --ads-v2-colors-control-field-checked-hover-bg
               ) !important;
               --checkbox-color-border: var(
-                --ads-v2-color-border-brand-secondary-emphasis
+                --ads-v2-colors-control-field-checked-hover-border
               ) !important;
             }
           `
         : css`
             &:hover > span {
-              --checkbox-color-border: var(--ads-v2-color-border-emphasis);
+              --checkbox-color-border: var(
+                --ads-v2-colors-control-field-hover-border
+              );
             }
           `;
     }
