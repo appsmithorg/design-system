@@ -83,7 +83,15 @@ export const StyledButton = styled(Button)`
   margin-left: var(--ads-v2-spaces-1);
   position: relative;
   top: 1px; // align with text
-  &:hover {
-    cursor: pointer;
+  cursor: pointer;
+
+  &:hover:not([data-disabled="true"]):not([data-loading="true"]) {
+    --button-color-fg: var(--tag-color-fg);
+    --button-color-bg: inherit;
+  }
+
+  &:active:not([data-disabled="true"]):not([data-loading="true"]) {
+    --button-color-fg: var(--tag-color-fg);
+    --button-color-bg: inherit;
   }
 `;
