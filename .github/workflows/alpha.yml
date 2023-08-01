@@ -68,7 +68,7 @@ jobs:
         run: |
           yarn changeset version --snapshot alpha
           yarn changeset publish --tag alpha
-          echo "VERSIONS_UPDATED=${{ yarn changeset status --output }}" >> $GITHUB_OUTPUT
+          echo "VERSIONS_UPDATED=$(yarn changeset status --output)" >> $GITHUB_OUTPUT
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
