@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.18
+
+### Patch Changes
+
+- [#534](https://github.com/appsmithorg/design-system/pull/534) [`059b0f0f`](https://github.com/appsmithorg/design-system/commit/059b0f0f7bdaee43a7e951d047e6b9b12bc2fb39) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - docs: separate resources from references
+
 ## 2.1.17
 
 ### Patch Changes
