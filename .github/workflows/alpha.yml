@@ -26,8 +26,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          ref: refs/pull/${{ inputs.pr }}/merge
+          ref: ${{ github.ref }}
       
       # Set up node version
       - name: Setup Node js version
