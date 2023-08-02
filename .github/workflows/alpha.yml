@@ -4,6 +4,11 @@ on:
   workflow_dispatch:
   # This workflow is only triggered by the generate alpha command dispatch
   workflow_call:
+    inputs:
+      pr:
+        description: "This is the PR number in case the workflow is being called in a pull request"
+        required: false
+        type: number
   repository_dispatch:
     types: [generate-alpha-command]
     
@@ -20,10 +25,9 @@ jobs:
       # Checkout branch or head commit
       - name: Checkout branch
         uses: actions/checkout@v3
-        if: github.event_name == 'pull_request'
         with:
           fetch-depth: 0
-          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+          ref: refs/pull/${{ inputs.pr }}/merge
       
       # Set up node version
       - name: Setup Node js version
