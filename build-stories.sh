@@ -6,7 +6,7 @@ set -o xtrace
 cd "$(dirname "$0")"
 
 _build-storybook() {
-  yarn install --immutable
+  yarn install --frozen-lockfile
   yarn build-storybook --loglevel warn --quiet --disable-telemetry --output-dir "$1"
 }
 

@@ -31,7 +31,7 @@ jobs:
      
      # Run yarn install to install project packages
       - name: Yarn
-        run: yarn install --immutable
+        run: yarn install --frozen-lockfile
       
       # yarn build to build the project
       - name: Build package
