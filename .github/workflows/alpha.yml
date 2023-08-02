@@ -20,9 +20,10 @@ jobs:
       # Checkout branch or head commit
       - name: Checkout branch
         uses: actions/checkout@v3
+        if: github.event_name == 'pull_request'
         with:
           fetch-depth: 0
-          ref: ${{ github.ref }}
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
       
       # Set up node version
       - name: Setup Node js version
@@ -68,7 +69,8 @@ jobs:
         run: |
           yarn changeset version --snapshot alpha
           yarn changeset publish --tag alpha
-          echo "VERSIONS_UPDATED=$(yarn changeset status --output)" >> $GITHUB_OUTPUT
+          tag=$(npm dist-tag | grep "alpha" | awk '{print $2}')
+          echo "VERSIONS_UPDATED=$tag" >> $GITHUB_OUTPUT
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
