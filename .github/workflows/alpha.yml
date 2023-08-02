@@ -1,7 +1,8 @@
 name: NPM Alpha Publish Release Workflow
 
 on:
-  # This workflow is only triggered by the ok to test command dispatch
+  workflow_dispatch:
+  # This workflow is only triggered by the generate alpha command dispatch
   workflow_call:
   repository_dispatch:
     types: [generate-alpha-command]
@@ -21,6 +22,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ref: ${{ github.ref }}
       
       # Set up node version
       - name: Setup Node js version
@@ -62,18 +64,18 @@ jobs:
       
       # Release alpha
       - name: Release to @alpha tag
-        if: steps.changesets.outputs.published != 'true'
+        id: changesets
         run: |
           yarn changeset version --snapshot alpha
           yarn changeset publish --tag alpha
+          echo "VERSIONS_UPDATED=$(yarn changeset status --output)" >> $GITHUB_OUTPUT
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Comment version details in PR
-        if: steps.changesets.outputs.published == 'true'
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{ github.event.client_payload.pull_request.number }}
           body: |
-            Publish Result: `${{ steps.changesets.outputs.publishedPackages }}``
+            Publish Result: `${{ steps.changesets.outputs.VERSIONS_UPDATED }}`
