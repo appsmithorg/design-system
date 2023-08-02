@@ -19,6 +19,9 @@ import {
   SegmentedControlSegmentsContainerClassName,
 } from "./SegmentedControl.constants";
 
+/**
+ * TODO: Rewrite segmented control to stop using the options={[],[]} api and start using a nested components API, to keep it in line with all the other components and how they work.
+ */
 const SegmentedControl = React.forwardRef(
   (props: SegmentedControlProps, ref: React.Ref<HTMLDivElement>) => {
     const {

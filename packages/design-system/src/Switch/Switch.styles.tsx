@@ -53,7 +53,7 @@ export const StyledSwitchInput = styled.input<{
   -webkit-appearance: none;
   appearance: none;
 
-  // the pill
+  // the track
   width: 2rem;
   height: 1.25rem;
   min-width: 2rem;

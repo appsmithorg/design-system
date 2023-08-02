@@ -6,6 +6,9 @@ import { AvatarGroup } from "./Avatar";
 export default {
   title: "Design System/Avatar/Avatar Group",
   component: AvatarGroup,
+  docs: {
+    autodocs: false,
+  },
   argTypes: {
     avatars: {
       control: {

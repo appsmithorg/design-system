@@ -68,7 +68,7 @@ const Avatar = React.forwardRef(
         >
           {image && !hasErrorLoadingImage && (
             <img
-              alt={`avatar-${label}`}
+              alt={`${label}'s profile picture`}
               className={AvatarImageClassName}
               onError={() => setHasErrorLoadingImage(true)}
               onLoad={() => setHasErrorLoadingImage(false)}
@@ -78,7 +78,10 @@ const Avatar = React.forwardRef(
           {!shouldRenderImage && firstLetter && (
             <span className={AvatarSvgClassName}>{firstLetter}</span>
           )}
-          {!shouldRenderImage && !firstLetter && (
+          {!shouldRenderImage && !firstLetter && label && (
+            <span className={AvatarSvgClassName}>{label.slice(0, 1)}</span>
+          )}
+          {!shouldRenderImage && !firstLetter && !label && (
             <Icon
               className={AvatarLetterClassName}
               name={svgIconName}
