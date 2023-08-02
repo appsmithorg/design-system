@@ -67,6 +67,10 @@ async function webpackConfig(config, options) {
       and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
     },
   });
+
+  // 3. Disable terser since build is failing
+  config.optimization.minimize = false;
+
   return {
     ...config,
     resolve: {
