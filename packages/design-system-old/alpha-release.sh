@@ -1,5 +1,5 @@
 echo "==============Yarn install from lock file=============="
-yarn install --frozen-lockfile
+yarn install --immutable
 
 echo "==============Increment version=============="
 npm version prerelease --preid alpha
