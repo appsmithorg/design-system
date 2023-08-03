@@ -67,7 +67,6 @@ jobs:
         run: |
           yarn changeset version --snapshot alpha
           tag=$(yarn changeset publish --tag alpha | grep "New tag:" | awk '{print $4}')
-          echo "Testing albin $tag"
           echo "alpha_version=$tag" >> $GITHUB_OUTPUT
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
