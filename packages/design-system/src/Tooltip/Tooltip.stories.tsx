@@ -106,7 +106,7 @@ export default {
 const Template: ComponentStory<typeof Tooltip> = (args) => {
   return (
     <Tooltip {...args}>
-      <Text color="red">
+      <Text>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
         <br />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
