@@ -80,4 +80,4 @@ jobs:
         with:
           issue-number: ${{ github.event.client_payload.pull_request.number }}
           body: |
-          Publish Result: `${{ steps.changesets.outputs.alpha_version }}`
+          Publish Result: ${{ steps.changesets.outputs.alpha_version }}
