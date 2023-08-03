@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-docs: separate resources from references
+feat: add affordance to link
