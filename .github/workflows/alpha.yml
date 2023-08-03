@@ -2,15 +2,15 @@ name: NPM Alpha Publish Release Workflow
 
 on:
   workflow_dispatch:
-  # This workflow is only triggered by the generate alpha command dispatch
-  workflow_call:
   repository_dispatch:
     types: [generate-alpha-command]
     
 jobs:
   release:
     name: Release
+
     runs-on: ubuntu-latest
+
     steps:
       # Get yarn cache directory and set it in a variable
       - name: Get yarn cache path
@@ -20,10 +20,8 @@ jobs:
       # Checkout branch or head commit
       - name: Checkout branch
         uses: actions/checkout@v3
-        if: github.event_name == 'pull_request'
         with:
-          fetch-depth: 0
-          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+          ref: ${{ github.ref }}
       
       # Set up node version
       - name: Setup Node js version
@@ -68,9 +66,9 @@ jobs:
         id: changesets
         run: |
           yarn changeset version --snapshot alpha
-          yarn changeset publish --tag alpha
-          tag=$(npm dist-tag | grep "alpha" | awk '{print $2}')
-          echo "VERSIONS_UPDATED=$tag" >> $GITHUB_OUTPUT
+          tag=$(yarn changeset publish --tag alpha | grep "New tag:" | awk '{print $4}')
+          echo "Testing albin $tag"
+          echo "alpha_version=$tag" >> $GITHUB_OUTPUT
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -80,4 +78,4 @@ jobs:
         with:
           issue-number: ${{ github.event.client_payload.pull_request.number }}
           body: |
-            Publish Result: `${{ steps.changesets.outputs.VERSIONS_UPDATED }}`
+            Publish Result: ${{ steps.changesets.outputs.alpha_version }}
