@@ -78,6 +78,6 @@ jobs:
       - name: Comment version details in PR
         uses: peter-evans/create-or-update-comment@v2
         with:
-          issue-number: ${{ github.event.pull_request.number }}
+          issue-number: ${{ github.event.number }}
           body: |
           Publish Result: ${{ steps.changesets.outputs.alpha_version }}
