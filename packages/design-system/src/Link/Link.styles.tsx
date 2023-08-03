@@ -6,6 +6,7 @@ import { LinkKind } from "./Link.types";
 const Variables = css`
   --color: var(--ads-v2-color-fg-brand);
   --text-decoration: none;
+  --text-decoration-color: none;
 `;
 
 const Kind = {
@@ -13,14 +14,27 @@ const Kind = {
     --color: var(--ads-v2-color-fg-brand);
     :hover {
       --color: var(--ads-v2-color-fg-brand-emphasis);
-      --text-decoration: underline;
     }
   `,
   secondary: css`
     --color: var(--ads-v2-color-fg);
+    --text-decoration: underline;
+    --text-decoration-color: var(--ads-v2-color-border);
     :hover {
       --color: var(--ads-v2-color-fg-emphasis);
-      --text-decoration: underline;
+      --text-decoration-color: var(--ads-v2-color-border-emphasis);
+    }
+    :active {
+      --color: var(--ads-v2-color-fg-emphasis-plus);
+      --text-decoration-color: var(--ads-v2-color-border-emphasis-plus);
+    }
+    :focus:active {
+      --color: var(--ads-v2-color-fg-emphasis-plus);
+      --text-decoration-color: var(--ads-v2-color-border-emphasis-plus);
+    }
+    :focus {
+      --color: var(--ads-v2-color-fg);
+      --text-decoration-color: var(--ads-v2-color-border);
     }
   `,
 };
@@ -34,6 +48,9 @@ export const Styles = css<{ kind?: LinkKind }>`
   /* TODO: Remove this once blueprint is removed from the main repo. */
   color: var(--color) !important;
   text-decoration: var(--text-decoration) !important;
+  text-decoration-color: var(--text-decoration-color) !important;
+  text-decoration-skip-ink: all !important;
+  text-underline-offset: var(--ads-v2-spaces-2) !important;
 
   display: flex;
   align-content: center;
@@ -42,7 +59,6 @@ export const Styles = css<{ kind?: LinkKind }>`
     outline: var(--ads-v2-border-width-outline) solid
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
-    text-decoration: var(--text-decoration);
     border-radius: var(--ads-v2-border-radius);
   }
 `;
