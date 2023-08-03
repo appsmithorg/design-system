@@ -16,8 +16,8 @@ jobs:
       - name: Checkout PR if pull_request event
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref }}
           fetch-depth: 0
+          ref: "refs/pull/${{ github.event.client_payload.pull_request.number }}/merge"
           
       # Setup node with version 16.x and NPM registry url
       - name: Use Node.js 16.x
