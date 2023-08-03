@@ -9,6 +9,8 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.changesets.outputs.version }}
     steps:
       # Get yarn cache directory and set it in a variable
       - name: Get yarn cache path
@@ -64,9 +66,8 @@ jobs:
         id: changesets
         run: |
           yarn changeset version --snapshot alpha
-          yarn changeset publish --tag alpha
-          tag=$(npm dist-tag | grep "alpha" | awk '{print $2}')
-          echo "VERSIONS_UPDATED=$tag" >> $GITHUB_OUTPUT
+          tag=$(yarn changeset publish --tag alpha | grep "New tag:" | awk '{print $3}')
+          echo "version=$tag" >> $GITHUB_OUTPUT
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -76,4 +77,4 @@ jobs:
         with:
           issue-number: ${{ github.event.client_payload.pull_request.number }}
           body: |
-          Publish Result: `${{ steps.changesets.outputs.VERSIONS_UPDATED }}`
+          Publish Result: `${{ steps.changesets.outputs.version }}`
