@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
+          fetch-depth: 0
           
       # Setup node with version 16.x and NPM registry url
       - name: Use Node.js 16.x
