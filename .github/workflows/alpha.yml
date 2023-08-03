@@ -66,7 +66,7 @@ jobs:
         id: changesets
         run: |
           yarn changeset version --snapshot alpha
-          tag=$(yarn changeset publish --tag alpha | grep "New tag:" | awk '{print $2}')
+          tag=$(yarn changeset publish --tag alpha | grep "New tag:" | awk '{print $4}')
           echo "Testing albin $tag"
           echo "alpha_version=$tag" >> $GITHUB_OUTPUT
         env:
@@ -78,4 +78,4 @@ jobs:
         with:
           issue-number: 557
           body: |
-          Publish Result: ${{ steps.changesets.outputs.alpha_version }}
+            Publish Result: ${{ steps.changesets.outputs.alpha_version }}
