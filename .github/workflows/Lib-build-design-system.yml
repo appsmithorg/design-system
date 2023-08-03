@@ -13,12 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout the code
-      - uses: actions/checkout@v3
+      - name: Checkout PR if pull_request event
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          ref: ${{ github.ref }}
           
       # Setup node with version 16.x and NPM registry url
-      - uses: actions/setup-node@v1
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
