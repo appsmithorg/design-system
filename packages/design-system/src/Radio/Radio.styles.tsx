@@ -1,16 +1,15 @@
 import styled, { css } from "styled-components";
 
 const Variables = css`
-  --ads-v2-colors-control-radio-tack-default-bg: var(--ads-v2-color-bg);
-  --ads-v2-colors-control-radio-tack-checked-bg: var(
+  --ads-v2-colors-control-radio-dot-checked-bg: var(
     --ads-v2-color-bg-brand-secondary
   );
-  --ads-v2-colors-control-radio-tack-checked-hover-bg: var(
+  --ads-v2-colors-control-radio-dot-checked-hover-bg: var(
     --ads-v2-color-bg-brand-secondary-emphasis
   );
 
-  --radio-color-border: var(--ads-v2-color-border);
-  --radio-color-check-mark: var(--ads-v2-colors-control-radio-tack-checked-bg);
+  --radio-color-border: var(--ads-v2-colors-control-field-default-border);
+  --radio-color-dot: var(--ads-v2-colors-control-radio-dot-checked-bg);
   --radio-color-label: var(--ads-v2-color-fg);
 `;
 
@@ -31,7 +30,7 @@ const BasicStyles = css`
     position: absolute;
     width: var(--ads-v2-spaces-5);
     height: var(--ads-v2-spaces-5);
-    background-color: var(--ads-v2-colors-control-radio-tack-default-bg);
+    background-color: var(--ads-v2-colors-control-field-default-bg);
     border: 1px solid var(--radio-color-border);
     border-radius: 50%;
     top: 50%;
@@ -45,8 +44,8 @@ const BasicStyles = css`
     position: absolute;
     width: var(--ads-v2-spaces-5);
     height: var(--ads-v2-spaces-5);
-    background-color: var(--radio-color-check-mark);
-    border: 1px solid var(--radio-color-check-mark);
+    background-color: var(--radio-color-dot);
+    border: 1px solid var(--radio-color-dot);
     border-radius: 50%;
     top: 50%;
     left: 0;
@@ -55,7 +54,7 @@ const BasicStyles = css`
   }
 
   input[type="radio"]:checked + span::before {
-    --radio-color-border: var(--ads-v2-color-border-brand-secondary);
+    --radio-color-border: var(--ads-v2-colors-control-field-checked-border);
   }
 
   input[type="radio"]:checked + span::after {
@@ -64,18 +63,18 @@ const BasicStyles = css`
 
   /* unchecked hover - outer circle */
   input[type="radio"]:hover:not(:disabled) + span::before {
-    --radio-color-border: var(--ads-v2-color-border-emphasis);
+    --radio-color-border: var(--ads-v2-colors-control-field-hover-border);
   }
   /* checked hover - outer circle */
   input[type="radio"]:checked:hover:not(:disabled) + span::before {
-    --radio-color-border: var(--ads-v2-color-border-brand-secondary-emphasis);
+    --radio-color-border: var(
+      --ads-v2-colors-control-field-checked--hover-border
+    );
   }
 
   /* checked hover - inner circle */
   input[type="radio"]:checked:hover:not(:disabled) + span::after {
-    --radio-color-check-mark: var(
-      --ads-v2-colors-control-radio-tack-checked-hover-bg
-    );
+    --radio-color-dot: var(--ads-v2-colors-control-radio-dot-checked-hover-bg);
   }
 `;
 
