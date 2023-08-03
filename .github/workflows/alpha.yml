@@ -2,13 +2,6 @@ name: NPM Alpha Publish Release Workflow
 
 on:
   workflow_dispatch:
-  # This workflow is only triggered by the generate alpha command dispatch
-  workflow_call:
-    inputs:
-      pr:
-        description: "This is the PR number in case the workflow is being called in a pull request"
-        required: false
-        type: number
   repository_dispatch:
     types: [generate-alpha-command]
     
@@ -83,4 +76,4 @@ jobs:
         with:
           issue-number: ${{ github.event.client_payload.pull_request.number }}
           body: |
-            Publish Result: `${{ steps.changesets.outputs.VERSIONS_UPDATED }}`
+          Publish Result: `${{ steps.changesets.outputs.VERSIONS_UPDATED }}`

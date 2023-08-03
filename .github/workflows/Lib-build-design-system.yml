@@ -2,11 +2,6 @@ name: Build Design system Lib
 
 on:
   workflow_call:
-    inputs:
-      pr:
-        description: "This is the PR number in case the workflow is being called in a pull request"
-        required: false
-        type: number
 
 # Change the working directory for all the jobs in this workflow
 defaults:
@@ -22,8 +17,7 @@ jobs:
         uses: actions/checkout@v3
         if: inputs.pr != 0
         with:
-          fetch-depth: 0
-          ref: refs/pull/${{ inputs.pr }}/merge
+          ref: ${{ github.ref }}
           
       # Setup node with version 16.x and NPM registry url
       - name: Use Node.js 16.x
