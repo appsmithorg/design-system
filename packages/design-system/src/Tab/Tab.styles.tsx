@@ -14,7 +14,7 @@ const Variables = css`
   );
   --ads-v2-colors-content-tag-background-default-bg: var(--ads-v2-color-bg);
 
-  --tab-color: var(--ads-v2-color-fg-muted);
+  --tab-color: var(--ads-v2-colors-content-label-inactive-fg);
   --tab-selection-color: var(
     --ads-v2-colors-content-tab-surface-default-border
   );
@@ -81,11 +81,11 @@ export const StyledTab = styled(RadixTabs.TabsTrigger)`
     --tab-selection-color: var(
       --ads-v2-colors-content-tab-surface-active-border
     );
-    --tab-color: var(--ads-v2-color-fg);
+    --tab-color: var(--ads-v2-colors-content-label-default-fg);
   }
 
   &:focus-visible {
-    --tab-color: var(--ads-v2-color-fg);
+    --tab-color: var(--ads-v2-colors-content-label-default-fg);
     outline: var(--ads-v2-border-width-outline) solid
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);

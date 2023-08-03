@@ -4,9 +4,9 @@ import { ToggleSizes } from "./ToggleButton.types";
 
 const Variables = css`
   --toggle-padding: var(--ads-v2-spaces-2);
-  --toggle-color-border: var(--ads-v2-color-border);
-  --toggle-color-background: var(--ads-v2-color-bg);
-  --toggle-color-icon: var(--ads-v2-color-fg);
+  --toggle-color-border: var(--ads-v2-colors-control-field-default-border);
+  --toggle-color-background: var(--ads-v2-colors-control-field-default-bg);
+  --toggle-color-icon: var(--ads-v2-colors-control-icon-default-fg);
   --toggle-height: var(--ads-v2-spaces-5);
   --toggle-width: var(--ads-v2-spaces-5);
 `;
@@ -45,19 +45,19 @@ export const StyledToggleButton = styled.button<{
   }
 
   &:hover:enabled {
-    --toggle-color-background: var(--ads-v2-color-bg-subtle);
-    --toggle-color-border: var(--ads-v2-color-border-emphasis);
+    --toggle-color-background: var(--ads-v2-colors-control-field-hover-bg);
+    --toggle-color-border: var(--ads-v2-colors-control-field-hover-border);
   }
 
   ${({ isSelected }) =>
     isSelected &&
-    `--toggle-color-background: var(--ads-v2-color-bg-brand-secondary);
-     --toggle-color-border: var(--ads-v2-color-border-brand-secondary);
-     --toggle-color-icon: var(--ads-v2-color-fg-on-brand-secondary);
+    `--toggle-color-background: var(--ads-v2-colors-control-field-checked-bg);
+     --toggle-color-border: var(--ads-v2-colors-control-field-checked-border);
+     --toggle-color-icon: var(--ads-v2-colors-control-icon-checked-fg);
 
      &:hover:enabled {
-       --toggle-color-background: var(--ads-v2-color-bg-brand-secondary-emphasis);
-       --toggle-color-border: var(--ads-v2-color-border-brand-secondary-emphasis);
+       --toggle-color-background: var(--ads-v2-colors-control-field-checked-hover-bg);
+       --toggle-color-border: var(--ads-v2-colors-control-field-checked-hover-border);
      }
   `}
 

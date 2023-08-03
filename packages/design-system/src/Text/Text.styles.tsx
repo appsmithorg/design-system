@@ -40,7 +40,7 @@ const TypographyScales = css`
 
 const Variables = css`
   --font-family: var(--ads-v2-font-family);
-  --color: var(--ads-v2-color-fg);
+  --color: var(--ads-v2-colors-content-label-default-fg);
 
   --font-size: var(--ads-v2-p-font-size);
   --font-weight: var(--ads-v2-p-font-weight);
@@ -54,7 +54,7 @@ const Kind = {
     --font-weight: var(--ads-v2-p-font-weight);
     --line-height: var(--ads-v2-p-line-height);
     --letter-spacing: var(--ads-v2-p-letter-spacing);
-    --color: var(--ads-v2-color-fg-error);
+    --color: var(--ads-v2-colors-content-label-error-fg);
   `,
   // The default, span, uses the same values as p for now.
   span: css`

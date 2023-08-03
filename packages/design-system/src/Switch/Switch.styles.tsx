@@ -14,8 +14,6 @@ const Variables = css`
   --ads-v2-colors-control-switch-track-checked-hover-bg: var(
     --ads-v2-color-bg-brand-secondary-emphasis
   );
-
-  --thumb-color-bg: var(--ads-v2-color-bg);
 `;
 
 export const StyledSwitch = styled.label`
@@ -116,8 +114,8 @@ export const StyledSwitchInput = styled.input<{
     height: 1rem;
     grid-area: off;
     border-radius: var(--ads-v2-border-radius-circle);
-    background-color: var(--thumb-color-bg);
+    background-color: var(--ads-v2-colors-control-knob-default-bg);
 
     box-shadow: 0 1px 4px 0 rgba(76, 86, 100, 0.2);
-}
+  }
 `;

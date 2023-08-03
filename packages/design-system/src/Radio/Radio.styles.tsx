@@ -68,7 +68,7 @@ const BasicStyles = css`
   /* checked hover - outer circle */
   input[type="radio"]:checked:hover:not(:disabled) + span::before {
     --radio-color-border: var(
-      --ads-v2-colors-control-field-checked--hover-border
+      --ads-v2-colors-control-field-checked-hover-border
     );
   }
 
