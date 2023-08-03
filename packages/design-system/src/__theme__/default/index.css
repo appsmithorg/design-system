@@ -76,6 +76,7 @@
   --ads-v2-colors-control-field-hover-border: var(--ads-v2-color-border-emphasis);
   --ads-v2-colors-control-field-active-border: var(--ads-v2-color-border-brand-secondary);
   --ads-v2-colors-control-field-checked-border: var(--ads-v2-color-border-brand-secondary);
+  --ads-v2-colors-control-field-error-border: var(--ads-v2-color-border-error);
   --ads-v2-colors-control-field-checked-hover-border: var(--ads-v2-color-border-brand-secondary-emphasis);
   --ads-v2-colors-control-helper-default-fg: var(--ads-v2-color-fg);
   --ads-v2-colors-control-helper-error-fg: var(--ads-v2-color-fg-error);
@@ -109,6 +110,7 @@
   --ads-v2-colors-content-surface-hover-bg: var(--ads-v2-color-bg-subtle);
   --ads-v2-colors-content-surface-active-bg: var(--ads-v2-color-bg-muted);
   --ads-v2-colors-content-surface-default-border: var(--ads-v2-color-border);
+  --ads-v2-colors-content-container-default-border: var(--ads-v2-color-border-muted);
 
 
 
