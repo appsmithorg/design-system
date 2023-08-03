@@ -38,28 +38,3 @@ IconStory.args = {
   size: "md",
   withWrapper: false,
 };
-
-export function AllIcons() {
-  return (
-    <div style={{ width: "100%;", display: "flex", flexDirection: "column" }}>
-      {IconCollection.sort().map((icon, index) => (
-        <div
-          key={index}
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            height: "4rem",
-          }}
-        >
-          <Icon color="var(--ads-v2-color-fg)" name={icon} size="lg" />
-          <Text kind="body-m">{icon}</Text>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-AllIcons.decorators = [
-  (Story) => <div style={{ height: "75%", width: "25%" }}>{Story()}</div>,
-];

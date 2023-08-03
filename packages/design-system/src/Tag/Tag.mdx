@@ -17,6 +17,33 @@ Use tags to categorize items with descriptive keywords. Use short labels for eas
 ## Spacing
 ![Tag spacing](./docs/tag-spacing.png)
 
+## Kind
+
+### Success
+Indicate that something is working as expected. It can also mark a recommended action, option or setting. E.g. “Active”.
+<Canvas of={TagStories.SuccessTag} />
+
+### Warning
+Indicate that something is working, but might cause issues later. Can also mark an action that is not recommended, or is expected to lead to an error down the line. E.g. “Expiring”.
+<Canvas of={TagStories.WarningTag} />
+
+### Error
+Indicate that something is not working as expected. Can also mark an action that is broken or will break some functionality immediately. E.g. "Expired".
+<Canvas of={TagStories.ErrorTag} />
+
+### Info
+For general use. Any tag that provides neutral information, or does not fit into one of the other categories falls here.
+<Canvas of={TagStories.InfoTag} />
+
+### Special
+Used to indicate features that are available as a custom option under Enterprise Edition
+<Canvas of={TagStories.SpecialTag} />
+
+### Premium
+Used to tag and upsell features that are included in the Business Edition
+<Canvas of={TagStories.PremiumTag} />
+
+
 ## Removing tags
 Tags can be permanent or closable (by displaying the close icon). The `isClosable` prop enables users to actively remove any tag and is frequently utilized in filtering.
 
@@ -25,5 +52,5 @@ Tags can be permanent or closable (by displaying the close icon). The `isClosabl
 ## Usage
 
 - Use sentence case for writing labels.
-- Keep labels short to prevent wrapping.
+- Keep labels short to prevent wrapping, typically one or two words.
 - Avoid overloading an interface with tags as it reduces their meaning and makes them easier to overlook.
