@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { PopoverSize } from "./Popover.types";
 import { Close, Content } from "@radix-ui/react-popover";
-import { ModalContentBodyClassName } from "../Modal/Modal.constants";
 
 const Variables = css`
   --popover-padding: var(--ads-v2-spaces-4);

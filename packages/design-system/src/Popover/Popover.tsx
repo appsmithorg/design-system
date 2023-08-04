@@ -15,19 +15,32 @@ import {
 } from "./Popover.styles";
 import { Text } from "../Text";
 import { Button } from "../Button";
+import {
+  PopoverBodyContentClassName,
+  PopoverBodyHeaderClassName,
+  PopoverTriggerClassName,
+} from "./Popover.constants";
 
 function PopoverTrigger(props: PopoverTriggerProps) {
   return (
-    <Trigger {...props} asChild>
+    <Trigger
+      className={`${PopoverTriggerClassName} ${props.className}`}
+      {...props}
+      asChild
+    >
       {props.children}
     </Trigger>
   );
 }
 
 // Text kind should be section-heading
-function PopoverHeader({ children, isClosable = true }: PopoverHeaderProps) {
+function PopoverHeader({
+  children,
+  className,
+  isClosable = true,
+}: PopoverHeaderProps) {
   return (
-    <StyledHeader>
+    <StyledHeader className={`${PopoverBodyHeaderClassName} ${className}`}>
       <Text>{children}</Text>
       {isClosable && (
         <StyledClose>
@@ -45,7 +58,12 @@ function PopoverHeader({ children, isClosable = true }: PopoverHeaderProps) {
 function PopoverContent({ size = "sm", ...props }: PopoverContentProps) {
   return (
     <Portal>
-      <StyledContent $size={size} sideOffset={4} {...props}>
+      <StyledContent
+        $size={size}
+        className={`${PopoverBodyContentClassName} ${props.className}`}
+        sideOffset={4}
+        {...props}
+      >
         {props.children}
       </StyledContent>
     </Portal>
