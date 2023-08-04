@@ -36,6 +36,29 @@ CalloutStory.argTypes = {
   },
 };
 
+export const CalloutInfoStory = Template.bind({});
+CalloutInfoStory.args = {
+  ...CalloutStory.args,
+  kind: "info",
+};
+export const CalloutSuccessStory = Template.bind({});
+CalloutSuccessStory.args = {
+  ...CalloutStory.args,
+  kind: "success",
+};
+
+export const CalloutWarningStory = Template.bind({});
+CalloutWarningStory.args = {
+  ...CalloutStory.args,
+  kind: "warning",
+};
+
+export const CalloutErrorStory = Template.bind({});
+CalloutErrorStory.args = {
+  ...CalloutStory.args,
+  kind: "error",
+};
+
 export const CalloutWithLink = Template.bind({});
 CalloutWithLink.args = {
   children: "This is a successful callout",

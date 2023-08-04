@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "2.1.15",
+  "version": "2.1.18",
   "description": "This is the package for the design system that powers the Appsmith platform",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -74,6 +74,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.0.0",
+    "remark-gfm": "^3.0.1",
     "remixicon-react": "^1.0.0",
     "rollup": "^3.9.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",

@@ -1,3 +1,6 @@
+#!/bin/bash
+
+set -e
 echo "==============Yarn install from lock file=============="
 yarn install --frozen-lockfile
 

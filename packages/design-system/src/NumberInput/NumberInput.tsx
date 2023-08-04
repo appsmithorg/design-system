@@ -6,6 +6,9 @@ import { StyledNumberInput } from "./NumberInput.styles";
 import { NumberInputClassName } from "./NumberInput.constants";
 import { useDOMRef } from "Hooks/useDomRef";
 
+/**
+ * TODO: Number input should actually use input type number.
+ */
 const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
   (props, ref) => {
     const inputRef = useDOMRef(ref);

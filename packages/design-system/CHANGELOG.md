@@ -1,5 +1,27 @@
 # @appsmithorg/design-system
 
+## 2.1.18
+
+### Patch Changes
+
+- [#534](https://github.com/appsmithorg/design-system/pull/534) [`059b0f0f`](https://github.com/appsmithorg/design-system/commit/059b0f0f7bdaee43a7e951d047e6b9b12bc2fb39) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - docs: separate resources from references
+
+## 2.1.17
+
+### Patch Changes
+
+- [#523](https://github.com/appsmithorg/design-system/pull/523) [`6c5ec6b8`](https://github.com/appsmithorg/design-system/commit/6c5ec6b86b5f2ee058289847a8987afc11381acb) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - chore: add documentation
+
+* [#516](https://github.com/appsmithorg/design-system/pull/516) [`02f2d243`](https://github.com/appsmithorg/design-system/commit/02f2d2439a29605b84c4a43c8219db32288f1267) Thanks [@dhruvikn](https://github.com/dhruvikn)! - feat: add collapsible component
+
+## 2.1.16
+
+### Patch Changes
+
+- [#525](https://github.com/appsmithorg/design-system/pull/525) [`8c73e9e6`](https://github.com/appsmithorg/design-system/commit/8c73e9e6620efbad2778237187e7abe792928735) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding link-unlink icon from remixicon-react
+
+* [#526](https://github.com/appsmithorg/design-system/pull/526) [`070286b8`](https://github.com/appsmithorg/design-system/commit/070286b8c999b593d7f2a061480bae47dc0d551e) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding user settings line icon from remixicon react
+
 ## 2.1.15
 
 ### Patch Changes

@@ -1,11 +1,13 @@
 import React from "react";
-import { Sizes } from "../__config__/types";
+import { Kind, Sizes } from "../__config__/types";
 
-export type TagSizes = Extract<Sizes, "sm" | "md">;
+export type TagSize = Extract<Sizes, "sm" | "md">;
+
+export type TagKind = Kind | "special" | "premium";
 
 export type TagProps = {
   /** the size of the tag */
-  size?: TagSizes;
+  size?: TagSize;
 
   /** (try not to) pass addition classes here */
   className?: string;
@@ -15,6 +17,9 @@ export type TagProps = {
 
   /** whether or not the tag can be dismissed*/
   isClosable?: boolean;
+
+  /** the kind of the tag */
+  kind?: TagKind;
 
   /** the function to call when the tag is dismissed */
   onClose?: () => void;
