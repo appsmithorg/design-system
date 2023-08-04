@@ -63,6 +63,8 @@ PopoverContentStory.args = {
       <PopoverBody>
         <Input label="Old password" renderAs="input" size="md" />
         <Input label="New Password" renderAs="input" size="md" />
+        <Input label="Third input" renderAs="input" size="md" />
+        <Input label="Fourth input" renderAs="input" size="md" />
         <Button UNSAFE_width="150px" kind="primary" size="md">
           Change
         </Button>
