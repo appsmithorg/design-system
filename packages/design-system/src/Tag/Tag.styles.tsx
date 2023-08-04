@@ -3,9 +3,9 @@ import { TagKind, TagSize } from "./Tag.types";
 import { Button } from "../Button";
 
 const Variables = css`
-  --tag-color-background: var(--ads-v2-color-bg);
-  --tag-color-border: var(--ads-v2-color-border);
-  --tag-color-fg: var(--ads-v2-color-fg);
+  --tag-color-background: var(--ads-v2-colors-content-surface-info-bg);
+  --tag-color-border: var(--ads-v2-colors-content-surface-info-border);
+  --tag-color-fg: var(--ads-v2-colors-content-label-info-fg);
 `;
 
 const SizeMap = {
