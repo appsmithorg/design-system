@@ -13,15 +13,15 @@ const Variables = css`
 const Size = {
   sm: css`
     --popover-padding: var(--ads-v2-spaces-4);
-    --popover-min-width: 23vw;
-    --popover-max-width: 34vw;
-    --popover-max-height: 57.5vh;
+    --popover-min-width: 14.3vw;
+    --popover-max-width: 21.4vw;
+    --popover-max-height: 26.02vh;
   `,
   md: css`
     --popover-padding: var(--ads-v2-spaces-5);
-    --popover-min-width: 52.7vw;
-    --popover-max-width: 57.53vw;
-    --popover-max-height: 41.93vh;
+    --popover-min-width: 28.5vw;
+    --popover-max-width: 35.7vw;
+    --popover-max-height: 46.8vh;
   `,
 };
 
