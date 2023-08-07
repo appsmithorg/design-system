@@ -55,6 +55,12 @@ const PopoverContentTemplate: ComponentStory<typeof PopoverHeader> = (args) => {
 
 export const PopoverContentStory = PopoverContentTemplate.bind({});
 PopoverContentStory.storyName = "Content";
+PopoverContentStory.argTypes = {
+  size: {
+    control: "radio",
+    options: ["sm", "md"],
+  },
+};
 PopoverContentStory.args = {
   size: "sm",
   children: (
