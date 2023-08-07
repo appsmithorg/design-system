@@ -1,5 +1,14 @@
 # @appsmithorg/design-system
 
+## 2.1.19
+
+### Patch Changes
+
+- [#535](https://github.com/appsmithorg/design-system/pull/535) [`c69f8439`](https://github.com/appsmithorg/design-system/commit/c69f8439ff92b2262e2a353e920513d7d49cb699) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add affordance to link
+
+- [#538](https://github.com/appsmithorg/design-system/pull/538) [`1df144b7`](https://github.com/appsmithorg/design-system/commit/1df144b71a3915f4a7900cbf621b65345e44ad9f) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - chore: Add color scale for purple
+  feat: Add different kinds of tag
+
 ## 2.1.18
 
 ### Patch Changes
