@@ -1,14 +1,10 @@
 import styled, { css } from "styled-components";
-import { TagKind, TagSize } from "./Tag.types";
+import { TagSizes } from "./Tag.types";
 import { Button } from "../Button";
 
-const Variables = css`
-  --tag-color-background: var(--ads-v2-color-bg);
-  --tag-color-border: var(--ads-v2-color-border);
-  --tag-color-fg: var(--ads-v2-color-fg);
-`;
+const Variables = css``;
 
-const SizeMap = {
+const TagSizeMap = {
   sm: css`
     padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
     height: 18px;
@@ -19,54 +15,17 @@ const SizeMap = {
   `,
 };
 
-const KindMap = {
-  success: css`
-    --tag-color-background: var(--ads-v2-color-bg-success);
-    --tag-color-border: var(--ads-v2-color-border-success);
-    --tag-color-fg: var(--ads-v2-color-fg-success);
-  `,
-  warning: css`
-    --tag-color-background: var(--ads-v2-color-bg-warning);
-    --tag-color-border: var(--ads-v2-color-border-warning);
-    --tag-color-fg: var(--ads-v2-color-fg-warning);
-  `,
-  info: css`
-    --tag-color-background: var(--ads-v2-color-bg-information);
-    --tag-color-border: var(--ads-v2-color-border-info);
-    --tag-color-fg: var(--ads-v2-color-fg-information);
-  `,
-  error: css`
-    --tag-color-background: var(--ads-v2-color-bg-error);
-    --tag-color-border: var(--ads-v2-color-border-error);
-    --tag-color-fg: var(--ads-v2-color-fg-error);
-  `,
-  special: css`
-    --tag-color-background: var(--ads-v2-color-bg-special);
-    --tag-color-border: var(--ads-v2-color-border-special);
-    --tag-color-fg: var(--ads-v2-color-fg-special);
-  `,
-  premium: css`
-    --tag-color-background: var(--ads-v2-color-bg-premium);
-    --tag-color-border: var(--ads-v2-color-border-premium);
-    --tag-color-fg: var(--ads-v2-color-fg-premium);
-  `,
-};
-
 export const StyledTag = styled.span<{
   isClosed: boolean;
-  kind?: TagKind;
-  size?: TagSize;
+  size?: TagSizes;
 }>`
   ${Variables}
 
-  ${({ size }) => size && SizeMap[size]}
-  ${({ kind }) => kind && KindMap[kind]}
+  ${({ size }) => size && TagSizeMap[size]}
   min-width: fit-content;
 
-  background-color: var(--tag-color-background);
-  border: 1px solid var(--tag-color-border);
-  color: var(--tag-color-fg);
-
+  background-color: var(--ads-v2-color-bg-subtle);
+  color: var(--ads-v2-color-fg);
   border-radius: var(--ads-v2-border-radius);
   box-sizing: border-box;
 
@@ -77,21 +36,10 @@ export const StyledTag = styled.span<{
 `;
 
 export const StyledButton = styled(Button)`
-  --button-color-fg: var(--tag-color-fg);
-  --button-color-bg: inherit;
-
   margin-left: var(--ads-v2-spaces-1);
   position: relative;
   top: 1px; // align with text
-  cursor: pointer;
-
-  &:hover:not([data-disabled="true"]):not([data-loading="true"]) {
-    --button-color-fg: var(--tag-color-fg);
-    --button-color-bg: inherit;
-  }
-
-  &:active:not([data-disabled="true"]):not([data-loading="true"]) {
-    --button-color-fg: var(--tag-color-fg);
-    --button-color-bg: inherit;
+  &:hover {
+    cursor: pointer;
   }
 `;

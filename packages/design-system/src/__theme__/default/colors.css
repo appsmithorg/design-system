@@ -56,28 +56,14 @@
   --ads-v2-color-red-100 : #FFF2F2;
   --ads-v2-color-red-50 : #FFF8F8;
 
-  /* blue */
   --ads-v2-color-blue-100: #EFF6FF;
   --ads-v2-color-blue-300: #8BB0FA;
   --ads-v2-color-blue-600: #2D6BF4;
 
-  /* yellow */
   --ads-v2-color-yellow-600: #EAA108;
   --ads-v2-color-yellow-100: #FFFBEB;
 
-  /* green */
   --ads-v2-color-green-600: #059669;
   --ads-v2-color-green-100: #ECFDF5;
 
-  /* purple */
-  --ads-v2-color-purple-50: #F5F4F9;
-  --ads-v2-color-purple-100: #F1EEF9;
-  --ads-v2-color-purple-200: #D5C7EB;
-  --ads-v2-color-purple-300: #B59FD4;
-  --ads-v2-color-purple-400: #9166CC;
-  --ads-v2-color-purple-500: #8147CC;
-  --ads-v2-color-purple-600: #5B2E99;
-  --ads-v2-color-purple-700: #401D73;
-  --ads-v2-color-purple-800: #2E1259;
-  --ads-v2-color-purple-900: #1C0640;
 }
