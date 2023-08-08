@@ -9,7 +9,7 @@
     * ===========================================*
   */
 
-   /** Used as active bg when --ads-v2-color-bg-brand is the default bg **/
+  /** Used as active bg when --ads-v2-color-bg-brand is the default bg **/
   --ads-v2-color-bg-brand-emphasis-plus: var(--ads-v2-color-orange-800);
   /** Used as hover bg when --ads-v2-color-bg-brand is the default bg **/
   --ads-v2-color-bg-brand-emphasis: var(--ads-v2-color-orange-700);
@@ -49,6 +49,10 @@
   --ads-v2-color-bg-warning: var(--ads-v2-color-yellow-100);
   /** Used for information background */
   --ads-v2-color-bg-information: var(--ads-v2-color-blue-100);
+  /** Used for special background */
+  --ads-v2-color-bg-special: var(--ads-v2-color-purple-100);
+  /** Used for premium background */
+  --ads-v2-color-bg-premium: var(--ads-v2-color-orange-50);
 
   /**
     * ===========================================*
@@ -94,6 +98,10 @@
   --ads-v2-color-fg-warning: var(--ads-v2-color-yellow-600);
   /** Foreground color for information*/
   --ads-v2-color-fg-information: var(--ads-v2-color-blue-600);
+  /** Foreground color for special */
+  --ads-v2-color-fg-special: var(--ads-v2-color-purple-700);
+  /** Foreground color for premium */
+  --ads-v2-color-fg-premium: var(--ads-v2-color-orange-600);
 
   /**
     * ===========================================*
@@ -128,7 +136,10 @@
   --ads-v2-color-border-warning: var(--ads-v2-color-yellow-600);
   /** Used for indicating information borders */
   --ads-v2-color-border-info: var(--ads-v2-color-blue-600);
-
+  /** Used for indicating special borders */
+  --ads-v2-color-border-special: var(--ads-v2-color-purple-300);
+  /** Used for indicating premium borders */
+  --ads-v2-color-border-premium: var(--ads-v2-color-orange-300);
   /**
     * ===========================================*
     * ================== Shadow =================*
@@ -189,11 +200,11 @@
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
- color: var(--ads-v2-color-fg-subtle);
+  color: var(--ads-v2-color-fg-subtle);
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
- color: var(--ads-v2-color-fg-subtle);
+  color: var(--ads-v2-color-fg-subtle);
 }
 
 * {

@@ -17,7 +17,22 @@ export const TagStory = Template.bind({});
 TagStory.storyName = "Tag";
 TagStory.args = {
   children: "contact@appsmith.com",
+  isClosable: false,
   size: "sm",
+};
+
+export const SpecialTag = Template.bind({});
+SpecialTag.args = {
+  ...TagStory.args,
+  children: "Enterprise",
+  kind: "special",
+};
+
+export const PremiumTag = Template.bind({});
+PremiumTag.args = {
+  ...TagStory.args,
+  children: "Business Edition",
+  kind: "premium",
 };
 
 export const TagCloseStory = Template.bind({});
