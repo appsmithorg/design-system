@@ -22,6 +22,11 @@ const Sizes = {
     --toggle-height: var(--ads-v2-spaces-7);
     --toggle-width: var(--ads-v2-spaces-7);
   `,
+  lg: css`
+    --toggle-padding: var(--ads-v2-spaces-2);
+    --toggle-height: var(--ads-v2-spaces-8);
+    --toggle-width: var(--ads-v2-spaces-8);
+  `,
 };
 
 export const StyledToggleButton = styled.button<{

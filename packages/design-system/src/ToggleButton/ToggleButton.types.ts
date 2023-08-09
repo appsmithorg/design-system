@@ -1,7 +1,7 @@
 import React from "react";
 import { Sizes } from "../__config__/types";
 
-export type ToggleSizes = Extract<Sizes, "sm" | "md">;
+export type ToggleSizes = Extract<Sizes, "sm" | "md" | "lg">;
 
 // Toggle props
 export type ToggleButtonProps = {
