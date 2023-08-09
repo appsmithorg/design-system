@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
-import { TagKind, TagSize } from "./Tag.types";
+import { TagKind, TagSizes } from "./Tag.types";
 import { Button } from "../Button";
 
 const Variables = css`
-  --tag-color-background: var(--ads-v2-color-bg);
-  --tag-color-border: var(--ads-v2-color-border);
-  --tag-color-fg: var(--ads-v2-color-fg);
-`;
+    --tag-color-background: var(--ads-v2-color-bg-subtle);
+    --tag-color-border: transparent;
+    --tag-color-fg: var(--ads-v2-color-fg);
+  `;
 
-const SizeMap = {
+const TagSizeMap = {
   sm: css`
     padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
     height: 18px;
@@ -20,25 +20,10 @@ const SizeMap = {
 };
 
 const KindMap = {
-  success: css`
-    --tag-color-background: var(--ads-v2-color-bg-success);
-    --tag-color-border: var(--ads-v2-color-border-success);
-    --tag-color-fg: var(--ads-v2-color-fg-success);
-  `,
-  warning: css`
-    --tag-color-background: var(--ads-v2-color-bg-warning);
-    --tag-color-border: var(--ads-v2-color-border-warning);
-    --tag-color-fg: var(--ads-v2-color-fg-warning);
-  `,
-  info: css`
-    --tag-color-background: var(--ads-v2-color-bg-information);
-    --tag-color-border: var(--ads-v2-color-border-info);
-    --tag-color-fg: var(--ads-v2-color-fg-information);
-  `,
-  error: css`
-    --tag-color-background: var(--ads-v2-color-bg-error);
-    --tag-color-border: var(--ads-v2-color-border-error);
-    --tag-color-fg: var(--ads-v2-color-fg-error);
+  neutral: css`
+    --tag-color-background: var(--ads-v2-color-bg-subtle);
+    --tag-color-border: transparent;
+    --tag-color-fg: var(--ads-v2-color-fg);
   `,
   special: css`
     --tag-color-background: var(--ads-v2-color-bg-special);
@@ -55,11 +40,11 @@ const KindMap = {
 export const StyledTag = styled.span<{
   isClosed: boolean;
   kind?: TagKind;
-  size?: TagSize;
+  size?: TagSizes;
 }>`
   ${Variables}
 
-  ${({ size }) => size && SizeMap[size]}
+  ${({ size }) => size && TagSizeMap[size]}
   ${({ kind }) => kind && KindMap[kind]}
   min-width: fit-content;
 
@@ -89,9 +74,8 @@ export const StyledButton = styled(Button)`
     --button-color-fg: var(--tag-color-fg);
     --button-color-bg: inherit;
   }
-
   &:active:not([data-disabled="true"]):not([data-loading="true"]) {
     --button-color-fg: var(--tag-color-fg);
     --button-color-bg: inherit;
-  }
+
 `;

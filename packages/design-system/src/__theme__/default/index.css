@@ -9,7 +9,7 @@
     * ===========================================*
   */
 
-   /** Used as active bg when --ads-v2-color-bg-brand is the default bg **/
+  /** Used as active bg when --ads-v2-color-bg-brand is the default bg **/
   --ads-v2-color-bg-brand-emphasis-plus: var(--ads-v2-color-orange-800);
   /** Used as hover bg when --ads-v2-color-bg-brand is the default bg **/
   --ads-v2-color-bg-brand-emphasis: var(--ads-v2-color-orange-700);
@@ -200,11 +200,11 @@
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
- color: var(--ads-v2-color-fg-subtle);
+  color: var(--ads-v2-color-fg-subtle);
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
- color: var(--ads-v2-color-fg-subtle);
+  color: var(--ads-v2-color-fg-subtle);
 }
 
 * {
