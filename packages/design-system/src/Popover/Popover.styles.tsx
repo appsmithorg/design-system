@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { PopoverSize } from "./Popover.types";
 import { Close, Content } from "@radix-ui/react-popover";
+import { Text } from "../Text";
 
 const Variables = css`
   --popover-padding: var(--ads-v2-spaces-4);
@@ -47,6 +48,14 @@ export const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+// TODO: Replace below rules with correct text kind when text is developed.
+export const StyledHeaderText = styled(Text)`
+  --color: var(--ads-v2-color-fg-emphasis);
+  //--font-size: var(--ads-v2-font-size-6);
+  //--font-weight: 600;
+  //--line-height: 1.5;
 `;
 
 export const StyledClose = styled(Close)`

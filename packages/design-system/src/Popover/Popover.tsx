@@ -12,8 +12,8 @@ import {
   StyledClose,
   StyledContent,
   StyledHeader,
+  StyledHeaderText,
 } from "./Popover.styles";
-import { Text } from "../Text";
 import { Button } from "../Button";
 import {
   PopoverBodyContentClassName,
@@ -41,7 +41,7 @@ function PopoverHeader({
 }: PopoverHeaderProps) {
   return (
     <StyledHeader className={`${PopoverBodyHeaderClassName} ${className}`}>
-      <Text>{children}</Text>
+      <StyledHeaderText>{children}</StyledHeaderText>
       {isClosable && (
         <StyledClose>
           <Button
