@@ -97,5 +97,5 @@ export const StyledButton = styled(Button)`
   &:active:not([data-disabled="true"]):not([data-loading="true"]) {
     --button-color-fg: var(--tag-color-fg);
     --button-color-bg: inherit;
-
+  }
 `;

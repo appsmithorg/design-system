@@ -91,7 +91,7 @@
   --ads-v2-colors-control-placeholder-default-fg: var(--ads-v2-color-fg-subtle);
   --ads-v2-colors-control-value-checked-fg: var(--ads-v2-color-fg-on-brand-secondary);
   --ads-v2-colors-control-value-default-fg: var(--ads-v2-color-fg);
-  --ads-v2-colors-content-value-inactive-fg: var(--ads-v2-color-fg-muted);
+  --ads-v2-colors-control-value-inactive-fg: var(--ads-v2-color-fg-muted);
 
   /* ========================= Response ========================= */
   --ads-v2-colors-response-surface-default-bg: var(--ads-v2-color-bg);

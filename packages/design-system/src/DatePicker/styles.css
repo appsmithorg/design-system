@@ -90,7 +90,7 @@
   line-height: normal;
   font-family: var(--ads-v2-font-family);
   font-size: var(--ads-v2-font-size-3);
-  color: var(--ads-v2-colors-content-value-inactive-fg);
+  color: var(--ads-v2-colors-control-value-inactive-fg);
   width: 30px;
   height: 20px;
   margin: 0;
@@ -205,7 +205,7 @@
 
 /* Disabled date style */
 .react-datepicker.ads-v2-datepicker__calender .react-datepicker__day--disabled, .react-datepicker__month-text--disabled, .react-datepicker__quarter-text--disabled, .react-datepicker__year-text--disabled {
-  color: var(--ads-v2-colors-content-value-inactive-fg);
+  color: var(--ads-v2-colors-control-value-inactive-fg);
   opacity: var(--ads-v2-opacity-disabled);
   cursor: not-allowed;
 }
