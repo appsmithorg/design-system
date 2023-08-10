@@ -10,6 +10,7 @@ import {
 } from "./Popover";
 import { Button } from "../Button";
 import { Input } from "../Input";
+import styled from "styled-components";
 
 export default {
   title: "Design System/Popover",
@@ -20,6 +21,15 @@ export default {
     PopoverHeader,
   },
 } as ComponentMeta<typeof Popover>;
+
+const FlexBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: var(--ads-v2-spaces-3);
+  &:last-child {
+    gap: var(--ads-v2-spaces-4);
+  }
+`;
 
 // eslint-disable-next-line react/function-component-definition
 const PopoverHeaderTemplate: ComponentStory<typeof PopoverHeader> = (args) => {
@@ -67,13 +77,43 @@ PopoverContentStory.args = {
     <>
       <PopoverHeader isClosable>Sign in</PopoverHeader>
       <PopoverBody>
-        <Input label="Old password" renderAs="input" size="md" />
-        <Input label="New Password" renderAs="input" size="md" />
-        <Input label="Third input" renderAs="input" size="md" />
-        <Input label="Fourth input" renderAs="input" size="md" />
-        <Button UNSAFE_width="150px" kind="primary" size="md">
-          Change
-        </Button>
+        <FlexBox>
+          <Input label="Old password" renderAs="input" size="md" />
+          <Input label="New Password" renderAs="input" size="md" />
+          <Input label="Third input" renderAs="input" size="md" />
+          <Input label="Fourth input" renderAs="input" size="md" />
+          <Button UNSAFE_width="150px" kind="primary" size="md">
+            Change
+          </Button>
+        </FlexBox>
+      </PopoverBody>
+    </>
+  ),
+};
+
+export const MediumPopoverContentStory = PopoverContentTemplate.bind({});
+MediumPopoverContentStory.storyName = "Content";
+MediumPopoverContentStory.argTypes = {
+  size: {
+    control: "radio",
+    options: ["sm", "md"],
+  },
+};
+MediumPopoverContentStory.args = {
+  size: "md",
+  children: (
+    <>
+      <PopoverHeader isClosable>Sign in</PopoverHeader>
+      <PopoverBody>
+        <FlexBox>
+          <Input label="Old password" renderAs="input" size="md" />
+          <Input label="New Password" renderAs="input" size="md" />
+          <Input label="Third input" renderAs="input" size="md" />
+          <Input label="Fourth input" renderAs="input" size="md" />
+          <Button UNSAFE_width="150px" kind="primary" size="md">
+            Change
+          </Button>
+        </FlexBox>
       </PopoverBody>
     </>
   ),
@@ -86,14 +126,16 @@ const Template: ComponentStory<typeof Popover> = (args) => {
       <PopoverTrigger>
         <Button>Open popover</Button>
       </PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent size="md">
         <PopoverHeader isClosable>Sign in</PopoverHeader>
         <PopoverBody>
-          <Input label="Old password" renderAs="input" size="md" />
-          <Input label="New Password" renderAs="input" size="md" />
-          <Button UNSAFE_width="150px" kind="primary" size="md">
-            Change
-          </Button>
+          <FlexBox>
+            <Input label="Old password" renderAs="input" size="md" />
+            <Input label="New Password" renderAs="input" size="md" />
+            <Button UNSAFE_width="150px" kind="primary" size="md">
+              Change
+            </Button>
+          </FlexBox>
         </PopoverBody>
       </PopoverContent>
     </Popover>
