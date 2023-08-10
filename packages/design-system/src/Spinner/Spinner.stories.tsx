@@ -13,8 +13,20 @@ const Template: ComponentStory<typeof Spinner> = (args) => {
   return <Spinner {...args} />;
 };
 
-export const SpinnerStory = Template.bind({});
-SpinnerStory.storyName = "Spinner";
-SpinnerStory.args = {
+export const SmallSpinnerStory = Template.bind({});
+SmallSpinnerStory.storyName = "Spinner";
+SmallSpinnerStory.args = {
   size: "sm",
+};
+
+export const MediumSpinnerStory = Template.bind({});
+MediumSpinnerStory.storyName = "Spinner";
+MediumSpinnerStory.args = {
+  size: "md",
+};
+
+export const LargeSpinnerStory = Template.bind({});
+LargeSpinnerStory.storyName = "Spinner";
+LargeSpinnerStory.args = {
+  size: "lg",
 };
