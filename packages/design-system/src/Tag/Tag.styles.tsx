@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
-import { TagKind, TagSize } from "./Tag.types";
+import { TagKind, TagSizes } from "./Tag.types";
 import { Button } from "../Button";
 
 const Variables = css`
-  --tag-color-background: var(--ads-v2-colors-content-surface-info-bg);
-  --tag-color-border: var(--ads-v2-colors-content-surface-info-border);
-  --tag-color-fg: var(--ads-v2-colors-content-label-info-fg);
+  --tag-color-background: var(--ads-v2-colors-content-surface-neutral-bg);
+  --tag-color-border: transparent;
+  --tag-color-fg: var(--ads-v2-colors-content-label-default-fg);
 `;
 
-const SizeMap = {
+const TagSizeMap = {
   sm: css`
     padding: var(--ads-v2-spaces-1) var(--ads-v2-spaces-2);
     height: 18px;
@@ -40,6 +40,11 @@ const KindMap = {
     --tag-color-border: var(--ads-v2-colors-content-surface-error-border);
     --tag-color-fg: var(--ads-v2-colors-content-label-error-fg);
   `,
+  neutral: css`
+    --tag-color-background: var(--ads-v2-colors-content-surface-neutral-bg);
+    --tag-color-border: transparent;
+    --tag-color-fg: var(--ads-v2-colors-content-label-default-fg);
+  `,
   special: css`
     --tag-color-background: var(--ads-v2-colors-content-surface-special-bg);
     --tag-color-border: var(--ads-v2-colors-content-surface-special-border);
@@ -55,11 +60,11 @@ const KindMap = {
 export const StyledTag = styled.span<{
   isClosed: boolean;
   kind?: TagKind;
-  size?: TagSize;
+  size?: TagSizes;
 }>`
   ${Variables}
 
-  ${({ size }) => size && SizeMap[size]}
+  ${({ size }) => size && TagSizeMap[size]}
   ${({ kind }) => kind && KindMap[kind]}
   min-width: fit-content;
 
@@ -89,9 +94,8 @@ export const StyledButton = styled(Button)`
     --button-color-fg: var(--tag-color-fg);
     --button-color-bg: inherit;
   }
-
   &:active:not([data-disabled="true"]):not([data-loading="true"]) {
     --button-color-fg: var(--tag-color-fg);
     --button-color-bg: inherit;
-  }
+
 `;

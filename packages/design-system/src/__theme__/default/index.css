@@ -123,6 +123,7 @@
   --ads-v2-colors-content-surface-error-bg: var(--ads-v2-color-bg-error);
   --ads-v2-colors-content-surface-success-bg: var(--ads-v2-color-bg-success);
   --ads-v2-colors-content-surface-info-bg: var(--ads-v2-color-bg-information);
+  --ads-v2-colors-content-surface-neutral-bg: var(--ads-v2-color-bg-subtle);
   --ads-v2-colors-content-surface-warning-bg: var(--ads-v2-color-bg-warning);
   --ads-v2-colors-content-surface-special-bg: var(--ads-v2-color-bg-special);
   --ads-v2-colors-content-surface-premium-bg: var(--ads-v2-color-bg-premium);
