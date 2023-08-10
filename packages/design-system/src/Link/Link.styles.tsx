@@ -11,45 +11,57 @@ const Variables = css`
   --ads-v2-action-link-primary-label-active-fg: var(
     --ads-v2-color-fg-brand-emphasis-plus
   );
-  --ads-v2-action-link-primary-icon-default-fg: var(--ads-v2-color-fg-brand);
-  --ads-v2-action-link-primary-icon-hover-fg: var(
-    --ads-v2-color-fg-brand-emphasis
+  --ads-v2-colors-action-link-secondary-surface-hover-border: var(
+    --ads-v2-color-border-emphasis
   );
-  --ads-v2-action-link-primary-icon-active-fg: var(
-    --ads-v2-color-fg-brand-emphasis-plus
+  --ads-v2-colors-action-link-secondary-surface-active-border: var(
+    --ads-v2-color-border-emphasis-plus
   );
 
-  --color: var(--ads-v2-color-fg-brand);
+  --color: var(--ads-v2-action-link-primary-label-default-fg);
   --text-decoration: none;
   --text-decoration-color: none;
 `;
 
 const Kind = {
   primary: css`
-    --color: var(--ads-v2-color-fg-brand);
+    --color: var(--ads-v2-action-link-primary-label-default-fg);
     :hover {
-      --color: var(--ads-v2-color-fg-brand-emphasis);
+      --color: var(--ads-v2-action-link-primary-label-hover-fg);
+    }
+    :active {
+      --color: var(--ads-v2-action-link-primary-label-active-fg);
     }
   `,
   secondary: css`
-    --color: var(--ads-v2-color-fg);
+    --color: var(--ads-v2-colors-action-secondary-label-default-fg);
     --text-decoration: underline;
-    --text-decoration-color: var(--ads-v2-color-border);
+    --text-decoration-color: var(
+      --ads-v2-colors-action-secondary-surface-default-border
+    );
     :hover {
-      --color: var(--ads-v2-color-fg-emphasis);
-      --text-decoration-color: var(--ads-v2-color-border-emphasis);
+      --color: var(--ads-v2-colors-action-secondary-label-hover-fg);
+      --text-decoration-color: var(
+        --ads-v2-colors-action-link-secondary-surface-hover-border
+      );
     }
     :active {
-      --color: var(--ads-v2-color-fg-emphasis-plus);
-      --text-decoration-color: var(--ads-v2-color-border-emphasis-plus);
+      --color: var(--ads-v2-colors-action-secondary-label-active-fg);
+      --text-decoration-color: var(
+        --ads-v2-colors-action-link-secondary-surface-active-border
+      );
     }
     :focus:active {
-      --color: var(--ads-v2-color-fg-emphasis-plus);
-      --text-decoration-color: var(--ads-v2-color-border-emphasis-plus);
+      --color: var(--ads-v2-colors-action-secondary-label-active-fg);
+      --text-decoration-color: var(
+        --ads-v2-colors-action-link-secondary-surface-active-border
+      );
     }
     :focus {
-      --color: var(--ads-v2-color-fg);
-      --text-decoration-color: var(--ads-v2-color-border);
+      --color: var(--ads-v2-colors-action-secondary-label-default-fg);
+      --text-decoration-color: var(
+        --ads-v2-colors-action-secondary-surface-default-border
+      );
     }
   `,
 };

@@ -50,6 +50,8 @@
   --ads-v2-colors-action-secondary-surface-hover-border: var(--ads-v2-color-border);
   --ads-v2-colors-action-secondary-surface-active-border: var(--ads-v2-color-border-emphasis);
   --ads-v2-colors-action-secondary-label-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-action-secondary-label-hover-fg: var(--ads-v2-color-fg-emphasis);
+  --ads-v2-colors-action-secondary-label-active-fg: var(--ads-v2-color-fg-emphasis-plus);
   --ads-v2-colors-action-secondary-icon-default-fg: var(--ads-v2-color-fg);
 
   /* Tertiary */
