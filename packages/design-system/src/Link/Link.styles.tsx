@@ -32,6 +32,12 @@ const Kind = {
     :active {
       --color: var(--ads-v2-action-link-primary-label-active-fg);
     }
+    :focus:active {
+      --color: var(--ads-v2-action-link-primary-label-active-fg);
+    }
+    :focus {
+      --color: var(--ads-v2-action-link-primary-label-default-fg);
+    }
   `,
   secondary: css`
     --color: var(--ads-v2-colors-action-secondary-label-default-fg);
