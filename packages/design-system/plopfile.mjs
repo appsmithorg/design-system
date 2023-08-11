@@ -43,6 +43,11 @@ export default function (plop) {
         path: "src/{{capitalize name}}/{{capitalize name}}.constants.ts",
         templateFile: "plop-templates/constants.ts.hbs",
       },
+      {
+        type: "add",
+        path: "src/{{capitalize name}}/{{capitalize name}}.mdx",
+        templateFile: "plop-templates/component.mdx.hbs",
+      },
     ],
   });
 }
