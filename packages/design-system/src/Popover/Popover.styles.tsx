@@ -53,9 +53,9 @@ export const StyledHeader = styled.div`
 // TODO: Replace below rules with correct text kind when text is developed.
 export const StyledHeaderText = styled(Text)`
   --color: var(--ads-v2-color-fg-emphasis);
-  //--font-size: var(--ads-v2-font-size-6);
-  //--font-weight: 600;
-  //--line-height: 1.5;
+  --font-size: var(--ads-v2-font-size-6);
+  --font-weight: 600;
+  --line-height: 1.5;
 `;
 
 export const StyledClose = styled(Close)`
