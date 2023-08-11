@@ -26,6 +26,7 @@ export const StyledTabs = styled(RadixTabs.Root)`
 `;
 
 export const StyledTabsList = styled(RadixTabs.List)`
+  ${Variables};
   display: flex;
   background-color: var(--ads-v2-colors-content-tag-background-default-bg);
   border-bottom: 1px solid

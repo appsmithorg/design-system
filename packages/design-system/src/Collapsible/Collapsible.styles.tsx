@@ -15,7 +15,7 @@ export const StyledCollapsibleHeader = styled.div`
   align-items: center;
   gap: var(--ads-v2-spaces-2);
   padding: var(--ads-v2-spaces-2) var(--ads-v2-spaces-0);
-  color: var(--ads-v2-color-gray-600);
+  color: var(--ads-v2-colors-content-label-default-fg);
 `;
 
 export const StyledCollapsibleContent = styled.div<{ isExpanded: boolean }>`
