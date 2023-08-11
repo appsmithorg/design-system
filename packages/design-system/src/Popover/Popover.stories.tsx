@@ -10,6 +10,7 @@ import {
 } from "./Popover";
 import { Button } from "../Button";
 import { Input } from "../Input";
+import { Text } from "../Text";
 import styled from "styled-components";
 
 export default {
@@ -64,7 +65,7 @@ const PopoverContentTemplate: ComponentStory<typeof PopoverHeader> = (args) => {
 };
 
 export const PopoverContentStory = PopoverContentTemplate.bind({});
-PopoverContentStory.storyName = "Content";
+PopoverContentStory.storyName = "Small Content";
 PopoverContentStory.argTypes = {
   size: {
     control: "radio",
@@ -75,24 +76,20 @@ PopoverContentStory.args = {
   size: "sm",
   children: (
     <>
-      <PopoverHeader isClosable>Sign in</PopoverHeader>
+      <PopoverHeader isClosable>Chutney Podi</PopoverHeader>
       <PopoverBody>
-        <FlexBox>
-          <Input label="Old password" renderAs="input" size="md" />
-          <Input label="New Password" renderAs="input" size="md" />
-          <Input label="Third input" renderAs="input" size="md" />
-          <Input label="Fourth input" renderAs="input" size="md" />
-          <Button UNSAFE_width="150px" kind="primary" size="md">
-            Change
-          </Button>
-        </FlexBox>
+        <Text>
+          Chutney pudi, or milagai podi is a coarse spice powder from southern
+          India that typically contains ground dry spices like dried chillis,
+          black gram, chickpeas, salt and sesame seeds.
+        </Text>
       </PopoverBody>
     </>
   ),
 };
 
 export const MediumPopoverContentStory = PopoverContentTemplate.bind({});
-MediumPopoverContentStory.storyName = "Content";
+MediumPopoverContentStory.storyName = "Medium Content";
 MediumPopoverContentStory.argTypes = {
   size: {
     control: "radio",
