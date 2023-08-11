@@ -9,6 +9,7 @@ export type ModalContentProps = DialogContentProps & {
   overlayClassName?: string;
 };
 
+//  TODO:  Need to change `isCloseButtonVisible` prop on Modal to `isClosable` to be in line with other components
 export type ModalHeaderProps = {
   /** Modal header */
   children: React.ReactNode;
