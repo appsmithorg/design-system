@@ -2,8 +2,18 @@ import styled, { css } from "styled-components";
 import { Text } from "../Text";
 
 const Variables = css`
-  --switch-color-bg: var(--ads-v2-color-bg-emphasis);
-  --thumb-color-bg: var(--ads-v2-color-bg);
+  --ads-v2-colors-control-switch-track-default-bg: var(
+    --ads-v2-color-bg-emphasis
+  );
+  --ads-v2-colors-control-switch-track-hover-bg: var(
+    --ads-v2-color-bg-emphasis-plus
+  );
+  --ads-v2-colors-control-switch-track-checked-bg: var(
+    --ads-v2-color-bg-brand-secondary
+  );
+  --ads-v2-colors-control-switch-track-checked-hover-bg: var(
+    --ads-v2-color-bg-brand-secondary-emphasis
+  );
 `;
 
 export const StyledSwitch = styled.label`
@@ -54,24 +64,24 @@ export const StyledSwitchInput = styled.input<{
   margin: 0;
   cursor: pointer;
   border-radius: 10px;
-  background-color: var(--switch-color-bg);
+  background-color: var(--ads-v2-colors-control-switch-track-default-bg);
 
   outline: none;
 
   ${({ isFocusVisible }) =>
     isFocusVisible &&
     `
-        outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
-        outline-offset: var(--ads-v2-offset-outline);
-    `}}
+      outline: var(--ads-v2-border-width-outline) solid var(--ads-v2-color-outline);
+      outline-offset: var(--ads-v2-offset-outline);
+    `}
 
   &:hover {
-    --switch-color-bg: var(--ads-v2-color-bg-emphasis-plus);
+    background-color: var(--ads-v2-colors-control-switch-track-hover-bg);
   }
 
   &:checked {
     justify-content: flex-end;
-    --switch-color-bg: var(--ads-v2-color-bg-brand-secondary);
+    background-color: var(--ads-v2-colors-control-switch-track-checked-bg);
 
     // set position of track when checked
     &::before {
@@ -81,7 +91,9 @@ export const StyledSwitchInput = styled.input<{
   }
 
   &:checked:hover {
-    --switch-color-bg: var(--ads-v2-color-bg-brand-secondary-emphasis)
+    background-color: var(
+      --ads-v2-colors-control-switch-track-checked-hover-bg
+    );
   }
 
   &:disabled {
@@ -89,11 +101,11 @@ export const StyledSwitchInput = styled.input<{
     opacity: var(--ads-v2-opacity-disabled);
 
     &:hover {
-      --switch-color-bg: var(--ads-v2-color-bg-emphasis);
+      background-color: var(--ads-v2-colors-control-switch-track-default-bg);
     }
 
     &:checked:hover {
-      --switch-color-bg: var(--ads-v2-color-bg-brand-secondary);
+      background-color: var(--ads-v2-colors-control-switch-track-checked-bg);
     }
   }
 
@@ -104,8 +116,7 @@ export const StyledSwitchInput = styled.input<{
     height: 1rem;
     grid-area: off;
     border-radius: var(--ads-v2-border-radius-circle);
-    background-color: var(--thumb-color-bg);
-
+    background-color: var(--ads-v2-colors-control-knob-default-bg);
     box-shadow: 0 1px 4px 0 rgba(76, 86, 100, 0.2);
-}
+  }
 `;

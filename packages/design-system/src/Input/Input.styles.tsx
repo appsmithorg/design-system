@@ -9,10 +9,9 @@ import { Text } from "Text";
 import { iconSizes } from "Icon";
 
 const Variables = css`
-  --input-color-border: var(--ads-v2-color-border);
+  --input-color-border: var(--ads-v2-colors-control-field-default-border);
   --input-padding-x: var(--ads-v2-spaces-2); // padding left and right
   --input-padding-y: var(--ads-v2-spaces-2); // padding top and bottom
-  --input-color: var(--ads-v2-color-fg);
   --input-font-size: var(--ads-v2-font-size-2);
   --input-height: 22px;
 `;
@@ -60,12 +59,12 @@ export const MainContainer = styled.div<{
 `;
 
 export const Label = styled.label`
-  color: var(--ads-v2-color-fg);
+  color: var(--ads-v2-colors-control-label-default-fg);
   width: 100%;
   word-wrap: break-word;
 
   & > span {
-    color: var(--ads-v2-color-fg-error);
+    color: var(--ads-v2-colors-control-icon-error-fg);
     margin-left: var(--ads-v2-spaces-1);
   }
 `;
@@ -85,7 +84,7 @@ export const InputContainer = styled.div<{
   align-items: center;
   width: 100%;
   min-width: 180px;
-  color: var(--input-color);
+  color: var(--ads-v2-colors-control-value-default-fg);
 
   & .${InputIconClassName} {
     position: absolute;
@@ -131,12 +130,12 @@ export const StyledInput = styled.input<{
 }>`
   --icon-size: ${({ inputSize }) => inputSize && iconSizes[inputSize]};
 
-  background-color: var(--ads-v2-color-bg);
+  background-color: var(--ads-v2-colors-control-field-default-bg);
   border: 1px solid var(--input-color-border);
   border-radius: var(--ads-v2-border-radius);
   font-family: var(--ads-v2-font-family);
   font-size: var(--input-font-size);
-  color: var(--input-color);
+  color: var(--ads-v2-colors-control-value-default-fg);
   padding: var(--input-padding-y) var(--input-padding-x);
   box-sizing: border-box;
   width: ${({ UNSAFE_width }) => UNSAFE_width || "100%"};
@@ -172,12 +171,12 @@ export const StyledInput = styled.input<{
   }
 
   &:hover:enabled:not(:read-only) {
-    --input-color-border: var(--ads-v2-color-border-emphasis);
+    --input-color-border: var(--ads-v2-colors-control-field-hover-border);
   }
 
   &:active:enabled:not(:read-only),
   &:focus:enabled:not(:read-only) {
-    --input-color-border: var(--ads-v2-color-border-emphasis-plus);
+    --input-color-border: var(--ads-v2-colors-control-field-active-border);
   }
 
   &:disabled {
@@ -186,15 +185,15 @@ export const StyledInput = styled.input<{
   }
 
   &[data-is-valid="false"] {
-    --input-color-border: var(--ads-v2-color-border-error);
+    --input-color-border: var(--ads-v2-colors-control-field-error-border);
 
     &:hover:enabled:not(:read-only) {
-      --input-color-border: var(--ads-v2-color-border-error);
+      --input-color-border: var(--ads-v2-colors-control-field-error-border);
     }
 
     &:active:enabled:not(:read-only),
     &:focus:enabled:not(:read-only) {
-      --input-color-border: var(--ads-v2-color-border-error);
+      --input-color-border: var(--ads-v2-colors-control-field-error-border);
     }
   }
 `;

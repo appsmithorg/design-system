@@ -6,6 +6,14 @@ import {
 import { AvatarSize } from "./Avatar.types";
 
 const Variables = css`
+  --ads-v2-colors-content-avatar-surface-default-bg: var(
+    --ads-v2-color-bg-subtle
+  );
+  --ads-v2-colors-content-avatar-surface-hover-bg: var(--ads-v2-color-bg-muted);
+  --ads-v2-colors-content-avatar-surface-default-border: var(
+    --ads-v2-color-white
+  );
+
   --avatar-width: 24px;
   --avatar-height: 24px;
   --avatar-font-size: var(--ads-v2-font-size-2);
@@ -39,8 +47,8 @@ export const StyledAvatar = styled.span<{
   ${({ size }) => Sizes[size]}
 
   border-radius: 50%;
-  background-color: var(--ads-v2-color-bg-subtle);
-  color: var(--ads-v2-color-fg);
+  background-color: var(--ads-v2-colors-content-avatar-surface-default-bg);
+  color: var(--ads-v2-colors-content-label-default-fg);
   font-family: var(--ads-v2-font-family);
 
   min-width: var(--avatar-width);
@@ -62,7 +70,7 @@ export const StyledAvatar = styled.span<{
   }
 
   &.${AvatarGroupShowMoreClassName}:hover {
-    background-color: var(--ads-v2-color-bg-muted);
+    background-color: var(--ads-v2-colors-content-avatar-surface-hover-bg);
 
     img:after {
       content: "";
@@ -86,7 +94,7 @@ export const StyledAvatarGroup = styled.div`
   }
 
   ${StyledAvatar} {
-    border: 1px solid var(--ads-v2-color-white);
+    border: 1px solid var(--ads-v2-colors-content-avatar-surface-default-border);
   }
 `;
 
