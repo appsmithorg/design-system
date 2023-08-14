@@ -3,10 +3,10 @@ import { TagKind, TagSizes } from "./Tag.types";
 import { Button } from "../Button";
 
 const Variables = css`
-    --tag-color-background: var(--ads-v2-color-bg-subtle);
-    --tag-color-border: transparent;
-    --tag-color-fg: var(--ads-v2-color-fg);
-  `;
+  --tag-color-background: var(--ads-v2-colors-content-surface-neutral-bg);
+  --tag-color-border: transparent;
+  --tag-color-fg: var(--ads-v2-colors-content-label-default-fg);
+`;
 
 const TagSizeMap = {
   sm: css`
@@ -20,20 +20,40 @@ const TagSizeMap = {
 };
 
 const KindMap = {
+  success: css`
+    --tag-color-background: var(--ads-v2-colors-content-surface-success-bg);
+    --tag-color-border: var(--ads-v2-colors-content-surface-success-border);
+    --tag-color-fg: var(--ads-v2-colors-content-label-success-fg);
+  `,
+  warning: css`
+    --tag-color-background: var(--ads-v2-colors-content-surface-warning-bg);
+    --tag-color-border: var(--ads-v2-colors-content-surface-warning-border);
+    --tag-color-fg: var(--ads-v2-colors-content-label-warning-fg);
+  `,
+  info: css`
+    --tag-color-background: var(--ads-v2-colors-content-surface-info-bg);
+    --tag-color-border: var(--ads-v2-colors-content-surface-info-border);
+    --tag-color-fg: var(--ads-v2-colors-content-label-info-fg);
+  `,
+  error: css`
+    --tag-color-background: var(--ads-v2-colors-content-surface-error-bg);
+    --tag-color-border: var(--ads-v2-colors-content-surface-error-border);
+    --tag-color-fg: var(--ads-v2-colors-content-label-error-fg);
+  `,
   neutral: css`
-    --tag-color-background: var(--ads-v2-color-bg-subtle);
+    --tag-color-background: var(--ads-v2-colors-content-surface-neutral-bg);
     --tag-color-border: transparent;
-    --tag-color-fg: var(--ads-v2-color-fg);
+    --tag-color-fg: var(--ads-v2-colors-content-label-default-fg);
   `,
   special: css`
-    --tag-color-background: var(--ads-v2-color-bg-special);
-    --tag-color-border: var(--ads-v2-color-border-special);
-    --tag-color-fg: var(--ads-v2-color-fg-special);
+    --tag-color-background: var(--ads-v2-colors-content-surface-special-bg);
+    --tag-color-border: var(--ads-v2-colors-content-surface-special-border);
+    --tag-color-fg: var(--ads-v2-colors-content-label-special-fg);
   `,
   premium: css`
-    --tag-color-background: var(--ads-v2-color-bg-premium);
-    --tag-color-border: var(--ads-v2-color-border-premium);
-    --tag-color-fg: var(--ads-v2-color-fg-premium);
+    --tag-color-background: var(--ads-v2-colors-content-surface-premium-bg);
+    --tag-color-border: var(--ads-v2-colors-content-surface-premium-border);
+    --tag-color-fg: var(--ads-v2-colors-content-label-premium-fg);
   `,
 };
 
@@ -77,5 +97,5 @@ export const StyledButton = styled(Button)`
   &:active:not([data-disabled="true"]):not([data-loading="true"]) {
     --button-color-fg: var(--tag-color-fg);
     --button-color-bg: inherit;
-
+  }
 `;

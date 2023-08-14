@@ -2,8 +2,22 @@ import styled, { css } from "styled-components";
 import * as RadixTabs from "@radix-ui/react-tabs";
 
 const Variables = css`
-  --tab-color: var(--ads-v2-color-fg-muted);
-  --tab-selection-color: transparent;
+  --ads-v2-colors-content-tab-baseline-default-border: var(
+    --ads-v2-color-border
+  );
+  --ads-v2-colors-content-tab-surface-default-border: transparent;
+  --ads-v2-colors-content-tab-surface-hover-border: var(
+    --ads-v2-color-border-emphasis
+  );
+  --ads-v2-colors-content-tab-surface-active-border: var(
+    --ads-v2-color-border-brand
+  );
+  --ads-v2-colors-content-tag-background-default-bg: var(--ads-v2-color-bg);
+
+  --tab-color: var(--ads-v2-colors-content-label-inactive-fg);
+  --tab-selection-color: var(
+    --ads-v2-colors-content-tab-surface-default-border
+  );
 `;
 
 export const StyledTabs = styled(RadixTabs.Root)`
@@ -12,9 +26,11 @@ export const StyledTabs = styled(RadixTabs.Root)`
 `;
 
 export const StyledTabsList = styled(RadixTabs.List)`
+  ${Variables};
   display: flex;
-  background-color: var(--ads-v2-color-bg);
-  border-bottom: 1px solid var(--ads-v2-color-border);
+  background-color: var(--ads-v2-colors-content-tag-background-default-bg);
+  border-bottom: 1px solid
+    var(--ads-v2-colors-content-tab-baseline-default-border);
   display: flex;
   gap: var(--ads-v2-spaces-4);
   width: 100%;
@@ -35,7 +51,7 @@ export const StyledTab = styled(RadixTabs.TabsTrigger)`
   cursor: pointer;
   padding: var(--ads-v2-spaces-2);
   padding-bottom: var(--ads-v2-spaces-3);
-  background-color: var(--ads-v2-color-bg);
+  background-color: var(--ads-v2-colors-content-tag-background-default-bg);
   border: none; // get rid of button styles
   color: var(--tab-color);
   min-width: fit-content;
@@ -56,17 +72,21 @@ export const StyledTab = styled(RadixTabs.TabsTrigger)`
   gap: var(--ads-v2-spaces-3);
 
   &:hover {
-    --tab-selection-color: var(--ads-v2-color-border-emphasis);
+    --tab-selection-color: var(
+      --ads-v2-colors-content-tab-surface-hover-border
+    );
   }
 
   &[aria-selected="true"],
   &:active {
-    --tab-selection-color: var(--ads-v2-color-border-brand);
-    --tab-color: var(--ads-v2-color-fg);
+    --tab-selection-color: var(
+      --ads-v2-colors-content-tab-surface-active-border
+    );
+    --tab-color: var(--ads-v2-colors-content-label-default-fg);
   }
 
   &:focus-visible {
-    --tab-color: var(--ads-v2-color-fg);
+    --tab-color: var(--ads-v2-colors-content-label-default-fg);
     outline: var(--ads-v2-border-width-outline) solid
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
