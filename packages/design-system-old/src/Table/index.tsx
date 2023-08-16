@@ -13,6 +13,7 @@ const UpperArrow = importSvg(() =>
 );
 
 const Styles = styled.div`
+&&& {
   table {
     border-spacing: 0;
     width: 100%;
@@ -101,6 +102,7 @@ const Styles = styled.div`
       }
     }
   }
+}
 `;
 
 const HiddenArrow = styled(DownArrow)`
