@@ -12,7 +12,7 @@ import { Text } from "../Text";
 function Tag({
   children,
   isClosable,
-  kind = "info",
+  kind = "neutral",
   onClose,
   ...rest
 }: TagProps) {

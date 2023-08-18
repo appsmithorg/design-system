@@ -35,7 +35,7 @@ export const StyledOverlay = styled(Overlay)`
 `;
 
 export const StyledContent = styled(Content)`
-  background-color: var(--ads-v2-color-bg);
+  background-color: var(--ads-v2-colors-content-surface-default-bg);
   border-radius: var(--ads-v2-border-radius);
   position: fixed;
   top: 40%;

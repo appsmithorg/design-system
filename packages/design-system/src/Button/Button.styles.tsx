@@ -8,9 +8,11 @@ import {
 import { ButtonSizes, ButtonKind } from "./Button.types";
 
 const Variables = css`
-  --button-color-bg: var(--ads-v2-color-bg);
-  --button-color-fg: var(--ads-v2-color-text);
-  --button-color-border: var(--ads-v2-color-border);
+  --button-color-bg: var(--ads-v2-colors-action-primary-surface-default-bg);
+  --button-color-fg: var(--ads-v2-colors-action-primary-label-default-fg);
+  --button-color-border: var(
+    --ads-v2-colors-action-primary-surface-default-border
+  );
   --button-font-weight: 600;
   --button-font-size: 14px;
   --button-padding: var(--ads-v2-spaces-3) var(--ads-v2-spaces-4);
@@ -59,76 +61,94 @@ const getHeights = (size: ButtonSizes, isIconButton?: boolean) => {
 
 const Kind = {
   primary: css`
-    --button-color-bg: var(--ads-v2-color-bg-brand);
-    --button-color-fg: var(--ads-v2-color-fg-on-brand);
-    --button-color-border: var(--ads-v2-color-border-brand);
+    --button-color-bg: var(--ads-v2-colors-action-primary-surface-default-bg);
+    --button-color-fg: var(--ads-v2-colors-action-primary-label-default-fg);
+    --button-color-border: var(
+      --ads-v2-colors-action-primary-surface-default-border
+    );
 
     &:hover:not([data-disabled="true"]):not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-brand-emphasis);
-      --button-color-fg: var(--ads-v2-color-fg-on-brand);
-      --button-color-border: var(--ads-v2-color-border-brand-emphasis);
+      --button-color-bg: var(--ads-v2-colors-action-primary-surface-hover-bg);
+      --button-color-fg: var(--ads-v2-colors-action-primary-label-default-fg);
+      --button-color-border: var(
+        --ads-v2-colors-action-primary-surface-hover-border
+      );
     }
 
     &:active:not([data-disabled="true"]):not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-brand-emphasis-plus);
-      --button-color-fg: var(--ads-v2-color-fg-on-brand);
-      --button-color-border: var(--ads-v2-color-border-brand-emphasis);
+      --button-color-bg: var(--ads-v2-colors-action-primary-surface-active-bg);
+      --button-color-fg: var(--ads-v2-colors-action-primary-label-default-fg);
+      --button-color-border: var(
+        --ads-v2-colors-action-primary-surface-active-border
+      );
     }
   `,
   secondary: css`
-    --button-color-bg: var(--ads-v2-color-bg);
-    --button-color-fg: var(--ads-v2-color-fg);
-    --button-color-border: var(--ads-v2-color-border);
+    --button-color-bg: var(--ads-v2-colors-action-secondary-surface-default-bg);
+    --button-color-fg: var(--ads-v2-colors-action-secondary-label-default-fg);
+    --button-color-border: var(
+      --ads-v2-colors-action-secondary-surface-default-border
+    );
 
     &:hover:not([data-disabled="true"]):not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-subtle);
-      --button-color-fg: var(--ads-v2-color-fg);
-      --button-color-border: var(--ads-v2-color-border);
+      --button-color-bg: var(--ads-v2-colors-action-secondary-surface-hover-bg);
+      --button-color-fg: var(--ads-v2-colors-action-secondary-label-default-fg);
+      --button-color-border: var(
+        --ads-v2-colors-action-secondary-surface-hover-border
+      );
     }
 
     &:active:not([data-disabled="true"]):not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-muted);
-      --button-color-fg: var(--ads-v2-color-fg);
-      --button-color-border: var(--ads-v2-color-border-emphasis);
+      --button-color-bg: var(
+        --ads-v2-colors-action-secondary-surface-active-bg
+      );
+      --button-color-fg: var(--ads-v2-colors-action-secondary-label-default-fg);
+      --button-color-border: var(
+        --ads-v2-colors-action-secondary-surface-active-border-emphasis
+      );
     }
   `,
   tertiary: css`
-    --button-color-bg: transparent;
-    --button-color-fg: var(--ads-v2-color-fg);
-    --button-color-border: transparent;
+    --button-color-bg: var(--ads-v2-colors-action-tertiary-surface-default-bg);
+    --button-color-fg: var(--ads-v2-colors-action-tertiary-label-default-fg);
+    --button-color-border: var(
+      --ads-v2-colors-action-tertiary-surface-default-border
+    );
     // We only apply mix-blend-mode-to tertiary button because other buttons are
     // not supposed to be on a background other than white.
     mix-blend-mode: multiply;
 
     &:hover:not([data-disabled="true"]):not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-subtle);
-      --button-color-fg: var(--ads-v2-color-fg);
+      --button-color-bg: var(--ads-v2-colors-action-tertiary-surface-hover-bg);
+      --button-color-fg: var(--ads-v2-colors-action-tertiary-label-default-fg);
     }
 
     &:active:not([data-disabled="true"]):not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-muted);
-      --button-color-fg: var(--ads-v2-color-fg);
+      --button-color-bg: var(--ads-v2-colors-action-tertiary-surface-active-bg);
+      --button-color-fg: var(--ads-v2-colors-action-tertiary-label-default-fg);
     }
 
     &:disabled {
-      --button-color-bg: transparent;
+      --button-color-bg: var(
+        --ads-v2-colors-action-tertiary-surface-default-bg
+      );
     }
   `,
   error: css`
-    --button-color-bg: var(--ads-v2-color-bg-error);
-    --button-color-fg: var(--ads-v2-color-fg-on-error);
-    --button-color-border: transparent;
+    --button-color-bg: var(--ads-v2-colors-action-error-surface-default-bg);
+    --button-color-fg: var(--ads-v2-colors-action-error-label-default-fg);
+    --button-color-border: var(
+      --ads-v2-colors-action-error-surface-default-border
+    );
 
     &:hover:not([data-disabled="true"]):not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-error-emphasis);
-      --button-color-fg: var(--ads-v2-color-fg-on-error);
-      --button-color-border: transparent;
+      --button-color-bg: var(--ads-v2-colors-action-error-surface-hover-bg);
+      --button-color-fg: var(--ads-v2-colors-action-error-label-default-fg);
     }
 
     &:active:not([data-disabled="true"]):not([data-loading="true"]) {
-      --button-color-bg: var(--ads-v2-color-bg-error-emphasis-plus);
-      --button-color-fg: var(--ads-v2-color-fg-on-error);
-      --button-color-border: transparent;
+      --button-color-bg: var(--ads-v2-colors-action-error-surface-active-bg);
+      --button-color-fg: var(--ads-v2-colors-action-error-label-default-fg);
     }
   `,
 };

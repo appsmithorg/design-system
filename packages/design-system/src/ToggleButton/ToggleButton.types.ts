@@ -1,7 +1,7 @@
 import React from "react";
 import { Sizes } from "../__config__/types";
 
-export type ToggleSizes = Extract<Sizes, "sm" | "md">;
+export type ToggleButtonSizes = Extract<Sizes, "sm" | "md" | "lg">;
 
 // Toggle props
 export type ToggleButtonProps = {
@@ -10,7 +10,7 @@ export type ToggleButtonProps = {
   /** the icon to be rendered */
   icon: string;
   /** the size of the toggle button */
-  size: ToggleSizes;
+  size: ToggleButtonSizes;
   /** Whether the toggle button is disabled or not. */
   isDisabled?: boolean;
   /** Whether the toggle button is selected or not. */
