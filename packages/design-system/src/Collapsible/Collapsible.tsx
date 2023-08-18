@@ -39,7 +39,7 @@ function CollapsibleHeader(props: CollapsibleHeaderProps) {
     >
       {arrowPosition === ARROW_POSITIONS.START && (
         <Icon
-          name={isExpanded ? "arrow-up-s-line" : "arrow-down-s-line"}
+          name={isExpanded ? "arrow-down-s-line" : "arrow-right-s-line"}
           size="md"
         />
       )}
@@ -48,7 +48,7 @@ function CollapsibleHeader(props: CollapsibleHeaderProps) {
 
       {arrowPosition === ARROW_POSITIONS.END && (
         <StyledEndIcon
-          name={isExpanded ? "arrow-up-s-line" : "arrow-down-s-line"}
+          name={isExpanded ? "arrow-down-s-line" : "arrow-right-s-line"}
           size="md"
         />
       )}
