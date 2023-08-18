@@ -5,8 +5,7 @@ import { Text } from "../Text";
 
 const Variables = css`
   --popover-padding: var(--ads-v2-spaces-4);
-  --popover-min-width: unset;
-  --popover-max-width: unset;
+  --popover-width: unset;
   --popover-max-height: unset;
 `;
 
@@ -14,15 +13,13 @@ const Variables = css`
 const Size = {
   sm: css`
     --popover-padding: var(--ads-v2-spaces-4);
-    --popover-min-width: 14.3vw;
-    --popover-max-width: 21.4vw;
-    --popover-max-height: 26.02vh;
+    --popover-width: 250px;
+    --popover-max-height: 400px;
   `,
   md: css`
     --popover-padding: var(--ads-v2-spaces-5);
-    --popover-min-width: 28.5vw;
-    --popover-max-width: 35.7vw;
-    --popover-max-height: 46.8vh;
+    --popover-width: 400px;
+    --popover-max-height: 600px;
   `,
 };
 
