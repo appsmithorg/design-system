@@ -40,8 +40,6 @@ export const StyledContent = styled(Content)<{ $size: PopoverSize }>`
   min-width: var(--popover-min-width);
   max-width: var(--popover-max-width);
   max-height: var(--popover-max-height);
-
-  overflow-y: scroll;
 `;
 
 export const StyledHeader = styled.div`
@@ -66,5 +64,4 @@ export const StyledClose = styled(Close)`
 export const StyledBody = styled.div`
   padding-top: var(--ads-v2-spaces-4);
   flex: 1;
-  overflow-y: auto;
 `;
