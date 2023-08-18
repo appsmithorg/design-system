@@ -30,8 +30,8 @@ export const StyledContent = styled(Content)<{ $size: PopoverSize }>`
 
   padding: var(--popover-padding);
 
-  background-color: var(--ads-v2-color-bg);
-  border: 1px solid var(--ads-v2-color-border);
+  background-color: var(--ads-v2-colors-content-surface-default-bg);
+  border: 1px solid var(--ads-v2-colors-content-surface-default-border);
   border-radius: var(--ads-v2-border-radius);
   box-shadow: var(--ads-v2-shadow-popovers);
 
@@ -47,7 +47,7 @@ export const StyledHeader = styled.div`
 
 // TODO: Replace below rules with correct text kind when text is developed.
 export const StyledHeaderText = styled(Text)`
-  --color: var(--ads-v2-color-fg-emphasis);
+  --color: var(--ads-v2-colors-content-header-default-fg);
   --font-size: var(--ads-v2-font-size-6);
   --font-weight: 600;
   --line-height: 1.5;

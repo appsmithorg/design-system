@@ -10,7 +10,7 @@
     * ===========================================*
   */
 
-  /* Naming convention: 
+  /* Naming convention:
     *
     * (Atom-Category-Component-Variant-Surface-State-PresenationalAttribute)
     * Atom - Type of token (color/spacing/typography).
@@ -111,6 +111,7 @@
   /* ========================= Content ========================= */
   --ads-v2-colors-content-helper-default-fg: var(--ads-v2-color-fg-muted);
   --ads-v2-colors-content-icon-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-content-header-default-fg: var(--ads-v2-color-fg-emphasis);
   --ads-v2-colors-content-label-default-fg: var(--ads-v2-color-fg);
   --ads-v2-colors-content-label-inactive-fg: var(--ads-v2-color-fg-muted);
   --ads-v2-colors-content-label-error-fg: var(--ads-v2-color-fg-error);
