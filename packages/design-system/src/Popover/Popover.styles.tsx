@@ -37,12 +37,16 @@ export const StyledContent = styled(Content)<{ $size: PopoverSize }>`
 
   width: var(--popover-width);
   max-height: var(--popover-max-height);
+
+  // to separate it from the bottom of the screen when it overflows
+  margin-bottom: var(--ads-v2-spaces-4);
 `;
 
 export const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: var(--ads-v2-spaces-4);
 `;
 
 // TODO: Replace below rules with correct text kind when text is developed.
@@ -59,6 +63,11 @@ export const StyledClose = styled(Close)`
 `;
 
 export const StyledBody = styled.div`
-  padding-top: var(--ads-v2-spaces-4);
   flex: 1;
+  // 25.5px is the line height of the header text.
+  // This code assumes that the header will always span exactly one line.
+  max-height: calc(
+    var(--popover-max-height) - calc(var(--popover-padding) * 2 + 25.5px)
+  );
+  overflow-y: scroll;
 `;
