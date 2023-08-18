@@ -35,8 +35,7 @@ export const StyledContent = styled(Content)<{ $size: PopoverSize }>`
   border-radius: var(--ads-v2-border-radius);
   box-shadow: var(--ads-v2-shadow-popovers);
 
-  min-width: var(--popover-min-width);
-  max-width: var(--popover-max-width);
+  width: var(--popover-width);
   max-height: var(--popover-max-height);
 `;
 
