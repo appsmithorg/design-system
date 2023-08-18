@@ -36,6 +36,8 @@ export const StyledContent = styled(Content)<{ $size: PopoverSize }>`
   background-color: var(--ads-v2-color-bg);
   border: 1px solid var(--ads-v2-color-border);
   border-radius: var(--ads-v2-border-radius);
+  // TODO: use elevation variable when it exists
+  box-shadow: 0 4px 14px 0 rgba(64, 64, 64, 0.1);
 
   min-width: var(--popover-min-width);
   max-width: var(--popover-max-width);
