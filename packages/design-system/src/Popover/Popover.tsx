@@ -43,7 +43,7 @@ function PopoverHeader({
     <StyledHeader className={`${PopoverBodyHeaderClassName} ${className}`}>
       <StyledHeaderText>{children}</StyledHeaderText>
       {isClosable && (
-        <StyledClose>
+        <StyledClose asChild>
           <Button
             isIconButton
             kind="tertiary"
