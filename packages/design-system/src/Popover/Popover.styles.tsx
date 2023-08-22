@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { PopoverSize } from "./Popover.types";
-import { Close, Content } from "@radix-ui/react-popover";
+import { Content } from "@radix-ui/react-popover";
 import { Text } from "../Text";
 
 const Variables = css`
@@ -55,13 +55,6 @@ export const StyledHeaderText = styled(Text)`
   --font-size: var(--ads-v2-font-size-6);
   --font-weight: 600;
   --line-height: 1.5;
-`;
-
-export const StyledClose = styled(Close)`
-  all: unset;
-  cursor: pointer;
-  // this container tends to take the height of the container it is in. To prevent this, we're setting it to the height of its child.
-  height: 24px;
 `;
 
 export const StyledBody = styled.div`

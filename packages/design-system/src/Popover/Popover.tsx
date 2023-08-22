@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Close,
   Root,
   Trigger,
   PopoverTriggerProps,
@@ -9,7 +10,6 @@ import {
 import { PopoverHeaderProps, PopoverContentProps } from "./Popover.types";
 import {
   StyledBody,
-  StyledClose,
   StyledContent,
   StyledHeader,
   StyledHeaderText,
@@ -43,14 +43,14 @@ function PopoverHeader({
     <StyledHeader className={`${PopoverBodyHeaderClassName} ${className}`}>
       <StyledHeaderText>{children}</StyledHeaderText>
       {isClosable && (
-        <StyledClose asChild>
+        <Close asChild>
           <Button
             isIconButton
             kind="tertiary"
             size="sm"
             startIcon="close-line"
           />
-        </StyledClose>
+        </Close>
       )}
     </StyledHeader>
   );
