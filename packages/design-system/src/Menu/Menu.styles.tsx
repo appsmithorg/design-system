@@ -9,7 +9,7 @@ import {
 const Variables = css`
   --menu-item-padding: var(--ads-v2-spaces-3);
   --menu-item-gap: var(--ads-v2-spaces-3);
-  --menu-item-color-bg: var(--ads-v2-color-bg);
+  --menu-item-color-bg: var(--ads-v2-colors-content-surface-default-bg);
   --menu-item-font-size: var(--ads-v2-font-size-4);
   --menu-item-height: 36px;
 `;
@@ -36,9 +36,9 @@ const MenuContentStyle = css`
   min-width: 100px;
   max-width: 280px;
   max-height: calc(var(--radix-dropdown-menu-content-available-height) - 20px);
-  background-color: var(--ads-v2-color-bg);
+  background-color: var(--ads-v2-colors-content-surface-default-bg);
   border-radius: var(--ads-v2-border-radius);
-  border: 1px solid var(--ads-v2-color-border-muted);
+  border: 1px solid var(--ads-v2-colors-content-surface-default-border);
   box-shadow: var(--ads-v2-shadow-popovers);
   padding: var(--ads-v2-spaces-2);
   animation-duration: 400ms;
@@ -76,7 +76,7 @@ const MenuItemStyle = css`
   cursor: pointer;
   background-color: var(--menu-item-color-bg);
   position: relative;
-  color: var(--ads-v2-color-fg);
+  color: var(--ads-v2-colors-content-label-default-fg);
   min-height: var(--menu-item-height);
   box-sizing: border-box;
 
@@ -96,7 +96,7 @@ const MenuItemStyle = css`
 
   &:hover:not([data-disabled]),
   &:focus-visible {
-    --menu-item-color-bg: var(--ads-v2-color-bg-subtle);
+    --menu-item-color-bg: var(--ads-v2-colors-content-surface-hover-bg);
     outline: none;
   }
 
@@ -107,7 +107,7 @@ const MenuItemStyle = css`
   }
 
   &:active:not([data-disabled]) {
-    --menu-item-color-bg: var(--ads-v2-color-bg-muted);
+    --menu-item-color-bg: var(--ads-v2-colors-content-surface-active-bg);
   }
 
   &[data-disabled] {
@@ -132,13 +132,13 @@ export const StyledMenuSubTrigger = styled(RadixMenu.SubTrigger)<{
   ${({ size }) => size && MenuItemSizeStyles[size]}
 
   &[data-state="open"] {
-    --menu-item-color-bg: var(--ads-v2-color-bg-muted);
+    --menu-item-color-bg: var(--ads-v2-colors-content-surface-active-bg);
   }
 `;
 
 export const StyledMenuSeparator = styled(RadixMenu.Separator)`
   height: 1px;
-  background-color: var(--ads-v2-color-border);
+  background-color: var(--ads-v2-colors-content-surface-default-border);
   width: 100%;
   display: list-item;
 

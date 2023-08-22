@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Callout } from "./Callout";
-import { Text } from "../Text";
 
 export default {
   title: "Design System/Callout",
@@ -26,7 +25,7 @@ CalloutStory.argTypes = {
     },
     table: {
       type: {
-        summary: "string",
+        summary: "ReactNode",
       },
     },
   },
@@ -82,7 +81,7 @@ CalloutWithLink.argTypes = {
     },
     table: {
       type: {
-        summary: "string",
+        summary: "ReactNode",
       },
     },
   },

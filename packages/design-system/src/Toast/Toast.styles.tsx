@@ -10,13 +10,13 @@ const Variables = css`
   // For a complete list, see https://fkhadra.github.io/react-toastify/how-to-style/#override-css-variables
 
   --toastify-toast-width: 320px;
-  --toastify-toast-background: var(--ads-v2-color-bg);
+  --toastify-toast-background: var(--ads-v2-colors-response-surface-default-bg);
   --toastify-toast-min-height: 2.5rem;
   --toastify-toast-max-height: 800px;
   --toastify-font-family: var(--ads-v2-font-family);
   --toastify-z-index: 9999;
 
-  --toastify-text-color-light: var(--ads-v2-color-fg-emphasis);
+  --toastify-text-color-light: var(--ads-v2-colors-response-label-default-fg);
 `;
 
 export const StyledToast = styled(ToastContainer).attrs<ToastProps>({
@@ -54,7 +54,7 @@ export const ToastBody = styled(Text)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--ads-v2-color-fg-emphasis);
+  color: var(--ads-v2-colors-response-label-default-fg);
   gap: var(--ads-v2-spaces-3);
   word-break: break-word;
 `;

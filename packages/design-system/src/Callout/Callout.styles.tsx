@@ -4,21 +4,31 @@ import { Button } from "Button";
 import { Text } from "Text";
 
 const Variables = css`
-  --callout-color-background: var(--ads-v2-color-bg);
+  --callout-color-background: var(
+    --ads-v2-colors-response-info-surface-default-bg
+  );
 `;
 
 const KindMap = {
   success: css`
-    --callout-color-background: var(--ads-v2-color-bg-success);
+    --callout-color-background: var(
+      --ads-v2-colors-response-success-surface-default-bg
+    );
   `,
   warning: css`
-    --callout-color-background: var(--ads-v2-color-bg-warning);
+    --callout-color-background: var(
+      --ads-v2-colors-response-warning-surface-default-bg
+    );
   `,
   info: css`
-    --callout-color-background: var(--ads-v2-color-bg-information);
+    --callout-color-background: var(
+      --ads-v2-colors-response-info-surface-default-bg
+    );
   `,
   error: css`
-    --callout-color-background: var(--ads-v2-color-bg-error);
+    --callout-color-background: var(
+      --ads-v2-colors-response-error-surface-default-bg
+    );
   `,
 };
 

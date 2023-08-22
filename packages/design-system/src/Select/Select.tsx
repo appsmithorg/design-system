@@ -60,14 +60,15 @@ function Select(props: SelectProps) {
         SelectDropdownClassName + `--${size}`,
         dropdownClassName,
       )}
+      inputIcon={<InputIcon />}
       maxTagCount={maxTagCount}
       maxTagPlaceholder={maxTagPlaceholder || getMaxTagPlaceholder}
       maxTagTextLength={maxTagTextLength}
       menuItemSelectedIcon=""
       mode={isMultiSelect ? "multiple" : undefined}
       placeholder={placeholder}
+      showArrow
       showSearch={showSearch}
-      suffixIcon={<InputIcon />}
       tagRender={(props) => {
         const { closable, label, onClose } = props;
         return (

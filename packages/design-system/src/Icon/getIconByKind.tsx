@@ -7,7 +7,7 @@ export function getIconByKind(kind: Kind) {
     case "success":
       return (
         <Icon
-          color="var(--ads-v2-color-fg-success)"
+          color="var(--ads-v2-colors-response-success-icon-default-fg)"
           name="oval-check-fill"
           size="lg"
         />
@@ -16,7 +16,7 @@ export function getIconByKind(kind: Kind) {
     case "error":
       return (
         <Icon
-          color="var(--ads-v2-color-fg-error)"
+          color="var(--ads-v2-colors-response-error-icon-default-fg)"
           name="close-circle"
           size="lg"
         />
@@ -25,7 +25,7 @@ export function getIconByKind(kind: Kind) {
     case "warning":
       return (
         <Icon
-          color="var(--ads-v2-color-fg-warning)"
+          color="var(--ads-v2-colors-response-warning-icon-default-fg)"
           name="alert-fill"
           size="lg"
         />
@@ -34,7 +34,7 @@ export function getIconByKind(kind: Kind) {
     case "info":
       return (
         <Icon
-          color="var(--ads-v2-color-fg-information)"
+          color="var(--ads-v2-colors-response-info-icon-default-fg)"
           name="info-fill"
           size="lg"
         />

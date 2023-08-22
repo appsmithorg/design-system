@@ -1,13 +1,14 @@
 import React from "react";
-import { Kind, Sizes } from "../__config__/types";
+import { Sizes } from "../__config__/types";
 
-export type TagSize = Extract<Sizes, "sm" | "md">;
+export type TagSizes = Extract<Sizes, "sm" | "md">;
 
-export type TagKind = Kind | "special" | "premium";
+// TODO: Update this to include "Kind" from __config__/types
+export type TagKind = "neutral" | "special" | "premium";
 
 export type TagProps = {
   /** the size of the tag */
-  size?: TagSize;
+  size?: TagSizes;
 
   /** (try not to) pass addition classes here */
   className?: string;

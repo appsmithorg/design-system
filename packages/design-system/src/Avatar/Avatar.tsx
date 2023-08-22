@@ -76,7 +76,9 @@ const Avatar = React.forwardRef(
             />
           )}
           {!shouldRenderImage && firstLetter && (
-            <span className={AvatarSvgClassName}>{firstLetter}</span>
+            <span className={AvatarSvgClassName}>
+              {firstLetter.slice(0, 2)}
+            </span>
           )}
           {!shouldRenderImage && !firstLetter && label && (
             <span className={AvatarSvgClassName}>{label.slice(0, 1)}</span>
