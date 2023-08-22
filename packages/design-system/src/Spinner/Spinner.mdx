@@ -1,60 +1,52 @@
 import { Canvas, Meta } from '@storybook/blocks';
 
 import * as SpinnerStories from './Spinner.stories';
+import { ButtonLoadingStory } from "../Button/Button.stories";
 
 <Meta of={SpinnerStories} />
 
 
-### Overview
+# Spinner
 
-Used as a visual cue to indicate information being loaded on to the screen or to communicate that the system is processing information.
-The spinner is a load indicator that displays whenever an application is processing or waiting for an operation. While the spinner is loading, you cannot interact with the target until the process is completed.
+The spinner is a special implementation of an icon-only button that is used as a visual cue to indicate information being loaded on to the screen or to communicate that the system is processing information.
 
-### Anatomy
+<Canvas of={SpinnerStories.SmallSpinnerStory} />
 
-1. **Icon:** Indicates the loading action; it is available in either a medium (md) or large (lg) size
+## Anatomy
 
----
+1. **Icon:** Indicates the loading action; it is available in either a medium (md) or large (lg) size
 
-### Size
+[//]: # (![Spinner anatomy]&#40;./docs/spinner-anatomy.png&#41;)
 
-Loaders are available in 3 sizes: small (sm), medium (md) and large (lg).
+## Spacing
 
-Choose a size based on your design and use case.
+The spinner follows the exact same spacing of an icon-only button. See [Icon Buttons](https://design-system.appsmith.com/?path=/docs/design-system-button--documentation#icon-buttons)
+
+[//]: # (![Spinner spacing]&#40;./docs/spinner-spacing.png&#41;)
+
+
+## Size
+
+Spinners are available in 3 sizes: small (sm), medium (md) and large (lg).
+
+### Small
+<Canvas of={SpinnerStories.SmallSpinnerStory} />
+
 
 ### Medium
 
-Use a medium loader to indicate when content is loading within smaller areas, such as panels, modals, and form controls. They are also ideal for areas with limited space.
+Use a medium spinner to indicate when content is loading within smaller areas, such as panels, modals, and form controls. They are also ideal for areas with limited space.
 
-Avoid using this size when labels and actions are used together.
+<Canvas of={SpinnerStories.MediumSpinnerStory} />
 
 ### Large
 
-Use a large loader to indicate when content is loading within larger areas, such as full-page views, large panels, and modals. They're also ideal for any areas that don't have space constraints.
+Use a large spinner to indicate when content is loading within larger areas, such as full-page views, large panels, and modals. They're also ideal for any areas that don't have space constraints.
+<Canvas of={SpinnerStories.LargeSpinnerStory} />
 
-### UI Text Guidelines
 
-Consider the following recommendations when using text with a loader:
+## Usage
 
-- Labels should be helpful and contextual.
-- All labels should be in sentence case, with the exception of proper nouns.
-
----
-
-### Usage
-
-Use a loading spinner whenever the wait time is anticipated to be longer than three seconds.
-
-Use a button loader for actions triggered by a button.
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/45c397c5-f985-4ef6-96a3-fd3edad6b65a/Untitled.png)
-
-### Loaders with only an icon
-
-If no context is needed, you can provide only an icon to show the loading process.
-
-### Loaders with a description
-
-This configuration includes a description that tells the user what content is currently loading.
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44ca786e-217b-4426-816a-5a6249eceb99/Untitled.png)
+1. Use a spinner whenever the wait time is anticipated to be longer than three seconds.
+2. Don't use a spinner when the action has occured after a button has been clicked, use the button's `isLoading` prop for this.
+<Canvas of={ButtonLoadingStory} />
