@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ToggleButtonGroup } from "./ToggleButtonGroup";
 
 export default {
-  title: "Design System/Toggle/Toggle Button Group",
+  title: "Design System/Toggle Button/Toggle Button Group",
   component: ToggleButtonGroup,
   parameters: {
     docs: {
