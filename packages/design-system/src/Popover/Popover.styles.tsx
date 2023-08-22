@@ -60,6 +60,8 @@ export const StyledHeaderText = styled(Text)`
 export const StyledClose = styled(Close)`
   all: unset;
   cursor: pointer;
+  // this container tends to take the height of the container it is in. To prevent this, we're setting it to the height of its child.
+  height: 24px;
 `;
 
 export const StyledBody = styled.div`
