@@ -10,7 +10,7 @@
     * ===========================================*
   */
 
-  /* Naming convention: 
+  /* Naming convention:
     *
     * (Atom-Category-Component-Variant-Surface-State-PresenationalAttribute)
     * Atom - Type of token (color/spacing/typography).
@@ -111,6 +111,7 @@
   /* ========================= Content ========================= */
   --ads-v2-colors-content-helper-default-fg: var(--ads-v2-color-fg-muted);
   --ads-v2-colors-content-icon-default-fg: var(--ads-v2-color-fg);
+  --ads-v2-colors-content-header-default-fg: var(--ads-v2-color-fg-emphasis);
   --ads-v2-colors-content-label-default-fg: var(--ads-v2-color-fg);
   --ads-v2-colors-content-label-inactive-fg: var(--ads-v2-color-fg-muted);
   --ads-v2-colors-content-label-error-fg: var(--ads-v2-color-fg-error);
@@ -129,15 +130,13 @@
   --ads-v2-colors-content-surface-warning-bg: var(--ads-v2-color-bg-warning);
   --ads-v2-colors-content-surface-special-bg: var(--ads-v2-color-bg-special);
   --ads-v2-colors-content-surface-premium-bg: var(--ads-v2-color-bg-premium);
-  --ads-v2-colors-content-surface-default-border: var(--ads-v2-color-border);
+  --ads-v2-colors-content-surface-default-border: var(--ads-v2-color-border-muted);
   --ads-v2-colors-content-surface-info-border: var(--ads-v2-color-border-info);
   --ads-v2-colors-content-surface-success-border: var(--ads-v2-color-border-success);
   --ads-v2-colors-content-surface-error-border: var(--ads-v2-color-border-error);
   --ads-v2-colors-content-surface-warning-border: var(--ads-v2-color-border-warning);
   --ads-v2-colors-content-surface-special-border: var(--ads-v2-color-border-special);
   --ads-v2-colors-content-surface-premium-border: var(--ads-v2-color-border-premium);
-  --ads-v2-colors-content-container-default-border: var(--ads-v2-color-border-muted);
-
 
   /**
     * ===========================================*
