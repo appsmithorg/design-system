@@ -1,5 +1,23 @@
 # @appsmithorg/design-system
 
+## 2.1.19
+
+### Patch Changes
+
+- [#535](https://github.com/appsmithorg/design-system/pull/535) [`c69f8439`](https://github.com/appsmithorg/design-system/commit/c69f8439ff92b2262e2a353e920513d7d49cb699) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add affordance to link
+
+- [#573](https://github.com/appsmithorg/design-system/pull/573) [`93373c97`](https://github.com/appsmithorg/design-system/commit/93373c97624524a0faba5f7cef7f880a3d287237) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: revert tag and release only special and premium tags
+
+- [#567](https://github.com/appsmithorg/design-system/pull/567) [`b6d2bc80`](https://github.com/appsmithorg/design-system/commit/b6d2bc807afc0b37f38d025f5c208aa1636af41c) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: add popover
+
+- [#584](https://github.com/appsmithorg/design-system/pull/584) [`ae47300c`](https://github.com/appsmithorg/design-system/commit/ae47300cbfac86b6fde0522063386f6d8613bb13) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Select arrow fix, table style priority
+
+- [#588](https://github.com/appsmithorg/design-system/pull/588) [`c399651c`](https://github.com/appsmithorg/design-system/commit/c399651ce7eace35f7ff3c225aa7ecb752c27359) Thanks [@dhruvikn](https://github.com/dhruvikn)! - fix: change collapsible toggle arrow directions from up/down to down/right
+
+- [#579](https://github.com/appsmithorg/design-system/pull/579) [`d1f138cf`](https://github.com/appsmithorg/design-system/commit/d1f138cfb0b1e973a2622e592bb2246dff06705e) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - feat: documentation updates for popover, collapsible, number input, callout, spinner. Add documentation template to generate files.
+
+- [#578](https://github.com/appsmithorg/design-system/pull/578) [`e80db491`](https://github.com/appsmithorg/design-system/commit/e80db4912e5a3ebea7f9de989893456623edb052) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added toggle new size variant "lg"
+
 ## 2.1.18
 
 ### Patch Changes
