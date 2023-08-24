@@ -4,3 +4,4 @@
  * @see https://en.bem.info/methodology/css/
  */
 export const CLASS_NAME_PREFIX = "ads-v2";
+export const TEST_ID_PREFIX = "ads-v2";

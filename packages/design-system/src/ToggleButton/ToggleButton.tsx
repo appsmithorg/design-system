@@ -3,7 +3,11 @@ import clsx from "classnames";
 
 import { ToggleButtonProps } from "./ToggleButton.types";
 import { StyledToggleButton } from "./ToggleButton.styles";
-import { ToggleClassName, ToggleIconClassName } from "./ToggleButton.constants";
+import {
+  ToggleButtonTestID,
+  ToggleClassName,
+  ToggleIconClassName,
+} from "./ToggleButton.constants";
 import { Icon } from "Icon";
 
 const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
@@ -28,10 +32,12 @@ const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
     return (
       <StyledToggleButton
         className={clsx(ToggleClassName, className)}
+        data-testid={ToggleButtonTestID}
         disabled={isDisabled}
         isSelected={isSelected ?? selected}
         size={size}
         {...rest}
+        aria-selected={isSelected ?? selected}
         data-selected={isSelected ?? selected}
         onClick={handleOnChange}
         ref={ref}
