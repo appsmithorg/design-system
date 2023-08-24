@@ -42,7 +42,7 @@
     "@svgr/rollup": "^6.5.1",
     "@svgr/webpack": "^8.0.1",
     "@testing-library/jest-dom": "^6.1.2",
-    "@testing-library/react": "^14.0.0",
+    "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.5.4",
     "@types/loadable__component": "^5.13.4",

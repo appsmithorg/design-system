@@ -8,7 +8,8 @@ import {
   ToggleClassName,
   ToggleIconClassName,
 } from "./ToggleButton.constants";
-import { Icon } from "Icon";
+// import { Icon } from "Icon";
+// import { Icon } from "Icon";
 
 const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
   (props, ref) => {
@@ -42,7 +43,7 @@ const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
         onClick={handleOnChange}
         ref={ref}
       >
-        <Icon className={ToggleIconClassName} name={icon} size={size} />
+        {/* <Icon className={ToggleIconClassName} name={icon} size={size} /> */}
       </StyledToggleButton>
     );
   },
