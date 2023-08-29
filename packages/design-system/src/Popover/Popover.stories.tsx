@@ -64,7 +64,7 @@ const PopoverContentTemplate: ComponentStory<typeof PopoverHeader> = (args) => {
   );
 };
 
-//  TODO: The popovr guidelines say that popovers should have at least one focusable element in it, b
+//  TODO: The popover guidelines say that popovers should have at least one focusable element in it, but this story doesn't because PopoverHeader expects children to be a string. Change this.
 export const PopoverContentStory = PopoverContentTemplate.bind({});
 PopoverContentStory.storyName = "Small Content";
 PopoverContentStory.argTypes = {
