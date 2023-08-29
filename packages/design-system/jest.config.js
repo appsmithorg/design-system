@@ -6,10 +6,12 @@ module.exports = {
   testEnvironment: "jsdom",
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest", // Use ts-jest for transforming TypeScript files
-    // '\\.(css|scss|sass)$': 'identity-obj-proxy', // Use identity-obj-proxy for handling CSS modules
-    // '\\.(svg)$': '<rootDir>/fileTransformer.js', // Create this file for SVG handling (see below)
+    "\\.(svg)$": "<rootDir>/fileTransformer.js", // Create this file for SVG handling (see below)
   },
-  // moduleNameMapper: {
-  // "\\.(css|scss|sass)$": "identity-obj-proxy", // Match CSS imports to the proxy
-  // },
+  moduleNameMapper: {
+    //  this mocks all binary files so jest doesn't try to convert it into js
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      "<rootDir>/fileTransformer.js",
+    // "\\.(css|less)$": "<rootDir>/fileTransformer.js" }
+  },
 };
