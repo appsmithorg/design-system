@@ -15,5 +15,5 @@ export const StyledDivider = styled.span<{
       ? "border-top: var(--divider-thickness) solid var(--ads-v2-colors-content-surface-default-border); width: var(--divider-length);"
       : "border-left: var(--divider-thickness) solid var(--ads-v2-colors-content-surface-default-border); height: var(--divider-length);"}
 
-  display: inline-block;
+  display: block;
 `;
