@@ -7,7 +7,6 @@ import {
   RenderResult,
 } from "@testing-library/react";
 import { ToggleButton } from "./ToggleButton";
-import '@testing-library/jest-dom';
 
 describe("given a default toggle button", () => {
   let rendered: RenderResult;
@@ -20,14 +19,13 @@ describe("given a default toggle button", () => {
 
   describe("when clicking the toggle button", () => {
     beforeEach(async () => {
-      // fireEvent.click(toggleButton);
-      // itemToAssert = await findByTestId(toggleButton, ToggleButtonTestID);
+      fireEvent.click(toggleButton);
+      itemToAssert = await findByTestId(toggleButton, ToggleButtonTestID);
     });
 
-    it.only("should render a selected toggle button", () => {
+    it("should render a selected toggle button", () => {
       // console.log(itemToAssert, "asrt item");
       // console.log(rendered, "rndr item");
-      expect(true).toEqual(true)
       expect(itemToAssert).toHaveAttribute("data-selected", "true");
     });
   });
