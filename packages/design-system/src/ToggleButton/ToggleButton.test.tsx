@@ -3,31 +3,29 @@ import { ToggleButtonTestID } from "./ToggleButton.constants";
 import {
   findByTestId,
   fireEvent,
+  getByTestId,
   render,
   RenderResult,
 } from "@testing-library/react";
 import { ToggleButton } from "./ToggleButton";
 
-describe("given a default toggle button", () => {
-  let rendered: RenderResult;
-  let toggleButton: HTMLElement;
-  let itemToAssert: HTMLElement;
+describe("ToggleButton Component", () => {
+  it("should be selected when clicked", () => {
+    const { getByTestId } = render(
+      <ToggleButton
+        data-testid="toggle-button"
+        icon="js-toggle-v2"
+        size="sm"
+      />,
+    );
 
-  beforeEach(() => {
-    rendered = render(<ToggleButton icon="js-toggle-v2" size="sm" />);
-  });
+    const toggleButton = getByTestId("toggle-button");
 
-  describe("when clicking the toggle button", () => {
-    beforeEach(async () => {
-      fireEvent.click(toggleButton);
-      itemToAssert = await findByTestId(toggleButton, ToggleButtonTestID);
-    });
+    expect(toggleButton).not.toHaveAttribute("aria-selected", "true");
 
-    it("should render a selected toggle button", () => {
-      // console.log(itemToAssert, "asrt item");
-      // console.log(rendered, "rndr item");
-      expect(itemToAssert).toHaveAttribute("data-selected", "true");
-    });
+    fireEvent.click(toggleButton);
+
+    expect(toggleButton).toHaveAttribute("aria-selected", "true");
   });
 });
 
