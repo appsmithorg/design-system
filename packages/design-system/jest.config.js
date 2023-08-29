@@ -2,6 +2,7 @@ module.exports = {
   roots: ["<rootDir>", "<rootDir>/src"], // Set this to the directory containing your source code
   modulePaths: ["<rootDir>"],
   moduleDirectories: ["node_modules", "src"],
+  testEnvironment: "jsdom",
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest", // Use ts-jest for transforming TypeScript files
     // '\\.(css|scss|sass)$': 'identity-obj-proxy', // Use identity-obj-proxy for handling CSS modules
