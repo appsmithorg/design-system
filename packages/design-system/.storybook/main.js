@@ -92,6 +92,7 @@ module.exports = {
     "../src/Documentation/Space.mdx",
     "../src/Documentation/FAQs.mdx",
     "../src/Documentation/LeanGuidelines.mdx",
+    "../src/Documentation/CategoryTokens/Introduction.mdx",
     "../src/*.mdx",
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)",
