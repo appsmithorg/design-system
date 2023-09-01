@@ -30,6 +30,7 @@
     "@rollup/plugin-image": "^3.0.1",
     "@rollup/plugin-terser": "^0.3.0",
     "@rollup/plugin-url": "^8.0.1",
+    "@storybook/addon-a11y": "^7.4.0",
     "@storybook/addon-actions": "^7.0.24",
     "@storybook/addon-essentials": "^7.0.24",
     "@storybook/addon-interactions": "^7.0.24",
