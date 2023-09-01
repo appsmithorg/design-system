@@ -38,7 +38,7 @@ const MenuContentStyle = css`
   max-height: calc(var(--radix-dropdown-menu-content-available-height) - 20px);
   background-color: var(--ads-v2-colors-content-surface-default-bg);
   border-radius: var(--ads-v2-border-radius);
-  border: 1px solid var(--ads-v2-colors-content-container-default-border);
+  border: 1px solid var(--ads-v2-colors-content-surface-default-border);
   box-shadow: var(--ads-v2-shadow-popovers);
   padding: var(--ads-v2-spaces-2);
   animation-duration: 400ms;
