@@ -172,6 +172,7 @@ function createShortcut(
 
 export function createDefaultShortcuts(
   allowSameDay: boolean,
+  hide2yearsFilter: boolean,
   useSingleDateShortcuts: boolean,
 ) {
   const today = new Date();
@@ -220,7 +221,7 @@ export function createDefaultShortcuts(
       oneYearAgo,
       today,
     ]),
-    ...(useSingleDateShortcuts
+    ...(useSingleDateShortcuts || hide2yearsFilter
       ? []
       : [createShortcut("Past 2 years", [twoYearsAgo, today])]),
   ];
@@ -230,6 +231,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   const {
     allowSameDay = false,
     currentDates,
+    hide2yearsFilter = false,
     onChangeHandler,
     showRangeShortcuts = false,
     useSingleDateShortcuts = false,
@@ -237,6 +239,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   } = props;
   const shortCuts = createDefaultShortcuts(
     allowSameDay,
+    hide2yearsFilter,
     useSingleDateShortcuts,
   );
   const [selectedShortCut, setSelectedShortCut] = useState<
@@ -553,6 +556,7 @@ function DateRangePicker(
       <DateRangeShortcuts
         allowSameDay={props.allowSameDay}
         currentDates={[startDate, endDate]}
+        hide2yearsFilter={props.hide2yearsFilter}
         onChangeHandler={onChangeHandler}
         showRangeShortcuts={props.showRangeShortcuts}
         useSingleDateShortcuts={props.useSingleDateShortcuts}

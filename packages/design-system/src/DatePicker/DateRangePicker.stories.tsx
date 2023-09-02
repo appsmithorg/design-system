@@ -85,6 +85,20 @@ export default {
         },
       },
     },
+    hide2yearsFilter: {
+      control: {
+        type: "boolean",
+      },
+      description: "Hide 2 years filter in the filter list.",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     showRangeShortcuts: {
       control: {
         type: "boolean",

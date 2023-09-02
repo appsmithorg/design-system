@@ -104,6 +104,7 @@ export interface DateRangeShortcutsConfig {
   allowSameDay?: boolean;
   hasTimePrecision?: boolean;
   useSingleDateShortcuts?: boolean;
+  hide2yearsFilter?: boolean;
 }
 
 export type DateRange = [Date | null, Date | null];
