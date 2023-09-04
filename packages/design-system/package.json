@@ -48,6 +48,7 @@
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
+    "axe-core": "^4.7.2",
     "babel-loader": "^8.2.5",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-preset-react-app": "^10.0.1",
