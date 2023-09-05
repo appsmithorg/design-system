@@ -5,7 +5,7 @@
 /* This follows the popover styles, hence the category content */
 .react-datepicker.ads-v2-datepicker__calender {
   background-color: var(--ads-v2-colors-content-surface-default-bg);
-  border: 1px solid var(--ads-v2-colors-content-surface-default-border);
+  border: 1px solid var(--ads-v2-colors-content-container-default-border);
   border-radius: var(--ads-v2-border-radius);
   box-shadow: var(--ads-v2-shadow-popovers);
   padding: var(--ads-v2-spaces-3);
@@ -63,7 +63,7 @@
   padding-right: var(--ads-v2-spaces-3);
   margin-left: -8px;
   margin-right: -32px;
-  border-left: 1px solid var(--ads-v2-colors-content-surface-default-border);
+  border-left: 1px solid var(--ads-v2-colors-content-container-default-border);
 }
 
 /* Custom header wrapper */

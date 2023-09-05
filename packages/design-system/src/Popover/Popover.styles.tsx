@@ -31,7 +31,7 @@ export const StyledContent = styled(Content)<{ $size: PopoverSize }>`
   padding: var(--popover-padding);
 
   background-color: var(--ads-v2-colors-content-surface-default-bg);
-  border: 1px solid var(--ads-v2-colors-content-surface-default-border);
+  border: 1px solid var(--ads-v2-colors-content-container-default-border);
   border-radius: var(--ads-v2-border-radius);
   box-shadow: var(--ads-v2-shadow-popovers);
 
