@@ -85,7 +85,7 @@ function Link(props: LinkProps) {
       }}
       style={rest.style}
       target={"_self"}
-      to={rest.to || ""}
+      to={}
     >
       {children}
     </StyledRouterLink>

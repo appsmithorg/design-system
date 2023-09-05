@@ -104,8 +104,17 @@ export interface DateRangeShortcutsConfig {
   allowSameDay?: boolean;
   hasTimePrecision?: boolean;
   useSingleDateShortcuts?: boolean;
-  hide2yearsFilter?: boolean;
+  excludeShortcuts?: ExcludeShorcuts;
 }
+
+export type ExcludeShorcuts = (
+  | "past_2_years"
+  | "past_year"
+  | "past_6_months"
+  | "past_3_months"
+  | "past_month"
+  | "past_week"
+)[];
 
 export type DateRange = [Date | null, Date | null];
 export type DateRangeShortcut = {

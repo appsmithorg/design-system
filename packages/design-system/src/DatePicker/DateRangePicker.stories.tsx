@@ -85,20 +85,6 @@ export default {
         },
       },
     },
-    hide2yearsFilter: {
-      control: {
-        type: "boolean",
-      },
-      description: "Hide 2 years filter in the filter list.",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "false",
-        },
-      },
-    },
     showRangeShortcuts: {
       control: {
         type: "boolean",
@@ -258,6 +244,20 @@ export default {
     excludeTimes: {
       table: {
         disable: true,
+      },
+    },
+    excludeShortcuts: {
+      control: {
+        type: "array",
+      },
+      description: "Shortcuts to be excluded from the datepicker.",
+      table: {
+        type: {
+          summary: "string[]",
+        },
+        defaultValue: {
+          summary: "[]",
+        },
       },
     },
     filterDate: {
@@ -504,4 +504,5 @@ DateRangePickerStory.storyName = "Date Range Picker";
 DateRangePickerStory.args = {
   //add arguments here
   excludeDates: [new Date()],
+  excludeShortcuts: [],
 };
