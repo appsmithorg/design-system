@@ -104,7 +104,7 @@ export interface DateRangeShortcutsConfig {
   allowSameDay?: boolean;
   hasTimePrecision?: boolean;
   useSingleDateShortcuts?: boolean;
-  excludeShortcuts?: ExcludeShorcuts[];
+  excludeShortcuts?: string[];
 }
 
 export type ExcludeShorcuts =

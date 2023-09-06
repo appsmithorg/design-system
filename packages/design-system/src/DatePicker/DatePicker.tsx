@@ -25,7 +25,6 @@ import {
   DateRangeShortcut,
   DateRangeShortcutsConfig,
   DateRangeShortcutsProps,
-  ExcludeShorcuts,
 } from "./DatePicker.types";
 import {
   DatePickerFooter,
@@ -173,7 +172,7 @@ function createShortcut(
 
 export function createDefaultShortcuts(
   allowSameDay: boolean,
-  excludeShortcuts: ExcludeShorcuts[],
+  excludeShortcuts: string[],
   useSingleDateShortcuts: boolean,
 ) {
   const today = new Date();
