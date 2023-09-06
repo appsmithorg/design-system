@@ -253,7 +253,7 @@ export default {
       description: "Shortcuts to be excluded from the datepicker.",
       table: {
         type: {
-          summary: "string[]",
+          summary: "ExcludeShorcuts[]",
         },
         defaultValue: {
           summary: "[]",

@@ -173,7 +173,7 @@ function createShortcut(
 
 export function createDefaultShortcuts(
   allowSameDay: boolean,
-  excludeShortcuts: ExcludeShorcuts,
+  excludeShortcuts: ExcludeShorcuts[],
   useSingleDateShortcuts: boolean,
 ) {
   const today = new Date();
@@ -454,6 +454,7 @@ function DateRangePicker(
     className,
     dateFormat = "MM/dd/yyyy",
     endDate: propEndDate,
+    excludeShortcuts = [],
     inputProps,
     inputSize = "md",
     isClearable,
@@ -573,7 +574,7 @@ function DateRangePicker(
       <DateRangeShortcuts
         allowSameDay={props.allowSameDay}
         currentDates={[startDate, endDate]}
-        excludeShortcuts={props.excludeShortcuts}
+        excludeShortcuts={[...excludeShortcuts]}
         onChangeHandler={onChangeHandler}
         showRangeShortcuts={props.showRangeShortcuts}
         useSingleDateShortcuts={props.useSingleDateShortcuts}
