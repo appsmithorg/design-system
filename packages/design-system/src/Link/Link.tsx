@@ -69,33 +69,27 @@ function Link(props: LinkProps) {
     </>
   );
 
-  // useList will always return a mock function as a constructor in the onClick on rest (in storybook at least).
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  return rest.onClick && !rest.onClick._isMockFunction ? (
-    // if an onClick prop exists
-    <StyledRouterLink
-      {...(linkProps as LinkProps)}
-      className={clsx(LinkClassName, className)}
-      innerRef={ref}
-      kind={rest.kind}
-      onClick={(e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-        e.preventDefault();
-        rest.onClick?.(e);
-      }}
-      style={rest.style}
-      target={"_self"}
-      to={rest.to || ""}
-    >
-      {children}
-    </StyledRouterLink>
-  ) : isExternal(rest.to) ? (
+  const onClickProps =
+    // useList will always return a mock function as a constructor in the onClick on rest (in storybook at least).
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    rest.onClick && !rest.onClick._isMockFunction
+      ? {
+          onClick: (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+            rest.onClick?.(e);
+          },
+        }
+      : {};
+
+  return isExternal(rest.to) ? (
     // if the url passed is external
     <StyledAnchor
       {...(linkProps as LinkProps)}
       className={clsx(LinkClassName, className)}
       href={rest.to}
       kind={rest.kind}
+      {...onClickProps}
+      ref={ref}
       style={rest.style}
       target={rest.target}
     >
@@ -108,6 +102,7 @@ function Link(props: LinkProps) {
       className={clsx(LinkClassName, className)}
       innerRef={ref}
       kind={rest.kind}
+      {...onClickProps}
       style={rest.style}
       target={rest.target || "_self"}
       to={rest.to || ""}
