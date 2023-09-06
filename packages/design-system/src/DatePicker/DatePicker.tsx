@@ -25,6 +25,7 @@ import {
   DateRangeShortcut,
   DateRangeShortcutsConfig,
   DateRangeShortcutsProps,
+  ExcludeShorcuts,
 } from "./DatePicker.types";
 import {
   DatePickerFooter,
@@ -172,7 +173,7 @@ function createShortcut(
 
 export function createDefaultShortcuts(
   allowSameDay: boolean,
-  excludeShortcuts: string[],
+  excludeShortcuts: ExcludeShorcuts[],
   useSingleDateShortcuts: boolean,
 ) {
   const today = new Date();
@@ -453,7 +454,6 @@ function DateRangePicker(
     className,
     dateFormat = "MM/dd/yyyy",
     endDate: propEndDate,
-    excludeShortcuts = [],
     inputProps,
     inputSize = "md",
     isClearable,
@@ -573,7 +573,7 @@ function DateRangePicker(
       <DateRangeShortcuts
         allowSameDay={props.allowSameDay}
         currentDates={[startDate, endDate]}
-        excludeShortcuts={[...excludeShortcuts]}
+        excludeShortcuts={props.excludeShortcuts}
         onChangeHandler={onChangeHandler}
         showRangeShortcuts={props.showRangeShortcuts}
         useSingleDateShortcuts={props.useSingleDateShortcuts}
