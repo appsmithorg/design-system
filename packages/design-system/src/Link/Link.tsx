@@ -75,9 +75,7 @@ function Link(props: LinkProps) {
     // @ts-ignore
     rest.onClick && !rest.onClick._isMockFunction
       ? {
-          onClick: (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-            rest.onClick?.(e);
-          },
+          onClick: rest.onClick,
         }
       : {};
 
