@@ -9,7 +9,7 @@ export type LinkProps = {
   /** (try not to) pass addition classes here */
   className?: string;
   /** the words you want to display */
-  children: string;
+  children: string | React.ReactNode;
   /** the place to navigate to. Doesn't have to be present if there is an onClick */
   to?: string;
   /** the function being passed. Should only be related to managing navigation -
