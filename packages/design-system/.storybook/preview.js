@@ -3,8 +3,30 @@ import "normalize.css";
 import "./styles.css";
 import { MemoryRouter } from "react-router-dom";
 import appsmithTheme from "./AppsmithTheme";
+import axe from "axe-core";
+
+function enableRulesByTag(tags = []) {
+  const allRules = axe.getRules();
+  return allRules.map((rule) =>
+    tags.some((t) => rule.tags.includes(t))
+      ? { id: rule.ruleId, enabled: true }
+      : { id: rule.ruleId, enabled: false },
+  );
+}
+
+// const AxeRules = enableRulesByTag(["wcag2a", "wcag21a", "wcag2aa", "wcag21aaa"]);
+const AxeRules = enableRulesByTag(["wcag21a", "wcag21aa", "wcag22aa", "best-practice", "ACT", "cat.*"]);
 
 export const parameters = {
+  a11y: {
+    config: {
+      detailedReport: true,
+      detailedReportOptions: {
+        html: true,
+      },
+      rules: AxeRules,
+    },
+  },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
