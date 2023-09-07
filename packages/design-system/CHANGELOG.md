@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.20
+
+### Patch Changes
+
+- [#603](https://github.com/appsmithorg/design-system/pull/603) [`d9302294`](https://github.com/appsmithorg/design-system/commit/d930229468ebe24a1c54918bbdfa6999f32ab282) Thanks [@tanvibhakta](https://github.com/tanvibhakta)! - fix: divider colors
+
 ## 2.1.19
 
 ### Patch Changes
