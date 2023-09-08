@@ -1,14 +1,16 @@
+# If someone with write access comments "/chromatic-test" on a pull request, emit a repository_dispatch event
+
 name: 'UI Tests with Chromatic'
 
 on:
   push:
-    branches:
-      - release
     paths:
       - packages/design-system/**'
   pull_request:
     paths:
       - packages/design-system/**'
+  issue_comment:
+    types: [ created ]
 
 defaults:
   run:
@@ -43,6 +45,18 @@ jobs:
         uses: chromaui/action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          projectToken: ${{ secrets.ADS_CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
           buildScriptName: "build"
+
+      - name: Slash Command Dispatch
+        uses: peter-evans/slash-command-dispatch@v3
+        env:
+          TOKEN: ${{ steps.generate_token.outputs.token }}
+        with:
+          token: ${{ env.TOKEN }} # GitHub App installation access token
+          reaction-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-type: pull-request
+          commands: |
+            chromatic-test
+          permission: write
