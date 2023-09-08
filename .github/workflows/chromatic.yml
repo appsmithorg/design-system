@@ -39,7 +39,8 @@ jobs:
           node-version: "16.14.0"
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
-        
+        uses: actions/checkout@v1
+
       - name: Publish to Chromatic
         id: chromatic-publish
         uses: chromaui/action@v1
