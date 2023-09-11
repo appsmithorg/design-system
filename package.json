@@ -31,5 +31,8 @@
     "nth-check": "2.0.1",
     "terser": "5.14.2",
     "loader-utils": "^2.0.4"
+  },
+  "devDependencies": {
+    "@omlet/cli": "^1.0.1-beta.36"
   }
 }
