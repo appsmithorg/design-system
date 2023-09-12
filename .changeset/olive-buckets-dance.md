@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: add popover
+feat: Add documentation for category tokens

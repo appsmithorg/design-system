@@ -126,7 +126,7 @@ export const StyledText = styled.span<{
   ${TypographyScales}
   ${Variables}
 
-  /* Variant style */
+  /* Kind style */
   ${({ kind }) => kind && Kind[kind]}
 
   /* Base style */

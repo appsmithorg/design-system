@@ -6,9 +6,9 @@ const Variables = css`
   // are defined here and used in the component's styles.
 `;
 
-// Variant style definitions
-const YOUR_VARIANTS = css`
-  // Styles for the variants defined in your type
+// Kind style definitions
+const YOUR_KINDS = css`
+  // Styles for the kinds defined in your type
 `;
 
 export const Styled{{capitalize name}} = styled.span<{
@@ -17,8 +17,8 @@ export const Styled{{capitalize name}} = styled.span<{
 }>`
   ${Variables}
 
-  /* Variant styles */
-  ${({ YOUR_PROP }) => YOUR_PROP && YOUR_VARIANTS[YOUR_PROP]} /* Base style */
+  /* Kind styles */
+  ${({ YOUR_PROP }) => YOUR_PROP && YOUR_KINDS[YOUR_PROP]} /* Base style */
 
   /* Additional styles and classes */
 `;
