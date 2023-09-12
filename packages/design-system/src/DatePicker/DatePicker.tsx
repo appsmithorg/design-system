@@ -192,16 +192,15 @@ export function createDefaultShortcuts(
   const oneYearAgo = makeDate((d) => d.setFullYear(d.getFullYear() - 1));
   const twoYearsAgo = makeDate((d) => d.setFullYear(d.getFullYear() - 2));
 
-  const singleDayShortcuts =
-    allowSameDay || useSingleDateShortcuts
-      ? [
-          createShortcut("Today", [today, today]),
-          createShortcut("Yesterday", [yesterday, yesterday]),
-        ]
-      : [];
+  const singleDateShortcuts = allowSameDay || useSingleDateShortcuts;
 
   return [
-    ...singleDayShortcuts,
+    ...(singleDateShortcuts && !excludeShortcuts.includes("today")
+      ? [createShortcut("Today", [today, today])]
+      : []),
+    ...(singleDateShortcuts && !excludeShortcuts.includes("yesterday")
+      ? [createShortcut("Yesterday", [yesterday, yesterday])]
+      : []),
     ...(excludeShortcuts.includes("past_week")
       ? []
       : [

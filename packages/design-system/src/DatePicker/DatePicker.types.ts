@@ -108,6 +108,8 @@ export interface DateRangeShortcutsConfig {
 }
 
 export type ExcludeShortcuts =
+  | "today"
+  | "yesterday"
   | "past_2_years"
   | "past_year"
   | "past_6_months"
