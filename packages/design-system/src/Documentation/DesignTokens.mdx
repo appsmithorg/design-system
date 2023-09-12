@@ -19,7 +19,7 @@ Not using the same tokens lead to un-intended consequences of style inconsistenc
 | --- | --- | --- | --- |
 | Perceptual / core tokens | Gray-500, Orange-600 | Tokens at this level refer to a style property in their primitive state. Using tokens at this level removes burden in remembering the hex value of the color and one could easily refer them with their names. | If one were to change the underlying styles or theme the application - this is where the change needs to happen. For designers and engineers consuming ADS2.0, do not use tokens at this level. |
 | Semantic tokens | primary-bg-color, text-muted | These tokens are more meaningful than the core tokens as they are associated with the brand or other semantics. One more layer of abstraction that enables users to easily identify if this is a primary color and not worry about what is the primary shade. | The minimum level at which tokens have to be used in order for people to understand the system. Engineers might come across these tokens in the appsmith repository. If you feel like the usage might be better served with a category token, feel free to replace it.  |
-| Component tokens | color/ui/control/switch/track/default/bg, color/ui/content/avatar/surface/active/bg | These tokens apply to a specific UI component and hence are more relatable in order for one to reason how to style. | Offers full clarity in terms of which token to use, but is too specific and doesn’t scale when new components have to be introduced. Also, requires a token to be created for every component of the system and every time a new component is added to the system. These variables are not set on the root element,so they are scoped to the component they are defined in. |
+| Component tokens | color/ui/control/switch/track/default/bg, color/ui/content/avatar/surface/active/bg | Component level tokens are highly component-specific, providing a means to uniquely style a component in case if the component cannot follow category styles. | Minimizing the use of component-level tokens is advisable whenever feasible. The only situation in which they may be created and employed is when the component cannot utilize a category token due to compelling design constraints. |
 | Category tokens | color/ui/action/primary/surface/default/bg, color/ui/control/field/default/bg | These tokens apply to a category of components rather than individual components. (More info. below) | Requires some interpretation to understand how an atomic component falls under a category. Easier to apply across a range of components. Easier to relate to. Scales well with new components. Engineers building snowflakes should endeavor to use these tokens.   |
 
 >  💡 The values of the category tokens are derived from semantic tokens and which are in turn derived from core tokens. Every level derives values from the previous level.
@@ -118,20 +118,20 @@ Category: Input control
 - Category tokens available for input controls:
 
 
-    | State | Surface | Presentation attribute | Token name | token value |
-    | --- | --- | --- | --- | --- |
-    | default | label | fg | color/ui/control/label/default/fg |  |
-    |  | bg | field | color/ui/control/field/default/bg |  |
-    |  | border | field | color/ui/control/field/default/border |  |
-    |  |  |  |  |
-    | hover | label | fg | color/ui/control/label/hover/fg |  |
-    |  | bg | field | color/ui/control/field/hover/bg |  |
-    |  | border | field | color/ui/control/field/hover/border |  |
-    |  |  |  |  |
-    | active | label | fg | color/ui/control/label/hover/fg |  |
-    |  | bg | field | color/ui/control/field/hover/bg |  |
-    |  | border | field | color/ui/control/field/hover/border |  |
-    |  |  |  |  |
+    | State | Surface | Presentation attribute | Token name |
+    | --- | --- | --- | --- |
+    | default | label | fg | color/ui/control/label/default/fg  |
+    |  | bg | field | color/ui/control/field/default/bg  |
+    |  | border | field | color/ui/control/field/default/border  |
+    |  |  |  |
+    | hover | label | fg | color/ui/control/label/hover/fg  |
+    |  | bg | field | color/ui/control/field/hover/bg  |
+    |  | border | field | color/ui/control/field/hover/border  |
+    |  |  |  |
+    | active | label | fg | color/ui/control/label/hover/fg  |
+    |  | bg | field | color/ui/control/field/hover/bg  |
+    |  | border | field | color/ui/control/field/hover/border  |
+    |  |  |  |
 
 Styling the default state of the switch:
 
