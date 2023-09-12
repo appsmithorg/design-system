@@ -246,6 +246,21 @@ export default {
         disable: true,
       },
     },
+    excludeShortcuts: {
+      control: {
+        type: "array",
+      },
+      description: "Shortcuts to be excluded from the datepicker.",
+      table: {
+        type: {
+          summary:
+            "today | yesterday | past_2_years | past_year | past_6_months | past_3_months | past_month | past_week",
+        },
+        defaultValue: {
+          summary: "[]",
+        },
+      },
+    },
     filterDate: {
       control: {
         type: "string",
@@ -490,4 +505,5 @@ DateRangePickerStory.storyName = "Date Range Picker";
 DateRangePickerStory.args = {
   //add arguments here
   excludeDates: [new Date()],
+  excludeShortcuts: [],
 };
