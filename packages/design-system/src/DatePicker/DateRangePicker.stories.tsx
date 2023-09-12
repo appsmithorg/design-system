@@ -254,7 +254,7 @@ export default {
       table: {
         type: {
           summary:
-            "past_2_years | past_year | past_6_months | past_3_months | past_month | past_week",
+            "today | yesterday | past_2_years | past_year | past_6_months | past_3_months | past_month | past_week",
         },
         defaultValue: {
           summary: "[]",
