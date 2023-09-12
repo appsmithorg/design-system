@@ -253,7 +253,8 @@ export default {
       description: "Shortcuts to be excluded from the datepicker.",
       table: {
         type: {
-          summary: "ExcludeShortcuts[]",
+          summary:
+            "past_2_years | past_year | past_6_months | past_3_months | past_month | past_week",
         },
         defaultValue: {
           summary: "[]",
