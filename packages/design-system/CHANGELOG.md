@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.21
+
+### Patch Changes
+
+- [#604](https://github.com/appsmithorg/design-system/pull/604) [`8cd9a0f1`](https://github.com/appsmithorg/design-system/commit/8cd9a0f11ad89b72e1d35b791f4b7b5d87ee5680) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Add new props for excluding shortcuts from date rage picker.
+
+- [#592](https://github.com/appsmithorg/design-system/pull/592) [`bd931c22`](https://github.com/appsmithorg/design-system/commit/bd931c22f52d162a846b11785a1a707251711cb0) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Add documentation for category tokens
+
 ## 2.1.20
 
 ### Patch Changes
