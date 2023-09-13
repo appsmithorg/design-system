@@ -66,8 +66,9 @@ InternalLink.args = {
 
 export const LinkWithOnClick = Template.bind({});
 LinkWithOnClick.args = {
+  to: "old",
   children: "click me",
-  onClick: () => console.log("this link was clicked"),
+  onClick: () => alert("this link was clicked"),
   endIcon: "arrow-right-line",
   kind: "primary",
 };
