@@ -76,7 +76,7 @@ function Link(props: LinkProps) {
     rest.onClick && !rest.onClick._isMockFunction
       ? {
           onClick: (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-            if (!rest.to || rest.to !== "") {
+            if (!rest.to || rest.to === "") {
               e.preventDefault();
             }
             rest.onClick?.(e);
