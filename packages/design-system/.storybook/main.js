@@ -1,6 +1,6 @@
 const path = require("path");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-import remarkGfm from 'remark-gfm';
+import remarkGfm from "remark-gfm";
 async function webpackConfig(config, options) {
   config.module.rules.push({
     test: /\.module\.css$/,
@@ -85,12 +85,14 @@ module.exports = {
     options: {},
   },
   stories: [
-    "../src/Introduction.mdx",
-    "../src/DesignTokens.mdx",
-    "../src/Typography.mdx",
-    "../src/Colors.mdx",
-    "../src/Space.mdx",
-    "../src/FAQs.mdx",
+    "../src/Documentation/Introduction.mdx",
+    "../src/Documentation/DesignTokens.mdx",
+    "../src/Documentation/Typography.mdx",
+    "../src/Documentation/Colors.mdx",
+    "../src/Documentation/Space.mdx",
+    "../src/Documentation/FAQs.mdx",
+    "../src/Documentation/LeanGuidelines.mdx",
+    "../src/Documentation/CategoryTokens/Introduction.mdx",
     "../src/*.mdx",
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)",
@@ -118,6 +120,7 @@ module.exports = {
       },
     },
     "storybook-zeplin/register",
+    "@storybook/addon-a11y",
   ],
   staticDirs: ["../src/__assets__"],
   webpackFinal: webpackConfig,

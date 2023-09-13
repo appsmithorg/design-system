@@ -534,6 +534,12 @@ const MenuUnfoldLineIcon = importRemixIcon(
 const Layout5LineIcon = importRemixIcon(
   () => import("remixicon-react/Layout5LineIcon"),
 );
+const BillLineIcon = importRemixIcon(
+  () => import("remixicon-react/BillLineIcon"),
+);
+const FilePaper2LineIcon = importRemixIcon(
+  () => import("remixicon-react/FilePaper2LineIcon"),
+);
 
 const CornerDownLeftLineIcon = importSvg(
   () => import("../__assets__/icons/ads/corner-down-left-line.svg"),
@@ -915,6 +921,9 @@ const ShowModalIcon = importSvg(
 const JSYellowIcon = importSvg(
   () => import("../__assets__/icons/ads/js-yellow.svg"),
 );
+const BindingIcon = importSvg(
+  () => import("../__assets__/icons/ads/binding-icon.svg"),
+);
 
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 
@@ -1189,6 +1198,9 @@ const ICON_LOOKUP = {
   "menu-unfold": MenuUnfoldLineIcon,
   "layout-5-line": Layout5LineIcon,
   "js-yellow": JSYellowIcon,
+  "binding-new": BindingIcon,
+  "bill-line": BillLineIcon,
+  "file-paper-2-line": FilePaper2LineIcon,
   billing: BillingIcon,
   binding: Binding,
   book: BookIcon,

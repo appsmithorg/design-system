@@ -25,6 +25,7 @@ import {
   DateRangeShortcut,
   DateRangeShortcutsConfig,
   DateRangeShortcutsProps,
+  ExcludeShortcuts,
 } from "./DatePicker.types";
 import {
   DatePickerFooter,
@@ -172,6 +173,7 @@ function createShortcut(
 
 export function createDefaultShortcuts(
   allowSameDay: boolean,
+  excludeShortcuts: ExcludeShortcuts[],
   useSingleDateShortcuts: boolean,
 ) {
   const today = new Date();
@@ -190,37 +192,52 @@ export function createDefaultShortcuts(
   const oneYearAgo = makeDate((d) => d.setFullYear(d.getFullYear() - 1));
   const twoYearsAgo = makeDate((d) => d.setFullYear(d.getFullYear() - 2));
 
-  const singleDayShortcuts =
-    allowSameDay || useSingleDateShortcuts
-      ? [
-          createShortcut("Today", [today, today]),
-          createShortcut("Yesterday", [yesterday, yesterday]),
-        ]
-      : [];
+  const singleDateShortcuts = allowSameDay || useSingleDateShortcuts;
 
   return [
-    ...singleDayShortcuts,
-    createShortcut(useSingleDateShortcuts ? "1 week ago" : "Past week", [
-      oneWeekAgo,
-      today,
-    ]),
-    createShortcut(useSingleDateShortcuts ? "1 month ago" : "Past month", [
-      oneMonthAgo,
-      today,
-    ]),
-    createShortcut(useSingleDateShortcuts ? "3 months ago" : "Past 3 months", [
-      threeMonthsAgo,
-      today,
-    ]),
+    ...(singleDateShortcuts && !excludeShortcuts.includes("today")
+      ? [createShortcut("Today", [today, today])]
+      : []),
+    ...(singleDateShortcuts && !excludeShortcuts.includes("yesterday")
+      ? [createShortcut("Yesterday", [yesterday, yesterday])]
+      : []),
+    ...(excludeShortcuts.includes("past_week")
+      ? []
+      : [
+          createShortcut(useSingleDateShortcuts ? "1 week ago" : "Past week", [
+            oneWeekAgo,
+            today,
+          ]),
+        ]),
+    ...(excludeShortcuts.includes("past_month")
+      ? []
+      : [
+          createShortcut(
+            useSingleDateShortcuts ? "1 month ago" : "Past month",
+            [oneMonthAgo, today],
+          ),
+        ]),
+    ...(excludeShortcuts.includes("past_3_months")
+      ? []
+      : [
+          createShortcut(
+            useSingleDateShortcuts ? "3 months ago" : "Past 3 months",
+            [threeMonthsAgo, today],
+          ),
+        ]),
     // Don't include a couple of these for the single date shortcut
-    ...(useSingleDateShortcuts
+    ...(useSingleDateShortcuts || excludeShortcuts.includes("past_6_months")
       ? []
       : [createShortcut("Past 6 months", [sixMonthsAgo, today])]),
-    createShortcut(useSingleDateShortcuts ? "1 year ago" : "Past year", [
-      oneYearAgo,
-      today,
-    ]),
-    ...(useSingleDateShortcuts
+    ...(useSingleDateShortcuts || excludeShortcuts.includes("past_year")
+      ? []
+      : [
+          createShortcut(useSingleDateShortcuts ? "1 year ago" : "Past year", [
+            oneYearAgo,
+            today,
+          ]),
+        ]),
+    ...(useSingleDateShortcuts || excludeShortcuts.includes("past_2_years")
       ? []
       : [createShortcut("Past 2 years", [twoYearsAgo, today])]),
   ];
@@ -230,6 +247,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   const {
     allowSameDay = false,
     currentDates,
+    excludeShortcuts = [],
     onChangeHandler,
     showRangeShortcuts = false,
     useSingleDateShortcuts = false,
@@ -237,6 +255,7 @@ function DateRangeShortcuts(props: DateRangeShortcutsProps) {
   } = props;
   const shortCuts = createDefaultShortcuts(
     allowSameDay,
+    excludeShortcuts,
     useSingleDateShortcuts,
   );
   const [selectedShortCut, setSelectedShortCut] = useState<
@@ -553,6 +572,7 @@ function DateRangePicker(
       <DateRangeShortcuts
         allowSameDay={props.allowSameDay}
         currentDates={[startDate, endDate]}
+        excludeShortcuts={props.excludeShortcuts}
         onChangeHandler={onChangeHandler}
         showRangeShortcuts={props.showRangeShortcuts}
         useSingleDateShortcuts={props.useSingleDateShortcuts}
