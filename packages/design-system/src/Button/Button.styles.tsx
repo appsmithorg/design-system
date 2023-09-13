@@ -206,7 +206,7 @@ export const StyledButton = styled.button<{
   isIconButton?: boolean;
 }>`
   ${Variables}
-  /* Variant style */
+  /* Kind style */
   ${({ kind }) => kind && Kind[kind]}
   /* Button heights */
   ${({ isIconButton, size }) => size && getHeights(size, isIconButton)}
