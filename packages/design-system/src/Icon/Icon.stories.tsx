@@ -2,8 +2,6 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icon } from "./Icon";
-import { IconCollection } from "./Icon.provider";
-import { Text } from "../Text";
 
 export default {
   title: "Design System/Icon",

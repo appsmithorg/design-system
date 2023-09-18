@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { Divider } from "./Divider"; // Update the path if necessary
+import { Divider } from "./Divider";
 
 describe("Divider", () => {
   it("renders", () => {
