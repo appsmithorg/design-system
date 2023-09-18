@@ -5,7 +5,7 @@ import { IconClassName } from "./Icon.constants";
 import { Icon } from "./Icon";
 
 describe("Icon Component", () => {
-  // this workaround to retroactiveky make Icon a default export is required because
+  // this workaround to retroactively make Icon a default export is required because
   // React/lazy doesn't yet support named exports
   // https://github.com/facebook/react/issues/14603
   const Icon = lazy(() =>
