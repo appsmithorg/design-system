@@ -129,7 +129,11 @@ function TagInputComponent(props: TagInputProps) {
     if (inputValues.length > 0 && values.length === 0) {
       setValues(inputValues);
     }
-  }, [inputValues, values]);
+
+    if (props.input.value !== values.join(",")) {
+      setValues(inputValues);
+    }
+  }, [inputValues, values, props.input.value]);
 
   const validateEmail = (newValues: string[]) => {
     if (newValues && newValues.length > 0) {
