@@ -12,8 +12,11 @@ import {
 import { getIconByKind } from "../Icon/getIconByKind";
 import { Link } from "../Link";
 import {
+  CalloutChildrenChildClassName,
   CalloutChildrenClassName,
+  CalloutChildrenLinkClassName,
   CalloutClassName,
+  CalloutCloseClassName,
   CalloutIconContainerClassName,
 } from "./Callout.constants";
 
@@ -22,6 +25,7 @@ import {
  *  - What will keyboard navigation for this look like?
  */
 function Callout({
+  _componentType = "callout",
   children,
   isClosable,
   kind = "info",
@@ -38,13 +42,22 @@ function Callout({
       kind={kind}
       {...rest}
     >
-      <StyledIconContainer className={CalloutIconContainerClassName}>
-        {kind && getIconByKind(kind)}
-      </StyledIconContainer>
+      {_componentType === "callout" && (
+        <StyledIconContainer className={CalloutIconContainerClassName}>
+          {kind && getIconByKind(kind)}
+        </StyledIconContainer>
+      )}
       <StyledChildrenContainer className={CalloutChildrenClassName}>
-        <StyledChildren kind="body-m">{children}</StyledChildren>
+        {_componentType === "banner" && (
+          <StyledIconContainer className={CalloutIconContainerClassName}>
+            {kind && getIconByKind(kind)}
+          </StyledIconContainer>
+        )}
+        <StyledChildren className={CalloutChildrenChildClassName} kind="body-m">
+          {children}
+        </StyledChildren>
         {links && (
-          <StyledLinks>
+          <StyledLinks className={CalloutChildrenLinkClassName}>
             {links.map((link) => {
               const { endIcon, onClick, startIcon, to, ...restOfLink } = link;
               return (
@@ -67,6 +80,7 @@ function Callout({
       {isClosable && (
         <StyledCloseButton
           aria-label="Close"
+          className={CalloutCloseClassName}
           isIconButton
           kind="tertiary"
           onClick={() => {
