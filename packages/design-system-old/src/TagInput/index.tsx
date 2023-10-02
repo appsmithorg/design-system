@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import styled from "styled-components";
 import { Classes, TagInput } from "@blueprintjs/core";
 import {
@@ -112,10 +112,13 @@ type TagInputProps = {
  * @param props : TagInputProps
  */
 function TagInputComponent(props: TagInputProps) {
-  const inputValues =
-    props.input.value && props.input.value.length > 0
-      ? props.input.value.split(",")
-      : [];
+  const inputValues = useMemo(
+    () =>
+      props.input.value && props.input.value.length > 0
+        ? props.input.value.split(",")
+        : [],
+    [props.input.value],
+  );
   const [values, setValues] = useState<string[]>(inputValues || []);
   const [currentValue, setCurrentValue] = useState<string>("");
 
@@ -126,7 +129,11 @@ function TagInputComponent(props: TagInputProps) {
     if (inputValues.length > 0 && values.length === 0) {
       setValues(inputValues);
     }
-  }, [inputValues, values]);
+
+    if (props.input.value !== values.join(",")) {
+      setValues(inputValues);
+    }
+  }, [inputValues, values, props.input.value]);
 
   const validateEmail = (newValues: string[]) => {
     if (newValues && newValues.length > 0) {
