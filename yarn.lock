@@ -7092,6 +7092,36 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
+"@xstyled/core@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/core/-/core-3.8.0.tgz#9f33314976e0ae1ae3cc8ce74b1cc70253085c0b"
+  integrity sha512-DkRtg1841+xJBW4azIEW6bQGPudnRYGDusXhTTT7W0xhMrSEvIyv02Ivhh6KkHtTYmmUalGJ+dRPHyOqrVpMUA==
+  dependencies:
+    "@xstyled/system" "^3.8.0"
+    "@xstyled/util" "^3.7.0"
+
+"@xstyled/styled-components@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/styled-components/-/styled-components-3.8.0.tgz#dc6cce97b74cec79b3fda4a6a186a7fddd5b5eab"
+  integrity sha512-TCOByj56DxdF2CM71sdEZSu4cA4s74/+C6n6etY21b0HxqU8Pm1KpMwhCZY0kV3Zb/y2VQsBAhWj5Nspv69Msg==
+  dependencies:
+    "@xstyled/core" "^3.8.0"
+    "@xstyled/system" "^3.8.0"
+    "@xstyled/util" "^3.7.0"
+
+"@xstyled/system@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/system/-/system-3.8.0.tgz#0d5959eab770f668561ff9ff7b5866a0f5ac0967"
+  integrity sha512-XDYihj8UHtA64lcKklUYu/ZN3SCB7ciqb6JBl6uFmaMIr8lgre8chJONqAyIX0s6MLjvcQdseSf0a7X2hTntOw==
+  dependencies:
+    "@xstyled/util" "^3.7.0"
+    csstype "^3.1.1"
+
+"@xstyled/util@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@xstyled/util/-/util-3.7.0.tgz#513c045dda0847d43b39612b6d36cc38b507e82d"
+  integrity sha512-rYtXRcNh+pgRxGnciP0Mas21mpyOzcCTVy7w9uIByQk3EytwBQjDiN6wCasXibkw49Urfti5efsklRbCl5QZww==
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@xtuc/ieee754/-/ieee754-1.2.0.tgz"
@@ -9546,9 +9576,9 @@ cssstyle@^2.3.0:
   dependencies:
     cssom "~0.3.6"
 
-csstype@^3.0.2, csstype@^3.1.0:
+csstype@^3.0.2, csstype@^3.1.0, csstype@^3.1.1, csstype@^3.1.2:
   version "3.1.2"
-  resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.2.tgz"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.2.tgz#1d4bf9d572f11c14031f0436e1c10bc1f571f50b"
   integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
 
 csv-generate@^3.4.3:
