@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.12
+
+### Patch Changes
+
+- [#642](https://github.com/appsmithorg/design-system/pull/642) [`c2eadd2a`](https://github.com/appsmithorg/design-system/commit/c2eadd2aaf9265e3f1e3e5783b17dc956a9c9e7b) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Updating the value of tag input to the original value, when the form is reset
+
 ## 1.1.11
 
 ### Patch Changes
