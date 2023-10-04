@@ -27,6 +27,7 @@ export default {
       useTsconfigDeclarationDir: true,
     }),
     postcss({
+      modules: true,
       minimize: true,
       sourceMap: true,
       plugins: [postcssImport()],

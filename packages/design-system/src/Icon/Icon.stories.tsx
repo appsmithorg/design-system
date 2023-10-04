@@ -2,8 +2,6 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Icon } from "./Icon";
-import { IconCollection } from "./Icon.provider";
-import { Text } from "../Text";
 
 export default {
   title: "Design System/Icon",
@@ -37,4 +35,33 @@ IconStory.args = {
   children: "",
   size: "md",
   withWrapper: false,
+};
+
+export const SmallIconStory = Template.bind({});
+SmallIconStory.storyName = "Small Icon";
+SmallIconStory.args = {
+  ...IconStory.args,
+  size: "sm",
+};
+
+export const MediumIconStory = Template.bind({});
+MediumIconStory.storyName = "Medium Icon";
+MediumIconStory.args = {
+  ...IconStory.args,
+  size: "md",
+};
+
+export const LargeIconStory = Template.bind({});
+LargeIconStory.storyName = "Large Icon";
+LargeIconStory.args = {
+  ...IconStory.args,
+  size: "lg",
+};
+
+export const ColoredIconStory = Template.bind({});
+ColoredIconStory.storyName = "Icon with custom color";
+ColoredIconStory.args = {
+  ...IconStory.args,
+  size: "lg",
+  color: "pink",
 };
