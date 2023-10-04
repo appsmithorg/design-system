@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.22
+
+### Patch Changes
+
+- [#642](https://github.com/appsmithorg/design-system/pull/642) [`c2eadd2a`](https://github.com/appsmithorg/design-system/commit/c2eadd2aaf9265e3f1e3e5783b17dc956a9c9e7b) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Updating the value of tag input to the original value, when the form is reset
+
+- [#641](https://github.com/appsmithorg/design-system/pull/641) [`09dd90ad`](https://github.com/appsmithorg/design-system/commit/09dd90ada28f1de01e15aa718e7e378761866393) Thanks [@NilanshBansal](https://github.com/NilanshBansal)! - feat: added file and box icons for IA Redesign
+
 ## 2.1.21
 
 ### Patch Changes
