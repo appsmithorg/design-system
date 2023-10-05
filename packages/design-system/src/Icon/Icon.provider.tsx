@@ -540,6 +540,9 @@ const BillLineIcon = importRemixIcon(
 const FilePaper2LineIcon = importRemixIcon(
   () => import("remixicon-react/FilePaper2LineIcon"),
 );
+const FileCopy2Line = importRemixIcon(
+  () => import("remixicon-react/FileCopy2LineIcon"),
+);
 
 const CornerDownLeftLineIcon = importSvg(
   () => import("../__assets__/icons/ads/corner-down-left-line.svg"),
@@ -924,6 +927,9 @@ const JSYellowIcon = importSvg(
 const BindingIcon = importSvg(
   () => import("../__assets__/icons/ads/binding-icon.svg"),
 );
+const Box3LineIcon = importSvg(
+  () => import("../__assets__/icons/ads/box-3-line.svg"),
+);
 
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 
@@ -1201,6 +1207,8 @@ const ICON_LOOKUP = {
   "binding-new": BindingIcon,
   "bill-line": BillLineIcon,
   "file-paper-2-line": FilePaper2LineIcon,
+  "file-copy-2-line": FileCopy2Line,
+  "box-3-line": Box3LineIcon,
   billing: BillingIcon,
   binding: Binding,
   book: BookIcon,
