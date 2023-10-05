@@ -15,6 +15,4 @@ function Box({ children, className, ...rest }: BoxProps) {
 
 Box.displayName = "Box";
 
-Box.defaultProps = {};
-
 export { Box };
