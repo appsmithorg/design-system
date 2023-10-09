@@ -30,17 +30,27 @@ export const StyledList = styled.div`
   padding: 2px;
 `;
 
-export const StyledListItem = styled.div<{ size: ListSizes }>`
-  ${Variables};
-
+export const Wrapper = styled.div`
   display: flex;
-  padding: 8px;
   width: 100%;
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  border-radius: var(--ads-v2-border-radius);
   box-sizing: border-box;
+  position: relative;
+`;
+
+export const StyledListItem = styled.div<{ size: ListSizes; endIcon?: string }>`
+  ${Variables};
+
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-radius: var(--ads-v2-border-radius);
+  padding: 8px;
+  box-sizing: border-box;
+  // 40px is the offset to make it look like the end icon is part of this div
+  ${(props) => !!props.endIcon && `padding: 8px 40px 8px 8px;`}}
 
   ${({ size }) => Sizes[size]}
 
@@ -128,4 +138,9 @@ export const InlineDescriptionWrapper = styled.div`
   min-width: 0;
   gap: 8px;
   flex: 1;
+`;
+
+export const EndIconWrapper = styled.div`
+  position: absolute;
+  right: 8px;
 `;

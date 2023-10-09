@@ -5,11 +5,13 @@ import { ListItemProps, ListProps } from "./List.types";
 import {
   ContentTextWrapper,
   DescriptionWrapper,
+  EndIconWrapper,
   InlineDescriptionWrapper,
   StartIconWrapper,
   StyledList,
   StyledListItem,
   TooltipTextWrapper,
+  Wrapper,
 } from "./List.styles";
 import { Icon } from "Icon";
 import { Text, TextProps } from "Text";
@@ -106,63 +108,66 @@ function ListItem(props: ListItemProps) {
   };
 
   return (
-    <StyledListItem
-      data-disabled={props.isDisabled || false}
-      data-selected={props.selected}
-      onClick={props.onClick}
-      onKeyDown={listItemhandleKeyDown}
-      size={size}
-      tabIndex={props.isDisabled ? -1 : 0}
-    >
-      <ContentTextWrapper className="content-text-wrapper">
-        <StartIconWrapper>
-          {startIcon && (
-            <Icon
-              color={hasError ? "var(--ads-v2-color-fg-error)" : undefined}
-              name={startIcon}
-              size={size}
-            />
-          )}
-        </StartIconWrapper>
-        <InlineDescriptionWrapper>
-          <DescriptionWrapper>
-            <TextWithTooltip
-              className={ListItemTitleClassName}
-              color={hasError ? "var(--ads-v2-color-fg-error)" : undefined}
-            >
-              {title}
-            </TextWithTooltip>
-            {isBlockDescription && description && (
+    <Wrapper>
+      <StyledListItem
+        data-disabled={props.isDisabled || false}
+        data-selected={props.selected}
+        endIcon={props.endIcon}
+        onClick={props.onClick}
+        onKeyDown={listItemhandleKeyDown}
+        size={size}
+        tabIndex={props.isDisabled ? -1 : 0}
+      >
+        <ContentTextWrapper className="content-text-wrapper">
+          <StartIconWrapper>
+            {startIcon && (
+              <Icon
+                color={hasError ? "var(--ads-v2-color-fg-error)" : undefined}
+                name={startIcon}
+                size={size}
+              />
+            )}
+          </StartIconWrapper>
+          <InlineDescriptionWrapper>
+            <DescriptionWrapper>
               <TextWithTooltip
-                className={ListItemBDescClassName}
+                className={ListItemTitleClassName}
+                color={hasError ? "var(--ads-v2-color-fg-error)" : undefined}
+              >
+                {title}
+              </TextWithTooltip>
+              {isBlockDescription && description && (
+                <TextWithTooltip
+                  className={ListItemBDescClassName}
+                  color="var(--ads-v2-color-fg-muted)"
+                  isMultiline
+                  kind="body-s"
+                >
+                  {description}
+                </TextWithTooltip>
+              )}
+            </DescriptionWrapper>
+            {!isBlockDescription && description && (
+              <TextWithTooltip
+                className={ListItemIDescClassName}
                 color="var(--ads-v2-color-fg-muted)"
-                isMultiline
                 kind="body-s"
               >
                 {description}
               </TextWithTooltip>
             )}
-          </DescriptionWrapper>
-          {!isBlockDescription && description && (
-            <TextWithTooltip
-              className={ListItemIDescClassName}
-              color="var(--ads-v2-color-fg-muted)"
-              kind="body-s"
-            >
-              {description}
-            </TextWithTooltip>
-          )}
-        </InlineDescriptionWrapper>
-      </ContentTextWrapper>
+          </InlineDescriptionWrapper>
+        </ContentTextWrapper>
+      </StyledListItem>
       {endIcon && (
-        <div>
+        <EndIconWrapper>
           <Button
             isDisabled={props.isDisabled}
             isIconButton
             kind="tertiary"
             onClick={(e) => {
+              e.stopPropagation();
               if (props.onEndIconClick) {
-                e.stopPropagation();
                 props.onEndIconClick();
               }
             }}
@@ -170,9 +175,9 @@ function ListItem(props: ListItemProps) {
             size={"sm"}
             startIcon={endIcon}
           />
-        </div>
+        </EndIconWrapper>
       )}
-    </StyledListItem>
+    </Wrapper>
   );
 }
 
