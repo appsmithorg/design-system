@@ -1,6 +1,6 @@
 import React from "react";
 
-import { List } from "./List";
+import { List, ListItem } from "./List";
 
 export default {
   title: "Design System/List",
@@ -21,57 +21,97 @@ export default {
 };
 
 // eslint-disable-next-line react/function-component-definition
-const Template = (args) => {
+const ListTemplate = (args) => {
   return <List {...args} />;
 };
 
-export const ListStory = Template.bind({});
+export const ListStory = ListTemplate.bind({});
 ListStory.storyName = "List";
 ListStory.args = {
   items: [
     {
       startIcon: "box-3-line",
       title: "Action item 1",
-      endIcon: "arrow-right-s-line",
-      description: "inline",
-      descriptionType: "inline",
-      size: "lg",
     },
     {
       startIcon: "box-3-line",
       title: "Action item 2",
-      endIcon: "comment-context-menu",
-      description: "inline",
-      descriptionType: "inline",
     },
     {
       startIcon: "box-3-line",
       title: "Action item 3",
-      endIcon: "arrow-right-s-line",
-      hasError: true,
     },
     {
       startIcon: "box-3-line",
       title: "Action item 4",
-      endIcon: "arrow-right-s-line",
-      isDisabled: true,
     },
     {
       startIcon: "box-3-line",
       title: "Action item 5",
-      endIcon: "arrow-right-s-line",
     },
     {
       startIcon: "box-3-line",
-      title:
-        "Action item 6 Action item 6 Action item 6 Action item 6 Action item 6",
-      description: "block",
+      title: "Action item 6",
     },
     {
       startIcon: "box-3-line",
       title: "Action item 7",
-      description:
-        "block more text more text more text more text more text more text more text more text more text more text more text more text more text more text more text",
     },
   ],
+};
+
+function ListItemTemplate(args) {
+  return <ListItem {...args} />;
+}
+export const ListItemLargeStory = ListItemTemplate.bind({});
+ListItemLargeStory.storyName = "List item size large";
+ListItemLargeStory.args = {
+  startIcon: "box-3-line",
+  title: "Action item 1",
+  description: "block",
+  descriptionType: "block",
+  size: "lg",
+};
+
+export const ListItemErrorStory = ListItemTemplate.bind({});
+ListItemErrorStory.storyName = "List item with error";
+ListItemErrorStory.args = {
+  startIcon: "box-3-line",
+  title: "Action item 1",
+  hasError: true,
+};
+
+export const ListItemDisabledStory = ListItemTemplate.bind({});
+ListItemDisabledStory.storyName = "List item disabled";
+ListItemDisabledStory.args = {
+  title: "Action item 1",
+  disabled: true,
+};
+
+export const ListItemInlineDescStory = ListItemTemplate.bind({});
+ListItemInlineDescStory.storyName = "List item inline description";
+ListItemInlineDescStory.args = {
+  title: "Action item 1",
+  description: "inline",
+};
+
+export const ListItemBlockDescStory = ListItemTemplate.bind({});
+ListItemBlockDescStory.storyName = "List item block description";
+ListItemBlockDescStory.args = {
+  title: "Action item 1",
+  description: "block",
+  descriptionType: "block",
+};
+
+export const ListItemOverflowStory = ListItemTemplate.bind({});
+ListItemOverflowStory.storyName = "List item title overflow";
+ListItemOverflowStory.args = {
+  title: "Action item 1 Action item 1 Action item 1 Action item 1",
+};
+
+export const ListItemEndIconStory = ListItemTemplate.bind({});
+ListItemEndIconStory.storyName = "List item end icon";
+ListItemEndIconStory.args = {
+  title: "Action item 1",
+  endIcon: "open",
 };
