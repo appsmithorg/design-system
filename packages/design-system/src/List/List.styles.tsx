@@ -1,5 +1,10 @@
 import styled, { css } from "styled-components";
 import { ListSizes } from "./List.types";
+import {
+  ListItemBDescClassName,
+  ListItemIDescClassName,
+  ListItemTitleClassName,
+} from "./List.constants";
 
 const Variables = css`
   --list-item-font-size: var(--ads-v2-font-size-4);
@@ -8,9 +13,13 @@ const Variables = css`
 const Sizes = {
   md: css`
     --listitem-title-font-size: var(--ads-v2-font-size-4);
+    --listitem-bdescription-font-size: var(--ads-v2-font-size-2);
+    --listitem-idescription-font-size: var(--ads-v2-font-size-2);
   `,
   lg: css`
-    --listitem-title-font-size: var(--ads-v2-font-size-10);
+    --listitem-title-font-size: var(--ads-v2-font-size-6);
+    --listitem-bdescription-font-size: var(--ads-v2-font-size-4);
+    --listitem-idescription-font-size: var(--ads-v2-font-size-4);
   `,
 };
 
@@ -39,6 +48,23 @@ export const StyledListItem = styled.div<{ size: ListSizes }>`
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  & .${ListItemTitleClassName} {
+    font-size: var(--listitem-title-font-size);
+  }
+
+  & .${ListItemBDescClassName} {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: initial;
+    white-space: initial;
+    font-size: var(--listitem-bdescription-font-size);
+  }
+
+  & .${ListItemIDescClassName} {
+    font-size: var(--listitem-idescription-font-size);
   }
 
   &:hover {
@@ -98,7 +124,7 @@ export const DescriptionWrapper = styled.div`
 export const InlineDescriptionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   min-width: 0;
   gap: 8px;
   flex: 1;

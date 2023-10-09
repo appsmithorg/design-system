@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import clsx from "classnames";
+
 import { ListItemProps, ListProps } from "./List.types";
 import {
   ContentTextWrapper,
@@ -15,6 +17,7 @@ import { Button } from "Button";
 import { Tooltip } from "Tooltip";
 import {
   ListItemBDescClassName,
+  ListItemIDescClassName,
   ListItemTitleClassName,
 } from "./List.constants";
 
@@ -28,7 +31,7 @@ function List({ items }: ListProps) {
   );
 }
 
-function TextWithTooltip(props: TextProps) {
+function TextWithTooltip(props: TextProps & { isMultiline?: boolean }) {
   const ref = React.useRef<HTMLDivElement>(null);
   const [disableTooltip, setDisableTooltip] = useState(true);
 
@@ -36,7 +39,11 @@ function TextWithTooltip(props: TextProps) {
     let active = false;
     if (ref.current) {
       const text_node = ref.current.children[0];
-      active = text_node && text_node.clientWidth < text_node.scrollWidth;
+      if (props.isMultiline) {
+        active = text_node && text_node.clientHeight < text_node.scrollHeight;
+      } else {
+        active = text_node && text_node.clientWidth < text_node.scrollWidth;
+      }
     }
 
     setDisableTooltip(!active);
@@ -55,8 +62,8 @@ function TextWithTooltip(props: TextProps) {
 
   return (
     <Tooltip content={props.children} isDisabled={disableTooltip}>
-      <TooltipTextWrapper className={props.className} ref={ref}>
-        <Text {...props} className="text-overflow">
+      <TooltipTextWrapper ref={ref}>
+        <Text {...props} className={clsx("text-overflow", props.className)}>
           {props.children}
         </Text>
       </TooltipTextWrapper>
@@ -129,6 +136,7 @@ function ListItem(props: ListItemProps) {
               <TextWithTooltip
                 className={ListItemBDescClassName}
                 color="var(--ads-v2-color-fg-muted)"
+                isMultiline
                 kind="body-s"
               >
                 {description}
@@ -137,7 +145,7 @@ function ListItem(props: ListItemProps) {
           </DescriptionWrapper>
           {!isBlockDescription && description && (
             <TextWithTooltip
-              className={ListItemBDescClassName}
+              className={ListItemIDescClassName}
               color="var(--ads-v2-color-fg-muted)"
               kind="body-s"
             >
@@ -170,4 +178,4 @@ function ListItem(props: ListItemProps) {
 
 List.displayName = "List";
 
-export { List };
+export { List, ListItem };

@@ -35,6 +35,7 @@ ListStory.args = {
       endIcon: "arrow-right-s-line",
       description: "inline",
       descriptionType: "inline",
+      size: "lg",
     },
     {
       startIcon: "box-3-line",
@@ -62,13 +63,15 @@ ListStory.args = {
     },
     {
       startIcon: "box-3-line",
-      title: "Action item 6",
+      title:
+        "Action item 6 Action item 6 Action item 6 Action item 6 Action item 6",
       description: "block",
     },
     {
       startIcon: "box-3-line",
-      title: "Action item 6 more text more text more text more text more text",
-      description: "block",
+      title: "Action item 7",
+      description:
+        "block more text more text more text more text more text more text more text more text more text more text more text more text more text more text more text",
     },
   ],
 };
