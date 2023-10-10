@@ -7,7 +7,9 @@ import {
 } from "./List.constants";
 
 const Variables = css`
-  --list-item-font-size: var(--ads-v2-font-size-4);
+  --listitem-title-font-size: var(--ads-v2-font-size-4);
+  --listitem-bdescription-font-size: var(--ads-v2-font-size-2);
+  --listitem-idescription-font-size: var(--ads-v2-font-size-2);
 `;
 
 const Sizes = {
@@ -27,7 +29,7 @@ export const StyledList = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
-  padding: 2px;
+  padding: var(--ads-v2-spaces-1);
 `;
 
 export const Wrapper = styled.div`
@@ -40,19 +42,74 @@ export const Wrapper = styled.div`
   position: relative;
 `;
 
-export const StyledListItem = styled.div<{ size: ListSizes; endIcon?: string }>`
+export const StartIconWrapper = styled.div`
+  align-self: flex-start;
+`;
+
+export const TooltipTextWrapper = styled.div`
+  display: flex;
+  min-width: 0;
+`;
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  gap: var(--ads-v2-spaces-3);
+`;
+
+export const ContentTextWrapper = styled.div`
+  display: flex;
+  gap: var(--ads-v2-spaces-3);
+  flex: 1;
+  min-width: 0;
+`;
+
+export const DescriptionWrapper = styled.div`
+  flex-direction: column;
+  min-width: 0;
+  gap: var(--ads-v2-spaces-3);
+  display: flex;
+`;
+
+export const InlineDescriptionWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+  gap: var(--ads-v2-spaces-3);
+  flex: 1;
+`;
+
+export const EndIconWrapper = styled.div`
+  position: absolute;
+  right: var(--ads-v2-spaces-3);
+`;
+
+export const StyledListItem = styled.div<{
+  size: ListSizes;
+  endIcon?: string;
+  isBlockDescription: boolean;
+}>`
   ${Variables};
 
   display: flex;
   width: 100%;
   align-items: center;
   border-radius: var(--ads-v2-border-radius);
-  padding: 8px;
+  padding: var(--ads-v2-spaces-3);
   box-sizing: border-box;
   // 40px is the offset to make it look like the end icon is part of this div
   ${(props) => !!props.endIcon && `padding: 8px 40px 8px 8px;`}}
 
   ${({ size }) => Sizes[size]}
+
+  ${({ isBlockDescription, size }) =>
+    size === "lg" &&
+    isBlockDescription &&
+    `
+    ${DescriptionWrapper} {
+      padding-top: 3px
+    }
+  `}
 
   .text-overflow {
     overflow: hidden;
@@ -101,46 +158,4 @@ export const StyledListItem = styled.div<{ size: ListSizes; endIcon?: string }>`
       var(--ads-v2-color-outline);
     outline-offset: var(--ads-v2-offset-outline);
   }
-`;
-
-export const StartIconWrapper = styled.div`
-  align-self: flex-start;
-`;
-
-export const TooltipTextWrapper = styled.div`
-  display: flex;
-  min-width: 0;
-`;
-
-export const ContentWrapper = styled.div`
-  display: flex;
-  gap: 8px;
-`;
-
-export const ContentTextWrapper = styled.div`
-  display: flex;
-  gap: 8px;
-  flex: 1;
-  min-width: 0;
-`;
-
-export const DescriptionWrapper = styled.div`
-  flex-direction: column;
-  min-width: 0;
-  gap: 8px;
-  display: flex;
-`;
-
-export const InlineDescriptionWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 0;
-  gap: 8px;
-  flex: 1;
-`;
-
-export const EndIconWrapper = styled.div`
-  position: absolute;
-  right: 8px;
 `;

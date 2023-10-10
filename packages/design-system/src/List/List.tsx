@@ -113,6 +113,7 @@ function ListItem(props: ListItemProps) {
         data-disabled={props.isDisabled || false}
         data-selected={props.selected}
         endIcon={props.endIcon}
+        isBlockDescription={isBlockDescription}
         onClick={props.onClick}
         onKeyDown={listItemhandleKeyDown}
         size={size}

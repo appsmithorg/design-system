@@ -69,8 +69,9 @@ ListItemLargeStory.args = {
   startIcon: "box-3-line",
   title: "Action item 1",
   description: "block",
-  descriptionType: "block",
+  descriptionType: "inline",
   size: "lg",
+  endIcon: "open",
 };
 
 export const ListItemErrorStory = ListItemTemplate.bind({});
