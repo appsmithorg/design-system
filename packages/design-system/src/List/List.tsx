@@ -76,7 +76,7 @@ function TextWithTooltip(props: TextProps & { isMultiline?: boolean }) {
 function ListItem(props: ListItemProps) {
   const {
     description,
-    descriptionType = "block",
+    descriptionType = "inline",
     endIcon,
     hasError,
     size = "md",
@@ -111,7 +111,7 @@ function ListItem(props: ListItemProps) {
     <Wrapper>
       <StyledListItem
         data-disabled={props.isDisabled || false}
-        data-selected={props.selected}
+        data-selected={props.isSelected}
         endIcon={props.endIcon}
         isBlockDescription={isBlockDescription}
         onClick={props.onClick}
