@@ -38,6 +38,7 @@ export const StyledBanner = styled(Callout)`
       &
       > .${CalloutChildrenLinkClassName} {
       padding-top: var(--ads-v2-spaces-2);
+      line-height: 16px;
     }
   }
 
