@@ -8,7 +8,6 @@ import {
   LayoutProps,
   Size,
   SizingProps,
-  SpaceProps,
   SystemProp,
   Theme,
   TransformsProps,
@@ -18,6 +17,8 @@ import {
 } from "@xstyled/styled-components";
 import * as CSS from "csstype";
 
+import { Spaces } from "__config__/types";
+
 interface WidthProps<T extends ITheme = Theme> {
   width?: SystemProp<Size<T> | CSS.Property.Width, T>;
 }
@@ -25,6 +26,34 @@ interface WidthProps<T extends ITheme = Theme> {
 interface HeightProps<T extends ITheme = Theme> {
   height?: SystemProp<Size<T> | CSS.Property.Height, T>;
 }
+
+type SpaceProps = {
+  m?: Spaces;
+  margin?: Spaces;
+  mt?: Spaces;
+  marginTop?: Spaces;
+  mr?: Spaces;
+  marginRight?: Spaces;
+  mb?: Spaces;
+  marginBottom?: Spaces;
+  ml?: Spaces;
+  marginLeft?: Spaces;
+  mx?: Spaces;
+  my?: Spaces;
+  p?: Spaces;
+  padding?: Spaces;
+  pt?: Spaces;
+  paddingTop?: Spaces;
+  pr?: Spaces;
+  paddingRight?: Spaces;
+  pb?: Spaces;
+  paddingBottom?: Spaces;
+  pl?: Spaces;
+  paddingLeft?: Spaces;
+  px?: Spaces;
+  py?: Spaces;
+  gap?: Spaces;
+};
 
 export type BoxProps = WidthProps &
   HeightProps &
@@ -38,5 +67,5 @@ export type BoxProps = WidthProps &
   TransformsProps &
   FlexboxesProps &
   FlexboxGridsProps &
-  GridsProps &
+  Omit<GridsProps, "gap"> &
   React.HTMLAttributes<HTMLDivElement>;
