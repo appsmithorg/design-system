@@ -129,6 +129,7 @@ export const StyledListItem = styled.div<{
     text-overflow: initial;
     white-space: initial;
     font-size: var(--listitem-bdescription-font-size);
+    line-height: normal;
   }
 
   & .${ListItemIDescClassName} {
