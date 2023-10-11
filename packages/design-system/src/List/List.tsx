@@ -20,6 +20,7 @@ import { Tooltip } from "Tooltip";
 import {
   ListItemBDescClassName,
   ListItemIDescClassName,
+  ListItemTextOverflowClassName,
   ListItemTitleClassName,
 } from "./List.constants";
 
@@ -65,7 +66,10 @@ function TextWithTooltip(props: TextProps & { isMultiline?: boolean }) {
   return (
     <Tooltip content={props.children} isDisabled={disableTooltip}>
       <TooltipTextWrapper ref={ref}>
-        <Text {...props} className={clsx("text-overflow", props.className)}>
+        <Text
+          {...props}
+          className={clsx(ListItemTextOverflowClassName, props.className)}
+        >
           {props.children}
         </Text>
       </TooltipTextWrapper>
@@ -107,6 +111,14 @@ function ListItem(props: ListItemProps) {
     }
   };
 
+  const endIconOnClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+
+    if (props.onEndIconClick) {
+      props.onEndIconClick();
+    }
+  };
+
   return (
     <Wrapper>
       <StyledListItem
@@ -119,7 +131,7 @@ function ListItem(props: ListItemProps) {
         size={size}
         tabIndex={props.isDisabled ? -1 : 0}
       >
-        <ContentTextWrapper className="content-text-wrapper">
+        <ContentTextWrapper>
           <StartIconWrapper>
             {startIcon && (
               <Icon
@@ -166,12 +178,7 @@ function ListItem(props: ListItemProps) {
             isDisabled={props.isDisabled}
             isIconButton
             kind="tertiary"
-            onClick={(e) => {
-              e.stopPropagation();
-              if (props.onEndIconClick) {
-                props.onEndIconClick();
-              }
-            }}
+            onClick={endIconOnClick}
             onKeyDown={endIconhandleKeyDown}
             size={"sm"}
             startIcon={endIcon}

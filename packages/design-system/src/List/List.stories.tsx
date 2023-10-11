@@ -159,7 +159,7 @@ ListItemLargeStory.argTypes = ListItemArgTypes;
 ListItemLargeStory.args = {
   startIcon: "box-3-line",
   title: "Action item 1",
-  description: "block",
+  description: "inline",
   descriptionType: "inline",
   size: "lg",
   endIcon: "open",
@@ -171,7 +171,7 @@ ListItemErrorStory.argTypes = ListItemArgTypes;
 ListItemErrorStory.args = {
   startIcon: "box-3-line",
   title: "Action item 1",
-  isDisabled: true,
+  hasError: true,
 };
 
 export const ListItemDisabledStory = ListItemTemplate.bind({});
@@ -192,7 +192,7 @@ ListItemInlineDescStory.args = {
 
 export const ListItemBlockDescStory = ListItemTemplate.bind({});
 ListItemBlockDescStory.storyName = "List item block description";
-ListItemInlineDescStory.argTypes = ListItemArgTypes;
+ListItemBlockDescStory.argTypes = ListItemArgTypes;
 ListItemBlockDescStory.args = {
   title: "Action item 1",
   description: "block",

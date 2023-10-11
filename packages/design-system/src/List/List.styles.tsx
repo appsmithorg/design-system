@@ -3,6 +3,7 @@ import { ListSizes } from "./List.types";
 import {
   ListItemBDescClassName,
   ListItemIDescClassName,
+  ListItemTextOverflowClassName,
   ListItemTitleClassName,
 } from "./List.constants";
 
@@ -111,7 +112,7 @@ export const StyledListItem = styled.div<{
     }
   `}
 
-  .text-overflow {
+  & .${ListItemTextOverflowClassName} {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

@@ -5,3 +5,4 @@ export const ListItemClassName = `${CLASS_NAME_PREFIX}-listitem`;
 export const ListItemTitleClassName = `${ListItemClassName}__title`;
 export const ListItemIDescClassName = `${ListItemClassName}__idesc`;
 export const ListItemBDescClassName = `${ListItemClassName}__bdesc`;
+export const ListItemTextOverflowClassName = `${ListItemClassName}_text-overflow`;
