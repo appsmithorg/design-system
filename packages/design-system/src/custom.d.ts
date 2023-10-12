@@ -9,9 +9,3 @@ declare module "*.png" {
   const value: any;
   export default value;
 }
-
-// declaration.d.ts
-declare module "*.css" {
-  const content: Record<string, string>;
-  export default content;
-}
