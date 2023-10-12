@@ -17,6 +17,8 @@ export type CalloutProps = {
   isClosable?: boolean;
   /** any additional links that might be present in the callout */
   links?: CalloutLinkProps[];
+  /** Not to use outside DS repo */
+  _componentType?: "callout" | "banner";
   /** callback for when the callout is closed */
   onClose?: () => void;
 } & React.HTMLAttributes<HTMLDivElement>;
