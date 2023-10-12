@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.23
+
+### Patch Changes
+
+- [#643](https://github.com/appsmithorg/design-system/pull/643) [`2f8b2fa6`](https://github.com/appsmithorg/design-system/commit/2f8b2fa6e301c54a4803eeac4c1431c86224c51b) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added banner component
+
 ## 2.1.22
 
 ### Patch Changes
