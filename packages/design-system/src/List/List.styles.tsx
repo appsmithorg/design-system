@@ -37,7 +37,7 @@ export const Wrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  gap: 8px;
+  gap: var(--ads-v2-spaces-3);
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
@@ -108,7 +108,7 @@ export const StyledListItem = styled.div<{
     isBlockDescription &&
     `
     ${DescriptionWrapper} {
-      padding-top: 3px
+      padding-top: var(--ads-v2-spaces-1);
     }
   `}
 
@@ -137,15 +137,15 @@ export const StyledListItem = styled.div<{
   }
 
   &:hover {
-    background-color: var(--ads-v2-color-bg-subtle);
+    background-color: var(--ads-v2-colors-content-surface-hover-bg);
   }
 
   &:active {
-    background-color: var(--ads-v2-color-bg-muted);
+    background-color: var(--ads-v2-colors-content-surface-active-bg);
   }
 
   &[data-selected="true"] {
-    background-color: var(--ads-v2-color-bg-muted);
+    background-color: var(--ads-v2-colors-content-surface-active-bg);
   }
 
   /* disabled style */
