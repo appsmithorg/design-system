@@ -3,13 +3,13 @@ import clsx from "classnames";
 
 import { FlexProps } from "./Flex.types";
 import { FlexClassName } from "./Flex.constants";
-import { StyledFlex } from "./Flex.styles";
+import { Box } from "Box";
 
 function Flex({ children, className, ...rest }: FlexProps) {
   return (
-    <StyledFlex className={clsx(FlexClassName, className)} {...rest}>
+    <Box className={clsx(FlexClassName, className)} display={"flex"} {...rest}>
       {children}
-    </StyledFlex>
+    </Box>
   );
 }
 

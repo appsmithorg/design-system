@@ -3,6 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { Flex } from "./Flex";
 import { Text } from "../Text";
+import { Box } from "../Box/Box";
 
 export default {
   title: "Design System/Flex",
@@ -22,169 +23,814 @@ export default {
     },
     m: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
+        defaultValue: { summary: "spaces-0" },
       },
       description: "Margin on top, left, bottom and right",
     },
     margin: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on top, left, bottom and right",
     },
     mt: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on top",
     },
     marginTop: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on top",
     },
     mr: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on right",
     },
     marginRight: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on right",
     },
     mb: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on bottom",
     },
     marginBottom: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on bottom",
     },
     ml: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on left",
     },
     marginLeft: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on left",
     },
     mx: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on left and right",
     },
     marginX: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on left and right",
     },
     my: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on top and bottom",
     },
     marginY: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Margin on top and bottom",
     },
     p: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on top, left, bottom and right",
     },
     padding: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on top, left, bottom and right",
     },
     pt: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on top",
     },
     paddingTop: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on top",
     },
     pr: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on right",
     },
     paddingRight: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on right",
     },
     pb: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on bottom",
     },
     paddingBottom: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on bottom",
     },
     pl: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on left",
     },
     paddingLeft: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on left",
     },
     px: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on left and right",
     },
     paddingX: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on left and right",
     },
     py: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on top and bottom",
     },
     paddingY: {
       control: {
-        type: "text",
+        type: "select",
+      },
+      options: [
+        "spaces-0",
+        "spaces-1",
+        "spaces-2",
+        "spaces-3",
+        "spaces-4",
+        "spaces-5",
+        "spaces-6",
+        "spaces-7",
+        "spaces-8",
+        "spaces-9",
+        "spaces-10",
+        "spaces-11",
+        "spaces-12",
+        "spaces-13",
+        "spaces-14",
+      ],
+      table: {
+        type: {
+          summary:
+            "spaces-0(0) | spaces-1(2px) | spaces-2(4px) | spaces-3(8px) | spaces-4(12px) | spaces-5(16px) | spaces-6(20px) | spaces-7(24px) | spaces-8(28px) | spaces-9(32px) | spaces-10(36px) | spaces-11(40px) | spaces-12(44px) | spaces-13(48px) | spaces-14(52px)",
+        },
       },
       description: "Padding on top and bottom",
     },
@@ -724,14 +1370,14 @@ export const FlexStory: Story = {
   name: "Flex",
   args: {
     bg: "var(--ads-v2-color-bg-brand)",
-    width: "100px",
-    height: "100px",
     justifyContent: "center",
     alignItems: "center",
   },
   render: (args) => (
     <Flex {...args}>
-      <Text color="#fff">Flex</Text>
+      <Box>
+        <Text color="#fff">Box 1</Text>
+      </Box>
     </Flex>
   ),
 };
