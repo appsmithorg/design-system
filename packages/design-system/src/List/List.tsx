@@ -90,18 +90,20 @@ function ListItem(props: ListItemProps) {
   const isBlockDescription = descriptionType === "block";
 
   const listItemhandleKeyDown = (e: React.KeyboardEvent) => {
-    switch (e.key) {
-      case "Enter":
-      case " ":
-        props.onClick();
-        break;
+    if (!props.isDisabled && props.onClick) {
+      switch (e.key) {
+        case "Enter":
+        case " ":
+          props.onClick();
+          break;
+      }
     }
   };
 
   const endIconhandleKeyDown = (e: React.KeyboardEvent) => {
     e.stopPropagation();
 
-    if (props.onEndIconClick) {
+    if (!props.isDisabled && props.onEndIconClick) {
       switch (e.key) {
         case "Enter":
         case " ":
@@ -114,8 +116,14 @@ function ListItem(props: ListItemProps) {
   const endIconOnClick = (e: React.MouseEvent) => {
     e.stopPropagation();
 
-    if (props.onEndIconClick) {
+    if (!props.isDisabled && props.onEndIconClick) {
       props.onEndIconClick();
+    }
+  };
+
+  const handleOnClick = () => {
+    if (!props.isDisabled && props.onClick) {
+      props.onClick();
     }
   };
 
@@ -126,7 +134,7 @@ function ListItem(props: ListItemProps) {
         data-selected={props.isSelected}
         endIcon={props.endIcon}
         isBlockDescription={isBlockDescription}
-        onClick={props.onClick}
+        onClick={handleOnClick}
         onKeyDown={listItemhandleKeyDown}
         size={size}
         tabIndex={props.isDisabled ? -1 : 0}

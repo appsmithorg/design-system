@@ -172,6 +172,7 @@ ListItemErrorStory.args = {
   startIcon: "box-3-line",
   title: "Action item 1",
   hasError: true,
+  onClick: () => alert("Clicked"),
 };
 
 export const ListItemDisabledStory = ListItemTemplate.bind({});
@@ -180,6 +181,7 @@ ListItemDisabledStory.argTypes = ListItemArgTypes;
 ListItemDisabledStory.args = {
   title: "Action item 1",
   isDisabled: true,
+  onClick: () => alert("Clicked"),
 };
 
 export const ListItemInlineDescStory = ListItemTemplate.bind({});
