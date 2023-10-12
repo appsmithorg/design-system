@@ -3,7 +3,6 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { Flex } from "./Flex";
 import { Text } from "../Text";
-import { Box } from "../Box/Box";
 
 export default {
   title: "Design System/Flex",
@@ -870,7 +869,7 @@ export default {
         },
         defaultValue: { summary: "normal" },
       },
-      description: "Align items of the box",
+      description: "Align items of the flex",
     },
     alignContent: {
       control: {
@@ -895,7 +894,7 @@ export default {
         },
         defaultValue: { summary: "normal" },
       },
-      description: "Align content of the box",
+      description: "Align content of the flex",
     },
     justifyContent: {
       control: {
@@ -920,7 +919,7 @@ export default {
         },
         defaultValue: { summary: "normal" },
       },
-      description: "Justify content of the box",
+      description: "Justify content of the flex",
     },
     justifyItems: {
       control: {
@@ -945,7 +944,7 @@ export default {
         },
         defaultValue: { summary: "normal" },
       },
-      description: "Justify items of the box",
+      description: "Justify items of the flex",
     },
     flexWrap: {
       control: {
@@ -958,25 +957,25 @@ export default {
         },
         defaultValue: { summary: "nowrap" },
       },
-      description: "Flex wrap of the box",
+      description: "Flex wrap of the flex",
     },
     flexGrow: {
       control: {
         type: "text",
       },
-      description: "Flex grow of the box",
+      description: "Flex grow of the flex",
     },
     flexShrink: {
       control: {
         type: "text",
       },
-      description: "Flex shrink of the box",
+      description: "Flex shrink of the flex",
     },
     flexBasis: {
       control: {
         type: "text",
       },
-      description: "Flex basis of the box",
+      description: "Flex basis of the flex",
     },
     flexDirection: {
       control: {
@@ -989,13 +988,13 @@ export default {
         },
         defaultValue: { summary: "row" },
       },
-      description: "Flex direction of the box",
+      description: "Flex direction of the flex",
     },
     flex: {
       control: {
         type: "text",
       },
-      description: "Flex of the box",
+      description: "Flex of the flex",
     },
     justifySelf: {
       control: {
@@ -1020,7 +1019,7 @@ export default {
         },
         defaultValue: { summary: "normal" },
       },
-      description: "Justify self of the box",
+      description: "Justify self of the flex",
     },
     alignSelf: {
       control: {
@@ -1045,61 +1044,61 @@ export default {
         },
         defaultValue: { summary: "normal" },
       },
-      description: "Align self of the box",
+      description: "Align self of the flex",
     },
     order: {
       control: {
         type: "text",
       },
-      description: "Order of the box",
+      description: "Order of the flex",
     },
     gap: {
       control: {
         type: "text",
       },
-      description: "Gap of the box",
+      description: "Gap of the flex",
     },
     minWidth: {
       control: {
         type: "text",
       },
-      description: "Minimum width of the box",
+      description: "Minimum width of the flex",
     },
     maxWidth: {
       control: {
         type: "text",
       },
-      description: "Maximum width of the box",
+      description: "Maximum width of the flex",
     },
     minHeight: {
       control: {
         type: "text",
       },
-      description: "Minimum height of the box",
+      description: "Minimum height of the flex",
     },
     maxHeight: {
       control: {
         type: "text",
       },
-      description: "Maximum height of the box",
+      description: "Maximum height of the flex",
     },
     size: {
       control: {
         type: "text",
       },
-      description: "Size of the box. Sets width and height",
+      description: "Size of the flex. Sets width and height",
     },
     id: {
       control: {
         type: "text",
       },
-      description: "Id of the box",
+      description: "Id of the flex",
     },
     className: {
       control: {
         type: "text",
       },
-      description: "Classname of the box",
+      description: "Classname of the flex",
     },
     verticalAlign: {
       control: {
@@ -1119,247 +1118,241 @@ export default {
         "sub",
         "super",
       ],
-      description: "Vertical align of the box",
+      description: "Vertical align of the flex",
     },
     overflow: {
       control: {
         type: "text",
       },
-      description: "Overflow of the box",
+      description: "Overflow of the flex",
     },
     overflowX: {
       control: {
         type: "text",
       },
-      description: "Overflow of the box on the x axis",
+      description: "Overflow of the flex on the x axis",
     },
     overflowY: {
       control: {
         type: "text",
       },
-      description: "Overflow of the box on the y axis",
+      description: "Overflow of the flex on the y axis",
     },
     bg: {
       control: {
         type: "color",
       },
-      description: "Background color of the box",
+      description: "Background color of the flex",
     },
     backgroundColor: {
       control: {
         type: "color",
       },
-      description: "Background color of the box",
+      description: "Background color of the flex",
     },
     opacity: {
       control: {
         type: "text",
       },
-      description: "Opacity of the box",
+      description: "Opacity of the flex",
     },
     border: {
       control: {
         type: "text",
       },
-      description: "Border of the box",
+      description: "Border of the flex",
     },
     borderWidth: {
       control: {
         type: "text",
       },
-      description: "Border width of the box",
+      description: "Border width of the flex",
     },
     borderStyle: {
       control: {
         type: "text",
       },
-      description: "Border style of the box",
+      description: "Border style of the flex",
     },
     borderColor: {
       control: {
         type: "color",
       },
-      description: "Border color of the box",
+      description: "Border color of the flex",
     },
     borderRadius: {
       control: {
         type: "text",
       },
-      description: "Border radius of the box",
+      description: "Border radius of the flex",
     },
     borderTop: {
       control: {
         type: "text",
       },
-      description: "Border top of the box",
+      description: "Border top of the flex",
     },
     borderTopWidth: {
       control: {
         type: "text",
       },
-      description: "Border top width of the box",
+      description: "Border top width of the flex",
     },
     borderTopStyle: {
       control: {
         type: "text",
       },
-      description: "Border top style of the box",
+      description: "Border top style of the flex",
     },
     borderTopColor: {
       control: {
         type: "color",
       },
-      description: "Border top color of the box",
+      description: "Border top color of the flex",
     },
     borderTopLeftRadius: {
       control: {
         type: "text",
       },
-      description: "Border top left radius of the box",
+      description: "Border top left radius of the flex",
     },
     borderTopRightRadius: {
       control: {
         type: "text",
       },
-      description: "Border top right radius of the box",
+      description: "Border top right radius of the flex",
     },
     borderRight: {
       control: {
         type: "text",
       },
-      description: "Border right of the box",
+      description: "Border right of the flex",
     },
     borderRightWidth: {
       control: {
         type: "text",
       },
-      description: "Border right width of the box",
+      description: "Border right width of the flex",
     },
     borderRightStyle: {
       control: {
         type: "text",
       },
-      description: "Border right style of the box",
+      description: "Border right style of the flex",
     },
     borderRightColor: {
       control: {
         type: "color",
       },
-      description: "Border right color of the box",
+      description: "Border right color of the flex",
     },
     borderBottom: {
       control: {
         type: "text",
       },
-      description: "Border bottom of the box",
+      description: "Border bottom of the flex",
     },
     borderBottomWidth: {
       control: {
         type: "text",
       },
-      description: "Border bottom width of the box",
+      description: "Border bottom width of the flex",
     },
     borderBottomStyle: {
       control: {
         type: "text",
       },
-      description: "Border bottom style of the box",
+      description: "Border bottom style of the flex",
     },
     borderBottomColor: {
       control: {
         type: "color",
       },
-      description: "Border bottom color of the box",
+      description: "Border bottom color of the flex",
     },
     borderBottomLeftRadius: {
       control: {
         type: "text",
       },
-      description: "Border bottom left radius of the box",
+      description: "Border bottom left radius of the flex",
     },
     borderBottomRightRadius: {
       control: {
         type: "text",
       },
-      description: "Border bottom right radius of the box",
+      description: "Border bottom right radius of the flex",
     },
     borderLeft: {
       control: {
         type: "text",
       },
-      description: "Border left of the box",
+      description: "Border left of the flex",
     },
     borderLeftWidth: {
       control: {
         type: "text",
       },
-      description: "Border left width of the box",
+      description: "Border left width of the flex",
     },
     borderLeftStyle: {
       control: {
         type: "text",
       },
-      description: "Border left style of the box",
+      description: "Border left style of the flex",
     },
     borderLeftColor: {
       control: {
         type: "color",
       },
-      description: "Border left color of the box",
+      description: "Border left color of the flex",
     },
     borderX: {
       control: {
         type: "text",
       },
-      description: "Border left and right of the box",
+      description: "Border left and right of the flex",
     },
     borderY: {
       control: {
         type: "text",
       },
-      description: "Border top and bottom of the box",
+      description: "Border top and bottom of the flex",
     },
     position: {
       control: {
         type: "text",
       },
-      description: "Position of the box",
+      description: "Position of the flex",
     },
     zIndex: {
       control: {
         type: "text",
       },
-      description: "Z-index of the box",
+      description: "Z-index of the flex",
     },
     top: {
       control: {
         type: "text",
       },
-      description: "Top of the box",
+      description: "Top of the flex",
     },
     right: {
       control: {
         type: "text",
       },
-      description: "Right of the box",
+      description: "Right of the flex",
     },
     bottom: {
       control: {
         type: "text",
       },
-      description: "Bottom of the box",
+      description: "Bottom of the flex",
     },
     left: {
       control: {
         type: "text",
       },
-      description: "Left of the box",
-    },
-    boxShadow: {
-      control: {
-        type: "text",
-      },
-      description: "Box shadow of the box",
+      description: "Left of the flex",
     },
   },
 } as Meta<typeof Flex>;
@@ -1369,15 +1362,46 @@ type Story = StoryObj<typeof Flex>;
 export const FlexStory: Story = {
   name: "Flex",
   args: {
-    bg: "var(--ads-v2-color-bg-brand)",
+    bg: "red",
+    gap: "spaces-3",
     justifyContent: "center",
     alignItems: "center",
+    p: "spaces-4",
+    width: "40vw",
+    height: "30vh",
   },
   render: (args) => (
     <Flex {...args}>
-      <Box>
+      <Flex
+        alignItems="center"
+        bg="green"
+        display="flex"
+        h="50px"
+        justifyContent="center"
+        w="50px"
+      >
         <Text color="#fff">Box 1</Text>
-      </Box>
+      </Flex>
+      <Flex
+        alignItems="center"
+        bg="green"
+        display="flex"
+        h="50px"
+        justifyContent="center"
+        w="50px"
+      >
+        <Text color="#fff">Box 2</Text>
+      </Flex>
+      <Flex
+        alignItems="center"
+        bg="green"
+        display="flex"
+        h="50px"
+        justifyContent="center"
+        w="50px"
+      >
+        <Text color="#fff">Box 3</Text>
+      </Flex>
     </Flex>
   ),
 };
