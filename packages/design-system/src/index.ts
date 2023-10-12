@@ -2,6 +2,7 @@ import "./__theme__/default/index.css";
 
 export * from "./Avatar";
 export * from "./Button";
+export * from "./Banner";
 export * from "./Callout";
 export * from "./Checkbox";
 export * from "./Collapsible";

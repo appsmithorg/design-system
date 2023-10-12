@@ -78,7 +78,7 @@
     "lodash.range": "^3.2.0",
     "normalize.css": "^8.0.1",
     "plop": "^3.1.1",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.31",
     "postcss-import": "^15.1.0",
     "prettier": "^2.8.1",
     "react": "^17.0.2",

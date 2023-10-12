@@ -6,6 +6,13 @@ import { Callout } from "./Callout";
 export default {
   title: "Design System/Callout",
   component: Callout,
+  argTypes: {
+    _componentType: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof Callout>;
 
 // eslint-disable-next-line react/function-component-definition
