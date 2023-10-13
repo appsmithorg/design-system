@@ -1,5 +1,27 @@
 # @appsmithorg/design-system
 
+## 2.1.23
+
+### Patch Changes
+
+- [#643](https://github.com/appsmithorg/design-system/pull/643) [`2f8b2fa6`](https://github.com/appsmithorg/design-system/commit/2f8b2fa6e301c54a4803eeac4c1431c86224c51b) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added banner component
+
+## 2.1.22
+
+### Patch Changes
+
+- [#642](https://github.com/appsmithorg/design-system/pull/642) [`c2eadd2a`](https://github.com/appsmithorg/design-system/commit/c2eadd2aaf9265e3f1e3e5783b17dc956a9c9e7b) Thanks [@ankitakinger](https://github.com/ankitakinger)! - fix: Updating the value of tag input to the original value, when the form is reset
+
+- [#641](https://github.com/appsmithorg/design-system/pull/641) [`09dd90ad`](https://github.com/appsmithorg/design-system/commit/09dd90ada28f1de01e15aa718e7e378761866393) Thanks [@NilanshBansal](https://github.com/NilanshBansal)! - feat: added file and box icons for IA Redesign
+
+## 2.1.21
+
+### Patch Changes
+
+- [#604](https://github.com/appsmithorg/design-system/pull/604) [`8cd9a0f1`](https://github.com/appsmithorg/design-system/commit/8cd9a0f11ad89b72e1d35b791f4b7b5d87ee5680) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Add new props for excluding shortcuts from date rage picker.
+
+- [#592](https://github.com/appsmithorg/design-system/pull/592) [`bd931c22`](https://github.com/appsmithorg/design-system/commit/bd931c22f52d162a846b11785a1a707251711cb0) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Add documentation for category tokens
+
 ## 2.1.20
 
 ### Patch Changes

@@ -1,20 +1,14 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta } from "@storybook/react";
 
 import { {{capitalize name}} } from "./{{capitalize name}}";
 
 export default {
   title: "Design System/{{capitalize name}}",
   component: {{capitalize name}},
-} as ComponentMeta<typeof {{capitalize name}}>;
+} as Meta<typeof {{capitalize name}}>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof {{capitalize name}}> = (args) => {
-  return <{{capitalize name}} {...args} />;
-};
+const Story = StoryObj<typeof {{capitalize name}}>;
 
-export const {{capitalize name}}Story = Template.bind({});
-{{capitalize name}}Story.storyName = "{{capitalize name}}";
-{{capitalize name}}Story.args = {
-  //add arguments here
-};
+export const {{capitalize name}}Story: Story = {};
