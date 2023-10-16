@@ -29,6 +29,7 @@ function FormControl({
   className,
   isDisabled,
   isRequired,
+  labelPosition = "top",
   size = "sm",
   ...rest
 }: FormControlProps) {
@@ -42,6 +43,7 @@ function FormControl({
     >
       <StyledFormControl
         className={clsx(FormControlClassName, className)}
+        data-label-position={labelPosition}
         {...rest}
       >
         {children}
