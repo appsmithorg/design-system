@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: Add documentation for category tokens
+feat: Added flex and grid component
