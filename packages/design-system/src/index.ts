@@ -9,6 +9,7 @@ export * from "./Collapsible";
 export * from "./DatePicker";
 export * from "./Divider";
 export * from "./Flex";
+export * from "./FormControl";
 export * from "./Grid";
 export * from "./Icon";
 export * from "./Input";
