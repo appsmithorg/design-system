@@ -65,7 +65,7 @@
   --ads-v2-colors-control-field-checked-border: var(--ads-v2-color-border-brand-secondary);
   --ads-v2-colors-control-field-checked-hover-border: var(--ads-v2-color-border-brand-secondary-emphasis);
   --ads-v2-colors-control-field-error-border: var(--ads-v2-color-border-error);
-  --ads-v2-colors-control-helper-default-fg: var(--ads-v2-color-fg-muted);
+  --ads-v2-colors-control-helper-default-fg: var(--ads-v2-color-fg);
   --ads-v2-colors-control-helper-error-fg: var(--ads-v2-color-fg-error);
   --ads-v2-colors-control-icon-checked-fg: var(--ads-v2-color-fg-on-brand-secondary);
   --ads-v2-colors-control-icon-default-fg: var(--ads-v2-color-fg);
