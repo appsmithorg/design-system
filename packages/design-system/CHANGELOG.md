@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.24
+
+### Patch Changes
+
+- [#647](https://github.com/appsmithorg/design-system/pull/647) [`4b554c29`](https://github.com/appsmithorg/design-system/commit/4b554c29d0404a44dd8052997fec85d262bdc9de) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added flex and grid component
+
 ## 2.1.23
 
 ### Patch Changes
