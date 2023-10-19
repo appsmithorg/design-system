@@ -18,7 +18,7 @@ export const FormControlStory: Story = {
     <FormControl {...args}>
       <FormLabel>Label</FormLabel>
       <Input placeholder="Control" />
-      <FormHelper>Heler text</FormHelper>
+      <FormHelper>Helper text</FormHelper>
       <FormError>Error message</FormError>
     </FormControl>
   ),
