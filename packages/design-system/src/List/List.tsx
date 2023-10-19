@@ -7,13 +7,11 @@ import {
   DescriptionWrapper,
   EndIconWrapper,
   InlineDescriptionWrapper,
-  StartIconWrapper,
   StyledList,
   StyledListItem,
   TooltipTextWrapper,
   Wrapper,
 } from "./List.styles";
-import { Icon } from "Icon";
 import { Text, TextProps } from "Text";
 import { Button } from "Button";
 import { Tooltip } from "Tooltip";
@@ -140,15 +138,7 @@ function ListItem(props: ListItemProps) {
         tabIndex={props.isDisabled ? -1 : 0}
       >
         <ContentTextWrapper>
-          <StartIconWrapper>
-            {startIcon && (
-              <Icon
-                color={hasError ? "var(--ads-v2-color-fg-error)" : undefined}
-                name={startIcon}
-                size={size}
-              />
-            )}
-          </StartIconWrapper>
+          {startIcon}
           <InlineDescriptionWrapper>
             <DescriptionWrapper>
               <TextWithTooltip
