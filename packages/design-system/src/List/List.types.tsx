@@ -1,10 +1,11 @@
 import { Sizes } from "__config__/types";
+import { ReactNode } from "react";
 
 export type ListSizes = Extract<Sizes, "md" | "lg">;
 
 export type ListItemProps = {
-  /** The icon to display before the list item title. Pass name of the icon from remix-icon library(eg: home-2-line) or an svg icon. */
-  startIcon?: string;
+  /** The icon to display before the list item title. */
+  startIcon?: ReactNode;
   /** The icon to display at the end. Pass name of the icon from remix-icon library(eg: home-2-line) or an svg icon. */
   endIcon?: string;
   /** callback for when the endIcon is clicked */
