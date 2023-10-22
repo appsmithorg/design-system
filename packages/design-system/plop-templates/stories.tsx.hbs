@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { {{capitalize name}} } from "./{{capitalize name}}";
 
@@ -8,7 +8,14 @@ export default {
   component: {{capitalize name}},
 } as Meta<typeof {{capitalize name}}>;
 
-// eslint-disable-next-line react/function-component-definition
-const Story = StoryObj<typeof {{capitalize name}}>;
+type Story = StoryObj<typeof {{capitalize name}}>;
 
-export const {{capitalize name}}Story: Story = {};
+export const {{capitalize name}}Story: Story = {
+  name: "{{capitalize name}}",
+  args: {},
+  render: (args) => (
+    <{{capitalize name}} {...args}>
+      content
+    </{{capitalize name}}>
+  ),
+};
