@@ -1,6 +1,7 @@
 import React from "react";
 
 import { List, ListItem } from "./List";
+import { Icon } from "../Icon";
 
 export default {
   title: "Design System/List",
@@ -30,31 +31,31 @@ ListStory.storyName = "List";
 ListStory.args = {
   items: [
     {
-      startIcon: "box-3-line",
+      startIcon: <Icon name="file-list-2-line" size={"md"} />,
       title: "Action item 1",
     },
     {
-      startIcon: "box-3-line",
+      startIcon: <Icon name="file-list-2-line" size={"md"} />,
       title: "Action item 2",
     },
     {
-      startIcon: "box-3-line",
+      startIcon: <Icon name="file-list-2-line" size={"md"} />,
       title: "Action item 3",
     },
     {
-      startIcon: "box-3-line",
+      startIcon: <Icon name="file-list-2-line" size={"md"} />,
       title: "Action item 4",
     },
     {
-      startIcon: "box-3-line",
+      startIcon: <Icon name="file-list-2-line" size={"md"} />,
       title: "Action item 5",
     },
     {
-      startIcon: "box-3-line",
+      startIcon: <Icon name="file-list-2-line" size={"md"} />,
       title: "Action item 6",
     },
     {
-      startIcon: "box-3-line",
+      startIcon: <Icon name="file-list-2-line" size={"md"} />,
       title: "Action item 7",
     },
   ],
@@ -71,11 +72,10 @@ const ListItemArgTypes = {
     },
   },
   startIcon: {
-    control: "text",
     description: "The icon to display before the list item title.",
     table: {
       type: {
-        summary: "string",
+        summary: "ReactNode",
       },
     },
   },
@@ -157,7 +157,7 @@ export const ListItemLargeStory = ListItemTemplate.bind({});
 ListItemLargeStory.storyName = "List item size large";
 ListItemLargeStory.argTypes = ListItemArgTypes;
 ListItemLargeStory.args = {
-  startIcon: "box-3-line",
+  startIcon: <Icon name="file-list-2-line" size={"md"} />,
   title: "Action item 1",
   description: "inline",
   descriptionType: "inline",
@@ -169,7 +169,13 @@ export const ListItemErrorStory = ListItemTemplate.bind({});
 ListItemErrorStory.storyName = "List item with error";
 ListItemErrorStory.argTypes = ListItemArgTypes;
 ListItemErrorStory.args = {
-  startIcon: "box-3-line",
+  startIcon: (
+    <Icon
+      color="var(--ads-v2-color-fg-error)"
+      name="file-list-2-line"
+      size={"md"}
+    />
+  ),
   title: "Action item 1",
   hasError: true,
   onClick: () => alert("Clicked"),

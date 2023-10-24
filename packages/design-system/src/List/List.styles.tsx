@@ -31,6 +31,9 @@ export const StyledList = styled.div`
   height: 100%;
   overflow: auto;
   padding: var(--ads-v2-spaces-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ads-v2-spaces-2);
 `;
 
 export const Wrapper = styled.div`
@@ -41,10 +44,6 @@ export const Wrapper = styled.div`
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
-`;
-
-export const StartIconWrapper = styled.div`
-  align-self: flex-start;
 `;
 
 export const TooltipTextWrapper = styled.div`
@@ -103,14 +102,6 @@ export const StyledListItem = styled.div<{
 
   ${({ size }) => Sizes[size]}
 
-  ${({ isBlockDescription, size }) =>
-    size === "lg" &&
-    isBlockDescription &&
-    `
-    ${DescriptionWrapper} {
-      padding-top: var(--ads-v2-spaces-1);
-    }
-  `}
 
   & .${ListItemTextOverflowClassName} {
     overflow: hidden;
