@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.25
+
+### Patch Changes
+
+- [#657](https://github.com/appsmithorg/design-system/pull/657) [`46ff5a31`](https://github.com/appsmithorg/design-system/commit/46ff5a31f91e322c5d1d64782943c0e8cb2eb0c1) Thanks [@akash-codemonk](https://github.com/akash-codemonk)! - feat: allow react node for start icon in ListItem
+
+- [#654](https://github.com/appsmithorg/design-system/pull/654) [`a5d82e3b`](https://github.com/appsmithorg/design-system/commit/a5d82e3b57ba602d49ada69ed9edaf0f6cb0b6a7) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added form control
+
 ## 2.1.24
 
 ### Patch Changes
