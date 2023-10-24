@@ -16,8 +16,11 @@ import {
   StyledTable,
 } from "./Table.styles";
 import { TableWrapperClassName } from "./Table.constants";
+import { Icon } from "Icon";
+import { Text } from "Text";
+import { Flex } from "Flex";
 
-function Table({ className, ...props }: TableProps) {
+function Table({ className, emptyText = NoData, ...props }: TableProps) {
   const components = {
     table: StyledTable,
     header: {
@@ -38,10 +41,25 @@ function Table({ className, ...props }: TableProps) {
       {...props}
       className={clsx(TableWrapperClassName, className)}
       components={components}
+      emptyText={emptyText}
     />
   );
 }
 
 Table.displayName = "Table";
+
+function NoData() {
+  return (
+    <Flex
+      alignItems={"center"}
+      flexDirection={"column"}
+      gap={"spaces-2"}
+      justifyContent={"center"}
+    >
+      <Icon name="search-line" size="lg" />
+      <Text>No data found</Text>
+    </Flex>
+  );
+}
 
 export { Table };

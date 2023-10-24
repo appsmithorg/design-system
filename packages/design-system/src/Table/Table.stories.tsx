@@ -1,9 +1,9 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
 import { Table } from "./Table";
 import { Tooltip } from "../Tooltip";
+import { ColumnType } from "rc-table/lib/interface";
 
 export default {
   title: "Design System/Table",
@@ -27,6 +27,125 @@ type Story = StoryObj<typeof Table>;
 
 export const TableStory: Story = {
   name: "Table",
+  argTypes: {
+    columns: {
+      control: {
+        type: "object",
+      },
+      description: "Table columns",
+    },
+    data: {
+      control: {
+        type: "object",
+      },
+      description: "Table data",
+    },
+    sticky: {
+      control: {
+        type: "boolean",
+      },
+      description:
+        "This flag makes the table header sticky. This can be an object also.",
+      table: {
+        defaultValue: {
+          summary: "boolean | TableSticky",
+        },
+        type: {
+          summary: `TableSticky {
+            offsetHeader?: number;
+            offsetSummary?: number;
+            offsetScroll?: number;
+            getContainer?: () => Window | HTMLElement;
+        }`,
+        },
+      },
+    },
+    className: {
+      control: {
+        type: "text",
+      },
+      description: "Table className",
+    },
+    id: {
+      control: {
+        type: "text",
+      },
+      description: "Table id",
+    },
+    expandable: {
+      control: {
+        type: "object",
+      },
+      description:
+        "Table expandable. ExpandableConfig object from rc-table. https://www.npmjs.com/package/rc-table",
+    },
+    rowKey: {
+      control: {
+        type: "text",
+      },
+      description:
+        "If rowKey is string, record[rowKey] will be used as key. If rowKey is function, the return value of rowKey(record, index) will be use as key.",
+    },
+    rowClassName: {
+      control: {
+        type: "text",
+      },
+      description: "get row's className",
+      table: {
+        type: {
+          summary: "string or Function(record, index, indent):string",
+        },
+      },
+    },
+    onRow: {
+      control: {
+        type: "object",
+      },
+      description: "onRow handler",
+      table: {
+        type: {
+          summary: "Function(record, index):Object",
+        },
+      },
+    },
+    onHeaderRow: {
+      control: {
+        type: "object",
+      },
+      description: "onHeaderRow handler",
+      table: {
+        type: {
+          summary: "Function(columns):Object",
+        },
+      },
+    },
+    emptyText: {
+      control: {
+        type: "text",
+      },
+      description: "empty text to show",
+      table: {
+        type: {
+          summary: "string | ReactNode | Function",
+        },
+        defaultValue: {
+          summary: "No Data",
+        },
+      },
+    },
+    summary: {
+      control: {
+        type: "object",
+      },
+      description:
+        "Summary attribute in table component is used to define the summary row.",
+      table: {
+        type: {
+          summary: "Function(data):ReactNode",
+        },
+      },
+    },
+  },
   args: {
     columns: [
       {
@@ -198,4 +317,118 @@ export const TableStory: Story = {
     sticky: true,
   },
   render: (args) => <Table {...args} />,
+};
+
+type RecordType = {
+  [key: string]: any;
+};
+
+type ColumnStory = StoryObj<ColumnType<RecordType>>;
+export const TableColumnStory: ColumnStory = {
+  name: "Table Column",
+  argTypes: {
+    key: {
+      control: {
+        type: "text",
+      },
+      description: "Key for the column",
+    },
+    className: {
+      control: {
+        type: "text",
+      },
+      description: "className for the column",
+    },
+    colSpan: {
+      control: {
+        type: "number",
+      },
+      description: "Number of columns to be spanned",
+    },
+    title: {
+      control: {
+        type: "text",
+      },
+      description: "Title of the column",
+    },
+    dataIndex: {
+      control: {
+        type: "text",
+      },
+      description: "Display field of the data record",
+    },
+    width: {
+      control: {
+        type: "number",
+      },
+      description: "Width of the column",
+    },
+    fixed: {
+      control: {
+        type: "text",
+      },
+      description: "Set column to be fixed: true(same as left) 'left' 'right'",
+    },
+    align: {
+      control: {
+        type: "text",
+      },
+      description: "Alignment of the column",
+    },
+    ellipsis: {
+      control: {
+        type: "boolean",
+      },
+      description: "Whether ellipsis show or not",
+      table: {
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    rowScope: {
+      control: {
+        type: "text",
+      },
+      description: "Scope of the row",
+      table: {
+        type: {
+          summary: "row | rowgroup",
+        },
+      },
+    },
+    onCell: {
+      control: {
+        type: "object",
+      },
+      description: "onCell handler",
+      table: {
+        type: {
+          summary: "Function(record, index):Object",
+        },
+      },
+    },
+    onHeaderCell: {
+      control: {
+        type: "object",
+      },
+      description: "onHeaderCell handler",
+      table: {
+        type: {
+          summary: "Function(column):Object",
+        },
+      },
+    },
+    render: {
+      control: {
+        type: "object",
+      },
+      description: "Render function of the cell",
+      table: {
+        type: {
+          summary: "Function(value, record, index):ReactNode",
+        },
+      },
+    },
+  },
 };
