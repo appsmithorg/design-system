@@ -150,7 +150,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {description && (
             <Description
               {...descriptionProps}
-              color="var(--ads-v2-color-fg-muted)"
+              color="var(--ads-v2-colors-control-helper-default-fg)"
               kind="body-s"
               style={
                 isDisabled ? { opacity: "var(--ads-v2-opacity-disabled)" } : {}
@@ -162,7 +162,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {errorMessage && (
             <Error
               {...errorMessageProps}
-              color="var(--ads-v2-color-fg-error)"
+              color="var(--ads-v2-colors-control-helper-error-fg)"
               kind="body-s"
             >
               {errorMessage}
