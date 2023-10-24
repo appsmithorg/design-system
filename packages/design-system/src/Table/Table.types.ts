@@ -1,5 +1,3 @@
+import type { TableProps as RcTableProps } from "rc-table";
 // Table props
-export type TableProps = {
-  children?: React.ReactNode;
-  className?: string;
-};
+export type TableProps = Omit<RcTableProps, "components" | "style">;
