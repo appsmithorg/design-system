@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.13
+
+### Patch Changes
+
+- [#660](https://github.com/appsmithorg/design-system/pull/660) [`e455013f`](https://github.com/appsmithorg/design-system/commit/e455013ff31f941e2de126bba0d6d84c06a73722) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Added z-index for table head
+
 ## 1.1.12
 
 ### Patch Changes
