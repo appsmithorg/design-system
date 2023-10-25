@@ -20,6 +20,7 @@ const Styles = styled.div`
     thead {
       position: sticky;
       top: 0;
+      z-index: 1;
 
       tr {
         background-color: var(--ads-v2-color-bg-subtle);
