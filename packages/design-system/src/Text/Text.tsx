@@ -6,11 +6,7 @@ import { TextClassName } from "./Text.constants";
 
 /*
 TODO:
- - ~create regular text component (copy styles)~
- - create editable text with prop `editable`
- - create highlight text with prop `highlight`
  - add segment header style to list of styles
- - create uneditable field with prop `uneditable`
  */
 
 function Text({
