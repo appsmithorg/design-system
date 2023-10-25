@@ -5,6 +5,7 @@ import clsx from "classnames";
 import "rc-table/assets/index.css";
 import "./reset.css";
 
+import { DefaultRecordType } from "rc-table/lib/interface";
 import { TableProps } from "./Table.types";
 import {
   StyledBody,
@@ -20,7 +21,11 @@ import { Icon } from "Icon";
 import { Text } from "Text";
 import { Flex } from "Flex";
 
-function Table({ className, emptyText = NoData, ...props }: TableProps) {
+function Table<T extends DefaultRecordType = DefaultRecordType>({
+  className,
+  emptyText = NoData,
+  ...props
+}: TableProps<T>) {
   const components = {
     table: StyledTable,
     header: {
@@ -35,7 +40,7 @@ function Table({ className, emptyText = NoData, ...props }: TableProps) {
     },
   };
   return (
-    <RcTable<any>
+    <RcTable<T>
       {...props}
       className={clsx(TableWrapperClassName, className)}
       components={components}
