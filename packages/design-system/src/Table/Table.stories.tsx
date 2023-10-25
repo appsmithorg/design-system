@@ -14,7 +14,7 @@ export default {
         style={{
           width: "60%",
           height: "50vh",
-          overflow: "scroll",
+          display: "table",
         }}
       >
         <Story />
@@ -315,6 +315,7 @@ export const TableStory: Story = {
       },
     ],
     sticky: true,
+    tableLayout: "fixed",
   },
   render: (args) => <Table {...args} />,
 };

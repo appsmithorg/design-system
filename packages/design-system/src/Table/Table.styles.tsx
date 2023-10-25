@@ -32,9 +32,9 @@ export const StyledHeaderCell = styled.th.attrs(({ className }) => ({
   className: clsx(TableHeaderCellClassName, className),
 }))`
   && {
-    font-size: 14px;
+    font-size: var(--ads-v2-font-size-4);
     font-style: normal;
-    font-weight: 400;
+    font-weight: var(--ads-v2-font-weight-normal);
     color: var(--ads-v2-colors-content-label-default-fg);
     font-family: var(--ads-v2-font-family);
     border: none;
@@ -60,7 +60,7 @@ export const StyledCell = styled.td.attrs(({ className }) => ({
   className: clsx(TableBodyCellClassName, className),
 }))`
   && {
-    font-size: 14px;
+    font-size: var(--ads-v2-font-size-4);
     padding: var(--ads-v2-spaces-6) var(--ads-v2-spaces-5);
     color: var(--ads-v2-colors-content-label-default-fg);
     font-family: var(--ads-v2-font-family);

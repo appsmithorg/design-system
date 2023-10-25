@@ -35,9 +35,7 @@ function Table({ className, emptyText = NoData, ...props }: TableProps) {
     },
   };
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    <RcTable
+    <RcTable<any>
       {...props}
       className={clsx(TableWrapperClassName, className)}
       components={components}
