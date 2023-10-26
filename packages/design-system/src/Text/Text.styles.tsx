@@ -175,32 +175,31 @@ export const StyledText = styled.span<{
 `;
 
 export const StyledEditableInput = styled.input`
-  && {
-    font-size: inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    line-height: inherit;
-    letter-spacing: inherit;
-    color: inherit;
-    text-decoration: inherit;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: var(--ads-v2-border-radius);
-    outline: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    left: -3px;
-    top: -3px;
-    width: 100%;
-    padding: var(--ads-v2-spaces-1);
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  text-decoration: inherit;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--ads-v2-border-radius);
+  outline: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 100%;
+  padding: var(--ads-v2-spaces-1);
 
-    &:hover {
-      border-color: var(--ads-v2-colors-control-field-hover-border);
-    }
+  &:hover {
+    border-color: var(--ads-v2-colors-control-field-hover-border);
+  }
 
-    &:focus {
-      border-color: var(--ads-v2-colors-control-field-default-border);
-    }
+  &:focus,
+  &:active {
+    border-color: var(--ads-v2-colors-control-field-default-border);
   }
 `;
