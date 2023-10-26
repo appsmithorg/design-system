@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "classnames";
 import { TextProps } from "./Text.types";
-import { StyledText } from "./Text.styles";
+import { StyledEditableInput, StyledText } from "./Text.styles";
 import { TextClassName } from "./Text.constants";
 
 /*
@@ -13,7 +13,10 @@ function Text({
   children,
   className,
   color,
+  inputProps,
+  isEditable,
   kind,
+  onChange,
   renderAs,
   ...rest
 }: TextProps) {
@@ -22,10 +25,23 @@ function Text({
       as={renderAs}
       className={clsx(TextClassName, className)}
       color={color}
+      data-bold={rest.isBold}
+      data-italic={rest.isItalic}
+      data-striked={rest.isStriked}
+      data-underlined={rest.isUnderlined}
+      data-value={isEditable && typeof children === "string" ? children : null}
       kind={kind}
       {...rest}
     >
-      {children}
+      {isEditable && typeof children === "string" ? (
+        <StyledEditableInput
+          onChange={onChange}
+          value={children}
+          {...inputProps}
+        />
+      ) : (
+        children
+      )}
     </StyledText>
   );
 }
