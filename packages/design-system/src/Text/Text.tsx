@@ -1,23 +1,22 @@
 import React from "react";
 import clsx from "classnames";
 import { TextProps } from "./Text.types";
-import { StyledText } from "./Text.styles";
+import { StyledEditableInput, StyledText } from "./Text.styles";
 import { TextClassName } from "./Text.constants";
 
 /*
 TODO:
- - ~create regular text component (copy styles)~
- - create editable text with prop `editable`
- - create highlight text with prop `highlight`
  - add segment header style to list of styles
- - create uneditable field with prop `uneditable`
  */
 
 function Text({
   children,
   className,
   color,
+  inputProps,
+  isEditable,
   kind,
+  onChange,
   renderAs,
   ...rest
 }: TextProps) {
@@ -26,10 +25,24 @@ function Text({
       as={renderAs}
       className={clsx(TextClassName, className)}
       color={color}
+      data-bold={rest.isBold}
+      data-italic={rest.isItalic}
+      data-striked={rest.isStriked}
+      data-underlined={rest.isUnderlined}
+      data-value={isEditable && typeof children === "string" ? children : null}
+      isEditable={isEditable && typeof children === "string"}
       kind={kind}
       {...rest}
     >
-      {children}
+      {isEditable && typeof children === "string" ? (
+        <StyledEditableInput
+          onChange={onChange}
+          value={children}
+          {...inputProps}
+        />
+      ) : (
+        children
+      )}
     </StyledText>
   );
 }

@@ -15,7 +15,7 @@ export type TextKind =
 
 // Text props
 export type TextProps = {
-  /** To change the rendering component */
+  /** to change the rendering component */
   renderAs?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "label";
   /** (try not to) pass addition classes here */
   className?: string;
@@ -25,6 +25,23 @@ export type TextProps = {
   kind?: TextKind;
   /** the color of the text. Accepts any valid css value. */
   color?: string;
+  /** whether the text is bold or not */
+  isBold?: boolean;
+  /** whether the text is italic or not */
+  isItalic?: boolean;
+  /** whether the text is underlined or not */
+  isUnderlined?: boolean;
+  /** whether the text is striked or not */
+  isStriked?: boolean;
+  /** whether the text is editable or not */
+  isEditable?: boolean;
+  /** onChange event for editable text */
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /** input component props while isEditable is true */
+  inputProps?: Omit<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    "value" | "onChange"
+  >;
 } & React.HTMLAttributes<HTMLLabelElement> &
   React.HTMLAttributes<HTMLHeadingElement> &
   React.HTMLAttributes<HTMLParagraphElement> &
