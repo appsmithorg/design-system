@@ -244,6 +244,7 @@ const YenIcon = importSvg(() =>
 const SteamBowlIcon = importSvg(() =>
   import("../assets/icons/ads/app-icons/steam-bowl.svg"),
 );
+const PackageIcon = importSvg(() => import("../assets/icons/ads/package.svg"));
 const ArrowDownIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowDownSLineIcon"),
 );
@@ -328,6 +329,7 @@ export const AppIconCollection = [
   "moon",
   "mug",
   "music",
+  "package",
   "pants",
   "pie-chart",
   "pizza",
@@ -595,6 +597,9 @@ function AppIcon(props: AppIconProps) {
       break;
     case "pie-chart":
       returnIcon = <PieChartIcon />;
+      break;
+    case "package":
+      returnIcon = <PackageIcon />;
       break;
     case "pizza":
       returnIcon = <PizzaIcon />;
