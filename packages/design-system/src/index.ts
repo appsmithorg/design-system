@@ -26,6 +26,7 @@ export * from "./Select";
 export * from "./Spinner";
 export * from "./Switch";
 export * from "./Tab";
+export * from "./Table";
 export * from "./Tag";
 export * from "./Text";
 export * from "./Toast";
