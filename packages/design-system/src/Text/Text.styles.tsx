@@ -126,6 +126,7 @@ export const StyledText = styled.span<{
   isItalic?: boolean;
   isUnderlined?: boolean;
   isStriked?: boolean;
+  isEditable?: boolean;
 }>`
   ${TypographyScales}
   ${Variables}
@@ -165,13 +166,17 @@ export const StyledText = styled.span<{
   }
 
   /* Editable style */
-  &:after {
-    content: attr(data-value) "  ";
-    visibility: hidden;
-    font-family: inherit;
-    font-size: inherit;
-    white-space: pre-wrap;
-  }
+  ${({ isEditable }) =>
+    isEditable &&
+    `
+      &:after {
+        content: attr(data-value) "  ";
+        visibility: hidden;
+        font-family: inherit;
+        font-size: inherit;
+        white-space: pre-wrap;
+      }
+    `}
 `;
 
 export const StyledEditableInput = styled.input`

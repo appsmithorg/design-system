@@ -30,6 +30,7 @@ function Text({
       data-striked={rest.isStriked}
       data-underlined={rest.isUnderlined}
       data-value={isEditable && typeof children === "string" ? children : null}
+      isEditable={isEditable && typeof children === "string"}
       kind={kind}
       {...rest}
     >
