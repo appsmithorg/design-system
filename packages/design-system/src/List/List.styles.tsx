@@ -111,6 +111,7 @@ export const StyledListItem = styled.div<{
 
   & .${ListItemTitleClassName} {
     font-size: var(--listitem-title-font-size);
+    line-height: 16px;
   }
 
   & .${ListItemBDescClassName} {

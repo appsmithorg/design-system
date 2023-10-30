@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: Added form control
+fix: List component line height class name

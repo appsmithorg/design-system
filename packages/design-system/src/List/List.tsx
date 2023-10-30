@@ -16,15 +16,18 @@ import { Text, TextProps } from "Text";
 import { Button } from "Button";
 import { Tooltip } from "Tooltip";
 import {
+  ListClassName,
   ListItemBDescClassName,
+  ListItemClassName,
   ListItemIDescClassName,
   ListItemTextOverflowClassName,
   ListItemTitleClassName,
+  ListItemWrapperClassName,
 } from "./List.constants";
 
-function List({ items }: ListProps) {
+function List({ className, items, ...rest }: ListProps) {
   return (
-    <StyledList>
+    <StyledList className={clsx(ListClassName, className)} {...rest}>
       {items.map((item) => {
         return <ListItem key={item.title} {...item} />;
       })}
@@ -126,8 +129,9 @@ function ListItem(props: ListItemProps) {
   };
 
   return (
-    <Wrapper>
+    <Wrapper className={clsx(ListItemWrapperClassName, props.wrapperClassName)}>
       <StyledListItem
+        className={clsx(ListItemClassName, props.className)}
         data-disabled={props.isDisabled || false}
         data-selected={props.isSelected}
         endIcon={props.endIcon}
