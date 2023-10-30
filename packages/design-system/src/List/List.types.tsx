@@ -28,8 +28,16 @@ export type ListItemProps = {
    * below the title.
    */
   descriptionType: "inline" | "block";
+  /** class names for the list item */
+  className?: string;
+  /** class names for the wrapper */
+  wrapperClassName?: string;
+  /** id for the list item */
+  id?: string;
 };
 
 export type ListProps = {
   items: ListItemProps[];
+  className?: string;
+  id?: string;
 };
