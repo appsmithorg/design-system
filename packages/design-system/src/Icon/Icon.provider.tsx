@@ -544,6 +544,10 @@ const FileCopy2Line = importRemixIcon(
   () => import("remixicon-react/FileCopy2LineIcon"),
 );
 
+const AppsLineIcon = importRemixIcon(
+  async () => import("remixicon-react/AppsLineIcon"),
+);
+
 const CornerDownLeftLineIcon = importSvg(
   () => import("../__assets__/icons/ads/corner-down-left-line.svg"),
 );
@@ -694,6 +698,9 @@ const ExecuteIcon = importSvg(
 );
 const PackageIcon = importSvg(
   () => import("../__assets__/icons/ads/package.svg"),
+);
+const ModuleIcon = importSvg(
+  () => import("../__assets__/icons/ads/module.svg"),
 );
 const DeleteIcon = importSvg(
   () => import("../__assets__/icons/control/delete.svg"),
@@ -1209,6 +1216,7 @@ const ICON_LOOKUP = {
   "file-paper-2-line": FilePaper2LineIcon,
   "file-copy-2-line": FileCopy2Line,
   "box-3-line": Box3LineIcon,
+  "apps-line": AppsLineIcon,
   billing: BillingIcon,
   binding: Binding,
   book: BookIcon,
@@ -1257,6 +1265,7 @@ const ICON_LOOKUP = {
   manage: ManageIcon,
   member: UserHeartLineIcon,
   minus: RemoveIcon,
+  module: ModuleIcon,
   mobile: MobileIcon,
   open: OpenIcon,
   pantone: PantoneLineIcon,
