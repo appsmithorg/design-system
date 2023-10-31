@@ -1,20 +1,42 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
+import { useArgs } from "@storybook/preview-api";
 
 import { Text } from "./index";
 
 export default {
   title: "Design System/Text",
   component: Text,
-} as ComponentMeta<typeof Text>;
+} as Meta<typeof Text>;
 
-// eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Text> = (args) => {
-  return <Text {...args} />;
+type Story = StoryObj<typeof Text>;
+
+export const TextStory: Story = {
+  name: "Text",
+  args: {
+    children: "How vexingly quick daft zebras jump!",
+  },
 };
 
-export const TextStory = Template.bind({});
-TextStory.storyName = "Text";
-TextStory.args = {
-  children: "How vexingly quick daft zebras jump!",
+export const EditableTextStory: Story = {
+  name: "Editable Text",
+  args: {
+    children: "How vexingly quick daft zebras jump!",
+    isEditable: true,
+    kind: "body-m",
+  },
+  render: function Render(args) {
+    const [text, setText] = React.useState(args.children);
+
+    return (
+      <Text
+        {...args}
+        onChange={(e) => {
+          setText(e.target.value);
+        }}
+      >
+        {text}
+      </Text>
+    );
+  },
 };
