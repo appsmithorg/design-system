@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.14
+
+### Patch Changes
+
+- [#667](https://github.com/appsmithorg/design-system/pull/667) [`a684a4e7`](https://github.com/appsmithorg/design-system/commit/a684a4e7d4e40d614418434ed51ec578855468a2) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding icons in AppIcon component and Icon provider
+
 ## 1.1.13
 
 ### Patch Changes
