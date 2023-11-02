@@ -2,12 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import { Tooltip } from "Tooltip";
 import { toast } from "Toast";
+import CopyButton from "CopyButton/CopyButton";
+import { style } from "@xstyled/styled-components";
 
 type CodeBlockProps = {
   code?: string;
 };
 
 function CodeBlock({ code }: CodeBlockProps) {
+  if (code === undefined) {
+    return null;
+  }
   return (
     <Wrapper
       onClick={() => {
@@ -16,7 +21,13 @@ function CodeBlock({ code }: CodeBlockProps) {
       }}
     >
       <Tooltip content="Click here to copy" mouseEnterDelay={0.7}>
-        <Code>{code}</Code>
+        <div>
+          <Code>{code}
+          <CopyButton 
+          textToCopy={code} 
+          />
+          </Code>
+        </div>
       </Tooltip>
     </Wrapper>
   );
@@ -30,6 +41,7 @@ const Wrapper = styled.div`
   border-radius: var(--ads-v2-border-radius);
   background-color: var(--ads-v2-colors-content-surface-hover-bg);
   width: fit-content;
+  position: relative;
 `;
 
 const Code = styled.div`
@@ -37,5 +49,7 @@ const Code = styled.div`
   font-family: var(--ads-v2-font-family-code);
   white-space: pre-wrap;
 `;
+
+
 
 export { CodeBlock };
