@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Tooltip } from "Tooltip";
 import { toast } from "Toast";
-import CopyButton from "CopyButton/CopyButton";
-import { style } from "@xstyled/styled-components";
+import { IconProvider } from "Icon/Icon.provider";
 
 type CodeBlockProps = {
   code?: string;
@@ -23,9 +22,7 @@ function CodeBlock({ code }: CodeBlockProps) {
       <Tooltip content="Click here to copy" mouseEnterDelay={0.7}>
         <div>
           <Code>{code}
-          <CopyButton 
-          textToCopy={code} 
-          />
+          <IconProvider iconName="copy-control" size="25px" color="" />
           </Code>
         </div>
       </Tooltip>
