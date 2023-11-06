@@ -12,6 +12,7 @@ export const StyledContent = styled(Content)`
   border-radius: var(--ads-v2-border-radius);
   box-shadow: var(--ads-v2-shadow-popovers);
   overflow: hidden;
+  z-index: 1001;
 
   .${AnnouncementPopoverArrowClassName} {
     position: relative;
