@@ -44,4 +44,6 @@ export const StyledBanner = styled.div<{ backgroundUrl?: string }>`
   padding: var(--ads-v2-spaces-5);
 `;
 
-export const StyledFooter = styled.div``;
+export const StyledFooter = styled.div`
+  margin-top: var(--ads-v2-spaces-5);
+`;
