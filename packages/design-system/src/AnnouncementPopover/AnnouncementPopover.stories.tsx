@@ -6,6 +6,8 @@ import {
   AnnouncementPopoverContent,
   AnnouncementPopoverTrigger,
 } from "./AnnouncementPopover";
+import { Button } from "../Button";
+import { Flex } from "../Flex";
 
 export default {
   title: "Design System/Announcement",
@@ -100,9 +102,19 @@ export const AnnouncementPopoverStory: Story = {
           <span>Something that trigger the announcement</span>
         </AnnouncementPopoverTrigger>
         <AnnouncementPopoverContent
-          arrowFillColor="#C6C7AC"
-          banner="https://picsum.photos/id/100/1080/720"
+          arrowFillColor="#F6F2FA"
+          banner="https://assets.appsmith.com.s3.us-east-2.amazonaws.com/new-sidebar-banner.svg"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+          footer={
+            <Flex gap="spaces-3">
+              <Button kind="primary" onClick={() => setOpen(false)} size="md">
+                Got it
+              </Button>
+              <Button kind="tertiary" onClick={() => setOpen(false)} size="md">
+                Read more
+              </Button>
+            </Flex>
+          }
           onCloseButtonClick={() => setOpen(false)}
           side="bottom"
           title="Title of the banner"
@@ -117,8 +129,9 @@ type StoryContent = StoryObj<typeof AnnouncementPopoverContent>;
 export const AnnouncementPopoverContentStory: StoryContent = {
   name: "Popover Content",
   args: {
-    arrowFillColor: "#A1C8BF",
-    banner: "https://picsum.photos/id/101/1080/720",
+    arrowFillColor: "#F6F2FA",
+    banner:
+      "https://assets.appsmith.com.s3.us-east-2.amazonaws.com/new-sidebar-banner.svg",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     side: "bottom",
@@ -310,7 +323,14 @@ export const AnnouncementPopoverContentStory: StoryContent = {
         <AnnouncementPopoverTrigger>
           <span>Something that trigger the announcement</span>
         </AnnouncementPopoverTrigger>
-        <AnnouncementPopoverContent {...args} />
+        <AnnouncementPopoverContent
+          {...args}
+          footer={
+            <Button kind="primary" size="md">
+              Got it
+            </Button>
+          }
+        />
       </AnnouncementPopover>
     );
   },
