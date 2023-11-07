@@ -82,9 +82,11 @@ function AnnouncementPopoverContent({
           >
             {description}
           </StyledDescription>
-          <StyledFooter className={AnnouncementPopoverBodyFooterClassName}>
-            {footer}
-          </StyledFooter>
+          {footer && (
+            <StyledFooter className={AnnouncementPopoverBodyFooterClassName}>
+              {footer}
+            </StyledFooter>
+          )}
         </StyledCustomBody>
         <HoverCard.Arrow asChild className={AnnouncementPopoverArrowClassName}>
           <svg
