@@ -27,6 +27,7 @@ export const StyledCustomBody = styled.div`
 `;
 
 export const StyledDescription = styled(Text)`
+  display: block;
   margin-top: var(--ads-v2-spaces-3);
   line-height: 20px;
 `;
