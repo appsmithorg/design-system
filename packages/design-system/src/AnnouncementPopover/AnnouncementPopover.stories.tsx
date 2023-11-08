@@ -103,7 +103,7 @@ export const AnnouncementPopoverStory: Story = {
         </AnnouncementPopoverTrigger>
         <AnnouncementPopoverContent
           arrowFillColor="#F6F2FA"
-          banner="https://assets.appsmith.com.s3.us-east-2.amazonaws.com/new-sidebar-banner.svg"
+          banner="https://assets.appsmith.com/new-sidebar-banner.svg"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
           footer={
             <Flex gap="spaces-3">
@@ -130,8 +130,7 @@ export const AnnouncementPopoverContentStory: StoryContent = {
   name: "Popover Content",
   args: {
     arrowFillColor: "#F6F2FA",
-    banner:
-      "https://assets.appsmith.com.s3.us-east-2.amazonaws.com/new-sidebar-banner.svg",
+    banner: "https://assets.appsmith.com/new-sidebar-banner.svg",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     side: "bottom",
