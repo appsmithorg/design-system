@@ -251,6 +251,246 @@ MenuContentStory.argTypes = {
       },
     },
   },
+  loop: {
+    control: {
+      type: "boolean",
+    },
+    description:
+      "When true, keyboard navigation will loop from last item to first, and vice versa.",
+    table: {
+      type: {
+        summary: "boolean",
+      },
+      defaultValue: {
+        summary: "false",
+      },
+    },
+  },
+  onCloseAutoFocus: {
+    control: {
+      type: "object",
+    },
+    description:
+      "Event handler called when focus moves to the trigger after closing. It can be prevented by calling event.preventDefault.",
+    table: {
+      type: {
+        summary: "(event: Event) => void",
+      },
+    },
+  },
+  onEscapeKeyDown: {
+    control: {
+      type: "object",
+    },
+    description:
+      "Event handler called when the escape key is pressed. It can be prevented by calling event.preventDefault.",
+    table: {
+      type: {
+        summary: "(event: KeyboardEvent) => void",
+      },
+    },
+  },
+  onPointerDownOutside: {
+    control: {
+      type: "object",
+    },
+    description:
+      "Event handler called when a pointer event occurs outside the bounds of the component. It can be prevented by calling event.preventDefault.",
+    table: {
+      type: {
+        summary: "(event: PointerDownOutsideEvent) => void",
+      },
+    },
+  },
+  onFocusOutside: {
+    control: {
+      type: "object",
+    },
+    description:
+      "Event handler called when focus moves outside the bounds of the component. It can be prevented by calling event.preventDefault.",
+    table: {
+      type: {
+        summary: "(event: FocusOutsideEvent) => void",
+      },
+    },
+  },
+  onInteractOutside: {
+    control: {
+      type: "object",
+    },
+    description:
+      "Event handler called when an interaction (pointer or focus event) happens outside the bounds of the component. It can be prevented by calling event.preventDefault.",
+    table: {
+      type: {
+        summary: "(event: PointerDownOutsideEvent | FocusOutsideEvent) => void",
+      },
+    },
+  },
+  forceMount: {
+    control: {
+      type: "boolean",
+    },
+    description:
+      "Used to force mounting when more control is needed. Useful when controlling animation with React animation libraries. It inherits from DropdownMenu.Portal.",
+    table: {
+      type: {
+        summary: "boolean",
+      },
+      defaultValue: {
+        summary: "false",
+      },
+    },
+  },
+  side: {
+    control: {
+      type: "select",
+    },
+    options: ["top", "right", "bottom", "left"],
+    description:
+      "The preferred side of the trigger to render against when open. Will be reversed when collisions occur and avoidCollisions is enabled.",
+    table: {
+      type: {
+        summary: "top | right | bottom | left",
+      },
+      defaultValue: {
+        summary: "bottom",
+      },
+    },
+  },
+  sideOffset: {
+    control: {
+      type: "number",
+    },
+    description:
+      "The offset of the menu from the trigger. The offset is flipped when collisions occur and avoidCollisions is enabled.",
+    table: {
+      type: {
+        summary: "number",
+      },
+      defaultValue: {
+        summary: "0",
+      },
+    },
+  },
+  align: {
+    control: {
+      type: "select",
+    },
+    options: ["start", "center", "end"],
+    description:
+      "The preferred alignment of the menu against the trigger. Will be reversed when collisions occur and avoidCollisions is enabled.",
+    table: {
+      type: {
+        summary: "start | center | end",
+      },
+      defaultValue: {
+        summary: "center",
+      },
+    },
+  },
+  alignOffset: {
+    control: {
+      type: "number",
+    },
+    description:
+      "The offset of the menu from the trigger. The offset is flipped when collisions occur and avoidCollisions is enabled.",
+    table: {
+      type: {
+        summary: "number",
+      },
+      defaultValue: {
+        summary: "0",
+      },
+    },
+  },
+  avoidCollisions: {
+    control: {
+      type: "boolean",
+    },
+    description:
+      "When true, the menu will flip sides when it reaches the viewport bounds.",
+    table: {
+      type: {
+        summary: "boolean",
+      },
+      defaultValue: {
+        summary: "true",
+      },
+    },
+  },
+  collisionBoundary: {
+    control: {
+      type: "object",
+    },
+    description:
+      "The element that the menu will be constrained to fit within if it reaches the viewport bounds.",
+    table: {
+      type: {
+        summary: "Element | null | Array<Element | null>",
+      },
+    },
+  },
+  collisionPadding: {
+    control: {
+      type: "object",
+    },
+    description:
+      "The padding between the menu and the viewport edges when collisions occur.",
+    table: {
+      type: {
+        summary: "number | Partial<Record<Side, number>>",
+      },
+      defaultValue: {
+        summary: "0",
+      },
+    },
+  },
+  arrowPadding: {
+    control: {
+      type: "object",
+    },
+    description:
+      "The padding between the menu and the trigger when the menu is positioned with an arrow.",
+    table: {
+      type: {
+        summary: "number",
+      },
+      defaultValue: {
+        summary: "0",
+      },
+    },
+  },
+  sticky: {
+    control: {
+      type: "select",
+    },
+    options: ["partial", "always"],
+    description:
+      "When true, the menu will remain open when the trigger is blurred.",
+    table: {
+      type: {
+        summary: "partial | always",
+      },
+      defaultValue: {
+        summary: "partial",
+      },
+    },
+  },
+  hideWhenDetached: {
+    control: {
+      type: "boolean",
+    },
+    description:
+      "When true, the menu will hide when the trigger is detached from the DOM.",
+    table: {
+      type: {
+        summary: "boolean",
+      },
+      defaultValue: {
+        summary: "false",
+      },
+    },
+  },
 };
 MenuContentStory.args = {
   children: <Text>Menu Content</Text>,

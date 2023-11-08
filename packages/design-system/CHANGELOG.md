@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.26
+
+### Patch Changes
+
+- [#668](https://github.com/appsmithorg/design-system/pull/668) [`8d28e37f`](https://github.com/appsmithorg/design-system/commit/8d28e37f797b84e52f0c581d38d1908cbcab5ece) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: List component line height class name
+
+- [#667](https://github.com/appsmithorg/design-system/pull/667) [`a684a4e7`](https://github.com/appsmithorg/design-system/commit/a684a4e7d4e40d614418434ed51ec578855468a2) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding icons in AppIcon component and Icon provider
+
 ## 2.1.25
 
 ### Patch Changes

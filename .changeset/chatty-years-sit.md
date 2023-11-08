@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-fix: List component line height class name
+feat: Added announcement popover component
