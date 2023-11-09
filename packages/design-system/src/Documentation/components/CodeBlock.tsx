@@ -21,9 +21,14 @@ function CodeBlock({ code }: CodeBlockProps) {
     >
       <Tooltip content="Click here to copy" mouseEnterDelay={0.7}>
         <div>
-          <Code>{code}
-          <IconProvider iconName="copy-control" size="25px" color="" />
+          <ParentComponent>
+          <Code>
+            {code}
+            <CustomIconWrapper>
+              <IconProvider iconName="copy-control" size="sm" color="" />
+            </CustomIconWrapper>
           </Code>
+          </ParentComponent>
         </div>
       </Tooltip>
     </Wrapper>
@@ -34,6 +39,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  vertical-align: middle;
   padding: 0 4px;
   border-radius: var(--ads-v2-border-radius);
   background-color: var(--ads-v2-colors-content-surface-hover-bg);
@@ -41,10 +47,21 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
+const ParentComponent = styled.div`
+  display: flex;
+`;
+
 const Code = styled.div`
   font-size: 14px;
   font-family: var(--ads-v2-font-family-code);
   white-space: pre-wrap;
+`;
+
+const CustomIconWrapper = styled.div`
+display: inline-block;
+vertical-align: sub;
+width: 16px;  
+height: 16px;
 `;
 
 
