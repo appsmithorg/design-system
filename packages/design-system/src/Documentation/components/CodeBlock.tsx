@@ -25,7 +25,7 @@ function CodeBlock({ code }: CodeBlockProps) {
           <Code>
             {code}
             <CustomIconWrapper>
-              <IconProvider iconName="copy-control" size="sm" color="" />
+              <IconProvider iconName="copy-control" size="sm:w-16 sm:h-16" color="" />
             </CustomIconWrapper>
           </Code>
           </ParentComponent>
