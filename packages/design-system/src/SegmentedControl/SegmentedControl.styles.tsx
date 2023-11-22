@@ -23,7 +23,7 @@ export const StyledSegmentedControl = styled.div<{
   border-radius: calc(var(--ads-v2-border-radius) + var(--ads-v2-spaces-1));
   box-sizing: border-box;
   height: 32px;
-  width: ${({ isFullWidth }) => (isFullWidth ? "auto" : "max-content")};
+  width: ${({ isFullWidth }) => (isFullWidth ? "100%" : "max-content")};
 `;
 
 export const StyledSegment = styled.span`

@@ -938,6 +938,18 @@ const Box3LineIcon = importSvg(
   () => import("../__assets__/icons/ads/box-3-line.svg"),
 );
 
+const QueriesLineIcon = importSvg(
+  () => import("../__assets__/icons/ads/queries.svg"),
+);
+
+const BracesLineIcon = importSvg(
+  () => import("../__assets__/icons/ads/braces.svg"),
+);
+
+const DashboardLineIcon = importSvg(
+  () => import("../__assets__/icons/ads/dashboard-line.svg"),
+);
+
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 
 function PlayIconPNGWrapper() {
@@ -1217,6 +1229,9 @@ const ICON_LOOKUP = {
   "file-copy-2-line": FileCopy2Line,
   "box-3-line": Box3LineIcon,
   "apps-line": AppsLineIcon,
+  "queries-line": QueriesLineIcon,
+  "braces-line": BracesLineIcon,
+  "dashboard-line": DashboardLineIcon,
   billing: BillingIcon,
   binding: Binding,
   book: BookIcon,
