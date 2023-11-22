@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.27
+
+### Patch Changes
+
+- [#673](https://github.com/appsmithorg/design-system/pull/673) [`c8045ee8`](https://github.com/appsmithorg/design-system/commit/c8045ee830a6d9d2e2f3f351982f7f4b695af0af) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added announcement popover component
+
 ## 2.1.26
 
 ### Patch Changes
