@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.28
+
+### Patch Changes
+
+- [#677](https://github.com/appsmithorg/design-system/pull/677) [`154932d6`](https://github.com/appsmithorg/design-system/commit/154932d63b392a14ffac0ff22a4953eae61b7348) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - New icons segmented control width
+
 ## 2.1.27
 
 ### Patch Changes
