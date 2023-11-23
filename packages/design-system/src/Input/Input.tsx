@@ -23,8 +23,6 @@ import {
   InputEndIconClassName,
   InputIconClassName,
   InputStartIconClassName,
-  InputStartIconDisabledClassName,
-  InputEndIconDisabledClassName,
 } from "./Input.constants";
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -105,7 +103,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                   InputIconClassName,
                   InputStartIconClassName,
                   startIconClassName,
-                  !startIconOnClick && InputStartIconDisabledClassName,
                 )}
                 data-has-onclick={!!startIconOnClick}
                 name={startIcon}
@@ -143,7 +140,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                   InputIconClassName,
                   InputEndIconClassName,
                   endIconClassName,
-                  !endIconOnClick && InputEndIconDisabledClassName,
                 )}
                 data-has-onclick={!!endIconOnClick}
                 name={endIcon}
