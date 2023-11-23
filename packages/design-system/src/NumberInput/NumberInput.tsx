@@ -112,7 +112,7 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
     };
 
     const handleChange = (_value: string, operation?: "add" | "subtract") => {
-      const inputValue = parseFloat(_value.replace(/[^0-9.-]+/g, ""));
+      const inputValue = getNumericalValue(_value);
 
       // Check if the input value is a valid number
       if (!isNaN(inputValue)) {
@@ -144,17 +144,20 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
 
     const checkMinViolation = (value: string): boolean => {
       if (typeof min === "number") {
-        return parseFloat(value.replace(/[^0-9.-]+/g, "")) <= min;
+        return getNumericalValue(value) <= min;
       }
       return false;
     };
 
     const checkMaxViolation = (value: string): boolean => {
       if (typeof max === "number") {
-        return parseFloat(value.replace(/[^0-9.-]+/g, "")) >= max;
+        return getNumericalValue(value) >= max;
       }
       return false;
     };
+
+    const getNumericalValue = (_value: string): number =>
+      parseFloat(_value.replace(/[^0-9.-]+/g, ""));
 
     return (
       <StyledNumberInput
