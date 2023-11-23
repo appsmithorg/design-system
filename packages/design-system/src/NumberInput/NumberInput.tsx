@@ -79,7 +79,7 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
           setDisableStartIcon(false);
         }
       }
-    }, [value, min, max]);
+    }, [value, min]);
 
     useEffect(() => {
       if (value) {
