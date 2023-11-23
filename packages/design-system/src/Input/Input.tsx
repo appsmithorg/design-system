@@ -23,6 +23,8 @@ import {
   InputEndIconClassName,
   InputIconClassName,
   InputStartIconClassName,
+  InputStartIconDisabledClassName,
+  InputEndIconDisabledClassName,
 } from "./Input.constants";
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -31,6 +33,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const {
       className,
       description,
+      disableTextInput = false,
       endIcon,
       endIconProps,
       errorMessage,
@@ -102,6 +105,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                   InputIconClassName,
                   InputStartIconClassName,
                   startIconClassName,
+                  !startIconOnClick && InputStartIconDisabledClassName,
                 )}
                 data-has-onclick={!!startIconOnClick}
                 name={startIcon}
@@ -120,6 +124,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               UNSAFE_width={UNSAFE_width}
               className={InputSectionInputClassName}
               data-is-valid={isValid}
+              disabled={disableTextInput || isDisabled}
               hasEndIcon={!!endIcon}
               hasStartIcon={!!startIcon}
               inputSize={size}
@@ -138,6 +143,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                   InputIconClassName,
                   InputEndIconClassName,
                   endIconClassName,
+                  !endIconOnClick && InputEndIconDisabledClassName,
                 )}
                 data-has-onclick={!!endIconOnClick}
                 name={endIcon}
