@@ -125,5 +125,7 @@ storybook-static
 build/
 node_modules/
 package-lock.json
-yarn.lock
 package.json
+
+# Yarn lock file
+yarn.lock
