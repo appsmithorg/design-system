@@ -126,6 +126,3 @@ build/
 node_modules/
 package-lock.json
 package.json
-
-# Yarn lock file
-yarn.lock
