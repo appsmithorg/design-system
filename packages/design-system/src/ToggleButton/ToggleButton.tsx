@@ -15,6 +15,7 @@ const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
       isSelected,
       onClick,
       size,
+      kind = "secondary",
       ...rest
     } = props;
 
@@ -29,6 +30,7 @@ const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(
       <StyledToggleButton
         className={clsx(ToggleClassName, className)}
         disabled={isDisabled}
+        kind={kind}
         isSelected={isSelected ?? selected}
         size={size}
         {...rest}

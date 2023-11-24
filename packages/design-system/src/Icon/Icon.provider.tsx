@@ -548,6 +548,14 @@ const AppsLineIcon = importRemixIcon(
   async () => import("remixicon-react/AppsLineIcon"),
 );
 
+const BracesIcon = importSvg(
+  () => import("../__assets__/icons/ads/braces-icon.svg"),
+);
+
+const JSToggleExperiment = importSvg(
+  () => import("../__assets__/icons/ads/js-exp-icon.svg"),
+);
+
 const CornerDownLeftLineIcon = importSvg(
   () => import("../__assets__/icons/ads/corner-down-left-line.svg"),
 );
@@ -1232,6 +1240,8 @@ const ICON_LOOKUP = {
   "queries-line": QueriesLineIcon,
   "braces-line": BracesLineIcon,
   "dashboard-line": DashboardLineIcon,
+  "braces-line-exp": BracesIcon,
+  "js-toggle-exp": JSToggleExperiment,
   billing: BillingIcon,
   binding: Binding,
   book: BookIcon,
