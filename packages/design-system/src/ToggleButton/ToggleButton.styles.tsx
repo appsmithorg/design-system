@@ -92,6 +92,7 @@ export const StyledToggleButton = styled.button<{
       &:hover:enabled {
         --toggle-color-background: var( --ads-v2-color-bg-emphasis-plus);
         --toggle-color-border: var( --ads-v2-color-bg-emphasis-plus);
+        --toggle-color-icon: var(--ads-v2-color-fg-on-brand);
       }
     `;
 
