@@ -33,7 +33,7 @@ export const StyledToggleButton = styled.button<{
   isDisabled?: boolean;
   isSelected?: boolean;
   size?: ToggleButtonSizes;
-  kind?: "primary" | "secondary";
+  kind?: "secondary" | "tertiary";
 }>`
   ${Variables};
 
@@ -84,11 +84,11 @@ export const StyledToggleButton = styled.button<{
   }
 
   ${({ kind, isSelected }) => {
-    if (kind !== "primary") return;
+    if (kind !== "tertiary") return;
     let css = `
       --toggle-color-background: var( --ads-v2-color-bg-emphasis);
       --toggle-color-border: var( --ads-v2-color-bg-emphasis);
-      --toggle-color-icon: var(--ads-v2-colors-action-tertiary-label-default-fg);
+      --toggle-color-icon: var(--ads-v2-color-fg-muted);
       &:hover:enabled {
         --toggle-color-background: var( --ads-v2-color-bg-emphasis-plus);
         --toggle-color-border: var( --ads-v2-color-bg-emphasis-plus);
