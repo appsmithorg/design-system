@@ -22,5 +22,5 @@ export type ToggleButtonProps = {
   /** tabIndex for the button */
   tabIndex?: number;
 
-  kind?: "secondary" | "primary";
+  kind?: "secondary" | "combination";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
