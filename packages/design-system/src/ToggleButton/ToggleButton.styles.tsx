@@ -33,7 +33,7 @@ export const StyledToggleButton = styled.button<{
   isDisabled?: boolean;
   isSelected?: boolean;
   size?: ToggleButtonSizes;
-  kind?: "secondary" | "tertiary";
+  kind?: "secondary" | "primary";
 }>`
   ${Variables};
 
@@ -84,35 +84,25 @@ export const StyledToggleButton = styled.button<{
   }
 
   ${({ kind, isSelected }) => {
-    if (kind !== "tertiary") return;
+    if (kind !== "primary") return;
     let css = `
-      --toggle-color-background: var( --ads-v2-color-bg-emphasis);
-      --toggle-color-border: var( --ads-v2-color-bg-emphasis);
-      --toggle-color-icon: var(--ads-v2-color-fg-muted);
+      --toggle-color-background: var(--ads-v2-color-orange-50);
+      --toggle-color-border: var(--ads-v2-color-orange-50);
+      --toggle-color-icon: var(--ads-v2-color-bg-brand);
       &:hover:enabled {
-        --toggle-color-background: var( --ads-v2-color-bg-emphasis-plus);
-        --toggle-color-border: var( --ads-v2-color-bg-emphasis-plus);
-        --toggle-color-icon: var(--ads-v2-color-fg-on-brand);
+        --toggle-color-background: var(--ads-v2-color-orange-100);
+        --toggle-color-border: var(--ads-v2-color-orange-100);
       }
     `;
-
     if (isSelected) {
       css += `
-      --toggle-color-background: var(
-        --ads-v2-color-bg-brand-secondary
-      );
-      --toggle-color-border: var(
-        --ads-v2-color-bg-brand-secondary
-      );
+      --toggle-color-background: var(--ads-v2-color-orange-500);
+      --toggle-color-border: var(--ads-v2-color-orange-500);
       --toggle-color-icon: var(--ads-v2-color-fg-on-brand);
  
       &:hover:enabled {
-        --toggle-color-background: var(
-          --ads-v2-color-bg-brand-secondary-emphasis
-        );
-        --toggle-color-border: var(
-          --ads-v2-color-bg-brand-secondary-emphasis
-        );
+        --toggle-color-background: var(--ads-v2-color-orange-500);
+        --toggle-color-border: var(--ads-v2-color-orange-500);
       }
       `;
     }
