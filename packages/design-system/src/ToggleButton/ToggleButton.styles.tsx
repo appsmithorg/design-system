@@ -90,18 +90,21 @@ export const StyledToggleButton = styled.button<{
       --toggle-color-border: var(--ads-v2-color-gray-100);
       --toggle-color-icon: var(--ads-v2-color-gray-600);
       &:hover:enabled {
-        --toggle-color-background: var(--ads-v2-color-orange-100);
-        --toggle-color-border: var(--ads-v2-color-orange-100);
+        --toggle-color-background: var(--ads-v2-color-orange-50);
+        --toggle-color-border: var(--ads-v2-color-fg-brand);
+        --toggle-color-icon: var(--ads-v2-color-fg-brand);
       }
     `;
     if (isSelected) {
       css += `
       --toggle-color-background: var(--ads-v2-color-bg);
-      --toggle-color-border: var(--ads-v2-color-fg-on-brand);
-      --toggle-color-icon: var(--ads-v2-color-fg-on-brand);
+      --toggle-color-border: var(--ads-v2-color-fg-brand);
+      --toggle-color-icon: var(--ads-v2-color-fg-brand);
  
       &:hover:enabled {
         --toggle-color-background: var(--ads-v2-color-orange-50);
+        --toggle-color-border: var(--ads-v2-color-fg-brand);
+        --toggle-color-icon: var(--ads-v2-color-fg-brand);
       }
       `;
     }
