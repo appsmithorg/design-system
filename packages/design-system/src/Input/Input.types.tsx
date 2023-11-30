@@ -21,6 +21,8 @@ interface Props extends TextFieldProps {
   renderAs?: "input" | "textarea";
   /** (try not to) pass addition classes here */
   className?: string;
+  /** whether only input is disabled. */
+  disableTextInput?: boolean;
   /** label position  */
   labelPosition?: "top" | "left";
   /** name */

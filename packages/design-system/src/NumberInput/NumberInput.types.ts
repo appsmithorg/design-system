@@ -16,6 +16,8 @@ export type NumberInputProps = InputProps & {
   labelPosition?: "top" | "left";
   /** Description of the input. */
   description?: string;
+  /** Whether text input is allowed. */
+  disableTextInput?: boolean;
   /** Error message of the input. Based on this, the input will show error state. */
   errorMessage?: string;
   /** Value */
