@@ -1,8 +1,10 @@
 import styled, { css } from "styled-components";
 import {
   InputEndIconClassName,
+  InputEndIconDisabledClassName,
   InputIconClassName,
   InputStartIconClassName,
+  InputStartIconDisabledClassName,
 } from "./Input.constants";
 import { InputSizes } from "./Input.types";
 import { Text } from "Text";
@@ -117,6 +119,16 @@ export const InputContainer = styled.div<{
       cursor: not-allowed !important;
     }
   `};
+
+  & .${InputEndIconDisabledClassName} {
+    opacity: var(--ads-v2-opacity-disabled);
+    cursor: not-allowed !important;
+  }
+
+  & .${InputStartIconDisabledClassName} {
+    opacity: var(--ads-v2-opacity-disabled);
+    cursor: not-allowed !important;
+  }
 `;
 
 export const StyledInput = styled.input<{

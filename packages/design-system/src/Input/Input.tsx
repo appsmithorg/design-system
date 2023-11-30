@@ -31,6 +31,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const {
       className,
       description,
+      disableTextInput = false,
       endIcon,
       endIconProps,
       errorMessage,
@@ -120,6 +121,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               UNSAFE_width={UNSAFE_width}
               className={InputSectionInputClassName}
               data-is-valid={isValid}
+              disabled={disableTextInput || isDisabled}
               hasEndIcon={!!endIcon}
               hasStartIcon={!!startIcon}
               inputSize={size}
