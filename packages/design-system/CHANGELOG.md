@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.29
+
+### Patch Changes
+
+- [#683](https://github.com/appsmithorg/design-system/pull/683) [`be332c99`](https://github.com/appsmithorg/design-system/commit/be332c99f0bb3e4fda93831d5edc11ac972a87ce) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - chore: Disable Icon clicks on NumberInput upon min-max violations
+
 ## 2.1.28
 
 ### Patch Changes
