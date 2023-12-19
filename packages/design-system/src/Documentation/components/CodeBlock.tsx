@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Icon } from "Icon";
+import { Button } from "Button";
 import { toast } from "Toast";
 
 type CodeBlockProps = {
@@ -15,14 +15,15 @@ function CodeBlock({ code }: CodeBlockProps) {
         toast.show("Copied to clipboard", { kind: "success" });
       }}
     >
-      <Code>{code}&nbsp;</Code>
-      <Icon name="copy-control" size="md" />
+      <Code>{code}</Code>
+      <Button startIcon="copy-control" kind="tertiary" />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
   display: flex;
+  align-items: center;
   cursor: pointer;
   padding: 0 4px;
   border-radius: var(--ads-v2-border-radius);
