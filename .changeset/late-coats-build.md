@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-New icons segmented control width
+feat: Editor sidebar v3 icons

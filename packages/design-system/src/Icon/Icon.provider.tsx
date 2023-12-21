@@ -950,6 +950,29 @@ const DashboardLineIcon = importSvg(
   () => import("../__assets__/icons/ads/dashboard-line.svg"),
 );
 
+// v3 icons
+const JsSquareV3Icon = importSvg(
+  () => import("../__assets__/icons/ads/js-square-v3-icon.svg"),
+);
+const QueriesV3Icon = importSvg(
+  () => import("../__assets__/icons/ads/queries-v3-icon.svg"),
+);
+const WidgetsV3Icon = importSvg(
+  () => import("../__assets__/icons/ads/widgets-v3-icon.svg"),
+);
+const DatasourceV3Icon = importSvg(
+  () => import("../__assets__/icons/ads/datasource-v3-icon.svg"),
+);
+const EditorV3Icon = importSvg(
+  () => import("../__assets__/icons/ads/editor-v3-icon.svg"),
+);
+const SettingsV3Icon = importSvg(
+  () => import("../__assets__/icons/ads/settings-v3-icon.svg"),
+);
+const PackagesV3Icon = importSvg(
+  () => import("../__assets__/icons/ads/packages-v3-icon.svg"),
+);
+
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 
 function PlayIconPNGWrapper() {
@@ -1232,6 +1255,13 @@ const ICON_LOOKUP = {
   "queries-line": QueriesLineIcon,
   "braces-line": BracesLineIcon,
   "dashboard-line": DashboardLineIcon,
+  "js-square-v3": JsSquareV3Icon,
+  "queries-v3": QueriesV3Icon,
+  "widgets-v3": WidgetsV3Icon,
+  "datasource-v3": DatasourceV3Icon,
+  "editor-v3": EditorV3Icon,
+  "settings-v3": SettingsV3Icon,
+  "packages-v3": PackagesV3Icon,
   billing: BillingIcon,
   binding: Binding,
   book: BookIcon,
