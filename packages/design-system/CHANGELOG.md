@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.30
+
+### Patch Changes
+
+- [#686](https://github.com/appsmithorg/design-system/pull/686) [`c626a0bb`](https://github.com/appsmithorg/design-system/commit/c626a0bbc2a74fbb11a23f4962af8c167e7cd19c) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Editor sidebar v3 icons
+
+- [#685](https://github.com/appsmithorg/design-system/pull/685) [`b01ab259`](https://github.com/appsmithorg/design-system/commit/b01ab259c5b5b4f9d64a1d797f4e0663c1eba445) Thanks [@vaibhavchobisa](https://github.com/vaibhavchobisa)! - feat: replaced tooltip with copy button in category token documentation
+
 ## 2.1.29
 
 ### Patch Changes
