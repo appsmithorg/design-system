@@ -23,4 +23,5 @@ FilePicker.args = {
   },
   title: "Import from file",
   uploadIcon: "file-line",
+  multiple: false,
 };
