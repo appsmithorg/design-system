@@ -141,7 +141,14 @@ export interface TableProps {
   noDataComponent?: JSX.Element;
 }
 
-function Table(props: TableProps) {
+export interface ManualSortTableProps extends TableProps {
+  sortingOptions: {
+    setSorting: () => void;
+    sorting: string;
+  };
+}
+
+function Table(props: TableProps | ManualSortTableProps) {
   const {
     columns,
     data,
@@ -150,6 +157,23 @@ function Table(props: TableProps) {
     noDataComponent,
   } = props;
 
+  const sortProps: {
+    manualSort?: boolean;
+    onSortingChange?: () => void;
+    state?: {
+      sorting: string;
+    };
+  } = {
+    manualSort: false,
+  };
+  if ("sortingOptions" in props) {
+    sortProps.manualSort = true;
+    sortProps.onSortingChange = props.sortingOptions.setSorting;
+    sortProps.state = {
+      sorting: props.sortingOptions.sorting,
+    };
+  }
+
   const {
     getTableBodyProps,
     getTableProps,
@@ -157,7 +181,7 @@ function Table(props: TableProps) {
     prepareRow,
     rows,
   } = useTable(
-    { autoResetExpanded: false, columns, data },
+    { autoResetExpanded: false, columns, data, ...sortProps },
     useSortBy,
     useExpanded,
   );
