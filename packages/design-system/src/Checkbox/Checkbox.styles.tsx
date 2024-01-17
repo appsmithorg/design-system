@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { CheckboxClassNameSquare } from "./Checkbox.constants";
 
 const Variables = css`
   /* This is a category level token.Since this is specific to checkbox, it is added here. */
@@ -34,7 +35,7 @@ const Checkbox = css`
     cursor: pointer;
   }
 
-  span {
+  span${"." + CheckboxClassNameSquare} {
     position: absolute;
     left: 0;
     top: 0;
@@ -47,12 +48,12 @@ const Checkbox = css`
     transition: background-color 200ms ease, border 200ms ease;
   }
 
-  input[type="checkbox"]:checked + span {
+  input[type="checkbox"]:checked + span${"." + CheckboxClassNameSquare} {
     --checkbox-color-border: var(--ads-v2-colors-control-field-checked-border);
     --checkbox-color-background: var(--ads-v2-colors-control-field-checked-bg);
   }
 
-  span::after {
+  span${"." + CheckboxClassNameSquare}::after {
     content: "";
     opacity: 0;
     position: absolute;
@@ -66,11 +67,11 @@ const Checkbox = css`
     z-index: 2;
   }
 
-  input[type="checkbox"]:checked + span::after {
+  input[type="checkbox"]:checked + span${"." + CheckboxClassNameSquare}::after {
     opacity: 1;
   }
 
-  span::before {
+  span${"." + CheckboxClassNameSquare}::before {
     content: "";
     opacity: 0;
     position: absolute;
@@ -84,7 +85,8 @@ const Checkbox = css`
     z-index: 2;
   }
 
-  input[type="checkbox"]:checked + span::before {
+  input[type="checkbox"]:checked
+    + span${"." + CheckboxClassNameSquare}::before {
     opacity: 1;
   }
 `;
@@ -102,7 +104,7 @@ export const StyledCheckbox = styled.label<{
   ${({ isIndeterminate }) => {
     if (isIndeterminate) {
       return css`
-        span {
+        span${"." + CheckboxClassNameSquare} {
           --checkbox-color-border: var(
             --ads-v2-colors-control-field-checked-border
           );
@@ -111,7 +113,7 @@ export const StyledCheckbox = styled.label<{
           );
         }
 
-        span::after {
+        span${"." + CheckboxClassNameSquare}::after {
           opacity: 1;
           left: 2px;
           top: 6px;
@@ -119,7 +121,7 @@ export const StyledCheckbox = styled.label<{
           transform: rotateZ(0deg);
         }
 
-        span::before {
+        span${"." + CheckboxClassNameSquare}::before {
           display: none;
         }
       `;
@@ -129,7 +131,7 @@ export const StyledCheckbox = styled.label<{
   ${({ isFocusVisible }) => {
     if (isFocusVisible === true) {
       return css`
-        span {
+        span${"." + CheckboxClassNameSquare} {
           outline: var(--ads-v2-border-width-outline) solid
             var(--ads-v2-color-outline);
           outline-offset: var(--ads-v2-offset-outline);
@@ -150,7 +152,7 @@ export const StyledCheckbox = styled.label<{
     } else {
       return isChecked
         ? css`
-            &:hover > span {
+            &:hover > span${"." + CheckboxClassNameSquare} {
               --checkbox-color-background: var(
                 --ads-v2-colors-control-field-checked-hover-bg
               ) !important;
@@ -160,7 +162,7 @@ export const StyledCheckbox = styled.label<{
             }
           `
         : css`
-            &:hover > span {
+            &:hover > span${"." + CheckboxClassNameSquare} {
               --checkbox-color-border: var(
                 --ads-v2-colors-control-field-hover-border
               );
