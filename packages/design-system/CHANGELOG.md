@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.31
+
+### Patch Changes
+
+- [#693](https://github.com/appsmithorg/design-system/pull/693) [`e8d0e522`](https://github.com/appsmithorg/design-system/commit/e8d0e5220713ba235148078e744f2aaff09daa20) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Radio, Checkbox - child span issue
+
 ## 2.1.30
 
 ### Patch Changes
