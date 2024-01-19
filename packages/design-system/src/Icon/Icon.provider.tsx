@@ -589,6 +589,12 @@ const InviteUserIcon = importSvg(
 const ManageIcon = importSvg(
   () => import("../__assets__/icons/ads/manage.svg"),
 );
+const MaximizeIcon = importSvg(
+  () => import("../__assets__/icons/ads/maximize.svg"),
+);
+const MinimizeIcon = importSvg(
+  () => import("../__assets__/icons/ads/minimize.svg"),
+);
 const ArrowLeft = importSvg(
   () => import("../__assets__/icons/ads/arrow-left.svg"),
 );
@@ -1308,7 +1314,9 @@ const ICON_LOOKUP = {
   login: LoginIcon,
   logout: LogoutIcon,
   manage: ManageIcon,
+  maximize: MaximizeIcon,
   member: UserHeartLineIcon,
+  minimize: MinimizeIcon,
   minus: RemoveIcon,
   module: ModuleIcon,
   mobile: MobileIcon,
