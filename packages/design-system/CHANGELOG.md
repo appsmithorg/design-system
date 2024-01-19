@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.32
+
+### Patch Changes
+
+- [#696](https://github.com/appsmithorg/design-system/pull/696) [`b8cf1dc4`](https://github.com/appsmithorg/design-system/commit/b8cf1dc46788fc3894cd51678b1b8cd578f7cf6b) Thanks [@hetunandu](https://github.com/hetunandu)! - chore: Add Maximize and Minimize icons for Side by Side
+
 ## 2.1.31
 
 ### Patch Changes
