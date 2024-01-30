@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { RadioDotClassName } from "./Radio.constants";
 
 const Variables = css`
   --ads-v2-colors-control-radio-dot-checked-bg: var(
@@ -25,7 +26,7 @@ const BasicStyles = css`
   font-family: var(--ads-v2-font-family);
   color: var(--radio-color-label);
 
-  span::before {
+  span${"." + RadioDotClassName}::before {
     content: "";
     position: absolute;
     width: var(--ads-v2-spaces-5);
@@ -39,7 +40,7 @@ const BasicStyles = css`
     transition: border-color 400ms ease;
   }
 
-  span::after {
+  span${"." + RadioDotClassName}::after {
     content: "";
     position: absolute;
     width: var(--ads-v2-spaces-5);
@@ -53,27 +54,30 @@ const BasicStyles = css`
     transition: transform 200ms ease;
   }
 
-  input[type="radio"]:checked + span::before {
+  input[type="radio"]:checked + span${"." + RadioDotClassName}::before {
     --radio-color-border: var(--ads-v2-colors-control-field-checked-border);
   }
 
-  input[type="radio"]:checked + span::after {
+  input[type="radio"]:checked + span${"." + RadioDotClassName}::after {
     transform: translateY(-50%) scale(0.55);
   }
 
   /* unchecked hover - outer circle */
-  input[type="radio"]:hover:not(:disabled) + span::before {
+  input[type="radio"]:hover:not(:disabled)
+    + span${"." + RadioDotClassName}::before {
     --radio-color-border: var(--ads-v2-colors-control-field-hover-border);
   }
   /* checked hover - outer circle */
-  input[type="radio"]:checked:hover:not(:disabled) + span::before {
+  input[type="radio"]:checked:hover:not(:disabled)
+    + span${"." + RadioDotClassName}::before {
     --radio-color-border: var(
       --ads-v2-colors-control-field-checked-hover-border
     );
   }
 
   /* checked hover - inner circle */
-  input[type="radio"]:checked:hover:not(:disabled) + span::after {
+  input[type="radio"]:checked:hover:not(:disabled)
+    + span${"." + RadioDotClassName}::after {
     --radio-color-dot: var(--ads-v2-colors-control-radio-dot-checked-hover-bg);
   }
 `;

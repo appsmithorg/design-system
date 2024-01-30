@@ -6,7 +6,11 @@ import clsx from "classnames";
 
 import { StyledRadio, StyledRadioGroup } from "./Radio.styles";
 import { RadioProps, RadioGroupProps } from "./Radio.types";
-import { RadioClassName, RadioGroupClassName } from "./Radio.constants";
+import {
+  RadioClassName,
+  RadioDotClassName,
+  RadioGroupClassName,
+} from "./Radio.constants";
 
 const RadioContext = React.createContext({} as RadioGroupState);
 
@@ -43,7 +47,7 @@ export function Radio(props: RadioProps) {
     >
       {children}
       <input {...inputProps} {...focusProps} ref={ref} />
-      <span />
+      <span className={RadioDotClassName} />
     </StyledRadio>
   );
 }

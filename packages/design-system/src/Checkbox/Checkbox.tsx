@@ -6,7 +6,10 @@ import clsx from "classnames";
 
 import { CheckboxProps } from "./Checkbox.types";
 import { StyledCheckbox } from "./Checkbox.styles";
-import { CheckboxClassName } from "./Checkbox.constants";
+import {
+  CheckboxClassName,
+  CheckboxClassNameSquare,
+} from "./Checkbox.constants";
 
 function Checkbox(props: CheckboxProps) {
   const { children, className, isDisabled, isIndeterminate } = props;
@@ -26,7 +29,7 @@ function Checkbox(props: CheckboxProps) {
     >
       {children}
       <input {...inputProps} {...focusProps} ref={ref} />
-      <span />
+      <span className={CheckboxClassNameSquare} />
     </StyledCheckbox>
   );
 }
