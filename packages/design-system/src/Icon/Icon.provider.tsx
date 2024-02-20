@@ -979,6 +979,10 @@ const PackagesV3Icon = importSvg(
   () => import("../__assets__/icons/ads/packages-v3-icon.svg"),
 );
 
+const MinimizeV3Icon = importSvg(
+  () => import("../__assets__/icons/ads/minimize-v3-icon.svg"),
+);
+
 import PlayIconPNG from "../__assets__/icons/control/play-icon.png";
 
 function PlayIconPNGWrapper() {
@@ -1268,6 +1272,7 @@ const ICON_LOOKUP = {
   "editor-v3": EditorV3Icon,
   "settings-v3": SettingsV3Icon,
   "packages-v3": PackagesV3Icon,
+  "minimize-v3": MinimizeV3Icon,
   billing: BillingIcon,
   binding: Binding,
   book: BookIcon,
