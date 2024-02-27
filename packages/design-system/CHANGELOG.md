@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.34
+
+### Patch Changes
+
+- [#705](https://github.com/appsmithorg/design-system/pull/705) [`c2f8c4f7`](https://github.com/appsmithorg/design-system/commit/c2f8c4f7b455199763b15dbde5c0dff3f54d8a00) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added new maximize minimize icons
+
 ## 2.1.33
 
 ### Patch Changes
