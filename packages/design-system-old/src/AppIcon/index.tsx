@@ -245,6 +245,9 @@ const SteamBowlIcon = importSvg(() =>
   import("../assets/icons/ads/app-icons/steam-bowl.svg"),
 );
 const PackageIcon = importSvg(() => import("../assets/icons/ads/package.svg"));
+const WorkflowsIcon = importSvg(() =>
+  import("../assets/icons/ads/workflows.svg"),
+);
 const ArrowDownIcon = importRemixIcon(() =>
   import("remixicon-react/ArrowDownSLineIcon"),
 );
@@ -364,6 +367,7 @@ export const AppIconCollection = [
   "arrow-right",
   "help",
   "open-new-tab",
+  "workflows",
 ] as const;
 
 export type AppIconName = typeof AppIconCollection[number];
@@ -600,6 +604,9 @@ function AppIcon(props: AppIconProps) {
       break;
     case "package":
       returnIcon = <PackageIcon />;
+      break;
+    case "workflows":
+      returnIcon = <WorkflowsIcon />;
       break;
     case "pizza":
       returnIcon = <PizzaIcon />;

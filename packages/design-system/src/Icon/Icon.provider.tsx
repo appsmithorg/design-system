@@ -708,6 +708,9 @@ const PackageIcon = importSvg(
 const ModuleIcon = importSvg(
   () => import("../__assets__/icons/ads/module.svg"),
 );
+const WorkflowsIcon = importSvg(
+  () => import("../__assets__/icons/ads/workflows.svg"),
+);
 const DeleteIcon = importSvg(
   () => import("../__assets__/icons/control/delete.svg"),
 );
@@ -1360,6 +1363,7 @@ const ICON_LOOKUP = {
   wand: WandIcon,
   warning: WarningIcon,
   widget: WidgetIcon,
+  workflows: WorkflowsIcon,
   workspace: WorkspaceIcon,
   package: PackageIcon,
   slash: SlashIcon,
