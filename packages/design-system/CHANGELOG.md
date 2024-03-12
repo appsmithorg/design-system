@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.36
+
+### Patch Changes
+
+- [#715](https://github.com/appsmithorg/design-system/pull/715) [`aa7aa940`](https://github.com/appsmithorg/design-system/commit/aa7aa940d0a3f2cea714343f3dd6b09ffa418adf) Thanks [@ayushpahwa](https://github.com/ayushpahwa)! - feat: new workflow icons
+
+- [#716](https://github.com/appsmithorg/design-system/pull/716) [`2d162af1`](https://github.com/appsmithorg/design-system/commit/2d162af17eacfe18f34f028333e00c3d1ca1d018) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Announcement modal
+
 ## 2.1.35
 
 ### Patch Changes
