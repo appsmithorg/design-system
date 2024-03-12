@@ -15,6 +15,7 @@ import {
 import { Classes } from "Constants/classes";
 import { importSvg } from "Utils/icon-loadables";
 import { Variant } from "Constants/variants";
+import { map, sum } from "lodash-es";
 
 const UploadSuccessIcon = importSvg(() =>
   import("../assets/icons/ads/upload_success.svg"),
@@ -34,6 +35,10 @@ export enum FileType {
   ANY = "ANY",
 }
 
+function isFileTypeEnum(value: string): value is FileType {
+  return Object.values(FileType).includes(value as FileType);
+}
+
 export type SetProgress = (percentage: number) => void;
 export type UploadCallback = (url: string) => void;
 export type FileUploader = (
@@ -48,20 +53,26 @@ export type FilePickerProps = {
   fileUploader?: FileUploader;
   url?: string;
   logoUploadError?: string;
-  fileType: FileType;
+  fileType: FileType | string;
   delayedUpload?: boolean;
   uploadIcon?: IconName;
   title?: string;
   description?: string;
   containerClickable?: boolean; // when container is clicked, it'll work as button
   iconFillColor?: string;
+  multiple?: boolean;
+  multipleFileUploader?: (
+    files: FileList,
+    setProgress: SetProgress,
+    onUpload: UploadCallback,
+  ) => void;
 };
 
 export const ContainerDiv = styled.div<{
   isUploaded: boolean;
   isActive: boolean;
   canDrop: boolean;
-  fileType: FileType;
+  fileType: FileType | string;
 }>`
   width: 320px;
   height: 190px;
@@ -199,7 +210,7 @@ const ContainerDivWithBorder = styled(ContainerDiv)<{
   isUploaded: boolean;
   isActive: boolean;
   canDrop: boolean;
-  fileType: FileType;
+  fileType: FileType | string;
 }>`
   width: 100%;
   height: 188px;
@@ -227,6 +238,8 @@ function FilePickerComponent(props: FilePickerProps) {
     onFileRemoved,
     onFileUploaded,
     fileUploader,
+    multiple = false,
+    multipleFileUploader,
   } = props;
   const [fileInfo, setFileInfo] = useState<{ name: string; size: number }>({
     name: "",
@@ -251,6 +264,9 @@ function FilePickerComponent(props: FilePickerProps) {
   const progressRef = useRef<HTMLDivElement>(null);
   const fileDescRef = useRef<HTMLDivElement>(null);
   const fileContainerRef = useRef<HTMLDivElement>(null);
+  const inputAcceptProp = isFileTypeEnum(fileType)
+    ? FileEndings[fileType]
+    : fileType;
 
   // when click container, it'll be work as browser button
   function onContainerClick() {
@@ -301,25 +317,47 @@ function FilePickerComponent(props: FilePickerProps) {
     }
   }
 
-  function handleOtherFileUpload(files: FileList | null) {
-    const file = files && files[0];
-    let fileSize = 0;
-    if (!file) {
-      return;
-    }
-    fileSize = Math.floor(file.size / 1024);
-    setFileInfo({ name: file.name, size: fileSize });
-    if (props.delayedUpload) {
-      setIsUploaded(true);
-      setProgress(100);
-    }
+  function showFileContainer() {
     if (fileDescRef.current) {
       fileDescRef.current.style.display = "flex";
     }
     if (fileContainerRef.current) {
       fileContainerRef.current.style.display = "none";
     }
-    fileUploader && fileUploader(file, setProgress, onUpload);
+  }
+
+  function handleDelayedUpload() {
+    if (props.delayedUpload) {
+      setIsUploaded(true);
+      setProgress(100);
+    }
+  }
+
+  function handleOtherFileUpload(files: FileList | null) {
+    if (!files) {
+      return;
+    }
+
+    if (multiple) {
+      const fileSize = sum(map(files, (file) => Math.floor(file.size / 1024)));
+      const name = `${files.length} files`;
+      setFileInfo({ name, size: fileSize });
+      handleDelayedUpload();
+      showFileContainer();
+      multipleFileUploader &&
+        multipleFileUploader(files, setProgress, onUpload);
+    } else {
+      const file = files && files[0];
+
+      if (!file) {
+        return;
+      }
+      const fileSize = Math.floor(file.size / 1024);
+      setFileInfo({ name: file.name, size: fileSize });
+      handleDelayedUpload();
+      showFileContainer();
+      fileUploader && fileUploader(file, setProgress, onUpload);
+    }
   }
 
   function handleImageFileUpload(files: FileList | null) {
@@ -424,9 +462,9 @@ function FilePickerComponent(props: FilePickerProps) {
       )}
       <form>
         <input
-          accept={FileEndings[fileType]}
+          accept={inputAcceptProp}
           id="fileInput"
-          multiple={false}
+          multiple={multiple}
           onChange={(el) => handleFileUpload(el.target.files)}
           ref={inputRef}
           type="file"
