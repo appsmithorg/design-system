@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 1.1.15
+
+### Patch Changes
+
+- [#711](https://github.com/appsmithorg/design-system/pull/711) [`cffe9497`](https://github.com/appsmithorg/design-system/commit/cffe94977c664efbf3465aff8545d30e5384a606) Thanks [@ayushpahwa](https://github.com/ayushpahwa)! - feat: Added new workflows icon
+
 ## 1.1.14
 
 ### Patch Changes

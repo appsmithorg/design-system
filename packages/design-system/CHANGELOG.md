@@ -1,5 +1,43 @@
 # @appsmithorg/design-system
 
+## 2.1.35
+
+### Patch Changes
+
+- [#711](https://github.com/appsmithorg/design-system/pull/711) [`cffe9497`](https://github.com/appsmithorg/design-system/commit/cffe94977c664efbf3465aff8545d30e5384a606) Thanks [@ayushpahwa](https://github.com/ayushpahwa)! - feat: Added new workflows icon
+
+## 2.1.34
+
+### Patch Changes
+
+- [#705](https://github.com/appsmithorg/design-system/pull/705) [`c2f8c4f7`](https://github.com/appsmithorg/design-system/commit/c2f8c4f7b455199763b15dbde5c0dff3f54d8a00) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added new maximize minimize icons
+
+## 2.1.33
+
+### Patch Changes
+
+- [#699](https://github.com/appsmithorg/design-system/pull/699) [`690716c1`](https://github.com/appsmithorg/design-system/commit/690716c13f6b0ee107ac615f3d0e2d4f1108fc53) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added new minimize icon
+
+## 2.1.32
+
+### Patch Changes
+
+- [#696](https://github.com/appsmithorg/design-system/pull/696) [`b8cf1dc4`](https://github.com/appsmithorg/design-system/commit/b8cf1dc46788fc3894cd51678b1b8cd578f7cf6b) Thanks [@hetunandu](https://github.com/hetunandu)! - chore: Add Maximize and Minimize icons for Side by Side
+
+## 2.1.31
+
+### Patch Changes
+
+- [#693](https://github.com/appsmithorg/design-system/pull/693) [`e8d0e522`](https://github.com/appsmithorg/design-system/commit/e8d0e5220713ba235148078e744f2aaff09daa20) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Radio, Checkbox - child span issue
+
+## 2.1.30
+
+### Patch Changes
+
+- [#686](https://github.com/appsmithorg/design-system/pull/686) [`c626a0bb`](https://github.com/appsmithorg/design-system/commit/c626a0bbc2a74fbb11a23f4962af8c167e7cd19c) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Editor sidebar v3 icons
+
+- [#685](https://github.com/appsmithorg/design-system/pull/685) [`b01ab259`](https://github.com/appsmithorg/design-system/commit/b01ab259c5b5b4f9d64a1d797f4e0663c1eba445) Thanks [@vaibhavchobisa](https://github.com/vaibhavchobisa)! - feat: replaced tooltip with copy button in category token documentation
+
 ## 2.1.29
 
 ### Patch Changes
