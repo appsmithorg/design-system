@@ -711,6 +711,9 @@ const ModuleIcon = importSvg(
 const WorkflowsIcon = importSvg(
   () => import("../__assets__/icons/ads/workflows.svg"),
 );
+const WorkflowsMonochromeIcon = importSvg(
+  () => import("../__assets__/icons/ads/workflows-mono.svg"),
+);
 const DeleteIcon = importSvg(
   () => import("../__assets__/icons/control/delete.svg"),
 );
@@ -1281,6 +1284,7 @@ const ICON_LOOKUP = {
   "packages-v3": PackagesV3Icon,
   "minimize-v3": MinimizeV3Icon,
   "maximize-v3": MaximizeV3Icon,
+  "workflows-mono": WorkflowsMonochromeIcon,
   billing: BillingIcon,
   binding: Binding,
   book: BookIcon,

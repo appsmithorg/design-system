@@ -28,7 +28,7 @@ function ModalContent(props: ModalContentProps) {
   const { children, className, overlayClassName, ...rest } = props;
   return (
     <Portal>
-      <StyledOverlay className={overlayClassName}/>
+      <StyledOverlay className={overlayClassName} />
       <StyledContent
         className={clsx(ModalContentClassName, className)}
         {...rest}
