@@ -629,6 +629,9 @@ const FluidIcon = importSvg(() => import("../__assets__/icons/ads/fluid.svg"));
 const CardContextMenu = importSvg(
   () => import("../__assets__/icons/ads/card-context-menu.svg"),
 );
+const GoogleColoredIcon = importSvg(
+  () => import("../__assets__/icons/ads/google.svg"),
+);
 const SendButton = importSvg(
   () => import("../__assets__/icons/comments/send-button.svg"),
 );
@@ -1256,6 +1259,7 @@ const ICON_LOOKUP = {
   "home-3-line": Home3LineIcon,
   "show-modal": ShowModalIcon,
   "folder-line": FolderLineIcon,
+  "google-colored": GoogleColoredIcon,
   "google-fill": GoogleFillIcon,
   "github-fill": GithubFillIcon,
   "enter-line": CornerDownLeftLineIcon,
