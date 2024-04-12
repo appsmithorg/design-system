@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.37
+
+### Patch Changes
+
+- [#722](https://github.com/appsmithorg/design-system/pull/722) [`5f0a73e5`](https://github.com/appsmithorg/design-system/commit/5f0a73e517679a365cab73b67253c613d9c4282f) Thanks [@ankitakinger](https://github.com/ankitakinger)! - chore: Adding color icon for google
+
 ## 2.1.36
 
 ### Patch Changes
