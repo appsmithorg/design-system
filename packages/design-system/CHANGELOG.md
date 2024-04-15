@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.38
+
+### Patch Changes
+
+- [#725](https://github.com/appsmithorg/design-system/pull/725) [`f14136ed`](https://github.com/appsmithorg/design-system/commit/f14136edd6dc91f252c4cd7c4fbb95acdc52f393) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Updated popover content z-index
+
 ## 2.1.37
 
 ### Patch Changes
