@@ -40,6 +40,7 @@ export const StyledContent = styled(Content)<{ $size: PopoverSize }>`
 
   // to separate it from the bottom of the screen when it overflows
   margin-bottom: var(--ads-v2-spaces-4);
+  z-index: 1001;
 `;
 
 export const StyledHeader = styled.div`
