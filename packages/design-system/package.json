@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "2.1.35",
+  "version": "2.1.37",
   "description": "This is the package for the design system that powers the Appsmith platform",
   "module": "build/index.js",
   "types": "build/index.d.ts",

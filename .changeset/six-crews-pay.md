@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-feat: Announcement modal
+fix: Updated popover content z-index
