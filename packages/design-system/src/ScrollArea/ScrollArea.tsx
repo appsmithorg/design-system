@@ -9,6 +9,7 @@ import { ScrollAreaProps } from "./ScrollArea.types";
 
 function ScrollArea({
   children,
+  className,
   options,
   size = "md",
   ...rest
@@ -26,6 +27,7 @@ function ScrollArea({
     <OverlayScrollbarsComponent
       className={clsx({
         "scroll-sm": size === "sm",
+        className,
       })}
       defer
       options={defaultOptions.options}
