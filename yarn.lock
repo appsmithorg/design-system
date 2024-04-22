@@ -16251,6 +16251,16 @@ outdent@^0.5.0:
   resolved "https://registry.npmjs.org/outdent/-/outdent-0.5.0.tgz"
   integrity sha512-/jHxFIzoMXdqPzTaCpFzAAWhpkSjZPF4Vsn6jAfNpmbH/ymsmd7Qc6VE9BGn0L6YMj6uwpQLxCECpus4ukKS9Q==
 
+overlayscrollbars-react@^0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/overlayscrollbars-react/-/overlayscrollbars-react-0.5.6.tgz#e9779f9fc2c1a3288570a45c83f8e42518bfb8c1"
+  integrity sha512-E5To04bL5brn9GVCZ36SnfGanxa2I2MDkWoa4Cjo5wol7l+diAgi4DBc983V7l2nOk/OLJ6Feg4kySspQEGDBw==
+
+overlayscrollbars@^2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/overlayscrollbars/-/overlayscrollbars-2.7.2.tgz#c25186649cb7d131d897e36ed42bee31168b48cf"
+  integrity sha512-wc5RWeObKo6aIYG5pDohoiWh2nMX1LZ1/9nJpaicM7tGgyXupf6gvbaodnPg8mIfxg0Q+BnPbt4Q5qiL1isb0A==
+
 p-all@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/p-all/-/p-all-2.1.0.tgz"

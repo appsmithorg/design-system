@@ -1,0 +1,9 @@
+.ads-v2-scroll-theme {
+  --os-size: 8px;
+  --os-handle-border-radius: 4px;
+  --os-handle-bg: var(--ads-v2-color-bg-emphasis-plus);
+}
+
+.scroll-sm .ads-v2-scroll-theme{
+  --os-size: 4px;
+}

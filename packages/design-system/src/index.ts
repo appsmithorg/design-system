@@ -22,6 +22,7 @@ export * from "./Modal";
 export * from "./NumberInput";
 export * from "./Popover";
 export * from "./Radio";
+export * from "./Scrollbar";
 export * from "./SearchInput";
 export * from "./SegmentedControl";
 export * from "./Select";
