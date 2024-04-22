@@ -1,14 +1,14 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
-import { Scrollbar } from "./Scrollbar";
+import { ScrollArea } from "./ScrollArea";
 
 export default {
   title: "Design System/Scrollbar",
-  component: Scrollbar,
-} as Meta<typeof Scrollbar>;
+  component: ScrollArea,
+} as Meta<typeof ScrollArea>;
 
-type Story = StoryObj<typeof Scrollbar>;
+type Story = StoryObj<typeof ScrollArea>;
 
 export const ScrollbarStory: Story = {
   name: "Scrollbar",
@@ -19,7 +19,7 @@ export const ScrollbarStory: Story = {
     },
   },
   render: (args) => (
-    <Scrollbar {...args}>
+    <ScrollArea {...args}>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industrys standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
@@ -87,6 +87,6 @@ export const ScrollbarStory: Story = {
       sites still in their infancy. Various versions have evolved over the
       years, sometimes by accident, sometimes on purpose (injected humour and
       the like).
-    </Scrollbar>
+    </ScrollArea>
   ),
 };

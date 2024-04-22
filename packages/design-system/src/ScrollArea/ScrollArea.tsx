@@ -5,9 +5,9 @@ import clsx from "classnames";
 import "overlayscrollbars/overlayscrollbars.css";
 import "./styles.css";
 
-import { ScrollbarProps } from "./Scrollbar.types";
+import { ScrollAreaProps } from "./ScrollArea.types";
 
-function Scrollbar({ children, size = "md", ...rest }: ScrollbarProps) {
+function ScrollArea({ children, size = "md", ...rest }: ScrollAreaProps) {
   return (
     <OverlayScrollbarsComponent
       className={clsx({
@@ -27,6 +27,6 @@ function Scrollbar({ children, size = "md", ...rest }: ScrollbarProps) {
   );
 }
 
-Scrollbar.displayName = "Scrollbar";
+ScrollArea.displayName = "ScrollArea";
 
-export { Scrollbar };
+export { ScrollArea };
