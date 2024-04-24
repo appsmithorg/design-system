@@ -1,5 +1,6 @@
-import React from "react";
-import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
+import React, { useEffect, useRef } from "react";
+import { useOverlayScrollbars } from "overlayscrollbars-react";
+import type { UseOverlayScrollbarsParams } from "overlayscrollbars-react";
 import clsx from "classnames";
 
 import "overlayscrollbars/overlayscrollbars.css";
@@ -7,34 +8,35 @@ import "./styles.css";
 
 import { ScrollAreaProps } from "./ScrollArea.types";
 
-function ScrollArea({
-  children,
-  className,
-  options,
-  size = "md",
-  ...rest
-}: ScrollAreaProps) {
-  const defaultOptions: Pick<ScrollAreaProps, "options"> = {
-    options: {
-      scrollbars: {
-        theme: "ads-v2-scroll-theme",
-        autoHide: "scroll",
-      },
-      ...options,
+function ScrollArea(props: ScrollAreaProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { children, className, options, size = "md", ...rest } = props;
+  const defaultOptions: UseOverlayScrollbarsParams["options"] = {
+    scrollbars: {
+      theme: "ads-v2-scroll-theme",
+      autoHide: "scroll",
     },
+    ...options,
   };
+  const [initialize] = useOverlayScrollbars({ options: defaultOptions });
+
+  useEffect(() => {
+    if (ref.current) initialize(ref.current);
+  }, [initialize]);
+
   return (
-    <OverlayScrollbarsComponent
-      className={clsx({
-        "scroll-sm": size === "sm",
+    <div
+      className={clsx(
+        {
+          "scroll-sm": size === "sm",
+        },
         className,
-      })}
-      defer
-      options={defaultOptions.options}
+      )}
+      ref={ref}
       {...rest}
     >
       {children}
-    </OverlayScrollbarsComponent>
+    </div>
   );
 }
 
