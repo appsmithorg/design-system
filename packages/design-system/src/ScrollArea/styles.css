@@ -7,3 +7,11 @@
 .scroll-sm .ads-v2-scroll-theme{
   --os-size: 4px !important;
 }
+
+.os-scrollbar-horizontal {
+  bottom: 2px !important;
+}
+
+.os-scrollbar-vertical {
+  right: 2px !important;
+}
