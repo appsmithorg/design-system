@@ -1,6 +1,6 @@
 {
   "name": "@appsmithorg/design-system",
-  "version": "2.1.37",
+  "version": "2.1.38",
   "description": "This is the package for the design system that powers the Appsmith platform",
   "module": "build/index.js",
   "types": "build/index.d.ts",
@@ -137,6 +137,8 @@
     "csstype": "^3.1.2",
     "date-fns": "^2.29.3",
     "loglevel": "^1.8.1",
+    "overlayscrollbars": "^2.7.2",
+    "overlayscrollbars-react": "^0.5.6",
     "rc-select": "^14.4.3",
     "rc-table": "^7.35.2",
     "rc-tooltip": "^5.3.1",

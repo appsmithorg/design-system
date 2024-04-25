@@ -2,4 +2,4 @@
 "@appsmithorg/design-system": patch
 ---
 
-fix: Updated popover content z-index
+feat: Added Scrollbar component
