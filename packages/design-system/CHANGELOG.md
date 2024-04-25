@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.39
+
+### Patch Changes
+
+- [#728](https://github.com/appsmithorg/design-system/pull/728) [`d40db1a4`](https://github.com/appsmithorg/design-system/commit/d40db1a45da6e2a6adba9cf05859f2bb599acd32) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added Scrollbar component
+
 ## 2.1.38
 
 ### Patch Changes
