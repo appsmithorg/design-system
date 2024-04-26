@@ -2,11 +2,6 @@
 @import "variables.css";
 @import "../../../../design-system/src/__theme__/default/index.css";
 
-@font-face {
-  font-family: PTRootUI;
-  src: url(https://assets.appsmith.com/pt-root-ui-regular.woff2);
-}
-
 :root {
 
   /* new variables */
