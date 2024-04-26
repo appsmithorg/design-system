@@ -41,3 +41,8 @@
   --ads-v2-letter-spacing-5: 0.8;
 
 }
+
+@font-face {
+  font-family: PTRootUI;
+  src: url(https://assets.appsmith.com/pt-root-ui-regular.woff2);
+}
