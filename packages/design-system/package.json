@@ -87,6 +87,7 @@
     "remark-gfm": "^3.0.1",
     "remixicon-react": "^1.0.0",
     "rollup": "^3.9.1",
+    "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.34.1",
