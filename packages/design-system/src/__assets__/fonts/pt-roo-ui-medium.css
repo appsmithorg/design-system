@@ -4,8 +4,8 @@
 @font-face {
 	font-family: 'PTRootUIWebMedium';
 	src:
-		url('pt-root-ui_medium.woff2') format('woff2'),
-		url('pt-root-ui_medium.woff') format('woff');
+		url('./pt-root-ui_medium.woff2') format('woff2'),
+		url('./pt-root-ui_medium.woff') format('woff');
 	font-weight: 500;
 	font-style: normal;
 }
