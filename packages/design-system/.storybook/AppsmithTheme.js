@@ -24,6 +24,6 @@ export default create({
   brandImage: "https://global-uploads.webflow.com/61531b23c347e4fbd4a84209/61531b23c347e41e24a8423e_Logo.svg",
   brandTarget: "_blank",
 
-  fontBase: 'PTRootUIWebMedium, -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Icons16", sans-serif',
+  fontBase: 'PTRootUIRegular, -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Icons16", sans-serif',
   fontCode: 'source-code-pro, "Menlo", "Monaco", "Consolas", "Courier New", monospace'
 });

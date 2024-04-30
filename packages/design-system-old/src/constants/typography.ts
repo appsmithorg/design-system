@@ -177,7 +177,7 @@ export enum FontStyleTypes {
 }
 
 export const TextFonts =
-  "PTRootUIWebMedium, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue";
+  "PTRootUIRegular, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue";
 
 export const getTypographyByKey = (key: TypographyKeys) => `
   font-weight: ${typography[key].fontWeight};
