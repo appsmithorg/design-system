@@ -218,4 +218,6 @@ body{
   font-family: var(--ads-v2-font-family);
   -webkit-font-smoothing: auto;
   letter-spacing: -0.1px;
+  font-feature-settings: "ss03";
+  text-wrap: balance;
 }
