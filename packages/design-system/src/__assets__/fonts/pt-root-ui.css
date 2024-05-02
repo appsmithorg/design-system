@@ -31,6 +31,14 @@
 @font-face {
 	font-family: 'PTRootUI';
 	src:
+		url('./pt-root-ui_semi-bold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PTRootUI';
+	src:
 		url('./pt-root-ui_bold.woff2') format('woff2'),
 		url('./pt-root-ui_bold.woff') format('woff');
 	font-weight: 700;
