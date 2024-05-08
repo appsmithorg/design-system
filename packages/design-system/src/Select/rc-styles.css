@@ -94,7 +94,7 @@
 .rc-select-multiple .rc-select-selector .rc-select-selection-search-input,
 .rc-select-multiple .rc-select-selector .rc-select-selection-search-mirror {
   padding: 1px;
-  font-family: system-ui;
+  font-family: var(--ads-v2-font-family);
 }
 .rc-select-multiple .rc-select-selector .rc-select-selection-search-mirror {
   position: absolute;
