@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.40
+
+### Patch Changes
+
+- [#731](https://github.com/appsmithorg/design-system/pull/731) [`b843c841`](https://github.com/appsmithorg/design-system/commit/b843c84119b8a078109f232d1edfe59e5f42226f) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added PT root UI font
+
 ## 2.1.39
 
 ### Patch Changes
