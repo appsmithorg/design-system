@@ -123,6 +123,9 @@ const GitCommit = importRemixIcon(
 const GitPullRequest = importRemixIcon(
   () => import("remixicon-react/GitPullRequestLineIcon"),
 );
+const GitRepository = importRemixIcon(
+  () => import("remixicon-react/GitRepositoryLineIcon"),
+)
 const GlobalLineIcon = importRemixIcon(
   () => import("remixicon-react/GlobalLineIcon"),
 );
@@ -1131,6 +1134,7 @@ const ICON_LOOKUP = {
   "git-branch": GitBranchLineIcon,
   "git-commit": GitCommit,
   "git-pull-request": GitPullRequest,
+  "git-repository": GitRepository,
   "global-line": GlobalLineIcon,
   "group-2-line": Group2LineIcon,
   "group-line": GroupLineIcon,
