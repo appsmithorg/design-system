@@ -1,5 +1,11 @@
 # @appsmithorg/design-system
 
+## 2.1.42
+
+### Patch Changes
+
+- [#740](https://github.com/appsmithorg/design-system/pull/740) [`fb7a979d`](https://github.com/appsmithorg/design-system/commit/fb7a979dc6dde647f8e1778801e117972ffadb26) Thanks [@brayn003](https://github.com/brayn003)! - chore: adding icon for git-repository
+
 ## 2.1.41
 
 ### Patch Changes
