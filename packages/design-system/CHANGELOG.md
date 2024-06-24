@@ -1,5 +1,17 @@
 # @appsmithorg/design-system
 
+## 2.1.42
+
+### Patch Changes
+
+- [#740](https://github.com/appsmithorg/design-system/pull/740) [`fb7a979d`](https://github.com/appsmithorg/design-system/commit/fb7a979dc6dde647f8e1778801e117972ffadb26) Thanks [@brayn003](https://github.com/brayn003)! - chore: adding icon for git-repository
+
+## 2.1.41
+
+### Patch Changes
+
+- [#735](https://github.com/appsmithorg/design-system/pull/735) [`56cd05b7`](https://github.com/appsmithorg/design-system/commit/56cd05b764a867a0c2adef0348ebcdbd55214df6) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Text wrap fix
+
 ## 2.1.40
 
 ### Patch Changes
