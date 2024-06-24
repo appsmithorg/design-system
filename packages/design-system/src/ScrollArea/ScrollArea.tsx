@@ -10,7 +10,15 @@ import { ScrollAreaProps } from "./ScrollArea.types";
 
 function ScrollArea(props: ScrollAreaProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const { children, className, options, size = "md", ...rest } = props;
+  const {
+    children,
+    className,
+    defer,
+    events,
+    options,
+    size = "md",
+    ...rest
+  } = props;
   const defaultOptions: UseOverlayScrollbarsParams["options"] = {
     scrollbars: {
       theme: "ads-v2-scroll-theme",
@@ -18,7 +26,11 @@ function ScrollArea(props: ScrollAreaProps) {
     },
     ...options,
   };
-  const [initialize] = useOverlayScrollbars({ options: defaultOptions });
+  const [initialize] = useOverlayScrollbars({
+    options: defaultOptions,
+    events,
+    defer,
+  });
 
   useEffect(() => {
     if (ref.current) initialize(ref.current);

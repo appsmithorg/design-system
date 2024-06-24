@@ -6,4 +6,6 @@ import { Sizes } from "__config__/types";
 export interface ScrollAreaProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: Extract<Sizes, "sm" | "md">;
   options?: UseOverlayScrollbarsParams["options"];
+  events?: UseOverlayScrollbarsParams["events"];
+  defer?: UseOverlayScrollbarsParams["defer"];
 }
