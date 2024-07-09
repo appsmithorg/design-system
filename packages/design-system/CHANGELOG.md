@@ -1,5 +1,13 @@
 # @appsmithorg/design-system
 
+## 2.1.43
+
+### Patch Changes
+
+- [#744](https://github.com/appsmithorg/design-system/pull/744) [`4a92d080`](https://github.com/appsmithorg/design-system/commit/4a92d0806fc0c0174f57fbcfdd33f5d37ccb1b37) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - feat: Added events and defer prop to ScrollArea
+
+- [#746](https://github.com/appsmithorg/design-system/pull/746) [`4b94af20`](https://github.com/appsmithorg/design-system/commit/4b94af2001728d0169b2b377d1d2f90db685a2a0) Thanks [@albinAppsmith](https://github.com/albinAppsmith)! - fix: Updated sm size for DatePicker, Input, Number Input, and Search Input
+
 ## 2.1.42
 
 ### Patch Changes
